@@ -1,0 +1,86 @@
+index,Series,Product Name,PureQty,ImpureQty,FinalQty
+0,iPhone 15 Base,IPHONE 15 CL CASE-ZML,22,17,39
+1,iPhone 15 Base,IPHONE 15 FINEWOVEN CASE BLACK-ZML,24,24,48
+2,iPhone 15 Base,IPHONE 15 FINEWOVEN CASE BLUE-ZML,4,12,16
+3,iPhone 15 Base,IPHONE 15 FINEWOVEN CASE GRN-ZML,11,16,27
+4,iPhone 15 Base,IPHONE 15 FINEWOVEN CASE MULBRY,6,6,12
+5,iPhone 15 Base,IPHONE 15 FINEWOVEN CASE TAUPE-ZML,7,9,16
+6,iPhone 15 Base,IPHONE 15 SI CASE BLACK-ZML,4,10,14
+7,iPhone 15 Base,IPHONE 15 SI CASE CLAY-ZML,0,3,3
+8,iPhone 15 Base,IPHONE 15 SI CASE CYPRESS-ZML,4,5,9
+9,iPhone 15 Base,IPHONE 15 SI CASE GUAVA-ZML,2,5,7
+10,iPhone 15 Base,IPHONE 15 SI CASE LIGHT PINK-ZML,0,1,1
+11,iPhone 15 Base,IPHONE 15 SI CASE ORANGE SORBET-ZML,3,5,8
+12,iPhone 15 Base,IPHONE 15 SI CASE STORM BLUE-ZML,5,8,13
+13,iPhone 15 Base,IPHONE 15 SI CASE WINTER BLUE-ZML,9,15,24
+14,iPhone 15 Plus,IPHONE 15 PLUS CL CASE-ZML,5,6,11
+15,iPhone 15 Plus,IPHONE 15 PLUS FINEWOVEN CASE BLACK-ZML,3,8,11
+16,iPhone 15 Plus,IPHONE 15 PLUS FINEWOVEN CASE GRN-ZML,1,2,3
+17,iPhone 15 Plus,IPHONE 15 PLUS FINEWOVEN CASE MULBRY,2,2,4
+18,iPhone 15 Plus,IPHONE 15 PLUS FINEWOVEN CASE TAUPE-ZML,2,2,4
+19,iPhone 15 Plus,IPHONE 15 PLUS SI CASE BLACK-ZML,6,7,13
+20,iPhone 15 Plus,IPHONE 15 PLUS SI CASE CYPRESS-ZML,5,2,7
+21,iPhone 15 Plus,IPHONE 15 PLUS SI CASE STORM BLUE-ZML,3,2,5
+22,iPhone 15 Plus,IPHONE 15 PLUS SI CASE WINTER BLUE-ZML,1,6,7
+23,iPhone 15 Plus,iPhone 15 Plus FineWoven Case with MagSafe - Pacific Blue,4,1,5
+24,iPhone 15 Plus,iPhone 15 Plus Silicone Case with MagSafe - Guava,1,0,1
+25,iPhone 15 Pro,IPHONE 15 PRO CL CASE-ZML,0,4,4
+26,iPhone 15 Pro,IPHONE 15 PRO FINEWOVEN CASE BLACK-ZML,0,11,11
+27,iPhone 15 Pro,IPHONE 15 PRO FINEWOVEN CASE TAUPE-ZML,1,15,16
+28,iPhone 15 Pro,IPHONE 15 PRO SI CASE BLACK-ZML,2,6,8
+29,iPhone 15 Pro,IPHONE 15 PRO SI CASE CLAY-ZML,1,2,3
+30,iPhone 15 Pro,IPHONE 15 PRO SI CASE GUAVA-ZML,0,5,5
+31,iPhone 15 Pro,IPHONE 15 PRO SI CASE ORANGE SORBET-ZML,0,0,0
+32,iPhone 15 Pro,IPHONE 15 PRO SI CASE STORM BLUE-ZML,0,1,1
+33,iPhone 15 Pro,IPHONE 15 PRO SI CASE WINTER BLUE-ZML,1,2,3
+34,iPhone 15 Pro,iPhone 15 Pro FineWoven Case with MagSafe - Pacific Blue,1,1,2
+35,iPhone 15 Pro Max,IPHONE 15 PRO MAX CL CASE-ZML,0,3,3
+36,iPhone 15 Pro Max,IPHONE 15 PRO MAX SI CASE GUAVA-ZML,0,2,2
+37,iPhone 15 Pro Max,IPHONE 15 PRO MAX SI CASE LIGHT PINK-ZML,2,2,4
+38,iPhone 15 Pro Max,IPHONE 15 PRO MAX SI CASE ORANGE SOR-ZML,0,3,3
+39,iPhone 15 Pro Max,IPHONE 15 PRO MAX SI CASE STORM BLUE-ZML,0,2,2
+40,iPhone 15 Pro Max,IPHONE 15 PRO MAX SI CASE WINTER BLU-ZML,0,1,1
+41,iPhone 15 Pro Max,iPhone 15 Pro Max FineWoven Case with MagSafe - Evergreen,0,2,2
+42,iPhone 15 Pro Max,iPhone 15 Pro Max Silicone Case with MagSafe - Black,0,2,2
+43,iPhone 15 Pro Max,iPhone 15 Pro Max Silicone Case with MagSafe - Cypress,0,1,1
+44,iPhone 16 Base,iPhone 16 Clear Case with MagSafe,134,43,177
+45,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Black,68,42,110
+46,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Denim,29,14,43
+47,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Fuchsia,24,13,37
+48,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Lake Green,50,33,83
+49,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Plum,16,11,27
+50,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Star Fruit,7,1,8
+51,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Stone Gray,2,6,8
+52,iPhone 16 Base,iPhone 16 Silicone Case with MagSafe - Ultramarine,20,22,42
+53,iPhone 16 Base,iPhone 16e Silicone Case   Black,11,6,17
+54,iPhone 16 Base,iPhone 16e Silicone Case   Fuchsia,1,0,1
+55,iPhone 16 Base,iPhone 16e Silicone Case   Lake Green,2,2,4
+56,iPhone 16 Base,iPhone 16e Silicone Case   White,3,1,4
+57,iPhone 16 Base,iPhone 16e Silicone Case   Winter Blue,4,1,5
+58,iPhone 16 Plus,iPhone 16 Plus Clear Case with MagSafe,94,26,120
+59,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Black,22,14,36
+60,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Denim,13,5,18
+61,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Fuchsia,19,11,30
+62,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Lake Green,19,10,29
+63,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Plum,9,3,12
+64,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Star Fruit,1,1,2
+65,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Stone Gray,6,11,17
+66,iPhone 16 Plus,iPhone 16 Plus Silicone Case with MagSafe - Ultramarine,21,14,35
+67,iPhone 16 Pro,iPhone 16 Pro Clear Case with MagSafe,251,293,544
+68,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Black,126,160,286
+69,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Denim,17,36,53
+70,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Fuchsia,6,11,17
+71,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Lake Green,0,8,8
+72,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Plum,4,18,22
+73,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Star Fruit,5,7,12
+74,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Stone Gray,15,20,35
+75,iPhone 16 Pro,iPhone 16 Pro Silicone Case with MagSafe - Ultramarine,10,23,33
+76,iPhone 16 Pro Max,iPhone 16 Pro Max Clear Case with MagSafe,282,360,642
+77,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Black,63,104,167
+78,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Denim,22,67,89
+79,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Fuchsia,13,21,34
+80,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Lake Green,17,46,63
+81,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Plum,16,28,44
+82,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Star Fruit,9,15,24
+83,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Stone Gray,11,21,32
+84,iPhone 16 Pro Max,iPhone 16 Pro Max Silicone Case with MagSafe - Ultramarine,11,27,38
