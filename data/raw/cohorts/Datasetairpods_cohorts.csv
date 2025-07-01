@@ -1,0 +1,16 @@
+lob,core_product,accessory_rank,accessory_category,accessory_name,purchase_count,attach_rate
+AirPods,AirPods Standard,1,Cable,USB-C to Lightning Cable  1m ,4625,0.015695790134559583
+AirPods,AirPods Standard,2,Charger/Adapter,20W USB-C Power Adapter,3762,0.012767040537559601
+AirPods,AirPods Standard,3,Other,EarPods  USB-C ,2070,0.007024926611575858
+AirPods,AirPods Standard,4,Other,Apple EarPods with Lightning Connector,2067,0.007014745558515603
+AirPods,AirPods Standard,5,Cable,Lightning to USB Cable  1m ,1975,0.00670252659800112
+AirPods,AirPods Pro,1,Cable,USB-C to Lightning Cable  1m ,4032,0.013683335312982539
+AirPods,AirPods Pro,2,Charger/Adapter,20W USB-C Power Adapter,3611,0.01225459420019344
+AirPods,AirPods Pro,3,Other,Apple EarPods with Lightning Connector,2087,0.007082619245583968
+AirPods,AirPods Pro,4,Other,EarPods  USB-C ,1840,0.006244379210289651
+AirPods,AirPods Pro,5,Cable,Lightning to USB Cable  1m ,1785,0.006057726570851645
+AirPods,AirPods Max,1,Charger/Adapter,20W USB-C Power Adapter,144,0.0004886905468922336
+AirPods,AirPods Max,2,Cable,USB-C to Lightning Cable  1m ,142,0.000481903178185397
+AirPods,AirPods Max,3,Other,Apple EarPods with Lightning Connector,98,0.00033258106663499226
+AirPods,AirPods Max,4,Other,EarPods  USB-C ,69,0.0002341642203858619
+AirPods,AirPods Max,5,Cable,Lightning to USB Cable  1m ,55,0.00018665263943800587
