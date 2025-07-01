@@ -1,0 +1,98 @@
+{
+  "store_info": {
+    "store_type": "express",
+    "store_name": "Express/Kiosk Store Template",
+    "description": "Compact format with essential items only",
+    "total_area_sqm": 10,
+    "accessory_area_sqm": 3,
+    "customer_flow": "high",
+    "avg_daily_visitors": 600,
+    "restock_frequency_days": 1
+  },
+  
+  "shelves": [
+    {
+      "shelf_id": 0,
+      "shelf_name": "Main Display Lower",
+      "width": 100,
+      "height": 30,
+      "depth": 30,
+      "y_position": 60,
+      "shelf_type": "standard",
+      "eye_level_score": 0.6,
+      "comment": "Lower display - cables, essential adapters"
+    },
+    {
+      "shelf_id": 1,
+      "shelf_name": "Main Display Eye Level",
+      "width": 100,
+      "height": 25,
+      "depth": 30,
+      "y_position": 95,
+      "shelf_type": "premium",
+      "eye_level_score": 1.0,
+      "comment": "Prime visibility - top selling cases & screen protectors only"
+    },
+    {
+      "shelf_id": 2,
+      "shelf_name": "Upper Display",
+      "width": 100,
+      "height": 25,
+      "depth": 30,
+      "y_position": 125,
+      "shelf_type": "standard",
+      "eye_level_score": 0.7,
+      "comment": "Upper level - popular accessories, chargers"
+    },
+    {
+      "shelf_id": 3,
+      "shelf_name": "Top Shelf",
+      "width": 80,
+      "height": 20,
+      "depth": 25,
+      "y_position": 155,
+      "shelf_type": "storage",
+      "eye_level_score": 0.3,
+      "comment": "Minimal storage - only if absolutely necessary"
+    }
+  ],
+  
+  "placement_rules": {
+    "category_grouping": false,
+    "group_by_series": false,
+    "premium_zone_required": false,
+    "demo_units_allowed": false,
+    "min_facings_multiplier": 0.8,
+    "comment": "Space is premium - minimize facings, maximize SKU variety"
+  },
+  
+  "product_mix_rules": {
+    "include_all_colors": false,
+    "include_all_series": false,
+    "min_skus_per_category": 2,
+    "max_skus_total": 30,
+    "premium_product_percentage": 0.05,
+    "new_product_slots": 2,
+    "filter_by_sales_rank": true,
+    "max_rank_included": 10,
+    "only_bestsellers": true,
+    "comment": "Ultra-curated selection - only proven fast movers"
+  },
+  
+  "optimization_weights": {
+    "sales_velocity": 0.7,
+    "new_product_priority": 0.05,
+    "visual_impact": 0.05,
+    "inventory_turnover": 0.2,
+    "comment": "Focus purely on turnover and availability"
+  },
+  
+  "special_rules": {
+    "max_facings_per_product": 3,
+    "bundle_only_popular": true,
+    "emergency_stock_only": true,
+    "categories_priority": ["case", "screen_protector", "cable", "charger"],
+    "excluded_categories": ["mount", "audio", "other"],
+    "comment": "Extreme space optimization - only absolute essentials"
+  }
+}
