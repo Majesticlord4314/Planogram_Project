@@ -1,0 +1,55 @@
+2025-07-02 11:03:40,217 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250702.log
+2025-07-02 11:08:23,942 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-02 11:08:23,947 | INFO     | main            | run_lob_optimization | Loaded 3 products for iPhone Accessories
+2025-07-02 11:08:24,055 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-02 11:08:24,055 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-02 11:08:24,070 | INFO     | main            | run_lob_optimization | Running bundle-based optimization...
+2025-07-02 11:08:24,071 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 3 products
+2025-07-02 11:08:24,071 | INFO     | base_optimizer  | create_planogram     | After store filtering: 3 products
+2025-07-02 11:08:24,071 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-02 11:08:24,074 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-02 11:08:24,074 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.00s
+2025-07-02 11:08:24,074 | INFO     | base_optimizer  | create_planogram     | Placed 3 products with 9 facings
+2025-07-02 11:08:24,074 | INFO     | main            | visualize_and_export_results | Creating visualization...
+2025-07-02 11:08:24,826 | INFO     | planogram_visualizer | visualize_planogram  | Planogram saved to output/iPhone_AAR_cohort.png
+2025-07-02 11:08:24,828 | INFO     | main            | visualize_and_export_results | Exporting results...
+2025-07-02 11:08:24,828 | INFO     | export_handler  | export_to_json       | Exported planogram to output\iPhone_AAR_cohort.json
+2025-07-02 11:08:25,014 | INFO     | export_handler  | export_to_excel      | Exported planogram to output\iPhone_AAR_cohort.xlsx
+2025-07-02 11:08:44,597 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250702.log
+2025-07-02 11:09:19,502 | INFO     | main            | run_product_category_optimization | Loading Phone Cases for AAR store...
+2025-07-02 11:09:19,502 | INFO     | main            | run_product_category_optimization | Loaded 3 products in Phone Cases
+2025-07-02 11:09:19,502 | INFO     | main            | run_product_category_optimization | Running balanced optimization...
+2025-07-02 11:09:19,502 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 3 products
+2025-07-02 11:09:19,502 | INFO     | base_optimizer  | create_planogram     | After store filtering: 3 products
+2025-07-02 11:09:19,502 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: balanced
+2025-07-02 11:09:19,502 | ERROR    | base_optimizer  | create_planogram     | Optimization failed: unsupported operand type(s) for *: 'NoneType' and 'float'
+2025-07-02 11:09:19,518 | ERROR    | main            | interactive_mode     | Error in interactive mode: Optimization failed: unsupported operand type(s) for *: 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 253, in create_planogram
+    result = self.optimize(filtered_products, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\utils\monitor.py", line 15, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\product_optimizer.py", line 22, in optimize
+    sorted_products = self._sort_products_by_priority(products)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 72, in _sort_products_by_priority
+    attach_score = getattr(product, 'attach_rate', 0) * weights.get('attach_rate', 0.3)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 48, in interactive_mode
+    run_product_category_optimization(loader, logger)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 137, in run_product_category_optimization
+    result = optimizer.create_planogram(products)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\utils\error_handler.py", line 31, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 272, in create_planogram
+    raise OptimizationError(f"Optimization failed: {str(e)}")
+src.utils.error_handler.OptimizationError: Optimization failed: unsupported operand type(s) for *: 'NoneType' and 'float'

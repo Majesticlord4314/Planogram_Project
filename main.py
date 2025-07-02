@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Main entry point for the planogram system with full interactive options
-"""
-
 import os
 import sys
 from pathlib import Path

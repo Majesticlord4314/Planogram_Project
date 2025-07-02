@@ -335,7 +335,7 @@ class BundleOptimizer(BaseOptimizer):
                         return next(s for s in self.store.shelves if s.shelf_id == shelf_id)
         
         # Look for shelves with same category products
-        category_shelf_counts = {}
+        category_shelf_counts = {}  # Use shelf_id instead of shelf object
         for shelf in self.store.shelves:
             category_count = 0
             for pos in shelf.positions:
@@ -345,11 +345,12 @@ class BundleOptimizer(BaseOptimizer):
                         category_count += 1
             
             if category_count > 0:
-                category_shelf_counts[shelf] = category_count
+                category_shelf_counts[shelf.shelf_id] = (shelf, category_count)  # Store tuple with shelf_id as key
         
         # Return shelf with most same-category products
         if category_shelf_counts:
-            return max(category_shelf_counts.items(), key=lambda x: x[1])[0]
+            best_shelf_id = max(category_shelf_counts.items(), key=lambda x: x[1][1])[0]
+            return category_shelf_counts[best_shelf_id][0]
         
         return None
     

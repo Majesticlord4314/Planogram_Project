@@ -126,8 +126,8 @@ class DataTransformer:
             max_facings = store.rules.get('special_rules', {}).get('max_facings_per_product', 3)
             base_facings = min(base_facings, max_facings)
         
-        # Adjust based on attach rate if available
-        if hasattr(product, 'attach_rate') and product.attach_rate > 0:
+        # Fix: Handle None attach_rate properly
+        if hasattr(product, 'attach_rate') and product.attach_rate is not None and product.attach_rate > 0:
             if product.attach_rate > 0.3:  # High attach rate
                 base_facings = min(base_facings + 1, product.max_facings)
         
