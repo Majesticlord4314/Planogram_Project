@@ -26,7 +26,6 @@ class ProductStatus(Enum):
 class Product:
     """Product data model for accessories"""
     # Basic info
-    product_id: str
     product_name: str
     series: str  # iPhone 16, iPhone 15, etc.
     category: ProductCategory
@@ -37,51 +36,94 @@ class Product:
     width: float
     height: float
     depth: float
-    weight: float  # in grams
     
     # Sales data
-    qty_sold_last_week: int
-    qty_sold_last_month: int
-    avg_weekly_sales: float
-    current_stock: int
-    min_stock: int
+    pureqty: float
+    impureqty: float
     
-    # Display constraints
-    min_facings: int
-    max_facings: int
-    
-    # Additional attributes
-    color: str
-    price: float
-    core_product: str  # Which device it's for
-    launch_date: str
-    status: ProductStatus
+    # Core product info
+    core_product: str  # Which device it's for (iPhone, iPad, etc.)
     
     # Cohort data (will be populated from cohort files)
     attach_rate: Optional[float] = None
     bundle_frequency: Optional[int] = None
     
+    # Computed fields
+    product_id: Optional[str] = None
+    min_facings: Optional[int] = None
+    max_facings: Optional[int] = None
+    status: Optional[ProductStatus] = None
+    
     def __post_init__(self):
         """Calculate derived fields"""
-        self.sales_velocity = self.avg_weekly_sales / 7  # Daily average
-        self.stock_days = self.current_stock / self.sales_velocity if self.sales_velocity > 0 else 999
-        self.needs_restock = self.current_stock <= self.min_stock
+        # Generate product_id if not provided
+        if not self.product_id:
+            self.product_id = f"{self.series}_{self.category.value}_{self.subcategory}_{self.brand}".replace(" ", "_")
         
+        # Total quantity sold
+        self.total_qty = self.pureqty + self.impureqty
+        
+        # Sales velocity (normalized to 0-100 scale based on total quantity)
+        # This will be recalculated relative to other products in the optimizer
+        self.sales_velocity = self.total_qty
+        
+        # Purity ratio (how much of sales is "pure")
+        self.purity_ratio = self.pureqty / self.total_qty if self.total_qty > 0 else 0
+        
+        # Calculate facings based on sales performance
+        self._calculate_facing_limits()
+        
+        # Default status
+        if not self.status:
+            self.status = ProductStatus.ACTIVE
+    
+    def _calculate_facing_limits(self):
+        """Calculate min/max facings based on sales performance"""
+        if self.total_qty >= 400:  # Top sellers
+            self.min_facings = 3
+            self.max_facings = 6
+        elif self.total_qty >= 200:  # Good sellers
+            self.min_facings = 2
+            self.max_facings = 4
+        elif self.total_qty >= 100:  # Moderate sellers
+            self.min_facings = 2
+            self.max_facings = 3
+        elif self.total_qty >= 50:  # Low sellers
+            self.min_facings = 1
+            self.max_facings = 2
+        else:  # Very low sellers
+            self.min_facings = 1
+            self.max_facings = 1
+    
     def calculate_facings(self, strategy: str = "balanced") -> int:
         """Calculate optimal facings based on strategy"""
         if strategy == "sales_based":
-            # Based purely on sales velocity
-            base_facings = min(self.max_facings, max(self.min_facings, int(self.sales_velocity / 10) + 1))
-        elif strategy == "stock_based":
-            # Consider current stock levels
-            if self.needs_restock:
-                base_facings = self.min_facings
+            # Pure sales-based calculation
+            if self.total_qty >= 400:
+                return self.max_facings
+            elif self.total_qty >= 200:
+                return self.max_facings - 1
+            elif self.total_qty >= 100:
+                return 2
             else:
-                stock_ratio = self.current_stock / (self.min_stock * 3)
-                base_facings = min(self.max_facings, max(self.min_facings, int(stock_ratio * 3) + 1))
-        else:  # balanced
-            sales_facings = int(self.sales_velocity / 10) + 1
-            stock_facings = int(self.current_stock / self.min_stock)
-            base_facings = min(self.max_facings, max(self.min_facings, (sales_facings + stock_facings) // 2))
+                return self.min_facings
+                
+        elif strategy == "purity_weighted":
+            # Give bonus for high purity ratio
+            base_facings = self.calculate_facings("sales_based")
+            if self.purity_ratio >= 0.8:
+                return min(self.max_facings, base_facings + 1)
+            elif self.purity_ratio <= 0.3:
+                return max(self.min_facings, base_facings - 1)
+            return base_facings
             
-        return base_facings
+        else:  # balanced
+            # Consider both total sales and purity
+            sales_facings = self.calculate_facings("sales_based")
+            purity_facings = self.calculate_facings("purity_weighted")
+            return (sales_facings + purity_facings) // 2
+    
+    @property
+    def space_efficiency(self) -> float:
+        """Calculate sales per unit of shelf space"""
+        return self.total_qty / (self.width * self.height) if self.width > 0 and self.height > 0 else 0

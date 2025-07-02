@@ -178,10 +178,13 @@ class PlanogramVisualizer:
         )
         
         # Add sales indicator
-        if hasattr(product, 'sales_velocity') and product.sales_velocity > 10:
-            # Add star for high-velocity items
-            ax.text(position.x_start + 2, shelf_y + product.height - 5, '⭐',
-                   fontsize=8, color='gold')
+        if hasattr(product, 'profit'):
+            if product.profit > 20:  # High margin
+                ax.text(position.x_end - 5, shelf_y + product.height - 5, '💰',
+                    fontsize=8, color='green')
+            elif product.profit > 10:  # Medium margin
+                ax.text(position.x_end - 5, shelf_y + product.height - 5, '💵',
+                    fontsize=8, color='darkgreen')
     
     def _format_product_label(self, product: Product, position) -> List[str]:
         """Format product label for display"""
@@ -196,7 +199,12 @@ class PlanogramVisualizer:
         
         lines.append(name)
         lines.append(f"{position.facings} units")
-        lines.append(f"${product.price}")
+        
+        # Show profit if available, otherwise price
+        if hasattr(product, 'profit') and product.profit > 0:
+            lines.append(f"M: ${product.profit:.0f}")  # M for margin
+        elif hasattr(product, 'price'):
+            lines.append(f"P: ${product.price:.0f}")   # P for price
         
         return lines
     
@@ -242,22 +250,84 @@ class PlanogramVisualizer:
             ax2.axvline(x=90, color='red', linestyle='--', alpha=0.5)
         
         # Metrics 3: Key metrics
-        ax3.set_title('Key Metrics', fontsize=10, weight='bold')
-        ax3.axis('off')
-        
-        metrics_text = [
-            f"Total Facings: {result.metrics.get('total_facings', 0)}",
-            f"Avg Utilization: {result.metrics.get('average_utilization', 0):.1f}%",
-            f"Space Efficiency: {(len(result.products_placed) / (len(result.products_placed) + len(result.products_rejected)) * 100):.1f}%"
-        ]
-        
-        if 'value_density' in result.metrics:
-            metrics_text.append(f"Value Density: ${result.metrics['value_density']:.2f}/cm")
-        
-        # Display metrics
-        for i, text in enumerate(metrics_text):
-            ax3.text(0.1, 0.8 - i*0.2, text, fontsize=9, transform=ax3.transAxes)
+            ax3.set_title('Key Metrics', fontsize=10, weight='bold')
+            ax3.axis('off')
+            
+            metrics_text = [
+                f"Total Facings: {result.metrics.get('total_facings', 0)}",
+                f"Avg Utilization: {result.metrics.get('average_utilization', 0):.1f}%",
+                f"Space Efficiency: {(len(result.products_placed) / (len(result.products_placed) + len(result.products_rejected)) * 100):.1f}%"
+            ]
+            
+            # Updated to show profit metrics
+            if 'profit_density' in result.metrics:
+                metrics_text.append(f"Profit Density: ${result.metrics['profit_density']:.2f}/cm")
+            elif 'value_density' in result.metrics:
+                metrics_text.append(f"Value Density: ${result.metrics['value_density']:.2f}/cm")
+            
+            if 'quantity_density' in result.metrics:
+                metrics_text.append(f"Qty Density: {result.metrics['quantity_density']:.1f}/cm")
+            
+            # Display metrics
+            for i, text in enumerate(metrics_text):
+                ax3.text(0.1, 0.8 - i*0.15, text, fontsize=9, transform=ax3.transAxes)
+    def create_profit_heatmap(self, result: OptimizationResult,
+                         product_lookup: Dict[str, Product],
+                         save_path: Optional[str] = None) -> plt.Figure:
     
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
+        
+        # Heatmap 1: Profit per unit
+        shelf_data_profit = []
+        # Heatmap 2: Total profit potential
+        shelf_data_potential = []
+        
+        for shelf in result.store.shelves:
+            profit_row = []
+            potential_row = []
+            
+            for position in shelf.positions:
+                if position.product_id in product_lookup:
+                    product = product_lookup[position.product_id]
+                    profit = getattr(product, 'profit', 0)
+                    potential = profit * product.total_qty * position.facings
+                    
+                    profit_row.append(profit)
+                    potential_row.append(potential)
+            
+            shelf_data_profit.append(profit_row)
+            shelf_data_potential.append(potential_row)
+        
+        # Pad rows and create heatmaps
+        max_positions = max(len(row) for row in shelf_data_profit) if shelf_data_profit else 0
+        
+        for row in shelf_data_profit:
+            row.extend([0] * (max_positions - len(row)))
+        for row in shelf_data_potential:
+            row.extend([0] * (max_positions - len(row)))
+        
+        # Create heatmaps
+        if shelf_data_profit and max_positions > 0:
+            sns.heatmap(shelf_data_profit, annot=True, fmt='.0f', cmap='Greens',
+                    cbar_kws={'label': 'Profit Margin ($)'},
+                    ax=ax1,
+                    xticklabels=False,
+                    yticklabels=[s.shelf_name for s in result.store.shelves])
+            ax1.set_title('Profit Margin by Position', fontsize=14, weight='bold')
+            
+            sns.heatmap(shelf_data_potential, annot=True, fmt='.0f', cmap='YlOrRd',
+                    cbar_kws={'label': 'Total Profit Potential ($)'},
+                    ax=ax2,
+                    xticklabels=False,
+                    yticklabels=[s.shelf_name for s in result.store.shelves])
+            ax2.set_title('Total Profit Potential by Position', fontsize=14, weight='bold')
+        
+        plt.tight_layout()
+        
+        if save_path:
+            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        
+        return fig
     def _add_legend(self, ax):
         """Add category color legend"""
         ax.axis('off')

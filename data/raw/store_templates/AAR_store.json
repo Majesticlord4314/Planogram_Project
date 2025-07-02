@@ -102,11 +102,10 @@
   },
   
   "optimization_weights": {
-    "sales_velocity": 0.7,
-    "new_product_priority": 0.05,
-    "visual_impact": 0.05,
-    "inventory_turnover": 0.2,
-    "comment": "Focus purely on turnover and availability"
+      "sales_velocity": 0.3,
+      "profitability": 0.4,  
+      "attach_rate": 0.2,
+      "new_product_priority": 0.1
   },
   
   "special_rules": {
@@ -116,5 +115,13 @@
     "categories_priority": ["case", "screen_protector", "cable", "charger"],
     "excluded_categories": ["mount", "audio", "other"],
     "comment": "Extreme space optimization - only absolute essentials"
+  },
+
+  "rules": {
+    "min_profit_threshold": 0,       
+    "min_profit_efficiency": 50,     
+    "min_quantity_threshold": 20,    
+    "premium_margin_focus": false,   
+    "flagship_min_margin": 0       
   }
 }

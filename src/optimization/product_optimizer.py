@@ -28,6 +28,8 @@ class ProductOptimizer(BaseOptimizer):
             result = self._optimize_by_category(sorted_products)
         elif self.strategy == "value_density":
             result = self._optimize_by_value(sorted_products)
+        elif self.strategy == "profit_efficiency":  
+            result = self._optimize_by_profit_efficiency(sorted_products)
         else:  # balanced
             result = self._optimize_balanced(sorted_products)
         
@@ -131,30 +133,36 @@ class ProductOptimizer(BaseOptimizer):
         )
     
     def _optimize_by_value(self, products: List[Product]) -> OptimizationResult:
-        """Optimize based on value density (profit per cm)"""
+        """Optimize based on profit density (profit per cm)"""
         products_placed = []
         products_rejected = []
         
-        # Calculate value density for each product
+        # Calculate profit density for each product
         for product in products:
-            value_per_unit = product.price * product.sales_velocity
+            # Use profit if available, otherwise use price as fallback
+            profit_per_unit = getattr(product, 'profit', product.price) if hasattr(product, 'price') else 0
+            
+            # Multiply by quantity to get total profit potential
+            total_profit_potential = profit_per_unit * product.total_qty
+            
+            # Profit density = total profit potential per cm of width
             space_per_unit = product.width
-            product.value_density = value_per_unit / space_per_unit
+            product.profit_density = total_profit_potential / space_per_unit if space_per_unit > 0 else 0
         
-        # Sort by value density
-        products.sort(key=lambda p: p.value_density, reverse=True)
+        # Sort by profit density
+        products.sort(key=lambda p: product.profit_density, reverse=True)
         
-        # Place high-value-density items at prime locations
+        # Place high-profit-density items at prime locations
         for product in products:
             placed = False
             
-            # Fewer facings for high-value items to maximize variety
-            if product.price > 50:
-                optimal_facings = max(product.min_facings, 2)
+            # For high-margin items, we might want more facings to capture profit
+            if getattr(product, 'profit', 0) > 30:  # High margin threshold
+                optimal_facings = min(product.max_facings, 3)
             else:
                 optimal_facings = product.calculate_facings("balanced")
             
-            # Try shelves by eye-level score
+            # Try shelves by eye-level score for maximum visibility
             shelves_by_score = sorted(self.store.shelves, 
                                     key=lambda s: s.eye_level_score, 
                                     reverse=True)
@@ -177,6 +185,64 @@ class ProductOptimizer(BaseOptimizer):
             warnings=self.warnings
         )
     
+    def _optimize_by_profit_efficiency(self, products: List[Product]) -> OptimizationResult:
+        products_placed = []
+        products_rejected = []
+        
+        # Calculate profit efficiency for each product
+        for product in products:
+            profit_per_unit = getattr(product, 'profit', getattr(product, 'price', 0))
+            total_profit_potential = profit_per_unit * product.total_qty
+            
+            # Profit efficiency = total profit potential per cm of space needed
+            min_space_needed = product.width * product.min_facings
+            product.profit_efficiency = total_profit_potential / min_space_needed if min_space_needed > 0 else 0
+        
+        # Sort by profit efficiency
+        products.sort(key=lambda p: p.profit_efficiency, reverse=True)
+        
+        # Place products prioritizing profit efficiency
+        for product in products:
+            placed = False
+            
+            # Calculate optimal facings based on profit margin
+            profit_margin = getattr(product, 'profit', 0)
+            if profit_margin > 40:  # High margin
+                optimal_facings = min(product.max_facings, 4)
+            elif profit_margin > 20:  # Medium margin
+                optimal_facings = min(product.max_facings, 3)
+            else:
+                optimal_facings = product.calculate_facings("balanced")
+            
+            # Try eye-level shelves first for high-efficiency products
+            if product.profit_efficiency > 50:  # High efficiency threshold
+                eye_level_shelves = [s for s in self.store.shelves if s.eye_level_score >= 0.7]
+                for shelf in eye_level_shelves:
+                    if self._try_place_product(shelf, product, optimal_facings):
+                        products_placed.append(product)
+                        placed = True
+                        break
+            
+            # Try any shelf if not placed
+            if not placed:
+                for shelf in sorted(self.store.shelves, key=lambda s: s.utilization):
+                    if self._try_place_product(shelf, product, optimal_facings):
+                        products_placed.append(product)
+                        placed = True
+                        break
+            
+            if not placed:
+                products_rejected.append(product)
+        
+        return OptimizationResult(
+            success=len(products_placed) > 0,
+            store=self.store,
+            products_placed=products_placed,
+            products_rejected=products_rejected,
+            metrics=self.metrics,
+            warnings=self.warnings
+        )
+        
     def _optimize_balanced(self, products: List[Product]) -> OptimizationResult:
         """Balanced optimization considering multiple factors"""
         products_placed = []
@@ -184,15 +250,23 @@ class ProductOptimizer(BaseOptimizer):
         
         # Calculate composite scores
         for product in products:
-            sales_score = min(product.sales_velocity / 20, 1.0)
-            value_score = min(product.price / 100, 1.0)
+            # Sales score based on total quantity
+            sales_score = min(product.total_qty / 300, 1.0)  # Adjust scale based on your data
+            
+            # Profit score
+            profit_score = min(getattr(product, 'profit', 0) / 50, 1.0) if hasattr(product, 'profit') else 0
+            
+            # Purity score (preference for pure sales)
+            purity_score = product.purity_ratio
+            
             attach_score = getattr(product, 'attach_rate', 0)
             
             # Weighted combination
             product.composite_score = (
-                sales_score * 0.4 +
-                value_score * 0.3 +
-                attach_score * 0.3
+                sales_score * 0.3 +
+                profit_score * 0.4 +  # Higher weight on profit
+                purity_score * 0.1 +
+                attach_score * 0.2
             )
         
         # Sort by composite score

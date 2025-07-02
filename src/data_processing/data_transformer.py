@@ -95,15 +95,22 @@ class DataTransformer:
         """Apply balanced optimization considering multiple factors"""
         # Calculate composite score for each product
         for product in products:
-            sales_score = min(product.sales_velocity / 50, 1.0)  # Normalize to 0-1
-            stock_score = min(product.current_stock / (product.min_stock * 3), 1.0)
-            attach_score = product.attach_rate if hasattr(product, 'attach_trate') else 0
+            # Use total_qty instead of sales_velocity for normalization
+            sales_score = min(product.total_qty / 200, 1.0)  # Normalize based on your data scale
+            
+            # Since stock is always full, use a fixed high score
+            stock_score = 1.0  # Always full stock
+            
+            # Profit score (assuming you'll add profit column)
+            profit_score = min(getattr(product, 'profit', product.price) / 50, 1.0) if hasattr(product, 'price') else 0
+            
+            attach_score = getattr(product, 'attach_rate', 0)
             
             # Weighted composite score
             weights = store.optimization_weights
             product.composite_score = (
                 sales_score * weights.get('sales_velocity', 0.4) +
-                stock_score * weights.get('inventory_turnover', 0.3) +
+                profit_score * weights.get('profitability', 0.3) +  # Add profitability weight
                 attach_score * weights.get('attach_rate', 0.3)
             )
         
@@ -321,9 +328,10 @@ class DataTransformer:
             data.append({
                 'category': category.value,
                 'product_count': len(cat_products),
-                'total_weekly_sales': sum(p.avg_weekly_sales for p in cat_products),
-                'avg_price': sum(p.price for p in cat_products) / len(cat_products),
-                'total_stock': sum(p.current_stock for p in cat_products),
+                'total_quantity_sold': sum(p.total_qty for p in cat_products),  # Use total_qty
+                'avg_profit': sum(getattr(p, 'profit', 0) for p in cat_products) / len(cat_products) if cat_products else 0,
+                'total_pureqty': sum(p.pureqty for p in cat_products),
+                'total_impureqty': sum(p.impureqty for p in cat_products),
                 'avg_attach_rate': sum(getattr(p, 'attach_rate', 0) for p in cat_products) / len(cat_products)
             })
         

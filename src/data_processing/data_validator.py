@@ -48,47 +48,29 @@ class DataValidator:
         """Validate individual product data"""
         # Check dimensions
         if product.width <= 0 or product.height <= 0 or product.depth <= 0:
-            self.errors.append(f"{product.product_id}: Invalid dimensions (width={product.width}, height={product.height}, depth={product.depth})")
+            self.errors.append(f"{product.product_name}: Invalid dimensions")
         
         # Check if dimensions are reasonable (in cm)
         if product.width > 50:
-            self.warnings.append(f"{product.product_id}: Unusually wide product ({product.width}cm)")
+            self.warnings.append(f"{product.product_name}: Unusually wide ({product.width}cm)")
         if product.height > 50:
-            self.warnings.append(f"{product.product_id}: Unusually tall product ({product.height}cm)")
+            self.warnings.append(f"{product.product_name}: Unusually tall ({product.height}cm)")
         
-        # Check inventory data
-        if product.current_stock < 0:
-            self.errors.append(f"{product.product_id}: Negative stock ({product.current_stock})")
+        # Check quantity data
+        if hasattr(product, 'pureqty') and product.pureqty < 0:
+            self.errors.append(f"{product.product_name}: Negative pure quantity")
         
-        if product.min_stock < 0:
-            self.errors.append(f"{product.product_id}: Negative minimum stock ({product.min_stock})")
+        if hasattr(product, 'impureqty') and product.impureqty < 0:
+            self.errors.append(f"{product.product_name}: Negative impure quantity")
         
-        if product.current_stock < product.min_stock:
-            self.warnings.append(f"{product.product_id}: Stock below minimum ({product.current_stock} < {product.min_stock})")
+        # Check facing constraints if they exist
+        if hasattr(product, 'min_facings') and hasattr(product, 'max_facings'):
+            if product.min_facings > product.max_facings:
+                self.errors.append(f"{product.product_name}: Min facings > Max facings")
         
-        # Check sales data
-        if product.avg_weekly_sales < 0:
-            self.errors.append(f"{product.product_id}: Negative sales data")
-        
-        if product.qty_sold_last_week > product.qty_sold_last_month:
-            self.warnings.append(f"{product.product_id}: Last week sales exceed last month sales")
-        
-        # Check facing constraints
-        if product.min_facings > product.max_facings:
-            self.errors.append(f"{product.product_id}: Min facings ({product.min_facings}) > Max facings ({product.max_facings})")
-        
-        if product.max_facings > 20:
-            self.warnings.append(f"{product.product_id}: Unusually high max facings ({product.max_facings})")
-        
-        # Check price
-        if product.price <= 0:
-            self.errors.append(f"{product.product_id}: Invalid price ({product.price})")
-        
-        # Check launch date format
-        try:
-            datetime.strptime(product.launch_date, '%Y-%m-%d')
-        except ValueError:
-            self.warnings.append(f"{product.product_id}: Invalid date format ({product.launch_date})")
+        # Check profit/price if exists
+        if hasattr(product, 'profit') and product.profit < 0:
+            self.warnings.append(f"{product.product_name}: Negative profit margin")
     
     def _validate_category_distribution(self, products: List[Product]):
         """Check if category distribution is reasonable"""
@@ -107,22 +89,22 @@ class DataValidator:
                 self.warnings.append(f"Category {category.value} has very few products ({count})")
     
     def _validate_price_distribution(self, products: List[Product]):
-        """Check price distribution for anomalies"""
-        prices = [p.price for p in products]
+        """Check profit distribution for anomalies"""
+        # Use profit if available, otherwise skip
+        profits = [getattr(p, 'profit', 0) for p in products if hasattr(p, 'profit')]
         
-        if not prices:
+        if not profits:
             return
         
-        avg_price = sum(prices) / len(prices)
-        min_price = min(prices)
-        max_price = max(prices)
+        avg_profit = sum(profits) / len(profits)
         
         # Check for extreme outliers
         for product in products:
-            if product.price > avg_price * 5:
-                self.warnings.append(f"{product.product_id}: Price ({product.price}) is much higher than average ({avg_price:.2f})")
-            elif product.price < avg_price * 0.1:
-                self.warnings.append(f"{product.product_id}: Price ({product.price}) is much lower than average ({avg_price:.2f})")
+            if hasattr(product, 'profit'):
+                if product.profit > avg_profit * 5:
+                    self.warnings.append(f"{product.product_name}: Very high margin ({product.profit})")
+                elif product.profit < avg_profit * 0.1 and product.profit > 0:
+                    self.warnings.append(f"{product.product_name}: Very low margin ({product.profit})")
     
     def validate_store_template(self, store: Store) -> Tuple[bool, List[str]]:
         """Validate store configuration"""

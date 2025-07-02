@@ -51,26 +51,48 @@ class Store:
             # Only top sellers
             if self.rules.get('only_bestsellers', False):
                 max_products = self.rules.get('max_skus_total', 30)
-                filtered = sorted(filtered, key=lambda p: p.avg_weekly_sales, reverse=True)[:max_products]
+                # UPDATED: Use total_qty instead of avg_weekly_sales
+                filtered = sorted(filtered, key=lambda p: p.total_qty, reverse=True)[:max_products]
         
         elif self.store_type == "standard":
             # Apply 80/20 rule if specified
             if self.rules.get('filter_by_sales_rank', False):
                 max_rank = self.rules.get('max_rank_included', 20)
-                # Sort by sales and take top products
-                filtered = sorted(filtered, key=lambda p: p.avg_weekly_sales, reverse=True)[:max_rank]
+                # UPDATED: Sort by total quantity
+                filtered = sorted(filtered, key=lambda p: p.total_qty, reverse=True)[:max_rank]
         
-        # Filter by minimum sales threshold
-        if 'min_weekly_sales' in self.rules:
-            min_sales = self.rules['min_weekly_sales']
-            filtered = [p for p in filtered if p.avg_weekly_sales >= min_sales]
+        # NEW: Filter by minimum profit threshold
+        if 'min_profit_threshold' in self.rules:
+            min_profit = self.rules['min_profit_threshold']
+            filtered = [p for p in filtered if getattr(p, 'profit', 0) >= min_profit]
+        
+        # NEW: Filter by profit efficiency threshold
+        if 'min_profit_efficiency' in self.rules:
+            min_efficiency = self.rules['min_profit_efficiency']
+            for p in filtered:
+                p.profit_efficiency = (getattr(p, 'profit', 0) * p.total_qty) / p.width if p.width > 0 else 0
+            filtered = [p for p in filtered if p.profit_efficiency >= min_efficiency]
+        
+        # UPDATED: Filter by minimum sales threshold
+        if 'min_quantity_threshold' in self.rules:
+            min_qty = self.rules['min_quantity_threshold']
+            filtered = [p for p in filtered if p.total_qty >= min_qty]
         
         # Category limits
         if self.rules.get('min_skus_per_category'):
             filtered = self._apply_category_limits(filtered)
         
+        # NEW: Premium store filtering
+        if self.store_type == "flagship":
+            # Filter out low-margin items unless they're top sellers
+            if self.rules.get('premium_margin_focus', False):
+                min_margin = self.rules.get('flagship_min_margin', 15)
+                filtered = [p for p in filtered if 
+                        getattr(p, 'profit', 0) >= min_margin or 
+                        p.total_qty >= 200]  # Keep high-volume items
+        
         return filtered
-    
+
     def _apply_category_limits(self, products: List[Product]) -> List[Product]:
         """Ensure minimum/maximum SKUs per category"""
         min_per_cat = self.rules.get('min_skus_per_category', 1)
@@ -86,8 +108,8 @@ class Store:
         # Apply limits
         result = []
         for category, cat_products in by_category.items():
-            # Sort by sales within category
-            cat_products.sort(key=lambda p: p.avg_weekly_sales, reverse=True)
+            # UPDATED: Sort by total quantity within category
+            cat_products.sort(key=lambda p: p.total_qty, reverse=True)
             
             # Take between min and max
             to_take = max(min_per_cat, min(len(cat_products), max_per_cat))
@@ -232,10 +254,10 @@ class Store:
         """Assign products to shelves optimally"""
         assignments = {shelf.shelf_id: [] for shelf in self.shelves}
         
-        # Sort products by value (price * sales_velocity)
+        # UPDATED: Sort products by profit potential (profit * quantity)
         products_sorted = sorted(products, 
-                               key=lambda p: p.price * p.sales_velocity, 
-                               reverse=True)
+                            key=lambda p: getattr(p, 'profit', 0) * p.total_qty, 
+                            reverse=True)
         
         # Assign high-value products to eye-level shelves
         eye_level_ids = [s.shelf_id for s in self.eye_level_shelves]

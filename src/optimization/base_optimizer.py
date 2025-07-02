@@ -67,12 +67,23 @@ class BaseOptimizer(ABC):
         weights = self.store.optimization_weights
         
         for product in products:
-            # Calculate priority score
-            sales_score = product.sales_velocity * weights.get('sales_velocity', 0.3)
-            attach_score = getattr(product, 'attach_rate', 0) * weights.get('attach_rate', 0.3)
-            new_product_score = (1.0 if product.status.value == 'new' else 0) * weights.get('new_product_priority', 0.2)
+            # Sales score based on total quantity (normalized)
+            max_qty = max(p.total_qty for p in products) if products else 1
+            sales_score = (product.total_qty / max_qty) * weights.get('sales_velocity', 0.3)
             
-            product.priority_score = sales_score + attach_score + new_product_score
+            # Profit score
+            profit_score = 0
+            if hasattr(product, 'profit'):
+                max_profit = max(getattr(p, 'profit', 0) for p in products) if products else 1
+                profit_score = (product.profit / max_profit) * weights.get('profitability', 0.3)
+            
+            # Attach rate score
+            attach_score = getattr(product, 'attach_rate', 0) * weights.get('attach_rate', 0.2)
+            
+            # New product score
+            new_product_score = (1.0 if hasattr(product, 'status') and product.status.value == 'new' else 0) * weights.get('new_product_priority', 0.2)
+            
+            product.priority_score = sales_score + profit_score + attach_score + new_product_score
         
         return sorted(products, key=lambda p: p.priority_score, reverse=True)
     
@@ -160,10 +171,12 @@ class BaseOptimizer(ABC):
             'shelf_utilization': [],
             'average_utilization': 0,
             'facings_by_product': {},
-            'value_density': 0  # Total value per cm of shelf space
+            'profit_density': 0,  # CHANGED from value_density
+            'quantity_density': 0  # ADD THIS for quantity-based metric
         }
         
-        total_value = 0
+        total_profit = 0  # CHANGED from total_value
+        total_quantity = 0  # ADD THIS
         total_width_used = 0
         
         for shelf in self.store.shelves:
@@ -179,12 +192,19 @@ class BaseOptimizer(ABC):
                 'facings': shelf_facings
             })
             
-            # Calculate value on shelf
+            # Calculate profit and quantity on shelf
             for pos in shelf.positions:
                 product = next((p for p in self.products_placed if p.product_id == pos.product_id), None)
                 if product:
-                    value = product.price * product.sales_velocity * pos.facings
-                    total_value += value
+                    # Use profit if available, otherwise use price as fallback
+                    profit_per_unit = getattr(product, 'profit', getattr(product, 'price', 0))
+                    profit = profit_per_unit * product.total_qty * pos.facings
+                    total_profit += profit
+                    
+                    # Add quantity metric
+                    quantity = product.total_qty * pos.facings
+                    total_quantity += quantity
+                    
                     total_width_used += pos.width
                     
                     metrics['facings_by_product'][product.product_id] = pos.facings
@@ -195,7 +215,8 @@ class BaseOptimizer(ABC):
             metrics['average_utilization'] = total_util / len(self.store.shelves)
         
         if total_width_used > 0:
-            metrics['value_density'] = total_value / total_width_used
+            metrics['profit_density'] = total_profit / total_width_used
+            metrics['quantity_density'] = total_quantity / total_width_used
         
         # Merge with existing metrics
         metrics.update(self.metrics)

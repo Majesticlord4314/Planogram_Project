@@ -215,38 +215,36 @@ class DataLoader:
             try:
                 # Map category string to enum
                 cat_enum = self._map_category(row['category'])
-                status_enum = ProductStatus(row['status']) if 'status' in row else ProductStatus.ACTIVE
+                
+                # Handle optional subcategory
+                subcategory = str(row['subcategory']) if pd.notna(row['subcategory']) else ''
                 
                 product = Product(
-                    product_id=str(row['product_id']),
-                    product_name=str(row['product_name']),
-                    series=str(row['series']),
+                    product_name=str(row['product_name']).strip(),
+                    series=str(row['series']).strip(),
                     category=cat_enum,
-                    subcategory=str(row['subcategory']),
+                    subcategory=subcategory,
                     brand=str(row['brand']),
                     width=float(row['width']),
                     height=float(row['height']),
                     depth=float(row['depth']),
-                    weight=float(row['weight']),
-                    qty_sold_last_week=int(row['qty_sold_last_week']),
-                    qty_sold_last_month=int(row['qty_sold_last_month']),
-                    avg_weekly_sales=float(row['avg_weekly_sales']),
-                    current_stock=int(row['current_stock']),
-                    min_stock=int(row['min_stock']),
-                    min_facings=int(row['min_facings']),
-                    max_facings=int(row['max_facings']),
-                    color=str(row['color']),
-                    price=float(row['price']),
-                    core_product=str(row['core_product']),
-                    launch_date=str(row['launch_date']),
-                    status=status_enum
+                    pureqty=float(row['pureqty']),
+                    impureqty=float(row['impureqty']),
+                    core_product=str(row['core_product'])
                 )
                 products.append(product)
                 
             except Exception as e:
-                print(f"Error loading product {row.get('product_id', 'unknown')}: {e}")
+                print(f"Error loading product {row.get('product_name', 'unknown')}: {e}")
                 continue
                 
+        # Normalize sales velocity across all products
+        if products:
+            max_qty = max(p.total_qty for p in products)
+            if max_qty > 0:
+                for p in products:
+                    p.sales_velocity = (p.total_qty / max_qty) * 100  # Normalize to 0-100
+                    
         return products
     
     def _map_category(self, category_str: str) -> ProductCategory:

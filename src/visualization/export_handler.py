@@ -91,7 +91,10 @@ class ExportHandler:
                         export_data['products'][position.product_id] = {
                             'name': product.product_name,
                             'category': product.category,
-                            'price': product.price,
+                            'price': getattr(product, 'price', 0),  # Handle missing price
+                            'profit': getattr(product, 'profit', 0),  # ADD profit
+                            'total_qty': product.total_qty,  # ADD quantity
+                            'profit_potential': getattr(product, 'profit', 0) * product.total_qty,  # ADD
                             'dimensions': {
                                 'width': product.width,
                                 'height': product.height,
@@ -157,8 +160,10 @@ class ExportHandler:
                             'X Position': position.x_start,
                             'Width': position.width,
                             'Facings': position.facings,
-                            'Price': product.price,
-                            'Sales/Day': getattr(product, 'sales_velocity', None)
+                            'Price': getattr(product, 'price', 0),
+                            'Profit': getattr(product, 'profit', 0),  # ADD
+                            'Total Qty': product.total_qty,  # ADD
+                            'Profit/Facing': getattr(product, 'profit', 0) * product.total_qty / position.facings  # ADD
                         })
             
             if shelf_data:

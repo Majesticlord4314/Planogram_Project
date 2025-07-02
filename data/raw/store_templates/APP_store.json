@@ -121,10 +121,19 @@
   },
   
   "optimization_weights": {
-    "sales_velocity": 0.3,
-    "new_product_priority": 0.2,
-    "visual_impact": 0.3,
-    "inventory_turnover": 0.2,
-    "comment": "Balance between sales, visual merchandising, and new products"
-  }
+      "sales_velocity": 0.3,
+      "profitability": 0.4,  
+      "attach_rate": 0.2,
+      "new_product_priority": 0.1
+  },
+
+  
+  "rules": {
+    "min_profit_threshold": 10,      
+    "min_profit_efficiency": 150,    
+    "min_quantity_threshold": 5,     
+    "premium_margin_focus": true,    
+    "flagship_min_margin": 15        
+    }
+
 }

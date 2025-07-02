@@ -194,13 +194,18 @@ class BundleOptimizer(BaseOptimizer):
         avg_placement_score = sum(shelf.get_placement_score(p) for p in bundle) / len(bundle)
         score += avg_placement_score
         
-        # Bundle value score
-        bundle_value = sum(p.price * p.sales_velocity for p in bundle)
-        if bundle_value > 100:  # High-value bundle
-            if shelf.is_eye_level:
+        # Bundle profit score (UPDATED)
+        bundle_profit = sum(getattr(p, 'profit', 0) * p.total_qty for p in bundle)
+        if bundle_profit > 100:  # High-profit bundle
+            if shelf.eye_level_score >= 0.8:  # Better than checking is_eye_level
                 score += 0.5
-            elif shelf.is_premium:
+            elif shelf.eye_level_score >= 0.6:
                 score += 0.3
+        
+        # Quantity score (NEW)
+        bundle_quantity = sum(p.total_qty for p in bundle)
+        if bundle_quantity > 500:  # High-volume bundle
+            score += 0.3
         
         # Space efficiency
         total_width = sum(p.width * p.calculate_facings("balanced") for p in bundle)
@@ -431,8 +436,17 @@ class BundleOptimizer(BaseOptimizer):
             'bundles_placed': len(self.bundle_placements),
             'products_in_bundles': sum(len(b) for b in self.bundle_groups),
             'bundle_coverage': 0,
-            'average_bundle_size': 0
+            'average_bundle_size': 0,
+            'total_bundle_profit': 0,  # NEW
+            'total_bundle_quantity': 0  # NEW
         }
+        
+        # Calculate bundle profit and quantity
+        for bundle in self.bundle_groups:
+            bundle_metrics['total_bundle_profit'] += sum(
+                getattr(p, 'profit', 0) * p.total_qty for p in bundle
+            )
+            bundle_metrics['total_bundle_quantity'] += sum(p.total_qty for p in bundle)
         
         if self.bundle_groups:
             bundle_metrics['average_bundle_size'] = (
@@ -446,7 +460,7 @@ class BundleOptimizer(BaseOptimizer):
                 products_in_bundles.update(p.product_id for p in bundle)
             
             placed_in_bundles = len([p for p in self.products_placed 
-                                   if p.product_id in products_in_bundles])
+                                if p.product_id in products_in_bundles])
             bundle_metrics['bundle_coverage'] = placed_in_bundles / len(self.products_placed)
         
         # Add to overall metrics
