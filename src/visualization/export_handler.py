@@ -1,12 +1,35 @@
 import json
 import pandas as pd
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Any
 from datetime import datetime
+from enum import Enum
+
 from src.models.product import Product
-from src.models.store import Store
 from src.optimization.base_optimizer import OptimizationResult
 from src.utils.logger import get_logger
+
+
+def _recursive_convert(obj: Any) -> Any:
+    """
+    Recursively convert:
+    - Dict keys that are Enums to their .value
+    - Enum values to .value
+    - Process nested lists and dicts
+    """
+    if isinstance(obj, dict):
+        new_dict = {}
+        for k, v in obj.items():
+            # convert key
+            new_key = k.value if isinstance(k, Enum) else k
+            new_dict[new_key] = _recursive_convert(v)
+        return new_dict
+    elif isinstance(obj, list):
+        return [_recursive_convert(item) for item in obj]
+    elif isinstance(obj, Enum):
+        return obj.value
+    else:
+        return obj
 
 class ExportHandler:
     """Handle exporting planogram data in various formats"""
@@ -16,9 +39,12 @@ class ExportHandler:
         self.output_dir.mkdir(exist_ok=True)
         self.logger = get_logger()
     
-    def export_to_json(self, result: OptimizationResult, 
-                      product_lookup: Dict[str, Product],
-                      filename: str = "planogram.json") -> str:
+    def export_to_json(
+        self,
+        result: OptimizationResult, 
+        product_lookup: Dict[str, Product],
+        filename: str = "planogram.json"
+    ) -> str:
         """Export planogram to JSON format"""
         
         export_data = {
@@ -50,7 +76,6 @@ class ExportHandler:
                 'products': []
             }
             
-            # Add products on shelf
             for position in shelf.positions:
                 if position.product_id in product_lookup:
                     product = product_lookup[position.product_id]
@@ -62,11 +87,10 @@ class ExportHandler:
                         'facings': position.facings
                     })
                     
-                    # Add to products dictionary if not already there
                     if position.product_id not in export_data['products']:
                         export_data['products'][position.product_id] = {
                             'name': product.product_name,
-                            'category': product.category.value,
+                            'category': product.category,
                             'price': product.price,
                             'dimensions': {
                                 'width': product.width,
@@ -77,17 +101,23 @@ class ExportHandler:
             
             export_data['shelves'].append(shelf_data)
         
-        # Save to file
+        # Convert any Enum keys/values recursively
+        cleaned = _recursive_convert(export_data)
+
+        # Write JSON
         filepath = self.output_dir / filename
         with open(filepath, 'w') as f:
-            json.dump(export_data, f, indent=2)
+            json.dump(cleaned, f, indent=2)
         
         self.logger.info(f"Exported planogram to {filepath}")
         return str(filepath)
     
-    def export_to_excel(self, result: OptimizationResult,
-                       product_lookup: Dict[str, Product],
-                       filename: str = "planogram.xlsx") -> str:
+    def export_to_excel(
+        self,
+        result: OptimizationResult,
+        product_lookup: Dict[str, Product],
+        filename: str = "planogram.xlsx"
+    ) -> str:
         """Export planogram to Excel format"""
         
         filepath = self.output_dir / filename
@@ -95,8 +125,10 @@ class ExportHandler:
         with pd.ExcelWriter(filepath, engine='openpyxl') as writer:
             # Sheet 1: Summary
             summary_data = {
-                'Metric': ['Total Products', 'Total Facings', 'Products Placed', 
-                          'Products Rejected', 'Average Utilization', 'Optimization Time'],
+                'Metric': [
+                    'Total Products', 'Total Facings', 'Products Placed', 
+                    'Products Rejected', 'Average Utilization', 'Optimization Time'
+                ],
                 'Value': [
                     len(product_lookup),
                     result.metrics.get('total_facings', 0),
@@ -106,7 +138,9 @@ class ExportHandler:
                     f"{result.optimization_time:.2f}s"
                 ]
             }
-            pd.DataFrame(summary_data).to_excel(writer, sheet_name='Summary', index=False)
+            pd.DataFrame(summary_data).to_excel(
+                writer, sheet_name='Summary', index=False
+            )
             
             # Sheet 2: Shelf Details
             shelf_data = []
@@ -124,11 +158,13 @@ class ExportHandler:
                             'Width': position.width,
                             'Facings': position.facings,
                             'Price': product.price,
-                            'Sales/Day': product.sales_velocity
+                            'Sales/Day': getattr(product, 'sales_velocity', None)
                         })
             
             if shelf_data:
-                pd.DataFrame(shelf_data).to_excel(writer, sheet_name='Shelf Details', index=False)
+                pd.DataFrame(shelf_data).to_excel(
+                    writer, sheet_name='Shelf Details', index=False
+                )
             
             # Sheet 3: Product List
             product_data = []
@@ -151,14 +187,19 @@ class ExportHandler:
                 })
             
             if product_data:
-                pd.DataFrame(product_data).to_excel(writer, sheet_name='Products', index=False)
+                pd.DataFrame(product_data).to_excel(
+                    writer, sheet_name='Products', index=False
+                )
         
         self.logger.info(f"Exported planogram to {filepath}")
         return str(filepath)
     
-    def export_to_csv(self, result: OptimizationResult,
-                     product_lookup: Dict[str, Product],
-                     filename_prefix: str = "planogram") -> List[str]:
+    def export_to_csv(
+        self,
+        result: OptimizationResult,
+        product_lookup: Dict[str, Product],
+        filename_prefix: str = "planogram"
+    ) -> List[str]:
         """Export planogram to multiple CSV files"""
         
         files_created = []
