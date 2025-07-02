@@ -2,12 +2,21 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Tuple, Any
 import time
-from ..models.product import Product, ProductCategory
-from ..models.shelf import Shelf, ShelfPosition
-from ..models.store import Store
-from ..utils.logger import get_logger
-from ..utils.error_handler import OptimizationError, handle_errors
-from ..utils.monitor import monitor
+import sys
+from pathlib import Path
+
+# Fix imports
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+from src.models.product import Product, ProductCategory
+from src.models.shelf import Shelf, ShelfPosition
+from src.models.store import Store
+from src.utils.logger import get_logger
+from src.utils.error_handler import OptimizationError, handle_errors
+from src.utils.monitor import monitor
+
+# Rest of the file remains the same...
 
 @dataclass
 class OptimizationResult:

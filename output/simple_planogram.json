@@ -1,0 +1,47 @@
+{
+  "store": "Standard Store",
+  "shelves": [
+    {
+      "id": 0,
+      "name": "Bottom Shelf",
+      "products": [
+        {
+          "name": "iPhone Case",
+          "position": 0,
+          "width": 20,
+          "facings": 3
+        },
+        {
+          "name": "Screen Protector",
+          "position": 25,
+          "width": 15,
+          "facings": 5
+        },
+        {
+          "name": "Cable",
+          "position": 45,
+          "width": 10,
+          "facings": 8
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Eye Level Shelf",
+      "products": [
+        {
+          "name": "Premium Case",
+          "position": 0,
+          "width": 25,
+          "facings": 2
+        },
+        {
+          "name": "Wireless Charger",
+          "position": 30,
+          "width": 20,
+          "facings": 3
+        }
+      ]
+    }
+  ]
+}

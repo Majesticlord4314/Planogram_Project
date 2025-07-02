@@ -1,0 +1,18 @@
+2025-07-01 16:43:46,993 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250701.log
+2025-07-01 16:43:46,993 | INFO     | main            | run_custom_planogram | Loading data...
+2025-07-01 16:43:46,993 | INFO     | main            | run_custom_planogram | Loaded store with 3 shelves
+2025-07-01 16:43:47,001 | INFO     | main            | run_custom_planogram | Loaded 14 custom products
+2025-07-01 16:43:47,001 | INFO     | main            | run_custom_planogram | Validating data...
+2025-07-01 16:43:47,001 | INFO     | main            | run_custom_planogram | Transforming data...
+2025-07-01 16:43:47,001 | ERROR    | main            | run_custom_planogram | Error: unsupported operand type(s) for *: 'NoneType' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 103, in run_custom_planogram
+    products = transformer.prepare_products_for_store(products, store, strategy="balanced")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\data_processing\data_transformer.py", line 33, in prepare_products_for_store
+    filtered_products = self._apply_balanced_optimization(filtered_products, store)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\data_processing\data_transformer.py", line 107, in _apply_balanced_optimization
+    attach_score * weights.get('attach_rate', 0.3)
+    ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'

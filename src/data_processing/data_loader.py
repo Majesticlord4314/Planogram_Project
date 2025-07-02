@@ -2,9 +2,9 @@ import pandas as pd
 import json
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple, Union
-from ..models.product import Product, ProductCategory, ProductStatus
-from ..models.shelf import Shelf
-from ..models.store import Store
+from src.models.product import Product, ProductCategory, ProductStatus
+from src.models.shelf import Shelf
+from src.models.store import Store
 
 class DataLoader:
     """Handle all data loading operations"""

@@ -1,8 +1,8 @@
 from typing import List, Dict, Tuple, Optional
 import pandas as pd
 from datetime import datetime
-from ..models.product import Product, ProductCategory
-from ..models.store import Store
+from src.models.product import Product, ProductCategory
+from src.models.store import Store
 
 class DataValidator:
     """Validate data quality and completeness"""

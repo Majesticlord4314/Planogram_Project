@@ -1,0 +1,4 @@
+product_id,product_name,series,category,subcategory,brand,width,height,depth,weight,color,price,qty_sold_last_week,qty_sold_last_month,avg_weekly_sales,current_stock,min_stock,min_facings,max_facings,core_product,launch_date,status
+IP16_CLR_01,Clear Case for iPhone 16,iPhone 16,case,clear_case,Generic,8.0,12.0,1.0,50,Clear,39.0,45,180,45,100,20,2,5,iPhone 16,2024-01-15,active
+IP16_SIL_01,Silicone Case for iPhone 16,iPhone 16,case,silicone_case,Apple,8.0,12.0,1.0,55,Blue,49.0,38,152,38,80,15,1,4,iPhone 16,2024-01-15,active
+IP15_CLR_01,Clear Case for iPhone 15,iPhone 15,case,clear_case,Generic,8.0,12.0,1.0,50,Clear,35.0,32,128,32,120,20,2,5,iPhone 15,2023-09-15,active

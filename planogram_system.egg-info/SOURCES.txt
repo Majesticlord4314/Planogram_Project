@@ -1,0 +1,7 @@
+README.md
+setup.py
+planogram_system.egg-info/PKG-INFO
+planogram_system.egg-info/SOURCES.txt
+planogram_system.egg-info/dependency_links.txt
+planogram_system.egg-info/requires.txt
+planogram_system.egg-info/top_level.txt

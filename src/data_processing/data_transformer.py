@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime, timedelta
-from ..models.product import Product, ProductCategory, ProductStatus
-from ..models.store import Store
+from src.models.product import Product, ProductCategory, ProductStatus
+from src.models.store import Store
 
 class DataTransformer:
     """Transform and prepare data for optimization"""
@@ -97,7 +97,7 @@ class DataTransformer:
         for product in products:
             sales_score = min(product.sales_velocity / 50, 1.0)  # Normalize to 0-1
             stock_score = min(product.current_stock / (product.min_stock * 3), 1.0)
-            attach_score = product.attach_rate if hasattr(product, 'attach_rate') else 0
+            attach_score = product.attach_rate if hasattr(product, 'attach_trate') else 0
             
             # Weighted composite score
             weights = store.optimization_weights
