@@ -98,11 +98,13 @@ class Product:
     def calculate_facings(self, strategy: str = "balanced") -> int:
         """Calculate optimal facings based on strategy"""
         if strategy == "sales_based":
-            # Pure sales-based calculation
-            if self.total_qty >= 400:
+            # Pure sales-based calculation - more conservative to fit more products
+            if self.total_qty >= 1000:
                 return self.max_facings
-            elif self.total_qty >= 200:
-                return self.max_facings - 1
+            elif self.total_qty >= 600:
+                return min(3, self.max_facings - 1)
+            elif self.total_qty >= 300:
+                return min(2, self.max_facings - 2)
             elif self.total_qty >= 100:
                 return 2
             else:
@@ -121,9 +123,16 @@ class Product:
             # Consider both total sales and purity
             sales_facings = self.calculate_facings("sales_based")
             purity_facings = self.calculate_facings("purity_weighted")
-            return (sales_facings + purity_facings) // 2
+            return max(self.min_facings, (sales_facings + purity_facings) // 2)
     
     @property
     def space_efficiency(self) -> float:
         """Calculate sales per unit of shelf space"""
         return self.total_qty / (self.width * self.height) if self.width > 0 and self.height > 0 else 0
+    
+    @property
+    def profit_efficiency(self) -> float:
+        """Calculate profit per unit of shelf space"""
+        profit = getattr(self, 'profit', 0) or 0
+        space = self.width * self.height if self.width > 0 and self.height > 0 else 1
+        return profit / space

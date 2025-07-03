@@ -1,0 +1,21 @@
+lob,core_product,accessory_rank,accessory_category,accessory_name,purchase_count,attach_rate
+Watch,Apple Watch SE,1,Cable,USB-C to Lightning Cable  1m ,2160,0.007330358203383503
+Watch,Apple Watch SE,2,Charger/Adapter,20W USB-C Power Adapter,1713,0.005813381297405528
+Watch,Apple Watch SE,3,Other,EarPods  USB-C ,1030,0.003495494884020837
+Watch,Apple Watch SE,4,Other,Apple EarPods with Lightning Connector,975,0.003308842244582831
+Watch,Apple Watch SE,5,Cable,Lightning to USB Cable  1m ,894,0.0030339538119559498
+Watch,Apple Watch Ultra,1,Cable,USB-C to Lightning Cable  1m ,220,0.0007466105577520235
+Watch,Apple Watch Ultra,2,Charger/Adapter,20W USB-C Power Adapter,165,0.0005599579183140176
+Watch,Apple Watch Ultra,3,Other,EarPods  USB-C ,121,0.0004106358067636129
+Watch,Apple Watch Ultra,4,Other,Apple EarPods with Lightning Connector,115,0.00039027370064310317
+Watch,Apple Watch Ultra,5,Cable,Lightning to USB Cable  1m ,88,0.0002986442231008094
+Watch,Apple Watch Other,1,Cable,USB-C to Lightning Cable  1m ,3354,0.01138241732136494
+Watch,Apple Watch Other,2,Charger/Adapter,20W USB-C Power Adapter,2721,0.009234215125651164
+Watch,Apple Watch Other,3,Other,Apple EarPods with Lightning Connector,1710,0.005803200244345274
+Watch,Apple Watch Other,4,Other,EarPods  USB-C ,1636,0.00555206760219232
+Watch,Apple Watch Other,5,Cable,Lightning to USB Cable  1m ,1438,0.004880118100215499
+Watch,Apple Watch Series,1,Cable,USB-C to Lightning Cable  1m ,293,0.0009943495155515585
+Watch,Apple Watch Series,2,Charger/Adapter,20W USB-C Power Adapter,263,0.0008925389849490098
+Watch,Apple Watch Series,3,Other,Apple EarPods with Lightning Connector,152,0.0005158400217195799
+Watch,Apple Watch Series,4,Other,EarPods  USB-C ,141,0.0004785094938319787
+Watch,Apple Watch Series,5,Cable,Lightning to USB Cable  1m ,115,0.00039027370064310317

@@ -1,0 +1,68 @@
+{
+  "store_info": {
+    "store_type": "standard",
+    "store_name": "Standard Store Template",
+    "description": "Standard format store with balanced product range",
+    "total_area_sqm": 40,
+    "accessory_area_sqm": 10,
+    "customer_flow": "medium",
+    "avg_daily_visitors": 500,
+    "restock_frequency_days": 3
+  },
+  
+  "shelves": [
+    {
+      "shelf_id": 0,
+      "shelf_name": "Eye Level Main",
+      "width": 120,
+      "height": 30,
+      "depth": 25,
+      "y_position": 140,
+      "shelf_type": "standard",
+      "eye_level_score": 1.0
+    },
+    {
+      "shelf_id": 1,
+      "shelf_name": "Upper Display",
+      "width": 120,
+      "height": 25,
+      "depth": 25,
+      "y_position": 170,
+      "shelf_type": "standard",
+      "eye_level_score": 0.7
+    },
+    {
+      "shelf_id": 2,
+      "shelf_name": "Lower Access",
+      "width": 120,
+      "height": 25,
+      "depth": 25,
+      "y_position": 110,
+      "shelf_type": "standard",
+      "eye_level_score": 0.6
+    }
+  ],
+  
+  "product_mix_rules": {
+    "max_categories": 6,
+    "min_products_per_category": 2,
+    "preferred_categories": ["case", "charger", "cable"],
+    "special_rules": {
+      "premium_space_allocation": 0.3
+    }
+  },
+  
+  "placement_rules": {
+    "eye_level_priority": ["popular", "high_margin"],
+    "grouping_strategy": "category_then_popularity",
+    "min_facings_multiplier": 0.8,
+    "gap_size": 1.0
+  },
+  
+  "optimization_weights": {
+    "sales_velocity": 0.40,
+    "profit_margin": 0.20,
+    "inventory_turnover": 0.30,
+    "attach_rate": 0.10
+  }
+}

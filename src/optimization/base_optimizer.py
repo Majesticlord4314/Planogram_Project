@@ -67,23 +67,33 @@ class BaseOptimizer(ABC):
         weights = self.store.optimization_weights
         
         for product in products:
-            # Sales score based on total quantity (normalized)
-            max_qty = max(p.total_qty for p in products) if products else 1
-            sales_score = (product.total_qty / max_qty) * weights.get('sales_velocity', 0.3)
+            # Calculate priority score with proper None handling
             
-            # Profit score
-            profit_score = 0
-            if hasattr(product, 'profit'):
-                max_profit = max(getattr(p, 'profit', 0) for p in products) if products else 1
-                profit_score = (product.profit / max_profit) * weights.get('profitability', 0.3)
+            # Sales score
+            if hasattr(product, 'sales_velocity') and product.sales_velocity is not None:
+                sales_score = product.sales_velocity * weights.get('sales_velocity', 0.3)
+            else:
+                # Use total_qty as fallback
+                sales_score = product.total_qty * weights.get('sales_velocity', 0.3)
             
-            # Attach rate score
-            attach_score = getattr(product, 'attach_rate', 0) * weights.get('attach_rate', 0.2)
+            # Attach score - handle None values properly
+            attach_rate = getattr(product, 'attach_rate', 0)
+            if attach_rate is None:
+                attach_rate = 0
+            attach_score = float(attach_rate) * weights.get('attach_rate', 0.3)
             
             # New product score
-            new_product_score = (1.0 if hasattr(product, 'status') and product.status.value == 'new' else 0) * weights.get('new_product_priority', 0.2)
+            new_product_score = 0
+            if hasattr(product, 'status') and product.status is not None:
+                try:
+                    if product.status.value == 'new':
+                        new_product_score = 1.0 * weights.get('new_product_priority', 0.2)
+                except AttributeError:
+                    # status might not be an enum
+                    if str(product.status).lower() == 'new':
+                        new_product_score = 1.0 * weights.get('new_product_priority', 0.2)
             
-            product.priority_score = sales_score + profit_score + attach_score + new_product_score
+            product.priority_score = sales_score + attach_score + new_product_score
         
         return sorted(products, key=lambda p: p.priority_score, reverse=True)
     
@@ -127,6 +137,18 @@ class BaseOptimizer(ABC):
     def _place_product_on_shelf(self, shelf: Shelf, product: Product, facings: int) -> bool:
         """Place a product on a specific shelf"""
         try:
+            # Validate basic dimensions first
+            if product.height > shelf.height:
+                self.logger.debug(f"Product {product.product_name} too tall ({product.height}cm) for shelf {shelf.shelf_name} ({shelf.height}cm)")
+                return False
+            
+            if hasattr(product, 'depth') and hasattr(shelf, 'depth') and product.depth > shelf.depth:
+                self.logger.debug(f"Product {product.product_name} too deep ({product.depth}cm) for shelf {shelf.shelf_name} ({shelf.depth}cm)")
+                return False
+            
+            # Calculate required width
+            product_width = product.width * facings
+            
             # Calculate position
             if shelf.positions:
                 # Place after last product with gap
@@ -135,9 +157,16 @@ class BaseOptimizer(ABC):
             else:
                 x_position = self.gap_size  # Start with gap from edge
             
-            # Check if fits
-            product_width = product.width * facings
-            if x_position + product_width > shelf.width - self.gap_size:
+            # Check if fits with end gap
+            total_needed = x_position + product_width + self.gap_size
+            if total_needed > shelf.width:
+                # Try with minimum facings if we have more than minimum
+                if facings > 1 and facings > (product.min_facings or 1):
+                    min_facings = max(1, product.min_facings or 1)
+                    self.logger.debug(f"Reducing facings from {facings} to {min_facings} for {product.product_name}")
+                    return self._place_product_on_shelf(shelf, product, min_facings)
+                
+                self.logger.debug(f"Product {product.product_name} doesn't fit on shelf {shelf.shelf_name}: need {total_needed:.1f}cm, have {shelf.width}cm")
                 return False
             
             # Create position
@@ -152,9 +181,13 @@ class BaseOptimizer(ABC):
             shelf.update_utilization()
             
             # Update metrics
-            if product.category not in self.metrics.get('category_distribution', {}):
-                self.metrics.setdefault('category_distribution', {})[product.category] = 0
+            if 'category_distribution' not in self.metrics:
+                self.metrics['category_distribution'] = {}
+            if product.category not in self.metrics['category_distribution']:
+                self.metrics['category_distribution'][product.category] = 0
             self.metrics['category_distribution'][product.category] += facings
+            
+            self.logger.debug(f"Successfully placed {product.product_name} on {shelf.shelf_name}: {facings} facings, {product_width:.1f}cm wide at position {x_position:.1f}cm")
             
             return True
             
@@ -171,13 +204,21 @@ class BaseOptimizer(ABC):
             'shelf_utilization': [],
             'average_utilization': 0,
             'facings_by_product': {},
-            'profit_density': 0,  # CHANGED from value_density
-            'quantity_density': 0  # ADD THIS for quantity-based metric
+            'profit_density': 0,
+            'quantity_density': 0
         }
         
-        total_profit = 0  # CHANGED from total_value
-        total_quantity = 0  # ADD THIS
+        total_profit = 0
+        total_quantity = 0
         total_width_used = 0
+        
+        # Check if we have products placed
+        if not hasattr(self, 'products_placed'):
+            self.products_placed = []
+        
+        # First, ensure all shelves are updated
+        for shelf in self.store.shelves:
+            shelf.update_utilization()
         
         for shelf in self.store.shelves:
             shelf_facings = sum(pos.facings for pos in shelf.positions)
@@ -194,11 +235,26 @@ class BaseOptimizer(ABC):
             
             # Calculate profit and quantity on shelf
             for pos in shelf.positions:
-                product = next((p for p in self.products_placed if p.product_id == pos.product_id), None)
+                # Find product from the list of placed products
+                product = None
+                for p in self.products_placed:
+                    if p.product_id == pos.product_id:
+                        product = p
+                        break
+                
                 if product:
+                    # Update category distribution
+                    cat_key = product.category
+                    if cat_key not in metrics['category_distribution']:
+                        metrics['category_distribution'][cat_key] = 0
+                    metrics['category_distribution'][cat_key] += pos.facings
+                    
                     # Use profit if available, otherwise use price as fallback
                     profit_per_unit = getattr(product, 'profit', getattr(product, 'price', 0))
-                    profit = profit_per_unit * product.total_qty * pos.facings
+                    if profit_per_unit is None:
+                        profit_per_unit = 0
+                    
+                    profit = float(profit_per_unit) * product.total_qty * pos.facings
                     total_profit += profit
                     
                     # Add quantity metric
@@ -218,8 +274,11 @@ class BaseOptimizer(ABC):
             metrics['profit_density'] = total_profit / total_width_used
             metrics['quantity_density'] = total_quantity / total_width_used
         
-        # Merge with existing metrics
-        metrics.update(self.metrics)
+        # Merge with existing metrics (preserve category_distribution from placement)
+        if hasattr(self, 'metrics') and self.metrics:
+            # Preserve the category distribution from placement process
+            if 'category_distribution' in self.metrics and self.metrics['category_distribution']:
+                metrics['category_distribution'].update(self.metrics['category_distribution'])
         
         return metrics
     

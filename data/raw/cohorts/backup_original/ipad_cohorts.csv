@@ -1,0 +1,21 @@
+lob,core_product,accessory_rank,accessory_category,accessory_name,purchase_count,attach_rate
+iPad,iPad Standard,1,Apple Pencil,APPLE PENCIL  USB-C ,1859,0.006308859213004598
+iPad,iPad Standard,2,Cable,USB-C to Lightning Cable  1m ,1609,0.005460438124650026
+iPad,iPad Standard,3,Charger/Adapter,20W USB-C Power Adapter,1372,0.004656134932889892
+iPad,iPad Standard,4,Other,Apple EarPods with Lightning Connector,921,0.003125583289498244
+iPad,iPad Standard,5,Other,EarPods  USB-C ,839,0.002847301172517944
+iPad,iPad Pro,1,Apple Pencil,Apple Pencil Pro,2969,0.010075848845298899
+iPad,iPad Pro,2,Cable,USB-C to Lightning Cable  1m ,1699,0.0057658697164576726
+iPad,iPad Pro,3,Charger/Adapter,20W USB-C Power Adapter,1441,0.004890299153275754
+iPad,iPad Pro,4,Other,Apple EarPods with Lightning Connector,841,0.0028540885412247806
+iPad,iPad Pro,5,Other,EarPods  USB-C ,833,0.0028269390663974345
+iPad,iPad Air,1,Apple Pencil,Apple Pencil Pro,4508,0.015298729065209645
+iPad,iPad Air,2,Cable,USB-C to Lightning Cable  1m ,1812,0.006149356048393939
+iPad,iPad Air,3,Charger/Adapter,20W USB-C Power Adapter,1389,0.004713827566898003
+iPad,iPad Air,4,Other,EarPods  USB-C ,927,0.0031459453956187533
+iPad,iPad Air,5,Other,Apple EarPods with Lightning Connector,855,0.002901600122172637
+iPad,iPad Mini,1,Cable,USB-C to Lightning Cable  1m ,259,0.0008789642475353367
+iPad,iPad Mini,2,Charger/Adapter,20W USB-C Power Adapter,208,0.000705886345511004
+iPad,iPad Mini,3,Other,EarPods  USB-C ,119,0.00040384843805677635
+iPad,iPad Mini,4,Cable,Lightning to USB Cable  1m ,114,0.0003868800162896849
+iPad,iPad Mini,5,Other,Apple EarPods with Lightning Connector,114,0.0003868800162896849

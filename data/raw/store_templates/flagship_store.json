@@ -1,0 +1,79 @@
+{
+  "store_info": {
+    "store_type": "flagship",
+    "store_name": "Flagship Store Template",
+    "description": "Large format store with full product range and premium displays",
+    "total_area_sqm": 60,
+    "accessory_area_sqm": 15,
+    "customer_flow": "high",
+    "avg_daily_visitors": 1000,
+    "restock_frequency_days": 2
+  },
+  
+  "shelves": [
+    {
+      "shelf_id": 0,
+      "shelf_name": "Eye Level Premium",
+      "width": 120,
+      "height": 30,
+      "depth": 25,
+      "y_position": 140,
+      "shelf_type": "premium",
+      "eye_level_score": 1.0
+    },
+    {
+      "shelf_id": 1,
+      "shelf_name": "Upper Display",
+      "width": 120,
+      "height": 25,
+      "depth": 25,
+      "y_position": 170,
+      "shelf_type": "standard",
+      "eye_level_score": 0.7
+    },
+    {
+      "shelf_id": 2,
+      "shelf_name": "Mid Level Main",
+      "width": 120,
+      "height": 30,
+      "depth": 25,
+      "y_position": 110,
+      "shelf_type": "standard",
+      "eye_level_score": 0.8
+    },
+    {
+      "shelf_id": 3,
+      "shelf_name": "Lower Access",
+      "width": 120,
+      "height": 25,
+      "depth": 25,
+      "y_position": 80,
+      "shelf_type": "standard",
+      "eye_level_score": 0.6
+    }
+  ],
+  
+  "product_mix_rules": {
+    "max_categories": 8,
+    "min_products_per_category": 3,
+    "preferred_categories": ["case", "charger", "cable"],
+    "special_rules": {
+      "premium_space_allocation": 0.4,
+      "new_product_priority": "high"
+    }
+  },
+  
+  "placement_rules": {
+    "eye_level_priority": ["high_margin", "popular", "new"],
+    "grouping_strategy": "category_then_brand",
+    "min_facings_multiplier": 1.5,
+    "gap_size": 3.0
+  },
+  
+  "optimization_weights": {
+    "sales_velocity": 0.35,
+    "profit_margin": 0.25,
+    "inventory_turnover": 0.20,
+    "attach_rate": 0.20
+  }
+}

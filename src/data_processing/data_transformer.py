@@ -40,6 +40,11 @@ class DataTransformer:
     
     def _optimize_for_sales_velocity(self, products: List[Product], store: Store) -> List[Product]:
         """Optimize product selection based on sales velocity"""
+        # Ensure all products have sales_velocity
+        for product in products:
+            if not hasattr(product, 'sales_velocity') or product.sales_velocity is None:
+                product.sales_velocity = product.total_qty
+        
         # Sort by sales velocity
         sorted_products = sorted(products, key=lambda p: p.sales_velocity, reverse=True)
         
@@ -95,22 +100,29 @@ class DataTransformer:
         """Apply balanced optimization considering multiple factors"""
         # Calculate composite score for each product
         for product in products:
-            # Use total_qty instead of sales_velocity for normalization
-            sales_score = min(product.total_qty / 200, 1.0)  # Normalize based on your data scale
+            # Ensure product has sales_velocity attribute
+            if not hasattr(product, 'sales_velocity'):
+                product.sales_velocity = product.total_qty
+                
+            # Normalize sales score
+            sales_score = min(product.sales_velocity / 50, 1.0)  # Normalize to 0-1
             
-            # Since stock is always full, use a fixed high score
-            stock_score = 1.0  # Always full stock
+            # Stock score - handle missing attributes
+            if hasattr(product, 'current_stock') and hasattr(product, 'min_stock') and product.min_stock > 0:
+                stock_score = min(product.current_stock / (product.min_stock * 3), 1.0)
+            else:
+                stock_score = 1.0  # Default to full score if no stock data
             
-            # Profit score (assuming you'll add profit column)
-            profit_score = min(getattr(product, 'profit', product.price) / 50, 1.0) if hasattr(product, 'price') else 0
-            
-            attach_score = getattr(product, 'attach_rate', 0)
+            # Attach rate score - handle None values
+            attach_score = 0.0  # Default value
+            if hasattr(product, 'attach_rate') and product.attach_rate is not None:
+                attach_score = float(product.attach_rate)
             
             # Weighted composite score
             weights = store.optimization_weights
             product.composite_score = (
                 sales_score * weights.get('sales_velocity', 0.4) +
-                profit_score * weights.get('profitability', 0.3) +  # Add profitability weight
+                stock_score * weights.get('inventory_turnover', 0.3) +
                 attach_score * weights.get('attach_rate', 0.3)
             )
         
@@ -133,10 +145,15 @@ class DataTransformer:
             max_facings = store.rules.get('special_rules', {}).get('max_facings_per_product', 3)
             base_facings = min(base_facings, max_facings)
         
-        # Fix: Handle None attach_rate properly
-        if hasattr(product, 'attach_rate') and product.attach_rate is not None and product.attach_rate > 0:
-            if product.attach_rate > 0.3:  # High attach rate
-                base_facings = min(base_facings + 1, product.max_facings)
+        # Handle attach_rate properly
+        if hasattr(product, 'attach_rate') and product.attach_rate is not None:
+            try:
+                attach_rate_value = float(product.attach_rate)
+                if attach_rate_value > 0.3:  # High attach rate
+                    base_facings = min(base_facings + 1, product.max_facings)
+            except (TypeError, ValueError):
+                # If attach_rate cannot be converted to float, ignore it
+                pass
         
         # Ensure within product constraints
         return max(product.min_facings, min(base_facings, product.max_facings))

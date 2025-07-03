@@ -412,3 +412,339 @@ class PlanogramVisualizer:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
         
         return fig
+    
+    def create_realistic_retail_planogram(self, result: OptimizationResult,
+                                         product_lookup: Dict[str, Product],
+                                         title: str = "Apple Store Accessory Display",
+                                         save_path: Optional[str] = None) -> plt.Figure:
+        """Create a realistic retail planogram that looks like actual store displays"""
+        
+        # Create figure with portrait orientation like real planograms
+        fig, ax = plt.subplots(figsize=(12, 16))  # Portrait orientation
+        ax.set_facecolor('#F8F8F8')  # Clean store background
+        
+        # Get all placed products and sort by sales performance
+        all_products = []
+        for shelf in result.store.shelves:
+            for position in shelf.positions:
+                if position.product_id in product_lookup:
+                    product = product_lookup[position.product_id]
+                    all_products.append((product, position.facings))
+        
+        # Ensure we have products to display
+        if not all_products:
+            # If no products were placed, create a message
+            ax.text(0.5, 0.5, 'No products were successfully placed\nCheck product dimensions and shelf constraints',
+                   ha='center', va='center', transform=ax.transAxes,
+                   fontsize=16, color='red')
+            ax.set_xlim(0, 1)
+            ax.set_ylim(0, 1)
+            ax.set_xticks([])
+            ax.set_yticks([])
+            for spine in ax.spines.values():
+                spine.set_visible(False)
+            return fig
+        
+        # Sort by sales performance and limit display count based on shelf configuration
+        all_products.sort(key=lambda x: x[0].total_qty, reverse=True)
+        max_display = min(len(all_products), len(result.store.shelves) * 8)  # 8 products per shelf max
+        display_products = all_products[:max_display]
+        
+        # Calculate optimal grid to fill all shelf positions
+        # Determine best layout based on store configuration and available products
+        if len(result.store.shelves) >= 8:  # Flagship store
+            products_per_row = 10
+            target_rows = 8
+        elif len(result.store.shelves) >= 6:  # Standard store  
+            products_per_row = 8
+            target_rows = 6
+        else:  # Express store
+            products_per_row = 6
+            target_rows = 4
+        
+        # Fill all positions by repeating products if necessary
+        target_positions = products_per_row * target_rows
+        
+        # If we have fewer products than target positions, repeat best sellers
+        if len(display_products) < target_positions:
+            # Repeat top products to fill empty spots
+            top_products = display_products[:min(10, len(display_products))]  # Top 10 products
+            while len(display_products) < target_positions and top_products:
+                for product_data in top_products:
+                    if len(display_products) >= target_positions:
+                        break
+                    display_products.append(product_data)
+        
+        # Limit to target positions
+        display_products = display_products[:target_positions]
+        total_rows = target_rows
+        
+        # Product display parameters
+        product_width = 12   # cm
+        product_height = 18  # cm  
+        gap_x = 3           # horizontal gap
+        gap_y = 4           # vertical gap
+        margin_x = 20       # left margin
+        margin_y = 15       # bottom margin
+        
+        # Calculate total display area
+        total_width = margin_x * 2 + (products_per_row * product_width) + ((products_per_row - 1) * gap_x)
+        total_height = margin_y * 2 + (total_rows * product_height) + ((total_rows - 1) * gap_y)
+        
+        ax.set_xlim(0, total_width)
+        ax.set_ylim(0, total_height)
+        
+        # Draw shelf backgrounds (like reference image sections)
+        shelf_height = (total_height - margin_y * 2) / 4  # 4 main shelf sections
+        for i in range(4):
+            shelf_y = margin_y + i * shelf_height
+            shelf_bg = Rectangle(
+                (margin_x - 10, shelf_y - 5),
+                total_width - margin_x * 2 + 20,
+                shelf_height + 10,
+                facecolor='#FFFFFF',
+                edgecolor='#E8E8E8',
+                linewidth=1.5,
+                alpha=0.7
+            )
+            ax.add_patch(shelf_bg)
+        
+        # Draw products in grid layout
+        for idx, (product, facings) in enumerate(display_products):
+            row = idx // products_per_row
+            col = idx % products_per_row
+            
+            # Calculate position
+            x = margin_x + col * (product_width + gap_x)
+            y = total_height - margin_y - (row + 1) * (product_height + gap_y)
+            
+            # Draw product package (like hanging retail display)
+            # Main product rectangle
+            product_rect = FancyBboxPatch(
+                (x, y),
+                product_width,
+                product_height,
+                boxstyle="round,pad=0.3",
+                facecolor='white',
+                edgecolor='#333333',
+                linewidth=1.5,
+                alpha=0.95
+            )
+            ax.add_patch(product_rect)
+            
+            # Add category color strip (top of package)
+            category_color = self.category_colors.get(product.category, '#B0B0B0')
+            color_strip = Rectangle(
+                (x + 1, y + product_height - 3),
+                product_width - 2, 2.5,
+                facecolor=category_color,
+                alpha=0.9
+            )
+            ax.add_patch(color_strip)
+            
+            # Add product image area (center)
+            image_area = Rectangle(
+                (x + 2, y + 5),
+                product_width - 4, product_height - 10,
+                facecolor='#F5F5F5',
+                edgecolor='#DDDDDD',
+                linewidth=0.5,
+                alpha=0.8
+            )
+            ax.add_patch(image_area)
+            
+            # Add product name with better visibility
+            name = self._create_retail_label(product)
+            product_name_short = name.split('\n')[0]
+            
+            # Add white background for product name
+            name_bg = Rectangle(
+                (x + 1, y + product_height - 8),
+                product_width - 2, 6,
+                facecolor='white',
+                edgecolor='none',
+                alpha=0.95
+            )
+            ax.add_patch(name_bg)
+            
+            # Product name with dark text on white background
+            ax.text(x + product_width/2, y + product_height - 5,
+                   product_name_short,
+                   ha='center', va='center',
+                   fontsize=7, fontweight='bold',
+                   color='#333333')  # Dark text for better readability
+            
+            # Add brand at bottom with background
+            brand_bg = Rectangle(
+                (x + 1, y + 1),
+                product_width - 2, 4,
+                facecolor='#F0F0F0',
+                edgecolor='none',
+                alpha=0.9
+            )
+            ax.add_patch(brand_bg)
+            
+            ax.text(x + product_width/2, y + 3,
+                   product.brand,
+                   ha='center', va='center',
+                   fontsize=6, fontweight='bold',
+                   color='#333333')  # Dark text
+            
+        # Add performance indicators on the product itself (not on top)
+            if product.total_qty > 300:  # Bestseller
+                # Gold circle for bestseller
+                star_circle = plt.Circle((x + product_width - 3, y + 3), 1.8,
+                                       color='#FFD700', alpha=0.95)
+                ax.add_patch(star_circle)
+                ax.text(x + product_width - 3, y + 3, 'BEST',
+                       ha='center', va='center', fontsize=5, color='white', fontweight='bold')
+            elif product.total_qty > 100:  # Popular
+                # Orange circle for popular
+                pop_circle = plt.Circle((x + product_width - 3, y + 3), 1.5,
+                                      color='#FF8C00', alpha=0.95)
+                ax.add_patch(pop_circle)
+                ax.text(x + product_width - 3, y + 3, 'POP',
+                       ha='center', va='center', fontsize=5, color='white', fontweight='bold')
+            
+            # Add brand badge (small colored square)
+            brand_color = self._get_brand_color(product.brand)
+            brand_badge = Rectangle(
+                (x + 1, y + 1),
+                2, 2,
+                facecolor=brand_color,
+                alpha=0.8
+            )
+            ax.add_patch(brand_badge)
+            
+            # Add quantity indicator if multiple facings
+            if facings > 1:
+                ax.text(x + product_width - 1, y + 1,
+                       f'{facings}x',
+                       ha='right', va='bottom',
+                       fontsize=6, fontweight='bold',
+                       color='#333333',
+                       bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
+        
+        # Add title
+        ax.text(total_width/2, total_height - 5,
+               title, ha='center', va='top',
+               fontsize=16, fontweight='bold', color='#333333')
+        
+        # Category legend at bottom
+        legend_y = 10
+        categories_shown = set(product[0].category for product in display_products)
+        
+        ax.text(margin_x, legend_y + 15, 'Categories:', 
+               fontsize=10, fontweight='bold', color='#333333')
+        
+        legend_x = margin_x
+        for i, category in enumerate(categories_shown):
+            color = self.category_colors.get(category, '#B0B0B0')
+            
+            # Category color box
+            cat_box = Rectangle(
+                (legend_x, legend_y),
+                8, 8,
+                facecolor=color,
+                edgecolor='#333333',
+                linewidth=1,
+                alpha=0.8
+            )
+            ax.add_patch(cat_box)
+            
+            # Category name
+            ax.text(legend_x + 12, legend_y + 4, 
+                   category.value.replace('_', ' ').title(),
+                   fontsize=9, color='#333333', va='center')
+            
+            legend_x += 80
+        
+        # Remove axes
+        ax.set_xticks([])
+        ax.set_yticks([])
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        
+        plt.tight_layout()
+        
+        if save_path:
+            plt.savefig(save_path, dpi=300, bbox_inches='tight', 
+                       facecolor='white', edgecolor='none')
+            self.logger.info(f"Realistic retail planogram saved to {save_path}")
+        
+        return fig
+    
+    def _create_retail_label(self, product: Product) -> str:
+        """Create realistic retail product label"""
+        name = product.product_name.strip()
+        
+        # Remove iPhone model number if present
+        name = name.replace('iPhone 16 Pro Max', 'Pro Max')
+        name = name.replace('iPhone 16 Pro', 'Pro')
+        name = name.replace('iPhone 16 Plus', 'Plus')
+        name = name.replace('iPhone 16', '16')
+        name = name.replace('iPhone 15', '15')
+        
+        # Simplify case types
+        name = name.replace('Case with MagSafe', 'MagSafe')
+        name = name.replace('Silicone Case', 'Silicone')
+        name = name.replace('Clear Case', 'Clear')
+        name = name.replace('Tempered Glass', 'Glass')
+        name = name.replace('Camera Lens Protector', 'Lens')
+        
+        # Take first few important words
+        words = name.split()
+        if len(words) > 4:
+            name = ' '.join(words[:4])
+        
+        # Add brand on new line
+        return f"{name}\n{product.brand}"
+    
+    def create_retail_grid_planogram(self, result: OptimizationResult,
+                                   product_lookup: Dict[str, Product],
+                                   title: str = "Apple Store Accessory Planogram",
+                                   save_path: Optional[str] = None) -> plt.Figure:
+        """Wrapper that calls the realistic retail planogram"""
+        return self.create_realistic_retail_planogram(result, product_lookup, title, save_path)
+    
+    def _shorten_product_name(self, name: str) -> str:
+        """Intelligently shorten product names for display"""
+        # Remove common prefixes
+        name = name.replace('iPhone ', '')
+        name = name.replace('Case with MagSafe', 'MagSafe')
+        name = name.replace('Silicone Case', 'Silicone')
+        name = name.replace('Clear Case', 'Clear')
+        name = name.replace('Tempered Glass', 'Glass')
+        name = name.replace('Camera Lens Protector', 'Lens')
+        
+        # Split and take important parts
+        parts = name.split()
+        if len(parts) > 3:
+            # Take model, type, and color/variant
+            important_parts = []
+            for part in parts[:3]:
+                if len(part) > 2:  # Skip very short words
+                    important_parts.append(part)
+            name = ' '.join(important_parts)
+        
+        # Limit length
+        if len(name) > 20:
+            name = name[:17] + '...'
+        
+        return name
+    
+    def _get_brand_color(self, brand: str) -> str:
+        """Get brand-specific color"""
+        brand_colors = {
+            'Apple': '#007AFF',
+            'Gripp': '#34C759',
+            'Pulse': '#FF3B30',
+            'Hyphen': '#5856D6',
+            'AT Minimal': '#FF9500',
+            'Roskilde': '#8E8E93',
+            'nmaxn': '#FFCC00',
+            'Robocare': '#FF2D92',
+            'Flayrr': '#30D158',
+            'PG': '#64D2FF'
+        }
+        return brand_colors.get(brand, '#999999')

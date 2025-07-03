@@ -43,14 +43,32 @@ class DataLoader:
             raise FileNotFoundError(f"Data file not found: {file_path}")
             
         df = pd.read_csv(file_path)
+        # Clean column names and values
+        df.columns = df.columns.str.strip()
+        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
         return self._dataframe_to_products(df)
     
     def load_products_by_lob(self, lob: str, series_filter: Optional[str] = None) -> List[Product]:
         """Load all products for a specific LOB (iPhone, iPad, etc.)"""
         all_products = []
         
-        # Load all accessory files
+        # Check which accessory files actually exist
+        available_categories = []
         for category in ['cases', 'cables', 'screen_protectors', 'others']:
+            file_mapping = {
+                'cases': 'cases_sales.csv',
+                'cables': 'cables_adapters_sales.csv',
+                'screen_protectors': 'screen_protectors_sales.csv',
+                'others': 'mounts_others_sales.csv'
+            }
+            file_path = self.accessories_path / file_mapping[category]
+            if file_path.exists():
+                available_categories.append(category)
+        
+        print(f"Available accessory categories: {available_categories}")
+        
+        # Load available accessory files
+        for category in available_categories:
             try:
                 products = self.load_products_by_category(category)
                 
@@ -62,8 +80,9 @@ class DataLoader:
                     lob_products = [p for p in lob_products if series_filter.lower() in p.series.lower()]
                     
                 all_products.extend(lob_products)
-            except FileNotFoundError:
-                print(f"Warning: Could not load {category} data")
+                print(f"Loaded {len(lob_products)} {lob} products from {category}")
+            except Exception as e:
+                print(f"Error loading {category} data: {e}")
                 continue
                 
         return all_products
@@ -84,15 +103,6 @@ class DataLoader:
     
     def load_cohort_data(self, lob: str, model: Optional[str] = None) -> pd.DataFrame:
         """Load cohort data for a specific LOB"""
-        if lob.lower() == 'iphone' and model:
-            # Use model-specific file for iPhone
-            file_path = self.cohorts_path / 'iphone_cohorts_by_model.csv'
-            if file_path.exists():
-                df = pd.read_csv(file_path)
-                return df[df['core_product'] == model]
-            else:
-                print(f"Warning: iPhone model-specific cohort file not found")
-                
         # Use general LOB file
         file_path = self.cohorts_path / f'{lob.lower()}_planogram_cohorts.csv'
         if not file_path.exists():
@@ -276,7 +286,7 @@ class DataLoader:
         """Get list of available LOBs from cohort files"""
         lobs = []
         for file in self.cohorts_path.glob("*_cohorts.csv"):
-            if 'master' not in file.stem and 'by_model' not in file.stem:
+            if 'master' not in file.stem:
                 lob = file.stem.replace('_cohorts', '').replace('_planogram', '')
                 lobs.append(lob.title())
         return lobs

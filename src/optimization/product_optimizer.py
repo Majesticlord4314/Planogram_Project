@@ -1,7 +1,7 @@
 from typing import List, Dict, Optional, Tuple
 import numpy as np
 from src.models.product import Product, ProductCategory
-from src.models.shelf import Shelf
+from src.models.shelf import Shelf, ShelfPosition  # ADD ShelfPosition here
 from .base_optimizer import BaseOptimizer, OptimizationResult
 from src.utils.monitor import monitor
 
@@ -35,8 +35,45 @@ class ProductOptimizer(BaseOptimizer):
         
         return result
     
+    def _force_place_high_priority_product(self, product: Product, products_placed: List[Product]) -> bool:
+        """Force place a high-priority product by bumping out lower-selling products"""
+        all_shelves = self.store.shelves
+        
+        # Try to place with 1 facing first
+        for shelf in all_shelves:
+            if self._try_place_product(shelf, product, 1):
+                return True
+        
+        # If that fails, find products with lower sales velocity to bump out
+        for shelf in all_shelves:
+            # Find all products on this shelf with lower sales velocity
+            lower_velocity_positions = []
+            for position in shelf.positions:
+                existing_product = next((p for p in products_placed if p.product_id == position.product_id), None)
+                if existing_product and existing_product.sales_velocity < product.sales_velocity:
+                    lower_velocity_positions.append((position, existing_product))
+            
+            # Sort by sales velocity (lowest first) to remove the worst performers first
+            lower_velocity_positions.sort(key=lambda x: x[1].sales_velocity)
+            
+            # Try removing products one by one until we have space
+            for position, existing_product in lower_velocity_positions:
+                shelf.positions.remove(position)
+                products_placed.remove(existing_product)
+                
+                # Try to place the high-priority product
+                if self._try_place_product(shelf, product, 1):
+                    self.logger.info(f"  -> BUMPED OUT {existing_product.product_name[:20]}... (sales: {existing_product.sales_velocity:.1f}/day) for higher priority product")
+                    return True
+                else:
+                    # If we still can't place it, restore the removed product and try next
+                    self._try_place_product(shelf, existing_product, position.facings)
+                    products_placed.append(existing_product)
+        
+        return False
+    
     def _optimize_by_sales(self, products: List[Product]) -> OptimizationResult:
-        """Optimize based on sales velocity"""
+        """Optimize based on sales velocity with aggressive prioritization"""
         products_placed = []
         products_rejected = []
         
@@ -46,31 +83,39 @@ class ProductOptimizer(BaseOptimizer):
         # Assign high-velocity products to eye-level shelves
         eye_level_shelves = [s for s in self.store.shelves if s.eye_level_score >= 0.7]
         other_shelves = [s for s in self.store.shelves if s.eye_level_score < 0.7]
+        all_shelves = eye_level_shelves + other_shelves
         
-        # Place high-velocity items first
-        for product in products:
+        # Place products with strict sales-based priority and aggressive bumping
+        for i, product in enumerate(products):
             placed = False
-            optimal_facings = product.calculate_facings("sales_based")
             
-            # Try eye-level shelves first for top products
-            if product.sales_velocity > 10:  # High velocity threshold
-                for shelf in eye_level_shelves:
-                    if self._try_place_product(shelf, product, optimal_facings):
-                        products_placed.append(product)
-                        placed = True
-                        break
+            # Try normal placement first (with 1 facing), prioritize less utilized shelves
+            for shelf in sorted(all_shelves, key=lambda s: s.utilization):
+                if self._try_place_product(shelf, product, 1):
+                    products_placed.append(product)
+                    placed = True
+                    if i < 15:
+                        self.logger.info(f"#{i+1}: Placed {product.product_name[:30]}... (sales: {product.sales_velocity:.1f}/day) on {shelf.shelf_name}")
+                    break
             
-            # Try other shelves
+            # If not placed, try bumping out lower-selling products
             if not placed:
-                for shelf in other_shelves + eye_level_shelves:
-                    if self._try_place_product(shelf, product, optimal_facings):
-                        products_placed.append(product)
-                        placed = True
-                        break
+                placed = self._force_place_high_priority_product(product, products_placed)
+                if placed:
+                    products_placed.append(product)
+                    if i < 15:
+                        self.logger.info(f"#{i+1}: BUMPED IN {product.product_name[:30]}... (sales: {product.sales_velocity:.1f}/day)")
             
             if not placed:
                 products_rejected.append(product)
                 self.warnings.append(f"Could not place {product.product_name} (sales: {product.sales_velocity:.1f}/day)")
+                if i < 15:
+                    # Debug shelf capacity
+                    shelf_info = " | ".join([f"{s.shelf_name}: {s.get_available_width():.1f}cm available" for s in all_shelves])
+                    self.logger.info(f"#{i+1}: REJECTED {product.product_name[:30]}... (sales: {product.sales_velocity:.1f}/day, needs: {product.width}cm) | {shelf_info}")
+        
+        # Store products_placed for metrics calculation
+        self.products_placed = products_placed
         
         return OptimizationResult(
             success=len(products_placed) > 0,
@@ -92,7 +137,12 @@ class ProductOptimizer(BaseOptimizer):
         # Calculate category priorities based on total value
         category_priorities = []
         for category, cat_products in category_groups.items():
-            total_value = sum(p.price * p.sales_velocity for p in cat_products)
+            # Safely get price and sales_velocity
+            total_value = 0
+            for p in cat_products:
+                price = getattr(p, 'price', 0) or 0
+                sales_velocity = getattr(p, 'sales_velocity', p.total_qty) or p.total_qty
+                total_value += price * sales_velocity
             category_priorities.append((category, total_value, cat_products))
         
         # Sort categories by priority
@@ -101,7 +151,7 @@ class ProductOptimizer(BaseOptimizer):
         # Assign categories to shelf zones
         shelf_assignments = self._assign_categories_to_shelves(category_priorities)
         
-        # Place products by category
+        # Place products by category with improved logic
         for category, assigned_shelves in shelf_assignments.items():
             cat_products = category_groups[category]
             # Sort products within category by sales
@@ -109,7 +159,8 @@ class ProductOptimizer(BaseOptimizer):
             
             for product in cat_products:
                 placed = False
-                optimal_facings = product.calculate_facings("balanced")
+                # Calculate optimal facings with store constraints
+                optimal_facings = self._calculate_optimal_facings_for_store(product)
                 
                 # Try assigned shelves first
                 for shelf_id in assigned_shelves:
@@ -118,6 +169,15 @@ class ProductOptimizer(BaseOptimizer):
                         products_placed.append(product)
                         placed = True
                         break
+                
+                # If not placed, try any available shelf with reduced facings
+                if not placed:
+                    for shelf in self.store.shelves:
+                        min_facings = max(1, product.min_facings or 1)
+                        if self._try_place_product(shelf, product, min_facings):
+                            products_placed.append(product)
+                            placed = True
+                            break
                 
                 if not placed:
                     products_rejected.append(product)
@@ -133,36 +193,46 @@ class ProductOptimizer(BaseOptimizer):
         )
     
     def _optimize_by_value(self, products: List[Product]) -> OptimizationResult:
-        """Optimize based on profit density (profit per cm)"""
+        """Optimize based on value density (profit per cm)"""
         products_placed = []
         products_rejected = []
         
-        # Calculate profit density for each product
+        # Calculate value density for each product
         for product in products:
-            # Use profit if available, otherwise use price as fallback
-            profit_per_unit = getattr(product, 'profit', product.price) if hasattr(product, 'price') else 0
+            # Get price/profit safely
+            price = getattr(product, 'profit', getattr(product, 'price', 0))
+            if price is None:
+                price = 0
             
-            # Multiply by quantity to get total profit potential
-            total_profit_potential = profit_per_unit * product.total_qty
+            # Get sales velocity safely
+            if hasattr(product, 'sales_velocity') and product.sales_velocity is not None:
+                sales_velocity = product.sales_velocity
+            else:
+                sales_velocity = product.total_qty
             
-            # Profit density = total profit potential per cm of width
+            value_per_unit = float(price) * float(sales_velocity)
             space_per_unit = product.width
-            product.profit_density = total_profit_potential / space_per_unit if space_per_unit > 0 else 0
+            product.value_density = value_per_unit / space_per_unit if space_per_unit > 0 else 0
         
-        # Sort by profit density
-        products.sort(key=lambda p: product.profit_density, reverse=True)
+        # Sort by value density
+        products.sort(key=lambda p: p.value_density, reverse=True)
         
-        # Place high-profit-density items at prime locations
+        # Place high-value-density items at prime locations
         for product in products:
             placed = False
             
-            # For high-margin items, we might want more facings to capture profit
-            if getattr(product, 'profit', 0) > 30:  # High margin threshold
-                optimal_facings = min(product.max_facings, 3)
+            # Get price safely for facing calculation
+            price = getattr(product, 'profit', getattr(product, 'price', 0))
+            if price is None:
+                price = 0
+                
+            # Fewer facings for high-value items to maximize variety
+            if price > 50:
+                optimal_facings = max(product.min_facings, 2)
             else:
                 optimal_facings = product.calculate_facings("balanced")
             
-            # Try shelves by eye-level score for maximum visibility
+            # Try shelves by eye-level score
             shelves_by_score = sorted(self.store.shelves, 
                                     key=lambda s: s.eye_level_score, 
                                     reverse=True)
@@ -175,6 +245,10 @@ class ProductOptimizer(BaseOptimizer):
             
             if not placed:
                 products_rejected.append(product)
+                self.warnings.append(f"Could not place {product.product_name} (value density: {product.value_density:.2f})")
+        
+        # Store products_placed for metrics calculation
+        self.products_placed = products_placed
         
         return OptimizationResult(
             success=len(products_placed) > 0,
@@ -234,6 +308,9 @@ class ProductOptimizer(BaseOptimizer):
             if not placed:
                 products_rejected.append(product)
         
+        # Store products_placed for metrics calculation
+        self.products_placed = products_placed
+        
         return OptimizationResult(
             success=len(products_placed) > 0,
             store=self.store,
@@ -244,29 +321,34 @@ class ProductOptimizer(BaseOptimizer):
         )
         
     def _optimize_balanced(self, products: List[Product]) -> OptimizationResult:
-        """Balanced optimization considering multiple factors"""
         products_placed = []
         products_rejected = []
         
         # Calculate composite scores
         for product in products:
             # Sales score based on total quantity
-            sales_score = min(product.total_qty / 300, 1.0)  # Adjust scale based on your data
+            if hasattr(product, 'sales_velocity') and product.sales_velocity is not None:
+                sales_score = min(product.sales_velocity / 20, 1.0)
+            else:
+                sales_score = min(product.total_qty / 300, 1.0)
             
-            # Profit score
-            profit_score = min(getattr(product, 'profit', 0) / 50, 1.0) if hasattr(product, 'profit') else 0
+            # Value/price score
+            if hasattr(product, 'price') and product.price is not None and product.price > 0:
+                value_score = min(product.price / 100, 1.0)
+            else:
+                value_score = 0.5
             
-            # Purity score (preference for pure sales)
-            purity_score = product.purity_ratio
-            
-            attach_score = getattr(product, 'attach_rate', 0)
+            # Attach score - handle None properly
+            attach_rate = getattr(product, 'attach_rate', 0)
+            if attach_rate is None:
+                attach_rate = 0
+            attach_score = float(attach_rate)
             
             # Weighted combination
             product.composite_score = (
-                sales_score * 0.3 +
-                profit_score * 0.4 +  # Higher weight on profit
-                purity_score * 0.1 +
-                attach_score * 0.2
+                sales_score * 0.4 +
+                value_score * 0.3 +
+                attach_score * 0.3
             )
         
         # Sort by composite score
@@ -277,29 +359,45 @@ class ProductOptimizer(BaseOptimizer):
             return self._optimize_by_category(products)
         
         # Otherwise, place by score with smart shelf selection
-        for product in products:
+        for i, product in enumerate(products):
             placed = False
             optimal_facings = product.calculate_facings("balanced")
+            
+            # Debug logging
+            if i < 5:  # Log first 5 products
+                self.logger.debug(f"Trying to place {product.product_name}: {product.width}x{product.height}cm, facings: {optimal_facings}")
             
             # Find best shelf based on product characteristics
             best_shelf = self._find_optimal_shelf_for_product(product)
             
-            if best_shelf and self._try_place_product(best_shelf, product, optimal_facings):
-                products_placed.append(product)
-                placed = True
-            else:
+            if best_shelf:
+                if self._try_place_product(best_shelf, product, optimal_facings):
+                    products_placed.append(product)
+                    placed = True
+                    self.logger.debug(f"Placed {product.product_name} on shelf {best_shelf.shelf_name}")
+                else:
+                    self.logger.debug(f"Could not fit {product.product_name} on best shelf {best_shelf.shelf_name}")
+            
+            if not placed:
                 # Try any available shelf
-                for shelf in self.store.shelves:
+                for shelf in sorted(self.store.shelves, key=lambda s: s.utilization):
                     if self._try_place_product(shelf, product, optimal_facings):
                         products_placed.append(product)
                         placed = True
+                        self.logger.debug(f"Placed {product.product_name} on shelf {shelf.shelf_name}")
                         break
             
             if not placed:
                 products_rejected.append(product)
+                self.warnings.append(f"Could not place {product.product_name} - no space available")
+                self.logger.debug(f"Rejected {product.product_name} - no suitable shelf found")
         
         # Run post-optimization improvements
-        self._post_optimization_improvements(products_placed)
+        if products_placed:
+            self._post_optimization_improvements(products_placed)
+        
+        # Store products_placed for metrics calculation
+        self.products_placed = products_placed
         
         return OptimizationResult(
             success=len(products_placed) > 0,
@@ -307,7 +405,7 @@ class ProductOptimizer(BaseOptimizer):
             products_placed=products_placed,
             products_rejected=products_rejected,
             metrics=self.metrics,
-            warnings=self.warnings
+            warnings=self.warnings  
         )
     
     def _assign_categories_to_shelves(self, category_priorities: List[Tuple]) -> Dict[ProductCategory, List[int]]:
@@ -447,3 +545,27 @@ class ProductOptimizer(BaseOptimizer):
             
             shelf.positions = new_positions
             shelf.update_utilization()
+    
+    def _calculate_optimal_facings_for_store(self, product: Product) -> int:
+        """Calculate optimal facings considering store constraints"""
+        # Get store rules - check different sources for max facings
+        max_facings_per_product = 4  # Default
+        
+        # Try to get from store rules
+        if hasattr(self.store, 'rules') and self.store.rules:
+            max_facings_per_product = self.store.rules.get('max_facings_per_product', 4)
+        
+        # For express stores, limit facings further
+        if self.store.store_type == 'express':
+            max_facings_per_product = min(max_facings_per_product, 2)
+        
+        # Calculate base facings
+        base_facings = product.calculate_facings("balanced")
+        
+        # Apply store constraints
+        optimal_facings = min(base_facings, max_facings_per_product)
+        
+        # Ensure minimum facings
+        optimal_facings = max(optimal_facings, product.min_facings or 1)
+        
+        return optimal_facings

@@ -68,8 +68,8 @@ class Shelf:
             return self.width
         
         used_width = sum(pos.width for pos in self.positions)
-        # Account for gaps between products (2cm per gap)
-        gaps = len(self.positions) * 2  
+        # Account for gaps between products (1cm per gap)
+        gaps = len(self.positions) * 1  
         return self.width - used_width - gaps
     
     def add_product(self, product, facings: int, x_position: Optional[float] = None) -> bool:
@@ -82,7 +82,7 @@ class Shelf:
             if self.positions:
                 # Place after last product with gap
                 last_pos = max(self.positions, key=lambda p: p.x_end)
-                x_position = last_pos.x_end + 2  # 2cm gap
+                x_position = last_pos.x_end + 1  # 1cm gap
             else:
                 x_position = 0
         
