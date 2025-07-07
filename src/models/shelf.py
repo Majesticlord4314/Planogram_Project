@@ -169,7 +169,8 @@ class Shelf:
             score += 0.1 * self.eye_level_score
         
         # Premium shelf bonus for high-value items
-        if self.is_premium and product.price > 50:
+        product_price = getattr(product, 'price', 0)
+        if self.is_premium and product_price > 50:
             score += 0.2
         
         # Height compatibility

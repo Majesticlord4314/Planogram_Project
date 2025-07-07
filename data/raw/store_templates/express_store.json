@@ -13,23 +13,53 @@
   "shelves": [
     {
       "shelf_id": 0,
-      "shelf_name": "Eye Level Essentials",
-      "width": 80,
-      "height": 25,
+      "shelf_name": "Apple Premium Row 1",
+      "width": 67,
+      "height": 22,
       "depth": 20,
-      "y_position": 140,
+      "y_position": 120,
       "shelf_type": "compact",
       "eye_level_score": 1.0
     },
     {
       "shelf_id": 1,
-      "shelf_name": "Quick Access",
-      "width": 80,
+      "shelf_name": "Apple Premium Row 2",
+      "width": 67,
+      "height": 22,
+      "depth": 20,
+      "y_position": 98,
+      "shelf_type": "compact",
+      "eye_level_score": 0.95
+    },
+    {
+      "shelf_id": 2,
+      "shelf_name": "Apple Premium Row 3",
+      "width": 67,
+      "height": 22,
+      "depth": 20,
+      "y_position": 76,
+      "shelf_type": "compact",
+      "eye_level_score": 0.9
+    },
+    {
+      "shelf_id": 3,
+      "shelf_name": "Third Party Row 1",
+      "width": 67,
       "height": 20,
       "depth": 20,
-      "y_position": 120,
+      "y_position": 54,
       "shelf_type": "compact",
       "eye_level_score": 0.8
+    },
+    {
+      "shelf_id": 4,
+      "shelf_name": "Third Party Row 2",
+      "width": 67,
+      "height": 20,
+      "depth": 20,
+      "y_position": 32,
+      "shelf_type": "compact",
+      "eye_level_score": 0.7
     }
   ],
   
@@ -47,7 +77,7 @@
     "eye_level_priority": ["essential", "popular"],
     "grouping_strategy": "popularity",
     "min_facings_multiplier": 0.8,
-    "gap_size": 1.5
+    "gap_size": 0.5
   },
   
   "optimization_weights": {

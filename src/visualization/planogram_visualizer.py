@@ -13,8 +13,9 @@ from src.utils.logger import get_logger
 class PlanogramVisualizer:
     """Create visual representations of planograms"""
     
-    def __init__(self, figsize: Tuple[int, int] = (20, 12)):
+    def __init__(self, figsize: Tuple[int, int] = (24, 16)):
         self.figsize = figsize
+        self.dpi = 300  # High resolution output
         self.logger = get_logger()
         
         # Define color schemes
@@ -30,6 +31,29 @@ class PlanogramVisualizer:
             ProductCategory.PENCIL: '#AA96DA',
             ProductCategory.WATCH_BAND: '#FCBAD3',
             ProductCategory.OTHER: '#B0B0B0'
+        }
+        
+        # Brand-based colors for cases
+        self.brand_colors = {
+            'apple': '#007AFF',      # Apple Blue
+            'pulse': '#FF3B30',      # Red
+            'tekne': '#34C759',      # Green  
+            'uag': '#FF9500',        # Orange
+            'gripp': '#AF52DE',      # Purple
+            'otterbox': '#000000',   # Black
+            'spigen': '#5856D6',     # Indigo
+            'default': '#8E8E93'     # Gray for unknown brands
+        }
+        
+        # iPhone model colors for better distinction
+        self.iphone_model_colors = {
+            'iphone 16': '#1D1D1F',      # Space Black (latest)
+            'iphone 16 plus': '#2F3034',  # Dark
+            'iphone 16 pro': '#5F5F5F',   # Pro Gray
+            'iphone 16 pro max': '#8A8A8D', # Light Gray
+            'iphone 15': '#B0B0B0',       # Lighter (older)
+            'iphone 14': '#C7C7CC',       # Lightest (oldest)
+            'default': '#E5E5EA'          # Default light
         }
         
         # Store type colors
@@ -72,7 +96,7 @@ class PlanogramVisualizer:
         
         # Save if path provided
         if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            plt.savefig(save_path, dpi=self.dpi, bbox_inches='tight')
             self.logger.info(f"Planogram saved to {save_path}")
         
         return fig
@@ -180,10 +204,10 @@ class PlanogramVisualizer:
         # Add sales indicator
         if hasattr(product, 'profit'):
             if product.profit > 20:  # High margin
-                ax.text(position.x_end - 5, shelf_y + product.height - 5, '💰',
+                ax.text(position.x_end - 5, shelf_y + product.height - 5, '$$$',
                     fontsize=8, color='green')
             elif product.profit > 10:  # Medium margin
-                ax.text(position.x_end - 5, shelf_y + product.height - 5, '💵',
+                ax.text(position.x_end - 5, shelf_y + product.height - 5, '$$',
                     fontsize=8, color='darkgreen')
     
     def _format_product_label(self, product: Product, position) -> List[str]:
@@ -325,7 +349,7 @@ class PlanogramVisualizer:
         plt.tight_layout()
         
         if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            plt.savefig(save_path, dpi=self.dpi, bbox_inches='tight')
         
         return fig
     def _add_legend(self, ax):
@@ -360,7 +384,7 @@ class PlanogramVisualizer:
         plt.tight_layout()
         
         if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            plt.savefig(save_path, dpi=self.dpi, bbox_inches='tight')
         
         return fig
     
@@ -409,22 +433,204 @@ class PlanogramVisualizer:
                     fontsize=16, weight='bold')
         
         if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            plt.savefig(save_path, dpi=self.dpi, bbox_inches='tight')
         
         return fig
+    
+    def _arrange_products_for_express_store(self, all_products: List[Tuple]) -> List[Tuple]:
+        """Arrange products for express store with aesthetic structure"""
+        self.logger.info("Creating aesthetic arrangement for express store")
+        
+        # Separate by brand
+        apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
+        tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
+        
+        # Sort each group by sales velocity
+        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        
+        self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
+        
+        # Group TPA products by iPhone series for visual coherence
+        tpa_by_series = {}
+        for product, facings in tpa_products:
+            series = getattr(product, 'series', 'Other')
+            if series not in tpa_by_series:
+                tpa_by_series[series] = []
+            tpa_by_series[series].append((product, facings))
+        
+        # Debug: Log what series we found
+        self.logger.info(f"TPA products by series: {list(tpa_by_series.keys())}")
+        
+        # Create structured arrangement - Apple products should be on TOP row
+        arranged_products = []
+        products_per_row = 6  # Express store grid
+        
+        # TOP ROW (Row 1): Apple products ONLY - prioritize iPhone case products
+        # Filter Apple products to prioritize iPhone cases (actual cases, not screen protectors)
+        apple_cases = [(p, f) for p, f in apple_products if str(getattr(p, 'category', '')).lower() == 'case']
+        apple_others = [(p, f) for p, f in apple_products if str(getattr(p, 'category', '')).lower() != 'case']
+        
+        # Prioritize iPhone cases in top row, then other Apple products
+        apple_row = (apple_cases + apple_others)[:products_per_row]
+        arranged_products.extend(apple_row)
+        self.logger.info(f"TOP ROW (Apple): {len(apple_row)} products ({len(apple_cases)} cases)")
+        
+        # Don't fill empty slots in top row - let them be empty if no Apple products
+        
+        # Rows 2-4: Group TPA products by series for aesthetics
+        # Group similar iPhone series together for visual coherence
+        
+        # Prioritize iPhone 15 series together, then iPhone 16 series
+        iphone_15_series = ['iPhone 15 Base', 'iPhone 15 Plus', 'iPhone 15 Pro', 'iPhone 15 Pro Max']
+        iphone_16_series = ['iPhone 16 Base', 'iPhone 16 Plus', 'iPhone 16 Pro', 'iPhone 16 Pro Max']
+        
+        # Row 2: iPhone 15 series - Group ALL iPhone 15 together
+        iphone_15_products = []
+        for series in iphone_15_series:
+            if series in tpa_by_series:
+                iphone_15_products.extend(tpa_by_series[series])
+                
+        # Also check for any products that have iPhone 15 in the name or series
+        for product_tuple in tpa_products:
+            product, facings = product_tuple
+            product_name = getattr(product, 'product_name', '').lower()
+            if 'iphone 15' in product_name and product_tuple not in iphone_15_products:
+                iphone_15_products.append(product_tuple)
+        
+        # Sort iPhone 15 products by sales velocity
+        iphone_15_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        row_2_products = iphone_15_products[:products_per_row]
+        arranged_products.extend(row_2_products)
+        self.logger.info(f"Row 2 (iPhone 15): {len(row_2_products)} products")
+        
+        # Row 3: iPhone 16 series  
+        iphone_16_products = []
+        for series in iphone_16_series:
+            if series in tpa_by_series:
+                iphone_16_products.extend(tpa_by_series[series])
+        
+        # Sort iPhone 16 products by sales velocity
+        iphone_16_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        row_3_products = iphone_16_products[:products_per_row]
+        arranged_products.extend(row_3_products)
+        self.logger.info(f"Row 3 (iPhone 16): {len(row_3_products)} products")
+        
+        # Row 4: Other series and remaining products
+        other_products = []
+        used_product_ids = set()
+        for product_tuple in row_2_products + row_3_products:
+            if product_tuple:
+                product, facings = product_tuple
+                used_product_ids.add(getattr(product, 'product_id', id(product)))
+                
+        for product_tuple in tpa_products:
+            if product_tuple:
+                product, facings = product_tuple
+                product_id = getattr(product, 'product_id', id(product))
+                if product_id not in used_product_ids:
+                    other_products.append(product_tuple)
+        
+        row_4_products = other_products[:products_per_row]
+        arranged_products.extend(row_4_products)
+        self.logger.info(f"Row 4 (Other): {len(row_4_products)} products")
+        
+        # Return arranged products - don't force full grid
+        return arranged_products
+        
+    def _arrange_products_for_flagship_store(self, all_products: List[Tuple]) -> List[Tuple]:
+        """Arrange products for flagship store: First 4 rows Apple only, last 4 rows TPA only"""
+        self.logger.info("Creating flagship arrangement: First 4 rows Apple, last 4 rows TPA")
+        
+        # Separate by brand
+        apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
+        tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
+        
+        # Sort each group by sales velocity
+        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        
+        self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
+        
+        arranged_products = []
+        products_per_row = 5  # Flagship store: 5 columns
+        
+        # First 4 rows: ONLY Apple products (20 slots total)
+        apple_slots = 4 * products_per_row  # 20 slots for Apple
+        apple_for_display = apple_products[:apple_slots]
+        arranged_products.extend(apple_for_display)
+        
+        # Fill remaining Apple slots with None if needed
+        while len(arranged_products) < apple_slots:
+            arranged_products.append(None)
+            
+        self.logger.info(f"Apple rows 1-4: {len([p for p in arranged_products if p is not None])} products")
+        
+        # Last 4 rows: ONLY TPA products (20 slots total)
+        tpa_slots = 4 * products_per_row  # 20 slots for TPA
+        tpa_for_display = tpa_products[:tpa_slots]
+        arranged_products.extend(tpa_for_display)
+        
+        # Fill remaining TPA slots with None if needed
+        while len(arranged_products) < apple_slots + tpa_slots:
+            arranged_products.append(None)
+            
+        self.logger.info(f"TPA rows 5-8: {len(tpa_for_display)} products")
+        
+        return arranged_products
+    
+    def _arrange_products_for_standard_store(self, all_products: List[Tuple]) -> List[Tuple]:
+        """Arrange products for standard store: First row Apple only, rest TPA only"""
+        self.logger.info("Creating standard arrangement: First row Apple, rest TPA")
+        
+        # Separate by brand
+        apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
+        tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
+        
+        # Sort each group by sales velocity
+        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        
+        self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
+        
+        arranged_products = []
+        products_per_row = 6  # Standard store: 6 columns
+        
+        # First row: ONLY Apple products (6 slots)
+        apple_slots = products_per_row  # 6 slots for Apple
+        apple_for_display = apple_products[:apple_slots]
+        arranged_products.extend(apple_for_display)
+        
+        # Fill remaining Apple slots with None if needed
+        while len(arranged_products) < apple_slots:
+            arranged_products.append(None)
+            
+        self.logger.info(f"Apple row 1: {len([p for p in arranged_products if p is not None])} products")
+        
+        # Remaining 5 rows: ONLY TPA products (30 slots total)
+        tpa_slots = 5 * products_per_row  # 30 slots for TPA
+        tpa_for_display = tpa_products[:tpa_slots]
+        arranged_products.extend(tpa_for_display)
+        
+        # Fill remaining TPA slots with None if needed
+        while len(arranged_products) < apple_slots + tpa_slots:
+            arranged_products.append(None)
+            
+        self.logger.info(f"TPA rows 2-6: {len(tpa_for_display)} products")
+        
+        return arranged_products
     
     def create_realistic_retail_planogram(self, result: OptimizationResult,
                                          product_lookup: Dict[str, Product],
                                          title: str = "Apple Store Accessory Display",
                                          save_path: Optional[str] = None) -> plt.Figure:
-        """Create a realistic retail planogram that looks like actual store displays"""
+        """Create a clean, modern retail planogram with proper grid layout"""
         
-        # Create figure with portrait orientation like real planograms
-        fig, ax = plt.subplots(figsize=(12, 16))  # Portrait orientation
-        ax.set_facecolor('#F8F8F8')  # Clean store background
-        
-        # Get all placed products and sort by sales performance
-        all_products = []
+        # Import and use the clean planogram function
+        from src.visualization.clean_planogram import create_clean_planogram
+        return create_clean_planogram(result, product_lookup, title, save_path, self.figsize)
+    
+    def _create_clean_label(self, product: Product) -> str:
         for shelf in result.store.shelves:
             for position in shelf.positions:
                 if position.product_id in product_lookup:
@@ -445,54 +651,84 @@ class PlanogramVisualizer:
                 spine.set_visible(False)
             return fig
         
-        # Sort by sales performance and limit display count based on shelf configuration
-        all_products.sort(key=lambda x: x[0].total_qty, reverse=True)
-        max_display = min(len(all_products), len(result.store.shelves) * 8)  # 8 products per shelf max
-        display_products = all_products[:max_display]
+        # Determine store type for structured arrangement
+        store_type = getattr(result.store, 'store_type', 'standard')
+        
+        if store_type == 'express':
+            # Express store: Proper multi-row arrangement with logical grouping
+            display_products = self._arrange_products_for_express_store(all_products)
+        elif store_type == 'flagship':
+            # Flagship store: First 4 rows Apple only, last 4 rows TPA only
+            display_products = self._arrange_products_for_flagship_store(all_products)
+        elif store_type == 'standard':
+            # Standard store: First row Apple only, rest TPA only
+            display_products = self._arrange_products_for_standard_store(all_products)
+        else:
+            # Other stores: Sort by sales performance
+            all_products.sort(key=lambda x: x[0].total_qty, reverse=True)
+            max_display = min(len(all_products), len(result.store.shelves) * 8)  # 8 products per shelf max
+            display_products = all_products[:max_display]
         
         # Calculate optimal grid to fill all shelf positions
         # Determine best layout based on store configuration and available products
         if len(result.store.shelves) >= 8:  # Flagship store
-            products_per_row = 10
+            products_per_row = 5
             target_rows = 8
         elif len(result.store.shelves) >= 6:  # Standard store  
-            products_per_row = 8
+            products_per_row = 6
             target_rows = 6
         else:  # Express store
             products_per_row = 6
-            target_rows = 4
+            target_rows = 5
         
-        # Fill all positions by repeating products if necessary
-        target_positions = products_per_row * target_rows
-        
-        # If we have fewer products than target positions, repeat best sellers
-        if len(display_products) < target_positions:
-            # Repeat top products to fill empty spots
-            top_products = display_products[:min(10, len(display_products))]  # Top 10 products
-            while len(display_products) < target_positions and top_products:
-                for product_data in top_products:
-                    if len(display_products) >= target_positions:
-                        break
-                    display_products.append(product_data)
+        # Apply store-specific layout rules
+        if store_type == 'express':
+            # Express store: 5 rows x 6 columns layout
+            total_rows = 5
+            products_per_row = 6
+            target_positions = products_per_row * total_rows  # 30 positions
+        elif store_type == 'flagship':
+            # Flagship store: 8 rows x 5 columns layout
+            total_rows = 8
+            products_per_row = 5
+            target_positions = products_per_row * total_rows  # 40 positions
+        elif store_type == 'standard':
+            # Standard store: 6 rows x 6 columns layout
+            total_rows = 6
+            products_per_row = 6
+            target_positions = products_per_row * total_rows  # 36 positions
+        else:
+            # Other stores: Use default calculated layout
+            total_rows = target_rows
+            target_positions = products_per_row * target_rows
+            
+            # Fill all positions by repeating products if necessary for other stores
+            if len(display_products) < target_positions:
+                # Repeat top products to fill empty spots
+                top_products = display_products[:min(10, len(display_products))]  # Top 10 products
+                while len(display_products) < target_positions and top_products:
+                    for product_data in top_products:
+                        if len(display_products) >= target_positions:
+                            break
+                        display_products.append(product_data)
         
         # Limit to target positions
         display_products = display_products[:target_positions]
-        total_rows = target_rows
         
-        # Product display parameters
-        product_width = 12   # cm
-        product_height = 18  # cm  
-        gap_x = 3           # horizontal gap
-        gap_y = 4           # vertical gap
-        margin_x = 20       # left margin
-        margin_y = 15       # bottom margin
+        # Product display parameters - adjusted for phone cases
+        product_width = 10   # cm - reduced width for phone cases
+        product_height = 16  # cm - reduced height for phone cases
+        gap_x = 2           # horizontal gap
+        gap_y = 3           # vertical gap
+        margin_x = 15       # left margin
+        margin_y = 10       # bottom margin
         
         # Calculate total display area
         total_width = margin_x * 2 + (products_per_row * product_width) + ((products_per_row - 1) * gap_x)
         total_height = margin_y * 2 + (total_rows * product_height) + ((total_rows - 1) * gap_y)
         
         ax.set_xlim(0, total_width)
-        ax.set_ylim(0, total_height)
+        ax.set_ylim(0, total_height + 100)  # Extra space for legend at bottom
         
         # Draw shelf backgrounds (like reference image sections)
         shelf_height = (total_height - margin_y * 2) / 4  # 4 main shelf sections
@@ -510,7 +746,12 @@ class PlanogramVisualizer:
             ax.add_patch(shelf_bg)
         
         # Draw products in grid layout
-        for idx, (product, facings) in enumerate(display_products):
+        for idx, product_data in enumerate(display_products):
+            # Skip empty slots
+            if product_data is None:
+                continue
+                
+            product, facings = product_data
             row = idx // products_per_row
             col = idx % products_per_row
             
@@ -532,15 +773,37 @@ class PlanogramVisualizer:
             )
             ax.add_patch(product_rect)
             
-            # Add category color strip (top of package)
-            category_color = self.category_colors.get(product.category, '#B0B0B0')
-            color_strip = Rectangle(
+            # Get brand and model colors
+            brand = getattr(product, 'brand', '').lower()
+            series = getattr(product, 'series', '').lower()
+            
+            # Determine primary color based on brand
+            brand_color = self.brand_colors.get(brand, self.brand_colors['default'])
+            
+            # Determine secondary color based on iPhone model
+            model_color = self.iphone_model_colors['default']
+            for model_key in self.iphone_model_colors:
+                if model_key in series:
+                    model_color = self.iphone_model_colors[model_key]
+                    break
+            
+            # Add brand color strip (top of package)
+            brand_strip = Rectangle(
                 (x + 1, y + product_height - 3),
                 product_width - 2, 2.5,
-                facecolor=category_color,
+                facecolor=brand_color,
                 alpha=0.9
             )
-            ax.add_patch(color_strip)
+            ax.add_patch(brand_strip)
+            
+            # Add model color accent (left side)
+            model_accent = Rectangle(
+                (x, y + 1),
+                2, product_height - 4,
+                facecolor=model_color,
+                alpha=0.8
+            )
+            ax.add_patch(model_accent)
             
             # Add product image area (center)
             image_area = Rectangle(
@@ -574,7 +837,7 @@ class PlanogramVisualizer:
                    fontsize=7, fontweight='bold',
                    color='#333333')  # Dark text for better readability
             
-            # Add brand at bottom with background
+            # Add brand and model at bottom with background
             brand_bg = Rectangle(
                 (x + 1, y + 1),
                 product_width - 2, 4,
@@ -584,11 +847,30 @@ class PlanogramVisualizer:
             )
             ax.add_patch(brand_bg)
             
-            ax.text(x + product_width/2, y + 3,
-                   product.brand,
+            # Format brand and model text
+            brand_text = getattr(product, 'brand', 'Unknown').upper()
+            series_text = getattr(product, 'series', '')
+            
+            # Extract iPhone model for cleaner display
+            if 'iPhone 16' in series_text:
+                model_text = series_text.replace('iPhone ', 'i').replace(' ', '')
+            else:
+                model_text = series_text.replace('iPhone ', 'i').replace(' ', '')[:8]
+            
+            # Display brand prominently
+            ax.text(x + product_width/2, y + 3.2,
+                   brand_text,
                    ha='center', va='center',
-                   fontsize=6, fontweight='bold',
-                   color='#333333')  # Dark text
+                   fontsize=7, fontweight='bold',
+                   color='#000000')
+            
+            # Display model below brand
+            if model_text:
+                ax.text(x + product_width/2, y + 1.8,
+                       model_text,
+                       ha='center', va='center',
+                       fontsize=5, fontweight='normal',
+                       color='#666666')
             
         # Add performance indicators on the product itself (not on top)
             if product.total_qty > 300:  # Bestseller
@@ -630,34 +912,83 @@ class PlanogramVisualizer:
                title, ha='center', va='top',
                fontsize=16, fontweight='bold', color='#333333')
         
-        # Category legend at bottom
-        legend_y = 10
-        categories_shown = set(product[0].category for product in display_products)
+        # Brand and Model legend at bottom - positioned properly
+        legend_y = 50  # Move legend down to avoid overlap
+        brands_shown = set()
+        models_shown = set()
         
-        ax.text(margin_x, legend_y + 15, 'Categories:', 
+        # Extract brands and models from displayed products (skip None values)
+        for product_data in display_products:
+            if product_data is None:
+                continue
+            product, _ = product_data
+            brand = getattr(product, 'brand', 'Unknown')
+            brands_shown.add(brand)
+            
+            series = getattr(product, 'series', '')
+            for model_key in self.iphone_model_colors:
+                if model_key in series.lower():
+                    models_shown.add(model_key)
+                    break
+        
+        # Brand legend - centered horizontally
+        brand_legend_width = len(brands_shown) * 80
+        brand_legend_start_x = max(margin_x, (total_width - brand_legend_width) // 2)
+        
+        ax.text(brand_legend_start_x, legend_y + 25, 'Brands (Top Strip):', 
                fontsize=10, fontweight='bold', color='#333333')
         
-        legend_x = margin_x
-        for i, category in enumerate(categories_shown):
-            color = self.category_colors.get(category, '#B0B0B0')
+        legend_x = brand_legend_start_x
+        for i, brand in enumerate(sorted(brands_shown)):
+            brand_color = self.brand_colors.get(brand.lower(), self.brand_colors['default'])
             
-            # Category color box
-            cat_box = Rectangle(
-                (legend_x, legend_y),
-                8, 8,
-                facecolor=color,
+            # Brand color box
+            brand_box = Rectangle(
+                (legend_x, legend_y + 15),
+                12, 6,
+                facecolor=brand_color,
                 edgecolor='#333333',
                 linewidth=1,
-                alpha=0.8
+                alpha=0.9
             )
-            ax.add_patch(cat_box)
+            ax.add_patch(brand_box)
             
-            # Category name
-            ax.text(legend_x + 12, legend_y + 4, 
-                   category.value.replace('_', ' ').title(),
+            # Brand name
+            ax.text(legend_x + 16, legend_y + 18, 
+                   brand.upper(),
                    fontsize=9, color='#333333', va='center')
             
             legend_x += 80
+        
+        # iPhone Model legend - centered horizontally below brands
+        if models_shown:
+            model_legend_width = len(models_shown) * 70
+            model_legend_start_x = max(margin_x, (total_width - model_legend_width) // 2)
+            
+            ax.text(model_legend_start_x, legend_y, 'iPhone Models (Left Accent):', 
+                   fontsize=10, fontweight='bold', color='#333333')
+            
+            model_legend_x = model_legend_start_x
+            for model in sorted(models_shown):
+                model_color = self.iphone_model_colors[model]
+                
+                # Model color box
+                model_box = Rectangle(
+                    (model_legend_x, legend_y - 10),
+                    8, 6,
+                    facecolor=model_color,
+                    edgecolor='#333333',
+                    linewidth=1,
+                    alpha=0.8
+                )
+                ax.add_patch(model_box)
+                
+                # Model name
+                ax.text(model_legend_x + 12, legend_y - 7, 
+                       model.replace('iphone ', 'i').title(),
+                       fontsize=8, color='#333333', va='center')
+                
+                model_legend_x += 70
         
         # Remove axes
         ax.set_xticks([])
@@ -668,11 +999,30 @@ class PlanogramVisualizer:
         plt.tight_layout()
         
         if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches='tight', 
-                       facecolor='white', edgecolor='none')
+            plt.savefig(save_path, dpi=self.dpi, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
             self.logger.info(f"Realistic retail planogram saved to {save_path}")
         
         return fig
+    
+    def _create_clean_label(self, product: Product) -> str:
+        """Create clean, readable product label"""
+        name = getattr(product, 'product_name', 'Unknown')
+        brand = getattr(product, 'brand', 'Unknown')
+        
+        # For Apple products, show simple name
+        if brand.lower() == 'apple':
+            if 'Pro Max' in name:
+                return 'Pro Max\nClear'
+            elif 'Pro' in name:
+                return 'Pro\nClear'
+            elif 'Plus' in name:
+                return 'Plus\nClear'
+            else:
+                return '16\nClear'
+        else:
+            # For TPA products, show brand
+            return f'{brand}\nCase'
     
     def _create_retail_label(self, product: Product) -> str:
         """Create realistic retail product label"""

@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 import argparse
 from typing import List, Optional
+from src.visualization.clean_planogram import create_clean_planogram
 
 # Setup paths
 project_root = Path(__file__).parent.absolute()
@@ -53,7 +54,7 @@ def interactive_mode():
             
     except Exception as e:
         logger.error(f"Error in interactive mode: {e}", exc_info=True)
-        print(f"\n❌ Error: {e}")
+        print(f"\n[ERROR] {e}")
 
 def run_product_category_optimization(loader, logger):
     """Run optimization for a specific product category"""
@@ -117,7 +118,7 @@ def run_product_category_optimization(loader, logger):
             logger.info(f"Filtered to {len(products)} products in {category_name}")
         except Exception as e2:
             logger.error(f"Failed to load any products: {e2}")
-            print(f"\n❌ Error: No product data found. Please check your data files.")
+            print(f"\n[ERROR] No product data found. Please check your data files.")
             return
     
     if not products:
@@ -244,7 +245,7 @@ def run_lob_optimization(loader, logger):
         logger.info(f"Loaded {len(products)} products for {lob_name}")
     except Exception as e:
         logger.error(f"Error loading {lob_key} products: {e}")
-        print(f"\n❌ Error loading products: {e}")
+        print(f"\n[ERROR] Error loading products: {e}")
         return
     
     if not products:
@@ -317,7 +318,18 @@ def run_lob_optimization(loader, logger):
     output_name = f"{lob_key}_{store_type}_cohort"
     title = f"{lob_name} - {store_type.title()} Store - Cohort-Based"
     
-    visualize_and_export_results(result, products, output_name, title)
+    # Always create the clean planogram visualization
+    product_lookup = {p.product_id: p for p in products}
+    save_path = f"output/{output_name}_clean.png"
+    create_clean_planogram(result, product_lookup, title=title, save_path=save_path)
+    print(f"Clean planogram saved to {save_path}")
+    
+    # Then generate multiple planograms based on iPhone sub-series and TPA-only (if LOB is iPhone)
+    if lob_key == 'iPhone':
+        print("\n" + "="*60)
+        print("GENERATING MULTIPLE PLANOGRAMS FOR iPHONE SUB-SERIES")
+        print("="*60)
+        generate_multiple_planograms(products, store, store_type, "sales_velocity", lob_key, logger)
 
 def run_full_store_optimization(loader, logger):
     """Run optimization for all products"""
@@ -342,7 +354,7 @@ def run_full_store_optimization(loader, logger):
         logger.info(f"Loaded {len(products)} total products")
     except Exception as e:
         logger.error(f"Failed to load products: {e}")
-        print(f"\n❌ Error: Could not load product data: {e}")
+        print(f"\n[ERROR] Could not load product data: {e}")
         return
     
     if not products:
@@ -457,7 +469,7 @@ def visualize_and_export_results(result, products, output_name, title):
             title=title,
             save_path=f"output/{output_name}_retail.png"
         )
-        print(f"  📊 {output_name}_retail.png (clean retail display)")
+        print(f"  [PLANOGRAM] {output_name}_retail.png (clean retail display)")
     except Exception as e:
         logger.warning(f"Could not create retail planogram: {e}")
         # Fallback to traditional view if retail fails
@@ -479,7 +491,7 @@ def visualize_and_export_results(result, products, output_name, title):
             f"{output_name}_details",
             title
         )
-        print(f"  📊 {output_name}_details.xlsx (product details and grid reference)")
+        print(f"  [EXCEL] {output_name}_details.xlsx (product details and grid reference)")
     except Exception as e:
         logger.warning(f"Could not create Excel export: {e}")
     
@@ -508,14 +520,14 @@ def visualize_and_export_results(result, products, output_name, title):
     
     # Show warnings if any
     if result.warnings:
-        print(f"\n⚠️  Warnings ({len(result.warnings)}):")
+        print(f"\nWarnings ({len(result.warnings)}):")
         for warning in result.warnings[:5]:
             print(f"  - {warning}")
         if len(result.warnings) > 5:
             print(f"  ... and {len(result.warnings) - 5} more warnings")
     
     print(f"\nFiles generated:")
-    print(f"  📊 {output_name}_retail.png (clean retail display)")
+    print(f"  [PLANOGRAM] {output_name}_retail.png (clean retail display)")
     
     # Count actual files generated
     csv_count = 0
@@ -604,7 +616,7 @@ Examples:
                 
         except Exception as e:
             logger.error(f"Error during optimization: {e}", exc_info=True)
-            print(f"\n❌ Error: {e}")
+            print(f"\n[ERROR] {e}")
             sys.exit(1)
 
 def run_direct_category_optimization(loader, logger, category, store_type, strategy):
@@ -657,6 +669,130 @@ def run_direct_category_optimization(loader, logger, category, store_type, strat
     title = f"{category.title()} - {store_type.title()} Store - {strategy.replace('_', ' ').title()}"
     visualize_and_export_results(result, products, output_name, title)
 
+def generate_multiple_planograms(products, store, store_type, strategy, lob, logger):
+    """Generate multiple planograms based on iPhone sub-series and store type requirements"""
+    from src.optimization.bundle_optimizer import BundleOptimizer
+    from src.optimization.product_optimizer import ProductOptimizer
+    
+    # Separate Apple and Third-party products
+    apple_products = [p for p in products if getattr(p, 'brand', '').lower() == 'apple']
+    tpa_products = [p for p in products if getattr(p, 'brand', '').lower() != 'apple']
+    
+    # Group Apple products by iPhone sub-series
+    apple_by_series = {}
+    for product in apple_products:
+        series = getattr(product, 'series', 'Other')
+        if 'iPhone 16 Base' in series or 'iphone 16 base' in series.lower():
+            key = 'iPhone 16 Base'
+        elif 'iPhone 16 Plus' in series or 'iphone 16 plus' in series.lower():
+            key = 'iPhone 16 Plus'
+        elif 'iPhone 16 Pro Max' in series or 'iphone 16 pro max' in series.lower():
+            key = 'iPhone 16 Pro Max'
+        elif 'iPhone 16 Pro' in series or 'iphone 16 pro' in series.lower():
+            key = 'iPhone 16 Pro'
+        elif 'iPhone 15' in series or 'iphone 15' in series.lower():
+            key = 'iPhone 15 Series'
+        else:
+            key = 'Other Apple'
+            
+        if key not in apple_by_series:
+            apple_by_series[key] = []
+        apple_by_series[key].append(product)
+    
+    # Group TPA products by iPhone sub-series  
+    tpa_by_series = {}
+    for product in tpa_products:
+        series = getattr(product, 'series', 'Other')
+        if 'iPhone 16 Base' in series or 'iphone 16 base' in series.lower():
+            key = 'iPhone 16 Base'
+        elif 'iPhone 16 Plus' in series or 'iphone 16 plus' in series.lower():
+            key = 'iPhone 16 Plus'
+        elif 'iPhone 16 Pro Max' in series or 'iphone 16 pro max' in series.lower():
+            key = 'iPhone 16 Pro Max'
+        elif 'iPhone 16 Pro' in series or 'iphone 16 pro' in series.lower():
+            key = 'iPhone 16 Pro'
+        elif 'iPhone 15' in series or 'iphone 15' in series.lower():
+            key = 'iPhone 15 Series'
+        else:
+            key = 'Other TPA'
+            
+        if key not in tpa_by_series:
+            tpa_by_series[key] = []
+        tpa_by_series[key].append(product)
+    
+    logger.info(f"Apple series found: {list(apple_by_series.keys())}")
+    logger.info(f"TPA series found: {list(tpa_by_series.keys())}")
+    
+    # Generate planograms based on store type rules
+    planogram_count = 0
+    
+    if store_type == 'flagship':
+        # Flagship: Multiple planograms for different Apple sub-series
+        for series_name, series_products in apple_by_series.items():
+            if len(series_products) > 0:
+                planogram_count += 1
+                generate_single_planogram(series_products, tpa_products, store, store_type, 
+                                        strategy, lob, f"{series_name}_flagship_{planogram_count}", logger)
+                
+    elif store_type == 'express':
+        # Express: 2 planograms
+        series_list = list(apple_by_series.keys())
+        for i in range(min(2, len(series_list))):
+            series_name = series_list[i]
+            series_products = apple_by_series[series_name]
+            planogram_count += 1
+            generate_single_planogram(series_products, tpa_products, store, store_type,
+                                    strategy, lob, f"{series_name}_express_{planogram_count}", logger)
+            
+    elif store_type == 'standard':
+        # Standard: 2 planograms
+        series_list = list(apple_by_series.keys())
+        for i in range(min(2, len(series_list))):
+            series_name = series_list[i]
+            series_products = apple_by_series[series_name]
+            planogram_count += 1
+            generate_single_planogram(series_products, tpa_products, store, store_type,
+                                    strategy, lob, f"{series_name}_standard_{planogram_count}", logger)
+    
+    # Generate TPA-only planograms for each store type
+    generate_tpa_only_planogram(tpa_products, store, store_type, strategy, lob, logger)
+
+def generate_single_planogram(apple_products, tpa_products, store, store_type, strategy, lob, output_suffix, logger):
+    """Generate a single planogram with specific Apple products and TPA products"""
+    from src.optimization.bundle_optimizer import BundleOptimizer
+    from src.optimization.product_optimizer import ProductOptimizer
+    
+    # Combine products for this planogram
+    planogram_products = apple_products + tpa_products
+    
+    # Create optimizer
+    optimizer = ProductOptimizer(store, gap_size=0.5, strategy=strategy)
+    optimizer.products_placed = []
+    result = optimizer.create_planogram(planogram_products)
+    
+    # Generate visualization
+    output_name = f"{lob}_{output_suffix}_{strategy}"
+    title = f"{lob} - {output_suffix.replace('_', ' ').title()} - {strategy.replace('_', ' ').title()}"
+    visualize_and_export_results(result, planogram_products, output_name, title)
+
+def generate_tpa_only_planogram(tpa_products, store, store_type, strategy, lob, logger):
+    """Generate TPA-only planogram organized by sub-series"""
+    from src.optimization.product_optimizer import ProductOptimizer
+    
+    if not tpa_products:
+        logger.info("No TPA products found for TPA-only planogram")
+        return
+        
+    # Create optimizer for TPA-only
+    optimizer = ProductOptimizer(store, gap_size=0.5, strategy=strategy)
+    optimizer.products_placed = []
+    result = optimizer.create_planogram(tpa_products)
+    
+    # Generate visualization
+    output_name = f"{lob}_{store_type}_tpa_only_{strategy}"
+    title = f"{lob} - {store_type.title()} TPA Only - {strategy.replace('_', ' ').title()}"
+    visualize_and_export_results(result, tpa_products, output_name, title)
+
 def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
     """Direct LOB optimization from command line"""
     from src.data_processing.data_transformer import DataTransformer
@@ -704,10 +840,8 @@ def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
     optimizer.products_placed = []
     result = optimizer.create_planogram(products)
     
-    output_name = f"{lob}_{store_type}_{strategy}"
-    title = f"{lob} Accessories - {store_type.title()} Store - {strategy.replace('_', ' ').title()}"
-    
-    visualize_and_export_results(result, products, output_name, title)
+    # Generate multiple planograms based on iPhone sub-series and TPA-only
+    generate_multiple_planograms(products, store, store_type, strategy, lob, logger)
 
 def run_direct_full_optimization(loader, logger, store_type, strategy):
     """Direct full store optimization from command line"""

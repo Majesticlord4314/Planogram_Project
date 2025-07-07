@@ -14,7 +14,7 @@ class PerformanceMonitor:
             start = time.time()
             result = func(*args, **kwargs)
             duration = time.time() - start
-            print(f"⏱️  {func.__name__} took {duration:.2f}s")
+            print(f"[TIMER] {func.__name__} took {duration:.2f}s")
             return result
         return wrapper
 
