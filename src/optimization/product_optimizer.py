@@ -696,6 +696,7 @@ class ProductOptimizer(BaseOptimizer):
         for i, product in enumerate(products):
             placed = False
             optimal_facings = product.calculate_facings("balanced")
+            print(f"DEBUG: Trying to place product {i}: {product.product_name[:30]} with {optimal_facings} facings")
             
             # Debug logging
             if i < 5:  # Log first 5 products
@@ -705,11 +706,16 @@ class ProductOptimizer(BaseOptimizer):
             best_shelf = self._find_optimal_shelf_for_product(product)
             
             if best_shelf:
-                if self._try_place_product(best_shelf, product, optimal_facings):
+                print(f"DEBUG: Found best shelf {best_shelf.shelf_name} for {product.product_name[:30]}")
+                placement_result = self._try_place_product(best_shelf, product, optimal_facings)
+                print(f"DEBUG: Placement result: {placement_result}")
+                if placement_result:
                     products_placed.append(product)
                     placed = True
+                    print(f"DEBUG: Successfully placed {product.product_name[:30]} on {best_shelf.shelf_name}")
                     self.logger.debug(f"Placed {product.product_name} on shelf {best_shelf.shelf_name}")
                 else:
+                    print(f"DEBUG: Failed to place {product.product_name[:30]} on {best_shelf.shelf_name}")
                     self.logger.debug(f"Could not fit {product.product_name} on best shelf {best_shelf.shelf_name}")
             
             if not placed:
@@ -728,6 +734,7 @@ class ProductOptimizer(BaseOptimizer):
         
         # Run post-optimization improvements
         if products_placed:
+            print(f"DEBUG: Running post-optimization improvements on {len(products_placed)} products")
             self._post_optimization_improvements(products_placed)
         
         # Store products_placed for metrics calculation
@@ -815,15 +822,21 @@ class ProductOptimizer(BaseOptimizer):
     
     def _post_optimization_improvements(self, products_placed: List[Product]):
         """Apply post-optimization improvements"""
+        print(f"DEBUG: Starting post-optimization improvements")
         # 1. Balance shelf utilization
+        print(f"DEBUG: Balancing shelf loads...")
         self._balance_shelf_loads()
         
         # 2. Optimize spacing
+        print(f"DEBUG: Optimizing spacing on {len(self.store.shelves)} shelves...")
         for shelf in self.store.shelves:
+            print(f"DEBUG: Before optimize_positions - {shelf.shelf_name}: {len(shelf.positions)} positions")
             shelf.optimize_positions(self.gap_size)
+            print(f"DEBUG: After optimize_positions - {shelf.shelf_name}: {len(shelf.positions)} positions")
         
         # 3. Group similar products within shelves
-        self._group_similar_products_on_shelves()
+        print(f"DEBUG: SKIPPING grouping for now...")
+        # self._group_similar_products_on_shelves()
     
     def _balance_shelf_loads(self):
         """Balance product load across shelves"""
@@ -849,6 +862,7 @@ class ProductOptimizer(BaseOptimizer):
     
     def _group_similar_products_on_shelves(self):
         """Group similar products together on shelves"""
+        print(f"DEBUG: _group_similar_products_on_shelves - self.products_placed has {len(self.products_placed)} products")
         for shelf in self.store.shelves:
             if len(shelf.positions) < 2:
                 continue

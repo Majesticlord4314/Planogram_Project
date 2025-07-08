@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for server environments
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.patches import Rectangle, FancyBboxPatch
@@ -628,92 +630,42 @@ class PlanogramVisualizer:
         
         # Import and use the clean planogram function
         from src.visualization.clean_planogram import create_clean_planogram
+        self.logger.debug(f"Calling create_clean_planogram with save_path={save_path}")
         return create_clean_planogram(result, product_lookup, title, save_path, self.figsize)
     
     def _create_clean_label(self, product: Product) -> str:
-        for shelf in result.store.shelves:
-            for position in shelf.positions:
-                if position.product_id in product_lookup:
-                    product = product_lookup[position.product_id]
-                    all_products.append((product, position.facings))
+        """Create a clean label for a product"""
+        # Create a clean product name (remove extra spaces and truncate if too long)
+        clean_name = product.product_name.strip()
+        if len(clean_name) > 40:
+            clean_name = clean_name[:37] + "..."
         
-        # Ensure we have products to display
-        if not all_products:
-            # If no products were placed, create a message
-            ax.text(0.5, 0.5, 'No products were successfully placed\nCheck product dimensions and shelf constraints',
-                   ha='center', va='center', transform=ax.transAxes,
-                   fontsize=16, color='red')
-            ax.set_xlim(0, 1)
-            ax.set_ylim(0, 1)
-            ax.set_xticks([])
-            ax.set_yticks([])
-            for spine in ax.spines.values():
-                spine.set_visible(False)
-            return fig
-        
-        # Determine store type for structured arrangement
-        store_type = getattr(result.store, 'store_type', 'standard')
-        
-        if store_type == 'express':
-            # Express store: Proper multi-row arrangement with logical grouping
-            display_products = self._arrange_products_for_express_store(all_products)
-        elif store_type == 'flagship':
-            # Flagship store: First 4 rows Apple only, last 4 rows TPA only
-            display_products = self._arrange_products_for_flagship_store(all_products)
-        elif store_type == 'standard':
-            # Standard store: First row Apple only, rest TPA only
-            display_products = self._arrange_products_for_standard_store(all_products)
+        # Add brand if available
+        if hasattr(product, 'brand') and product.brand:
+            return f"{product.brand}\n{clean_name}"
         else:
-            # Other stores: Sort by sales performance
-            all_products.sort(key=lambda x: x[0].total_qty, reverse=True)
-            max_display = min(len(all_products), len(result.store.shelves) * 8)  # 8 products per shelf max
-            display_products = all_products[:max_display]
-        
-        # Calculate optimal grid to fill all shelf positions
-        # Determine best layout based on store configuration and available products
-        if len(result.store.shelves) >= 8:  # Flagship store
-            products_per_row = 5
-            target_rows = 8
-        elif len(result.store.shelves) >= 6:  # Standard store  
-            products_per_row = 6
-            target_rows = 6
-        else:  # Express store
-            products_per_row = 6
-            target_rows = 5
-        
-        # Apply store-specific layout rules
-        if store_type == 'express':
-            # Express store: 5 rows x 6 columns layout
+            return clean_name
+    
+    def _create_realistic_retail_display(self, result: OptimizationResult, 
+                                       product_lookup: Dict[str, Product], 
+                                       display_products: List[Tuple[Product, int]],
+                                       title: str = "Apple Store Accessory Display", 
+                                       save_path: Optional[str] = None) -> plt.Figure:
+        """Create the actual retail display visualization"""
+        # Get layout parameters
+        if result.store.store_type == 'express':
             total_rows = 5
             products_per_row = 6
-            target_positions = products_per_row * total_rows  # 30 positions
-        elif store_type == 'flagship':
-            # Flagship store: 8 rows x 5 columns layout
+        elif result.store.store_type == 'flagship':
             total_rows = 8
             products_per_row = 5
-            target_positions = products_per_row * total_rows  # 40 positions
-        elif store_type == 'standard':
-            # Standard store: 6 rows x 6 columns layout
+        else:
             total_rows = 6
             products_per_row = 6
-            target_positions = products_per_row * total_rows  # 36 positions
-        else:
-            # Other stores: Use default calculated layout
-            total_rows = target_rows
-            target_positions = products_per_row * target_rows
-            
-            # Fill all positions by repeating products if necessary for other stores
-            if len(display_products) < target_positions:
-                # Repeat top products to fill empty spots
-                top_products = display_products[:min(10, len(display_products))]  # Top 10 products
-                while len(display_products) < target_positions and top_products:
-                    for product_data in top_products:
-                        if len(display_products) >= target_positions:
-                            break
-                        display_products.append(product_data)
         
-        # Limit to target positions
-        display_products = display_products[:target_positions]
+        # Create figure
+        fig, ax = plt.subplots(figsize=self.figsize)
+        ax.set_facecolor('#F8F9FA')
         
         # Product display parameters - adjusted for phone cases
         product_width = 10   # cm - reduced width for phone cases

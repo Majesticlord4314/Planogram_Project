@@ -58,6 +58,7 @@ class BaseOptimizer(ABC):
     
     def _reset_shelves(self):
         """Clear all product positions from shelves"""
+        print(f"DEBUG: _reset_shelves() called - clearing all shelf positions")
         for shelf in self.store.shelves:
             shelf.positions = []
             shelf.update_utilization()
@@ -136,6 +137,7 @@ class BaseOptimizer(ABC):
     
     def _place_product_on_shelf(self, shelf: Shelf, product: Product, facings: int) -> bool:
         """Place a product on a specific shelf"""
+        print(f"DEBUG: _place_product_on_shelf called: {product.product_name[:30]} -> {shelf.shelf_name}, {facings} facings")
         try:
             # Validate basic dimensions first
             if product.height > shelf.height:
@@ -179,6 +181,7 @@ class BaseOptimizer(ABC):
             
             shelf.positions.append(position)
             shelf.update_utilization()
+            print(f"DEBUG: Successfully added position to shelf. Shelf now has {len(shelf.positions)} positions")
             
             # Update metrics
             if 'category_distribution' not in self.metrics:
@@ -282,6 +285,25 @@ class BaseOptimizer(ABC):
         
         return metrics
     
+    def _validate_products_placed_sync(self):
+        """Ensure products_placed list matches actual shelf positions"""
+        # Get all product_ids that are actually on shelves
+        shelf_product_ids = set()
+        for shelf in self.store.shelves:
+            for pos in shelf.positions:
+                shelf_product_ids.add(pos.product_id)
+        
+        # Filter products_placed to only include those actually on shelves
+        synced_products = []
+        for product in self.products_placed:
+            if product.product_id in shelf_product_ids:
+                synced_products.append(product)
+            else:
+                self.logger.warning(f"Product {product.product_name} in products_placed but not on any shelf")
+        
+        self.products_placed = synced_products
+        self.logger.debug(f"Synced products_placed: {len(synced_products)} products actually on shelves")
+    
     def _validate_placement(self) -> List[str]:
         """Validate the placement and return any issues"""
         issues = []
@@ -331,6 +353,10 @@ class BaseOptimizer(ABC):
             
             # Run optimization
             result = self.optimize(filtered_products, **kwargs)
+            
+            # Sync products_placed for metrics calculation and validate placement
+            self.products_placed = result.products_placed
+            self._validate_products_placed_sync()
             
             # Calculate final metrics
             result.metrics = self._calculate_metrics()
