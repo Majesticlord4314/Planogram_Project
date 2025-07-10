@@ -51,38 +51,48 @@ class DataLoader:
     def load_products_by_lob(self, lob: str, series_filter: Optional[str] = None) -> List[Product]:
         """Load all products for a specific LOB (iPhone, iPad, etc.)"""
         all_products = []
-        
-        # Check which accessory files actually exist
-        available_categories = []
+        lob_lower = lob.lower()
+
+        # --- Special handling for iPad ---
+        if lob_lower == 'ipad':
+            try:
+                ipad_file = self.accessories_path / 'ipad-cases-transformed.csv'
+                if not ipad_file.exists():
+                    print("Warning: ipad-cases-transformed.csv not found.")
+                    return []
+                
+                df_ipad = pd.read_csv(ipad_file)
+                df_ipad.columns = df_ipad.columns.str.strip()
+                df_ipad = df_ipad.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+                
+                ipad_products = self._dataframe_to_products(df_ipad)
+                
+                if series_filter:
+                    ipad_products = [p for p in ipad_products if series_filter.lower() in p.series.lower()]
+                
+                print(f"Loaded {len(ipad_products)} iPad products exclusively from ipad-cases-transformed.csv")
+                return ipad_products
+            except Exception as e:
+                print(f"Error loading iPad cases file: {e}")
+                return []
+
+        # --- General handling for other LOBs (iPhone, etc.) ---
         for category in ['cases', 'cables', 'screen_protectors', 'others']:
-            file_mapping = {
-                'cases': 'cases_sales.csv',
-                'cables': 'cables_adapters_sales.csv',
-                'screen_protectors': 'screen_protectors_sales.csv',
-                'others': 'mounts_others_sales.csv'
-            }
-            file_path = self.accessories_path / file_mapping[category]
-            if file_path.exists():
-                available_categories.append(category)
-        
-        print(f"Available accessory categories: {available_categories}")
-        
-        # Load available accessory files
-        for category in available_categories:
             try:
                 products = self.load_products_by_category(category)
+                # Filter by core_product
+                lob_products = [p for p in products if lob_lower in p.core_product.lower()]
                 
-                # Filter by LOB
-                lob_products = [p for p in products if lob.lower() in p.core_product.lower()]
-                
-                # Further filter by series if specified
                 if series_filter:
                     lob_products = [p for p in lob_products if series_filter.lower() in p.series.lower()]
                     
-                all_products.extend(lob_products)
-                print(f"Loaded {len(lob_products)} {lob} products from {category}")
+                if lob_products:
+                    all_products.extend(lob_products)
+                    print(f"Loaded {len(lob_products)} {lob} products from {category}")
+            except FileNotFoundError:
+                continue # It's okay if a category file doesn't exist
             except Exception as e:
-                print(f"Error loading {category} data: {e}")
+                print(f"Error loading {category} data for {lob}: {e}")
                 continue
                 
         return all_products
@@ -238,8 +248,8 @@ class DataLoader:
                     width=float(row['width']),
                     height=float(row['height']),
                     depth=float(row['depth']),
-                    pureqty=float(row['pureqty']),
-                    impureqty=float(row['impureqty']),
+                    pureqty=float(row['pureqty']) if 'pureqty' in row and pd.notna(row['pureqty']) else (float(row['frequency']) if 'frequency' in row else 0.0),
+                    impureqty=float(row['impureqty']) if 'impureqty' in row and pd.notna(row['impureqty']) else 0.0,
                     core_product=str(row['core_product'])
                 )
                 products.append(product)

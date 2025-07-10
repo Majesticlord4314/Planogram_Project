@@ -320,9 +320,9 @@ def run_lob_optimization(loader, logger):
     
     # Always create the clean planogram visualization
     product_lookup = {p.product_id: p for p in products}
-    save_path = f"output/{output_name}_clean.png"
-    create_clean_planogram(result, product_lookup, title=title, save_path=save_path, products_list=list(product_lookup.values()))
-    print(f"Clean planogram saved to {save_path}")
+    # Generate a single clean planogram for the selected LOB and store
+    create_clean_planogram(list(product_lookup.values()), store, lob=lob_key)
+    print("Clean planogram generated and saved in output directory.")
     
     # Then generate multiple planograms based on iPhone sub-series and TPA-only (if LOB is iPhone)
     if lob_key == 'iPhone':
@@ -740,55 +740,30 @@ def generate_tpa_only_planogram(tpa_products, result, store, store_type, strateg
     visualize_and_export_results(result, tpa_products, output_name, title)
 
 def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
-    """Direct LOB optimization from command line"""
-    from src.data_processing.data_transformer import DataTransformer
-    from src.optimization.bundle_optimizer import BundleOptimizer
-    from src.optimization.product_optimizer import ProductOptimizer
+    """Direct LOB optimization from command line. This is now streamlined to only generate the clean planogram."""
+    logger.info(f"Starting clean planogram generation for LOB: {lob}, Store: {store_type}")
     
-    # Load products
+    # Load products for the specified Line of Business
     products = loader.load_products_by_lob(lob)
-    
     if not products:
-        raise ValueError(f"No products found for {lob}")
-    
-    # Fix missing attributes
-    for product in products:
-        if not hasattr(product, 'attach_rate'):
-            product.attach_rate = 0.0
-        if not hasattr(product, 'bundle_frequency'):
-            product.bundle_frequency = 0
-        if not hasattr(product, 'current_stock'):
-            product.current_stock = 100
-        if not hasattr(product, 'min_stock'):
-            product.min_stock = 10
-        if not hasattr(product, 'avg_weekly_sales'):
-            product.avg_weekly_sales = product.total_qty / 4
-        if not hasattr(product, 'price'):
-            product.price = 0
-    
-    # Load cohort data
-    cohort_df = loader.load_cohort_data(lob)
-    if not cohort_df.empty:
-        products = loader.enrich_products_with_cohorts(products, cohort_df)
-    
-    # Load store and optimize
-    store = loader.load_store_template(store_type)
-    transformer = DataTransformer()
-    products = transformer.prepare_products_for_store(products, store, "cohort_based")
-    
-    # Use bundle optimizer if we have bundle data
-    bundle_df = loader.load_bundle_recommendations()
-    if not bundle_df.empty and lob in bundle_df.get('lob', []).values:
-        optimizer = BundleOptimizer(store, gap_size=2.0, bundle_data=bundle_df)
-    else:
-        optimizer = ProductOptimizer(store, gap_size=1.0, strategy=strategy)
-    
-    optimizer.products_placed = []
-    result = optimizer.create_planogram(products)
-    
-    # Generate multiple planograms using the original, complete product list for this LOB.
-    # This ensures we have full diversity for our arrangement logic, instead of the optimizer's culled list.
-    generate_multiple_planograms(products, result, store, store_type, strategy, lob, logger)
+        logger.error(f"No products found for LOB '{lob}'. Exiting.")
+        print(f"Error: No products found for LOB '{lob}'.")
+        return
+
+    # Load the specified store template
+    store_template = loader.load_store_template(store_type)
+    if not store_template:
+        logger.error(f"Could not load store template '{store_type}'. Exiting.")
+        print(f"Error: Could not load store template '{store_type}'.")
+        return
+
+    # Create the clean planogram
+    try:
+        create_clean_planogram(products, store_template, lob)
+        logger.info(f"Successfully generated clean planogram for {lob} at {store_type}.")
+    except Exception as e:
+        logger.error(f"Failed to create clean planogram: {e}", exc_info=True)
+        print(f"An error occurred during planogram generation: {e}")
 
 def run_direct_full_optimization(loader, logger, store_type, strategy):
     """Direct full store optimization from command line"""
