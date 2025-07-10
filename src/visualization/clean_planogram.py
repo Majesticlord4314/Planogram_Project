@@ -27,7 +27,8 @@ def create_clean_planogram(result: OptimizationResult,
                           product_lookup: Dict[str, Product],
                           title: str = "Clean Planogram",
                           save_path: Optional[str] = None,
-                          figsize: Tuple[int, int] = (16, 12)) -> plt.Figure:
+                          figsize: Tuple[int, int] = (16, 12),
+                          products_list: Optional[List[Product]] = None) -> plt.Figure:
     """Create a clean, modern planogram visualization"""
     from src.utils.logger import get_logger
     logger = get_logger()
@@ -37,13 +38,18 @@ def create_clean_planogram(result: OptimizationResult,
     fig, ax = plt.subplots(figsize=figsize)
     ax.set_facecolor('#FFFFFF')
     
-    # Get all placed products
-    all_products = []
-    for shelf in result.store.shelves:
-        for position in shelf.positions:
-            if position.product_id in product_lookup:
-                product = product_lookup[position.product_id]
-                all_products.append((product, position.facings))
+    # Get products to visualize
+    if products_list is not None and len(products_list) > 0:
+        # Use provided list directly (default 1 facing each)
+        all_products = [(p, 1) for p in products_list]
+    else:
+        # Fallback to products actually placed on shelves
+        all_products = []
+        for shelf in result.store.shelves:
+            for position in shelf.positions:
+                if position.product_id in product_lookup:
+                    product = product_lookup[position.product_id]
+                    all_products.append((product, position.facings))
     
     if not all_products:
         logger.debug("No products found, returning early")
@@ -83,8 +89,20 @@ def create_clean_planogram(result: OptimizationResult,
     
     # Arrange Apple and TPA sections with new logic
     arranged = []
-    arranged_apple = arrange_section(apple_products, apple_slots, cols, group_clear_columnwise=True)
-    arranged_tpa = arrange_section(tpa_products, tpa_slots, cols, group_clear_columnwise=True, group_by_brand=True)
+    # For iPad cases we skip clear-case priority; detect by checking any product series contains 'ipad'
+    apple_series_lower = [getattr(p[0], 'series', '').lower() for p in apple_products]
+    is_ipad_context = any('ipad' in s for s in apple_series_lower)
+    arranged_apple = arrange_section(
+        apple_products,
+        apple_slots,
+        cols,
+        group_clear_columnwise=not is_ipad_context,
+        color_rowwise=True
+    )
+    priority_brands = ['Pulse', 'Tekne', 'Gripp']
+    priority_lower = [b.lower() for b in priority_brands]
+    tpa_products_priority = [p for p in tpa_products if getattr(p[0], 'brand', '').lower() in priority_lower]
+    arranged_tpa = arrange_section(tpa_products_priority, tpa_slots, cols, group_clear_columnwise=False, group_by_brand=True, priority_brands=priority_brands, brand_columnwise=True)
     arranged += arranged_apple
     arranged += arranged_tpa
 
