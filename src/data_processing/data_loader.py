@@ -76,7 +76,30 @@ class DataLoader:
                 print(f"Error loading iPad cases file: {e}")
                 return []
 
-        # --- General handling for other LOBs (iPhone, etc.) ---
+        # --- Special handling for iPhone ---
+        if lob_lower == 'iphone':
+            try:
+                iphone_file = self.accessories_path / 'cases_sales.csv'
+                if not iphone_file.exists():
+                    print("Warning: cases_sales.csv not found.")
+                    return []
+                
+                df_iphone = pd.read_csv(iphone_file)
+                df_iphone.columns = df_iphone.columns.str.strip()
+                df_iphone = df_iphone.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+                
+                iphone_products = self._dataframe_to_products(df_iphone)
+                
+                if series_filter:
+                    iphone_products = [p for p in iphone_products if series_filter.lower() in p.series.lower()]
+                
+                print(f"Loaded {len(iphone_products)} iPhone products exclusively from cases_sales.csv")
+                return iphone_products
+            except Exception as e:
+                print(f"Error loading iPhone cases file: {e}")
+                return []
+
+        # --- General handling for other LOBs ---
         for category in ['cases', 'cables', 'screen_protectors', 'others']:
             try:
                 products = self.load_products_by_category(category)

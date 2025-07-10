@@ -27,7 +27,7 @@ def extract_color_from_name(name):
     return ''
 
 def create_clean_planogram(products: List[Product], store_template: 'Store', lob: str, figsize: Tuple[int, int] = (16, 12)) -> plt.Figure:
-    """Create a clean, modern planogram visualization with two separate planograms for iPad series split."""
+    """Create a clean, modern planogram visualization with two separate planograms for iPad/iPhone series split."""
     from src.utils.logger import get_logger
     logger = get_logger()
     logger.info(f"Generating clean planogram for LOB '{lob}' with store '{store_template.store_name}'.")
@@ -62,26 +62,65 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
     # Fixed layout: 3 columns, realistic shelf capacity
     cols = 3
     
-    # Split Apple products into two groups for two planograms
-    # Part 1: Pro & Air series only
-    pro_air_products = []
-    # Part 2: Mini & Base series only  
-    mini_base_products = []
+    # Determine layout based on store template
+    if store_template.store_type.lower() == 'flagship':
+        # Flagship stores get more space
+        apple_rows = 4
+        tpa_rows = 4
+    elif store_template.store_type.lower() == 'standard':
+        # Standard stores get medium space
+        apple_rows = 3
+        tpa_rows = 3
+    else:  # Express stores
+        # Express stores get compact space
+        apple_rows = 2
+        tpa_rows = 2
     
-    for prod_tuple in apple_products:
-        product = prod_tuple[0]
-        series = getattr(product, 'series', '').lower()
+    # Split Apple products into two groups for two planograms based on LOB
+    if lob.lower() == 'ipad':
+        # iPad series split: Pro & Air vs Mini & Base
+        part1_products = []
+        part2_products = []
         
-        if 'pro' in series or 'air' in series:
-            pro_air_products.append(prod_tuple)
-        elif 'mini' in series or 'base' in series:
-            mini_base_products.append(prod_tuple)
-    
-    # Ensure we have products for both parts - use best selling if needed
-    if not pro_air_products:
-        pro_air_products = apple_products[:9]  # Take best selling if no specific series found
-    if not mini_base_products:
-        mini_base_products = apple_products[:9]  # Take best selling if no specific series found
+        for prod_tuple in apple_products:
+            product = prod_tuple[0]
+            series = getattr(product, 'series', '').lower()
+            
+            if 'pro' in series or 'air' in series:
+                part1_products.append(prod_tuple)
+            elif 'mini' in series or 'base' in series:
+                part2_products.append(prod_tuple)
+        
+        # Ensure we have products for both parts
+        if not part1_products:
+            part1_products = apple_products[:apple_rows * cols]
+        if not part2_products:
+            part2_products = apple_products[:apple_rows * cols]
+            
+        part1_title = "Pro & Air"
+        part2_title = "Mini & Base"
+        part1_filter = ["pro", "air"]
+        part2_filter = ["mini", "base"]
+        
+    elif lob.lower() == 'iphone':
+        # Use dedicated iPhone planogram system
+        from src.visualization.iphone_planogram import create_iphone_planogram
+        create_iphone_planogram([p[0] for p in all_products], store_template)
+        # Create dummy figure to return
+        fig, ax = plt.subplots(figsize=figsize)
+        ax.text(0.5, 0.5, 'iPhone planograms generated successfully', ha='center', va='center', transform=ax.transAxes, fontsize=16)
+        ax.axis('off')
+        return fig
+        
+    else:
+        # Default fallback for other LOBs
+        mid_point = len(apple_products) // 2
+        part1_products = apple_products[:mid_point]
+        part2_products = apple_products[mid_point:]
+        part1_title = "Series 1"
+        part2_title = "Series 2"
+        part1_filter = []
+        part2_filter = []
 
     def arrange_products_columnwise(products_list, total_slots, cols, rows):
         """Arrange products column-wise to create symmetrical layout"""
@@ -111,17 +150,15 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
         return grid
     
     # Function to create a single planogram part
-    def create_planogram_part(apple_part_products, part_title, part_num, series_filter):
-        """Create a single planogram with 3 rows Apple + 3 rows TPA (same series as Apple)"""
+    def create_planogram_part(apple_part_products, part_title, part_num, series_filter, apple_rows, tpa_rows):
+        """Create a single planogram with adaptive rows based on store template"""
         
-        # Layout: 3 rows for the specific Apple series + 3 rows for TPA same series
-        apple_rows = 3
-        tpa_rows = 3  # TPA section will contain same series as Apple section
+        # Layout: adaptive rows based on store template
         total_rows = apple_rows + tpa_rows
         
-        # Limit to realistic shelf capacity - 3 products per row
-        apple_slots = apple_rows * cols  # 9 slots for specific series
-        tpa_slots = tpa_rows * cols      # 9 slots for TPA same series
+        # Limit to realistic shelf capacity based on store template
+        apple_slots = apple_rows * cols  # slots for specific series
+        tpa_slots = tpa_rows * cols      # slots for TPA same series
         
         # Arrange Apple products column-wise for symmetry
         apple_grid = arrange_products_columnwise(apple_part_products, apple_slots, cols, apple_rows)
@@ -218,7 +255,7 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
                fontsize=10, ha='center', va='top', weight='bold')
         
         # Set title and clean up
-        ax.set_title(f'iPad Planogram - Flagship Store Template (Part {part_num})', 
+        ax.set_title(f'{lob.title()} Planogram - {store_template.store_name} (Part {part_num})', 
                     fontsize=16, weight='bold', pad=20)
         ax.set_xticks([])
         ax.set_yticks([])
@@ -238,13 +275,13 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
         
         return fig
     
-    # Create Part 1: Pro & Air rows
-    logger.info("Creating Part 1: iPad Pro & Air series")
-    create_planogram_part(pro_air_products, "Pro & Air", 1, ["pro", "air"])
+    # Create Part 1
+    logger.info(f"Creating Part 1: {lob.title()} {part1_title} series")
+    create_planogram_part(part1_products, part1_title, 1, part1_filter, apple_rows, tpa_rows)
     
-    # Create Part 2: Mini & Base rows  
-    logger.info("Creating Part 2: iPad Mini & Base series")
-    fig = create_planogram_part(mini_base_products, "Mini & Base", 2, ["mini", "base"])
+    # Create Part 2
+    logger.info(f"Creating Part 2: {lob.title()} {part2_title} series")
+    fig = create_planogram_part(part2_products, part2_title, 2, part2_filter, apple_rows, tpa_rows)
     
     return fig
 

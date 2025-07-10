@@ -320,16 +320,9 @@ def run_lob_optimization(loader, logger):
     
     # Always create the clean planogram visualization
     product_lookup = {p.product_id: p for p in products}
-    # Generate a single clean planogram for the selected LOB and store
+    # Generate a clean planogram for the selected LOB and store
     create_clean_planogram(list(product_lookup.values()), store, lob=lob_key)
     print("Clean planogram generated and saved in output directory.")
-    
-    # Then generate multiple planograms based on iPhone sub-series and TPA-only (if LOB is iPhone)
-    if lob_key == 'iPhone':
-        print("\n" + "="*60)
-        print("GENERATING MULTIPLE PLANOGRAMS FOR iPHONE SUB-SERIES")
-        print("="*60)
-        generate_multiple_planograms(products, result, store, store_type, "sales_velocity", lob_key, logger)
 
 def run_full_store_optimization(loader, logger):
     """Run optimization for all products"""
@@ -659,85 +652,6 @@ def run_direct_category_optimization(loader, logger, category, store_type, strat
     title = f"{category.title()} - {store_type.title()} Store - {strategy.replace('_', ' ').title()}"
     visualize_and_export_results(result, products, output_name, title)
 
-def generate_multiple_planograms(products, result, store, store_type, strategy, lob, logger):
-    """Generate multiple planograms based on iPhone sub-series and store type requirements"""
-    from src.optimization.bundle_optimizer import BundleOptimizer
-    from src.optimization.product_optimizer import ProductOptimizer
-    
-    # Separate Apple and Third-party products
-    apple_products = [p for p in products if getattr(p, 'brand', '').lower() == 'apple']
-    tpa_products_raw = [p for p in products if getattr(p, 'brand', '').lower() != 'apple']
-
-    # Prioritise key TPA brands (Pulse, Tekne, Gripp) but still include the rest if slots remain
-    primary_brands = {"pulse", "tekne", "gripp"}
-    primary_tpa = [p for p in tpa_products_raw if getattr(p, 'brand', '').lower() in primary_brands]
-    secondary_tpa = [p for p in tpa_products_raw if getattr(p, 'brand', '').lower() not in primary_brands]
-    # Keep order deterministic (sales_velocity descending assumed already from upstream sort)
-    tpa_products = primary_tpa + secondary_tpa
-
-    # ------------------------------------------------------------------
-    # Consolidated (Apple+TPA) + TPA-only planograms for every store type
-    # ------------------------------------------------------------------
-    logger.info(f"Generating consolidated planogram for {lob} LOB…")
-    generate_single_planogram(apple_products, tpa_products, result, store, store_type,
-                              strategy, lob, f"{lob}_consolidated", logger)
-
-    logger.info("Generating TPA-only planogram…")
-    generate_tpa_only_planogram(tpa_products, result, store, store_type, strategy, lob, logger)
-
-    # --------------------------------------------------------------
-    # Additional sub-series specific planograms (Flagship requirement)
-    # --------------------------------------------------------------
-    if store_type.lower() == "flagship":
-        # Detect sub-series under iPhone 16 (Pro Max, Pro, Plus, Standard)
-        subseries_map = {
-            "pro max": "Pro_Max",
-            "pro": "Pro",
-            "plus": "Plus",
-            # Anything else treated as standard/base
-        }
-        # Pre-compute for speed
-        apple_lower = [(p, getattr(p, 'series', '').lower()) for p in apple_products]
-        for key_phrase, suffix in subseries_map.items():
-            sub_apple = [p for (p, s) in apple_lower if "iphone 16" in s and key_phrase in s]
-            if not sub_apple:
-                continue  # Skip if no products
-            output_suffix = f"iPhone16_{suffix}"
-            logger.info(f"Generating sub-series planogram: {output_suffix} …")
-            generate_single_planogram(sub_apple, tpa_products, result, store, store_type,
-                                      strategy, lob, output_suffix, logger)
-        # Fallback for standard/base (products that didn't match any of the above)
-        base_apple = [p for (p, s) in apple_lower if "iphone 16" in s and not any(k in s for k in subseries_map)]
-        if base_apple:
-            logger.info("Generating sub-series planogram: iPhone16_Base …")
-            generate_single_planogram(base_apple, tpa_products, result, store, store_type,
-                                      strategy, lob, "iPhone16_Base", logger)
-
-    # For express/standard stores, two planograms (already consolidated + TPA-only) are sufficient
-
-def generate_single_planogram(apple_products, tpa_products, result, store, store_type, strategy, lob, output_suffix, logger):
-    """Generate a single planogram with specific Apple products and TPA products"""
-    # Combine products for this planogram, preserving the order from the calling function
-    planogram_products = apple_products + tpa_products
-    
-    # Generate visualization
-    output_name = f"{lob}_{output_suffix}_{strategy}"
-    title = f"{lob} - {output_suffix.replace('_', ' ').title()} - {strategy.replace('_', ' ').title()}"
-    visualize_and_export_results(result, planogram_products, output_name, title)
-
-def generate_tpa_only_planogram(tpa_products, result, store, store_type, strategy, lob, logger):
-    """Generate TPA-only planogram organized by sub-series"""
-    from src.optimization.product_optimizer import ProductOptimizer
-    
-    if not tpa_products:
-        logger.info("No TPA products found for TPA-only planogram")
-        return
-        
-    # Generate visualization for TPA-only planogram
-    # We use the original result for context but the filtered tpa_products for the actual planogram
-    output_name = f"{lob}_TPA_only_{store_type}_{strategy}"
-    title = f"TPA Only - {store_type.title()} Store - {strategy.replace('_', ' ').title()}"
-    visualize_and_export_results(result, tpa_products, output_name, title)
 
 def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
     """Direct LOB optimization from command line. This is now streamlined to only generate the clean planogram."""

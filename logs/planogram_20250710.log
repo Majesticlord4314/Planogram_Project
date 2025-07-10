@@ -1488,3 +1488,186 @@ TypeError: 'Product' object is not subscriptable
 2025-07-10 14:24:32,214 | INFO     | clean_planogram | create_clean_planogram | Creating Part 2: iPad Mini & Base series
 2025-07-10 14:24:32,695 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 2 to output/iPad_Flagship_Store_Template_planogram_part2.png
 2025-07-10 14:24:32,695 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPad at flagship.
+2025-07-10 14:40:54,017 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:40:54,017 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:40:54,017 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-10 14:40:54,035 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 14:40:54,035 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:40:54,035 | INFO     | clean_planogram | create_clean_planogram | Creating Part 1: Iphone Pro & Pro Max series
+2025-07-10 14:40:54,543 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 1 to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 14:40:54,543 | INFO     | clean_planogram | create_clean_planogram | Creating Part 2: Iphone Plus & Base series
+2025-07-10 14:40:55,019 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 2 to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 14:40:55,019 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-10 14:41:01,678 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:41:01,678 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:41:01,678 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-10 14:41:01,697 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-10 14:41:01,698 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:41:01,698 | INFO     | clean_planogram | create_clean_planogram | Creating Part 1: Iphone Pro & Pro Max series
+2025-07-10 14:41:02,156 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 1 to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-10 14:41:02,156 | INFO     | clean_planogram | create_clean_planogram | Creating Part 2: Iphone Plus & Base series
+2025-07-10 14:41:02,549 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 2 to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-10 14:41:02,550 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at standard.
+2025-07-10 14:41:08,665 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:41:08,665 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:41:08,665 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: express
+2025-07-10 14:41:08,692 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-10 14:41:08,692 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:41:08,692 | INFO     | clean_planogram | create_clean_planogram | Creating Part 1: Iphone Pro & Pro Max series
+2025-07-10 14:41:09,100 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 1 to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-10 14:41:09,101 | INFO     | clean_planogram | create_clean_planogram | Creating Part 2: Iphone Plus & Base series
+2025-07-10 14:41:09,439 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 2 to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-10 14:41:09,439 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
+2025-07-10 14:50:44,372 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:50:44,372 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:50:44,372 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-10 14:50:44,394 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 14:50:44,394 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:50:44,398 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 14:50:44,398 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:50:44,398 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:50:44,398 | ERROR    | main            | run_direct_lob_optimization | Failed to create clean planogram: name 'get_logger' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 676, in run_direct_lob_optimization
+    create_clean_planogram(products, store_template, lob)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\visualization\clean_planogram.py", line 108, in create_clean_planogram
+    create_iphone_planogram([p[0] for p in all_products], store_template)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\visualization\iphone_planogram.py", line 74, in create_iphone_planogram
+    create_flagship_series_planograms(apple_products, tpa_products, store_template, cols, figsize)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\visualization\iphone_planogram.py", line 90, in create_flagship_series_planograms
+    logger = get_logger()
+             ^^^^^^^^^^
+NameError: name 'get_logger' is not defined
+2025-07-10 14:51:19,960 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:51:19,960 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:51:19,960 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-10 14:51:19,980 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 14:51:19,980 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:51:19,985 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 14:51:19,985 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:51:19,985 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:51:19,985 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-10 14:51:20,649 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-10 14:51:20,650 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-10 14:51:21,249 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-10 14:51:21,249 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-10 14:51:21,829 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-10 14:51:21,829 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-10 14:51:22,417 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-10 14:51:22,417 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:51:23,034 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 14:51:23,034 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:51:23,639 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 14:51:23,643 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-10 14:51:31,346 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:51:31,346 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:51:31,346 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-10 14:51:31,368 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-10 14:51:31,368 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:51:31,368 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-10 14:51:31,368 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:51:31,368 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:51:31,369 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:51:32,042 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-10 14:51:32,042 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:51:32,680 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-10 14:51:32,683 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at standard.
+2025-07-10 14:51:39,372 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:51:39,372 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:51:39,372 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: express
+2025-07-10 14:51:39,391 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-10 14:51:39,391 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:51:39,392 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-10 14:51:39,392 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:51:39,392 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:51:39,392 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:51:39,922 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-10 14:51:39,922 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:51:40,451 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-10 14:51:40,456 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
+2025-07-10 14:52:19,560 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:52:19,560 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:52:19,560 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-10 14:52:19,578 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-10 14:52:19,578 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:52:19,583 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-10 14:52:19,583 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:52:19,583 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:52:19,583 | ERROR    | main            | run_direct_lob_optimization | Failed to create clean planogram: 'ProductCategory' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 676, in run_direct_lob_optimization
+    create_clean_planogram(products, store_template, lob)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\visualization\clean_planogram.py", line 108, in create_clean_planogram
+    create_iphone_planogram([p[0] for p in all_products], store_template)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\visualization\iphone_planogram.py", line 79, in create_iphone_planogram
+    screen_protector_products = [p for p in all_products if 'screen_protector' in getattr(p[0], 'category', '').lower()]
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProductCategory' object has no attribute 'lower'
+2025-07-10 14:52:36,384 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:52:36,384 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:52:36,384 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-10 14:52:36,405 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-10 14:52:36,405 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:52:36,409 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-10 14:52:36,410 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:52:36,410 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:52:36,410 | INFO     | iphone_planogram | create_iphone_planogram | Added 28 screen protector products for standard store
+2025-07-10 14:52:36,410 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:52:37,079 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-10 14:52:37,079 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:52:37,791 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-10 14:52:37,795 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at standard.
+2025-07-10 14:54:40,204 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:54:40,204 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:54:40,204 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-10 14:54:40,231 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 14:54:40,231 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:54:40,231 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 14:54:40,231 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:54:40,231 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:54:40,231 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-10 14:54:40,803 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-10 14:54:40,803 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-10 14:54:41,424 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-10 14:54:41,426 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-10 14:54:41,984 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-10 14:54:41,984 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-10 14:54:42,582 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-10 14:54:42,582 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:54:43,192 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 14:54:43,192 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:54:43,784 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 14:54:43,788 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-10 14:54:52,199 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:54:52,199 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:54:52,199 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-10 14:54:52,219 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-10 14:54:52,219 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:54:52,220 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-10 14:54:52,220 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:54:52,220 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:54:52,220 | INFO     | iphone_planogram | create_iphone_planogram | Added 28 screen protector products for standard store
+2025-07-10 14:54:52,220 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:54:52,896 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-10 14:54:52,896 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:54:53,543 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-10 14:54:53,547 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at standard.
+2025-07-10 14:55:00,597 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 14:55:00,597 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 14:55:00,597 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: express
+2025-07-10 14:55:00,618 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-10 14:55:00,618 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 14:55:00,618 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-10 14:55:00,619 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 14:55:00,619 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 14:55:00,619 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 14:55:01,150 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-10 14:55:01,150 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 14:55:01,678 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-10 14:55:01,682 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
+2025-07-10 14:58:54,254 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
