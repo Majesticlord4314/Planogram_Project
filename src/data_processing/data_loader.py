@@ -99,6 +99,49 @@ class DataLoader:
                 print(f"Error loading iPhone cases file: {e}")
                 return []
 
+        # --- Special handling for Watch ---
+        if lob_lower == 'watch':
+            try:
+                watch_file = self.accessories_path / 'combined_watch.csv'
+                if not watch_file.exists():
+                    print("Warning: combined_watch.csv not found.")
+                    return []
+                
+                df_watch = pd.read_csv(watch_file)
+                df_watch.columns = df_watch.columns.str.strip()
+                df_watch = df_watch.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+                
+                watch_products = self._dataframe_to_watch_products(df_watch)
+                
+                print(f"Loaded {len(watch_products)} Watch products exclusively from combined_watch.csv")
+                return watch_products
+            except Exception as e:
+                print(f"Error loading Watch file: {e}")
+                return []
+
+        # --- Special handling for Mac ---
+        if lob_lower == 'mac':
+            try:
+                mac_file = self.accessories_path / 'mac-accessories-transformed.csv'
+                if not mac_file.exists():
+                    print("Warning: mac-accessories-transformed.csv not found.")
+                    return []
+                
+                df_mac = pd.read_csv(mac_file)
+                df_mac.columns = df_mac.columns.str.strip()
+                df_mac = df_mac.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+                
+                mac_products = self._dataframe_to_products(df_mac)
+                
+                if series_filter:
+                    mac_products = [p for p in mac_products if series_filter.lower() in p.series.lower()]
+                
+                print(f"Loaded {len(mac_products)} Mac products exclusively from mac-accessories-transformed.csv")
+                return mac_products
+            except Exception as e:
+                print(f"Error loading Mac accessories file: {e}")
+                return []
+
         # --- General handling for other LOBs ---
         for category in ['cases', 'cables', 'screen_protectors', 'others']:
             try:
@@ -289,6 +332,61 @@ class DataLoader:
                     p.sales_velocity = (p.total_qty / max_qty) * 100  # Normalize to 0-100
                     
         return products
+    
+    def _dataframe_to_watch_products(self, df: pd.DataFrame) -> List[Product]:
+        """Convert watch DataFrame to list of Product objects"""
+        products = []
+        
+        for _, row in df.iterrows():
+            try:
+                # Map category string to enum for watch products
+                cat_enum = self._map_watch_category(row['category'])
+                
+                # Handle optional subcategory
+                subcategory = str(row['subcategory']) if pd.notna(row['subcategory']) else ''
+                
+                # Create fake series for watch products (use subcategory as series)
+                series = subcategory if subcategory else 'Apple Watch'
+                
+                product = Product(
+                    product_name=str(row['product_name']).strip(),
+                    series=series,
+                    category=cat_enum,
+                    subcategory=subcategory,
+                    brand=str(row['brand']),
+                    width=float(row['width']),
+                    height=float(row['height']),
+                    depth=float(row['depth']),
+                    pureqty=float(row['frequency']) if pd.notna(row['frequency']) else 0.0,
+                    impureqty=0.0,  # No impureqty for watch data
+                    core_product='Watch'  # All watch products
+                )
+                products.append(product)
+                
+            except Exception as e:
+                print(f"Error loading watch product {row.get('product_name', 'unknown')}: {e}")
+                continue
+                
+        # Normalize sales velocity across all products
+        if products:
+            max_qty = max(p.total_qty for p in products)
+            if max_qty > 0:
+                for p in products:
+                    p.sales_velocity = (p.total_qty / max_qty) * 100  # Normalize to 0-100
+                     
+        return products
+    
+    def _map_watch_category(self, category_str: str) -> ProductCategory:
+        """Map watch category string to enum"""
+        mapping = {
+            'straps': ProductCategory.OTHER,  # Use OTHER for watch straps
+            'watch glass': ProductCategory.SCREEN_PROTECTOR,
+            'cables & adapters': ProductCategory.CABLE,
+            'chargers & docks': ProductCategory.CHARGER,
+        }
+        
+        category_lower = category_str.lower().strip()
+        return mapping.get(category_lower, ProductCategory.OTHER)
     
     def _map_category(self, category_str: str) -> ProductCategory:
         """Map string category to enum"""

@@ -1,0 +1,731 @@
+2025-07-14 10:09:03,707 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:09:03,708 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-14 10:09:03,708 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-14 10:09:03,802 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-14 10:09:03,802 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-14 10:09:03,819 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-14 10:09:03,820 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-14 10:09:03,820 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-14 10:09:03,821 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-14 10:09:05,387 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-14 10:09:05,389 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-14 10:09:07,098 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-14 10:09:07,098 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-14 10:09:08,523 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-14 10:09:08,524 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-14 10:09:09,963 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-14 10:09:09,963 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-14 10:09:11,226 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-14 10:09:11,227 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-14 10:09:12,590 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-14 10:09:12,597 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-14 10:09:24,866 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:09:24,866 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-14 10:09:24,867 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: standard
+2025-07-14 10:09:24,914 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-14 10:09:24,914 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-14 10:09:24,915 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-14 10:09:24,916 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-14 10:09:24,916 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-14 10:09:24,917 | INFO     | iphone_planogram | create_iphone_planogram | Added 28 screen protector products for standard store
+2025-07-14 10:09:24,917 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-14 10:09:25,997 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-14 10:09:25,997 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-14 10:09:26,898 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-14 10:09:26,905 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at standard.
+2025-07-14 10:09:34,708 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:09:34,708 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-14 10:09:34,709 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: express
+2025-07-14 10:09:34,767 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-14 10:09:34,767 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-14 10:09:34,768 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-14 10:09:34,769 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-14 10:09:34,769 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-14 10:09:34,770 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-14 10:09:35,862 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-14 10:09:35,863 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-14 10:09:37,007 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-14 10:09:37,021 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
+2025-07-14 10:15:35,789 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:26:45,076 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:26:45,076 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:26:45,077 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: flagship
+2025-07-14 10:26:45,107 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Flagship Store Template'.
+2025-07-14 10:26:45,107 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:26:45,114 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Flagship Store Template'.
+2025-07-14 10:26:45,138 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:26:45,138 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:26:47,142 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Flagship_Store_Template_planogram.png
+2025-07-14 10:26:47,153 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at flagship.
+2025-07-14 10:26:56,156 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:26:56,156 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:26:56,156 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: standard
+2025-07-14 10:26:56,182 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Standard Store Template'.
+2025-07-14 10:26:56,183 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:26:56,184 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Standard Store Template'.
+2025-07-14 10:26:56,208 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:26:56,209 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:26:58,061 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Standard_Store_Template_planogram.png
+2025-07-14 10:26:58,071 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at standard.
+2025-07-14 10:27:06,286 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:27:06,287 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:27:06,288 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: express
+2025-07-14 10:27:06,330 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Express Store Template'.
+2025-07-14 10:27:06,331 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:27:06,332 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Express Store Template'.
+2025-07-14 10:27:06,360 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:27:06,361 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:27:08,412 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Express_Store_Template_planogram.png
+2025-07-14 10:27:08,421 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at express.
+2025-07-14 10:29:31,245 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:29:31,246 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:29:31,246 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: flagship
+2025-07-14 10:29:31,310 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Flagship Store Template'.
+2025-07-14 10:29:31,310 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:29:31,320 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Flagship Store Template'.
+2025-07-14 10:29:31,376 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:29:31,376 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:29:34,029 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Flagship_Store_Template_planogram.png
+2025-07-14 10:29:34,045 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at flagship.
+2025-07-14 10:29:45,709 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:29:45,710 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:29:45,710 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: standard
+2025-07-14 10:29:45,898 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Standard Store Template'.
+2025-07-14 10:29:45,901 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:29:45,945 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Standard Store Template'.
+2025-07-14 10:29:46,294 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:29:46,375 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:29:49,651 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Standard_Store_Template_planogram.png
+2025-07-14 10:29:49,677 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at standard.
+2025-07-14 10:30:04,518 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:30:04,523 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:30:04,524 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: express
+2025-07-14 10:30:04,666 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Express Store Template'.
+2025-07-14 10:30:04,676 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:30:04,689 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Express Store Template'.
+2025-07-14 10:30:04,818 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:30:04,826 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:30:09,147 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Express_Store_Template_planogram.png
+2025-07-14 10:30:09,193 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at express.
+2025-07-14 10:34:14,203 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:34:14,203 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:34:14,203 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: flagship
+2025-07-14 10:34:14,238 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Flagship Store Template'.
+2025-07-14 10:34:14,238 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:34:14,246 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Flagship Store Template'.
+2025-07-14 10:34:14,279 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:34:14,279 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:34:16,721 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Flagship_Store_Template_planogram.png
+2025-07-14 10:34:16,733 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at flagship.
+2025-07-14 10:34:25,283 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:34:25,284 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:34:25,284 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: standard
+2025-07-14 10:34:25,318 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Standard Store Template'.
+2025-07-14 10:34:25,319 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:34:25,320 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Standard Store Template'.
+2025-07-14 10:34:25,352 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:34:25,353 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:34:27,158 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Standard_Store_Template_planogram.png
+2025-07-14 10:34:27,171 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at standard.
+2025-07-14 10:34:37,946 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 10:34:37,947 | INFO     | main            | main                 | Running LOB optimization: Watch
+2025-07-14 10:34:37,947 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Watch, Store: express
+2025-07-14 10:34:37,984 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Watch' with store 'Express Store Template'.
+2025-07-14 10:34:37,984 | INFO     | clean_planogram | create_clean_planogram | Found 207 Apple products for iPad planogram generation.
+2025-07-14 10:34:37,985 | INFO     | watch_planogram | create_watch_planogram | Generating Apple Watch planogram for store 'Express Store Template'.
+2025-07-14 10:34:38,035 | INFO     | watch_planogram | create_watch_planogram | Loaded 314 watch products from combined_watch.csv
+2025-07-14 10:34:38,035 | INFO     | watch_planogram | create_watch_planogram | Found 207 Apple and 107 TPA watch products.
+2025-07-14 10:34:40,558 | INFO     | watch_planogram | create_watch_planogram_visual | Saved Apple Watch planogram to output/Watch_Express_Store_Template_planogram.png
+2025-07-14 10:34:40,574 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Watch at express.
+2025-07-14 11:51:23,028 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:51:27,595 | INFO     | main            | run_lob_optimization | Loading Mac Accessories...
+2025-07-14 11:51:27,623 | INFO     | main            | run_lob_optimization | Loaded 0 products for Mac Accessories
+2025-07-14 11:56:45,077 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:56:45,077 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 11:56:45,077 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 11:56:45,107 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 11:56:45,107 | WARNING  | clean_planogram | create_clean_planogram | No Apple products found. Cannot create iPad planogram.
+2025-07-14 11:56:45,126 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 11:57:32,283 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:57:32,283 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 11:57:32,283 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 11:57:32,317 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 11:57:32,317 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 11:57:32,323 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms...
+2025-07-14 11:57:33,601 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 11:57:35,298 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_accessories_flagship.png
+2025-07-14 11:57:35,298 | INFO     | mac_planogram   | create_mac_planogram | Successfully created both Mac planograms
+2025-07-14 11:57:35,298 | ERROR    | mac_planogram   | create_mac_planogram | Error creating Mac planograms: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-14 11:58:08,000 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:58:08,000 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 11:58:08,000 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 11:58:08,035 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 11:58:08,035 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 11:58:08,041 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms...
+2025-07-14 11:58:09,586 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 11:58:11,499 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_accessories_standard.png
+2025-07-14 11:58:11,499 | INFO     | mac_planogram   | create_mac_planogram | Successfully created both Mac planograms
+2025-07-14 11:58:11,510 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 11:58:19,960 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:58:19,961 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 11:58:19,961 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: express
+2025-07-14 11:58:20,004 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Express Store Template'.
+2025-07-14 11:58:20,005 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 11:58:20,006 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms...
+2025-07-14 11:58:21,446 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_sleeves_bags_express.png
+2025-07-14 11:58:23,222 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_accessories_express.png
+2025-07-14 11:58:23,222 | INFO     | mac_planogram   | create_mac_planogram | Successfully created both Mac planograms
+2025-07-14 11:58:23,238 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at express.
+2025-07-14 11:58:43,566 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:59:32,847 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 11:59:36,069 | INFO     | main            | run_lob_optimization | Loading Mac Accessories...
+2025-07-14 11:59:36,099 | INFO     | main            | run_lob_optimization | Loaded 254 products for Mac Accessories
+2025-07-14 11:59:36,131 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-14 11:59:36,139 | INFO     | main            | run_lob_optimization | Loaded 29 bundle recommendations
+2025-07-14 11:59:36,155 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-14 11:59:36,155 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 131 products
+2025-07-14 11:59:36,158 | INFO     | base_optimizer  | create_planogram     | After store filtering: 131 products
+2025-07-14 11:59:36,158 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-14 11:59:36,161 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-14 11:59:36,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-14 11:59:36,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 1: 3 facings, 24.0cm wide at position 19.0cm
+2025-07-14 11:59:36,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 100 ml on Apple Premium Row 1: 3 facings, 15.0cm wide at position 45.0cm
+2025-07-14 11:59:36,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml doesn't fit on shelf Apple Premium Row 1: need 69.0cm, have 67.0cm
+2025-07-14 11:59:36,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml on Apple Premium Row 2: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-14 11:59:36,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 8221 black Laptop bag 13 3 / 6 on Apple Premium Row 3: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-14 11:59:36,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE essential USB-C Hub doesn't fit on shelf Apple Premium Row 1: need 72.2cm, have 67.0cm
+2025-07-14 11:59:36,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Apple Premium Row 4: 1 facings, 8.2cm wide at position 2.0cm
+2025-07-14 11:59:36,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Third Party Row 1: 1 facings, 6.0cm wide at position 2.0cm
+2025-07-14 11:59:36,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION STOW MACBOOK CASE FABRIC SLATE 13 on Third Party Row 2: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-14 11:59:36,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION  STOW MACBOOK CASE FABRIC INDIGO 13 on Third Party Row 3: 2 facings, 60.0cm wide at position 2.0cm
+2025-07-14 11:59:36,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Third Party Row 4: 2 facings, 20.4cm wide at position 2.0cm
+2025-07-14 11:59:36,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 2 facings, 12.0cm wide at position 10.0cm
+2025-07-14 11:59:36,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Apple Premium Row 4: 1 facings, 30.0cm wide at position 12.2cm
+2025-07-14 11:59:36,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Belkin-6-OUTLET SURGE PROTECTOR  2 METER CORD on Third Party Row 1: 2 facings, 12.0cm wide at position 24.0cm
+2025-07-14 11:59:36,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed MOFT logo debossed only laptop stand fits up to 15.6 laptops - Space Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 19.0cm
+2025-07-14 11:59:36,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Black on Third Party Row 4: 1 facings, 30.0cm wide at position 24.4cm
+2025-07-14 11:59:36,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Brown on Apple Premium Row 3: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-14 11:59:36,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12 on Third Party Row 2: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-14 11:59:36,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Riser Laptop Stand - Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 36.0cm
+2025-07-14 11:59:36,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve-Blue Ultrabooks   Macbooks 13 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Frost doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve Ultrabooks   Macbooks 13 -Grey doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Blue doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product RIVACASE 5120 black Laptop bag 13.3 / 12 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight on Third Party Row 1: 1 facings, 10.0cm wide at position 38.0cm
+2025-07-14 11:59:36,178 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 on Apple Premium Row 4: 1 facings, 8.0cm wide at position 44.2cm
+2025-07-14 11:59:36,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black on Third Party Row 1: 1 facings, 10.0cm wide at position 50.0cm
+2025-07-14 11:59:36,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - White doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,181 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Logitech Pebble M350s Mouse - White on Apple Premium Row 2: 1 facings, 10.0cm wide at position 53.0cm
+2025-07-14 11:59:36,181 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI on Apple Premium Row 4: 1 facings, 8.0cm wide at position 54.2cm
+2025-07-14 11:59:36,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion SWIFT 4-in-1 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion SWIFT 4-in-1 Hub on Third Party Row 4: 1 facings, 8.0cm wide at position 56.4cm
+2025-07-14 11:59:36,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin PVC C-LTG 1M  WHITE - C -Lightning Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,191 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,191 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,192 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,192 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,192 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,193 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,193 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,193 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,194 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,194 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,194 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,195 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,195 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,196 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,196 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,196 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,197 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,197 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,197 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,197 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,199 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,199 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 11:59:36,200 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 11:59:36,200 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,201 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,201 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,202 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,202 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C TO HDMI CABLE - 1M - Space Grey doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,203 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,206 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,209 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,209 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,209 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 11:59:36,210 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 11:59:36,211 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,211 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,211 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,212 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,212 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,212 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M - BLK doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,213 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M WHT doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,214 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,214 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,214 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,214 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 11:59:36,215 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,215 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,215 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,215 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,216 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,216 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product 5 Meter HDMI Gold 4K 2.0 Ethernet Ultra HD Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 11:59:36,217 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,218 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,218 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,219 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,219 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,219 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,220 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,221 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 11:59:36,221 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 11:59:36,221 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 11:59:36,221 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 24 products actually on shelves
+2025-07-14 11:59:36,223 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.07s
+2025-07-14 11:59:36,223 | INFO     | base_optimizer  | create_planogram     | Placed 24 products with 36 facings
+2025-07-14 11:59:36,223 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 11:59:36,223 | INFO     | clean_planogram | create_clean_planogram | Found 70 products for MAC planogram generation.
+2025-07-14 11:59:36,230 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms...
+2025-07-14 11:59:37,608 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 11:59:39,053 | INFO     | mac_planogram   | create_mac_planogram_from_csv | Saved Mac planogram: output\mac_accessories_flagship.png
+2025-07-14 11:59:39,053 | INFO     | mac_planogram   | create_mac_planogram | Successfully created both Mac planograms
+2025-07-14 12:06:01,014 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:06:01,014 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:06:01,015 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 12:06:01,079 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 12:06:01,079 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:06:01,102 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 12:06:06,336 | INFO     | mac_planogram   | create_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 12:06:09,451 | INFO     | mac_planogram   | create_grouped_accessories_planogram | Saved grouped accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 12:06:09,453 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 12:06:09,513 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 12:06:23,528 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:06:23,529 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:06:23,529 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 12:06:23,708 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 12:06:23,708 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:06:23,709 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for standard store...
+2025-07-14 12:06:25,518 | INFO     | mac_planogram   | create_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 12:06:26,965 | INFO     | mac_planogram   | create_grouped_accessories_planogram | Saved grouped accessories planogram: output\mac_accessories_standard.png
+2025-07-14 12:06:26,965 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for standard store
+2025-07-14 12:06:26,974 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 12:07:08,434 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:07:08,435 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:07:08,435 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: express
+2025-07-14 12:07:08,463 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Express Store Template'.
+2025-07-14 12:07:08,463 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:07:08,464 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for express store...
+2025-07-14 12:07:09,803 | INFO     | mac_planogram   | create_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_express.png
+2025-07-14 12:07:11,969 | INFO     | mac_planogram   | create_grouped_accessories_planogram | Saved grouped accessories planogram: output\mac_accessories_express.png
+2025-07-14 12:07:11,969 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for express store
+2025-07-14 12:07:11,980 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at express.
+2025-07-14 12:15:45,807 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:15:45,808 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:15:45,808 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 12:15:45,863 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 12:15:45,863 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:15:45,876 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 12:15:45,918 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:15:45,918 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:15:48,785 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 12:15:48,786 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:15:52,111 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 12:15:52,111 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 12:15:52,132 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 12:16:03,767 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:16:03,767 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:16:03,767 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 12:16:03,808 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 12:16:03,808 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:16:03,809 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for standard store...
+2025-07-14 12:16:03,827 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:16:03,828 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:16:05,835 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 12:16:05,835 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:16:07,952 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_standard.png
+2025-07-14 12:16:07,952 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for standard store
+2025-07-14 12:16:07,963 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 12:16:19,114 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:16:19,115 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:16:19,115 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: express
+2025-07-14 12:16:19,143 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Express Store Template'.
+2025-07-14 12:16:19,143 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:16:19,144 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for express store...
+2025-07-14 12:16:19,170 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:16:19,171 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:16:20,952 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_express.png
+2025-07-14 12:16:20,953 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:16:22,711 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_express.png
+2025-07-14 12:16:22,711 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for express store
+2025-07-14 12:16:22,728 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at express.
+2025-07-14 12:21:01,456 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:21:01,456 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:21:01,456 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 12:21:01,485 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 12:21:01,485 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:21:01,495 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 12:21:01,516 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:21:01,516 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:21:04,520 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 12:21:04,521 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:21:07,332 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 12:21:07,333 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 12:21:07,361 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 12:21:37,964 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:21:37,964 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:21:37,964 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 12:21:38,010 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 12:21:38,010 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:21:38,011 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for standard store...
+2025-07-14 12:21:38,051 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:21:38,051 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:21:42,928 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 12:21:42,930 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:21:47,435 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_standard.png
+2025-07-14 12:21:47,437 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for standard store
+2025-07-14 12:21:47,449 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 12:22:15,160 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:22:15,160 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:22:15,160 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: express
+2025-07-14 12:22:15,184 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Express Store Template'.
+2025-07-14 12:22:15,184 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:22:15,186 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for express store...
+2025-07-14 12:22:15,206 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:22:15,206 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:22:17,129 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_express.png
+2025-07-14 12:22:17,129 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:22:19,603 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_express.png
+2025-07-14 12:22:19,603 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for express store
+2025-07-14 12:22:19,612 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at express.
+2025-07-14 12:25:58,804 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:25:58,804 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:25:58,804 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 12:25:58,843 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 12:25:58,843 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:25:58,852 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for standard store...
+2025-07-14 12:25:58,899 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:25:58,900 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:26:01,415 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 12:26:01,416 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:26:04,009 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_standard.png
+2025-07-14 12:26:04,010 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for standard store
+2025-07-14 12:26:04,027 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 12:26:51,165 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:26:51,166 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:26:51,166 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 12:26:51,192 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 12:26:51,192 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:26:51,193 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 12:26:51,211 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:26:51,211 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:26:53,298 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 12:26:53,299 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:26:55,099 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 12:26:55,099 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 12:26:55,127 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 12:27:10,549 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:27:10,549 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:27:10,550 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: express
+2025-07-14 12:27:10,583 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Express Store Template'.
+2025-07-14 12:27:10,584 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:27:10,585 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for express store...
+2025-07-14 12:27:10,608 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:27:10,608 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:27:12,402 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_express.png
+2025-07-14 12:27:12,403 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:27:14,394 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_express.png
+2025-07-14 12:27:14,394 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for express store
+2025-07-14 12:27:14,403 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at express.
+2025-07-14 12:29:57,590 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 12:29:57,590 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 12:29:57,591 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: standard
+2025-07-14 12:29:57,623 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Standard Store Template'.
+2025-07-14 12:29:57,623 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 12:29:57,635 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for standard store...
+2025-07-14 12:29:57,670 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 12:29:57,670 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 12:29:59,541 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_standard.png
+2025-07-14 12:29:59,542 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 12:30:01,623 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_standard.png
+2025-07-14 12:30:01,623 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for standard store
+2025-07-14 12:30:01,678 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at standard.
+2025-07-14 13:08:06,959 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 13:08:06,960 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 13:08:06,960 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 13:08:06,981 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 13:08:06,981 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 13:08:06,991 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 13:08:07,011 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 13:08:07,012 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 13:08:08,320 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 13:08:08,321 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 13:08:09,639 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 13:08:09,639 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 13:08:09,654 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 13:12:11,456 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 13:12:11,456 | INFO     | main            | main                 | Running LOB optimization: Mac
+2025-07-14 13:12:11,457 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: Mac, Store: flagship
+2025-07-14 13:12:11,511 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 13:12:11,511 | INFO     | clean_planogram | create_clean_planogram | Found 254 products for MAC planogram generation.
+2025-07-14 13:12:11,534 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 13:12:11,585 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 13:12:11,586 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 13:12:13,869 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 13:12:13,871 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 13:12:16,306 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 13:12:16,307 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-14 13:12:16,332 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for Mac at flagship.
+2025-07-14 14:46:58,831 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 14:47:05,589 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-14 14:47:05,608 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-14 14:47:05,661 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-14 14:47:05,665 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-14 14:47:05,693 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-14 14:47:05,693 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-14 14:47:05,694 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-14 14:47:05,694 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-14 14:47:05,781 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-14 14:47:05,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-14 14:47:05,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-14 14:47:05,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-14 14:47:05,785 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,785 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,787 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,787 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,788 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Third Party Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-14 14:47:05,788 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Clear Magsafe Case for iPhone 15-Clear on Third Party Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,790 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Armor Magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,791 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse TANK Gradient Magsafe case for iPhone 15-Blue on Third Party Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-14 14:47:05,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-14 14:47:05,793 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-14 14:47:05,793 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Clear on Apple Premium Row 4: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-14 14:47:05,794 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Grey on Third Party Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-14 14:47:05,794 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 2: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-14 14:47:05,794 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 3: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-14 14:47:05,795 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White on Third Party Row 4: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-14 14:47:05,796 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black on Apple Premium Row 2: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-14 14:47:05,797 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black on Apple Premium Row 3: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-14 14:47:05,798 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Blue on Apple Premium Row 4: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-14 14:47:05,798 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 1: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-14 14:47:05,798 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White on Third Party Row 2: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-14 14:47:05,798 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-14 14:47:05,798 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear on Third Party Row 4: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-14 14:47:05,806 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 33 products actually on shelves
+2025-07-14 14:47:05,806 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.11s
+2025-07-14 14:47:05,806 | INFO     | base_optimizer  | create_planogram     | Placed 33 products with 40 facings
+2025-07-14 14:47:05,807 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-14 14:47:05,807 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-14 14:47:05,813 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-14 14:47:05,814 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-14 14:47:05,814 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-14 14:47:05,814 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-14 14:47:06,743 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-14 14:47:06,745 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-14 14:47:07,855 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-14 14:47:07,855 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-14 14:47:09,081 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-14 14:47:09,081 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-14 14:47:10,348 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-14 14:47:10,349 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-14 14:47:12,112 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-14 14:47:12,114 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-14 14:47:13,374 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-14 17:40:48,977 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250714.log
+2025-07-14 17:40:52,894 | INFO     | main            | run_lob_optimization | Loading Mac Accessories...
+2025-07-14 17:40:52,910 | INFO     | main            | run_lob_optimization | Loaded 254 products for Mac Accessories
+2025-07-14 17:40:52,921 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-14 17:40:52,928 | INFO     | main            | run_lob_optimization | Loaded 29 bundle recommendations
+2025-07-14 17:40:52,934 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-14 17:40:52,934 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 131 products
+2025-07-14 17:40:52,934 | INFO     | base_optimizer  | create_planogram     | After store filtering: 131 products
+2025-07-14 17:40:52,934 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-14 17:40:52,937 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-14 17:40:52,940 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-14 17:40:52,940 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 1: 3 facings, 24.0cm wide at position 19.0cm
+2025-07-14 17:40:52,941 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 100 ml on Apple Premium Row 1: 3 facings, 15.0cm wide at position 45.0cm
+2025-07-14 17:40:52,941 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml doesn't fit on shelf Apple Premium Row 1: need 69.0cm, have 67.0cm
+2025-07-14 17:40:52,942 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml on Apple Premium Row 2: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-14 17:40:52,942 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 8221 black Laptop bag 13 3 / 6 on Apple Premium Row 3: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-14 17:40:52,942 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE essential USB-C Hub doesn't fit on shelf Apple Premium Row 1: need 72.2cm, have 67.0cm
+2025-07-14 17:40:52,942 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Apple Premium Row 4: 1 facings, 8.2cm wide at position 2.0cm
+2025-07-14 17:40:52,944 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Third Party Row 1: 1 facings, 6.0cm wide at position 2.0cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION STOW MACBOOK CASE FABRIC SLATE 13 on Third Party Row 2: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION  STOW MACBOOK CASE FABRIC INDIGO 13 on Third Party Row 3: 2 facings, 60.0cm wide at position 2.0cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Third Party Row 4: 2 facings, 20.4cm wide at position 2.0cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 2 facings, 12.0cm wide at position 10.0cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Apple Premium Row 4: 1 facings, 30.0cm wide at position 12.2cm
+2025-07-14 17:40:52,945 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Belkin-6-OUTLET SURGE PROTECTOR  2 METER CORD on Third Party Row 1: 2 facings, 12.0cm wide at position 24.0cm
+2025-07-14 17:40:52,948 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed MOFT logo debossed only laptop stand fits up to 15.6 laptops - Space Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 19.0cm
+2025-07-14 17:40:52,949 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Black on Third Party Row 4: 1 facings, 30.0cm wide at position 24.4cm
+2025-07-14 17:40:52,949 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Brown on Apple Premium Row 3: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-14 17:40:52,949 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12 on Third Party Row 2: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-14 17:40:52,950 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Riser Laptop Stand - Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 36.0cm
+2025-07-14 17:40:52,951 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve-Blue Ultrabooks   Macbooks 13 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,951 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,951 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,951 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Frost doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,951 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve Ultrabooks   Macbooks 13 -Grey doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,952 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Blue doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,952 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product RIVACASE 5120 black Laptop bag 13.3 / 12 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,952 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,952 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight on Third Party Row 1: 1 facings, 10.0cm wide at position 38.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 on Apple Premium Row 4: 1 facings, 8.0cm wide at position 44.2cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black on Third Party Row 1: 1 facings, 10.0cm wide at position 50.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - White doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Logitech Pebble M350s Mouse - White on Apple Premium Row 2: 1 facings, 10.0cm wide at position 53.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI on Apple Premium Row 4: 1 facings, 8.0cm wide at position 54.2cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion SWIFT 4-in-1 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion SWIFT 4-in-1 Hub on Third Party Row 4: 1 facings, 8.0cm wide at position 56.4cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin PVC C-LTG 1M  WHITE - C -Lightning Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,953 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,956 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,957 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,959 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,960 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,960 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C TO HDMI CABLE - 1M - Space Grey doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,960 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,960 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M - BLK doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M WHT doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,961 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,966 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product 5 Meter HDMI Gold 4K 2.0 Ethernet Ultra HD Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,967 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,967 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-14 17:40:52,968 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 24 products actually on shelves
+2025-07-14 17:40:52,968 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.03s
+2025-07-14 17:40:52,968 | INFO     | base_optimizer  | create_planogram     | Placed 24 products with 36 facings
+2025-07-14 17:40:52,968 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-14 17:40:52,968 | INFO     | clean_planogram | create_clean_planogram | Found 70 products for MAC planogram generation.
+2025-07-14 17:40:52,976 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-14 17:40:53,003 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-14 17:40:53,003 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-14 17:40:53,536 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-14 17:40:53,536 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-14 17:40:54,127 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-14 17:40:54,127 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store

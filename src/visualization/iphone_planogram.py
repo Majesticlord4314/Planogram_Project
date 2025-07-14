@@ -222,21 +222,44 @@ def create_single_series_planogram(apple_part_products, tpa_products, store_temp
         # Add text labels with BLACK text for better readability
         series_label = getattr(product, 'series', 'Unknown')
         name_label = getattr(product, 'product_name', 'Unknown Product')
+        brand_name = getattr(product, 'brand', 'Unknown')
         
-        # Extract color for colored cases
-        if i < apple_slots and col > 0:
+        if i < apple_slots:  # Apple section
+            # Extract color for colored cases
+            if col == 0:  # First column - show "Clear Case"
+                display_name = "Clear Case"
+            else:  # Other columns - show color
+                color_name = extract_color_from_name(name_label)
+                display_name = color_name if color_name else "Colored Case"
+            
+            ax.text(x + product_width / 2, y + product_height * 0.75, 
+                   series_label, fontsize=7, ha='center', va='center', 
+                   color='black', weight='bold')
+            ax.text(x + product_width / 2, y + product_height * 0.35, 
+                   display_name, fontsize=6, ha='center', va='center', 
+                   color='black', linespacing=1.1)
+        else:  # TPA section - show brand and product type with color
+            # Show brand prominently and product type with color
+            product_type = "Case"
+            if "screen" in name_label.lower():
+                product_type = "Screen Protector"
+            elif "lens" in name_label.lower():
+                product_type = "Lens Protector"
+            elif "cable" in name_label.lower():
+                product_type = "Cable"
+            
+            # Extract color for TPA products
             color_name = extract_color_from_name(name_label)
+            display_text = f"{product_type}"
             if color_name:
-                name_label = color_name
-        
-        wrapped_name = '\n'.join(textwrap.wrap(name_label, width=15))
-        
-        ax.text(x + product_width / 2, y + product_height * 0.75, 
-               series_label, fontsize=7, ha='center', va='center', 
-               color='black', weight='bold')
-        ax.text(x + product_width / 2, y + product_height * 0.35, 
-               wrapped_name, fontsize=6, ha='center', va='center', 
-               color='black', linespacing=1.1)
+                display_text = f"{color_name} {product_type}"
+            
+            ax.text(x + product_width / 2, y + product_height * 0.75, 
+                   brand_name, fontsize=7, ha='center', va='center', 
+                   color='black', weight='bold')
+            ax.text(x + product_width / 2, y + product_height * 0.35, 
+                   display_text, fontsize=6, ha='center', va='center', 
+                   color='black', linespacing=1.1)
     
     # Add section divider line
     divider_y = total_height - apple_rows * product_height - (apple_rows - 0.5) * gap_y
@@ -277,7 +300,7 @@ def create_single_series_planogram(apple_part_products, tpa_products, store_temp
     plt.close(fig)
 
 def arrange_apple_products_with_clear_logic(apple_products, total_slots, cols, rows):
-    """Arrange Apple products with first column clear, rest high-selling colors"""
+    """Arrange Apple products with first column clear, rest diverse high-selling colors"""
     from itertools import cycle, islice
     
     if not apple_products:
@@ -287,34 +310,78 @@ def arrange_apple_products_with_clear_logic(apple_products, total_slots, cols, r
     clear_products = [p for p in apple_products if 'clear' in getattr(p[0], 'product_name', '').lower() or 'clear' in getattr(p[0], 'subcategory', '').lower()]
     colored_products = [p for p in apple_products if p not in clear_products]
     
-    # Sort colored by sales (total_qty)
+    # Sort colored by sales (total_qty) - best sellers first
     colored_products.sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
     
-    grid = [None] * total_slots
+    # Ensure we have products for both categories
+    if not clear_products:
+        clear_products = apple_products[:len(apple_products)//2] if len(apple_products) > 1 else apple_products
+    if not colored_products:
+        colored_products = apple_products[len(apple_products)//2:] if len(apple_products) > 1 else apple_products
     
-    # Fill first column with clear products
-    clear_cycle = cycle(clear_products) if clear_products else cycle(apple_products)
+    # Group colored products by unique colors to maximize diversity
+    color_groups = {}
+    for prod_tuple in colored_products:
+        color = extract_color_from_name(getattr(prod_tuple[0], 'product_name', ''))
+        if color not in color_groups:
+            color_groups[color] = []
+        color_groups[color].append(prod_tuple)
+    
+    # Sort each color group by sales and take the best seller for each color
+    diverse_colored_products = []
+    for color, products in color_groups.items():
+        # Sort by sales and take the best seller for this color
+        products.sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
+        diverse_colored_products.append(products[0])
+    
+    # Sort diverse colors by their best product's sales
+    diverse_colored_products.sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
+    
+    # If we need more products, add more from top selling colors
+    if len(diverse_colored_products) < cols - 1:  # -1 for clear column
+        remaining_needed = (cols - 1) - len(diverse_colored_products)
+        # Add more products from top selling colors
+        for _ in range(remaining_needed):
+            if colored_products:
+                diverse_colored_products.append(colored_products[len(diverse_colored_products) % len(colored_products)])
+    
+    grid = []
+    clear_idx = 0
+    colored_idx = 0
+    
+    # Fill row by row with clear first column logic
     for row in range(rows):
-        slot_index = row * cols  # First column of each row
-        if slot_index < total_slots:
-            grid[slot_index] = next(clear_cycle)
+        for col in range(cols):
+            if col == 0:  # First column - clear products
+                if clear_products:
+                    grid.append(clear_products[clear_idx % len(clear_products)])
+                    clear_idx += 1
+                else:
+                    grid.append(apple_products[0] if apple_products else None)
+            else:  # Other columns - diverse colored products
+                if diverse_colored_products:
+                    grid.append(diverse_colored_products[colored_idx % len(diverse_colored_products)])
+                    colored_idx += 1
+                else:
+                    grid.append(colored_products[0] if colored_products else apple_products[0] if apple_products else None)
     
-    # Fill remaining slots with high-selling colored products
-    colored_cycle = cycle(colored_products) if colored_products else cycle(apple_products)
-    for slot_index in range(total_slots):
-        if grid[slot_index] is None:  # Not filled by clear products
-            grid[slot_index] = next(colored_cycle)
+    # Ensure exact slot count and no None values
+    while len(grid) < total_slots:
+        if apple_products:
+            grid.append(apple_products[len(grid) % len(apple_products)])
+        else:
+            grid.append(None)
     
-    return grid
+    return grid[:total_slots]
 
 def arrange_tpa_products_with_diversity(tpa_products, total_slots, cols, rows):
-    """Arrange TPA products with brand diversity and better grouping"""
+    """Arrange TPA products with proper brand grouping and no blank spots"""
     from itertools import cycle, islice
     
     if not tpa_products:
         return [None] * total_slots
     
-    # Group by brand
+    # Group by brand and sort by sales within each brand
     brand_groups = {}
     for prod_tuple in tpa_products:
         brand = getattr(prod_tuple[0], 'brand', 'Unknown')
@@ -322,29 +389,46 @@ def arrange_tpa_products_with_diversity(tpa_products, total_slots, cols, rows):
             brand_groups[brand] = []
         brand_groups[brand].append(prod_tuple)
     
-    # Sort each brand group by sales
+    # Sort each brand group by sales (best sellers first)
     for brand in brand_groups:
         brand_groups[brand].sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
     
-    # Create diverse arrangement - cycle through brands
-    grid = [None] * total_slots
-    brand_names = list(brand_groups.keys())
-    brand_indices = {brand: 0 for brand in brand_names}
+    # Sort brands by their total sales (best brands first)
+    brand_totals = {}
+    for brand, products in brand_groups.items():
+        brand_totals[brand] = sum(getattr(p[0], 'total_qty', 0) for p in products)
     
-    for slot_index in range(total_slots):
-        # Cycle through brands for diversity
-        brand = brand_names[slot_index % len(brand_names)]
+    sorted_brands = sorted(brand_groups.keys(), key=lambda b: brand_totals[b], reverse=True)
+    
+    # Create brand-grouped arrangement (fill by brand blocks)
+    grid = []
+    products_per_brand = max(1, total_slots // len(sorted_brands)) if sorted_brands else total_slots
+    
+    for brand in sorted_brands:
         brand_products = brand_groups[brand]
-        
-        if brand_indices[brand] < len(brand_products):
-            grid[slot_index] = brand_products[brand_indices[brand]]
-            brand_indices[brand] += 1
-        else:
-            # If brand exhausted, take from any available brand
-            for other_brand in brand_names:
-                if brand_indices[other_brand] < len(brand_groups[other_brand]):
-                    grid[slot_index] = brand_groups[other_brand][brand_indices[other_brand]]
-                    brand_indices[other_brand] += 1
-                    break
+        # Add products from this brand (cycling if needed)
+        brand_cycle = cycle(brand_products)
+        for _ in range(min(products_per_brand, total_slots - len(grid))):
+            if len(grid) < total_slots:
+                grid.append(next(brand_cycle))
     
-    return grid
+    # Fill remaining slots with best sellers from any brand
+    if len(grid) < total_slots:
+        all_remaining = []
+        for brand in sorted_brands:
+            all_remaining.extend(brand_groups[brand])
+        # Sort all remaining by sales
+        all_remaining.sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
+        remaining_cycle = cycle(all_remaining)
+        
+        while len(grid) < total_slots:
+            grid.append(next(remaining_cycle))
+    
+    # Ensure no None values
+    if len(grid) < total_slots:
+        # Fill with cycling through all products
+        all_tpa_cycle = cycle(tpa_products)
+        while len(grid) < total_slots:
+            grid.append(next(all_tpa_cycle))
+    
+    return grid[:total_slots]  # Ensure exact slot count

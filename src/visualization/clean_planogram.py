@@ -43,18 +43,22 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
         ax.axis('off')
         return fig
     
-    # Filter only Apple products for both sections
-    apple_products = [p for p in all_products if 'apple' in getattr(p[0], 'brand', '').lower()]
+    # Filter products - for Mac, use all products since they're third-party accessories
+    if lob.lower() == 'mac':
+        apple_products = all_products  # Mac accessories are third-party, use all
+    else:
+        # Filter only Apple products for other LOBs
+        apple_products = [p for p in all_products if 'apple' in getattr(p[0], 'brand', '').lower()]
     
     if not apple_products:
-        logger.warning("No Apple products found. Cannot create iPad planogram.")
+        logger.warning(f"No products found for {lob.upper()} planogram.")
         fig, ax = plt.subplots(figsize=figsize)
         ax.set_facecolor('#FFFFFF')
-        ax.text(0.5, 0.5, 'No Apple iPad products to display', ha='center', va='center', transform=ax.transAxes, fontsize=16, color='red')
+        ax.text(0.5, 0.5, f'No {lob.upper()} products to display', ha='center', va='center', transform=ax.transAxes, fontsize=16, color='red')
         ax.axis('off')
         return fig
 
-    logger.info(f"Found {len(apple_products)} Apple products for iPad planogram generation.")
+    logger.info(f"Found {len(apple_products)} products for {lob.upper()} planogram generation.")
 
     # Sort Apple products by sales velocity to get best selling products
     apple_products.sort(key=lambda p: getattr(p[0], 'total_qty', 0), reverse=True)
@@ -109,6 +113,26 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
         # Create dummy figure to return
         fig, ax = plt.subplots(figsize=figsize)
         ax.text(0.5, 0.5, 'iPhone planograms generated successfully', ha='center', va='center', transform=ax.transAxes, fontsize=16)
+        ax.axis('off')
+        return fig
+        
+    elif lob.lower() == 'watch':
+        # Use dedicated Watch planogram system
+        from src.visualization.watch_planogram import create_watch_planogram
+        create_watch_planogram(store_template)
+        # Create dummy figure to return
+        fig, ax = plt.subplots(figsize=figsize)
+        ax.text(0.5, 0.5, 'Apple Watch planograms generated successfully', ha='center', va='center', transform=ax.transAxes, fontsize=16)
+        ax.axis('off')
+        return fig
+        
+    elif lob.lower() == 'mac':
+        # Use dedicated Mac planogram system with our pre-built planograms
+        from src.visualization.mac_planogram import create_mac_planogram
+        create_mac_planogram(products, store_template)
+        # Create dummy figure to return
+        fig, ax = plt.subplots(figsize=figsize)
+        ax.text(0.5, 0.5, 'Mac planograms generated successfully', ha='center', va='center', transform=ax.transAxes, fontsize=16)
         ax.axis('off')
         return fig
         

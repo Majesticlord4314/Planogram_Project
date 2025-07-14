@@ -1671,3 +1671,192 @@ AttributeError: 'ProductCategory' object has no attribute 'lower'
 2025-07-10 14:55:01,678 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
 2025-07-10 14:55:01,682 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
 2025-07-10 14:58:54,254 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 17:51:05,349 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 17:51:18,583 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-10 17:51:18,610 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-10 17:51:18,667 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-10 17:51:18,688 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-10 17:51:18,709 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-10 17:51:18,709 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-10 17:51:18,710 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-10 17:51:18,711 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-10 17:51:18,779 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-10 17:51:18,780 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,780 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,780 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:51:18,781 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-10 17:51:18,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-10 17:51:18,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Third Party Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:51:18,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,785 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,785 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Clear Magsafe Case for iPhone 15-Clear on Third Party Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Armor Magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse TANK Gradient Magsafe case for iPhone 15-Blue on Third Party Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:51:18,787 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:51:18,788 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:51:18,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Clear on Apple Premium Row 4: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:51:18,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Grey on Third Party Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:51:18,790 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 2: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:51:18,790 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 3: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:51:18,790 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White on Third Party Row 4: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:51:18,791 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black on Apple Premium Row 2: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:51:18,791 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black on Apple Premium Row 3: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:51:18,791 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Blue on Apple Premium Row 4: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:51:18,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 1: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:51:18,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White on Third Party Row 2: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:51:18,793 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:51:18,793 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear on Third Party Row 4: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:51:18,799 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 33 products actually on shelves
+2025-07-10 17:51:18,799 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.09s
+2025-07-10 17:51:18,799 | INFO     | base_optimizer  | create_planogram     | Placed 33 products with 40 facings
+2025-07-10 17:51:18,799 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 17:51:18,800 | INFO     | clean_planogram | create_clean_planogram | Found 13 Apple products for iPad planogram generation.
+2025-07-10 17:51:18,824 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 17:51:18,824 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-10 17:51:18,824 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 17:51:18,825 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-10 17:51:19,441 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-10 17:51:19,442 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-10 17:51:19,999 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-10 17:51:20,000 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-10 17:51:20,545 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-10 17:51:20,546 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-10 17:51:21,075 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-10 17:51:21,076 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 17:51:21,693 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 17:51:21,693 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 17:51:22,288 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 17:53:12,817 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 17:53:15,704 | INFO     | main            | run_lob_optimization | Loading iPad Accessories...
+2025-07-10 17:53:15,734 | INFO     | main            | run_lob_optimization | Loaded 158 products for iPad Accessories
+2025-07-10 17:53:15,775 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-10 17:53:15,776 | INFO     | main            | run_lob_optimization | Loaded 24 bundle recommendations
+2025-07-10 17:53:15,780 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-10 17:53:15,780 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-10 17:53:15,780 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-10 17:53:15,780 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-10 17:53:15,783 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-10 17:53:15,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Black on Apple Premium Row 1: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 11  2024    Black on Apple Premium Row 2: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black on Apple Premium Row 3: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,789 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 13  2024    Black on Apple Premium Row 4: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 13  2024    Black on Third Party Row 1: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Black on Third Party Row 2: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-10 17:53:15,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey on Third Party Row 3: 1 facings, 25.0cm wide at position 2.0cm
+2025-07-10 17:53:15,794 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Grey on Third Party Row 4: 1 facings, 25.0cm wide at position 2.0cm
+2025-07-10 17:53:15,795 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp STYLEUS Case for Apple iPad Air 10.9 Black on Third Party Row 3: 1 facings, 25.0cm wide at position 29.0cm
+2025-07-10 17:53:15,795 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue on Third Party Row 4: 1 facings, 25.0cm wide at position 29.0cm
+2025-07-10 17:53:15,796 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 10 products actually on shelves
+2025-07-10 17:53:15,796 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.02s
+2025-07-10 17:53:15,796 | INFO     | base_optimizer  | create_planogram     | Placed 10 products with 16 facings
+2025-07-10 17:53:15,796 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPad' with store 'Flagship Store Template'.
+2025-07-10 17:53:15,796 | INFO     | clean_planogram | create_clean_planogram | Found 5 Apple products for iPad planogram generation.
+2025-07-10 17:53:15,796 | INFO     | clean_planogram | create_clean_planogram | Creating Part 1: Ipad Pro & Air series
+2025-07-10 17:53:16,239 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 1 to output/iPad_Flagship_Store_Template_planogram_part1.png
+2025-07-10 17:53:16,239 | INFO     | clean_planogram | create_clean_planogram | Creating Part 2: Ipad Mini & Base series
+2025-07-10 17:53:16,695 | INFO     | clean_planogram | create_planogram_part | Saved planogram part 2 to output/iPad_Flagship_Store_Template_planogram_part2.png
+2025-07-10 17:54:51,620 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 17:54:54,404 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-10 17:54:54,421 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-10 17:54:54,465 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-10 17:54:54,471 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-10 17:54:54,492 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-10 17:54:54,492 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-10 17:54:54,492 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-10 17:54:54,492 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-10 17:54:54,560 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-10 17:54:54,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Third Party Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Clear Magsafe Case for iPhone 15-Clear on Third Party Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Armor Magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse TANK Gradient Magsafe case for iPhone 15-Blue on Third Party Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:54:54,564 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Clear on Apple Premium Row 4: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:54:54,570 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Grey on Third Party Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-10 17:54:54,570 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 2: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:54:54,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 3: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:54:54,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White on Third Party Row 4: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-10 17:54:54,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black on Apple Premium Row 2: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:54:54,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black on Apple Premium Row 3: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:54:54,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Blue on Apple Premium Row 4: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:54:54,573 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 1: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-10 17:54:54,573 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White on Third Party Row 2: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:54:54,574 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:54:54,574 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear on Third Party Row 4: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-10 17:54:54,574 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 33 products actually on shelves
+2025-07-10 17:54:54,574 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-10 17:54:54,574 | INFO     | base_optimizer  | create_planogram     | Placed 33 products with 40 facings
+2025-07-10 17:54:54,574 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 17:54:54,581 | INFO     | clean_planogram | create_clean_planogram | Found 13 Apple products for iPad planogram generation.
+2025-07-10 17:54:54,581 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 17:54:54,581 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-10 17:54:54,581 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 17:54:54,581 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-10 17:54:55,077 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-10 17:54:55,077 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-10 17:54:55,620 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-10 17:54:55,620 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-10 17:54:56,131 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-10 17:54:56,134 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-10 17:54:56,618 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-10 17:54:56,618 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 17:54:57,159 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 17:54:57,159 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 17:54:57,683 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 18:01:06,371 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 18:01:06,372 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 18:01:06,372 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-10 18:01:06,392 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-10 18:01:06,392 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 18:01:06,397 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-10 18:01:06,397 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 18:01:06,397 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 18:01:06,397 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-10 18:01:07,046 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-10 18:01:07,047 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-10 18:01:07,493 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-10 18:01:07,493 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-10 18:01:07,987 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-10 18:01:07,987 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-10 18:01:08,472 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-10 18:01:08,473 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 18:01:08,957 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-10 18:01:08,957 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 18:01:09,484 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-10 18:01:09,494 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-10 18:01:17,939 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250710.log
+2025-07-10 18:01:17,939 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-10 18:01:17,939 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: express
+2025-07-10 18:01:17,960 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-10 18:01:17,960 | INFO     | clean_planogram | create_clean_planogram | Found 47 Apple products for iPad planogram generation.
+2025-07-10 18:01:17,960 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-10 18:01:17,960 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-10 18:01:17,961 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-10 18:01:17,961 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-10 18:01:18,393 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-10 18:01:18,394 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-10 18:01:18,840 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-10 18:01:18,844 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at express.
