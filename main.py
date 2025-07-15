@@ -36,14 +36,14 @@ def interactive_mode():
     try:
         # Step 1: Choose optimization type
         print("\nSelect optimization type:")
-        print("1. Product Category (Cases, Cables, etc.)")
+        print("1. Cohort Planogram (Generate cohort-based planograms)")
         print("2. Line of Business (iPhone, iPad, Mac, etc.)")
         print("3. All Products (Full store optimization)")
         
         choice = input("\nEnter your choice (1-3): ").strip()
         
         if choice == "1":
-            run_product_category_optimization(loader, logger)
+            run_cohort_planogram_interactive(loader, logger)
         elif choice == "2":
             run_lob_optimization(loader, logger)
         elif choice == "3":
@@ -55,6 +55,91 @@ def interactive_mode():
     except Exception as e:
         logger.error(f"Error in interactive mode: {e}", exc_info=True)
         print(f"\n[ERROR] {e}")
+
+def run_cohort_planogram_interactive(loader, logger):
+    """Interactive cohort planogram generation"""
+    print("\n" + "="*50)
+    print("COHORT PLANOGRAM GENERATION")
+    print("="*50)
+    
+    # Check if cohort_planogram.py is available
+    try:
+        import subprocess
+        import os
+        
+        # Step 1: Choose LOB or all
+        print("\nChoose generation mode:")
+        print("1. Generate for specific Line of Business")
+        print("2. Generate for all Lines of Business")
+        print("3. Show system status")
+        
+        mode_choice = input("\nEnter your choice (1-3): ").strip()
+        
+        if mode_choice == "1":
+            # Select LOB
+            lobs = {
+                '1': 'iPhone',
+                '2': 'iPad', 
+                '3': 'Mac',
+                '4': 'Watch',
+                '5': 'AirPods'
+            }
+            
+            print("\nAvailable Lines of Business:")
+            for key, lob in lobs.items():
+                print(f"{key}. {lob}")
+            
+            lob_choice = input("\nSelect LOB (1-5): ").strip()
+            if lob_choice not in lobs:
+                print("Invalid choice.")
+                return
+            
+            selected_lob = lobs[lob_choice]
+            
+            # Select store type
+            store_type = select_store_type(loader)
+            if not store_type:
+                return
+            
+            # Run cohort planogram generation
+            print(f"\nGenerating cohort planogram for {selected_lob} - {store_type} store...")
+            cmd = [sys.executable, "cohort_planogram.py", "--lob", selected_lob, "--store", store_type]
+            
+        elif mode_choice == "2":
+            # Select store type for all LOBs
+            store_type = select_store_type(loader)
+            if not store_type:
+                return
+            
+            print(f"\nGenerating cohort planograms for all LOBs - {store_type} store...")
+            cmd = [sys.executable, "cohort_planogram.py", "--all", "--store", store_type]
+            
+        elif mode_choice == "3":
+            print("\nShowing system status...")
+            cmd = [sys.executable, "cohort_planogram.py", "--status"]
+            
+        else:
+            print("Invalid choice.")
+            return
+        
+        # Execute the command
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            print(result.stdout)
+            if result.stderr:
+                print("Warnings:")
+                print(result.stderr)
+        else:
+            print(f"Error running cohort planogram generation:")
+            print(result.stderr)
+            
+    except ImportError:
+        print("ERROR: Cohort planogram module not found")
+        print("Please ensure cohort_planogram.py is available in the project root")
+    except Exception as e:
+        logger.error(f"Error in cohort planogram generation: {e}", exc_info=True)
+        print(f"ERROR: {e}")
 
 def run_product_category_optimization(loader, logger):
     """Run optimization for a specific product category"""
@@ -545,6 +630,7 @@ Examples:
   python main.py --category cases --store standard
   python main.py --lob iPhone --store flagship
   python main.py --lob iPhone --store express
+  python main.py --lob iPhone --store flagship --cohort    # Cohort-based planogram
   python main.py --all --store standard --strategy profit_efficiency
         """
     )
@@ -553,8 +639,10 @@ Examples:
                        help='Run in interactive mode (default)')
     parser.add_argument('--category', '-c', choices=['cases', 'cables', 'screen_protectors', 'others'],
                        help='Optimize specific product category')
-    parser.add_argument('--lob', '-l', choices=['iPhone', 'iPad', 'Mac', 'Watch'],
+    parser.add_argument('--lob', '-l', choices=['iPhone', 'iPad', 'Mac', 'Watch', 'AirPods'],
                        help='Optimize by Line of Business')
+    parser.add_argument('--cohort', action='store_true',
+                       help='Generate cohort-based planogram instead of LOB-based')
     parser.add_argument('--all', '-a', action='store_true',
                        help='Optimize all products (full store)')
 
@@ -588,10 +676,14 @@ Examples:
                                                args.store, args.strategy)
             elif args.lob:
                 # Quick LOB mode
-                logger.info(f"Running LOB optimization: {args.lob}")
-                # Implement direct LOB optimization
-                run_direct_lob_optimization(loader, logger, args.lob, 
-                                          args.store, args.strategy)
+                if args.cohort:
+                    logger.info(f"Running cohort-based planogram: {args.lob}")
+                    run_cohort_planogram_generation(loader, logger, args.lob, args.store)
+                else:
+                    logger.info(f"Running LOB optimization: {args.lob}")
+                    # Implement direct LOB optimization
+                    run_direct_lob_optimization(loader, logger, args.lob, 
+                                              args.store, args.strategy)
             elif args.all:
                 # Full store optimization
                 logger.info("Running full store optimization")
@@ -652,6 +744,19 @@ def run_direct_category_optimization(loader, logger, category, store_type, strat
     title = f"{category.title()} - {store_type.title()} Store - {strategy.replace('_', ' ').title()}"
     visualize_and_export_results(result, products, output_name, title)
 
+
+def run_cohort_planogram_generation(loader, logger, lob, store_type):
+    """Generate cohort-based planogram for specified LOB"""
+    from src.visualization.cohort_planogram import CohortPlanogramGenerator
+    
+    try:
+        generator = CohortPlanogramGenerator()
+        generator.generate_cohort_planogram(lob, store_type)
+        logger.info(f"Successfully generated cohort planogram for {lob} - {store_type}")
+        print(f"✅ Cohort planogram generated for {lob} - {store_type}")
+    except Exception as e:
+        logger.error(f"Failed to generate cohort planogram: {e}", exc_info=True)
+        print(f"❌ Error generating cohort planogram: {e}")
 
 def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
     """Direct LOB optimization from command line. This is now streamlined to only generate the clean planogram."""

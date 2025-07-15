@@ -1,0 +1,30 @@
+2025-07-15 12:09:14,135 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
+2025-07-15 12:09:14,135 | INFO     | main            | main                 | Running cohort-based planogram: iPhone
+2025-07-15 12:09:16,345 | INFO     | main            | run_cohort_planogram_generation | Successfully generated cohort planogram for iPhone - flagship
+2025-07-15 12:09:25,674 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
+2025-07-15 12:09:25,678 | INFO     | main            | main                 | Running cohort-based planogram: AirPods
+2025-07-15 12:09:25,785 | INFO     | main            | run_cohort_planogram_generation | Successfully generated cohort planogram for AirPods - flagship
+2025-07-15 12:09:32,878 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
+2025-07-15 12:09:32,878 | INFO     | main            | main                 | Running LOB optimization: iPhone
+2025-07-15 12:09:32,878 | INFO     | main            | run_direct_lob_optimization | Starting clean planogram generation for LOB: iPhone, Store: flagship
+2025-07-15 12:09:32,944 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-15 12:09:32,944 | INFO     | clean_planogram | create_clean_planogram | Found 47 products for IPHONE planogram generation.
+2025-07-15 12:09:32,946 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-15 12:09:32,946 | INFO     | iphone_planogram | create_iphone_planogram | Found 47 Apple and 352 TPA products.
+2025-07-15 12:09:32,946 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-15 12:09:32,946 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-15 12:09:33,812 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-15 12:09:33,812 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-15 12:09:34,698 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-15 12:09:34,699 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-15 12:09:35,535 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-15 12:09:35,535 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-15 12:09:36,461 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-15 12:09:36,468 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-15 12:09:37,478 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-15 12:09:37,478 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-15 12:09:38,311 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-15 12:09:38,319 | INFO     | main            | run_direct_lob_optimization | Successfully generated clean planogram for iPhone at flagship.
+2025-07-15 15:53:14,084 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
+2025-07-15 15:56:44,529 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
+2025-07-15 16:06:51,565 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250715.log
