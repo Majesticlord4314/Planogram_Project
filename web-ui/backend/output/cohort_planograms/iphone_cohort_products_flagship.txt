@@ -1,0 +1,414 @@
+iPhone Cohort-Based Product List
+==================================================
+Store Type: Flagship
+Generated: 2025-07-17 11:06:55
+
+
+iPhone 15 Pro Max
+----------------------
+
+Headphones (Avg Attach Rate: 15.7%)
+   Total Sales: 63
+   Recommended Products:
+   1. *** Headphones for iPhone 15 Pro Max
+      Attach Rate: 15.7% | Sales: 63 | Facings: 1
+
+
+PopSocket (Avg Attach Rate: 32.6%)
+   Total Sales: 69
+   Recommended Products:
+   1. *** PopSocket for iPhone 15 Pro Max
+      Attach Rate: 32.6% | Sales: 69 | Facings: 1
+
+
+Ring Holder (Avg Attach Rate: 15.3%)
+   Total Sales: 56
+   Recommended Products:
+   1. *** Ring Holder for iPhone 15 Pro Max
+      Attach Rate: 15.3% | Sales: 56 | Facings: 1
+
+
+Case (Avg Attach Rate: 15.7%)
+   Total Sales: 70
+   Recommended Products:
+   1. *** Case for iPhone 15 Pro Max
+      Attach Rate: 15.7% | Sales: 70 | Facings: 1
+
+
+Stand (Avg Attach Rate: 37.6%)
+   Total Sales: 66
+   Recommended Products:
+   1. *** Stand for iPhone 15 Pro Max
+      Attach Rate: 37.6% | Sales: 66 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 15.2%)
+   Total Sales: 60
+   Recommended Products:
+   1. *** Screen Protector for iPhone 15 Pro Max
+      Attach Rate: 15.2% | Sales: 60 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 14.6%)
+   Total Sales: 54
+   Recommended Products:
+   1. ** Wireless Charger for iPhone 15 Pro Max
+      Attach Rate: 14.6% | Sales: 54 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 38.4%)
+   Total Sales: 52
+   Recommended Products:
+   1. *** Wallet for iPhone 15 Pro Max
+      Attach Rate: 38.4% | Sales: 52 | Facings: 1
+
+
+iPhone 16 Plus
+-------------------
+
+Headphones (Avg Attach Rate: 35.7%)
+   Total Sales: 69
+   Recommended Products:
+   1. *** Headphones for iPhone 16 Plus
+      Attach Rate: 35.7% | Sales: 69 | Facings: 1
+
+
+PopSocket (Avg Attach Rate: 14.7%)
+   Total Sales: 66
+   Recommended Products:
+   1. ** PopSocket for iPhone 16 Plus
+      Attach Rate: 14.7% | Sales: 66 | Facings: 1
+
+
+Ring Holder (Avg Attach Rate: 20.6%)
+   Total Sales: 60
+   Recommended Products:
+   1. *** Ring Holder for iPhone 16 Plus
+      Attach Rate: 20.6% | Sales: 60 | Facings: 1
+
+
+Case (Avg Attach Rate: 26.0%)
+   Total Sales: 65
+   Recommended Products:
+   1. *** Case for iPhone 16 Plus
+      Attach Rate: 26.0% | Sales: 65 | Facings: 1
+
+
+Stand (Avg Attach Rate: 6.3%)
+   Total Sales: 61
+   Recommended Products:
+   1. * Stand for iPhone 16 Plus
+      Attach Rate: 6.3% | Sales: 61 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 18.6%)
+   Total Sales: 59
+   Recommended Products:
+   1. *** Screen Protector for iPhone 16 Plus
+      Attach Rate: 18.6% | Sales: 59 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 5.3%)
+   Total Sales: 56
+   Recommended Products:
+   1. * Wireless Charger for iPhone 16 Plus
+      Attach Rate: 5.3% | Sales: 56 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 8.5%)
+   Total Sales: 53
+   Recommended Products:
+   1. ** Wallet for iPhone 16 Plus
+      Attach Rate: 8.5% | Sales: 53 | Facings: 1
+
+
+iPhone 15
+--------------
+
+Headphones (Avg Attach Rate: 7.5%)
+   Total Sales: 74
+   Recommended Products:
+   1. * Headphones for iPhone 15
+      Attach Rate: 7.5% | Sales: 74 | Facings: 1
+
+
+PopSocket (Avg Attach Rate: 18.4%)
+   Total Sales: 58
+   Recommended Products:
+   1. *** PopSocket for iPhone 15
+      Attach Rate: 18.4% | Sales: 58 | Facings: 1
+
+
+Ring Holder (Avg Attach Rate: 24.8%)
+   Total Sales: 51
+   Recommended Products:
+   1. *** Ring Holder for iPhone 15
+      Attach Rate: 24.8% | Sales: 51 | Facings: 1
+
+
+Case (Avg Attach Rate: 5.3%)
+   Total Sales: 59
+   Recommended Products:
+   1. * Case for iPhone 15
+      Attach Rate: 5.3% | Sales: 59 | Facings: 1
+
+
+Stand (Avg Attach Rate: 4.6%)
+   Total Sales: 61
+   Recommended Products:
+   1. * Stand for iPhone 15
+      Attach Rate: 4.6% | Sales: 61 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 12.7%)
+   Total Sales: 67
+   Recommended Products:
+   1. ** Screen Protector for iPhone 15
+      Attach Rate: 12.7% | Sales: 67 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 15.2%)
+   Total Sales: 59
+   Recommended Products:
+   1. *** Wireless Charger for iPhone 15
+      Attach Rate: 15.2% | Sales: 59 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 12.6%)
+   Total Sales: 58
+   Recommended Products:
+   1. ** Wallet for iPhone 15
+      Attach Rate: 12.6% | Sales: 58 | Facings: 1
+
+
+iPhone 16 Pro
+------------------
+
+Headphones (Avg Attach Rate: 17.3%)
+   Total Sales: 57
+   Recommended Products:
+   1. *** Headphones for iPhone 16 Pro
+      Attach Rate: 17.3% | Sales: 57 | Facings: 1
+
+
+PopSocket (Avg Attach Rate: 28.7%)
+   Total Sales: 61
+   Recommended Products:
+   1. *** PopSocket for iPhone 16 Pro
+      Attach Rate: 28.7% | Sales: 61 | Facings: 1
+
+
+Ring Holder (Avg Attach Rate: 23.3%)
+   Total Sales: 55
+   Recommended Products:
+   1. *** Ring Holder for iPhone 16 Pro
+      Attach Rate: 23.3% | Sales: 55 | Facings: 1
+
+
+Case (Avg Attach Rate: 16.5%)
+   Total Sales: 56
+   Recommended Products:
+   1. *** Case for iPhone 16 Pro
+      Attach Rate: 16.5% | Sales: 56 | Facings: 1
+
+
+Stand (Avg Attach Rate: 18.5%)
+   Total Sales: 67
+   Recommended Products:
+   1. *** Stand for iPhone 16 Pro
+      Attach Rate: 18.5% | Sales: 67 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 9.7%)
+   Total Sales: 63
+   Recommended Products:
+   1. ** Screen Protector for iPhone 16 Pro
+      Attach Rate: 9.7% | Sales: 63 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 29.5%)
+   Total Sales: 52
+   Recommended Products:
+   1. *** Wireless Charger for iPhone 16 Pro
+      Attach Rate: 29.5% | Sales: 52 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 9.8%)
+   Total Sales: 59
+   Recommended Products:
+   1. ** Wallet for iPhone 16 Pro
+      Attach Rate: 9.8% | Sales: 59 | Facings: 1
+
+
+iPhone 16 Pro Max
+----------------------
+
+Headphones (Avg Attach Rate: 38.4%)
+   Total Sales: 58
+   Recommended Products:
+   1. *** Headphones for iPhone 16 Pro Max
+      Attach Rate: 38.4% | Sales: 58 | Facings: 1
+
+
+PopSocket (Avg Attach Rate: 4.5%)
+   Total Sales: 66
+   Recommended Products:
+   1. * PopSocket for iPhone 16 Pro Max
+      Attach Rate: 4.5% | Sales: 66 | Facings: 1
+
+
+Ring Holder (Avg Attach Rate: 32.8%)
+   Total Sales: 68
+   Recommended Products:
+   1. *** Ring Holder for iPhone 16 Pro Max
+      Attach Rate: 32.8% | Sales: 68 | Facings: 1
+
+
+Case (Avg Attach Rate: 23.8%)
+   Total Sales: 59
+   Recommended Products:
+   1. *** Case for iPhone 16 Pro Max
+      Attach Rate: 23.8% | Sales: 59 | Facings: 1
+
+
+Stand (Avg Attach Rate: 8.9%)
+   Total Sales: 57
+   Recommended Products:
+   1. ** Stand for iPhone 16 Pro Max
+      Attach Rate: 8.9% | Sales: 57 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 15.4%)
+   Total Sales: 56
+   Recommended Products:
+   1. *** Screen Protector for iPhone 16 Pro Max
+      Attach Rate: 15.4% | Sales: 56 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 17.3%)
+   Total Sales: 45
+   Recommended Products:
+   1. *** Wireless Charger for iPhone 16 Pro Max
+      Attach Rate: 17.3% | Sales: 45 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 5.7%)
+   Total Sales: 50
+   Recommended Products:
+   1. * Wallet for iPhone 16 Pro Max
+      Attach Rate: 5.7% | Sales: 50 | Facings: 1
+
+
+iPhone 16
+--------------
+
+Headphones (Avg Attach Rate: 43.4%)
+   Total Sales: 61
+   Recommended Products:
+   1. *** Headphones for iPhone 16
+      Attach Rate: 43.4% | Sales: 61 | Facings: 2
+
+
+PopSocket (Avg Attach Rate: 44.9%)
+   Total Sales: 58
+   Recommended Products:
+   1. *** PopSocket for iPhone 16
+      Attach Rate: 44.9% | Sales: 58 | Facings: 2
+
+
+Ring Holder (Avg Attach Rate: 9.2%)
+   Total Sales: 50
+   Recommended Products:
+   1. ** Ring Holder for iPhone 16
+      Attach Rate: 9.2% | Sales: 50 | Facings: 1
+
+
+Case (Avg Attach Rate: 27.2%)
+   Total Sales: 55
+   Recommended Products:
+   1. *** Case for iPhone 16
+      Attach Rate: 27.2% | Sales: 55 | Facings: 1
+
+
+Stand (Avg Attach Rate: 34.7%)
+   Total Sales: 47
+   Recommended Products:
+   1. *** Stand for iPhone 16
+      Attach Rate: 34.7% | Sales: 47 | Facings: 1
+
+
+Screen Protector (Avg Attach Rate: 30.3%)
+   Total Sales: 60
+   Recommended Products:
+   1. *** Screen Protector for iPhone 16
+      Attach Rate: 30.3% | Sales: 60 | Facings: 1
+
+
+Wireless Charger (Avg Attach Rate: 19.5%)
+   Total Sales: 56
+   Recommended Products:
+   1. *** Wireless Charger for iPhone 16
+      Attach Rate: 19.5% | Sales: 56 | Facings: 1
+
+
+Wallet (Avg Attach Rate: 7.8%)
+   Total Sales: 61
+   Recommended Products:
+   1. * Wallet for iPhone 16
+      Attach Rate: 7.8% | Sales: 61 | Facings: 1
+
+
+==================================================
+SUMMARY
+==================================================
+
+Top Overall Combinations (All Models):
+----------------------------------------
+ 1. iPhone 16 + PopSocket for iPhone 16
+     Category: PopSocket | Attach Rate: 44.9% | Sales: 58
+
+ 2. iPhone 16 + Headphones for iPhone 16
+     Category: Headphones | Attach Rate: 43.4% | Sales: 61
+
+ 3. iPhone 16 Pro Max + Headphones for iPhone 16 Pro Max
+     Category: Headphones | Attach Rate: 38.4% | Sales: 58
+
+ 4. iPhone 15 Pro Max + Wallet for iPhone 15 Pro Max
+     Category: Wallet | Attach Rate: 38.4% | Sales: 52
+
+ 5. iPhone 15 Pro Max + Stand for iPhone 15 Pro Max
+     Category: Stand | Attach Rate: 37.6% | Sales: 66
+
+ 6. iPhone 16 Plus + Headphones for iPhone 16 Plus
+     Category: Headphones | Attach Rate: 35.7% | Sales: 69
+
+ 7. iPhone 16 + Stand for iPhone 16
+     Category: Stand | Attach Rate: 34.7% | Sales: 47
+
+ 8. iPhone 16 Pro Max + Ring Holder for iPhone 16 Pro Max
+     Category: Ring Holder | Attach Rate: 32.8% | Sales: 68
+
+ 9. iPhone 15 Pro Max + PopSocket for iPhone 15 Pro Max
+     Category: PopSocket | Attach Rate: 32.6% | Sales: 69
+
+10. iPhone 16 + Screen Protector for iPhone 16
+     Category: Screen Protector | Attach Rate: 30.3% | Sales: 60
+
+
+Performance Indicators:
+-------------------------
+*** High Performance: >15% attach rate
+** Medium Performance: 8-15% attach rate
+* Low Performance: 3-8% attach rate
+- Very Low Performance: <3% attach rate
+
+Category Performance Summary:
+-----------------------------------
+• Headphones: 26.3% avg attach rate | 382 total sales | 6 products
+• PopSocket: 24.0% avg attach rate | 378 total sales | 6 products
+• Ring Holder: 21.0% avg attach rate | 340 total sales | 6 products
+• Case: 19.1% avg attach rate | 364 total sales | 6 products
+• Stand: 18.4% avg attach rate | 359 total sales | 6 products
+• Screen Protector: 17.0% avg attach rate | 365 total sales | 6 products
+• Wireless Charger: 16.9% avg attach rate | 322 total sales | 6 products
+• Wallet: 13.8% avg attach rate | 333 total sales | 6 products

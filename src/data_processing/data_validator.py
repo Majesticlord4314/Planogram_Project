@@ -180,7 +180,7 @@ class DataValidator:
             report.append(f"ERRORS ({len(self.errors)}):")
             report.append("-" * 30)
             for error in self.errors:
-                report.append(f"❌ {error}")
+                report.append(f"ERROR: {error}")
             report.append("")
         
         if self.warnings:
@@ -191,6 +191,6 @@ class DataValidator:
             report.append("")
         
         if not self.errors and not self.warnings:
-            report.append("✅ All validations passed!")
+            report.append("SUCCESS: All validations passed!")
         
         return "\n".join(report)

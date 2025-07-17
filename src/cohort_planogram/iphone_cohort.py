@@ -521,4 +521,4 @@ class iPhoneCohortPlanogram(CohortPlanogramBase):
                     f.write(f"• {category}: {avg_attach:.1%} avg attach rate | {total_sales:,.0f} total sales | {product_count} products\n")
         
         self.logger.info(f"Generated detailed product list: {output_path}")
-        print(f"Detailed product list generated: {output_path}")
+        print("Detailed product list generated: " + str(output_path))

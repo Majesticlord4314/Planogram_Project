@@ -237,12 +237,12 @@ class PlanogramSystemWrapper:
             
             self._emit_progress(job_id, 100, "completed", "LOB optimization completed successfully")
             
-            # Set result
+            # Set result with JSON-serializable data
             job.result = {
                 'products_placed': len(result.products_placed),
                 'products_rejected': len(result.products_rejected),
-                'metrics': result.metrics,
-                'warnings': result.warnings[:10] if result.warnings else [],
+                'metrics': self._serialize_metrics(result.metrics) if result.metrics else {},
+                'warnings': [str(w) for w in result.warnings[:10]] if result.warnings else [],
                 'lob': lob,
                 'store_type': store_type,
                 'strategy': strategy
@@ -332,8 +332,8 @@ class PlanogramSystemWrapper:
             job.result = {
                 'products_placed': len(result.products_placed),
                 'products_rejected': len(result.products_rejected),
-                'metrics': result.metrics,
-                'warnings': result.warnings[:10] if result.warnings else [],
+                'metrics': self._serialize_metrics(result.metrics) if result.metrics else {},
+                'warnings': [str(w) for w in result.warnings[:10]] if result.warnings else [],
                 'category': category,
                 'store_type': store_type,
                 'strategy': strategy
@@ -423,8 +423,8 @@ class PlanogramSystemWrapper:
             job.result = {
                 'products_placed': len(result.products_placed),
                 'products_rejected': len(result.products_rejected),
-                'metrics': result.metrics,
-                'warnings': result.warnings[:10] if result.warnings else [],
+                'metrics': self._serialize_metrics(result.metrics) if result.metrics else {},
+                'warnings': [str(w) for w in result.warnings[:10]] if result.warnings else [],
                 'store_type': store_type,
                 'strategy': strategy,
                 'total_products_processed': len(products)
@@ -514,6 +514,74 @@ class PlanogramSystemWrapper:
             job.completed_at = datetime.now()
             return True
         return False
+    
+    def _serialize_metrics(self, metrics: Any) -> Dict[str, Any]:
+        """Serialize metrics to JSON-safe format"""
+        if not metrics:
+            return {}
+        
+        try:
+            # Convert metrics to a JSON-serializable dictionary
+            serialized = {}
+            
+            if hasattr(metrics, '__dict__'):
+                # If it's an object with attributes
+                for key, value in metrics.__dict__.items():
+                    serialized[str(key)] = self._serialize_value(value)
+            elif isinstance(metrics, dict):
+                # If it's already a dictionary
+                for key, value in metrics.items():
+                    serialized[str(key)] = self._serialize_value(value)
+            else:
+                # If it's a simple value
+                serialized = self._serialize_value(metrics)
+            
+            return serialized
+            
+        except Exception as e:
+            logger.error(f"Error serializing metrics: {e}")
+            return {'error': 'Failed to serialize metrics'}
+    
+    def _serialize_value(self, value: Any) -> Any:
+        """Serialize a single value to JSON-safe format"""
+        try:
+            # Handle basic types
+            if value is None or isinstance(value, (str, int, float, bool)):
+                return value
+            
+            # Handle lists and tuples
+            if isinstance(value, (list, tuple)):
+                return [self._serialize_value(item) for item in value]
+            
+            # Handle dictionaries - avoid sorting keys that might not be comparable
+            if isinstance(value, dict):
+                result = {}
+                for k, v in value.items():
+                    try:
+                        result[str(k)] = self._serialize_value(v)
+                    except Exception as e:
+                        logger.warning(f"Error serializing dict key {k}: {e}")
+                        result[f"key_{id(k)}"] = str(v)
+                return result
+            
+            # Handle enum types
+            if hasattr(value, 'name') and hasattr(value, 'value'):
+                return {'name': str(value.name), 'value': str(value.value)}
+            
+            # Handle objects with __dict__
+            if hasattr(value, '__dict__'):
+                return self._serialize_value(value.__dict__)
+            
+            # Handle objects with string representation
+            if hasattr(value, '__str__'):
+                return str(value)
+            
+            # Fallback to string representation
+            return str(value)
+            
+        except Exception as e:
+            logger.error(f"Error serializing value {value}: {e}")
+            return f"<serialization_error: {type(value).__name__}>"
 
 # Global instance
 planogram_system = PlanogramSystemWrapper()

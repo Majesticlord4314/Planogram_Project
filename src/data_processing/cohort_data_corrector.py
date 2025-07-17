@@ -172,7 +172,7 @@ class CohortDataCorrector:
         
         # Save corrected data
         df_corrected.to_csv(self.corrected_file, index=False)
-        print(f"✅ Saved {len(df_corrected)} corrected records to {self.corrected_file}")
+        print(f"SUCCESS: Saved {len(df_corrected)} corrected records to {self.corrected_file}")
         
         # Generate summary
         self._generate_correction_summary(df, df_corrected)
@@ -205,7 +205,7 @@ class CohortDataCorrector:
                     reclassified_count += 1
                     break
         
-        print(f"✅ Reclassified {reclassified_count} items from 'Other' category")
+        print(f"SUCCESS: Reclassified {reclassified_count} items from 'Other' category")
         return df_corrected
     
     def _break_down_iphone_other(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -240,7 +240,7 @@ class CohortDataCorrector:
         if new_records:
             new_df = pd.DataFrame(new_records)
             df_corrected = pd.concat([df_corrected, new_df], ignore_index=True)
-            print(f"✅ Broke down {len(iphone_other_records)} iPhone Other records into {len(new_records)} specific model records")
+            print(f"SUCCESS: Broke down {len(iphone_other_records)} iPhone Other records into {len(new_records)} specific model records")
         
         return df_corrected
     
@@ -283,7 +283,7 @@ class CohortDataCorrector:
         if new_records:
             new_df = pd.DataFrame(new_records)
             df_corrected = pd.concat([df_corrected, new_df], ignore_index=True)
-            print(f"✅ Added {len(new_records)} new accessory records")
+            print(f"SUCCESS: Added {len(new_records)} new accessory records")
         
         return df_corrected
     
@@ -332,13 +332,13 @@ class CohortDataCorrector:
         if new_records:
             new_df = pd.DataFrame(new_records)
             df_corrected = pd.concat([df_corrected, new_df], ignore_index=True)
-            print(f"✅ Added {len(new_records)} case subcategory records")
+            print(f"SUCCESS: Added {len(new_records)} case subcategory records")
         
         return df_corrected
     
     def _generate_correction_summary(self, original_df: pd.DataFrame, corrected_df: pd.DataFrame) -> None:
         """Generate summary of corrections made"""
-        print("\n📋 CORRECTION SUMMARY")
+        print("\nCORRECTION SUMMARY")
         print("=" * 50)
         
         print(f"Original records: {len(original_df)}")

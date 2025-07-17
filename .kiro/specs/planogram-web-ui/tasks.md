@@ -12,6 +12,8 @@
 
 
 
+
+
   - Create Flask backend structure with requirements.txt including Flask, Flask-CORS, Flask-SocketIO
   - Create Docker Compose configuration for development environment
   - _Requirements: 1.1, 1.2_
