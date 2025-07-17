@@ -1021,3 +1021,25 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 
 11:59:38 | INFO     | Generating detailed product list for iPhone cohort combinations
 11:59:38 | INFO     | Generated detailed product list: output\cohort_planograms\iphone_cohort_products_flagship.txt
 11:59:38 | INFO     | Successfully generated cohort planogram: output\cohort_planograms\iphone_cohort_detailed_flagship.png
+15:43:25 | INFO     | Starting cohort planogram generation for Mac - flagship
+15:43:25 | INFO     | Loaded 23287 cohort records
+15:43:25 | INFO     | Retrieved 946 records for LOB: Mac
+15:43:25 | INFO     | Generating Mac cohort planogram for flagship store
+15:43:25 | INFO     | Loaded 23287 cohort records
+15:43:25 | INFO     | Retrieved 946 records for LOB: Mac
+15:43:25 | ERROR    | Error generating cohort planogram: CohortPlanogramBase.create_figure() got an unexpected keyword argument 'figsize'
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\cohort_planogram\runner.py", line 63, in generate_cohort_planogram
+    output_path = generator.generate_cohort_planogram(store_type)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\cohort_planogram\mac_cohort.py", line 29, in generate_cohort_planogram
+    fig, ax = self.create_figure(store_type, figsize=(20, 16))
+              ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CohortPlanogramBase.create_figure() got an unexpected keyword argument 'figsize'
+16:02:32 | INFO     | Starting cohort planogram generation for Mac - flagship
+16:02:32 | INFO     | Loaded 23287 cohort records
+16:02:32 | INFO     | Retrieved 946 records for LOB: Mac
+16:02:32 | INFO     | Generating Mac cohort planogram for flagship store
+16:02:32 | INFO     | Loaded 23287 cohort records
+16:02:32 | INFO     | Retrieved 946 records for LOB: Mac
+16:02:33 | INFO     | Saved planogram: output\cohort_planograms\mac_cohort_detailed_flagship.png
+16:02:33 | INFO     | Successfully generated cohort planogram: output\cohort_planograms\mac_cohort_detailed_flagship.png
