@@ -1,38 +1,30 @@
 """
-Base Class for Cohort-Based Planogram Generation
-
-This module provides the base class and common functionality
-for all cohort-based planogram generators.
+Base class for cohort-based planogram generators
+Provides common functionality and styling for all LOB planograms
 """
 
-import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle, FancyBboxPatch
-from matplotlib import patches
-import pandas as pd
-import numpy as np
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for server environments
 import logging
-from .store_template_loader import StoreTemplateLoader
+from pathlib import Path
+from typing import Dict, List, Any
+import pandas as pd
 
 class CohortPlanogramBase:
-    """Base class for cohort-based planogram generation"""
+    """Base class for cohort planogram generators"""
     
     def __init__(self, lob: str):
         self.lob = lob
         self.logger = logging.getLogger(__name__)
         self.output_dir = Path("output/cohort_planograms")
-        self.output_dir.mkdir(exist_ok=True, parents=True)
-        self.store_template_loader = StoreTemplateLoader()
-
-        # Common visual properties
-        self.bg_color = '#F8F9FA'
-        self.border_color = '#D1D1D6'
-        self.text_color = '#1D1D1F'
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Common color schemes for accessory categories
+        # Common styling
+        self.text_color = '#1D1D1F'
+        self.background_color = '#F8F9FA'
+        
+        # Color schemes for different categories
         self.category_colors = {
             'Case': '#007AFF',
             'Screen Protector': '#34C759',
@@ -51,7 +43,7 @@ class CohortPlanogramBase:
             'Apple Pencil': '#1D1D1F',
             'Keyboard': '#48484A',
             'Mouse/Trackpad': '#636366',
-            'Watch Band': '#2E2E2E',
+            'Watch Band': '#F2F2F7',
             'Hooks/Holders': '#D1D1D6',
             'Hub/Adapter': '#8E8E93',
             'Sleeve': '#E5E5EA',
@@ -64,128 +56,233 @@ class CohortPlanogramBase:
         # Performance thresholds
         self.high_attach_threshold = 0.15
         self.medium_attach_threshold = 0.08
-        self.low_attach_threshold = 0.03
         
-    def create_figure(self, store_type: str = 'flagship') -> Tuple[plt.Figure, plt.Axes]:
-        """Create standardized figure for cohort planogram based on store type"""
-        figsize, (xlim, ylim) = self.store_template_loader.get_planogram_dimensions(store_type)
-        fig, ax = plt.subplots(figsize=figsize)
-        ax.set_facecolor('#F8F9FA')
-        ax.set_xlim(0, xlim)
-        ax.set_ylim(0, ylim)
+        # Store template configurations
+        self.store_configs = {
+            'flagship': {
+                'figure_size': (24, 18),
+                'max_models': 6,
+                'max_categories': 8,
+                'title_y': 265,
+                'matrix_y': 200,
+                'insights_x': 20,
+                'insights_y': 90,
+                'recommended_x': 300,
+                'recommended_y': 90,
+                'legend_x': 310,
+                'legend_y': 100
+            },
+            'standard': {
+                'figure_size': (20, 15),
+                'max_models': 5,
+                'max_categories': 6,
+                'title_y': 220,
+                'matrix_y': 170,
+                'insights_x': 15,
+                'insights_y': 70,
+                'recommended_x': 250,
+                'recommended_y': 70,
+                'legend_x': 260,
+                'legend_y': 80
+            },
+            'express': {
+                'figure_size': (16, 12),
+                'max_models': 4,
+                'max_categories': 5,
+                'title_y': 180,
+                'matrix_y': 140,
+                'insights_x': 10,
+                'insights_y': 50,
+                'recommended_x': 200,
+                'recommended_y': 50,
+                'legend_x': 210,
+                'legend_y': 60
+            }
+        }
+    
+    def create_figure(self, store_type: str):
+        """Create matplotlib figure with store-specific dimensions"""
+        config = self.store_configs.get(store_type, self.store_configs['flagship'])
+        fig, ax = plt.subplots(figsize=config['figure_size'])
+        ax.set_facecolor(self.background_color)
+        ax.set_xlim(0, config['figure_size'][0] * 16)  # Scale for coordinate system
+        ax.set_ylim(0, config['figure_size'][1] * 16)
         ax.axis('off')
         return fig, ax
     
-    def add_title(self, ax: plt.Axes, title: str, y_pos: int = 265) -> None:
-        """Add title to planogram"""
-        ax.text(190, y_pos, title, 
+    def add_title(self, ax, title: str, y_pos: int):
+        """Add title to the planogram"""
+        ax.text(ax.get_xlim()[1]/2, y_pos, title, 
                 fontsize=22, fontweight='bold', ha='center', va='center', 
-                color='#1D1D1F')
+                color=self.text_color)
     
-    def add_section_label(self, ax: plt.Axes, label: str, x_pos: int, y_pos: int, ha: str = 'center') -> None:
+    def add_section_label(self, ax, label: str, x_pos: int, y_pos: int, ha='left'):
         """Add section label"""
-        ax.text(x_pos, y_pos, label, 
-                fontsize=14, fontweight='bold', ha=ha, color='#1D1D1F')
+        ax.text(x_pos, y_pos, label, fontsize=14, fontweight='bold', 
+                color=self.text_color, ha=ha)
     
     def get_performance_color(self, attach_rate: float) -> str:
-        """Get color based on attach rate performance"""
+        """Get color based on performance thresholds"""
         if attach_rate > self.high_attach_threshold:
             return '#007AFF'  # Blue for high performance
         elif attach_rate > self.medium_attach_threshold:
             return '#34C759'  # Green for medium performance
-        elif attach_rate > self.low_attach_threshold:
-            return '#FF9500'  # Orange for low performance
         else:
-            return '#8E8E93'  # Gray for very low performance
+            return '#8E8E93'  # Gray for low performance
     
-    def add_performance_indicator(self, ax: plt.Axes, x_pos: float, y_pos: float, 
-                                 attach_rate: float, size: int = 3) -> None:
-        """Add performance indicator (star for high performance)"""
-        if attach_rate > self.high_attach_threshold:
-            star = patches.Circle((x_pos, y_pos), size, color='gold', alpha=0.9)
-            ax.add_patch(star)
-    
-    def format_product_name(self, name: str, max_length: int = 15) -> str:
+    def format_product_name(self, name: str, max_length: int = 12) -> str:
         """Format product name for display"""
+        if not name:
+            return ""
+        
         # Remove common prefixes
-        name = name.replace('iPhone ', '').replace('iPad ', '').replace('Mac ', '')
-        name = name.replace('Apple Watch ', '').replace('AirPods ', '')
+        name = name.replace(f'{self.lob} ', '').replace('Apple ', '')
         
-        # Shorten common terms
-        replacements = {
-            'Pro Max': 'PM',
-            'Plus': '+',
-            'Standard': 'Std',
-            'Generation': 'Gen',
-            '2nd Gen': '2G',
-            '3rd Gen': '3G'
-        }
-        
-        for old, new in replacements.items():
-            name = name.replace(old, new)
-        
-        # Truncate if still too long
+        # Truncate if too long
         if len(name) > max_length:
             name = name[:max_length-2] + '..'
         
         return name
     
-    def save_planogram(self, fig: plt.Figure, filename: str) -> Path:
-        """Save planogram to file"""
-        output_path = self.output_dir / filename
-        plt.tight_layout()
-        fig.savefig(output_path, dpi=200, bbox_inches='tight', 
-                   facecolor='white', edgecolor='none')
-        plt.close(fig)
-        
-        self.logger.info(f"Saved {self.lob} cohort planogram: {output_path}")
-        return output_path
+    def add_performance_indicator(self, ax, x_pos: int, y_pos: int, 
+                                attach_rate: float, size: int = 3):
+        """Add performance indicator (star for high performance)"""
+        if attach_rate > self.high_attach_threshold:
+            from matplotlib import patches
+            star = patches.Circle((x_pos, y_pos), size, color='gold', alpha=0.9)
+            ax.add_patch(star)
     
-    def create_legend(self, ax: plt.Axes, categories: List[str], 
-                     x_pos: int = 250, y_pos: int = 60) -> None:
-        """Create legend for accessory categories"""
-        ax.text(x_pos, y_pos + 35, "CATEGORIES", 
-                fontsize=11, fontweight='bold', color='#1D1D1F', ha='left')
+    def create_legend(self, ax, categories: List[str], x_pos: int, y_pos: int):
+        """Create legend for categories and performance indicators"""
+        self.add_section_label(ax, "LEGEND", x_pos, y_pos + 30)
         
-        # Show up to 8 categories for more compact display
-        display_categories = categories[:8]
-        
-        for i, category in enumerate(display_categories):
+        # Category colors
+        for i, category in enumerate(categories[:6]):  # Limit to 6 for space
             color = self.category_colors.get(category, '#8E8E93')
             
             # Draw color square
-            legend_rect = Rectangle((x_pos, y_pos + 25 - i*6), 6, 4, 
+            from matplotlib.patches import Rectangle
+            legend_rect = Rectangle((x_pos, y_pos + 18 - i*8), 8, 6, 
                                   facecolor=color, edgecolor='#86868B', linewidth=1)
             ax.add_patch(legend_rect)
             
             # Add category name
-            ax.text(x_pos + 10, y_pos + 27 - i*6, category, 
-                   fontsize=7, ha='left', va='center', color='#1D1D1F')
+            ax.text(x_pos + 12, y_pos + 21 - i*8, category, 
+                   fontsize=8, ha='left', va='center', color=self.text_color)
+    
+    def save_planogram(self, fig, filename: str) -> Path:
+        """Save planogram to file"""
+        output_path = self.output_dir / filename
+        plt.tight_layout()
+        plt.savefig(output_path, dpi=300, bbox_inches='tight', 
+                    facecolor='white', edgecolor='none')
+        plt.close(fig)
         
-        # Add performance indicators legend
-        ax.text(x_pos, y_pos - 30, "PERFORMANCE", 
-                fontsize=11, fontweight='bold', color='#1D1D1F', ha='left')
-        
-        # High performance
-        star = patches.Circle((x_pos + 3, y_pos - 36), 1.5, color='gold', alpha=0.9)
-        ax.add_patch(star)
-        ax.text(x_pos + 8, y_pos - 36, f"> {self.high_attach_threshold:.0%} (High)", 
-               fontsize=7, ha='left', va='center', color='#1D1D1F')
-        
-        # Medium performance
-        medium_rect = Rectangle((x_pos + 1, y_pos - 46), 4, 3, 
-                              facecolor='#34C759', alpha=0.7, edgecolor='#86868B', linewidth=1)
-        ax.add_patch(medium_rect)
-        ax.text(x_pos + 8, y_pos - 44, f"> {self.medium_attach_threshold:.0%} (Medium)", 
-               fontsize=7, ha='left', va='center', color='#1D1D1F')
-        
-        # Low performance
-        low_rect = Rectangle((x_pos + 1, y_pos - 56), 4, 3, 
-                           facecolor='#FF9500', alpha=0.7, edgecolor='#86868B', linewidth=1)
-        ax.add_patch(low_rect)
-        ax.text(x_pos + 8, y_pos - 54, f"> {self.low_attach_threshold:.0%} (Low)", 
-               fontsize=7, ha='left', va='center', color='#1D1D1F')
+        self.logger.info(f"Saved planogram: {output_path}")
+        return output_path
     
     def generate_cohort_planogram(self, store_type: str) -> Path:
         """Generate cohort planogram - to be implemented by subclasses"""
         raise NotImplementedError("Subclasses must implement generate_cohort_planogram")
+
+
+class StoreTemplateLoader:
+    """Loads store-specific configuration templates"""
+    
+    def __init__(self):
+        self.templates = {
+            'flagship': {
+                'max_models': 6,
+                'max_categories': 8,
+                'cell_width': 32,
+                'cell_height': 16,
+                'x_spacing': 3,
+                'y_spacing': 3,
+                'x_start': 90
+            },
+            'standard': {
+                'max_models': 5,
+                'max_categories': 6,
+                'cell_width': 28,
+                'cell_height': 14,
+                'x_spacing': 2,
+                'y_spacing': 2,
+                'x_start': 80
+            },
+            'express': {
+                'max_models': 4,
+                'max_categories': 5,
+                'cell_width': 24,
+                'cell_height': 12,
+                'x_spacing': 2,
+                'y_spacing': 2,
+                'x_start': 70
+            }
+        }
+    
+    def get_matrix_config(self, store_type: str) -> Dict[str, Any]:
+        """Get matrix configuration for store type"""
+        return self.templates.get(store_type, self.templates['flagship'])
+    
+    def get_layout_positions(self, store_type: str) -> Dict[str, int]:
+        """Get layout positions for store type"""
+        positions = {
+            'flagship': {
+                'title_y': 265,
+                'matrix_y': 200,
+                'insights_x': 20,
+                'insights_y': 90,
+                'recommended_x': 300,
+                'recommended_y': 90,
+                'legend_x': 310,
+                'legend_y': 100
+            },
+            'standard': {
+                'title_y': 220,
+                'matrix_y': 170,
+                'insights_x': 15,
+                'insights_y': 70,
+                'recommended_x': 250,
+                'recommended_y': 70,
+                'legend_x': 260,
+                'legend_y': 80
+            },
+            'express': {
+                'title_y': 180,
+                'matrix_y': 140,
+                'insights_x': 10,
+                'insights_y': 50,
+                'recommended_x': 200,
+                'recommended_y': 50,
+                'legend_x': 210,
+                'legend_y': 60
+            }
+        }
+        return positions.get(store_type, positions['flagship'])
+    
+    def get_core_product_config(self, store_type: str) -> Dict[str, int]:
+        """Get core product zone configuration"""
+        configs = {
+            'flagship': {
+                'zone_width': 22,
+                'zone_height': 12,
+                'x_start': 240,
+                'y_start': 240,
+                'x_spacing': 3
+            },
+            'standard': {
+                'zone_width': 20,
+                'zone_height': 10,
+                'x_start': 200,
+                'y_start': 200,
+                'x_spacing': 2
+            },
+            'express': {
+                'zone_width': 18,
+                'zone_height': 8,
+                'x_start': 160,
+                'y_start': 160,
+                'x_spacing': 2
+            }
+        }
+        return configs.get(store_type, configs['flagship'])

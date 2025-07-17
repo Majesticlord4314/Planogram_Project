@@ -1,24 +1,28 @@
 """
-Cohort-Based Planogram System
+Cohort-based planogram generation system
 
-This module provides a dedicated system for generating cohort-based planograms
-that show LOB-accessory relationships based on customer purchase behavior.
-
-Key Components:
-- CohortDataLoader: Loads and processes corrected cohort data
-- CohortPlanogramBase: Base class for cohort planogram generation
-- iPhone/iPad/Mac/Watch/AirPods specific cohort planogram generators
-- CohortPlanogramRunner: Main entry point for cohort planogram generation
-
-Usage:
-    from src.cohort_planogram.runner import CohortPlanogramRunner
-    
-    runner = CohortPlanogramRunner()
-    runner.generate_cohort_planogram('iPhone', 'flagship')
+This package provides cohort-based planogram generation for different LOBs,
+showing relationships between core products and their accessories based on
+customer purchase behavior and attach rates.
 """
 
 from .runner import CohortPlanogramRunner
-from .iphone_cohort import iPhoneCohortPlanogram
+from .base import CohortPlanogramBase, StoreTemplateLoader
 from .data_loader import CohortDataLoader
+from .iphone_cohort import iPhoneCohortPlanogram
+from .ipad_cohort import iPadCohortPlanogram
+from .mac_cohort import MacCohortPlanogram
+from .watch_cohort import WatchCohortPlanogram
 
-__all__ = ['CohortPlanogramRunner', 'iPhoneCohortPlanogram', 'CohortDataLoader']
+__all__ = [
+    'CohortPlanogramRunner',
+    'CohortPlanogramBase',
+    'StoreTemplateLoader', 
+    'CohortDataLoader',
+    'iPhoneCohortPlanogram',
+    'iPadCohortPlanogram',
+    'MacCohortPlanogram',
+    'WatchCohortPlanogram'
+]
+
+__version__ = '1.0.0'

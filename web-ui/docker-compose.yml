@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../data:/app/data:ro  # Mount data directory as read-only
+      - ../src:/app/src:ro    # Mount source code as read-only
+      - ../output:/app/output # Mount output directory for results
+      - ../logs:/app/logs     # Mount logs directory
+    environment:
+      - FLASK_ENV=development
+      - PYTHONPATH=/app
+    working_dir: /app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+
+volumes:
+  node_modules:

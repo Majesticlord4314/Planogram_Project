@@ -13,7 +13,7 @@ from matplotlib import patches
 from typing import Dict, List, Tuple
 from pathlib import Path
 
-from .base import CohortPlanogramBase
+from .base import CohortPlanogramBase, StoreTemplateLoader
 from .data_loader import CohortDataLoader
 
 class iPhoneCohortPlanogram(CohortPlanogramBase):
@@ -22,6 +22,7 @@ class iPhoneCohortPlanogram(CohortPlanogramBase):
     def __init__(self):
         super().__init__('iPhone')
         self.data_loader = CohortDataLoader()
+        self.store_template_loader = StoreTemplateLoader()
         
     def generate_cohort_planogram(self, store_type: str) -> Path:
         """Generate comprehensive iPhone cohort planogram"""
