@@ -20,6 +20,9 @@ sys.path.insert(0, str(project_root))
 
 logger = logging.getLogger(__name__)
 
+# Import progress tracking system
+from progress_tracker import progress_tracker, create_progress_callback, create_log_callback, setup_log_capture, remove_log_capture
+
 class JobStatus(Enum):
     PENDING = "pending"
     RUNNING = "running"
@@ -120,40 +123,64 @@ class PlanogramSystemWrapper:
         job.started_at = datetime.now()
         
         try:
+            # Update both the old progress system and the new one
             self._emit_progress(job_id, 10, "running", f"Starting {lob} cohort planogram for {store_type} store")
+            progress_tracker.update_progress(job_id, 10, f"Starting {lob} cohort planogram for {store_type} store")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Use the existing cohort planogram system directly
             from src.cohort_planogram.runner import CohortPlanogramRunner
             
             self._emit_progress(job_id, 30, "running", f"Initializing cohort planogram runner for {lob}")
+            progress_tracker.update_progress(job_id, 30, f"Initializing cohort planogram runner for {lob}")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Create runner and generate planogram
             runner = CohortPlanogramRunner()
             
             self._emit_progress(job_id, 50, "running", f"Generating {lob} cohort planogram for {store_type} store")
+            progress_tracker.update_progress(job_id, 50, f"Generating {lob} cohort planogram for {store_type} store")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Generate the cohort planogram using existing system
             output_path = runner.generate_cohort_planogram(lob, store_type)
             
             if output_path and Path(output_path).exists():
                 self._emit_progress(job_id, 90, "running", f"Cohort planogram generated successfully")
+                progress_tracker.update_progress(job_id, 90, f"Cohort planogram generated successfully")
                 
                 # Set result with file information
                 job.result = {
                     'output_name': f"{lob}_{store_type}_cohort_{job_id[:8]}",
                     'lob': lob,
                     'store_type': store_type,
-                    'output_path': output_path,
+                    'output_path': str(output_path),  # Convert Path to string
                     'files': [
                         {
                             'name': Path(output_path).name,
                             'type': 'planogram',
-                            'path': output_path
+                            'path': str(output_path)  # Convert Path to string
                         }
                     ]
                 }
                 
                 self._emit_progress(job_id, 100, "completed", f"Cohort planogram completed: {Path(output_path).name}")
+                progress_tracker.complete_job(job_id, job.result)
                 job.status = JobStatus.COMPLETED
                 job.completed_at = datetime.now()
             else:
@@ -163,22 +190,10 @@ class PlanogramSystemWrapper:
             error_msg = str(e)
             logger.error(f"Error in cohort planogram job {job_id}: {error_msg}")
             self._emit_progress(job_id, 0, "failed", f"Error: {error_msg}")
+            progress_tracker.fail_job(job_id, error_msg)
             job.status = JobStatus.FAILED
             job.error = error_msg
             job.completed_at = datetime.now()
-            
-            # Emit error via WebSocket
-            try:
-                from app import socketio
-                socketio.emit('job_status', {
-                    'job_id': job_id,
-                    'status': 'failed',
-                    'progress': 0,
-                    'error': error_msg,
-                    'logs': job.logs[-10:] if job.logs else []
-                }, room=job_id)
-            except Exception as emit_error:
-                logger.error(f"Failed to emit error for job {job_id}: {emit_error}")
     
     def run_lob_optimization(self, job_id: str, lob: str, store_type: str, strategy: str):
         """Run LOB optimization"""
@@ -187,7 +202,15 @@ class PlanogramSystemWrapper:
         job.started_at = datetime.now()
         
         try:
+            # Update both the old progress system and the new one
             self._emit_progress(job_id, 10, "running", f"Starting {lob} optimization with {strategy} strategy")
+            progress_tracker.update_progress(job_id, 10, f"Starting {lob} optimization with {strategy} strategy")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Import existing modules
             from src.data_processing.data_loader import DataLoader
@@ -198,6 +221,13 @@ class PlanogramSystemWrapper:
             transformer = DataTransformer()
             
             self._emit_progress(job_id, 20, "running", f"Loading {lob} products")
+            progress_tracker.update_progress(job_id, 20, f"Loading {lob} products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load products
             products = loader.load_products_by_lob(lob)
@@ -205,11 +235,25 @@ class PlanogramSystemWrapper:
                 raise ValueError(f"No products found for {lob}")
             
             self._emit_progress(job_id, 40, "running", f"Found {len(products)} products")
+            progress_tracker.update_progress(job_id, 40, f"Found {len(products)} products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load store
             store = loader.load_store_template(store_type)
             
             self._emit_progress(job_id, 60, "running", "Transforming products for optimization")
+            progress_tracker.update_progress(job_id, 60, "Transforming products for optimization")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Fix products with missing attributes
             for product in products:
@@ -230,12 +274,17 @@ class PlanogramSystemWrapper:
             products = transformer.prepare_products_for_store(products, store, strategy)
             
             self._emit_progress(job_id, 80, "running", f"Optimizing with {strategy} strategy")
+            progress_tracker.update_progress(job_id, 80, f"Optimizing with {strategy} strategy")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Run optimization
             optimizer = ProductOptimizer(store, gap_size=1.0, strategy=strategy)
             result = optimizer.create_planogram(products)
-            
-            self._emit_progress(job_id, 100, "completed", "LOB optimization completed successfully")
             
             # Set result with JSON-serializable data
             job.result = {
@@ -247,6 +296,9 @@ class PlanogramSystemWrapper:
                 'store_type': store_type,
                 'strategy': strategy
             }
+            
+            self._emit_progress(job_id, 100, "completed", "LOB optimization completed successfully")
+            progress_tracker.complete_job(job_id, job.result)
             job.status = JobStatus.COMPLETED
             job.completed_at = datetime.now()
             
@@ -254,22 +306,10 @@ class PlanogramSystemWrapper:
             error_msg = str(e)
             logger.error(f"Error in LOB optimization job {job_id}: {error_msg}")
             self._emit_progress(job_id, 0, "failed", f"Error: {error_msg}")
+            progress_tracker.fail_job(job_id, error_msg)
             job.status = JobStatus.FAILED
             job.error = error_msg
             job.completed_at = datetime.now()
-            
-            # Emit error via WebSocket
-            try:
-                from app import socketio
-                socketio.emit('job_status', {
-                    'job_id': job_id,
-                    'status': 'failed',
-                    'progress': 0,
-                    'error': error_msg,
-                    'logs': job.logs[-10:] if job.logs else []
-                }, room=job_id)
-            except Exception as emit_error:
-                logger.error(f"Failed to emit error for job {job_id}: {emit_error}")
     
     def run_category_optimization(self, job_id: str, category: str, store_type: str, strategy: str):
         """Run category optimization"""
@@ -278,7 +318,15 @@ class PlanogramSystemWrapper:
         job.started_at = datetime.now()
         
         try:
+            # Update both the old progress system and the new one
             self._emit_progress(job_id, 10, "running", f"Starting {category} optimization")
+            progress_tracker.update_progress(job_id, 10, f"Starting {category} optimization")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Import existing modules
             from src.data_processing.data_loader import DataLoader
@@ -289,6 +337,13 @@ class PlanogramSystemWrapper:
             transformer = DataTransformer()
             
             self._emit_progress(job_id, 30, "running", f"Loading {category} products")
+            progress_tracker.update_progress(job_id, 30, f"Loading {category} products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load products
             products = loader.load_products_by_category(category)
@@ -296,11 +351,25 @@ class PlanogramSystemWrapper:
                 raise ValueError(f"No products found for category {category}")
             
             self._emit_progress(job_id, 50, "running", f"Found {len(products)} products")
+            progress_tracker.update_progress(job_id, 50, f"Found {len(products)} products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load store
             store = loader.load_store_template(store_type)
             
             self._emit_progress(job_id, 70, "running", "Transforming products for optimization")
+            progress_tracker.update_progress(job_id, 70, "Transforming products for optimization")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Fix products with missing attributes
             for product in products:
@@ -321,12 +390,17 @@ class PlanogramSystemWrapper:
             products = transformer.prepare_products_for_store(products, store, strategy)
             
             self._emit_progress(job_id, 90, "running", f"Optimizing with {strategy} strategy")
+            progress_tracker.update_progress(job_id, 90, f"Optimizing with {strategy} strategy")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Run optimization
             optimizer = ProductOptimizer(store, gap_size=1.0, strategy=strategy)
             result = optimizer.create_planogram(products)
-            
-            self._emit_progress(job_id, 100, "completed", "Category optimization completed")
             
             # Set result
             job.result = {
@@ -338,6 +412,9 @@ class PlanogramSystemWrapper:
                 'store_type': store_type,
                 'strategy': strategy
             }
+            
+            self._emit_progress(job_id, 100, "completed", "Category optimization completed")
+            progress_tracker.complete_job(job_id, job.result)
             job.status = JobStatus.COMPLETED
             job.completed_at = datetime.now()
             
@@ -345,22 +422,10 @@ class PlanogramSystemWrapper:
             error_msg = str(e)
             logger.error(f"Error in category optimization job {job_id}: {error_msg}")
             self._emit_progress(job_id, 0, "failed", f"Error: {error_msg}")
+            progress_tracker.fail_job(job_id, error_msg)
             job.status = JobStatus.FAILED
             job.error = error_msg
             job.completed_at = datetime.now()
-            
-            # Emit error via WebSocket
-            try:
-                from app import socketio
-                socketio.emit('job_status', {
-                    'job_id': job_id,
-                    'status': 'failed',
-                    'progress': 0,
-                    'error': error_msg,
-                    'logs': job.logs[-10:] if job.logs else []
-                }, room=job_id)
-            except Exception as emit_error:
-                logger.error(f"Failed to emit error for job {job_id}: {emit_error}")
     
     def run_full_store_optimization(self, job_id: str, store_type: str, strategy: str):
         """Run full store optimization"""
@@ -369,7 +434,15 @@ class PlanogramSystemWrapper:
         job.started_at = datetime.now()
         
         try:
+            # Update both the old progress system and the new one
             self._emit_progress(job_id, 10, "running", "Loading all products")
+            progress_tracker.update_progress(job_id, 10, "Loading all products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Import existing modules
             from src.data_processing.data_loader import DataLoader
@@ -380,6 +453,13 @@ class PlanogramSystemWrapper:
             transformer = DataTransformer()
             
             self._emit_progress(job_id, 30, "running", "Loading products from all categories")
+            progress_tracker.update_progress(job_id, 30, "Loading products from all categories")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load all products
             products = loader.load_all_products()
@@ -387,11 +467,25 @@ class PlanogramSystemWrapper:
                 raise ValueError("No products found")
             
             self._emit_progress(job_id, 50, "running", f"Found {len(products)} total products")
+            progress_tracker.update_progress(job_id, 50, f"Found {len(products)} total products")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Load store
             store = loader.load_store_template(store_type)
             
             self._emit_progress(job_id, 70, "running", "Transforming all products for optimization")
+            progress_tracker.update_progress(job_id, 70, "Transforming all products for optimization")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Fix products with missing attributes
             for product in products:
@@ -412,12 +506,17 @@ class PlanogramSystemWrapper:
             products = transformer.prepare_products_for_store(products, store, strategy)
             
             self._emit_progress(job_id, 90, "running", f"Optimizing entire store with {strategy} strategy")
+            progress_tracker.update_progress(job_id, 90, f"Optimizing entire store with {strategy} strategy")
+            
+            # Check for cancellation
+            if progress_tracker.is_cancelled(job_id):
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return
             
             # Run optimization
             optimizer = ProductOptimizer(store, gap_size=1.0, strategy=strategy)
             result = optimizer.create_planogram(products)
-            
-            self._emit_progress(job_id, 100, "completed", "Full store optimization completed")
             
             # Set result
             job.result = {
@@ -429,6 +528,9 @@ class PlanogramSystemWrapper:
                 'strategy': strategy,
                 'total_products_processed': len(products)
             }
+            
+            self._emit_progress(job_id, 100, "completed", "Full store optimization completed")
+            progress_tracker.complete_job(job_id, job.result)
             job.status = JobStatus.COMPLETED
             job.completed_at = datetime.now()
             
@@ -436,22 +538,10 @@ class PlanogramSystemWrapper:
             error_msg = str(e)
             logger.error(f"Error in full store optimization job {job_id}: {error_msg}")
             self._emit_progress(job_id, 0, "failed", f"Error: {error_msg}")
+            progress_tracker.fail_job(job_id, error_msg)
             job.status = JobStatus.FAILED
             job.error = error_msg
             job.completed_at = datetime.now()
-            
-            # Emit error via WebSocket
-            try:
-                from app import socketio
-                socketio.emit('job_status', {
-                    'job_id': job_id,
-                    'status': 'failed',
-                    'progress': 0,
-                    'error': error_msg,
-                    'logs': job.logs[-10:] if job.logs else []
-                }, room=job_id)
-            except Exception as emit_error:
-                logger.error(f"Failed to emit error for job {job_id}: {emit_error}")
     
     def run_job_async(self, job_id: str):
         """Run a job asynchronously in a separate thread"""
@@ -459,8 +549,16 @@ class PlanogramSystemWrapper:
         if not job:
             raise ValueError(f"Job {job_id} not found")
         
+        # Initialize progress tracking for this job
+        progress_tracker.track_job(job_id)
+        
         def run_job():
+            # Set up log capture for this job
+            log_handler = setup_log_capture(job_id)
+            
             try:
+                progress_tracker.add_log(job_id, f"Starting {job.job_type} job with parameters: {job.parameters}")
+                
                 if job.job_type == "cohort":
                     self.run_cohort_planogram(
                         job_id, 
@@ -491,8 +589,17 @@ class PlanogramSystemWrapper:
                     raise ValueError(f"Unknown job type: {job.job_type}")
                     
             except Exception as e:
-                logger.error(f"Job {job_id} failed: {e}")
+                error_msg = str(e)
+                logger.error(f"Job {job_id} failed: {error_msg}")
+                progress_tracker.fail_job(job_id, error_msg)
                 # Error is already set in the individual run methods
+            finally:
+                # Clean up log capture
+                remove_log_capture(log_handler)
+                
+                # Check if job was cancelled
+                if progress_tracker.is_cancelled(job_id):
+                    progress_tracker.confirm_cancelled(job_id)
         
         thread = threading.Thread(target=run_job, daemon=True)
         thread.start()
@@ -510,8 +617,16 @@ class PlanogramSystemWrapper:
         """Cancel a running job"""
         job = self.jobs.get(job_id)
         if job and job.status == JobStatus.RUNNING:
+            # Update job status
             job.status = JobStatus.CANCELLED
             job.completed_at = datetime.now()
+            
+            # Also update progress tracker
+            progress_tracker.cancel_job(job_id)
+            
+            # Log cancellation
+            logger.info(f"Job {job_id} cancelled by user")
+            
             return True
         return False
     

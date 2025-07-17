@@ -68,30 +68,31 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
   const [tabValue, setTabValue] = useState(0);
   const [planogramImage, setPlanogramImage] = useState<string | null>(null);
 
+  const [files, setFiles] = useState<any[]>([]);
+
   const fetchResultDetails = React.useCallback(async () => {
     if (!jobId) return;
 
     try {
+      // Fetch job details
       const response = await apiService.getResultDetails(jobId);
       if (response.success && response.data) {
         setResult(response.data);
-        
-        // Try to load planogram image if available
-        if (response.data.files && response.data.files.length > 0) {
-          const imageFile = response.data.files.find((f: any) => 
-            f.name.includes('retail.png') || f.name.includes('.png')
+      }
+
+      // Fetch associated files
+      const filesResponse = await fetch(`http://localhost:5000/api/results/${jobId}/files`);
+      if (filesResponse.ok) {
+        const filesData = await filesResponse.json();
+        if (filesData.success && filesData.data.files) {
+          setFiles(filesData.data.files);
+          
+          // Find and set planogram image
+          const imageFile = filesData.data.files.find((f: any) => 
+            f.type === 'planogram' && f.name.toLowerCase().includes('.png')
           );
           if (imageFile) {
-            // Load the actual image from the backend
-            setPlanogramImage(`http://localhost:5000/api/files/${imageFile.name}`);
-          }
-        } else if (response.data.result && response.data.result.files) {
-          // Check if files are in the result object
-          const imageFile = response.data.result.files.find((f: any) => 
-            f.name.includes('retail.png') || f.name.includes('.png')
-          );
-          if (imageFile) {
-            setPlanogramImage(`http://localhost:5000/api/files/${imageFile.name}`);
+            setPlanogramImage(`http://localhost:5000${imageFile.url}`);
           }
         }
       }
@@ -106,15 +107,18 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
     }
   }, [open, jobId, fetchResultDetails]);
 
-  const handleDownload = async (fileType: string) => {
-    if (!jobId) return;
-
+  const handleDownload = async (file: any) => {
     try {
-      const blob = await apiService.downloadResultFile(jobId, fileType);
+      const response = await fetch(`http://localhost:5000${file.download_url}`);
+      if (!response.ok) {
+        throw new Error('Download failed');
+      }
+      
+      const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `planogram_${jobId.substring(0, 8)}_${fileType}`;
+      a.download = file.name;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
@@ -280,7 +284,13 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
                 <Button 
                   variant="outlined" 
                   sx={{ mt: 2 }}
-                  onClick={() => handleDownload('planogram')}
+                  onClick={() => {
+                    const imageFile = files.find(f => f.type === 'planogram' && f.name.toLowerCase().includes('.png'));
+                    if (imageFile) {
+                      handleDownload(imageFile);
+                    }
+                  }}
+                  disabled={!files.some(f => f.type === 'planogram' && f.name.toLowerCase().includes('.png'))}
                 >
                   Try Download
                 </Button>
@@ -352,79 +362,82 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
             <Typography variant="h6" gutterBottom>
               Available Downloads
             </Typography>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6} md={4}>
-                <Card>
-                  <CardContent>
-                    <Box display="flex" alignItems="center" mb={2}>
-                      <ImageIcon color="primary" sx={{ mr: 1 }} />
-                      <Typography variant="h6">
-                        Planogram Image
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                      High-resolution planogram visualization
-                    </Typography>
-                    <Button 
-                      variant="contained" 
-                      fullWidth 
-                      startIcon={<DownloadIcon />}
-                      onClick={() => handleDownload('planogram')}
-                    >
-                      Download PNG
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
+            {files.length > 0 ? (
+              <Grid container spacing={2}>
+                {files.map((file, index) => {
+                  const getFileIcon = (fileName: string, fileType: string) => {
+                    if (fileType === 'planogram' || fileName.toLowerCase().includes('.png')) {
+                      return <ImageIcon color="primary" sx={{ mr: 1 }} />;
+                    } else if (fileName.toLowerCase().includes('.xlsx')) {
+                      return <TableChartIcon color="primary" sx={{ mr: 1 }} />;
+                    } else if (fileName.toLowerCase().includes('.txt') || fileName.toLowerCase().includes('.csv')) {
+                      return <AssessmentIcon color="primary" sx={{ mr: 1 }} />;
+                    }
+                    return <AssessmentIcon color="primary" sx={{ mr: 1 }} />;
+                  };
 
-              <Grid item xs={12} sm={6} md={4}>
-                <Card>
-                  <CardContent>
-                    <Box display="flex" alignItems="center" mb={2}>
-                      <TableChartIcon color="primary" sx={{ mr: 1 }} />
-                      <Typography variant="h6">
-                        Excel Report
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                      Detailed product placement data
-                    </Typography>
-                    <Button 
-                      variant="contained" 
-                      fullWidth 
-                      startIcon={<DownloadIcon />}
-                      onClick={() => handleDownload('excel')}
-                    >
-                      Download XLSX
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
+                  const getFileDescription = (fileName: string, fileType: string) => {
+                    if (fileType === 'planogram' || fileName.toLowerCase().includes('.png')) {
+                      return 'High-resolution planogram visualization';
+                    } else if (fileName.toLowerCase().includes('.xlsx')) {
+                      return 'Detailed product placement data';
+                    } else if (fileName.toLowerCase().includes('.txt')) {
+                      return 'Text report with optimization details';
+                    } else if (fileName.toLowerCase().includes('.csv')) {
+                      return 'Raw data export for analysis';
+                    }
+                    return 'Generated file from optimization';
+                  };
 
-              <Grid item xs={12} sm={6} md={4}>
-                <Card>
-                  <CardContent>
-                    <Box display="flex" alignItems="center" mb={2}>
-                      <AssessmentIcon color="primary" sx={{ mr: 1 }} />
-                      <Typography variant="h6">
-                        CSV Report
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                      Raw data export for analysis
-                    </Typography>
-                    <Button 
-                      variant="contained" 
-                      fullWidth 
-                      startIcon={<DownloadIcon />}
-                      onClick={() => handleDownload('report')}
-                    >
-                      Download CSV
-                    </Button>
-                  </CardContent>
-                </Card>
+                  const formatFileSize = (bytes: number) => {
+                    if (bytes === 0) return '0 Bytes';
+                    const k = 1024;
+                    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                    const i = Math.floor(Math.log(bytes) / Math.log(k));
+                    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+                  };
+
+                  return (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                      <Card>
+                        <CardContent>
+                          <Box display="flex" alignItems="center" mb={2}>
+                            {getFileIcon(file.name, file.type)}
+                            <Typography variant="h6" noWrap>
+                              {file.name}
+                            </Typography>
+                          </Box>
+                          <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                            {getFileDescription(file.name, file.type)}
+                          </Typography>
+                          <Typography variant="caption" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+                            Size: {formatFileSize(file.size)} • Created: {new Date(file.created).toLocaleDateString()}
+                          </Typography>
+                          <Button 
+                            variant="contained" 
+                            fullWidth 
+                            startIcon={<DownloadIcon />}
+                            onClick={() => handleDownload(file)}
+                          >
+                            Download
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  );
+                })}
               </Grid>
-            </Grid>
+            ) : (
+              <Card sx={{ p: 4, textAlign: 'center', bgcolor: 'grey.100' }}>
+                <AssessmentIcon sx={{ fontSize: 64, color: 'grey.400', mb: 2 }} />
+                <Typography variant="h6" color="text.secondary">
+                  No Files Available
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Files may still be generating or there was an issue with the optimization.
+                </Typography>
+              </Card>
+            )}
           </Box>
         </TabPanel>
       </DialogContent>

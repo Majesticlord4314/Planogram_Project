@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .connecting {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        #log {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f8f9fa;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info {
+            color: #0c5460;
+        }
+
+        .error {
+            color: #721c24;
+        }
+
+        .success {
+            color: #155724;
+        }
+
+        .warning {
+            color: #856404;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebSocket Connection Test</h1>
+
+    <div id="status" class="disconnected">Disconnected</div>
+
+    <div>
+        <label for="serverUrl">Server URL:</label>
+        <input type="text" id="serverUrl" value="http://localhost:5000" />
+        <button id="connectBtn">Connect</button>
+        <button id="disconnectBtn">Disconnect</button>
+    </div>
+
+    <div>
+        <h3>Job Operations</h3>
+        <label for="jobId">Job ID:</label>
+        <input type="text" id="jobId" placeholder="Enter job ID" />
+        <button id="joinJobBtn">Join Job</button>
+        <button id="leaveJobBtn">Leave Job</button>
+        <button id="getStatusBtn">Get Status</button>
+        <button id="getLogsBtn">Get Logs</button>
+        <button id="cancelJobBtn">Cancel Job</button>
+    </div>
+
+    <h3>Event Log</h3>
+    <div id="log"></div>
+
+    <script>
+        let socket = null;
+
+        const statusEl = document.getElementById('status');
+        const logEl = document.getElementById('log');
+        const serverUrlEl = document.getElementById('serverUrl');
+        const jobIdEl = document.getElementById('jobId');
+
+        // Connect to WebSocket server
+        document.getElementById('connectBtn').addEventListener('click', () => {
+            const serverUrl = serverUrlEl.value;
+
+            if (socket) {
+                socket.disconnect();
+            }
+
+            logMessage('Connecting to ' + serverUrl + '...', 'info');
+            statusEl.className = 'connecting';
+            statusEl.textContent = 'Connecting...';
+
+            try {
+                socket = io(serverUrl, {
+                    transports: ['websocket', 'polling'],
+                    timeout: 10000,
+                    forceNew: true
+                });
+
+                // Connection events
+                socket.on('connect', () => {
+                    statusEl.className = 'connected';
+                    statusEl.textContent = 'Connected (ID: ' + socket.id + ')';
+                    logMessage('Connected to server', 'success');
+
+                    // Get transport info
+                    const transport = socket.io.engine.transport.name;
+                    const upgrades = socket.io.engine.transport.upgrades || [];
+                    logMessage('Transport: ' + transport + ', Available upgrades: ' + upgrades.join(', '), 'info');
+                });
+
+                socket.on('disconnect', (reason) => {
+                    statusEl.className = 'disconnected';
+                    statusEl.textContent = 'Disconnected: ' + reason;
+                    logMessage('Disconnected: ' + reason, 'warning');
+                });
+
+                socket.on('connect_error', (error) => {
+                    statusEl.className = 'disconnected';
+                    statusEl.textContent = 'Connection Error';
+                    logMessage('Connection error: ' + error.message, 'error');
+                });
+
+                // Server events
+                socket.on('connected', (data) => {
+                    logMessage('Server handshake: ' + JSON.stringify(data), 'success');
+                });
+
+                // Job events
+                socket.on('job_status', (data) => {
+                    logMessage('Job status update: ' + JSON.stringify(data), 'info');
+                });
+
+                socket.on('job_logs_stream', (data) => {
+                    logMessage('Job logs received: ' + data.logs.length + ' entries', 'info');
+                    data.logs.forEach(log => {
+                        logMessage(`[${log.level}] ${log.message}`, log.level);
+                    });
+                });
+
+                socket.on('optimization_progress', (data) => {
+                    logMessage(`Progress update for job ${data.job_id}: ${data.progress}% - ${data.status}`, 'info');
+                });
+
+                socket.on('optimization_complete', (data) => {
+                    logMessage(`Job ${data.job_id} completed: ${JSON.stringify(data.result)}`, 'success');
+                });
+
+                socket.on('optimization_error', (data) => {
+                    logMessage(`Job ${data.job_id} error: ${data.error.message}`, 'error');
+                });
+
+                socket.on('job_cancellation_response', (data) => {
+                    logMessage(`Job ${data.job_id} cancellation response: ${data.success ? 'Success' : 'Failed'}`, data.success ? 'success' : 'error');
+                });
+
+            } catch (error) {
+                statusEl.className = 'disconnected';
+                statusEl.textContent = 'Connection Failed';
+                logMessage('Failed to initialize socket: ' + error.message, 'error');
+            }
+        });
+
+        // Disconnect from server
+        document.getElementById('disconnectBtn').addEventListener('click', () => {
+            if (socket) {
+                socket.disconnect();
+                socket = null;
+                statusEl.className = 'disconnected';
+                statusEl.textContent = 'Disconnected';
+                logMessage('Manually disconnected', 'warning');
+            }
+        });
+
+        // Join job room
+        document.getElementById('joinJobBtn').addEventListener('click', () => {
+            const jobId = jobIdEl.value;
+            if (!socket || !socket.connected) {
+                logMessage('Not connected to server', 'error');
+                return;
+            }
+            if (!jobId) {
+                logMessage('Please enter a job ID', 'error');
+                return;
+            }
+
+            socket.emit('join_job', { job_id: jobId });
+            logMessage('Joined job room: ' + jobId, 'info');
+        });
+
+        // Leave job room
+        document.getElementById('leaveJobBtn').addEventListener('click', () => {
+            const jobId = jobIdEl.value;
+            if (!socket || !socket.connected) {
+                logMessage('Not connected to server', 'error');
+                return;
+            }
+            if (!jobId) {
+                logMessage('Please enter a job ID', 'error');
+                return;
+            }
+
+            socket.emit('leave_job', { job_id: jobId });
+            logMessage('Left job room: ' + jobId, 'info');
+        });
+
+        // Get job status
+        document.getElementById('getStatusBtn').addEventListener('click', () => {
+            const jobId = jobIdEl.value;
+            if (!socket || !socket.connected) {
+                logMessage('Not connected to server', 'error');
+                return;
+            }
+            if (!jobId) {
+                logMessage('Please enter a job ID', 'error');
+                return;
+            }
+
+            socket.emit('get_job_status', { job_id: jobId });
+            logMessage('Requested status for job: ' + jobId, 'info');
+        });
+
+        // Get job logs
+        document.getElementById('getLogsBtn').addEventListener('click', () => {
+            const jobId = jobIdEl.value;
+            if (!socket || !socket.connected) {
+                logMessage('Not connected to server', 'error');
+                return;
+            }
+            if (!jobId) {
+                logMessage('Please enter a job ID', 'error');
+                return;
+            }
+
+            socket.emit('get_job_logs_stream', { job_id: jobId, limit: 20 });
+            logMessage('Requested logs for job: ' + jobId, 'info');
+        });
+
+        // Cancel job
+        document.getElementById('cancelJobBtn').addEventListener('click', () => {
+            const jobId = jobIdEl.value;
+            if (!socket || !socket.connected) {
+                logMessage('Not connected to server', 'error');
+                return;
+            }
+            if (!jobId) {
+                logMessage('Please enter a job ID', 'error');
+                return;
+            }
+
+            socket.emit('cancel_job_request', { job_id: jobId });
+            logMessage('Requested cancellation for job: ' + jobId, 'warning');
+        });
+
+        // Helper function to log messages
+        function logMessage(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry ' + type;
+            entry.textContent = new Date().toLocaleTimeString() + ' - ' + message;
+            logEl.appendChild(entry);
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>

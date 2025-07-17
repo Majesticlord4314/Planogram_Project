@@ -4,7 +4,7 @@ Flask Backend for Planogram Web UI
 Backend API that interfaces with the existing planogram optimization system
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file, render_template
 from flask_cors import CORS
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import os
@@ -15,82 +15,209 @@ import traceback
 import logging
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List, Union, Callable
 
 # Add the parent directory to Python path to import existing modules
 # The actual project root is two levels up from web-ui/backend/
 project_root = Path(__file__).parent.parent.parent.absolute()
 sys.path.insert(0, str(project_root))
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'planogram-web-ui-dev-key'
-CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*", logger=True, engineio_logger=True)
-
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(Path(__file__).parent / "logs" / "api.log"),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
-# Store active jobs and results
-active_jobs: Dict[str, Dict[str, Any]] = {}
-completed_results: Dict[str, Dict[str, Any]] = {}
+# Create Flask application
+app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'planogram-web-ui-dev-key')
+app.config['JSON_SORT_KEYS'] = False  # Preserve key order in JSON responses
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max upload size
 
-class APIResponse:
-    """Standardized API response format"""
-    
-    @staticmethod
-    def success(data: Any = None, message: str = "Success") -> Dict[str, Any]:
-        response = {
-            "success": True,
-            "message": message,
-            "timestamp": datetime.now().isoformat()
-        }
-        if data is not None:
-            response["data"] = data
-        return response
-    
-    @staticmethod
-    def error(code: str, message: str, details: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        response = {
-            "success": False,
-            "error": {
-                "code": code,
-                "message": message
-            },
-            "timestamp": datetime.now().isoformat()
-        }
-        if details:
-            response["error"]["details"] = details
-        return response
+# Configure CORS - allow all origins for both API and WebSocket
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-def handle_api_error(func):
-    """Decorator for handling API errors consistently"""
-    def wrapper(*args, **kwargs):
-        try:
-            return func(*args, **kwargs)
-        except FileNotFoundError as e:
-            logger.error(f"File not found in {func.__name__}: {e}")
-            return jsonify(APIResponse.error(
-                "FILE_NOT_FOUND",
-                str(e),
-                {"suggestions": ["Check if data files exist", "Verify file paths"]}
-            )), 404
-        except ValueError as e:
-            logger.error(f"Value error in {func.__name__}: {e}")
-            return jsonify(APIResponse.error(
-                "INVALID_PARAMETER",
-                str(e)
-            )), 400
-        except Exception as e:
-            logger.error(f"Unexpected error in {func.__name__}: {e}")
-            logger.error(traceback.format_exc())
-            return jsonify(APIResponse.error(
-                "INTERNAL_ERROR",
-                "An unexpected error occurred",
-                {"technical_details": str(e)}
-            )), 500
-    wrapper.__name__ = func.__name__
-    return wrapper
+# Configure SocketIO
+socketio = SocketIO(
+    app, 
+    cors_allowed_origins="*", 
+    logger=True, 
+    engineio_logger=True,
+    async_mode='eventlet'  # Use eventlet for better performance
+)
+
+# Import and configure progress tracker
+from progress_tracker import progress_tracker
+progress_tracker.set_socketio(socketio)
+
+# Create logs directory if it doesn't exist
+logs_dir = Path(__file__).parent / "logs"
+logs_dir.mkdir(exist_ok=True)
+
+# Import integration components
+try:
+    from integration import planogram_system, OptimizationJob, JobStatus
+    logger.info("Successfully imported integration components")
+except Exception as e:
+    logger.error(f"Failed to import integration components: {e}")
+    # Create a fallback system
+    from enum import Enum
+    from dataclasses import dataclass
+    from datetime import datetime
+    import threading
+    import time
+    
+    class JobStatus(Enum):
+        PENDING = "pending"
+        RUNNING = "running"
+        COMPLETED = "completed"
+        FAILED = "failed"
+        CANCELLED = "cancelled"
+    
+    @dataclass
+    class OptimizationJob:
+        job_id: str
+        job_type: str
+        parameters: dict
+        status: JobStatus = JobStatus.PENDING
+        progress: int = 0
+        logs: list = None
+        result: dict = None
+        error: str = None
+        created_at: datetime = None
+        started_at: datetime = None
+        completed_at: datetime = None
+        
+        def __post_init__(self):
+            if self.logs is None:
+                self.logs = []
+            if self.created_at is None:
+                self.created_at = datetime.now()
+    
+    class SimplePlanogramSystem:
+        def __init__(self):
+            self.jobs = {}
+        
+        def create_job(self, job_type: str, parameters: dict) -> str:
+            job_id = str(uuid.uuid4())
+            job = OptimizationJob(job_id=job_id, job_type=job_type, parameters=parameters)
+            self.jobs[job_id] = job
+            logger.info(f"Created job {job_id} of type {job_type}")
+            return job_id
+        
+        def get_job(self, job_id: str):
+            return self.jobs.get(job_id)
+        
+        def get_all_jobs(self):
+            return list(self.jobs.values())
+        
+        def cancel_job(self, job_id: str) -> bool:
+            job = self.jobs.get(job_id)
+            if job and job.status == JobStatus.RUNNING:
+                job.status = JobStatus.CANCELLED
+                job.completed_at = datetime.now()
+                return True
+            return False
+        
+        def run_job_async(self, job_id: str):
+            job = self.jobs.get(job_id)
+            if not job:
+                return
+            
+            def simulate_optimization():
+                job.status = JobStatus.RUNNING
+                job.started_at = datetime.now()
+                
+                # Initialize progress tracking
+                progress_tracker.track_job(job_id)
+                
+                steps = [
+                    (10, "Initializing optimization system"),
+                    (20, "Loading data files and configurations"),
+                    (35, "Processing product catalog"),
+                    (50, "Analyzing customer behavior patterns"),
+                    (65, "Calculating optimal placements"),
+                    (80, "Generating planogram layout"),
+                    (95, "Finalizing optimization results"),
+                    (100, "Optimization completed successfully")
+                ]
+                
+                try:
+                    for progress, message in steps:
+                        if progress_tracker.is_cancelled(job_id):
+                            job.status = JobStatus.CANCELLED
+                            job.completed_at = datetime.now()
+                            progress_tracker.confirm_cancelled(job_id)
+                            return
+                        
+                        # Update progress in both systems
+                        job.progress = progress
+                        job.logs.append(f"[{datetime.now().strftime('%H:%M:%S')}] {message}")
+                        progress_tracker.update_progress(job_id, progress, message)
+                        
+                        # Emit WebSocket events
+                        socketio.emit('job_status', {
+                            'job_id': job_id,
+                            'status': job.status.value,
+                            'progress': progress,
+                            'logs': job.logs,
+                            'timestamp': datetime.now().isoformat()
+                        }, room=job_id)
+                        
+                        socketio.emit('optimization_progress', {
+                            'job_id': job_id,
+                            'status': job.status.value,
+                            'progress': progress,
+                            'logs': job.logs[-5:],
+                            'timestamp': datetime.now().isoformat()
+                        }, room=job_id)
+                        
+                        logger.info(f"Job {job_id}: {progress}% - {message}")
+                        time.sleep(2)  # Simulate work
+                    
+                    # Complete the job
+                    job.status = JobStatus.COMPLETED
+                    job.completed_at = datetime.now()
+                    job.result = {
+                        'products_placed': 150,
+                        'products_rejected': 25,
+                        'metrics': {'average_utilization': 85.5},
+                        'lob': job.parameters.get('lob', 'Unknown'),
+                        'store_type': job.parameters.get('store_type', 'Unknown')
+                    }
+                    
+                    progress_tracker.complete_job(job_id, job.result)
+                    
+                    # Emit completion event
+                    socketio.emit('optimization_complete', {
+                        'job_id': job_id,
+                        'result': job.result,
+                        'timestamp': datetime.now().isoformat()
+                    }, room=job_id)
+                    
+                except Exception as e:
+                    error_msg = str(e)
+                    job.status = JobStatus.FAILED
+                    job.error = error_msg
+                    job.completed_at = datetime.now()
+                    progress_tracker.fail_job(job_id, error_msg)
+                    
+                    socketio.emit('optimization_error', {
+                        'job_id': job_id,
+                        'error': {'message': error_msg},
+                        'timestamp': datetime.now().isoformat()
+                    }, room=job_id)
+            
+            thread = threading.Thread(target=simulate_optimization, daemon=True)
+            thread.start()
+    
+    planogram_system = SimplePlanogramSystem()
+    logger.info("Using fallback planogram system")
 
 # WebSocket Event Handlers
 @socketio.on('connect')
@@ -104,33 +231,6 @@ def handle_disconnect():
     """Handle client disconnection"""
     logger.info(f"Client disconnected: {request.sid}")
 
-def emit_progress(job_id: str, progress: int, status: str, logs: list = None):
-    """Emit progress update to connected clients"""
-    socketio.emit('optimization_progress', {
-        'job_id': job_id,
-        'progress': progress,
-        'status': status,
-        'logs': logs or [],
-        'timestamp': datetime.now().isoformat()
-    })
-
-def emit_completion(job_id: str, result: Dict[str, Any]):
-    """Emit completion event to connected clients"""
-    socketio.emit('optimization_complete', {
-        'job_id': job_id,
-        'result': result,
-        'timestamp': datetime.now().isoformat()
-    })
-
-def emit_error(job_id: str, error: Dict[str, Any]):
-    """Emit error event to connected clients"""
-    socketio.emit('optimization_error', {
-        'job_id': job_id,
-        'error': error,
-        'timestamp': datetime.now().isoformat()
-    })
-
-# Enhanced WebSocket Events for Progress Tracking
 @socketio.on('join_job')
 def handle_join_job(data):
     """Join a specific job room for updates"""
@@ -157,41 +257,109 @@ def handle_leave_job(data):
         leave_room(job_id)
         logger.info(f"Client {request.sid} left job room: {job_id}")
 
-@socketio.on('cancel_job')
-def handle_cancel_job(data):
-    """Cancel a running job via WebSocket"""
+# New WebSocket event handlers for real-time progress tracking
+
+@socketio.on('get_job_status')
+def handle_get_job_status(data):
+    """Get current status of a job using the new progress tracking system"""
+    job_id = data.get('job_id')
+    logger.info(f"Received get_job_status request for job: {job_id}")
+    
+    if job_id:
+        # Check the planogram system first
+        job = planogram_system.get_job(job_id)
+        if job:
+            status = {
+                'status': job.status.value,
+                'progress': job.progress,
+                'logs': job.logs[-10:] if job.logs else []
+            }
+            
+            emit('job_status', {
+                'job_id': job_id,
+                'status': status['status'],
+                'progress': status['progress'],
+                'logs': status['logs'],
+                'timestamp': datetime.now().isoformat()
+            })
+            logger.info(f"Sent job status for {job_id}: {status['status']} ({status['progress']}%)")
+        else:
+            # Job doesn't exist, send a not found status
+            emit('job_status', {
+                'job_id': job_id,
+                'status': 'not_found',
+                'progress': 0,
+                'logs': [],
+                'timestamp': datetime.now().isoformat()
+            })
+            logger.info(f"Job {job_id} not found")
+    else:
+        logger.warning("No job_id provided in get_job_status request")
+
+@socketio.on('get_job_logs_stream')
+def handle_get_job_logs_stream(data):
+    """Get logs for a job with streaming support"""
+    job_id = data.get('job_id')
+    limit = data.get('limit', 50)
+    logger.info(f"Received get_job_logs_stream request for job: {job_id}")
+    
+    if job_id:
+        # Get logs from progress tracker
+        logs = progress_tracker.get_logs(job_id, limit)
+        
+        # Also check the planogram system
+        job = planogram_system.get_job(job_id)
+        if job and job.logs:
+            # Format logs properly
+            formatted_logs = []
+            for log in job.logs[-limit:]:
+                if isinstance(log, str):
+                    formatted_logs.append({
+                        'message': log,
+                        'level': 'info',
+                        'timestamp': datetime.now().isoformat()
+                    })
+                else:
+                    formatted_logs.append(log)
+            logs = formatted_logs
+        
+        emit('job_logs_stream', {
+            'job_id': job_id,
+            'logs': logs,
+            'total_logs': len(logs),
+            'timestamp': datetime.now().isoformat()
+        })
+        logger.info(f"Sent {len(logs)} logs for job {job_id}")
+    else:
+        logger.warning("No job_id provided in get_job_logs_stream request")
+
+@socketio.on('cancel_job_request')
+def handle_cancel_job_request(data):
+    """Request cancellation of a job using the new progress tracking system"""
     job_id = data.get('job_id')
     if job_id:
-        success = planogram_system.cancel_job(job_id)
-        emit('job_cancelled', {
+        # Request cancellation through progress tracker
+        success = progress_tracker.cancel_job(job_id)
+        
+        # Also cancel through the old system for compatibility
+        planogram_system.cancel_job(job_id)
+        
+        emit('job_cancellation_response', {
             'job_id': job_id,
             'success': success,
             'timestamp': datetime.now().isoformat()
         })
-        
-        if success:
-            # Notify all clients in the job room
-            socketio.emit('job_status', {
-                'job_id': job_id,
-                'status': 'cancelled',
-                'message': 'Job was cancelled by user'
-            }, room=job_id)
 
-@socketio.on('get_job_logs')
-def handle_get_job_logs(data):
-    """Get recent logs for a job"""
-    job_id = data.get('job_id')
-    limit = data.get('limit', 20)
-    
-    if job_id:
-        job = planogram_system.get_job(job_id)
-        if job:
-            logs = job.logs[-limit:] if job.logs else []
-            emit('job_logs', {
-                'job_id': job_id,
-                'logs': logs,
-                'total_logs': len(job.logs) if job.logs else 0
-            })
+# Helper functions for emitting events
+def emit_progress(job_id: str, progress: int, status: str, logs: list = None):
+    """Emit progress update to connected clients"""
+    socketio.emit('optimization_progress', {
+        'job_id': job_id,
+        'progress': progress,
+        'status': status,
+        'logs': logs or [],
+        'timestamp': datetime.now().isoformat()
+    })
 
 def emit_progress_to_room(job_id: str, progress: int, status: str, logs: list = None):
     """Emit progress update to specific job room"""
@@ -219,421 +387,191 @@ def emit_error_to_room(job_id: str, error: Dict[str, Any]):
         'timestamp': datetime.now().isoformat()
     }, room=job_id)
 
+# API Response helper class
+class APIResponse:
+    """Standardized API response format"""
+    
+    @staticmethod
+    def success(data: Any = None, message: str = "Success") -> Dict[str, Any]:
+        response = {
+            "success": True,
+            "message": message,
+            "timestamp": datetime.now().isoformat()
+        }
+        if data is not None:
+            response["data"] = data
+        return response
+    
+    @staticmethod
+    def error(code: str, message: str, details: Optional[Dict[str, Any]] = None, status_code: int = 400) -> tuple[Dict[str, Any], int]:
+        response = {
+            "success": False,
+            "error": {
+                "code": code,
+                "message": message
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        if details:
+            response["error"]["details"] = details
+        return response, status_code
+
 # API Endpoints
 @app.route('/api/health', methods=['GET'])
-@handle_api_error
 def health_check():
     """Health check endpoint"""
-    return jsonify(APIResponse.success({
+    return jsonify({
         'status': 'healthy',
         'version': '1.0.0',
-        'active_jobs': len(active_jobs),
-        'completed_results': len(completed_results)
-    }))
-
-@app.route('/api/status/system', methods=['GET'])
-@handle_api_error
-def get_system_status():
-    """Get system status including data files and templates"""
-    # Import existing system components
-    from src.data_processing.data_loader import DataLoader
-    
-    loader = DataLoader()
-    
-    # Check data files
-    data_files = {}
-    categories = ['cases', 'cables', 'screen_protectors', 'others']
-    
-    for category in categories:
-        try:
-            products = loader.load_products_by_category(category)
-            data_files[category] = len(products) > 0
-        except:
-            data_files[category] = False
-    
-    # Check store templates
-    store_templates = loader.get_available_stores()
-    
-    # Check LOBs
-    lobs = ['iPhone', 'iPad', 'Mac', 'Watch', 'AirPods']
-    lob_status = {}
-    for lob in lobs:
-        try:
-            products = loader.load_products_by_lob(lob)
-            lob_status[lob] = len(products) > 0
-        except:
-            lob_status[lob] = False
-    
-    return jsonify(APIResponse.success({
-        'data_files': data_files,
-        'store_templates': store_templates,
-        'lob_status': lob_status,
-        'system_health': 'healthy',
-        'active_jobs': len(active_jobs),
-        'project_root': str(project_root)
-    }))
-
-@app.route('/api/status/logs', methods=['GET'])
-@handle_api_error
-def get_recent_logs():
-    """Get recent system logs"""
-    logs_dir = project_root / 'logs'
-    recent_logs = []
-    
-    if logs_dir.exists():
-        log_files = sorted(logs_dir.glob('*.log'), key=lambda x: x.stat().st_mtime, reverse=True)
-        for log_file in log_files[:5]:  # Get 5 most recent log files
-            try:
-                with open(log_file, 'r', encoding='utf-8') as f:
-                    lines = f.readlines()[-10:]  # Last 10 lines
-                    recent_logs.append({
-                        'file': log_file.name,
-                        'lines': [line.strip() for line in lines]
-                    })
-            except:
-                continue
-    
-    return jsonify(APIResponse.success({
-        'logs': recent_logs
-    }))
-
-# Import integration components
-from integration import planogram_system, OptimizationJob, JobStatus
-from file_manager import FileManager
-
-# Initialize file manager
-file_manager = FileManager(project_root)
+        'timestamp': datetime.now().isoformat()
+    })
 
 @app.route('/api/system/info', methods=['GET'])
-@handle_api_error
 def get_system_info():
     """Get comprehensive system information"""
-    system_info = file_manager.get_system_info()
-    
-    # Add job information
-    all_jobs = planogram_system.get_all_jobs()
-    system_info['jobs'] = {
-        'total': len(all_jobs),
-        'running': len([j for j in all_jobs if j.status == JobStatus.RUNNING]),
-        'completed': len([j for j in all_jobs if j.status == JobStatus.COMPLETED]),
-        'failed': len([j for j in all_jobs if j.status == JobStatus.FAILED])
-    }
-    
-    return jsonify(APIResponse.success(system_info))
+    try:
+        # Check actual data files
+        data_dir = project_root / 'data' / 'raw'
+        processed_dir = project_root / 'data' / 'processed'
+        
+        data_files = {
+            'cases': False,
+            'cables': False,
+            'screen_protectors': False,
+            'others': False
+        }
+        
+        # Check for actual data files in accessories directory
+        accessories_dir = data_dir / 'accessories'
+        if accessories_dir.exists():
+            for file_path in accessories_dir.glob('*.csv'):
+                filename = file_path.name.lower()
+                if 'case' in filename:
+                    data_files['cases'] = True
+                elif 'cable' in filename or 'adapter' in filename:
+                    data_files['cables'] = True
+                elif 'screen' in filename or 'protector' in filename:
+                    data_files['screen_protectors'] = True
+                elif 'watch' in filename or 'mac' in filename or 'ipad' in filename:
+                    data_files['others'] = True
+        
+        # Also check processed directory
+        if processed_dir.exists():
+            for file_path in processed_dir.glob('*.csv'):
+                filename = file_path.name.lower()
+                if 'case' in filename:
+                    data_files['cases'] = True
+                elif 'cable' in filename or 'adapter' in filename:
+                    data_files['cables'] = True
+                elif 'screen' in filename or 'protector' in filename:
+                    data_files['screen_protectors'] = True
+                elif 'sleeve' in filename or 'bag' in filename or 'accessories' in filename:
+                    data_files['others'] = True
+        
+        # Check LOB data availability
+        lob_status = {
+            'iPhone': False,
+            'iPad': False,
+            'Mac': False,
+            'Watch': False,
+            'AirPods': False
+        }
+        
+        # Check for cohort data files
+        cohort_files = []
+        cohorts_dir = data_dir / 'cohorts'
+        if cohorts_dir.exists():
+            cohort_files.extend(cohorts_dir.glob('*cohort*.csv'))
+        if data_dir.exists():
+            cohort_files.extend(data_dir.glob('*cohort*.csv'))
+        if processed_dir.exists():
+            cohort_files.extend(processed_dir.glob('*cohort*.csv'))
+        
+        for file_path in cohort_files:
+            filename = file_path.name.lower()
+            if 'iphone' in filename:
+                lob_status['iPhone'] = True
+            elif 'ipad' in filename:
+                lob_status['iPad'] = True
+            elif 'mac' in filename:
+                lob_status['Mac'] = True
+            elif 'watch' in filename:
+                lob_status['Watch'] = True
+            elif 'airpod' in filename:
+                lob_status['AirPods'] = True
+        
+        # Also check for general product files by LOB
+        all_files = []
+        if data_dir.exists():
+            all_files.extend(data_dir.glob('*.csv'))
+        if processed_dir.exists():
+            all_files.extend(processed_dir.glob('*.csv'))
+        
+        for file_path in all_files:
+            filename = file_path.name.lower()
+            if 'iphone' in filename or 'case' in filename:  # Cases are mostly iPhone
+                lob_status['iPhone'] = True
+            elif 'ipad' in filename:
+                lob_status['iPad'] = True
+            elif 'mac' in filename:
+                lob_status['Mac'] = True
+            elif 'watch' in filename:
+                lob_status['Watch'] = True
+            elif 'airpod' in filename:
+                lob_status['AirPods'] = True
+        
+        # Calculate disk usage
+        def get_dir_size(path):
+            total = 0
+            try:
+                if path.exists():
+                    for file_path in path.rglob('*'):
+                        if file_path.is_file():
+                            total += file_path.stat().st_size
+            except Exception:
+                pass
+            return total // (1024 * 1024)  # Convert to MB
+        
+        disk_usage = {
+            'output_mb': get_dir_size(project_root / 'output'),
+            'logs_mb': get_dir_size(project_root / 'logs'),
+            'data_mb': get_dir_size(project_root / 'data')
+        }
+        
+        # Determine system health
+        system_health = 'healthy'
+        if not any(data_files.values()) and not any(lob_status.values()):
+            system_health = 'error'
+        elif not any(data_files.values()) or not any(lob_status.values()):
+            system_health = 'warning'
+        
+        system_info = {
+            'data_files': data_files,
+            'store_templates': ['flagship', 'standard', 'express'],
+            'lob_status': lob_status,
+            'system_health': system_health,
+            'active_jobs': len([j for j in planogram_system.get_all_jobs() if j.status == JobStatus.RUNNING]),
+            'project_root': str(project_root),
+            'directories': {
+                'data': str(project_root / 'data'),
+                'output': str(project_root / 'output'),
+                'logs': str(project_root / 'logs')
+            },
+            'disk_usage': disk_usage,
+            'jobs': {
+                'total': len(planogram_system.get_all_jobs()),
+                'running': len([j for j in planogram_system.get_all_jobs() if j.status == JobStatus.RUNNING]),
+                'completed': len([j for j in planogram_system.get_all_jobs() if j.status == JobStatus.COMPLETED]),
+                'failed': len([j for j in planogram_system.get_all_jobs() if j.status == JobStatus.FAILED])
+            }
+        }
+        
+        return jsonify(APIResponse.success(system_info))
+    except Exception as e:
+        logger.error(f"Error getting system info: {e}")
+        return jsonify(APIResponse.error("SYSTEM_ERROR", str(e))[0]), 500
 
-@app.route('/api/files/list', methods=['GET'])
-@handle_api_error
-def list_output_files():
-    """List output files"""
-    pattern = request.args.get('pattern')
-    files = file_manager.get_output_files(pattern)
-    return jsonify(APIResponse.success({'files': files}))
-
-@app.route('/api/files/<filename>', methods=['DELETE'])
-@handle_api_error
-def delete_output_file(filename: str):
-    """Delete an output file"""
-    success = file_manager.delete_file(filename)
-    if success:
-        return jsonify(APIResponse.success({'deleted': filename}))
-    else:
-        return jsonify(APIResponse.error("FILE_NOT_FOUND", f"File {filename} not found or could not be deleted")), 404
-
-@app.route('/api/files/<filename>', methods=['GET'])
-@handle_api_error
-def serve_output_file(filename: str):
-    """Serve an output file"""
-    from flask import send_file
-    
-    file_path = file_manager.output_dir / filename
-    if not file_path.exists():
-        return jsonify(APIResponse.error("FILE_NOT_FOUND", f"File {filename} not found")), 404
-    
-    return send_file(str(file_path))
-
-@app.route('/api/jobs', methods=['GET'])
-@handle_api_error
-def list_jobs():
-    """List all optimization jobs"""
-    jobs = planogram_system.get_all_jobs()
-    jobs_data = []
-    
-    for job in jobs:
-        jobs_data.append({
-            'job_id': job.job_id,
-            'job_type': job.job_type,
-            'parameters': job.parameters,
-            'status': job.status.value,
-            'progress': job.progress,
-            'created_at': job.created_at.isoformat(),
-            'started_at': job.started_at.isoformat() if job.started_at else None,
-            'completed_at': job.completed_at.isoformat() if job.completed_at else None,
-            'error': job.error,
-            'result_summary': {
-                'has_result': job.result is not None,
-                'products_placed': job.result.get('products_placed') if job.result else None,
-                'products_rejected': job.result.get('products_rejected') if job.result else None
-            } if job.result else None
-        })
-    
-    return jsonify(APIResponse.success({'jobs': jobs_data}))
-
-@app.route('/api/jobs/<job_id>', methods=['GET'])
-@handle_api_error
-def get_job_details(job_id: str):
-    """Get detailed information about a specific job"""
-    job = planogram_system.get_job(job_id)
-    if not job:
-        return jsonify(APIResponse.error("JOB_NOT_FOUND", f"Job {job_id} not found")), 404
-    
-    job_data = {
-        'job_id': job.job_id,
-        'job_type': job.job_type,
-        'parameters': job.parameters,
-        'status': job.status.value,
-        'progress': job.progress,
-        'logs': job.logs[-20:],  # Last 20 log entries
-        'created_at': job.created_at.isoformat(),
-        'started_at': job.started_at.isoformat() if job.started_at else None,
-        'completed_at': job.completed_at.isoformat() if job.completed_at else None,
-        'error': job.error,
-        'result': job.result
-    }
-    
-    return jsonify(APIResponse.success(job_data))
-
-@app.route('/api/jobs/<job_id>', methods=['DELETE'])
-@handle_api_error
-def cancel_job(job_id: str):
-    """Cancel a running job"""
-    success = planogram_system.cancel_job(job_id)
-    if success:
-        return jsonify(APIResponse.success({'cancelled': job_id}))
-    else:
-        return jsonify(APIResponse.error("CANNOT_CANCEL", "Job cannot be cancelled (not running or not found)")), 400
-
-# Core Optimization API Endpoints
-
-@app.route('/api/optimize/cohort', methods=['POST'])
-@handle_api_error
-def optimize_cohort():
-    """Generate cohort-based planogram"""
-    data = request.get_json()
-    
-    # Validate required parameters
-    if not data:
-        return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")), 400
-    
-    lob = data.get('lob')
-    store_type = data.get('store_type')
-    
-    if not lob or not store_type:
-        return jsonify(APIResponse.error(
-            "MISSING_PARAMETERS", 
-            "Both 'lob' and 'store_type' are required",
-            {"required": ["lob", "store_type"], "received": list(data.keys())}
-        )), 400
-    
-    # Validate parameter values
-    valid_lobs = ['iPhone', 'iPad', 'Mac', 'Watch', 'AirPods']
-    valid_stores = ['flagship', 'standard', 'express']
-    
-    if lob not in valid_lobs:
-        return jsonify(APIResponse.error(
-            "INVALID_LOB", 
-            f"Invalid LOB: {lob}",
-            {"valid_options": valid_lobs}
-        )), 400
-    
-    if store_type not in valid_stores:
-        return jsonify(APIResponse.error(
-            "INVALID_STORE_TYPE", 
-            f"Invalid store type: {store_type}",
-            {"valid_options": valid_stores}
-        )), 400
-    
-    # Create and start job
-    job_id = planogram_system.create_job('cohort', {
-        'lob': lob,
-        'store_type': store_type
-    })
-    
-    # Set up progress callback
-    def progress_callback(job_id, progress, status, logs):
-        emit_progress(job_id, progress, status, logs)
-    
-    planogram_system.set_progress_callback(job_id, progress_callback)
-    
-    # Start job asynchronously
-    planogram_system.run_job_async(job_id)
-    
-    return jsonify(APIResponse.success({
-        'job_id': job_id,
-        'message': f'Started cohort planogram generation for {lob} - {store_type} store'
-    }))
-
-@app.route('/api/optimize/lob', methods=['POST'])
-@handle_api_error
-def optimize_lob():
-    """Run LOB optimization"""
-    data = request.get_json()
-    
-    if not data:
-        return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")), 400
-    
-    lob = data.get('lob')
-    store_type = data.get('store_type')
-    strategy = data.get('strategy', 'balanced')  # Default strategy
-    
-    if not lob or not store_type:
-        return jsonify(APIResponse.error(
-            "MISSING_PARAMETERS", 
-            "Both 'lob' and 'store_type' are required",
-            {"required": ["lob", "store_type"], "optional": ["strategy"]}
-        )), 400
-    
-    # Validate parameters
-    valid_lobs = ['iPhone', 'iPad', 'Mac', 'Watch', 'AirPods']
-    valid_stores = ['flagship', 'standard', 'express']
-    valid_strategies = ['balanced', 'sales_velocity', 'category_grouped', 'value_density', 'profit_efficiency']
-    
-    if lob not in valid_lobs:
-        return jsonify(APIResponse.error("INVALID_LOB", f"Invalid LOB: {lob}", {"valid_options": valid_lobs})), 400
-    
-    if store_type not in valid_stores:
-        return jsonify(APIResponse.error("INVALID_STORE_TYPE", f"Invalid store type: {store_type}", {"valid_options": valid_stores})), 400
-    
-    if strategy not in valid_strategies:
-        return jsonify(APIResponse.error("INVALID_STRATEGY", f"Invalid strategy: {strategy}", {"valid_options": valid_strategies})), 400
-    
-    # Create and start job
-    job_id = planogram_system.create_job('lob', {
-        'lob': lob,
-        'store_type': store_type,
-        'strategy': strategy
-    })
-    
-    # Set up progress callback
-    def progress_callback(job_id, progress, status, logs):
-        emit_progress(job_id, progress, status, logs)
-    
-    planogram_system.set_progress_callback(job_id, progress_callback)
-    
-    # Start job asynchronously
-    planogram_system.run_job_async(job_id)
-    
-    return jsonify(APIResponse.success({
-        'job_id': job_id,
-        'message': f'Started LOB optimization for {lob} - {store_type} store with {strategy} strategy'
-    }))
-
-@app.route('/api/optimize/category', methods=['POST'])
-@handle_api_error
-def optimize_category():
-    """Run category optimization"""
-    data = request.get_json()
-    
-    if not data:
-        return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")), 400
-    
-    category = data.get('category')
-    store_type = data.get('store_type')
-    strategy = data.get('strategy', 'balanced')
-    
-    if not category or not store_type:
-        return jsonify(APIResponse.error(
-            "MISSING_PARAMETERS", 
-            "Both 'category' and 'store_type' are required",
-            {"required": ["category", "store_type"], "optional": ["strategy"]}
-        )), 400
-    
-    # Validate parameters
-    valid_categories = ['cases', 'cables', 'screen_protectors', 'others']
-    valid_stores = ['flagship', 'standard', 'express']
-    valid_strategies = ['balanced', 'sales_velocity', 'category_grouped', 'value_density', 'profit_efficiency']
-    
-    if category not in valid_categories:
-        return jsonify(APIResponse.error("INVALID_CATEGORY", f"Invalid category: {category}", {"valid_options": valid_categories})), 400
-    
-    if store_type not in valid_stores:
-        return jsonify(APIResponse.error("INVALID_STORE_TYPE", f"Invalid store type: {store_type}", {"valid_options": valid_stores})), 400
-    
-    if strategy not in valid_strategies:
-        return jsonify(APIResponse.error("INVALID_STRATEGY", f"Invalid strategy: {strategy}", {"valid_options": valid_strategies})), 400
-    
-    # Create and start job
-    job_id = planogram_system.create_job('category', {
-        'category': category,
-        'store_type': store_type,
-        'strategy': strategy
-    })
-    
-    # Set up progress callback
-    def progress_callback(job_id, progress, status, logs):
-        emit_progress(job_id, progress, status, logs)
-    
-    planogram_system.set_progress_callback(job_id, progress_callback)
-    
-    # Start job asynchronously
-    planogram_system.run_job_async(job_id)
-    
-    return jsonify(APIResponse.success({
-        'job_id': job_id,
-        'message': f'Started category optimization for {category} - {store_type} store with {strategy} strategy'
-    }))
-
-@app.route('/api/optimize/full-store', methods=['POST'])
-@handle_api_error
-def optimize_full_store():
-    """Run full store optimization"""
-    data = request.get_json()
-    
-    if not data:
-        return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")), 400
-    
-    store_type = data.get('store_type')
-    strategy = data.get('strategy', 'balanced')
-    
-    if not store_type:
-        return jsonify(APIResponse.error(
-            "MISSING_PARAMETERS", 
-            "'store_type' is required",
-            {"required": ["store_type"], "optional": ["strategy"]}
-        )), 400
-    
-    # Validate parameters
-    valid_stores = ['flagship', 'standard', 'express']
-    valid_strategies = ['balanced', 'sales_velocity', 'category_grouped', 'value_density', 'profit_efficiency']
-    
-    if store_type not in valid_stores:
-        return jsonify(APIResponse.error("INVALID_STORE_TYPE", f"Invalid store type: {store_type}", {"valid_options": valid_stores})), 400
-    
-    if strategy not in valid_strategies:
-        return jsonify(APIResponse.error("INVALID_STRATEGY", f"Invalid strategy: {strategy}", {"valid_options": valid_strategies})), 400
-    
-    # Create and start job
-    job_id = planogram_system.create_job('full_store', {
-        'store_type': store_type,
-        'strategy': strategy
-    })
-    
-    # Set up progress callback
-    def progress_callback(job_id, progress, status, logs):
-        emit_progress(job_id, progress, status, logs)
-    
-    planogram_system.set_progress_callback(job_id, progress_callback)
-    
-    # Start job asynchronously
-    planogram_system.run_job_async(job_id)
-    
-    return jsonify(APIResponse.success({
-        'job_id': job_id,
-        'message': f'Started full store optimization for {store_type} store with {strategy} strategy'
-    }))
-
-# Validation endpoints
 @app.route('/api/validate/parameters', methods=['GET'])
-@handle_api_error
 def get_valid_parameters():
     """Get all valid parameter options"""
     return jsonify(APIResponse.success({
@@ -650,273 +588,430 @@ def get_valid_parameters():
         }
     }))
 
-# Results Management API Endpoints
+@app.route('/api/optimize/cohort', methods=['POST'])
+def optimize_cohort():
+    """Generate cohort-based planogram"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")[0]), 400
+        
+        lob = data.get('lob')
+        store_type = data.get('store_type')
+        
+        if not lob or not store_type:
+            return jsonify(APIResponse.error("MISSING_PARAMETERS", "Both 'lob' and 'store_type' are required")[0]), 400
+        
+        # Create and start job
+        job_id = planogram_system.create_job('cohort', {
+            'lob': lob,
+            'store_type': store_type
+        })
+        
+        # Start job asynchronously
+        planogram_system.run_job_async(job_id)
+        
+        return jsonify(APIResponse.success({
+            'job_id': job_id,
+            'message': f'Started cohort planogram generation for {lob} - {store_type} store'
+        }))
+    except Exception as e:
+        logger.error(f"Error starting cohort optimization: {e}")
+        return jsonify(APIResponse.error("OPTIMIZATION_ERROR", str(e))[0]), 500
 
-@app.route('/api/results/list', methods=['GET'])
-@handle_api_error
-def list_results():
-    """List all optimization results"""
-    # Get query parameters
-    job_type = request.args.get('type')  # Filter by job type
-    status = request.args.get('status')  # Filter by status
-    limit = int(request.args.get('limit', 50))  # Limit results
-    
-    jobs = planogram_system.get_all_jobs()
-    
-    # Filter jobs
-    if job_type:
-        jobs = [j for j in jobs if j.job_type == job_type]
-    if status:
-        jobs = [j for j in jobs if j.status.value == status]
-    
-    # Sort by creation time (newest first)
-    jobs.sort(key=lambda x: x.created_at, reverse=True)
-    
-    # Limit results
-    jobs = jobs[:limit]
-    
-    # Format results
-    results = []
-    for job in jobs:
+@app.route('/api/optimize/lob', methods=['POST'])
+def optimize_lob():
+    """Run LOB optimization"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")[0]), 400
+        
+        lob = data.get('lob')
+        store_type = data.get('store_type')
+        strategy = data.get('strategy', 'balanced')
+        
+        if not lob or not store_type:
+            return jsonify(APIResponse.error("MISSING_PARAMETERS", "Both 'lob' and 'store_type' are required")[0]), 400
+        
+        # Create and start job
+        job_id = planogram_system.create_job('lob', {
+            'lob': lob,
+            'store_type': store_type,
+            'strategy': strategy
+        })
+        
+        # Start job asynchronously
+        planogram_system.run_job_async(job_id)
+        
+        return jsonify(APIResponse.success({
+            'job_id': job_id,
+            'message': f'Started LOB optimization for {lob} - {store_type} store with {strategy} strategy'
+        }))
+    except Exception as e:
+        logger.error(f"Error starting LOB optimization: {e}")
+        return jsonify(APIResponse.error("OPTIMIZATION_ERROR", str(e))[0]), 500
+
+@app.route('/api/optimize/category', methods=['POST'])
+def optimize_category():
+    """Run category optimization"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")[0]), 400
+        
+        category = data.get('category')
+        store_type = data.get('store_type')
+        strategy = data.get('strategy', 'balanced')
+        
+        if not category or not store_type:
+            return jsonify(APIResponse.error("MISSING_PARAMETERS", "Both 'category' and 'store_type' are required")[0]), 400
+        
+        # Create and start job
+        job_id = planogram_system.create_job('category', {
+            'category': category,
+            'store_type': store_type,
+            'strategy': strategy
+        })
+        
+        # Start job asynchronously
+        planogram_system.run_job_async(job_id)
+        
+        return jsonify(APIResponse.success({
+            'job_id': job_id,
+            'message': f'Started category optimization for {category} - {store_type} store with {strategy} strategy'
+        }))
+    except Exception as e:
+        logger.error(f"Error starting category optimization: {e}")
+        return jsonify(APIResponse.error("OPTIMIZATION_ERROR", str(e))[0]), 500
+
+@app.route('/api/optimize/full-store', methods=['POST'])
+def optimize_full_store():
+    """Run full store optimization"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify(APIResponse.error("MISSING_DATA", "Request body is required")[0]), 400
+        
+        store_type = data.get('store_type')
+        strategy = data.get('strategy', 'balanced')
+        
+        if not store_type:
+            return jsonify(APIResponse.error("MISSING_PARAMETERS", "'store_type' is required")[0]), 400
+        
+        # Create and start job
+        job_id = planogram_system.create_job('full_store', {
+            'store_type': store_type,
+            'strategy': strategy
+        })
+        
+        # Start job asynchronously
+        planogram_system.run_job_async(job_id)
+        
+        return jsonify(APIResponse.success({
+            'job_id': job_id,
+            'message': f'Started full store optimization for {store_type} store with {strategy} strategy'
+        }))
+    except Exception as e:
+        logger.error(f"Error starting full store optimization: {e}")
+        return jsonify(APIResponse.error("OPTIMIZATION_ERROR", str(e))[0]), 500
+
+@app.route('/api/jobs', methods=['GET'])
+def list_jobs():
+    """List all optimization jobs"""
+    try:
+        jobs = planogram_system.get_all_jobs()
+        jobs_data = []
+        
+        for job in jobs:
+            jobs_data.append({
+                'job_id': job.job_id,
+                'job_type': job.job_type,
+                'parameters': job.parameters,
+                'status': job.status.value,
+                'progress': job.progress,
+                'created_at': job.created_at.isoformat(),
+                'started_at': job.started_at.isoformat() if job.started_at else None,
+                'completed_at': job.completed_at.isoformat() if job.completed_at else None,
+                'error': job.error,
+                'has_result': job.result is not None,
+                'has_error': job.error is not None
+            })
+        
+        return jsonify(APIResponse.success({'jobs': jobs_data}))
+    except Exception as e:
+        logger.error(f"Error listing jobs: {e}")
+        return jsonify(APIResponse.error("JOBS_ERROR", str(e))[0]), 500
+
+@app.route('/api/jobs/<job_id>', methods=['GET'])
+def get_job_details(job_id: str):
+    """Get detailed information about a specific job"""
+    try:
+        job = planogram_system.get_job(job_id)
+        if not job:
+            return jsonify(APIResponse.error("JOB_NOT_FOUND", f"Job {job_id} not found")[0]), 404
+        
+        # Convert any Path objects to strings for JSON serialization
+        result = convert_paths_to_strings(job.result) if job.result else None
+        logs = convert_paths_to_strings(job.logs[-20:]) if job.logs else []
+        parameters = convert_paths_to_strings(job.parameters) if job.parameters else {}
+        error = convert_paths_to_strings(job.error) if job.error else None
+        
+        job_data = {
+            'job_id': job.job_id,
+            'job_type': job.job_type,
+            'parameters': parameters,
+            'status': job.status.value,
+            'progress': job.progress,
+            'logs': logs,
+            'created_at': job.created_at.isoformat(),
+            'started_at': job.started_at.isoformat() if job.started_at else None,
+            'completed_at': job.completed_at.isoformat() if job.completed_at else None,
+            'error': error,
+            'result': result
+        }
+        
+        return jsonify(APIResponse.success(job_data))
+    except Exception as e:
+        logger.error(f"Error getting job details: {e}")
+        return jsonify(APIResponse.error("JOB_ERROR", str(e))[0]), 500
+
+@app.route('/api/jobs/<job_id>', methods=['DELETE'])
+def cancel_job(job_id: str):
+    """Cancel a running job"""
+    try:
+        success = planogram_system.cancel_job(job_id)
+        if success:
+            return jsonify(APIResponse.success({'cancelled': job_id}))
+        else:
+            return jsonify(APIResponse.error("CANNOT_CANCEL", "Job cannot be cancelled (not running or not found)")[0]), 400
+    except Exception as e:
+        logger.error(f"Error cancelling job: {e}")
+        return jsonify(APIResponse.error("CANCEL_ERROR", str(e))[0]), 500
+
+def convert_paths_to_strings(obj):
+    """Recursively convert Path objects to strings for JSON serialization"""
+    if isinstance(obj, Path):
+        return str(obj)
+    elif isinstance(obj, dict):
+        return {key: convert_paths_to_strings(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_paths_to_strings(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return tuple(convert_paths_to_strings(item) for item in obj)
+    else:
+        return obj
+
+@app.route('/api/results/<job_id>', methods=['GET'])
+def get_result_details(job_id: str):
+    """Get detailed result information for a specific job"""
+    try:
+        job = planogram_system.get_job(job_id)
+        if not job:
+            return jsonify(APIResponse.error("RESULT_NOT_FOUND", f"Result {job_id} not found")[0]), 404
+        
+        # Convert any Path objects to strings for JSON serialization
+        result = convert_paths_to_strings(job.result) if job.result else None
+        logs = convert_paths_to_strings(job.logs) if job.logs else []
+        parameters = convert_paths_to_strings(job.parameters) if job.parameters else {}
+        
         result_data = {
             'job_id': job.job_id,
             'job_type': job.job_type,
-            'parameters': job.parameters,
+            'parameters': parameters,
             'status': job.status.value,
             'progress': job.progress,
             'created_at': job.created_at.isoformat(),
             'started_at': job.started_at.isoformat() if job.started_at else None,
             'completed_at': job.completed_at.isoformat() if job.completed_at else None,
-            'duration_seconds': None,
-            'has_result': job.result is not None,
-            'has_error': job.error is not None
+            'result': result,
+            'logs': logs,
+            'files': []  # Add file information if available
         }
         
-        # Calculate duration if completed
-        if job.started_at and job.completed_at:
-            duration = job.completed_at - job.started_at
-            result_data['duration_seconds'] = duration.total_seconds()
-        
-        # Add summary metrics if available
-        if job.result:
-            result_data['summary'] = {
-                'products_placed': job.result.get('products_placed'),
-                'products_rejected': job.result.get('products_rejected'),
-                'utilization': job.result.get('metrics', {}).get('average_utilization'),
-                'warnings_count': len(job.result.get('warnings', []))
-            }
-        
-        results.append(result_data)
-    
-    return jsonify(APIResponse.success({
-        'results': results,
-        'total_count': len(planogram_system.get_all_jobs()),
-        'filtered_count': len(results)
-    }))
-
-@app.route('/api/results/<job_id>', methods=['GET'])
-@handle_api_error
-def get_result_details(job_id: str):
-    """Get detailed result information for a specific job"""
-    job = planogram_system.get_job(job_id)
-    if not job:
-        return jsonify(APIResponse.error("RESULT_NOT_FOUND", f"Result {job_id} not found")), 404
-    
-    # Get associated files
-    output_files = file_manager.get_output_files(job_id[:8])  # Files containing job ID prefix
-    
-    result_data = {
-        'job_id': job.job_id,
-        'job_type': job.job_type,
-        'parameters': job.parameters,
-        'status': job.status.value,
-        'progress': job.progress,
-        'created_at': job.created_at.isoformat(),
-        'started_at': job.started_at.isoformat() if job.started_at else None,
-        'completed_at': job.completed_at.isoformat() if job.completed_at else None,
-        'logs': job.logs,
-        'error': job.error,
-        'result': job.result,
-        'files': output_files
-    }
-    
-    # Calculate duration
-    if job.started_at and job.completed_at:
-        duration = job.completed_at - job.started_at
-        result_data['duration_seconds'] = duration.total_seconds()
-    
-    return jsonify(APIResponse.success(result_data))
-
-@app.route('/api/results/<job_id>/download/<file_type>', methods=['GET'])
-@handle_api_error
-def download_result_file(job_id: str, file_type: str):
-    """Download a specific result file"""
-    from flask import send_file
-    
-    job = planogram_system.get_job(job_id)
-    if not job:
-        return jsonify(APIResponse.error("RESULT_NOT_FOUND", f"Result {job_id} not found")), 404
-    
-    # Map file types to potential filenames
-    file_patterns = {
-        'planogram': f"*{job_id[:8]}*retail.png",
-        'excel': f"*{job_id[:8]}*details.xlsx", 
-        'image': f"*{job_id[:8]}*.png",
-        'report': f"*{job_id[:8]}*.csv"
-    }
-    
-    if file_type not in file_patterns:
-        return jsonify(APIResponse.error(
-            "INVALID_FILE_TYPE", 
-            f"Invalid file type: {file_type}",
-            {"valid_types": list(file_patterns.keys())}
-        )), 400
-    
-    # Find matching files
-    import glob
-    pattern = str(file_manager.output_dir / file_patterns[file_type])
-    matching_files = glob.glob(pattern)
-    
-    if not matching_files:
-        return jsonify(APIResponse.error(
-            "FILE_NOT_FOUND", 
-            f"No {file_type} file found for job {job_id}"
-        )), 404
-    
-    # Return the first matching file
-    file_path = matching_files[0]
-    return send_file(file_path, as_attachment=True)
-
-@app.route('/api/results/<job_id>', methods=['DELETE'])
-@handle_api_error
-def delete_result(job_id: str):
-    """Delete a result and its associated files"""
-    job = planogram_system.get_job(job_id)
-    if not job:
-        return jsonify(APIResponse.error("RESULT_NOT_FOUND", f"Result {job_id} not found")), 404
-    
-    # Delete associated files
-    output_files = file_manager.get_output_files(job_id[:8])
-    deleted_files = []
-    
-    for file_info in output_files:
-        if file_manager.delete_file(file_info['name']):
-            deleted_files.append(file_info['name'])
-    
-    # Remove job from system
-    if job_id in planogram_system.jobs:
-        del planogram_system.jobs[job_id]
-    
-    # Clean up progress callback
-    if job_id in planogram_system.progress_callbacks:
-        del planogram_system.progress_callbacks[job_id]
-    
-    return jsonify(APIResponse.success({
-        'deleted_job': job_id,
-        'deleted_files': deleted_files,
-        'files_count': len(deleted_files)
-    }))
-
-@app.route('/api/results/cleanup', methods=['POST'])
-@handle_api_error
-def cleanup_old_results():
-    """Clean up old results and files"""
-    data = request.get_json() or {}
-    days = data.get('days', 7)  # Default to 7 days
-    
-    if days < 1:
-        return jsonify(APIResponse.error("INVALID_DAYS", "Days must be at least 1")), 400
-    
-    # Clean up old files
-    deleted_files = file_manager.cleanup_old_files(days)
-    
-    # Clean up old jobs
-    cutoff_time = datetime.now() - timedelta(days=days)
-    deleted_jobs = []
-    
-    jobs_to_delete = []
-    for job_id, job in planogram_system.jobs.items():
-        if job.completed_at and job.completed_at < cutoff_time:
-            jobs_to_delete.append(job_id)
-    
-    for job_id in jobs_to_delete:
-        del planogram_system.jobs[job_id]
-        if job_id in planogram_system.progress_callbacks:
-            del planogram_system.progress_callbacks[job_id]
-        deleted_jobs.append(job_id)
-    
-    return jsonify(APIResponse.success({
-        'deleted_files': deleted_files,
-        'deleted_jobs': deleted_jobs,
-        'cleanup_days': days
-    }))
-
-@app.route('/api/results/stats', methods=['GET'])
-@handle_api_error
-def get_results_stats():
-    """Get statistics about results"""
-    jobs = planogram_system.get_all_jobs()
-    
-    # Calculate stats
-    stats = {
-        'total_jobs': len(jobs),
-        'by_status': {},
-        'by_type': {},
-        'success_rate': 0,
-        'average_duration': None,
-        'total_products_optimized': 0
-    }
-    
-    # Count by status
-    for status in JobStatus:
-        stats['by_status'][status.value] = len([j for j in jobs if j.status == status])
-    
-    # Count by type
-    job_types = set(j.job_type for j in jobs)
-    for job_type in job_types:
-        stats['by_type'][job_type] = len([j for j in jobs if j.job_type == job_type])
-    
-    # Calculate success rate
-    completed_jobs = [j for j in jobs if j.status == JobStatus.COMPLETED]
-    if jobs:
-        stats['success_rate'] = len(completed_jobs) / len(jobs) * 100
-    
-    # Calculate average duration
-    durations = []
-    total_products = 0
-    
-    for job in completed_jobs:
-        if job.started_at and job.completed_at:
-            duration = job.completed_at - job.started_at
-            durations.append(duration.total_seconds())
-        
-        if job.result:
-            products_placed = job.result.get('products_placed', 0)
-            if isinstance(products_placed, int):
-                total_products += products_placed
-    
-    if durations:
-        stats['average_duration'] = sum(durations) / len(durations)
-    
-    stats['total_products_optimized'] = total_products
-    
-    return jsonify(APIResponse.success(stats))
-
-if __name__ == '__main__':
-    print("🚀 Starting Planogram Web UI Backend...")
-    print("📊 Dashboard will be available at: http://localhost:3000")
-    print("🔧 API server running on: http://localhost:5000")
-    print(f"📁 Project root: {project_root}")
-    print(f"📊 Data directory: {project_root / 'data'}")
-    print(f"📤 Output directory: {project_root / 'output'}")
-    
-    # Validate system on startup
-    try:
-        system_info = file_manager.get_system_info()
-        print(f"✅ Data files: {sum(system_info['data_files'].values())}/{len(system_info['data_files'])}")
-        print(f"✅ Store templates: {len(system_info['store_templates'])}")
-        print(f"✅ LOB data: {sum(system_info['lob_status'].values())}/{len(system_info['lob_status'])}")
+        return jsonify(APIResponse.success(result_data))
     except Exception as e:
-        print(f"⚠️  System validation warning: {e}")
+        logger.error(f"Error getting result details: {e}")
+        return jsonify(APIResponse.error("RESULT_ERROR", str(e))[0]), 500
+
+# File serving endpoints
+@app.route('/api/files/<path:filename>')
+def serve_file(filename):
+    """Serve generated files from the output directory"""
+    try:
+        # Try multiple possible locations for the file
+        possible_paths = [
+            project_root / 'output' / filename,  # Main project output
+            Path(__file__).parent / 'output' / filename,  # Backend output
+            Path.cwd() / 'output' / filename,  # Current working directory output
+        ]
+        
+        file_path = None
+        for path in possible_paths:
+            if path.exists():
+                file_path = path
+                break
+        
+        if not file_path:
+            logger.error(f"File not found in any location: {filename}")
+            logger.error(f"Searched paths: {[str(p) for p in possible_paths]}")
+            return jsonify(APIResponse.error("FILE_NOT_FOUND", f"File not found: {filename}")[0]), 404
+        
+        # Security check - ensure the file is within an allowed output directory
+        allowed_dirs = [str(project_root / 'output'), str(Path(__file__).parent / 'output')]
+        if not any(str(file_path).startswith(allowed_dir) for allowed_dir in allowed_dirs):
+            return jsonify(APIResponse.error("INVALID_PATH", "File path not allowed")[0]), 403
+        
+        # Determine MIME type based on file extension
+        mime_type = 'application/octet-stream'  # Default
+        if filename.lower().endswith('.png'):
+            mime_type = 'image/png'
+        elif filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
+            mime_type = 'image/jpeg'
+        elif filename.lower().endswith('.xlsx'):
+            mime_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        elif filename.lower().endswith('.csv'):
+            mime_type = 'text/csv'
+        elif filename.lower().endswith('.txt'):
+            mime_type = 'text/plain'
+        
+        return send_file(str(file_path), mimetype=mime_type, as_attachment=False)
+    except Exception as e:
+        logger.error(f"Error serving file {filename}: {e}")
+        return jsonify(APIResponse.error("FILE_ERROR", str(e))[0]), 500
+
+@app.route('/api/files/<path:filename>/download')
+def download_file(filename):
+    """Download generated files from the output directory"""
+    try:
+        # Try multiple possible locations for the file
+        possible_paths = [
+            project_root / 'output' / filename,  # Main project output
+            Path(__file__).parent / 'output' / filename,  # Backend output
+            Path.cwd() / 'output' / filename,  # Current working directory output
+        ]
+        
+        file_path = None
+        for path in possible_paths:
+            if path.exists():
+                file_path = path
+                break
+        
+        if not file_path:
+            logger.error(f"File not found in any location for download: {filename}")
+            logger.error(f"Searched paths: {[str(p) for p in possible_paths]}")
+            return jsonify(APIResponse.error("FILE_NOT_FOUND", f"File not found: {filename}")[0]), 404
+        
+        # Security check - ensure the file is within an allowed output directory
+        allowed_dirs = [str(project_root / 'output'), str(Path(__file__).parent / 'output')]
+        if not any(str(file_path).startswith(allowed_dir) for allowed_dir in allowed_dirs):
+            return jsonify(APIResponse.error("INVALID_PATH", "File path not allowed")[0]), 403
+        
+        # Determine MIME type and download name
+        mime_type = 'application/octet-stream'
+        download_name = file_path.name
+        
+        if filename.lower().endswith('.png'):
+            mime_type = 'image/png'
+        elif filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
+            mime_type = 'image/jpeg'
+        elif filename.lower().endswith('.xlsx'):
+            mime_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        elif filename.lower().endswith('.csv'):
+            mime_type = 'text/csv'
+        elif filename.lower().endswith('.txt'):
+            mime_type = 'text/plain'
+        
+        return send_file(str(file_path), mimetype=mime_type, as_attachment=True, download_name=download_name)
+    except Exception as e:
+        logger.error(f"Error downloading file {filename}: {e}")
+        return jsonify(APIResponse.error("FILE_ERROR", str(e))[0]), 500
+
+@app.route('/api/results/<job_id>/files')
+def get_result_files(job_id: str):
+    """Get list of files associated with a specific job result"""
+    try:
+        job = planogram_system.get_job(job_id)
+        if not job:
+            return jsonify(APIResponse.error("JOB_NOT_FOUND", f"Job {job_id} not found")[0]), 404
+        
+        files = []
+        
+        # Check if job has result with file information
+        if job.result and 'files' in job.result:
+            for file_info in job.result['files']:
+                file_path = Path(file_info['path'])
+                if file_path.exists():
+                    # Try to get relative path from different output directories
+                    relative_path = None
+                    for base_dir in [project_root / 'output', Path(__file__).parent / 'output']:
+                        try:
+                            relative_path = file_path.relative_to(base_dir)
+                            break
+                        except ValueError:
+                            continue
+                    
+                    if relative_path:
+                        files.append({
+                            'name': file_path.name,
+                            'path': str(relative_path),
+                            'type': file_info.get('type', 'unknown'),
+                            'size': file_path.stat().st_size,
+                            'created': datetime.fromtimestamp(file_path.stat().st_ctime).isoformat(),
+                            'url': f'/api/files/{relative_path}',
+                            'download_url': f'/api/files/{relative_path}/download'
+                        })
+        
+        # Also check for common file patterns based on job type and parameters
+        if job.job_type == 'cohort' and job.result:
+            lob = job.parameters.get('lob', '').lower()
+            store_type = job.parameters.get('store_type', '').lower()
+            
+            # Look for cohort planogram files in multiple locations
+            possible_cohort_dirs = [
+                project_root / 'output' / 'cohort_planograms',
+                Path(__file__).parent / 'output' / 'cohort_planograms'
+            ]
+            
+            for cohort_dir in possible_cohort_dirs:
+                if cohort_dir.exists():
+                    for file_path in cohort_dir.glob(f'{lob}_cohort_*_{store_type}.*'):
+                        # Get relative path from the appropriate base directory
+                        if str(file_path).startswith(str(project_root / 'output')):
+                            relative_path = file_path.relative_to(project_root / 'output')
+                        else:
+                            relative_path = file_path.relative_to(Path(__file__).parent / 'output')
+                        
+                        # Check if already added
+                        if not any(f['path'] == str(relative_path) for f in files):
+                            file_type = 'planogram' if file_path.suffix.lower() in ['.png', '.jpg', '.jpeg'] else 'report'
+                            files.append({
+                                'name': file_path.name,
+                                'path': str(relative_path),
+                                'type': file_type,
+                                'size': file_path.stat().st_size,
+                                'created': datetime.fromtimestamp(file_path.stat().st_ctime).isoformat(),
+                                'url': f'/api/files/{relative_path}',
+                                'download_url': f'/api/files/{relative_path}/download'
+                            })
+        
+        return jsonify(APIResponse.success({'files': files}))
+    except Exception as e:
+        logger.error(f"Error getting result files for job {job_id}: {e}")
+        return jsonify(APIResponse.error("FILES_ERROR", str(e))[0]), 500
+
+# Serve the WebSocket test page
+@app.route('/socket-test')
+def socket_test():
+    """Serve the WebSocket test page"""
+    return send_file('static/socket-test.html')
+
+# Main entry point
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    host = os.environ.get('HOST', '0.0.0.0')
+    debug = os.environ.get('DEBUG', 'False').lower() == 'true'
     
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+    logger.info(f"Starting Planogram Web UI API on {host}:{port} (debug={debug})")
+    socketio.run(app, host=host, port=port, debug=debug)

@@ -73,7 +73,7 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
 
     initializeConnection();
 
-    // Set up event listeners
+    // Set up event listeners for both new and legacy events
     const handleProgress = (data: ProgressUpdate) => {
       if (data.job_id === jobId) {
         console.log('Received progress update:', data);
@@ -127,7 +127,16 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
         
         if (data.logs && data.logs.length > 0) {
           console.log('Setting logs:', data.logs);
-          setLogs(data.logs); // Use the complete logs array from backend
+          // Handle both string logs and object logs
+          const formattedLogs = data.logs.map((log: any) => {
+            if (typeof log === 'string') {
+              return log;
+            } else if (log.message) {
+              return `[${log.timestamp || new Date().toLocaleTimeString()}] ${log.message}`;
+            }
+            return JSON.stringify(log);
+          });
+          setLogs(formattedLogs);
         }
       }
     };
@@ -141,10 +150,47 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
       }
     };
 
+    // New event handlers for real-time progress tracking
+    const handleJobStatusUpdate = (data: any) => {
+      if (data.job_id === jobId) {
+        console.log('Received job status update:', data);
+        handleJobStatus(data);
+      }
+    };
+
+    const handleJobLogsStream = (data: any) => {
+      if (data.job_id === jobId) {
+        console.log('Received job logs stream:', data);
+        if (data.logs && data.logs.length > 0) {
+          const formattedLogs = data.logs.map((log: any) => {
+            if (typeof log === 'string') {
+              return log;
+            } else if (log.message) {
+              return `[${log.timestamp || new Date().toLocaleTimeString()}] [${log.level || 'info'}] ${log.message}`;
+            }
+            return JSON.stringify(log);
+          });
+          setLogs(formattedLogs);
+        }
+      }
+    };
+
+    // Set up all event listeners
     socketService.onProgress(handleProgress);
     socketService.onComplete(handleComplete);
     socketService.onError(handleError);
     socketService.onJobStatus(handleJobStatus);
+    socketService.onJobStatusUpdate(handleJobStatusUpdate);
+    socketService.onJobLogsStream(handleJobLogsStream);
+
+    // Only request initial status and logs if we have a valid job ID and the job exists
+    if (socketService.isConnected() && jobId && jobId.length > 10) {
+      // Add a small delay to ensure the job is created before requesting status
+      setTimeout(() => {
+        socketService.requestJobStatus(jobId);
+        socketService.requestJobLogs(jobId, 50);
+      }, 500);
+    }
 
     // Enhanced polling fallback with exponential backoff
     let pollAttempts = 0;
@@ -206,6 +252,8 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
       socketService.offComplete(handleComplete);
       socketService.offError(handleError);
       socketService.offJobStatus(handleJobStatus);
+      socketService.offJobStatusUpdate(handleJobStatusUpdate);
+      socketService.offJobLogsStream(handleJobLogsStream);
       if (jobId) {
         socketService.leaveJob(jobId);
       }
