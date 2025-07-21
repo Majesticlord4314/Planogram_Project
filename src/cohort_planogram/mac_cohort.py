@@ -63,6 +63,9 @@ class MacCohortPlanogram(CohortPlanogramBase):
         filename = f"mac_cohort_detailed_{store_type}.png"
         planogram_path = self.save_planogram(fig, filename)
         
+        # Generate detailed product list
+        self._generate_product_list(top_models, top_categories, store_type)
+        
         return planogram_path
     
     def _create_placeholder_planogram(self, store_type: str) -> Path:
@@ -276,4 +279,119 @@ class MacCohortPlanogram(CohortPlanogramBase):
         )
         ax.add_patch(medium_rect)
         ax.text(x_pos + 12, y_pos - 38, "> 8% (Medium)", 
-               fontsize=8, ha='left', va='center', color=self.text_color)
+        fontsize=8, ha='left', va='center', color=self.text_color)
+    
+    def _generate_product_list(self, top_models: list, top_categories: list, 
+                              store_type: str) -> None:
+        """Generate detailed product list for each Mac model + accessory category combination"""
+        
+        # Load Mac cohort data
+        mac_data = self.data_loader.get_lob_data('Mac')
+        
+        if len(mac_data) == 0:
+            self.logger.warning("No Mac cohort data found, skipping product list generation")
+            return
+        
+        output_path = self.output_dir / f"mac_cohort_products_{store_type}.txt"
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write("Mac Cohort-Based Product List\n")
+            f.write("=" * 50 + "\n")
+            f.write(f"Store Type: {store_type.title()}\n")
+            from datetime import datetime
+            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n\n")
+            
+            # Process each Mac model
+            for model in top_models:
+                model_data = mac_data[mac_data['core_product'] == model]
+                
+                if len(model_data) == 0:
+                    continue
+                
+                f.write(f"{model}\n")
+                f.write("-" * len(model) + "\n\n")
+                
+                # Process each accessory category for this model
+                for category in top_categories:
+                    category_data = model_data[model_data['accessory_category'] == category]
+                    
+                    if len(category_data) == 0:
+                        continue
+                    
+                    avg_attach_rate = category_data['attach_rate'].mean()
+                    total_sales = category_data['purchase_frequency'].sum()
+                    
+                    f.write(f"{category} (Avg Attach Rate: {avg_attach_rate:.1%})\n")
+                    f.write(f"   Total Sales: {total_sales:,.0f}\n")
+                    f.write("   Recommended Products:\n")
+                    
+                    # Get top products in this category for this model
+                    top_products = category_data.nlargest(5, 'attach_rate')
+                    
+                    for idx, (_, product_row) in enumerate(top_products.iterrows(), 1):
+                        attach_rate = product_row['attach_rate']
+                        sales = product_row['purchase_frequency']
+                        
+                        # Performance indicators
+                        if attach_rate > 0.15:
+                            indicator = "***"
+                        elif attach_rate > 0.08:
+                            indicator = "**"
+                        elif attach_rate > 0.03:
+                            indicator = "*"
+                        else:
+                            indicator = "-"
+                        
+                        # Use accessory_name if available, otherwise use category
+                        product_name = product_row.get('accessory_name', f"{category} Product {idx}")
+                        
+                        f.write(f"   {idx}. {indicator} {product_name}\n")
+                        f.write(f"      Attach Rate: {attach_rate:.1%} | Sales: {sales:,.0f} | Facings: 1\n")
+                    
+                    f.write("\n\n")
+                
+                f.write("\n")
+            
+            # Add summary section
+            f.write("=" * 50 + "\n")
+            f.write("SUMMARY\n")
+            f.write("=" * 50 + "\n\n")
+            
+            # Top overall combinations
+            top_combinations = mac_data.nlargest(10, 'attach_rate')
+            f.write("Top Overall Combinations (All Models):\n")
+            f.write("-" * 40 + "\n")
+            
+            for idx, (_, combo) in enumerate(top_combinations.iterrows(), 1):
+                model = combo['core_product']
+                category = combo['accessory_category'] 
+                attach_rate = combo['attach_rate']
+                sales = combo['purchase_frequency']
+                
+                f.write(f" {idx:2d}. {model} + {category}\n")
+                f.write(f"     Category: {category} | Attach Rate: {attach_rate:.1%} | Sales: {sales:,.0f}\n\n")
+            
+            # Performance indicators explanation
+            f.write("\nPerformance Indicators:\n")
+            f.write("-" * 25 + "\n")
+            f.write("*** High Performance: >15% attach rate\n")
+            f.write("** Medium Performance: 8-15% attach rate\n")
+            f.write("* Low Performance: 3-8% attach rate\n")
+            f.write("- Very Low Performance: <3% attach rate\n\n")
+            
+            # Category performance summary
+            f.write("Category Performance Summary:\n")
+            f.write("-" * 35 + "\n")
+            category_summary = mac_data.groupby('accessory_category').agg({
+                'attach_rate': 'mean',
+                'purchase_frequency': 'sum'
+            }).sort_values('attach_rate', ascending=False)
+            
+            for category, stats in category_summary.iterrows():
+                avg_rate = stats['attach_rate']
+                total_sales = stats['purchase_frequency']
+                product_count = len(mac_data[mac_data['accessory_category'] == category])
+                
+                f.write(f"• {category}: {avg_rate:.1%} avg attach rate | {total_sales:,.0f} total sales | {product_count} products\n")
+        
+        self.logger.info(f"Generated detailed product list: {output_path}")

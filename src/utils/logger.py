@@ -27,9 +27,9 @@ class PlanogramLogger:
         console_handler.setFormatter(console_format)
         self.logger.addHandler(console_handler)
         
-        # File handler
+        # File handler with UTF-8 encoding
         log_file = self.log_dir / f"planogram_{datetime.now().strftime('%Y%m%d')}.log"
-        file_handler = logging.FileHandler(log_file)
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
         file_handler.setLevel(getattr(logging, file_level))
         file_format = logging.Formatter(
             '%(asctime)s | %(levelname)-8s | %(module)-15s | %(funcName)-20s | %(message)s'

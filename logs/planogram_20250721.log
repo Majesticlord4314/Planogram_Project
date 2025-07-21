@@ -1,0 +1,592 @@
+2025-07-21 12:09:37,502 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 12:09:37,502 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 12:09:37,579 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 12:23:49,864 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 12:23:49,864 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 12:23:49,880 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 12:24:43,885 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 12:24:43,885 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 12:24:43,901 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 12:40:49,031 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 12:40:49,032 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 12:40:49,060 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 12:40:49,119 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 12:40:49,123 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 12:40:49,133 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 12:40:49,133 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 12:40:49,134 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 12:40:49,134 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 12:40:49,245 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 12:40:49,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 12:40:49,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 12:40:49,250 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
+2025-07-21 12:40:49,250 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.12s
+2025-07-21 12:40:49,250 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-21 12:40:49,251 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-21 12:40:49,251 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 12:40:49,251 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-21 12:40:49,252 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 12:40:49,252 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 12:40:49,252 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 12:40:49,969 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-21 12:40:49,969 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 12:40:50,530 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-21 13:08:52,282 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 13:11:33,821 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 13:11:33,821 | INFO     | main            | run_lob_optimization | Loading Mac Accessories...
+2025-07-21 13:11:33,832 | INFO     | main            | run_lob_optimization | Loaded 254 products for Mac Accessories
+2025-07-21 13:11:33,844 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 13:11:33,846 | INFO     | main            | run_lob_optimization | Loaded 29 bundle recommendations
+2025-07-21 13:11:33,849 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 13:11:33,849 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 131 products
+2025-07-21 13:11:33,849 | INFO     | base_optimizer  | create_planogram     | After store filtering: 131 products
+2025-07-21 13:11:33,849 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 13:11:33,850 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 1: 3 facings, 24.0cm wide at position 19.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 100 ml on Apple Premium Row 1: 3 facings, 15.0cm wide at position 45.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml doesn't fit on shelf Apple Premium Row 1: need 69.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml on Apple Premium Row 2: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE essential USB-C Hub doesn't fit on shelf Apple Premium Row 1: need 72.2cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Apple Premium Row 3: 1 facings, 8.2cm wide at position 2.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Third Party Row 1: 1 facings, 6.0cm wide at position 2.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Third Party Row 2: 2 facings, 20.4cm wide at position 2.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 2 facings, 12.0cm wide at position 10.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Apple Premium Row 3: 1 facings, 30.0cm wide at position 12.2cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Belkin-6-OUTLET SURGE PROTECTOR  2 METER CORD on Third Party Row 1: 2 facings, 12.0cm wide at position 24.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed MOFT logo debossed only laptop stand fits up to 15.6 laptops - Space Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 19.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Black on Third Party Row 2: 1 facings, 30.0cm wide at position 24.4cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Brown doesn't fit on shelf Apple Premium Row 2: need 68.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Brown doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12 doesn't fit on shelf Apple Premium Row 2: need 68.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Riser Laptop Stand - Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 36.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve-Blue Ultrabooks   Macbooks 13 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve Ultrabooks   Macbooks 13 -Grey doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Blue doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight on Third Party Row 1: 1 facings, 10.0cm wide at position 38.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,851 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 on Apple Premium Row 3: 1 facings, 8.0cm wide at position 44.2cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black on Third Party Row 1: 1 facings, 10.0cm wide at position 50.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - White doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Logitech Pebble M350s Mouse - White on Apple Premium Row 2: 1 facings, 10.0cm wide at position 53.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI on Apple Premium Row 3: 1 facings, 8.0cm wide at position 54.2cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion SWIFT 4-in-1 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion SWIFT 4-in-1 Hub on Third Party Row 2: 1 facings, 8.0cm wide at position 56.4cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin PVC C-LTG 1M  WHITE - C -Lightning Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 3: need 74.2cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 3: need 74.2cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 3: need 74.2cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 3: need 74.2cm, have 67.0cm
+2025-07-21 13:11:33,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 13:11:33,853 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 13:11:33,853 | ERROR    | base_optimizer  | create_planogram     | Optimization failed: [Errno 22] Invalid argument
+2025-07-21 13:11:33,853 | ERROR    | main            | interactive_mode     | Error in interactive mode: Optimization failed: [Errno 22] Invalid argument
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 355, in create_planogram
+    result = self.optimize(filtered_products, **kwargs)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\utils\monitor.py", line 15, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\bundle_optimizer.py", line 54, in optimize
+    remaining_placed, remaining_rejected = self._place_remaining_products(remaining_products)
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\bundle_optimizer.py", line 318, in _place_remaining_products
+    if self._try_place_product(shelf, product, facings):
+       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\bundle_optimizer.py", line 430, in _try_place_product
+    return self._place_product_on_shelf(shelf, product, facings)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 140, in _place_product_on_shelf
+    print(f"DEBUG: _place_product_on_shelf called: {product.product_name[:30]} -> {shelf.shelf_name}, {facings} facings")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 48, in interactive_mode
+    run_lob_optimization(loader, logger)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\main.py", line 400, in run_lob_optimization
+    result = optimizer.create_planogram(products)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\utils\error_handler.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Shivansh Pal\Desktop\Planogram_Project\src\optimization\base_optimizer.py", line 378, in create_planogram
+    raise OptimizationError(f"Optimization failed: {str(e)}")
+src.utils.error_handler.OptimizationError: Optimization failed: [Errno 22] Invalid argument
+2025-07-21 13:29:58,381 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 13:29:58,381 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 13:29:58,420 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 13:29:58,478 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 13:29:58,501 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 13:29:58,525 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 13:29:58,525 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 13:29:58,525 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 13:29:58,525 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 13:29:58,591 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 13:29:58,591 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 13:29:58,592 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 13:29:58,592 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 13:29:58,592 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 13:29:58,594 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
+2025-07-21 13:29:58,594 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.07s
+2025-07-21 13:29:58,594 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-21 13:29:58,594 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-21 13:29:58,594 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 13:29:58,595 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-21 13:29:58,595 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 13:29:58,595 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 13:29:58,595 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 13:29:58,996 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-21 13:29:58,996 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 13:29:59,345 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-21 14:03:18,600 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 14:03:53,582 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:09:14,147 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:09:14,148 | INFO     | main            | run_lob_optimization | Loading iPad Accessories...
+2025-07-21 15:09:14,177 | INFO     | main            | run_lob_optimization | Loaded 158 products for iPad Accessories
+2025-07-21 15:09:14,223 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:09:14,245 | INFO     | main            | run_lob_optimization | Loaded 24 bundle recommendations
+2025-07-21 15:09:14,264 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:09:14,264 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 54 products
+2025-07-21 15:09:14,264 | INFO     | base_optimizer  | create_planogram     | After store filtering: 54 products
+2025-07-21 15:09:14,264 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:09:14,271 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:09:14,271 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Black on Apple Premium Row 1: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-21 15:09:14,271 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 11  2024    Black on Apple Premium Row 2: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-21 15:09:14,271 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black on Apple Premium Row 3: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-21 15:09:14,271 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 13  2024    Black on Third Party Row 1: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-21 15:09:14,271 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 13  2024    Black on Third Party Row 2: 2 facings, 50.0cm wide at position 2.0cm
+2025-07-21 15:09:14,272 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 5 products actually on shelves
+2025-07-21 15:09:14,272 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.01s
+2025-07-21 15:09:14,272 | INFO     | base_optimizer  | create_planogram     | Placed 5 products with 10 facings
+2025-07-21 15:09:14,272 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPad' with store 'Express Store Template'.
+2025-07-21 15:09:14,272 | WARNING  | clean_planogram | create_clean_planogram | No products found for IPAD planogram.
+2025-07-21 15:09:30,613 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:09:30,613 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 15:09:30,652 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 15:09:30,710 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:09:30,714 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 15:09:30,720 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:09:30,720 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 15:09:30,720 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 15:09:30,720 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:09:30,783 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:09:30,783 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:09:30,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:09:30,785 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
+2025-07-21 15:09:30,786 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.07s
+2025-07-21 15:09:30,786 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-21 15:09:30,786 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-21 15:09:30,786 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 15:09:30,787 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-21 15:09:30,787 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 15:09:30,787 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 15:09:30,787 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 15:09:31,208 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-21 15:09:31,208 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 15:09:31,585 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-21 15:21:42,556 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:21:46,258 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 15:21:46,277 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 15:21:46,321 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:21:46,324 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 15:21:46,352 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:21:46,352 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 15:21:46,352 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 15:21:46,353 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:21:46,418 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:21:46,419 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,419 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,419 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:21:46,419 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:21:46,420 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:21:46,420 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,420 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,420 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,421 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,421 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,421 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,422 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Third Party Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:21:46,422 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,422 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,422 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,422 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Clear Magsafe Case for iPhone 15-Clear on Third Party Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,423 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Armor Magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,423 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse TANK Gradient Magsafe case for iPhone 15-Blue on Third Party Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,424 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:21:46,425 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:21:46,426 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:21:46,426 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Clear on Apple Premium Row 4: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:21:46,426 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Grey on Third Party Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:21:46,427 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 2: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-21 15:21:46,427 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 3: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-21 15:21:46,427 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White on Third Party Row 4: 2 facings, 22.0cm wide at position 28.0cm
+2025-07-21 15:21:46,427 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black on Apple Premium Row 2: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:21:46,428 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black on Apple Premium Row 3: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:21:46,429 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Blue on Apple Premium Row 4: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:21:46,429 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 1: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:21:46,429 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White on Third Party Row 2: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-21 15:21:46,430 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-21 15:21:46,430 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear on Third Party Row 4: 1 facings, 11.0cm wide at position 52.0cm
+2025-07-21 15:21:46,434 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 33 products actually on shelves
+2025-07-21 15:21:46,435 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 15:21:46,435 | INFO     | base_optimizer  | create_planogram     | Placed 33 products with 40 facings
+2025-07-21 15:21:46,435 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Flagship Store Template'.
+2025-07-21 15:21:46,436 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 15:21:46,437 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Flagship Store Template'.
+2025-07-21 15:21:46,437 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 15:21:46,437 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 15:21:46,437 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Base
+2025-07-21 15:21:46,896 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Base.png
+2025-07-21 15:21:46,896 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Plus
+2025-07-21 15:21:47,308 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Plus.png
+2025-07-21 15:21:47,308 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro
+2025-07-21 15:21:47,785 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_Pro.png
+2025-07-21 15:21:47,785 | INFO     | iphone_planogram | create_flagship_series_planograms | Creating flagship planogram for iPhone 16 Pro Max
+2025-07-21 15:21:48,237 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_iPhone16_ProMax.png
+2025-07-21 15:21:48,237 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 15:21:48,727 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part1.png
+2025-07-21 15:21:48,728 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 15:21:49,207 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Flagship_Store_Template_planogram_part2.png
+2025-07-21 15:26:05,002 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:26:09,077 | INFO     | main            | run_lob_optimization | Loading Mac Accessories...
+2025-07-21 15:26:09,108 | INFO     | main            | run_lob_optimization | Loaded 254 products for Mac Accessories
+2025-07-21 15:26:09,143 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:26:09,147 | INFO     | main            | run_lob_optimization | Loaded 29 bundle recommendations
+2025-07-21 15:26:09,150 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:26:09,150 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 131 products
+2025-07-21 15:26:09,151 | INFO     | base_optimizer  | create_planogram     | After store filtering: 131 products
+2025-07-21 15:26:09,151 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:26:09,153 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:26:09,154 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-21 15:26:09,154 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 1: 3 facings, 24.0cm wide at position 19.0cm
+2025-07-21 15:26:09,154 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 100 ml on Apple Premium Row 1: 3 facings, 15.0cm wide at position 45.0cm
+2025-07-21 15:26:09,155 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml doesn't fit on shelf Apple Premium Row 1: need 69.0cm, have 67.0cm
+2025-07-21 15:26:09,155 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PanzerGlass SPRAY Twice A Day Antibacterial screen cleaner 30 ml on Apple Premium Row 2: 3 facings, 15.0cm wide at position 2.0cm
+2025-07-21 15:26:09,156 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 8221 black Laptop bag 13 3 / 6 on Apple Premium Row 3: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-21 15:26:09,156 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE essential USB-C Hub doesn't fit on shelf Apple Premium Row 1: need 72.2cm, have 67.0cm
+2025-07-21 15:26:09,156 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Apple Premium Row 4: 1 facings, 8.2cm wide at position 2.0cm
+2025-07-21 15:26:09,156 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Third Party Row 1: 1 facings, 6.0cm wide at position 2.0cm
+2025-07-21 15:26:09,157 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION STOW MACBOOK CASE FABRIC SLATE 13 on Third Party Row 2: 1 facings, 30.0cm wide at position 2.0cm
+2025-07-21 15:26:09,157 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed NATIVE UNION  STOW MACBOOK CASE FABRIC INDIGO 13 on Third Party Row 3: 2 facings, 60.0cm wide at position 2.0cm
+2025-07-21 15:26:09,158 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Third Party Row 4: 2 facings, 20.4cm wide at position 2.0cm
+2025-07-21 15:26:09,158 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 2 facings, 12.0cm wide at position 10.0cm
+2025-07-21 15:26:09,158 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Apple Premium Row 4: 1 facings, 30.0cm wide at position 12.2cm
+2025-07-21 15:26:09,159 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Belkin-6-OUTLET SURGE PROTECTOR  2 METER CORD on Third Party Row 1: 2 facings, 12.0cm wide at position 24.0cm
+2025-07-21 15:26:09,159 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed MOFT logo debossed only laptop stand fits up to 15.6 laptops - Space Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 19.0cm
+2025-07-21 15:26:09,160 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Black on Third Party Row 4: 1 facings, 30.0cm wide at position 24.4cm
+2025-07-21 15:26:09,160 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp LUXURY Premium Leather Laptop Sleeve for 14 - Brown on Apple Premium Row 3: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-21 15:26:09,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12 on Third Party Row 2: 1 facings, 30.0cm wide at position 34.0cm
+2025-07-21 15:26:09,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Riser Laptop Stand - Grey on Apple Premium Row 2: 1 facings, 15.0cm wide at position 36.0cm
+2025-07-21 15:26:09,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve-Blue Ultrabooks   Macbooks 13 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Black doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Frost doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Tucano Gommo Sleeve Ultrabooks   Macbooks 13 -Grey doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product tomtoc Laptop Sleeve 14  Blue doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product RIVACASE 5120 black Laptop bag 13.3 / 12 doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip - Midnight on Third Party Row 1: 1 facings, 10.0cm wide at position 38.0cm
+2025-07-21 15:26:09,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion ALPHA 5-in-1 Hub V2 on Apple Premium Row 4: 1 facings, 8.0cm wide at position 44.2cm
+2025-07-21 15:26:09,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE macbook essential Kit for Macbook pro 14 M3 -Space Black on Third Party Row 1: 1 facings, 10.0cm wide at position 50.0cm
+2025-07-21 15:26:09,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - White doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,164 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Logitech Pebble M350s Mouse - White on Apple Premium Row 2: 1 facings, 10.0cm wide at position 53.0cm
+2025-07-21 15:26:09,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB- C AnchorHDMI Hub - USB-A (USB2.0)  USB-C (PD 60W) 3.5mm Audio Jack  HDMI on Apple Premium Row 4: 1 facings, 8.0cm wide at position 54.2cm
+2025-07-21 15:26:09,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion SWIFT 4-in-1 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed ALOGIC USB-C Fusion SWIFT 4-in-1 Hub on Third Party Row 4: 1 facings, 8.0cm wide at position 56.4cm
+2025-07-21 15:26:09,165 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin PVC C-LTG 1M  WHITE - C -Lightning Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,166 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,166 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,166 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,166 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,166 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Dock Wave - ALL-IN-ONE / USB-C Hub with Power Delivery  Power Bank & Wireless Charger doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Starlight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,167 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 13-inch MacBook Air with  M2 chip-Space Grey doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 16-inch MacBook Pro: Apple M3  Pro -Space Black doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,168 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Fusion ALPHA 5-in-1 Hub - HDMI/USB/Ethernet & Power Delivery doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,169 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC Ultra USB-C Dock UNI V2 - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,170 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive NET Hub for USB-C MacBook Pro doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,171 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,172 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,172 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,172 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,172 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-21 15:26:09,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin ADAPTER  USB-C TO HDMI  VGA  DVI  DISPLAYPORT  BLK doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-21 15:26:09,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,173 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,174 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,174 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup MINI SPLITTER USB-C HUB 3IN1 (Type-C/HDMI/USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,174 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C TO HDMI CABLE - 1M - Space Grey doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,175 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup ELITE MICRO USB-C HUB 5IN1 (PD-4USB) doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,176 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,176 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product TEKNE macbook essential Kit for 15-inch MacBook Air M3-Midnight doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,176 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,176 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,176 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C MultiPort Adapter with Card Reader/3 x USB 3.0 Hub doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,177 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,178 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-21 15:26:09,178 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product ALOGIC USB-C Laptop/Macbook Wall Charger 60W with Power Delivery doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-21 15:26:09,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,179 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,180 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,180 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac MACBOOK CHARGING HUB ADAPTER doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,180 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M - BLK doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,180 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Belkin USB-C to Lightning Cable 1.2M WHT doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,181 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,181 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Logitech Pebble M350s Mouse - Graphite doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Apple Premium Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product GRAVASTAR M2 BLK   MERCURY M2 WIRELESS GAMING MOUSE doesn't fit on shelf Third Party Row 1: need 74.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,182 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Alogic Fusion CORE USB-C 5 in 1 HDMI & USB Hub - Space Grey doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,183 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product 5 Meter HDMI Gold 4K 2.0 Ethernet Ultra HD Cable doesn't fit on shelf Third Party Row 1: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,183 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,183 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,183 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 1: need 70.0cm, have 67.0cm
+2025-07-21 15:26:09,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Third Party Row 3: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 4: need 72.2cm, have 67.0cm
+2025-07-21 15:26:09,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Powerup 120w 3 Type-C  PD   USB QC 3.0 Wall Charger - White doesn't fit on shelf Apple Premium Row 2: need 73.0cm, have 67.0cm
+2025-07-21 15:26:09,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,184 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product HyperDrive DUO 7-in-2 USB-C Hub for MacBook Pro / Air doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,185 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Third Party Row 1: need 72.0cm, have 67.0cm
+2025-07-21 15:26:09,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 4: need 74.2cm, have 67.0cm
+2025-07-21 15:26:09,186 | DEBUG    | base_optimizer  | _place_product_on_shelf | Product Xtrememac TYPE-C HUB PLUS - HDMI + 2*USB-A + SD CARD + USB-C + ETHERNET doesn't fit on shelf Apple Premium Row 2: need 75.0cm, have 67.0cm
+2025-07-21 15:26:09,187 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 24 products actually on shelves
+2025-07-21 15:26:09,187 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.04s
+2025-07-21 15:26:09,187 | INFO     | base_optimizer  | create_planogram     | Placed 24 products with 36 facings
+2025-07-21 15:26:09,187 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'Mac' with store 'Flagship Store Template'.
+2025-07-21 15:26:09,188 | INFO     | clean_planogram | create_clean_planogram | Found 70 products for MAC planogram generation.
+2025-07-21 15:26:09,189 | INFO     | mac_planogram   | create_mac_planogram | Creating Mac accessories planograms for flagship store...
+2025-07-21 15:26:09,200 | INFO     | mac_planogram   | create_mac_planogram | Loaded 254 Mac products
+2025-07-21 15:26:09,201 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Found 78 sleeves and 59 bags
+2025-07-21 15:26:09,771 | INFO     | mac_planogram   | create_mac_sleeves_bags_planogram | Saved sleeves & bags planogram: output\mac_sleeves_bags_flagship.png
+2025-07-21 15:26:09,771 | INFO     | mac_planogram   | create_mac_accessories_planogram | Found accessories in 11 categories
+2025-07-21 15:26:10,327 | INFO     | mac_planogram   | create_mac_accessories_planogram | Saved accessories planogram: output\mac_accessories_flagship.png
+2025-07-21 15:26:10,328 | INFO     | mac_planogram   | create_mac_planogram | Successfully created Mac planograms for flagship store
+2025-07-21 15:37:56,506 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:38:00,016 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 15:38:00,039 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 15:38:00,078 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:38:00,081 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 15:38:00,087 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:38:00,088 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 15:38:00,088 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 15:38:00,088 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:38:00,157 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:38:00,158 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:38:00,159 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:38:00,159 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:38:00,160 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:38:00,160 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:38:00,160 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:38:00,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:38:00,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:38:00,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:38:00,161 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:38:00,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:38:00,162 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:38:00,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:38:00,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:38:00,163 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:38:00,167 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
+2025-07-21 15:38:00,167 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 15:38:00,167 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-21 15:38:00,168 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-21 15:38:00,168 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 15:38:00,169 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-21 15:38:00,170 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 15:38:00,170 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 15:38:00,170 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 15:38:00,596 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-21 15:38:00,596 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 15:38:00,992 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png
+2025-07-21 15:40:13,778 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:40:17,273 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 15:40:17,293 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 15:40:17,331 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:40:17,334 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 15:40:17,366 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:40:17,366 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 15:40:17,366 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 15:40:17,367 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:40:17,438 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:40:17,438 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,439 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,439 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,439 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:40:17,439 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:40:17,440 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Third Party Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,440 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Third Party Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,440 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,440 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,441 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Third Party Row 5: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:40:17,441 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,441 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Third Party Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,441 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,442 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,442 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Third Party Row 5: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:40:17,442 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Clear Magsafe Case for iPhone 15-Clear on Third Party Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,442 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Armor Magsafe case for iPhone 15 Black on Third Party Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,442 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse TANK Gradient Magsafe case for iPhone 15-Blue on Third Party Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,443 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,443 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Blue on Third Party Row 5: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:40:17,443 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Third Party Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:40:17,444 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Clear on Third Party Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:40:17,444 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Grey on Third Party Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:40:17,444 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CLEAR Case with Camera stand for iPhone 16-White on Third Party Row 4: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:40:17,444 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 5: 2 facings, 22.0cm wide at position 41.0cm
+2025-07-21 15:40:17,445 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White on Third Party Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:40:17,445 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black on Third Party Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:40:17,445 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:40:17,448 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 28 products actually on shelves
+2025-07-21 15:40:17,448 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 15:40:17,449 | INFO     | base_optimizer  | create_planogram     | Placed 28 products with 30 facings
+2025-07-21 15:40:17,449 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Standard Store Template'.
+2025-07-21 15:40:17,449 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 15:40:17,450 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Standard Store Template'.
+2025-07-21 15:40:17,451 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 15:40:17,451 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 15:40:17,451 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 15:40:17,878 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part1.png
+2025-07-21 15:40:17,878 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 15:40:18,313 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Standard_Store_Template_planogram_part2.png
+2025-07-21 15:49:57,578 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 15:49:57,578 | INFO     | main            | run_lob_optimization | Loading iPhone Accessories...
+2025-07-21 15:49:57,594 | INFO     | main            | run_lob_optimization | Loaded 399 products for iPhone Accessories
+2025-07-21 15:49:57,633 | INFO     | main            | run_lob_optimization | Enriched products with cohort data
+2025-07-21 15:49:57,636 | INFO     | main            | run_lob_optimization | Loaded 54 bundle recommendations
+2025-07-21 15:49:57,641 | INFO     | main            | run_lob_optimization | Running optimization...
+2025-07-21 15:49:57,641 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 344 products
+2025-07-21 15:49:57,641 | INFO     | base_optimizer  | create_planogram     | After store filtering: 344 products
+2025-07-21 15:49:57,641 | INFO     | bundle_optimizer | optimize             | Running bundle-based optimization
+2025-07-21 15:49:57,709 | INFO     | bundle_optimizer | _extract_bundle_groups | Extracted 0 bundle groups
+2025-07-21 15:49:57,709 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Apple Premium Row 1: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:49:57,709 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:49:57,709 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 1: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Grey on Apple Premium Row 2: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Storm Blue on Apple Premium Row 3: 1 facings, 11.0cm wide at position 2.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse LIQUID silicon case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 15.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Tire magsafe case for iPhone 15 Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse HORNOR Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 28.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse THOR Leather case for iPhone 15-Blue on Apple Premium Row 2: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Newton Magsafe Case for iPhone 15-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 41.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse FROSTED Case for iPhone 15-Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:49:57,710 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Apple Premium Row 3: 1 facings, 11.0cm wide at position 54.0cm
+2025-07-21 15:49:57,712 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
+2025-07-21 15:49:57,712 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.07s
+2025-07-21 15:49:57,712 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-21 15:49:57,712 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'iPhone' with store 'Express Store Template'.
+2025-07-21 15:49:57,712 | INFO     | clean_planogram | create_clean_planogram | Found 13 products for IPHONE planogram generation.
+2025-07-21 15:49:57,714 | INFO     | iphone_planogram | create_iphone_planogram | Generating iPhone planogram for store 'Express Store Template'.
+2025-07-21 15:49:57,714 | INFO     | iphone_planogram | create_iphone_planogram | Found 13 Apple and 95 TPA products.
+2025-07-21 15:49:57,714 | INFO     | iphone_planogram | create_iphone_planogram | Calculated 5 products per row (shelf: 67.0cm, avg product: 11.0cm)
+2025-07-21 15:49:57,714 | INFO     | iphone_planogram | create_main_planogram | Creating Part 1: iPhone Pro & Pro Max series
+2025-07-21 15:49:58,119 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part1.png
+2025-07-21 15:49:58,119 | INFO     | iphone_planogram | create_main_planogram | Creating Part 2: iPhone Plus & Base series
+2025-07-21 15:49:58,522 | INFO     | iphone_planogram | create_single_series_planogram | Saved iPhone planogram to output/iPhone_Express_Store_Template_planogram_part2.png

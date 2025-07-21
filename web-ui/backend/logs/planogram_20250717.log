@@ -362,3 +362,260 @@
 2025-07-17 14:41:19,458 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 15 products actually on shelves
 2025-07-17 14:41:19,458 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.04s
 2025-07-17 14:41:19,458 | INFO     | base_optimizer  | create_planogram     | Placed 15 products with 15 facings
+2025-07-17 17:58:33,701 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250717.log
+2025-07-17 17:58:33,702 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-17 17:58:33,703 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-17 17:58:33,704 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-17 17:58:33,705 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 21, 'Apple': 2, 'Pulse': 37, 'Tekne': 7}
+2025-07-17 17:58:33,706 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro - iPhone 16 Pro Clear 
+2025-07-17 17:58:33,706 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - iPhone 16 Pro Max Cl
+2025-07-17 17:58:33,707 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Base - Pulse CRYSTAL Case w
+2025-07-17 17:58:33,707 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Plus - Gripp FOCAL Camera L
+2025-07-17 17:58:33,707 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - Gripp FOCAL Camera L
+2025-07-17 17:58:33,708 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPhone 16 Pro': 1, 'iPhone 16 Pro Max': 1}
+2025-07-17 17:58:33,709 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 2 | Third-party products: 30
+2025-07-17 17:58:33,709 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-17 17:58:33,710 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-17 17:58:33,710 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-17 17:58:33,711 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-17 17:58:33,712 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-17 17:58:33,713 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Max Clear Case with MagSafe... (sales: 51.9/day)
+2025-07-17 17:58:33,713 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Clear Case with MagSafe... (sales: 41.0/day)
+2025-07-17 17:58:33,713 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 2 products selected with maximum unique color representation
+2025-07-17 17:58:33,714 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,714 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-17 17:58:33,715 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed iPhone 16 Pro Max Clear Case w... (sales: 51.9/day)
+2025-07-17 17:58:33,716 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,716 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-17 17:58:33,717 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed iPhone 16 Pro Clear Case with ... (sales: 41.0/day)
+2025-07-17 17:58:33,717 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-17 17:58:33,718 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 14 products from ['Pulse', 'Gripp', 'Tekne']
+2025-07-17 17:58:33,719 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold' | Subcat: 'lens_protector' | Detected color: 'gold'
+2025-07-17 17:58:33,720 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black' | Subcat: '' | Detected color: 'black'
+2025-07-17 17:58:33,722 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium' | Subcat: 'lens_protector' | Detected color: 'lens_protector'
+2025-07-17 17:58:33,723 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear' | Subcat: 'magsafe' | Detected color: 'clear'
+2025-07-17 17:58:33,724 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold' | Subcat: 'lens_protector' | Detected color: 'grey'
+2025-07-17 17:58:33,725 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black' | Subcat: 'lens_protector' | Detected color: 'black'
+2025-07-17 17:58:33,725 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver' | Subcat: 'lens_protector' | Detected color: 'silver'
+2025-07-17 17:58:33,726 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black' | Subcat: 'tempered_glass' | Detected color: 'black'
+2025-07-17 17:58:33,727 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White' | Subcat: 'crystal' | Detected color: 'white'
+2025-07-17 17:58:33,728 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Super crystal magsafe case for iPhone 15-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-17 17:58:33,728 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE Matt Magsafe Case for iPhone 16-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-17 17:58:33,729 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE ARMOUR Case for iPhone 16-Black' | Subcat: 'armour' | Detected color: 'black'
+2025-07-17 17:58:33,730 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-17 17:58:33,730 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-17 17:58:33,731 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gold product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 100.0/day)
+2025-07-17 17:58:33,731 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Privacy Glass for  Apple iPhone 15 Pro Max  ... (sales: 64.4/day)
+2025-07-17 17:58:33,732 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA lens_protector product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 59.7/day)
+2025-07-17 17:58:33,732 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Gripp Clear MagSafe Case for Apple iPhone 15 Max  ... (sales: 55.8/day)
+2025-07-17 17:58:33,733 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp FOCAL Camera Lens Protector 3N1 (Compatible ... (sales: 53.9/day)
+2025-07-17 17:58:33,734 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 42.2/day)
+2025-07-17 17:58:33,734 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: Pulse CRYSTAL Case with Metal Camera Stand for iPh... (sales: 46.0/day)
+2025-07-17 17:58:33,735 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp FOCAL Camera Lens Protector 3N1 Compatible w... (sales: 53.2/day)
+2025-07-17 17:58:33,735 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 32.1/day)
+2025-07-17 17:58:33,736 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Pulse Super crystal magsafe case for iPhone 15-Bla... (sales: 41.0/day)
+2025-07-17 17:58:33,736 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 28.5/day)
+2025-07-17 17:58:33,736 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Dust Proof 3D Tempered Glass for Apple iPhon... (sales: 38.4/day)
+2025-07-17 17:58:33,737 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE Matt Magsafe Case for iPhone 16-Black... (sales: 35.4/day)
+2025-07-17 17:58:33,737 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE ARMOUR Case for iPhone 16-Black... (sales: 34.2/day)
+2025-07-17 17:58:33,738 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 14 products selected with maximum unique color representation
+2025-07-17 17:58:33,738 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold on Apple Premium Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,739 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,739 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp FOCAL Camera Lens Protec... (sales: 100.0/day)
+2025-07-17 17:58:33,740 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,740 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,740 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Privacy Glass for  Apple... (sales: 64.4/day)
+2025-07-17 17:58:33,741 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium on Third Party Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,741 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,742 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp FOCAL Camera Lens Protec... (sales: 59.7/day)
+2025-07-17 17:58:33,742 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Third Party Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,743 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,743 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Clear MagSafe Case for A... (sales: 55.8/day)
+2025-07-17 17:58:33,744 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold on Third Party Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,744 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,744 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.9/day)
+2025-07-17 17:58:33,745 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver on Third Party Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:33,745 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,745 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp FOCAL Camera Lens Protec... (sales: 42.2/day)
+2025-07-17 17:58:33,746 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,747 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,747 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed Pulse CRYSTAL Case with Metal ... (sales: 46.0/day)
+2025-07-17 17:58:33,747 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,748 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,748 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.2/day)
+2025-07-17 17:58:33,748 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,749 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,749 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed Tekne CLEAR Case with Camera s... (sales: 32.1/day)
+2025-07-17 17:58:33,750 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,750 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,750 | INFO     | product_optimizer | _place_brand_products | [TPA] #10: Placed Pulse Super crystal magsafe ca... (sales: 41.0/day)
+2025-07-17 17:58:33,751 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,751 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,752 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black on Third Party Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,752 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,752 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,753 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,753 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:33,754 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:33,755 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-17 17:58:33,755 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.05s
+2025-07-17 17:58:33,756 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-17 17:58:41,505 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-17 17:58:41,506 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-17 17:58:41,507 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-17 17:58:41,509 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 21, 'Apple': 2, 'Pulse': 37, 'Tekne': 7}
+2025-07-17 17:58:41,509 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro - iPhone 16 Pro Clear 
+2025-07-17 17:58:41,510 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - iPhone 16 Pro Max Cl
+2025-07-17 17:58:41,511 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Base - Pulse CRYSTAL Case w
+2025-07-17 17:58:41,511 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Plus - Gripp FOCAL Camera L
+2025-07-17 17:58:41,511 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - Gripp FOCAL Camera L
+2025-07-17 17:58:41,512 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPhone 16 Pro': 1, 'iPhone 16 Pro Max': 1}
+2025-07-17 17:58:41,513 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 2 | Third-party products: 30
+2025-07-17 17:58:41,513 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-17 17:58:41,514 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-17 17:58:41,515 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-17 17:58:41,516 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-17 17:58:41,516 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-17 17:58:41,517 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Max Clear Case with MagSafe... (sales: 51.9/day)
+2025-07-17 17:58:41,518 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Clear Case with MagSafe... (sales: 41.0/day)
+2025-07-17 17:58:41,519 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 2 products selected with maximum unique color representation
+2025-07-17 17:58:41,520 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,521 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-17 17:58:41,522 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed iPhone 16 Pro Max Clear Case w... (sales: 51.9/day)
+2025-07-17 17:58:41,524 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,525 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-17 17:58:41,525 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed iPhone 16 Pro Clear Case with ... (sales: 41.0/day)
+2025-07-17 17:58:41,526 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-17 17:58:41,527 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 14 products from ['Pulse', 'Gripp', 'Tekne']
+2025-07-17 17:58:41,527 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold' | Subcat: 'lens_protector' | Detected color: 'gold'
+2025-07-17 17:58:41,529 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black' | Subcat: '' | Detected color: 'black'
+2025-07-17 17:58:41,530 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium' | Subcat: 'lens_protector' | Detected color: 'lens_protector'
+2025-07-17 17:58:41,531 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear' | Subcat: 'magsafe' | Detected color: 'clear'
+2025-07-17 17:58:41,532 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold' | Subcat: 'lens_protector' | Detected color: 'grey'
+2025-07-17 17:58:41,533 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black' | Subcat: 'lens_protector' | Detected color: 'black'
+2025-07-17 17:58:41,534 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver' | Subcat: 'lens_protector' | Detected color: 'silver'
+2025-07-17 17:58:41,535 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black' | Subcat: 'tempered_glass' | Detected color: 'black'
+2025-07-17 17:58:41,536 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White' | Subcat: 'crystal' | Detected color: 'white'
+2025-07-17 17:58:41,537 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Super crystal magsafe case for iPhone 15-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-17 17:58:41,537 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE Matt Magsafe Case for iPhone 16-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-17 17:58:41,538 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE ARMOUR Case for iPhone 16-Black' | Subcat: 'armour' | Detected color: 'black'
+2025-07-17 17:58:41,539 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-17 17:58:41,540 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-17 17:58:41,541 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gold product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 100.0/day)
+2025-07-17 17:58:41,541 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Privacy Glass for  Apple iPhone 15 Pro Max  ... (sales: 64.4/day)
+2025-07-17 17:58:41,542 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA lens_protector product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 59.7/day)
+2025-07-17 17:58:41,543 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Gripp Clear MagSafe Case for Apple iPhone 15 Max  ... (sales: 55.8/day)
+2025-07-17 17:58:41,544 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp FOCAL Camera Lens Protector 3N1 (Compatible ... (sales: 53.9/day)
+2025-07-17 17:58:41,544 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 42.2/day)
+2025-07-17 17:58:41,545 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: Pulse CRYSTAL Case with Metal Camera Stand for iPh... (sales: 46.0/day)
+2025-07-17 17:58:41,546 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp FOCAL Camera Lens Protector 3N1 Compatible w... (sales: 53.2/day)
+2025-07-17 17:58:41,547 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 32.1/day)
+2025-07-17 17:58:41,548 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Pulse Super crystal magsafe case for iPhone 15-Bla... (sales: 41.0/day)
+2025-07-17 17:58:41,549 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 28.5/day)
+2025-07-17 17:58:41,550 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Dust Proof 3D Tempered Glass for Apple iPhon... (sales: 38.4/day)
+2025-07-17 17:58:41,551 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE Matt Magsafe Case for iPhone 16-Black... (sales: 35.4/day)
+2025-07-17 17:58:41,551 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE ARMOUR Case for iPhone 16-Black... (sales: 34.2/day)
+2025-07-17 17:58:41,552 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 14 products selected with maximum unique color representation
+2025-07-17 17:58:41,553 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold on Apple Premium Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,554 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,555 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp FOCAL Camera Lens Protec... (sales: 100.0/day)
+2025-07-17 17:58:41,556 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,556 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,557 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Privacy Glass for  Apple... (sales: 64.4/day)
+2025-07-17 17:58:41,558 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium on Third Party Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,558 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,559 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp FOCAL Camera Lens Protec... (sales: 59.7/day)
+2025-07-17 17:58:41,560 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Third Party Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,560 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,561 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Clear MagSafe Case for A... (sales: 55.8/day)
+2025-07-17 17:58:41,562 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold on Third Party Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,562 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,563 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.9/day)
+2025-07-17 17:58:41,565 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver on Third Party Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-17 17:58:41,565 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,566 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp FOCAL Camera Lens Protec... (sales: 42.2/day)
+2025-07-17 17:58:41,567 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,567 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,567 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed Pulse CRYSTAL Case with Metal ... (sales: 46.0/day)
+2025-07-17 17:58:41,569 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,569 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,570 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.2/day)
+2025-07-17 17:58:41,571 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,571 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,572 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed Tekne CLEAR Case with Camera s... (sales: 32.1/day)
+2025-07-17 17:58:41,573 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,574 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,574 | INFO     | product_optimizer | _place_brand_products | [TPA] #10: Placed Pulse Super crystal magsafe ca... (sales: 41.0/day)
+2025-07-17 17:58:41,575 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,576 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,577 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black on Third Party Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,577 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,578 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,578 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,579 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-17 17:58:41,579 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:58:41,580 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-17 17:58:41,580 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-17 17:58:41,581 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-17 17:59:27,758 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-17 17:59:27,760 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-17 17:59:27,760 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-17 17:59:27,761 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Tekne': 6, 'Pulse': 6, 'PanzerGlass': 2, 'Rivacase': 8, 'Native Union': 2, 'Belkin': 2, 'Gripp': 9, 'Tucano': 24, 'MOFT': 1, 'Sandisk': 2, 'tomtoc': 3, 'ALOGIC': 1, 'Logitech': 1}
+2025-07-17 17:59:27,761 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 0 | Third-party products: 30
+2025-07-17 17:59:27,762 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-17 17:59:27,762 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-17 17:59:27,763 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-17 17:59:27,764 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-17 17:59:27,764 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-17 17:59:27,765 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 0 products selected with maximum unique color representation
+2025-07-17 17:59:27,766 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-17 17:59:27,766 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 9 products from ['Tekne', 'Pulse', 'Gripp']
+2025-07-17 17:59:27,767 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE Spotfree Cleaning Spray' | Subcat: 'default' | Detected color: 'default'
+2025-07-17 17:59:27,768 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE essential USB-C Hub' | Subcat: 'default' | Detected color: 'default'
+2025-07-17 17:59:27,769 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE Gadget Organiser- Olive Green' | Subcat: 'green' | Detected color: 'green'
+2025-07-17 17:59:27,770 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE 240W USB4 Braided Cable' | Subcat: 'default' | Detected color: 'default'
+2025-07-17 17:59:27,770 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: '7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER)' | Subcat: 'silver' | Detected color: 'silver'
+2025-07-17 17:59:27,771 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Magnetic privacy filter for MacBook Air 13.6inch M2 M3  2022- 2024' | Subcat: 'black' | Detected color: 'privacy'
+2025-07-17 17:59:27,772 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Magnetic privacy filter for MacBook Pro 14.2 inch M1 M2 2021  2023' | Subcat: 'black' | Detected color: 'privacy'
+2025-07-17 17:59:27,773 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE 100W PD GAN Desktop Charger - White' | Subcat: 'white' | Detected color: 'white'
+2025-07-17 17:59:27,773 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-17 17:59:27,774 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE Spotfree Cleaning Spray... (sales: 100.0/day)
+2025-07-17 17:59:27,775 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA green product: TEKNE Gadget Organiser- Olive Green... (sales: 5.7/day)
+2025-07-17 17:59:27,775 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER)... (sales: 19.0/day)
+2025-07-17 17:59:27,776 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA privacy product: Pulse Magnetic privacy filter for MacBook Air 13.6... (sales: 14.7/day)
+2025-07-17 17:59:27,777 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: PULSE 100W PD GAN Desktop Charger - White... (sales: 2.8/day)
+2025-07-17 17:59:27,778 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Keyboard Skin for Apple Macbook Pro 14 and 1... (sales: 2.5/day)
+2025-07-17 17:59:27,779 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE essential USB-C Hub... (sales: 6.6/day)
+2025-07-17 17:59:27,779 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA privacy product: Pulse Magnetic privacy filter for MacBook Pro 14.2... (sales: 5.0/day)
+2025-07-17 17:59:27,780 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE 240W USB4 Braided Cable... (sales: 3.6/day)
+2025-07-17 17:59:27,781 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 9 products selected with maximum unique color representation
+2025-07-17 17:59:27,782 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 1 facings, 5.0cm wide at position 1.0cm
+2025-07-17 17:59:27,783 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,783 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed TEKNE Spotfree Cleaning Spray... (sales: 100.0/day)
+2025-07-17 17:59:27,784 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Apple Premium Row 2: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-17 17:59:27,785 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,785 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed TEKNE Gadget Organiser- Olive ... (sales: 5.7/day)
+2025-07-17 17:59:27,786 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 3: 1 facings, 8.0cm wide at position 1.0cm
+2025-07-17 17:59:27,786 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,787 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed 7 IN 1 MULTI PORT HUB(HUB)(COL... (sales: 19.0/day)
+2025-07-17 17:59:27,788 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Magnetic privacy filter for MacBook Air 13.6inch M2 M3  2022- 2024 on Apple Premium Row 4: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-17 17:59:27,788 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,789 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Pulse Magnetic privacy filter ... (sales: 14.7/day)
+2025-07-17 17:59:27,790 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-17 17:59:27,791 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,791 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed PULSE 100W PD GAN Desktop Char... (sales: 2.8/day)
+2025-07-17 17:59:27,792 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Third Party Row 2: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-17 17:59:27,792 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,792 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp Keyboard Skin for Apple ... (sales: 2.5/day)
+2025-07-17 17:59:27,793 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Third Party Row 3: 1 facings, 8.2cm wide at position 1.0cm
+2025-07-17 17:59:27,794 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,794 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed TEKNE essential USB-C Hub... (sales: 6.6/day)
+2025-07-17 17:59:27,795 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Magnetic privacy filter for MacBook Pro 14.2 inch M1 M2 2021  2023 on Third Party Row 4: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-17 17:59:27,795 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,796 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Pulse Magnetic privacy filter ... (sales: 5.0/day)
+2025-07-17 17:59:27,797 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Apple Premium Row 1: 1 facings, 10.2cm wide at position 7.0cm
+2025-07-17 17:59:27,797 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-17 17:59:27,798 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed TEKNE 240W USB4 Braided Cable... (sales: 3.6/day)
+2025-07-17 17:59:27,799 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 9 products actually on shelves
+2025-07-17 17:59:27,799 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.04s
+2025-07-17 17:59:27,800 | INFO     | base_optimizer  | create_planogram     | Placed 9 products with 9 facings

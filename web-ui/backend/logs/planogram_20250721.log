@@ -1,0 +1,721 @@
+2025-07-21 10:23:43,793 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 10:23:43,795 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 10:23:43,795 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 10:23:43,796 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 10:23:43,797 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 21, 'Apple': 2, 'Pulse': 37, 'Tekne': 7}
+2025-07-21 10:23:43,798 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro - iPhone 16 Pro Clear 
+2025-07-21 10:23:43,799 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - iPhone 16 Pro Max Cl
+2025-07-21 10:23:43,799 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Base - Pulse CRYSTAL Case w
+2025-07-21 10:23:43,799 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Plus - Gripp FOCAL Camera L
+2025-07-21 10:23:43,800 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - Gripp FOCAL Camera L
+2025-07-21 10:23:43,800 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPhone 16 Pro': 1, 'iPhone 16 Pro Max': 1}
+2025-07-21 10:23:43,801 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 2 | Third-party products: 30
+2025-07-21 10:23:43,801 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 10:23:43,802 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 10:23:43,803 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 10:23:43,804 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 10:23:43,805 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 10:23:43,806 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Max Clear Case with MagSafe... (sales: 51.9/day)
+2025-07-21 10:23:43,808 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Clear Case with MagSafe... (sales: 41.0/day)
+2025-07-21 10:23:43,810 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 2 products selected with maximum unique color representation
+2025-07-21 10:23:43,811 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,812 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:23:43,812 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed iPhone 16 Pro Max Clear Case w... (sales: 51.9/day)
+2025-07-21 10:23:43,813 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,814 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:23:43,815 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed iPhone 16 Pro Clear Case with ... (sales: 41.0/day)
+2025-07-21 10:23:43,816 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 10:23:43,817 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 14 products from ['Pulse', 'Gripp', 'Tekne']
+2025-07-21 10:23:43,819 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold' | Subcat: 'lens_protector' | Detected color: 'gold'
+2025-07-21 10:23:43,820 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black' | Subcat: '' | Detected color: 'black'
+2025-07-21 10:23:43,823 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium' | Subcat: 'lens_protector' | Detected color: 'lens_protector'
+2025-07-21 10:23:43,825 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear' | Subcat: 'magsafe' | Detected color: 'clear'
+2025-07-21 10:23:43,826 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold' | Subcat: 'lens_protector' | Detected color: 'grey'
+2025-07-21 10:23:43,827 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black' | Subcat: 'lens_protector' | Detected color: 'black'
+2025-07-21 10:23:43,828 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver' | Subcat: 'lens_protector' | Detected color: 'silver'
+2025-07-21 10:23:43,828 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black' | Subcat: 'tempered_glass' | Detected color: 'black'
+2025-07-21 10:23:43,829 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White' | Subcat: 'crystal' | Detected color: 'white'
+2025-07-21 10:23:43,829 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Super crystal magsafe case for iPhone 15-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-21 10:23:43,829 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE Matt Magsafe Case for iPhone 16-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-21 10:23:43,830 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE ARMOUR Case for iPhone 16-Black' | Subcat: 'armour' | Detected color: 'black'
+2025-07-21 10:23:43,830 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-21 10:23:43,831 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-21 10:23:43,831 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gold product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 100.0/day)
+2025-07-21 10:23:43,832 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Privacy Glass for  Apple iPhone 15 Pro Max  ... (sales: 64.4/day)
+2025-07-21 10:23:43,833 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA lens_protector product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 59.7/day)
+2025-07-21 10:23:43,833 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Gripp Clear MagSafe Case for Apple iPhone 15 Max  ... (sales: 55.8/day)
+2025-07-21 10:23:43,834 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp FOCAL Camera Lens Protector 3N1 (Compatible ... (sales: 53.9/day)
+2025-07-21 10:23:43,835 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 42.2/day)
+2025-07-21 10:23:43,835 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: Pulse CRYSTAL Case with Metal Camera Stand for iPh... (sales: 46.0/day)
+2025-07-21 10:23:43,836 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp FOCAL Camera Lens Protector 3N1 Compatible w... (sales: 53.2/day)
+2025-07-21 10:23:43,837 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 32.1/day)
+2025-07-21 10:23:43,838 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Pulse Super crystal magsafe case for iPhone 15-Bla... (sales: 41.0/day)
+2025-07-21 10:23:43,839 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 28.5/day)
+2025-07-21 10:23:43,840 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Dust Proof 3D Tempered Glass for Apple iPhon... (sales: 38.4/day)
+2025-07-21 10:23:43,841 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE Matt Magsafe Case for iPhone 16-Black... (sales: 35.4/day)
+2025-07-21 10:23:43,841 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE ARMOUR Case for iPhone 16-Black... (sales: 34.2/day)
+2025-07-21 10:23:43,842 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 14 products selected with maximum unique color representation
+2025-07-21 10:23:43,843 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold on Apple Premium Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,843 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,843 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp FOCAL Camera Lens Protec... (sales: 100.0/day)
+2025-07-21 10:23:43,844 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,844 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,844 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Privacy Glass for  Apple... (sales: 64.4/day)
+2025-07-21 10:23:43,845 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium on Third Party Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,845 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,846 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp FOCAL Camera Lens Protec... (sales: 59.7/day)
+2025-07-21 10:23:43,848 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Third Party Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,849 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,850 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Clear MagSafe Case for A... (sales: 55.8/day)
+2025-07-21 10:23:43,852 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold on Third Party Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,853 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,853 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.9/day)
+2025-07-21 10:23:43,855 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver on Third Party Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:23:43,856 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,856 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp FOCAL Camera Lens Protec... (sales: 42.2/day)
+2025-07-21 10:23:43,859 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,859 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,859 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed Pulse CRYSTAL Case with Metal ... (sales: 46.0/day)
+2025-07-21 10:23:43,860 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,861 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,861 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.2/day)
+2025-07-21 10:23:43,862 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,862 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,862 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed Tekne CLEAR Case with Camera s... (sales: 32.1/day)
+2025-07-21 10:23:43,864 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,864 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,864 | INFO     | product_optimizer | _place_brand_products | [TPA] #10: Placed Pulse Super crystal magsafe ca... (sales: 41.0/day)
+2025-07-21 10:23:43,866 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,867 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,868 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black on Third Party Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,869 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,870 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,871 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,873 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:23:43,874 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:23:43,875 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-21 10:23:43,875 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 10:23:43,876 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-21 10:29:17,185 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 10:29:17,186 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 10:29:17,188 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 10:29:17,189 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 21, 'Apple': 2, 'Pulse': 37, 'Tekne': 7}
+2025-07-21 10:29:17,190 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro - iPhone 16 Pro Clear 
+2025-07-21 10:29:17,191 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - iPhone 16 Pro Max Cl
+2025-07-21 10:29:17,191 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Base - Pulse CRYSTAL Case w
+2025-07-21 10:29:17,192 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Plus - Gripp FOCAL Camera L
+2025-07-21 10:29:17,192 | DEBUG    | product_optimizer | _sort_by_sales_and_iphone16_priority | Ensured representation: iPhone 16 Pro Max - Gripp FOCAL Camera L
+2025-07-21 10:29:17,193 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPhone 16 Pro': 1, 'iPhone 16 Pro Max': 1}
+2025-07-21 10:29:17,194 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 2 | Third-party products: 30
+2025-07-21 10:29:17,195 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 10:29:17,196 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 10:29:17,197 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 10:29:17,198 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 10:29:17,198 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 10:29:17,199 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Max Clear Case with MagSafe... (sales: 51.9/day)
+2025-07-21 10:29:17,199 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple clear product: iPhone 16 Pro Clear Case with MagSafe... (sales: 41.0/day)
+2025-07-21 10:29:17,200 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 2 products selected with maximum unique color representation
+2025-07-21 10:29:17,201 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Max Clear Case with MagSafe on Apple Premium Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,201 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:29:17,201 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed iPhone 16 Pro Max Clear Case w... (sales: 51.9/day)
+2025-07-21 10:29:17,204 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed iPhone 16 Pro Clear Case with MagSafe on Apple Premium Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,204 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:29:17,205 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed iPhone 16 Pro Clear Case with ... (sales: 41.0/day)
+2025-07-21 10:29:17,205 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 10:29:17,206 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 14 products from ['Pulse', 'Gripp', 'Tekne']
+2025-07-21 10:29:17,207 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold' | Subcat: 'lens_protector' | Detected color: 'gold'
+2025-07-21 10:29:17,208 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black' | Subcat: '' | Detected color: 'black'
+2025-07-21 10:29:17,208 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium' | Subcat: 'lens_protector' | Detected color: 'lens_protector'
+2025-07-21 10:29:17,209 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear' | Subcat: 'magsafe' | Detected color: 'clear'
+2025-07-21 10:29:17,210 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold' | Subcat: 'lens_protector' | Detected color: 'grey'
+2025-07-21 10:29:17,211 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black' | Subcat: 'lens_protector' | Detected color: 'black'
+2025-07-21 10:29:17,211 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver' | Subcat: 'lens_protector' | Detected color: 'silver'
+2025-07-21 10:29:17,212 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black' | Subcat: 'tempered_glass' | Detected color: 'black'
+2025-07-21 10:29:17,213 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White' | Subcat: 'crystal' | Detected color: 'white'
+2025-07-21 10:29:17,213 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Super crystal magsafe case for iPhone 15-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-21 10:29:17,214 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE Matt Magsafe Case for iPhone 16-Black' | Subcat: 'magsafe' | Detected color: 'black'
+2025-07-21 10:29:17,214 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE ARMOUR Case for iPhone 16-Black' | Subcat: 'armour' | Detected color: 'black'
+2025-07-21 10:29:17,215 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-21 10:29:17,216 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black' | Subcat: 'clear' | Detected color: 'clear'
+2025-07-21 10:29:17,216 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gold product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 100.0/day)
+2025-07-21 10:29:17,217 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Privacy Glass for  Apple iPhone 15 Pro Max  ... (sales: 64.4/day)
+2025-07-21 10:29:17,218 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA lens_protector product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 59.7/day)
+2025-07-21 10:29:17,218 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Gripp Clear MagSafe Case for Apple iPhone 15 Max  ... (sales: 55.8/day)
+2025-07-21 10:29:17,219 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp FOCAL Camera Lens Protector 3N1 (Compatible ... (sales: 53.9/day)
+2025-07-21 10:29:17,220 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: Gripp FOCAL Camera Lens Protector 3N1  Compatible ... (sales: 42.2/day)
+2025-07-21 10:29:17,220 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: Pulse CRYSTAL Case with Metal Camera Stand for iPh... (sales: 46.0/day)
+2025-07-21 10:29:17,221 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp FOCAL Camera Lens Protector 3N1 Compatible w... (sales: 53.2/day)
+2025-07-21 10:29:17,222 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 32.1/day)
+2025-07-21 10:29:17,223 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Pulse Super crystal magsafe case for iPhone 15-Bla... (sales: 41.0/day)
+2025-07-21 10:29:17,223 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA clear product: Tekne CLEAR Case with Camera stand for iPhone 16 P... (sales: 28.5/day)
+2025-07-21 10:29:17,224 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Dust Proof 3D Tempered Glass for Apple iPhon... (sales: 38.4/day)
+2025-07-21 10:29:17,224 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE Matt Magsafe Case for iPhone 16-Black... (sales: 35.4/day)
+2025-07-21 10:29:17,225 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: PULSE ARMOUR Case for iPhone 16-Black... (sales: 34.2/day)
+2025-07-21 10:29:17,225 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 14 products selected with maximum unique color representation
+2025-07-21 10:29:17,226 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold on Apple Premium Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,227 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,227 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp FOCAL Camera Lens Protec... (sales: 100.0/day)
+2025-07-21 10:29:17,228 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,228 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,229 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Privacy Glass for  Apple... (sales: 64.4/day)
+2025-07-21 10:29:17,230 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium on Third Party Row 1: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,230 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,231 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp FOCAL Camera Lens Protec... (sales: 59.7/day)
+2025-07-21 10:29:17,232 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear on Third Party Row 2: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,232 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,233 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Clear MagSafe Case for A... (sales: 55.8/day)
+2025-07-21 10:29:17,234 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold on Third Party Row 3: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,234 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,234 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.9/day)
+2025-07-21 10:29:17,235 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver on Third Party Row 4: 1 facings, 11.0cm wide at position 1.0cm
+2025-07-21 10:29:17,236 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,236 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp FOCAL Camera Lens Protec... (sales: 42.2/day)
+2025-07-21 10:29:17,237 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White on Apple Premium Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,237 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,238 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed Pulse CRYSTAL Case with Metal ... (sales: 46.0/day)
+2025-07-21 10:29:17,239 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black on Apple Premium Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,239 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,240 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Gripp FOCAL Camera Lens Protec... (sales: 53.2/day)
+2025-07-21 10:29:17,241 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White on Apple Premium Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,241 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,242 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed Tekne CLEAR Case with Camera s... (sales: 32.1/day)
+2025-07-21 10:29:17,243 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Super crystal magsafe case for iPhone 15-Black on Apple Premium Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,243 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,244 | INFO     | product_optimizer | _place_brand_products | [TPA] #10: Placed Pulse Super crystal magsafe ca... (sales: 41.0/day)
+2025-07-21 10:29:17,245 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black on Third Party Row 1: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,245 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,246 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black on Third Party Row 2: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,247 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,248 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE Matt Magsafe Case for iPhone 16-Black on Third Party Row 3: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,248 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,249 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE ARMOUR Case for iPhone 16-Black on Third Party Row 4: 1 facings, 11.0cm wide at position 13.0cm
+2025-07-21 10:29:17,249 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:17,250 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-21 10:29:17,250 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.06s
+2025-07-21 10:29:17,250 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-21 10:29:26,310 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 10:29:26,311 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 10:29:26,312 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 10:29:26,312 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 32, 'Apple': 11, 'tomtoc': 9, 'STM': 8, 'Logitech': 6, 'DBramante1928': 1}
+2025-07-21 10:29:26,313 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPad Base': 3, 'iPad Pro': 4, 'iPad Air': 3}
+2025-07-21 10:29:26,314 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 11 | Third-party products: 30
+2025-07-21 10:29:26,315 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 10:29:26,315 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 10:29:26,316 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 10:29:26,317 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 10:29:26,317 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 10:29:26,318 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Magic Keyboard Folio for iPad  10th generation... (sales: 50.2/day)
+2025-07-21 10:29:26,319 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  BLACK-ZML... (sales: 28.8/day)
+2025-07-21 10:29:26,320 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  BLACK-ZML... (sales: 24.2/day)
+2025-07-21 10:29:26,320 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad (10th generation) - Sky... (sales: 14.2/day)
+2025-07-21 10:29:26,321 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML... (sales: 9.1/day)
+2025-07-21 10:29:26,321 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  DENIM ZML... (sales: 22.8/day)
+2025-07-21 10:29:26,322 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad Air (4th generation) - Black... (sales: 7.3/day)
+2025-07-21 10:29:26,323 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  DENIM ZML... (sales: 8.2/day)
+2025-07-21 10:29:26,323 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: Smart Keyboard Folio for iPadAir (4th generation) ... (sales: 8.7/day)
+2025-07-21 10:29:26,324 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  DENIM ZML... (sales: 5.5/day)
+2025-07-21 10:29:26,325 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML... (sales: 4.6/day)
+2025-07-21 10:29:26,326 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 11 products selected with maximum unique color representation
+2025-07-21 10:29:26,327 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Magic Keyboard Folio for iPad  10th generation on Apple Premium Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,327 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,327 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed Magic Keyboard Folio for iPad ... (sales: 50.2/day)
+2025-07-21 10:29:26,328 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  BLACK-ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,329 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,329 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed IPAD PRO SMART FOLIO 13  BLACK... (sales: 28.8/day)
+2025-07-21 10:29:26,330 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  BLACK-ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,331 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,331 | INFO     | product_optimizer | _place_brand_products | [APPLE] #3: Placed IPAD PRO SMART FOLIO 11  BLACK... (sales: 24.2/day)
+2025-07-21 10:29:26,332 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad (10th generation) - Sky on Apple Premium Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,332 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 4 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,333 | INFO     | product_optimizer | _place_brand_products | [APPLE] #4: Placed Smart Folio for iPad (10th gen... (sales: 14.2/day)
+2025-07-21 10:29:26,334 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML on Third Party Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,335 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,336 | INFO     | product_optimizer | _place_brand_products | [APPLE] #5: Placed IPAD AIR SMART FOLIO 13  CHARC... (sales: 9.1/day)
+2025-07-21 10:29:26,338 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  DENIM ZML on Third Party Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,338 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,339 | INFO     | product_optimizer | _place_brand_products | [APPLE] #6: Placed IPAD PRO SMART FOLIO 11  DENIM... (sales: 22.8/day)
+2025-07-21 10:29:26,340 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad Air (4th generation) - Black on Third Party Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,340 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 3 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,341 | INFO     | product_optimizer | _place_brand_products | [APPLE] #7: Placed Smart Folio for iPad Air (4th ... (sales: 7.3/day)
+2025-07-21 10:29:26,342 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  DENIM ZML on Third Party Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 10:29:26,343 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 4 (Apple section: 0.0cm used)
+2025-07-21 10:29:26,343 | INFO     | product_optimizer | _place_brand_products | [APPLE] #8: Placed IPAD PRO SMART FOLIO 13  DENIM... (sales: 8.2/day)
+2025-07-21 10:29:26,345 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Keyboard Folio for iPadAir (4th generation) and iPadPro 11-inch (2nd generation) on Apple Premium Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,345 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 25.0cm used)
+2025-07-21 10:29:26,346 | INFO     | product_optimizer | _place_brand_products | [APPLE] #9: Placed Smart Keyboard Folio for iPadA... (sales: 8.7/day)
+2025-07-21 10:29:26,347 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  DENIM ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,348 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 25.0cm used)
+2025-07-21 10:29:26,348 | INFO     | product_optimizer | _place_brand_products | [APPLE] #10: Placed IPAD AIR SMART FOLIO 13  DENIM... (sales: 5.5/day)
+2025-07-21 10:29:26,350 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,350 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 25.0cm used)
+2025-07-21 10:29:26,350 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 10:29:26,352 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 15 products from ['Gripp']
+2025-07-21 10:29:26,352 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,354 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,355 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 10:29:26,356 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,356 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,357 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,358 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 10:29:26,359 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 10:29:26,359 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Air 10.9 Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,360 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue' | Subcat: 'dark blue' | Detected color: 'blue'
+2025-07-21 10:29:26,361 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 10:29:26,362 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Air 11  2024    Grey Black' | Subcat: 'grey' | Detected color: 'black'
+2025-07-21 10:29:26,362 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,363 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:26,363 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sky Blue' | Subcat: 'sky blue' | Detected color: 'blue'
+2025-07-21 10:29:26,364 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 11  2024    Bl... (sales: 100.0/day)
+2025-07-21 10:29:26,365 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 36.1/day)
+2025-07-21 10:29:26,366 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp Melon Case for Apple iPad Pro 11 2022 - Dark... (sales: 31.1/day)
+2025-07-21 10:29:26,367 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11  2024    Bl... (sales: 74.9/day)
+2025-07-21 10:29:26,367 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad Air 11  2024    Gr... (sales: 34.2/day)
+2025-07-21 10:29:26,368 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sk... (sales: 25.1/day)
+2025-07-21 10:29:26,370 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad 10.9 (10th Generat... (sales: 68.9/day)
+2025-07-21 10:29:26,371 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 13  2024    Bl... (sales: 61.6/day)
+2025-07-21 10:29:26,372 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 13  2024    Bl... (sales: 55.7/day)
+2025-07-21 10:29:26,373 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 53.4/day)
+2025-07-21 10:29:26,374 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Air 10.9 Black... (sales: 31.5/day)
+2025-07-21 10:29:26,375 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Pro 11 2022 - Grey... (sales: 30.6/day)
+2025-07-21 10:29:26,375 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Air 11  2024    Gr... (sales: 29.7/day)
+2025-07-21 10:29:26,376 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Bl... (sales: 27.9/day)
+2025-07-21 10:29:26,376 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11 2022 - Blac... (sales: 26.0/day)
+2025-07-21 10:29:26,377 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 15 products selected with maximum unique color representation
+2025-07-21 10:29:26,379 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Black on Apple Premium Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,379 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:26,380 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp Ultra Case for Apple iPa... (sales: 100.0/day)
+2025-07-21 10:29:26,381 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey on Third Party Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,382 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:26,382 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Ultra Case for Apple iPa... (sales: 36.1/day)
+2025-07-21 10:29:26,383 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue on Third Party Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,384 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:26,384 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp Melon Case for Apple iPa... (sales: 31.1/day)
+2025-07-21 10:29:26,386 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 11  2024    Black on Third Party Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,386 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:26,386 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Ultra Case for Apple iPa... (sales: 74.9/day)
+2025-07-21 10:29:26,388 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Grey on Third Party Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 10:29:26,388 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:26,388 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp Ultra Case for Apple iPa... (sales: 34.2/day)
+2025-07-21 10:29:26,389 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #6: Gripp STYLEUS Case for Apple i... (sales: 25.1/day)
+2025-07-21 10:29:26,390 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #7: Gripp Melon Case for Apple iPa... (sales: 68.9/day)
+2025-07-21 10:29:26,391 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #8: Gripp Ultra Case for Apple iPa... (sales: 61.6/day)
+2025-07-21 10:29:26,391 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #9: Gripp Ultra Case for Apple iPa... (sales: 55.7/day)
+2025-07-21 10:29:26,392 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #10: Gripp Ultra Case for Apple iPa... (sales: 53.4/day)
+2025-07-21 10:29:26,393 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-21 10:29:26,394 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 10:29:26,395 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-21 10:29:36,615 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 10:29:36,617 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 10:29:36,617 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 10:29:36,618 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Tekne': 6, 'Pulse': 6, 'PanzerGlass': 2, 'Rivacase': 8, 'Native Union': 2, 'Belkin': 2, 'Gripp': 9, 'Tucano': 24, 'MOFT': 1, 'Sandisk': 2, 'tomtoc': 3, 'ALOGIC': 1, 'Logitech': 1}
+2025-07-21 10:29:36,619 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 0 | Third-party products: 30
+2025-07-21 10:29:36,620 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 10:29:36,620 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 10:29:36,621 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 10:29:36,622 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 10:29:36,622 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 10:29:36,623 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 0 products selected with maximum unique color representation
+2025-07-21 10:29:36,623 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 10:29:36,624 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 9 products from ['Tekne', 'Pulse', 'Gripp']
+2025-07-21 10:29:36,625 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE Spotfree Cleaning Spray' | Subcat: 'default' | Detected color: 'default'
+2025-07-21 10:29:36,626 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE essential USB-C Hub' | Subcat: 'default' | Detected color: 'default'
+2025-07-21 10:29:36,627 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE Gadget Organiser- Olive Green' | Subcat: 'green' | Detected color: 'green'
+2025-07-21 10:29:36,627 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'TEKNE 240W USB4 Braided Cable' | Subcat: 'default' | Detected color: 'default'
+2025-07-21 10:29:36,628 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: '7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER)' | Subcat: 'silver' | Detected color: 'silver'
+2025-07-21 10:29:36,628 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Magnetic privacy filter for MacBook Air 13.6inch M2 M3  2022- 2024' | Subcat: 'black' | Detected color: 'privacy'
+2025-07-21 10:29:36,629 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse Magnetic privacy filter for MacBook Pro 14.2 inch M1 M2 2021  2023' | Subcat: 'black' | Detected color: 'privacy'
+2025-07-21 10:29:36,630 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'PULSE 100W PD GAN Desktop Charger - White' | Subcat: 'white' | Detected color: 'white'
+2025-07-21 10:29:36,630 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 10:29:36,631 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE Spotfree Cleaning Spray... (sales: 100.0/day)
+2025-07-21 10:29:36,631 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA green product: TEKNE Gadget Organiser- Olive Green... (sales: 5.7/day)
+2025-07-21 10:29:36,632 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER)... (sales: 19.0/day)
+2025-07-21 10:29:36,632 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA privacy product: Pulse Magnetic privacy filter for MacBook Air 13.6... (sales: 14.7/day)
+2025-07-21 10:29:36,633 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA white product: PULSE 100W PD GAN Desktop Charger - White... (sales: 2.8/day)
+2025-07-21 10:29:36,634 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Keyboard Skin for Apple Macbook Pro 14 and 1... (sales: 2.5/day)
+2025-07-21 10:29:36,635 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE essential USB-C Hub... (sales: 6.6/day)
+2025-07-21 10:29:36,637 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA privacy product: Pulse Magnetic privacy filter for MacBook Pro 14.2... (sales: 5.0/day)
+2025-07-21 10:29:36,638 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA default product: TEKNE 240W USB4 Braided Cable... (sales: 3.6/day)
+2025-07-21 10:29:36,639 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 9 products selected with maximum unique color representation
+2025-07-21 10:29:36,640 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Spotfree Cleaning Spray on Apple Premium Row 1: 1 facings, 5.0cm wide at position 1.0cm
+2025-07-21 10:29:36,640 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,640 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed TEKNE Spotfree Cleaning Spray... (sales: 100.0/day)
+2025-07-21 10:29:36,641 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE Gadget Organiser- Olive Green on Apple Premium Row 2: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:36,641 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,642 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed TEKNE Gadget Organiser- Olive ... (sales: 5.7/day)
+2025-07-21 10:29:36,643 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 7 IN 1 MULTI PORT HUB(HUB)(COLOR SILVER) on Apple Premium Row 3: 1 facings, 8.0cm wide at position 1.0cm
+2025-07-21 10:29:36,643 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,644 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed 7 IN 1 MULTI PORT HUB(HUB)(COL... (sales: 19.0/day)
+2025-07-21 10:29:36,645 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Magnetic privacy filter for MacBook Air 13.6inch M2 M3  2022- 2024 on Apple Premium Row 4: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-21 10:29:36,645 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,645 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Pulse Magnetic privacy filter ... (sales: 14.7/day)
+2025-07-21 10:29:36,646 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed PULSE 100W PD GAN Desktop Charger - White on Third Party Row 1: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:36,647 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,647 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed PULSE 100W PD GAN Desktop Char... (sales: 2.8/day)
+2025-07-21 10:29:36,649 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Keyboard Skin for Apple Macbook Pro 14 and 16 M1 - 2021 - Black on Third Party Row 2: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-21 10:29:36,649 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,649 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Gripp Keyboard Skin for Apple ... (sales: 2.5/day)
+2025-07-21 10:29:36,651 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE essential USB-C Hub on Third Party Row 3: 1 facings, 8.2cm wide at position 1.0cm
+2025-07-21 10:29:36,651 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,652 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed TEKNE essential USB-C Hub... (sales: 6.6/day)
+2025-07-21 10:29:36,653 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse Magnetic privacy filter for MacBook Pro 14.2 inch M1 M2 2021  2023 on Third Party Row 4: 1 facings, 30.0cm wide at position 1.0cm
+2025-07-21 10:29:36,653 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,654 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Pulse Magnetic privacy filter ... (sales: 5.0/day)
+2025-07-21 10:29:36,655 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed TEKNE 240W USB4 Braided Cable on Apple Premium Row 1: 1 facings, 10.2cm wide at position 7.0cm
+2025-07-21 10:29:36,655 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:36,655 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed TEKNE 240W USB4 Braided Cable... (sales: 3.6/day)
+2025-07-21 10:29:36,656 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 9 products actually on shelves
+2025-07-21 10:29:36,657 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.04s
+2025-07-21 10:29:36,657 | INFO     | base_optimizer  | create_planogram     | Placed 9 products with 9 facings
+2025-07-21 10:29:53,476 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 10:29:53,477 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 10:29:53,478 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 10:29:53,479 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Apple': 13, 'Pulse': 6, 'Gripp': 42, 'PanzerGlass': 4, 'AmazingThing': 2}
+2025-07-21 10:29:53,480 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'USB-C Connector': 1, 'USB Connector': 1, '45mm': 4, '41mm': 4}
+2025-07-21 10:29:53,480 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 13 | Third-party products: 30
+2025-07-21 10:29:53,481 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 10:29:53,481 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 10:29:53,482 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 10:29:53,482 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 10:29:53,484 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 10:29:53,485 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple usb-c_connector product: Apple Watch Magnetic Fast Charger to USB-C Cable  ... (sales: 100.0/day)
+2025-07-21 10:29:53,485 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple usb_connector product: Apple Watch Magnetic Charging Cable  1 m... (sales: 25.7/day)
+2025-07-21 10:29:53,486 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: 45mm Midnight Sport Band   M L... (sales: 5.1/day)
+2025-07-21 10:29:53,487 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 41mm product: 45mm Storm Blue Sport Band   M L... (sales: 4.3/day)
+2025-07-21 10:29:53,487 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: Apple 45mm Midnight Sport Band - Regular... (sales: 4.6/day)
+2025-07-21 10:29:53,488 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 41mm product: 45mm Starlight Sport Band   M L... (sales: 4.0/day)
+2025-07-21 10:29:53,488 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: Apple 45mm Starlight Sport Band - Regular... (sales: 2.5/day)
+2025-07-21 10:29:53,489 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 41mm product: 45mm Midnight Sport Band   S M... (sales: 2.6/day)
+2025-07-21 10:29:53,490 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: APPLE WATCH 45 STARLIGHT SB S/M-ZML... (sales: 2.3/day)
+2025-07-21 10:29:53,490 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 41mm product: 45mm Storm Blue Sport Band - S/M... (sales: 2.3/day)
+2025-07-21 10:29:53,491 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: Apple 45 mm Midnight Sport Band  B483  Demo... (sales: 2.0/day)
+2025-07-21 10:29:53,492 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 41mm product: 41mm Storm Blue Sport Band - S/M... (sales: 1.6/day)
+2025-07-21 10:29:53,493 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple 45mm product: APPLE WATCH 45 MIDNIGHT SL XL-ZML... (sales: 1.8/day)
+2025-07-21 10:29:53,493 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 13 products selected with maximum unique color representation
+2025-07-21 10:29:53,494 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Apple Watch Magnetic Fast Charger to USB-C Cable  1 m on Apple Premium Row 1: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,495 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,495 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed Apple Watch Magnetic Fast Char... (sales: 100.0/day)
+2025-07-21 10:29:53,496 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Apple Watch Magnetic Charging Cable  1 m on Apple Premium Row 2: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,496 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,497 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed Apple Watch Magnetic Charging ... (sales: 25.7/day)
+2025-07-21 10:29:53,498 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 45mm Midnight Sport Band   M L on Apple Premium Row 3: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,498 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,498 | INFO     | product_optimizer | _place_brand_products | [APPLE] #3: Placed 45mm Midnight Sport Band   M L... (sales: 5.1/day)
+2025-07-21 10:29:53,499 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 45mm Storm Blue Sport Band   M L on Apple Premium Row 4: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,500 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 4 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,501 | INFO     | product_optimizer | _place_brand_products | [APPLE] #4: Placed 45mm Storm Blue Sport Band   M... (sales: 4.3/day)
+2025-07-21 10:29:53,502 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Apple 45mm Midnight Sport Band - Regular on Third Party Row 1: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,503 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 1 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,503 | INFO     | product_optimizer | _place_brand_products | [APPLE] #5: Placed Apple 45mm Midnight Sport Band... (sales: 4.6/day)
+2025-07-21 10:29:53,505 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 45mm Starlight Sport Band   M L on Third Party Row 2: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,505 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 2 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,505 | INFO     | product_optimizer | _place_brand_products | [APPLE] #6: Placed 45mm Starlight Sport Band   M ... (sales: 4.0/day)
+2025-07-21 10:29:53,506 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Apple 45mm Starlight Sport Band - Regular on Third Party Row 3: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,507 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 3 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,507 | INFO     | product_optimizer | _place_brand_products | [APPLE] #7: Placed Apple 45mm Starlight Sport Ban... (sales: 2.5/day)
+2025-07-21 10:29:53,508 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 45mm Midnight Sport Band   S M on Third Party Row 4: 1 facings, 6.0cm wide at position 1.0cm
+2025-07-21 10:29:53,509 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 4 (Apple section: 0.0cm used)
+2025-07-21 10:29:53,509 | INFO     | product_optimizer | _place_brand_products | [APPLE] #8: Placed 45mm Midnight Sport Band   S M... (sales: 2.6/day)
+2025-07-21 10:29:53,510 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed APPLE WATCH 45 STARLIGHT SB S/M-ZML on Apple Premium Row 1: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,511 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 6.0cm used)
+2025-07-21 10:29:53,511 | INFO     | product_optimizer | _place_brand_products | [APPLE] #9: Placed APPLE WATCH 45 STARLIGHT SB S/... (sales: 2.3/day)
+2025-07-21 10:29:53,512 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 45mm Storm Blue Sport Band - S/M on Apple Premium Row 2: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,512 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 6.0cm used)
+2025-07-21 10:29:53,512 | INFO     | product_optimizer | _place_brand_products | [APPLE] #10: Placed 45mm Storm Blue Sport Band - S... (sales: 2.3/day)
+2025-07-21 10:29:53,513 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Apple 45 mm Midnight Sport Band  B483  Demo on Apple Premium Row 3: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,514 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 6.0cm used)
+2025-07-21 10:29:53,515 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed 41mm Storm Blue Sport Band - S/M on Apple Premium Row 4: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,515 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 4 (Apple section: 6.0cm used)
+2025-07-21 10:29:53,516 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed APPLE WATCH 45 MIDNIGHT SL XL-ZML on Third Party Row 1: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,517 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 1 (Apple section: 6.0cm used)
+2025-07-21 10:29:53,517 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 10:29:53,518 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 13 products from ['Pulse', 'Gripp']
+2025-07-21 10:29:53,519 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp 40/42/44mm stainless steel watch strap - Black' | Subcat: '42/44mm' | Detected color: 'black'
+2025-07-21 10:29:53,519 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Defence 45mm Watch Bumper - Black' | Subcat: '45mm' | Detected color: 'black'
+2025-07-21 10:29:53,520 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Defence 45mm Watch Bumper - Blue' | Subcat: '45mm' | Detected color: 'blue'
+2025-07-21 10:29:53,521 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp 45/49mm GLEN watch strap - Black' | Subcat: '45/49mm' | Detected color: 'black'
+2025-07-21 10:29:53,521 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp 40/42/44mm stainless steel watch strap - Silver' | Subcat: '42/44mm' | Detected color: 'silver'
+2025-07-21 10:29:53,522 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp 38/40mm stainless steel watch strap - Gold' | Subcat: '38/40mm' | Detected color: 'gold'
+2025-07-21 10:29:53,523 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp 45/49mm BRUT watch strap - Grey/Black' | Subcat: '45/49mm' | Detected color: 'black'
+2025-07-21 10:29:53,523 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'IN-LINE WIRELESS CHARGERFOR WATCH' | Subcat: 'watch charger' | Detected color: 'watch_charger'
+2025-07-21 10:29:53,524 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse magnetic silicon Apple watch band  BLACK RED' | Subcat: 'straps' | Detected color: 'black'
+2025-07-21 10:29:53,524 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse magnetic silicon Apple watch band  STARLING OLIVE GREEN' | Subcat: 'straps' | Detected color: 'green'
+2025-07-21 10:29:53,525 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse magnetic silicon Apple watch band  CLOULD GRAY DEEP' | Subcat: 'straps' | Detected color: 'gray'
+2025-07-21 10:29:53,526 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse magnetic silicon Apple watch band  BLUE DARK BLUE' | Subcat: 'straps' | Detected color: 'blue'
+2025-07-21 10:29:53,527 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Pulse magnetic silicon Apple watch band  ORANGE PINK' | Subcat: 'straps' | Detected color: 'pink'
+2025-07-21 10:29:53,527 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Pulse magnetic silicon Apple watch band  BLACK RED... (sales: 33.1/day)
+2025-07-21 10:29:53,528 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Pulse magnetic silicon Apple watch band  BLUE DARK... (sales: 20.3/day)
+2025-07-21 10:29:53,528 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA silver product: Gripp 40/42/44mm stainless steel watch strap - Sil... (sales: 11.6/day)
+2025-07-21 10:29:53,529 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gold product: Gripp 38/40mm stainless steel watch strap - Gold... (sales: 10.2/day)
+2025-07-21 10:29:53,530 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA watch_charger product: IN-LINE WIRELESS CHARGERFOR WATCH... (sales: 53.1/day)
+2025-07-21 10:29:53,530 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA green product: Pulse magnetic silicon Apple watch band  STARLING ... (sales: 30.1/day)
+2025-07-21 10:29:53,531 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA gray product: Pulse magnetic silicon Apple watch band  CLOULD GR... (sales: 22.9/day)
+2025-07-21 10:29:53,531 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA pink product: Pulse magnetic silicon Apple watch band  ORANGE PI... (sales: 13.6/day)
+2025-07-21 10:29:53,532 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp 40/42/44mm stainless steel watch strap - Bla... (sales: 18.3/day)
+2025-07-21 10:29:53,532 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp Defence 45mm Watch Bumper - Blue... (sales: 13.8/day)
+2025-07-21 10:29:53,533 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Defence 45mm Watch Bumper - Black... (sales: 17.9/day)
+2025-07-21 10:29:53,534 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp 45/49mm GLEN watch strap - Black... (sales: 12.6/day)
+2025-07-21 10:29:53,535 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp 45/49mm BRUT watch strap - Grey/Black... (sales: 10.0/day)
+2025-07-21 10:29:53,535 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 13 products selected with maximum unique color representation
+2025-07-21 10:29:53,536 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse magnetic silicon Apple watch band  BLACK RED on Third Party Row 2: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,536 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,537 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Pulse magnetic silicon Apple w... (sales: 33.1/day)
+2025-07-21 10:29:53,537 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse magnetic silicon Apple watch band  BLUE DARK BLUE on Third Party Row 3: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,538 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,538 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Pulse magnetic silicon Apple w... (sales: 20.3/day)
+2025-07-21 10:29:53,539 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp 40/42/44mm stainless steel watch strap - Silver on Third Party Row 4: 1 facings, 6.0cm wide at position 8.0cm
+2025-07-21 10:29:53,540 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,540 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp 40/42/44mm stainless ste... (sales: 11.6/day)
+2025-07-21 10:29:53,541 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp 38/40mm stainless steel watch strap - Gold on Apple Premium Row 1: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,542 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,542 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp 38/40mm stainless steel ... (sales: 10.2/day)
+2025-07-21 10:29:53,543 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IN-LINE WIRELESS CHARGERFOR WATCH on Apple Premium Row 2: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,543 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,544 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed IN-LINE WIRELESS CHARGERFOR WA... (sales: 53.1/day)
+2025-07-21 10:29:53,545 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse magnetic silicon Apple watch band  STARLING OLIVE GREEN on Apple Premium Row 3: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,545 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,545 | INFO     | product_optimizer | _place_brand_products | [TPA] #6: Placed Pulse magnetic silicon Apple w... (sales: 30.1/day)
+2025-07-21 10:29:53,546 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse magnetic silicon Apple watch band  CLOULD GRAY DEEP on Apple Premium Row 4: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,547 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,547 | INFO     | product_optimizer | _place_brand_products | [TPA] #7: Placed Pulse magnetic silicon Apple w... (sales: 22.9/day)
+2025-07-21 10:29:53,548 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Pulse magnetic silicon Apple watch band  ORANGE PINK on Third Party Row 1: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,548 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,549 | INFO     | product_optimizer | _place_brand_products | [TPA] #8: Placed Pulse magnetic silicon Apple w... (sales: 13.6/day)
+2025-07-21 10:29:53,550 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp 40/42/44mm stainless steel watch strap - Black on Third Party Row 2: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,550 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,551 | INFO     | product_optimizer | _place_brand_products | [TPA] #9: Placed Gripp 40/42/44mm stainless ste... (sales: 18.3/day)
+2025-07-21 10:29:53,552 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Defence 45mm Watch Bumper - Blue on Third Party Row 3: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,552 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,552 | INFO     | product_optimizer | _place_brand_products | [TPA] #10: Placed Gripp Defence 45mm Watch Bumpe... (sales: 13.8/day)
+2025-07-21 10:29:53,554 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Defence 45mm Watch Bumper - Black on Third Party Row 4: 1 facings, 6.0cm wide at position 15.0cm
+2025-07-21 10:29:53,554 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,555 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp 45/49mm GLEN watch strap - Black on Apple Premium Row 1: 1 facings, 6.0cm wide at position 22.0cm
+2025-07-21 10:29:53,555 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 1 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,557 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp 45/49mm BRUT watch strap - Grey/Black on Apple Premium Row 2: 1 facings, 6.0cm wide at position 22.0cm
+2025-07-21 10:29:53,557 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 2 (TPA section: 0.0cm used)
+2025-07-21 10:29:53,557 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 26 products actually on shelves
+2025-07-21 10:29:53,558 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.08s
+2025-07-21 10:29:53,558 | INFO     | base_optimizer  | create_planogram     | Placed 26 products with 26 facings
+2025-07-21 11:38:04,561 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 11:38:04,562 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 11:38:04,562 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 11:38:04,563 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 11:38:04,563 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 32, 'Apple': 11, 'tomtoc': 9, 'STM': 8, 'Logitech': 6, 'DBramante1928': 1}
+2025-07-21 11:38:04,564 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPad Base': 3, 'iPad Pro': 4, 'iPad Air': 3}
+2025-07-21 11:38:04,564 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 11 | Third-party products: 30
+2025-07-21 11:38:04,565 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 11:38:04,565 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 11:38:04,565 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 11:38:04,566 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 11:38:04,567 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 11:38:04,567 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Magic Keyboard Folio for iPad  10th generation... (sales: 50.2/day)
+2025-07-21 11:38:04,567 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  BLACK-ZML... (sales: 28.8/day)
+2025-07-21 11:38:04,568 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  BLACK-ZML... (sales: 24.2/day)
+2025-07-21 11:38:04,568 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad (10th generation) - Sky... (sales: 14.2/day)
+2025-07-21 11:38:04,568 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML... (sales: 9.1/day)
+2025-07-21 11:38:04,569 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  DENIM ZML... (sales: 22.8/day)
+2025-07-21 11:38:04,569 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad Air (4th generation) - Black... (sales: 7.3/day)
+2025-07-21 11:38:04,569 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  DENIM ZML... (sales: 8.2/day)
+2025-07-21 11:38:04,569 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: Smart Keyboard Folio for iPadAir (4th generation) ... (sales: 8.7/day)
+2025-07-21 11:38:04,570 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  DENIM ZML... (sales: 5.5/day)
+2025-07-21 11:38:04,573 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML... (sales: 4.6/day)
+2025-07-21 11:38:04,574 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 11 products selected with maximum unique color representation
+2025-07-21 11:38:04,575 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Magic Keyboard Folio for iPad  10th generation on Apple Premium Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,576 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,576 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed Magic Keyboard Folio for iPad ... (sales: 50.2/day)
+2025-07-21 11:38:04,577 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  BLACK-ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,577 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,577 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed IPAD PRO SMART FOLIO 13  BLACK... (sales: 28.8/day)
+2025-07-21 11:38:04,578 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  BLACK-ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,578 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,578 | INFO     | product_optimizer | _place_brand_products | [APPLE] #3: Placed IPAD PRO SMART FOLIO 11  BLACK... (sales: 24.2/day)
+2025-07-21 11:38:04,579 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad (10th generation) - Sky on Apple Premium Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,579 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 4 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,579 | INFO     | product_optimizer | _place_brand_products | [APPLE] #4: Placed Smart Folio for iPad (10th gen... (sales: 14.2/day)
+2025-07-21 11:38:04,580 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML on Third Party Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,580 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 1 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,581 | INFO     | product_optimizer | _place_brand_products | [APPLE] #5: Placed IPAD AIR SMART FOLIO 13  CHARC... (sales: 9.1/day)
+2025-07-21 11:38:04,581 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  DENIM ZML on Third Party Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,582 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 2 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,582 | INFO     | product_optimizer | _place_brand_products | [APPLE] #6: Placed IPAD PRO SMART FOLIO 11  DENIM... (sales: 22.8/day)
+2025-07-21 11:38:04,582 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad Air (4th generation) - Black on Third Party Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,583 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 3 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,583 | INFO     | product_optimizer | _place_brand_products | [APPLE] #7: Placed Smart Folio for iPad Air (4th ... (sales: 7.3/day)
+2025-07-21 11:38:04,583 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  DENIM ZML on Third Party Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:38:04,583 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 4 (Apple section: 0.0cm used)
+2025-07-21 11:38:04,584 | INFO     | product_optimizer | _place_brand_products | [APPLE] #8: Placed IPAD PRO SMART FOLIO 13  DENIM... (sales: 8.2/day)
+2025-07-21 11:38:04,584 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Keyboard Folio for iPadAir (4th generation) and iPadPro 11-inch (2nd generation) on Apple Premium Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,584 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 25.0cm used)
+2025-07-21 11:38:04,585 | INFO     | product_optimizer | _place_brand_products | [APPLE] #9: Placed Smart Keyboard Folio for iPadA... (sales: 8.7/day)
+2025-07-21 11:38:04,585 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  DENIM ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,585 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 25.0cm used)
+2025-07-21 11:38:04,586 | INFO     | product_optimizer | _place_brand_products | [APPLE] #10: Placed IPAD AIR SMART FOLIO 13  DENIM... (sales: 5.5/day)
+2025-07-21 11:38:04,586 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,586 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 25.0cm used)
+2025-07-21 11:38:04,587 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 11:38:04,587 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 15 products from ['Gripp']
+2025-07-21 11:38:04,587 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,588 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,588 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 11:38:04,588 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,589 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,589 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,590 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 11:38:04,590 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 11:38:04,591 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Air 10.9 Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,591 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue' | Subcat: 'dark blue' | Detected color: 'blue'
+2025-07-21 11:38:04,592 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 11:38:04,592 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Air 11  2024    Grey Black' | Subcat: 'grey' | Detected color: 'black'
+2025-07-21 11:38:04,592 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,593 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:38:04,593 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sky Blue' | Subcat: 'sky blue' | Detected color: 'blue'
+2025-07-21 11:38:04,594 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 11  2024    Bl... (sales: 100.0/day)
+2025-07-21 11:38:04,594 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 36.1/day)
+2025-07-21 11:38:04,594 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp Melon Case for Apple iPad Pro 11 2022 - Dark... (sales: 31.1/day)
+2025-07-21 11:38:04,594 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11  2024    Bl... (sales: 74.9/day)
+2025-07-21 11:38:04,595 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad Air 11  2024    Gr... (sales: 34.2/day)
+2025-07-21 11:38:04,595 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sk... (sales: 25.1/day)
+2025-07-21 11:38:04,595 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad 10.9 (10th Generat... (sales: 68.9/day)
+2025-07-21 11:38:04,596 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 13  2024    Bl... (sales: 61.6/day)
+2025-07-21 11:38:04,596 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 13  2024    Bl... (sales: 55.7/day)
+2025-07-21 11:38:04,596 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 53.4/day)
+2025-07-21 11:38:04,597 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Air 10.9 Black... (sales: 31.5/day)
+2025-07-21 11:38:04,597 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Pro 11 2022 - Grey... (sales: 30.6/day)
+2025-07-21 11:38:04,598 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Air 11  2024    Gr... (sales: 29.7/day)
+2025-07-21 11:38:04,598 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Bl... (sales: 27.9/day)
+2025-07-21 11:38:04,599 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11 2022 - Blac... (sales: 26.0/day)
+2025-07-21 11:38:04,599 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 15 products selected with maximum unique color representation
+2025-07-21 11:38:04,599 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Black on Apple Premium Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,600 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 11:38:04,600 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp Ultra Case for Apple iPa... (sales: 100.0/day)
+2025-07-21 11:38:04,601 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey on Third Party Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,601 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 11:38:04,601 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Ultra Case for Apple iPa... (sales: 36.1/day)
+2025-07-21 11:38:04,602 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue on Third Party Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,602 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 11:38:04,602 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp Melon Case for Apple iPa... (sales: 31.1/day)
+2025-07-21 11:38:04,603 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 11  2024    Black on Third Party Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,603 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 11:38:04,603 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Ultra Case for Apple iPa... (sales: 74.9/day)
+2025-07-21 11:38:04,604 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Grey on Third Party Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:38:04,604 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 11:38:04,605 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp Ultra Case for Apple iPa... (sales: 34.2/day)
+2025-07-21 11:38:04,605 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #6: Gripp STYLEUS Case for Apple i... (sales: 25.1/day)
+2025-07-21 11:38:04,606 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #7: Gripp Melon Case for Apple iPa... (sales: 68.9/day)
+2025-07-21 11:38:04,607 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #8: Gripp Ultra Case for Apple iPa... (sales: 61.6/day)
+2025-07-21 11:38:04,607 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #9: Gripp Ultra Case for Apple iPa... (sales: 55.7/day)
+2025-07-21 11:38:04,607 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #10: Gripp Ultra Case for Apple iPa... (sales: 53.4/day)
+2025-07-21 11:38:04,607 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-21 11:38:04,608 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.05s
+2025-07-21 11:38:04,608 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings
+2025-07-21 11:47:29,512 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250721.log
+2025-07-21 11:47:29,513 | INFO     | base_optimizer  | create_planogram     | Starting optimization with 67 products
+2025-07-21 11:47:29,514 | INFO     | base_optimizer  | create_planogram     | After store filtering: 67 products
+2025-07-21 11:47:29,514 | INFO     | product_optimizer | optimize             | Running product optimization with strategy: sales_velocity
+2025-07-21 11:47:29,515 | INFO     | product_optimizer | _optimize_by_sales   | Brand distribution: {'Gripp': 32, 'Apple': 11, 'tomtoc': 9, 'STM': 8, 'Logitech': 6, 'DBramante1928': 1}
+2025-07-21 11:47:29,515 | INFO     | product_optimizer | _optimize_by_sales   | Apple series in top 10: {'iPad Base': 3, 'iPad Pro': 4, 'iPad Air': 3}
+2025-07-21 11:47:29,516 | INFO     | product_optimizer | _optimize_by_sales   | Apple products: 11 | Third-party products: 30
+2025-07-21 11:47:29,516 | INFO     | product_optimizer | _optimize_by_sales   | Store type: flagship
+2025-07-21 11:47:29,517 | INFO     | product_optimizer | _optimize_by_sales   | Strategy: Apple first half, TPA second half (all shelves)
+2025-07-21 11:47:29,517 | INFO     | product_optimizer | _optimize_by_sales   | Apple shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4'] | TPA shelves: ['Apple Premium Row 1', 'Apple Premium Row 2', 'Apple Premium Row 3', 'Apple Premium Row 4', 'Third Party Row 1', 'Third Party Row 2', 'Third Party Row 3', 'Third Party Row 4']
+2025-07-21 11:47:29,518 | INFO     | product_optimizer | _optimize_by_sales   | Total shelf width available: 536.0cm
+2025-07-21 11:47:29,518 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING APPLE PRODUCTS ===
+2025-07-21 11:47:29,519 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Magic Keyboard Folio for iPad  10th generation... (sales: 50.2/day)
+2025-07-21 11:47:29,519 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  BLACK-ZML... (sales: 28.8/day)
+2025-07-21 11:47:29,520 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  BLACK-ZML... (sales: 24.2/day)
+2025-07-21 11:47:29,520 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad (10th generation) - Sky... (sales: 14.2/day)
+2025-07-21 11:47:29,520 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML... (sales: 9.1/day)
+2025-07-21 11:47:29,520 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: IPAD PRO SMART FOLIO 11  DENIM ZML... (sales: 22.8/day)
+2025-07-21 11:47:29,520 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_10.9-inch product: Smart Folio for iPad Air (4th generation) - Black... (sales: 7.3/day)
+2025-07-21 11:47:29,521 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD PRO SMART FOLIO 13  DENIM ZML... (sales: 8.2/day)
+2025-07-21 11:47:29,521 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_11.0-inch product: Smart Keyboard Folio for iPadAir (4th generation) ... (sales: 8.7/day)
+2025-07-21 11:47:29,521 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  DENIM ZML... (sales: 5.5/day)
+2025-07-21 11:47:29,521 | INFO     | product_optimizer | _diversify_apple_products | Selected Apple size_13.0-inch product: IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML... (sales: 4.6/day)
+2025-07-21 11:47:29,522 | INFO     | product_optimizer | _diversify_apple_products | Apple color diversity: 11 products selected with maximum unique color representation
+2025-07-21 11:47:29,522 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Magic Keyboard Folio for iPad  10th generation on Apple Premium Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,522 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,522 | INFO     | product_optimizer | _place_brand_products | [APPLE] #1: Placed Magic Keyboard Folio for iPad ... (sales: 50.2/day)
+2025-07-21 11:47:29,523 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  BLACK-ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,523 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,523 | INFO     | product_optimizer | _place_brand_products | [APPLE] #2: Placed IPAD PRO SMART FOLIO 13  BLACK... (sales: 28.8/day)
+2025-07-21 11:47:29,526 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  BLACK-ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,526 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,527 | INFO     | product_optimizer | _place_brand_products | [APPLE] #3: Placed IPAD PRO SMART FOLIO 11  BLACK... (sales: 24.2/day)
+2025-07-21 11:47:29,527 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad (10th generation) - Sky on Apple Premium Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,528 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 4 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,528 | INFO     | product_optimizer | _place_brand_products | [APPLE] #4: Placed Smart Folio for iPad (10th gen... (sales: 14.2/day)
+2025-07-21 11:47:29,530 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  CHARCOAL GRY ZML on Third Party Row 1: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,530 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 1 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,531 | INFO     | product_optimizer | _place_brand_products | [APPLE] #5: Placed IPAD AIR SMART FOLIO 13  CHARC... (sales: 9.1/day)
+2025-07-21 11:47:29,532 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 11  DENIM ZML on Third Party Row 2: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,532 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 2 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,532 | INFO     | product_optimizer | _place_brand_products | [APPLE] #6: Placed IPAD PRO SMART FOLIO 11  DENIM... (sales: 22.8/day)
+2025-07-21 11:47:29,533 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Folio for iPad Air (4th generation) - Black on Third Party Row 3: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,534 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 3 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,534 | INFO     | product_optimizer | _place_brand_products | [APPLE] #7: Placed Smart Folio for iPad Air (4th ... (sales: 7.3/day)
+2025-07-21 11:47:29,534 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD PRO SMART FOLIO 13  DENIM ZML on Third Party Row 4: 1 facings, 25.0cm wide at position 1.0cm
+2025-07-21 11:47:29,534 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Third Party Row 4 (Apple section: 0.0cm used)
+2025-07-21 11:47:29,535 | INFO     | product_optimizer | _place_brand_products | [APPLE] #8: Placed IPAD PRO SMART FOLIO 13  DENIM... (sales: 8.2/day)
+2025-07-21 11:47:29,535 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Smart Keyboard Folio for iPadAir (4th generation) and iPadPro 11-inch (2nd generation) on Apple Premium Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,535 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 1 (Apple section: 25.0cm used)
+2025-07-21 11:47:29,536 | INFO     | product_optimizer | _place_brand_products | [APPLE] #9: Placed Smart Keyboard Folio for iPadA... (sales: 8.7/day)
+2025-07-21 11:47:29,536 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  DENIM ZML on Apple Premium Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,536 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 2 (Apple section: 25.0cm used)
+2025-07-21 11:47:29,537 | INFO     | product_optimizer | _place_brand_products | [APPLE] #10: Placed IPAD AIR SMART FOLIO 13  DENIM... (sales: 5.5/day)
+2025-07-21 11:47:29,537 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed IPAD AIR SMART FOLIO 13  LIGHT VIOLET ZML on Apple Premium Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,538 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed Apple product on Apple Premium Row 3 (Apple section: 25.0cm used)
+2025-07-21 11:47:29,538 | INFO     | product_optimizer | _optimize_by_sales   | === PLACING THIRD-PARTY PRODUCTS ===
+2025-07-21 11:47:29,538 | INFO     | product_optimizer | _filter_tpa_brands   | Filtered TPA brands: 15 products from ['Gripp']
+2025-07-21 11:47:29,539 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,539 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,540 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 11:47:29,540 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,540 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 13  2024    Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,541 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,541 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 11:47:29,542 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Air 11  2024    Grey' | Subcat: 'grey' | Detected color: 'grey'
+2025-07-21 11:47:29,542 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Air 10.9 Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,543 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue' | Subcat: 'dark blue' | Detected color: 'blue'
+2025-07-21 11:47:29,543 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Pro 11 2022 - Grey/Black' | Subcat: 'grey/black' | Detected color: 'black'
+2025-07-21 11:47:29,543 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Melon Case for Apple iPad Air 11  2024    Grey Black' | Subcat: 'grey' | Detected color: 'black'
+2025-07-21 11:47:29,544 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,544 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp Ultra Case for Apple iPad Pro 11 2022 - Black' | Subcat: 'black' | Detected color: 'black'
+2025-07-21 11:47:29,545 | INFO     | product_optimizer | _diversify_tpa_products | [COLOR DEBUG] Product: 'Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sky Blue' | Subcat: 'sky blue' | Detected color: 'blue'
+2025-07-21 11:47:29,545 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 11  2024    Bl... (sales: 100.0/day)
+2025-07-21 11:47:29,545 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 36.1/day)
+2025-07-21 11:47:29,546 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp Melon Case for Apple iPad Pro 11 2022 - Dark... (sales: 31.1/day)
+2025-07-21 11:47:29,546 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11  2024    Bl... (sales: 74.9/day)
+2025-07-21 11:47:29,546 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA grey product: Gripp Ultra Case for Apple iPad Air 11  2024    Gr... (sales: 34.2/day)
+2025-07-21 11:47:29,546 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA blue product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sk... (sales: 25.1/day)
+2025-07-21 11:47:29,547 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad 10.9 (10th Generat... (sales: 68.9/day)
+2025-07-21 11:47:29,547 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Air 13  2024    Bl... (sales: 61.6/day)
+2025-07-21 11:47:29,548 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 13  2024    Bl... (sales: 55.7/day)
+2025-07-21 11:47:29,548 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad 10.9 (10th Generat... (sales: 53.4/day)
+2025-07-21 11:47:29,548 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Air 10.9 Black... (sales: 31.5/day)
+2025-07-21 11:47:29,549 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Pro 11 2022 - Grey... (sales: 30.6/day)
+2025-07-21 11:47:29,549 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Melon Case for Apple iPad Air 11  2024    Gr... (sales: 29.7/day)
+2025-07-21 11:47:29,549 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Bl... (sales: 27.9/day)
+2025-07-21 11:47:29,550 | INFO     | product_optimizer | _diversify_tpa_products | Selected TPA black product: Gripp Ultra Case for Apple iPad Pro 11 2022 - Blac... (sales: 26.0/day)
+2025-07-21 11:47:29,550 | INFO     | product_optimizer | _diversify_tpa_products | TPA color diversity: 15 products selected with maximum unique color representation
+2025-07-21 11:47:29,551 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Black on Apple Premium Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,551 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Apple Premium Row 4 (TPA section: 0.0cm used)
+2025-07-21 11:47:29,552 | INFO     | product_optimizer | _place_brand_products | [TPA] #1: Placed Gripp Ultra Case for Apple iPa... (sales: 100.0/day)
+2025-07-21 11:47:29,553 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey on Third Party Row 1: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,553 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 1 (TPA section: 0.0cm used)
+2025-07-21 11:47:29,553 | INFO     | product_optimizer | _place_brand_products | [TPA] #2: Placed Gripp Ultra Case for Apple iPa... (sales: 36.1/day)
+2025-07-21 11:47:29,554 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue on Third Party Row 2: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,554 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 2 (TPA section: 0.0cm used)
+2025-07-21 11:47:29,554 | INFO     | product_optimizer | _place_brand_products | [TPA] #3: Placed Gripp Melon Case for Apple iPa... (sales: 31.1/day)
+2025-07-21 11:47:29,555 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Pro 11  2024    Black on Third Party Row 3: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,555 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 3 (TPA section: 0.0cm used)
+2025-07-21 11:47:29,555 | INFO     | product_optimizer | _place_brand_products | [TPA] #4: Placed Gripp Ultra Case for Apple iPa... (sales: 74.9/day)
+2025-07-21 11:47:29,556 | DEBUG    | base_optimizer  | _place_product_on_shelf | Successfully placed Gripp Ultra Case for Apple iPad Air 11  2024    Grey on Third Party Row 4: 1 facings, 25.0cm wide at position 27.0cm
+2025-07-21 11:47:29,556 | DEBUG    | product_optimizer | _try_place_with_half_shelf_logic | Placed TPA product on Third Party Row 4 (TPA section: 0.0cm used)
+2025-07-21 11:47:29,556 | INFO     | product_optimizer | _place_brand_products | [TPA] #5: Placed Gripp Ultra Case for Apple iPa... (sales: 34.2/day)
+2025-07-21 11:47:29,557 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #6: Gripp STYLEUS Case for Apple i... (sales: 25.1/day)
+2025-07-21 11:47:29,557 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #7: Gripp Melon Case for Apple iPa... (sales: 68.9/day)
+2025-07-21 11:47:29,558 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #8: Gripp Ultra Case for Apple iPa... (sales: 61.6/day)
+2025-07-21 11:47:29,559 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #9: Gripp Ultra Case for Apple iPa... (sales: 55.7/day)
+2025-07-21 11:47:29,559 | INFO     | product_optimizer | _place_brand_products | [REJECTED] #10: Gripp Ultra Case for Apple iPa... (sales: 53.4/day)
+2025-07-21 11:47:29,559 | DEBUG    | base_optimizer  | _validate_products_placed_sync | Synced products_placed: 16 products actually on shelves
+2025-07-21 11:47:29,560 | INFO     | base_optimizer  | create_planogram     | Optimization completed in 0.05s
+2025-07-21 11:47:29,560 | INFO     | base_optimizer  | create_planogram     | Placed 16 products with 16 facings

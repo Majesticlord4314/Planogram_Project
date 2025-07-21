@@ -28,9 +28,9 @@ function App() {
     const initializeSocket = async () => {
       try {
         await socketService.connect();
-        console.log('✅ WebSocket connected successfully');
+        console.log('WebSocket connected successfully');
       } catch (error) {
-        console.error('❌ Failed to connect to WebSocket:', error);
+        console.error('Failed to connect to WebSocket:', error);
         // App will still work with polling fallback
       }
     };

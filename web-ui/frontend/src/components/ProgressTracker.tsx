@@ -62,8 +62,8 @@ const ProgressTracker: React.FC<ProgressTrackerProps> = ({
     const initializeConnection = async () => {
       try {
         await socketService.connect();
-        console.log('🔌 WebSocket connected:', socketService.isConnected());
-        console.log('📥 Joining job room:', jobId);
+        console.log('WebSocket connected:', socketService.isConnected());
+        console.log('Joining job room:', jobId);
         socketService.joinJob(jobId);
       } catch (error) {
         console.error('Failed to connect to WebSocket:', error);

@@ -185,7 +185,7 @@ def run_product_category_optimization(loader, logger):
         logger.info(f"Loaded {len(products)} products in {category_name}")
     except Exception as e:
         logger.error(f"Could not load category {category_key}: {e}")
-        print(f"\n⚠️  Warning: Could not load {category_key} data file")
+        print(f"\nWarning: Could not load {category_key} data file")
         print("Attempting to load all products and filter...")
         
         # Try loading all products instead
@@ -214,7 +214,7 @@ def run_product_category_optimization(loader, logger):
     validator = DataValidator()
     is_valid, issues = validator.validate_products(products)
     if not is_valid:
-        print(f"\n⚠️  Data validation found {len(issues)} issues:")
+        print(f"\nData validation found {len(issues)} issues:")
         for issue in issues[:5]:  # Show first 5 issues
             print(f"  - {issue}")
         if len(issues) > 5:
@@ -341,7 +341,7 @@ def run_lob_optimization(loader, logger):
     validator = DataValidator()
     is_valid, issues = validator.validate_products(products)
     if not is_valid:
-        print(f"\n⚠️  Data validation found {len(issues)} issues")
+        print(f"\nData validation found {len(issues)} issues")
     
     # Load cohort data
     cohort_df = loader.load_cohort_data(lob_key)
@@ -490,7 +490,7 @@ def select_store_type(loader) -> Optional[str]:
     available_stores = loader.get_available_stores()
     
     if not available_stores:
-        print("\n⚠️  No store templates found!")
+        print("\nNo store templates found!")
         print("Please ensure store templates exist in data/raw/store_templates/")
         return None
     
@@ -753,10 +753,10 @@ def run_cohort_planogram_generation(loader, logger, lob, store_type):
         generator = CohortPlanogramGenerator()
         generator.generate_cohort_planogram(lob, store_type)
         logger.info(f"Successfully generated cohort planogram for {lob} - {store_type}")
-        print(f"✅ Cohort planogram generated for {lob} - {store_type}")
+        print(f"Success: Cohort planogram generated for {lob} - {store_type}")
     except Exception as e:
         logger.error(f"Failed to generate cohort planogram: {e}", exc_info=True)
-        print(f"❌ Error generating cohort planogram: {e}")
+        print(f"Error generating cohort planogram: {e}")
 
 def run_direct_lob_optimization(loader, logger, lob, store_type, strategy):
     """Direct LOB optimization from command line. This is now streamlined to only generate the clean planogram."""

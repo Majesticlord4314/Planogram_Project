@@ -187,7 +187,7 @@ class DataValidator:
             report.append(f"WARNINGS ({len(self.warnings)}):")
             report.append("-" * 30)
             for warning in self.warnings:
-                report.append(f"⚠️  {warning}")
+                report.append(f"Warning: {warning}")
             report.append("")
         
         if not self.errors and not self.warnings:

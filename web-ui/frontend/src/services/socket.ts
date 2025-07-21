@@ -65,7 +65,7 @@ class SocketService {
         this.socket = null;
       }
 
-      console.log(`🔌 Connecting to WebSocket server at ${SOCKET_URL}...`);
+      console.log(`Connecting to WebSocket server at ${SOCKET_URL}...`);
 
       try {
         this.socket = io(SOCKET_URL, {
@@ -77,15 +77,15 @@ class SocketService {
         });
 
         this.socket.on('connect', () => {
-          console.log('✅ Connected to WebSocket server');
-          console.log(`🔌 Socket ID: ${this.socket?.id}`);
-          console.log(`🔌 Transport: ${this.socket?.io.engine.transport.name}`);
+          console.log('Connected to WebSocket server');
+          console.log(`Socket ID: ${this.socket?.id}`);
+          console.log(`Transport: ${this.socket?.io.engine.transport.name}`);
           this.reconnectAttempts = 0;
           resolve(this.socket!);
         });
 
         this.socket.on('connect_error', (error: Error) => {
-          console.error('❌ WebSocket connection error:', error.message);
+          console.error('WebSocket connection error:', error.message);
           console.error('Connection URL:', SOCKET_URL);
           console.error('Transport:', this.socket?.io.engine.transport?.name);
           this.handleReconnect();
@@ -93,7 +93,7 @@ class SocketService {
         });
 
         this.socket.on('disconnect', (reason: string) => {
-          console.log('🔌 Disconnected from WebSocket server:', reason);
+          console.log('Disconnected from WebSocket server:', reason);
           if (reason === 'io server disconnect') {
             // Server initiated disconnect, try to reconnect
             this.handleReconnect();
@@ -109,7 +109,7 @@ class SocketService {
           console.error('WebSocket error:', error);
         });
       } catch (error) {
-        console.error('❌ Failed to initialize socket:', error);
+        console.error('Failed to initialize socket:', error);
         reject(error);
       }
     });
@@ -124,7 +124,7 @@ class SocketService {
         this.connect().catch(console.error);
       }, this.reconnectDelay * this.reconnectAttempts);
     } else {
-      console.error('❌ Max reconnection attempts reached');
+      console.error('Max reconnection attempts reached');
     }
   }
 
@@ -132,7 +132,7 @@ class SocketService {
     if (this.socket) {
       this.socket.disconnect();
       this.socket = null;
-      console.log('🔌 WebSocket disconnected');
+      console.log('WebSocket disconnected');
     }
   }
 
@@ -140,18 +140,18 @@ class SocketService {
   joinJob(jobId: string) {
     if (this.socket?.connected) {
       this.socket.emit('join_job', { job_id: jobId });
-      console.log(`📥 Joined job room: ${jobId}`);
+      console.log(`Joined job room: ${jobId}`);
     } else {
-      console.warn('⚠️ Cannot join job room: Socket not connected');
+      console.warn('Cannot join job room: Socket not connected');
     }
   }
 
   leaveJob(jobId: string) {
     if (this.socket?.connected) {
       this.socket.emit('leave_job', { job_id: jobId });
-      console.log(`📤 Left job room: ${jobId}`);
+      console.log(`Left job room: ${jobId}`);
     } else {
-      console.warn('⚠️ Cannot leave job room: Socket not connected');
+      console.warn('Cannot leave job room: Socket not connected');
     }
   }
 
@@ -159,27 +159,27 @@ class SocketService {
   requestJobStatus(jobId: string) {
     if (this.socket?.connected) {
       this.socket.emit('get_job_status', { job_id: jobId });
-      console.log(`📊 Requested status for job: ${jobId}`);
+      console.log(`Requested status for job: ${jobId}`);
     } else {
-      console.warn('⚠️ Cannot request job status: Socket not connected');
+      console.warn('Cannot request job status: Socket not connected');
     }
   }
 
   requestJobLogs(jobId: string, limit: number = 50) {
     if (this.socket?.connected) {
       this.socket.emit('get_job_logs_stream', { job_id: jobId, limit });
-      console.log(`📜 Requested logs for job: ${jobId} (limit: ${limit})`);
+      console.log(`Requested logs for job: ${jobId} (limit: ${limit})`);
     } else {
-      console.warn('⚠️ Cannot request job logs: Socket not connected');
+      console.warn('Cannot request job logs: Socket not connected');
     }
   }
 
   requestJobCancellation(jobId: string) {
     if (this.socket?.connected) {
       this.socket.emit('cancel_job_request', { job_id: jobId });
-      console.log(`⚠️ Requested cancellation for job: ${jobId}`);
+      console.log(`Requested cancellation for job: ${jobId}`);
     } else {
-      console.warn('⚠️ Cannot request job cancellation: Socket not connected');
+      console.warn('Cannot request job cancellation: Socket not connected');
     }
   }
 
@@ -187,18 +187,18 @@ class SocketService {
   cancelJob(jobId: string) {
     if (this.socket?.connected) {
       this.socket.emit('cancel_job', { job_id: jobId });
-      console.log(`❌ Cancelled job: ${jobId} (legacy method)`);
+      console.log(`Cancelled job: ${jobId} (legacy method)`);
     } else {
-      console.warn('⚠️ Cannot cancel job: Socket not connected');
+      console.warn('Cannot cancel job: Socket not connected');
     }
   }
 
   getJobLogs(jobId: string, limit: number = 20) {
     if (this.socket?.connected) {
       this.socket.emit('get_job_logs', { job_id: jobId, limit });
-      console.log(`📜 Requested logs for job: ${jobId} (legacy method)`);
+      console.log(`Requested logs for job: ${jobId} (legacy method)`);
     } else {
-      console.warn('⚠️ Cannot get job logs: Socket not connected');
+      console.warn('Cannot get job logs: Socket not connected');
     }
   }
 
