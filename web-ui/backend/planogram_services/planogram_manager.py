@@ -18,10 +18,12 @@ sys.path.insert(0, str(project_root))
 try:
     from .cases_covers_generator import CasesCoversGenerator
     from .ipad_accessories_generator import IPadAccessoriesGenerator
+    from .mac_integration import MacIntegration
 except ImportError:
     # Handle direct execution
     from cases_covers_generator import CasesCoversGenerator
     from ipad_accessories_generator import IPadAccessoriesGenerator
+    from mac_integration import MacIntegration
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +44,7 @@ class PlanogramManager:
         """Initialize planogram generators for different categories"""
         return {
             'Cases & Covers': CasesCoversGenerator,  # Enhanced generator
-            'Mac Accessories': None,  # TODO: Add Mac generator
+            'Mac Accessories': MacIntegration,  # Mac accessories and bags/sleeves generator
             'iPad Accessories': IPadAccessoriesGenerator,  # iPad generator with multi-wall support
             'Watch Accessories': None,  # TODO: Add Watch generator
             'Audio Accessories': None,  # TODO: Add Audio generator
@@ -197,6 +199,9 @@ class PlanogramManager:
             elif lob == 'iPad Accessories':
                 # Use iPad-specific multi-wall generation
                 return self._generate_ipad_planograms(store_name, wall_num, lob_data, base_filename, timestamp)
+            elif lob == 'Mac Accessories':
+                # Use Mac-specific multi-wall generation
+                return self._generate_mac_planograms(store_name, wall_num, lob_data, base_filename, timestamp)
             else:
                 # Extract products from lob_data for other categories
                 products = lob_data.get('products', [])
@@ -344,6 +349,68 @@ class PlanogramManager:
             4: "Flagship Strategy: 2 Apple/TPA walls + 2 TPA-only walls"
         }
         return strategies.get(wall_count, f"{wall_count}-wall custom strategy")
+
+    def _generate_mac_planograms(self, store_name: str, wall_num: int, lob_data: Dict, base_filename: str, timestamp: str) -> Dict:
+        """Generate Mac planograms using the enhanced Mac system"""
+        try:
+            # Get Mac wall count from configuration
+            final_config = self.get_final_wall_config(store_name)
+            if final_config:
+                mac_wall_count = final_config.get('wall_counts', {}).get('Mac Accessories', 1)
+            else:
+                mac_wall_count = 1
+
+            logger.info(f"Generating Mac planograms for {store_name} with {mac_wall_count} walls")
+
+            # Initialize Mac integration
+            mac_integration = MacIntegration()
+
+            # Generate Mac planograms
+            wall_config = {'Mac Accessories': mac_wall_count}
+            mac_results = mac_integration.generate_mac_planograms(
+                store_name=store_name,
+                wall_config=wall_config,
+                selected_categories=['mac_accessories', 'bags_sleeves']
+            )
+
+            # Convert results to expected format
+            generated_files = []
+            for wall_id, file_path in mac_results.items():
+                if file_path:
+                    generated_files.append({
+                        'wall_id': wall_id,
+                        'file_path': file_path,
+                        'file_name': Path(file_path).name
+                    })
+
+            strategy_description = self._get_mac_strategy_description(mac_wall_count)
+
+            return {
+                'success': True,
+                'files_generated': generated_files,
+                'wall_count': mac_wall_count,
+                'strategy': strategy_description,
+                'total_planograms': len(generated_files),
+                'lob': 'Mac Accessories'
+            }
+
+        except Exception as e:
+            logger.error(f"Error generating Mac planograms: {e}")
+            return {
+                'success': False,
+                'error': str(e),
+                'lob': 'Mac Accessories'
+            }
+
+    def _get_mac_strategy_description(self, wall_count: int) -> str:
+        """Get description of Mac planogram strategy based on wall count"""
+        strategies = {
+            1: "Single Wall Strategy: Mixed Mac accessories with dimensional optimization",
+            2: "Two Wall Strategy: Wall 1 (Protection & Privacy) + Wall 2 (Connectivity & Power)",
+            3: "Three Wall Strategy: Protection + Connectivity + Bags & Peripherals",
+            4: "Multi-Wall Strategy: Dedicated walls per category (Protection, Connectivity, Power, Peripherals)"
+        }
+        return strategies.get(wall_count, f"{wall_count}-wall custom Mac strategy")
 
     def _generate_generic_planogram(self, store_name: str, lob: str, wall_num: int, lob_data: Dict, base_filename: str, timestamp: str) -> bool:
         """Generate a generic planogram layout"""

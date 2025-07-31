@@ -962,7 +962,7 @@ def generate_planogram_for_store(parameters):
     if 'ipad_accessories' in selected_accessories and 'iPad Accessories' in wall_details:
         ipad_details = wall_details['iPad Accessories']
         num_walls = ipad_details['wall_count']
-        
+
         if num_walls > 0:
             logger.info(f"Generating planograms for {num_walls} iPad Accessories walls")
             ipad_result = generate_ipad_planograms(store_name, num_walls, decoded_name)
@@ -971,7 +971,21 @@ def generate_planogram_for_store(parameters):
                 generation_results.append(f"iPad Accessories: {num_walls} walls")
             else:
                 generation_results.append(f"iPad Accessories: Failed - {ipad_result['message']}")
-    
+
+    # Generate Mac Accessories planograms
+    if 'mac_accessories' in selected_accessories and 'Mac Accessories' in wall_details:
+        mac_details = wall_details['Mac Accessories']
+        num_walls = mac_details['wall_count']
+
+        if num_walls > 0:
+            logger.info(f"Generating planograms for {num_walls} Mac Accessories walls")
+            mac_result = generate_mac_planograms(store_name, num_walls, decoded_name)
+            if mac_result['success']:
+                generated_files.extend(mac_result['generated_files'])
+                generation_results.append(f"Mac Accessories: {num_walls} walls")
+            else:
+                generation_results.append(f"Mac Accessories: Failed - {mac_result['message']}")
+
     # Check if any planograms were generated
     if not generated_files:
         return {
@@ -1240,6 +1254,66 @@ def generate_ipad_planograms(store_name: str, num_walls: int, decoded_name: str)
         return {
             'success': False,
             'message': f'Error generating iPad Accessories: {str(e)}',
+            'generated_files': []
+        }
+
+def generate_mac_planograms(store_name: str, num_walls: int, decoded_name: str) -> dict:
+    """Generate Mac Accessories planograms using the enhanced Mac system"""
+    try:
+        from planogram_services.mac_integration import MacIntegration
+
+        logger.info(f"Generating {num_walls} Mac planograms using enhanced Mac system")
+
+        # Initialize Mac integration
+        mac_integration = MacIntegration()
+
+        # Generate Mac planograms
+        wall_config = {'Mac Accessories': num_walls}
+        mac_results = mac_integration.generate_mac_planograms(
+            store_name=store_name,
+            wall_config=wall_config,
+            selected_categories=['mac_accessories', 'bags_sleeves']
+        )
+
+        if not mac_results:
+            return {
+                'success': False,
+                'message': 'Mac generation returned no results',
+                'generated_files': []
+            }
+
+        # Convert to expected format
+        generated_files = []
+        for wall_id, file_path in mac_results.items():
+            if file_path and Path(file_path).exists():
+                # Extract wall number from wall_id (e.g., "wall_1" -> 1)
+                if wall_id.startswith('wall_'):
+                    wall_number = wall_id.split('_')[1]
+                elif wall_id == 'bags_sleeves':
+                    wall_number = 'bags'
+                else:
+                    wall_number = '1'
+
+                # Add planogram image
+                generated_files.append({
+                    "type": "planogram_image",
+                    "accessory": "mac",
+                    "filename": Path(file_path).name,
+                    "description": f"Mac Accessories Planogram - {wall_id.replace('_', ' ').title()}",
+                    "wall": str(wall_number)
+                })
+
+        return {
+            'success': True,
+            'generated_files': generated_files,
+            'message': f'Generated {len(generated_files)} Mac Accessories files (dimensional optimization)'
+        }
+
+    except Exception as e:
+        logger.error(f"Error in Mac Accessories generation: {e}", exc_info=True)
+        return {
+            'success': False,
+            'message': f'Error generating Mac Accessories: {str(e)}',
             'generated_files': []
         }
 

@@ -1,0 +1,27 @@
+{
+  "store_name": "Test_Store_Integration",
+  "generation_timestamp": "2025-07-31T13:02:28.425935",
+  "wall_configuration": {
+    "Mac Accessories": 2
+  },
+  "generated_planograms": [
+    "wall_1",
+    "wall_2",
+    "bags_sleeves"
+  ],
+  "planogram_files": {
+    "wall_1": "output\\mac_wall_1_test_store_integration.png",
+    "wall_2": "output\\mac_wall_2_test_store_integration.png",
+    "bags_sleeves": "output\\enhanced_bags_sleeves_test_store_integration.png"
+  },
+  "mac_categories_generated": 3,
+  "total_walls_used": 2,
+  "product_statistics": {
+    "total_mac_products": 47,
+    "total_bags_sleeves": 41,
+    "total_products": 88,
+    "categories": 10,
+    "brands": 6,
+    "avg_frequency": 221
+  }
+}
