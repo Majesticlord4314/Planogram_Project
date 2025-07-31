@@ -1,0 +1,4945 @@
+{
+  "0": {
+    "original_name": "0",
+    "location": "IMAGINE @ LULU KOZHIKODE",
+    "city": "KOZHIKODE",
+    "total_walls": 2,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE,TEKNE,PULSE,POWERUP",
+            "product": "PHONE ACCESSORIES AND MAC ACCESSORIES (Primary: Cases & Covers)",
+            "capacity": 684
+          }
+        ],
+        "total_capacity": 684
+      },
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "GRIP,TEKNE RIVACASE",
+            "product": "TABLET CASE,MACBOOK ACC (Primary: Miscellaneous)",
+            "capacity": 30
+          }
+        ],
+        "total_capacity": 30
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 1,
+      "Miscellaneous": 1
+    }
+  },
+  "imagine- ampa skywalk chennai": {
+    "original_name": "IMAGINE- AMPA SKYWALK CHENNAI",
+    "location": "IMAGINE @ AMPA",
+    "city": "Chennai",
+    "total_walls": 12,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 5,
+        "category": "Miscellaneous",
+        "walls": [
+          "W4",
+          "W2",
+          "W3",
+          "w1",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "TUCANO",
+            "product": "BAGS & SLEEVES (Primary: Miscellaneous)",
+            "capacity": 9
+          },
+          {
+            "wall": "W2",
+            "brand": "APPLE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 26
+          },
+          {
+            "wall": "W3",
+            "brand": "APPLE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 32
+          },
+          {
+            "wall": "W4",
+            "brand": "APPLE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 32
+          },
+          {
+            "wall": "w1",
+            "brand": "PULSE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 14
+          }
+        ],
+        "total_capacity": 113
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W11"
+        ],
+        "products": [
+          {
+            "wall": "W11",
+            "brand": "PULSE",
+            "product": "Adapters & Cables (Primary: Adapters & Cables)",
+            "capacity": 7
+          }
+        ],
+        "total_capacity": 7
+      },
+      "Cases & Covers": {
+        "wall_count": 3,
+        "category": "Cases & Covers",
+        "walls": [
+          "W6",
+          "W12",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W12",
+            "brand": "APPLE",
+            "product": "PHONES & ACCESSORIES",
+            "capacity": 6
+          },
+          {
+            "wall": "W5",
+            "brand": "PANZER",
+            "product": "CAMERA LENS (Primary: Cases & Covers)",
+            "capacity": 24
+          },
+          {
+            "wall": "W6",
+            "brand": "GRIPP",
+            "product": "CAMERA LENS (Primary: Cases & Covers)",
+            "capacity": 7
+          }
+        ],
+        "total_capacity": 37
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W7",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "APPLE",
+            "product": "IPAD CASE (Primary: iPad Accessories)",
+            "capacity": 3
+          },
+          {
+            "wall": "W8",
+            "brand": "APPLE",
+            "product": "IPAD CASE (Primary: iPad Accessories)",
+            "capacity": 3
+          }
+        ],
+        "total_capacity": 6
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W9",
+            "brand": "PULSE",
+            "product": "PRIVACY FILTER (Primary: Mac Accessories)",
+            "capacity": 9
+          }
+        ],
+        "total_capacity": 9
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 5,
+      "Adapters & Cables": 1,
+      "Cases & Covers": 3,
+      "iPad Accessories": 2,
+      "Mac Accessories": 1
+    }
+  },
+  "imagine- aparna neo mall hyderabad": {
+    "original_name": "IMAGINE- APARNA NEO MALL HYDERABAD",
+    "location": "IMAGINE @ APARNA MALL",
+    "city": "hyderabad",
+    "total_walls": 8,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 3,
+        "category": "Miscellaneous",
+        "walls": [
+          "W2",
+          "W1",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 186
+          },
+          {
+            "wall": "W2",
+            "brand": "APPLE",
+            "product": "CASE (Primary: Cases & Covers)",
+            "capacity": 192
+          },
+          {
+            "wall": "W6",
+            "brand": "GRIPP",
+            "product": "BAGS & SLEEVES (Primary: Miscellaneous)",
+            "capacity": 36
+          }
+        ],
+        "total_capacity": 414
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "GRIPP",
+            "product": "CAMERA LENS (Primary: Cases & Covers)",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      },
+      "Mac Accessories": {
+        "wall_count": 3,
+        "category": "Mac Accessories",
+        "walls": [
+          "W4",
+          "W7",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "APPLE",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 0
+          },
+          {
+            "wall": "W5",
+            "brand": "APPLE",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 232
+          },
+          {
+            "wall": "W7",
+            "brand": "APPLE",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 84
+          }
+        ],
+        "total_capacity": 316
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W8",
+            "brand": "GRIPP",
+            "product": "IPAD CASE / AIRPODS (Primary: iPad Accessories)",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 20
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 3,
+      "Cases & Covers": 1,
+      "Mac Accessories": 3,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- bharatiya city bengaluru": {
+    "original_name": "IMAGINE- BHARATIYA CITY BENGALURU",
+    "location": "Bharatiya City (IBB)",
+    "city": "Bengaluru",
+    "total_walls": 12,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "HOMEPOD",
+            "capacity": 6
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "Apple TV/Watch",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 22
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W12",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "Apple",
+            "product": "Silicon cases (Primary: Cases & Covers)",
+            "capacity": 96
+          },
+          {
+            "wall": "W12",
+            "brand": "Apple",
+            "product": "Silicon cases (Primary: Cases & Covers)",
+            "capacity": 96
+          }
+        ],
+        "total_capacity": 192
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W2",
+          "W11"
+        ],
+        "products": [
+          {
+            "wall": "W11",
+            "brand": "Apple",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 16
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 192
+          }
+        ],
+        "total_capacity": 208
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "Watch Band (Primary: Watch Accessories)",
+            "capacity": 312
+          }
+        ],
+        "total_capacity": 312
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Airpods/Pencil (Primary: Audio Accessories)",
+            "capacity": 0
+          },
+          {
+            "wall": "W9",
+            "brand": "TPA",
+            "product": "Audio/Essential/Organiser",
+            "capacity": 18
+          }
+        ],
+        "total_capacity": 18
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "Ipad cases (Primary: iPad Accessories)",
+            "capacity": 96
+          },
+          {
+            "wall": "W6",
+            "brand": "TPA",
+            "product": "Sleeves/Laptop bags/Ipad cases",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 120
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "TPA",
+            "product": "Essentials (Power bank/Wall charger/USB cable) (Primary: Adapters & Cables)",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 2,
+      "Cases & Covers": 2,
+      "Mac Accessories": 2,
+      "Watch Accessories": 1,
+      "Audio Accessories": 2,
+      "iPad Accessories": 2,
+      "Adapters & Cables": 1
+    }
+  },
+  "imagine- bm habitat mall mysuru": {
+    "original_name": "IMAGINE- BM HABITAT MALL MYSURU",
+    "location": "IMAGINE @ HABITAT MALL",
+    "city": "MYSORE",
+    "total_walls": 7,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 2,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "PA1",
+            "product": "ADAPTOR & MAGSAFE (Primary: Adapters & Cables)",
+            "capacity": 104
+          },
+          {
+            "wall": "W6",
+            "brand": "PA2",
+            "product": "CABLE (Primary: Adapters & Cables)",
+            "capacity": 136
+          }
+        ],
+        "total_capacity": 240
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W3",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "TPA3",
+            "product": "LENS PROTECTOR (Primary: Cases & Covers)",
+            "capacity": 78
+          },
+          {
+            "wall": "W3",
+            "brand": "TPA3",
+            "product": "LENS PROTECTOR & STRAPS (Primary: Cases & Covers)",
+            "capacity": 54
+          }
+        ],
+        "total_capacity": 132
+      },
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W4",
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "TPA1",
+            "product": "TEKNE PRO MAX CASES (Primary: Miscellaneous)",
+            "capacity": 72
+          },
+          {
+            "wall": "W7",
+            "brand": "PA1",
+            "product": "APPLE TV (Primary: Miscellaneous)",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 80
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "PA1",
+            "product": "IPAD CASES (Primary: iPad Accessories)",
+            "capacity": 32
+          }
+        ],
+        "total_capacity": 32
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 2,
+      "Cases & Covers": 2,
+      "Miscellaneous": 2,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- chromepet chennai": {
+    "original_name": "IMAGINE- CHROMEPET CHENNAI",
+    "location": "IMAGINE @ CHROMEPET",
+    "city": "CHENNAI",
+    "total_walls": 8,
+    "wall_details": {
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE, TEKNE, PULSE, POWERUP",
+            "product": "Earphones,Airtag,Magsafe ,Wireless Powerbank,Cables,Adaptors",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "iPad Accessories": {
+        "wall_count": 3,
+        "category": "iPad Accessories",
+        "walls": [
+          "W7",
+          "W2",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "APPLE, TEKNE",
+            "product": "Ipad folio, Ipad Case, Gadget Organisers",
+            "capacity": 32
+          },
+          {
+            "wall": "W7",
+            "brand": "PULSE, TUCANO, BELKIN, TEKNE, GRIPP",
+            "product": "MacBook Privacy Screen, Tekne Ipad Cases, Gripp iPAd TG, Sleeves, Surge Protectors",
+            "capacity": 18
+          },
+          {
+            "wall": "W8",
+            "brand": "APPLE",
+            "product": "Iphones, Ipad cases, Airpods, Apple pencils, Magic Keyboards, Magic Mouse, Apple Watch",
+            "capacity": 5
+          }
+        ],
+        "total_capacity": 55
+      },
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TUCANO, RIVACASE, GRIPP",
+            "product": "Bags, Macbook Hardshell",
+            "capacity": 18
+          },
+          {
+            "wall": "W4",
+            "brand": "PANZERGLASS, APPLE",
+            "product": "Apple TV+, Gadget cleaner Spray",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 26
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "APPLE, PULSE, TEKNE, GRIPP",
+            "product": "Apple Cases, Tekne iPhone cases, Pulse iphone Cases, Gripp Iphone cases",
+            "capacity": 90
+          }
+        ],
+        "total_capacity": 90
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "APPLE, GRIPP, PANZERGLASS, AMAZING THINGS",
+            "product": "Gripp iphone TG, Lens Protector & Cases, Pulse Watch Strap, Apple Watch Strap, Panzerglass TG & Lens Protectors",
+            "capacity": 70
+          }
+        ],
+        "total_capacity": 70
+      }
+    },
+    "lob_summary": {
+      "Audio Accessories": 1,
+      "iPad Accessories": 3,
+      "Miscellaneous": 2,
+      "Cases & Covers": 1,
+      "Watch Accessories": 1
+    }
+  },
+  "imagine- db city mall gwalior": {
+    "original_name": "IMAGINE- DB CITY MALL GWALIOR",
+    "location": "IMAGINE @ D.B MALL",
+    "city": "Gwalior",
+    "total_walls": 4,
+    "wall_details": {
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE",
+            "product": "APPLE TV / Essentials (Wall charger / cable/ Earphones) (Primary: Audio Accessories)",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "APPLE",
+            "product": "Clear Cases / Silicon / Laether cases (Primary: Cases & Covers)",
+            "capacity": 360
+          }
+        ],
+        "total_capacity": 360
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TPA",
+            "product": "Sleeves/Laptop bags / Hard Shells (Primary: Mac Accessories)",
+            "capacity": 199
+          },
+          {
+            "wall": "W4",
+            "brand": "APPLE",
+            "product": "Essentials (Wall charger /cable / pencil tips /mac hub ) (Primary: Mac Accessories)",
+            "capacity": 205
+          }
+        ],
+        "total_capacity": 404
+      }
+    },
+    "lob_summary": {
+      "Audio Accessories": 1,
+      "Cases & Covers": 1,
+      "Mac Accessories": 2
+    }
+  },
+  "imagine- express avenue chennai": {
+    "original_name": "IMAGINE- EXPRESS AVENUE CHENNAI",
+    "location": "IMAGINE @ EXPRESS AVENUE",
+    "city": "CHENNAI",
+    "total_walls": 2,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple & Tekne",
+            "product": "Apple Case & Tekne Cables (Primary: Adapters & Cables)",
+            "capacity": 138
+          }
+        ],
+        "total_capacity": 138
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Keyboard,Mouse,Adaptor (Primary: Mac Accessories)",
+            "capacity": 170
+          }
+        ],
+        "total_capacity": 170
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 1,
+      "Mac Accessories": 1
+    }
+  },
+  "imagine- forum thomsun mall kochi": {
+    "original_name": "IMAGINE- FORUM THOMSUN MALL KOCHI",
+    "location": "IMAGINE @ FORUM KOCHI",
+    "city": "Kochi",
+    "total_walls": 6,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple,pulse/Tekne",
+            "product": "Adapter,cables powerbank",
+            "capacity": 300
+          }
+        ],
+        "total_capacity": 300
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple,Tekne/pulse,Gripp",
+            "product": "Ipad case,TG",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 24
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple,Tekne/pulse,Gripp",
+            "product": "iphone case,watchstraps,apple TV",
+            "capacity": 70
+          }
+        ],
+        "total_capacity": 70
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple,Tekne/pulse,Gripp",
+            "product": "Iphone case and TG",
+            "capacity": 150
+          }
+        ],
+        "total_capacity": 150
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Tekne/Pulse,Gripp,Belkin",
+            "product": "Laptopbags, Surge protector,laptop stand",
+            "capacity": 25
+          }
+        ],
+        "total_capacity": 25
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple",
+            "product": "Iphone,ipad,Airpods",
+            "capacity": 25
+          }
+        ],
+        "total_capacity": 25
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 1,
+      "iPad Accessories": 1,
+      "Watch Accessories": 1,
+      "Cases & Covers": 1,
+      "Mac Accessories": 1,
+      "Audio Accessories": 1
+    }
+  },
+  "imagine- g square alappuzha": {
+    "original_name": "IMAGINE- G SQUARE ALAPPUZHA",
+    "location": "IMAGINE @ CULLEN ROAD",
+    "city": "ALAPPUZHA",
+    "total_walls": 10,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE, PULSE",
+            "product": "adapters,cable,phone mount,wireless charger,wall charger,pencil tip",
+            "capacity": 92
+          },
+          {
+            "wall": "W3",
+            "brand": "Tucano,Native Union,Pulse,Gripp",
+            "product": "Sleeve,Privacy Filter, Revolving Stand",
+            "capacity": 18
+          }
+        ],
+        "total_capacity": 110
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W5",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "apple,combotouch,ultrahuman ring",
+            "product": "ring,adapter,airpods,pencil,ipad,iphones,keybord",
+            "capacity": 36
+          },
+          {
+            "wall": "W5",
+            "brand": "Marshall, Apple TV",
+            "product": "Apple TV, Marshall Speakers",
+            "capacity": 3
+          }
+        ],
+        "total_capacity": 39
+      },
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W2",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "tekene,apple,gripp,travel,hypen",
+            "product": "traval organizor,watch charger,cable,wallet,airpod case,duokit, headphone, magsafe charger,usb-c to digital av,airtag,convertor,",
+            "capacity": 132
+          },
+          {
+            "wall": "W9",
+            "brand": "apple tekene",
+            "product": "watch strap,power bank,",
+            "capacity": 36
+          }
+        ],
+        "total_capacity": 168
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple, Tekne",
+            "product": "iPad case",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 16
+      },
+      "Cases & Covers": {
+        "wall_count": 3,
+        "category": "Cases & Covers",
+        "walls": [
+          "W7",
+          "W8",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple,Gripp,Tekne,panzer",
+            "product": "iPhone cases",
+            "capacity": 120
+          },
+          {
+            "wall": "W7",
+            "brand": "apple,tekene,panzer,gripp,safe",
+            "product": "case,tempered glass,camera lense",
+            "capacity": 108
+          },
+          {
+            "wall": "W8",
+            "brand": "apple ,gripp,tekene",
+            "product": "iphone cases",
+            "capacity": 58
+          }
+        ],
+        "total_capacity": 286
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 2,
+      "Audio Accessories": 2,
+      "Watch Accessories": 2,
+      "iPad Accessories": 1,
+      "Cases & Covers": 3
+    }
+  },
+  "imagine- garuda mall bengaluru": {
+    "original_name": "IMAGINE- GARUDA MALL BENGALURU",
+    "location": "IMAGINE @ GARUDA MALL",
+    "city": "Bangalore",
+    "total_walls": 8,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "1"
+        ],
+        "products": [
+          {
+            "wall": "1",
+            "brand": "Pluse",
+            "product": "Magleap Duo 3 in 1 Wireless Charger Stand",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 8
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "2",
+          "8"
+        ],
+        "products": [
+          {
+            "wall": "2",
+            "brand": "Apple",
+            "product": "Airpods",
+            "capacity": 10
+          },
+          {
+            "wall": "8",
+            "brand": "APPLE",
+            "product": "Apple Accessories Earphones and Airtags",
+            "capacity": 28
+          }
+        ],
+        "total_capacity": 38
+      },
+      "Mac Accessories": {
+        "wall_count": 3,
+        "category": "Mac Accessories",
+        "walls": [
+          "4",
+          "5",
+          "3"
+        ],
+        "products": [
+          {
+            "wall": "3",
+            "brand": "Apple",
+            "product": "Apple Accessories",
+            "capacity": 24
+          },
+          {
+            "wall": "4",
+            "brand": "Apple",
+            "product": "Apple Accessories Back case",
+            "capacity": 48
+          },
+          {
+            "wall": "5",
+            "brand": "TPA",
+            "product": "Tucano Macbook Sleeve",
+            "capacity": 9
+          }
+        ],
+        "total_capacity": 81
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "6"
+        ],
+        "products": [
+          {
+            "wall": "6",
+            "brand": "Apple",
+            "product": "Apple Accessories, Watch Straps",
+            "capacity": 36
+          }
+        ],
+        "total_capacity": 36
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "7"
+        ],
+        "products": [
+          {
+            "wall": "7",
+            "brand": "Apple",
+            "product": "Apple iPad Back Case",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 16
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 1,
+      "Audio Accessories": 2,
+      "Mac Accessories": 3,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- global mall bengaluru": {
+    "original_name": "IMAGINE- GLOBAL MALL BENGALURU",
+    "location": "IMAGINE @ LULU GLOBAL MALL",
+    "city": "Bangalore",
+    "total_walls": 6,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple/Pulse",
+            "product": "Apple TV/Carmounts",
+            "capacity": 18
+          },
+          {
+            "wall": "W5",
+            "brand": "Tekne/Pulse",
+            "product": "Tekne Cases",
+            "capacity": 108
+          }
+        ],
+        "total_capacity": 126
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Airpods/Pencil/iPhones",
+            "capacity": 6
+          }
+        ],
+        "total_capacity": 6
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple/Pulse/ Tekne",
+            "product": "Adapters/Earpods/Cables/Powerbanks/TG",
+            "capacity": 180
+          }
+        ],
+        "total_capacity": 180
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Tucano, Tekne",
+            "product": "Bags, Sleeves, Mac essential Kit",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 24
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple/Panzer",
+            "product": "iPhone cases and iPhone TG",
+            "capacity": 108
+          }
+        ],
+        "total_capacity": 108
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 2,
+      "Audio Accessories": 1,
+      "Adapters & Cables": 1,
+      "Mac Accessories": 1,
+      "Cases & Covers": 1
+    }
+  },
+  "imagine- gopalan signature mall bengaluru": {
+    "original_name": "IMAGINE- GOPALAN SIGNATURE MALL BENGALURU",
+    "location": "IMAGINE @ GOPALAN SIGNATURE MALL",
+    "city": "Bangalore",
+    "total_walls": 16,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 5,
+        "category": "Mac Accessories",
+        "walls": [
+          "WALL 4",
+          "Gondola 1",
+          "WALL 1",
+          "Gondola 2",
+          "WALL 5"
+        ],
+        "products": [
+          {
+            "wall": "Gondola 1",
+            "brand": "TEKNE",
+            "product": "ESSENTIAL KIT",
+            "capacity": 20
+          },
+          {
+            "wall": "Gondola 2",
+            "brand": "TUCANO",
+            "product": "MAC SLEEVES",
+            "capacity": 20
+          },
+          {
+            "wall": "WALL 1",
+            "brand": "APPLE",
+            "product": "APPLE ACC",
+            "capacity": 168
+          },
+          {
+            "wall": "WALL 4",
+            "brand": "GRIPP/TUCANO",
+            "product": "MAC SLEEVES",
+            "capacity": 8
+          },
+          {
+            "wall": "WALL 5",
+            "brand": "GRIPP/TUCANO",
+            "product": "MAC SLEEVES",
+            "capacity": 10
+          }
+        ],
+        "total_capacity": 226
+      },
+      "Adapters & Cables": {
+        "wall_count": 4,
+        "category": "Adapters & Cables",
+        "walls": [
+          "WALL 10",
+          "WALL 2",
+          "WALL 11",
+          "Gondola 3"
+        ],
+        "products": [
+          {
+            "wall": "Gondola 3",
+            "brand": "TEKNE/PANZER/GRIPP",
+            "product": "ADAPTORS/CABLES/LENS PROTECTOR",
+            "capacity": 200
+          },
+          {
+            "wall": "WALL 10",
+            "brand": "TEKNE/PANZER",
+            "product": "IPHONE CASES/CABLES/ADAPTORS/CAR MOUNT",
+            "capacity": 216
+          },
+          {
+            "wall": "WALL 11",
+            "brand": "TEKNE/PANZER/POWER UP",
+            "product": "POWERBANK/15 CASES/4-1 CABLE",
+            "capacity": 288
+          },
+          {
+            "wall": "WALL 2",
+            "brand": "BELKINS",
+            "product": "SURGE PROTECTOR",
+            "capacity": 9
+          }
+        ],
+        "total_capacity": 713
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "WALL 13",
+          "WALL 12"
+        ],
+        "products": [
+          {
+            "wall": "WALL 12",
+            "brand": "APPLE/TEKNE/GRIPP",
+            "product": "AIRPODS/GADGET ORGANIZER/AIRPOD CASES (Primary: Audio Accessories)",
+            "capacity": 30
+          },
+          {
+            "wall": "WALL 13",
+            "brand": "MARSHALL/BEATS/TEKNE",
+            "product": "MARSHALL HEADPHONE/BEATS EARBUDS",
+            "capacity": 6
+          }
+        ],
+        "total_capacity": 36
+      },
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "WALL 3",
+          "WALL 6"
+        ],
+        "products": [
+          {
+            "wall": "WALL 3",
+            "brand": "APPLE WATCH STRAP/PULSE WATCH STRAP/PANZER WATCH CASES",
+            "product": "nan",
+            "capacity": 96
+          },
+          {
+            "wall": "WALL 6",
+            "brand": "MAC ACC/MAC HARD CELLS",
+            "product": "nan",
+            "capacity": 18
+          }
+        ],
+        "total_capacity": 114
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "WALL 8",
+          "WALL 7"
+        ],
+        "products": [
+          {
+            "wall": "WALL 7",
+            "brand": "IPAD CASES",
+            "product": "APPLE IPAD CASES/TEKNE IPAD CASES",
+            "capacity": 40
+          },
+          {
+            "wall": "WALL 8",
+            "brand": "TUCANO/GRIPP",
+            "product": "IPAD CASES/IPAD TG",
+            "capacity": 80
+          }
+        ],
+        "total_capacity": 120
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "WALL 9"
+        ],
+        "products": [
+          {
+            "wall": "WALL 9",
+            "brand": "TEKNE/PANZER",
+            "product": "IPHONE CASES/PANZER TG",
+            "capacity": 288
+          }
+        ],
+        "total_capacity": 288
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 5,
+      "Adapters & Cables": 4,
+      "Audio Accessories": 2,
+      "Miscellaneous": 2,
+      "iPad Accessories": 2,
+      "Cases & Covers": 1
+    }
+  },
+  "imagine- hilite mall calicut": {
+    "original_name": "IMAGINE- HILITE MALL CALICUT",
+    "location": "IMAGINE @ HI LITE MALL",
+    "city": "CALICUT",
+    "total_walls": 4,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "TPA",
+            "product": "TEKNE MAC SCREEN FILTER / MAC ESSENTIAL KIT / ORGANISER/ NATIVE UNION SLEEVES (Primary: Mac Accessories)",
+            "capacity": 168
+          }
+        ],
+        "total_capacity": 168
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "TPA",
+            "product": "PHONE CASES (Primary: Cases & Covers)",
+            "capacity": 0
+          },
+          {
+            "wall": "W4",
+            "brand": "TPA",
+            "product": "PHONE CASES/TG (Primary: Cases & Covers)",
+            "capacity": 624
+          }
+        ],
+        "total_capacity": 624
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TPA",
+            "product": "IPAD COVER (Primary: iPad Accessories)",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 1,
+      "Cases & Covers": 2,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- hsr layout bengaluru": {
+    "original_name": "IMAGINE- HSR LAYOUT BENGALURU",
+    "location": "IMAGINE @ HSR LAYOUT",
+    "city": "Bangalore",
+    "total_walls": 13,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 4,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2",
+          "W1",
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "PANZER",
+            "product": "LENS PROTECTOR/TG",
+            "capacity": 192
+          },
+          {
+            "wall": "W2",
+            "brand": "TEKNE",
+            "product": "IPHONE CASES",
+            "capacity": 336
+          },
+          {
+            "wall": "W3",
+            "brand": "TEKNE",
+            "product": "IPHONE CASES",
+            "capacity": 384
+          },
+          {
+            "wall": "W4",
+            "brand": "APPLE/TEKNE",
+            "product": "IPHONE CASES/IPHONE CASES",
+            "capacity": 384
+          }
+        ],
+        "total_capacity": 1296
+      },
+      "Audio Accessories": {
+        "wall_count": 3,
+        "category": "Audio Accessories",
+        "walls": [
+          "W9",
+          "W11",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "APPLE",
+            "product": "IPHONES/ AIRPODS/ ADAPTORS",
+            "capacity": 192
+          },
+          {
+            "wall": "W11",
+            "brand": "APPLE/ BEATS",
+            "product": "AIRPODS/ BEATS HEADPHONE",
+            "capacity": 0
+          },
+          {
+            "wall": "W9",
+            "brand": "APPLE",
+            "product": "ADAPTORS/ CABLES/EARPHONES/ MAGIC KEYBOARD/ MAGIC MOUSE/ APPLE PENCIL",
+            "capacity": 300
+          }
+        ],
+        "total_capacity": 492
+      },
+      "Miscellaneous": {
+        "wall_count": 3,
+        "category": "Miscellaneous",
+        "walls": [
+          "W8",
+          "W12",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W12",
+            "brand": "POP SOCKETS/VALENTA/ POWERUP",
+            "product": "POPSOCKETS/SSD DRIVE/ CARD HIOLDERS/ MOBILE HOLDERS/",
+            "capacity": 240
+          },
+          {
+            "wall": "W6",
+            "brand": "APPLE",
+            "product": "HOMEPOD MINI/HOMEPOD",
+            "capacity": 0
+          },
+          {
+            "wall": "W8",
+            "brand": "APPLE",
+            "product": "APPLE TV",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 240
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W13"
+        ],
+        "products": [
+          {
+            "wall": "W13",
+            "brand": "UH/TEKNE/BOSE/PANZER/ GRAVASTAR",
+            "product": "UH RING/ TEKNE SPRAY/ PANZER SPRAY/TEKNE ORGANIZER/ GAMING MOUSE",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "TEKNE",
+            "product": "HUBS/POWER ADAPTORS/CABLES",
+            "capacity": 384
+          }
+        ],
+        "total_capacity": 384
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "TEKNE/GRIPP",
+            "product": "IPAD CASES/ IPAD TG",
+            "capacity": 160
+          }
+        ],
+        "total_capacity": 160
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 4,
+      "Audio Accessories": 3,
+      "Miscellaneous": 3,
+      "Mac Accessories": 1,
+      "Adapters & Cables": 1,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- kmc kollam": {
+    "original_name": "IMAGINE- KMC KOLLAM",
+    "location": "IMAGINE @ KOLLAM",
+    "city": "KOLLAM",
+    "total_walls": 6,
+    "wall_details": {
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple, Tekne, Panzer",
+            "product": "Phone cases, Watch strap",
+            "capacity": 120
+          }
+        ],
+        "total_capacity": 120
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Gripp, Tekne, Panzer",
+            "product": "Phone Cases, iPhone Tempered Glass, iPad Cases",
+            "capacity": 120
+          },
+          {
+            "wall": "W3",
+            "brand": "Tekne, Panzer",
+            "product": "Power bank, Lens protector, iPad Cases, Hub, Cables",
+            "capacity": 100
+          }
+        ],
+        "total_capacity": 220
+      },
+      "Audio Accessories": {
+        "wall_count": 3,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4",
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple, Gripp, Powerup",
+            "product": "Adaptors,Cables,ear pods,Cables, Airpods case, Magsafe",
+            "capacity": 100
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "Phones, Airpods, Cables, Adaptors, Airtag, Pencil, Magic Keyboard, Watches, Magic Mouse",
+            "capacity": 64
+          },
+          {
+            "wall": "W6",
+            "brand": "Apple, Marshall",
+            "product": "Apple TV 4K, Homepod Mini, Marshall Speakers",
+            "capacity": 4
+          }
+        ],
+        "total_capacity": 168
+      }
+    },
+    "lob_summary": {
+      "Watch Accessories": 1,
+      "iPad Accessories": 2,
+      "Audio Accessories": 3
+    }
+  },
+  "imagine- kns towers tumkur": {
+    "original_name": "IMAGINE- KNS TOWERS TUMKUR",
+    "location": "IMAGINE @ KNS TOWERS",
+    "city": "Bengaluru",
+    "total_walls": 9,
+    "wall_details": {
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "IPad Cases (Primary: iPad Accessories)",
+            "capacity": 4
+          },
+          {
+            "wall": "W2",
+            "brand": "TPA",
+            "product": "Laptop Sleve, IPad case and Magnetic filters",
+            "capacity": 3
+          }
+        ],
+        "total_capacity": 7
+      },
+      "Audio Accessories": {
+        "wall_count": 3,
+        "category": "Audio Accessories",
+        "walls": [
+          "W3",
+          "W7",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "Phones, Pencil, Keyboard, Mouse, Airpods",
+            "capacity": 6
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple",
+            "product": "Adapter, Cables, Wirless charges,Earphones (Primary: Audio Accessories)",
+            "capacity": 6
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "Adapter, Cables, Wirless charges,Earphones (Primary: Audio Accessories)",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 20
+      },
+      "Cases & Covers": {
+        "wall_count": 3,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4",
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "TPA",
+            "product": "IPhone Cases",
+            "capacity": 3
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "Apple IPhone Cases (Primary: Cases & Covers)",
+            "capacity": 8
+          },
+          {
+            "wall": "W6",
+            "brand": "Apple",
+            "product": "Apple IPhone Cases (Primary: Cases & Covers)",
+            "capacity": 7
+          }
+        ],
+        "total_capacity": 18
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W9",
+            "brand": "TPA",
+            "product": "Watch straps (Primary: Watch Accessories)",
+            "capacity": 3
+          }
+        ],
+        "total_capacity": 3
+      }
+    },
+    "lob_summary": {
+      "iPad Accessories": 2,
+      "Audio Accessories": 3,
+      "Cases & Covers": 3,
+      "Watch Accessories": 1
+    }
+  },
+  "imagine- koramangala bengaluru": {
+    "original_name": "IMAGINE- KORAMANGALA BENGALURU",
+    "location": "IMAGINE @ KORAMANGALA",
+    "city": "BANGALORE",
+    "total_walls": 11,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 3,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W2",
+          "W1",
+          "W11"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Tekne,Belkin,Powerup",
+            "product": "Power adapters ,powerbanks,TSF, powerup car charger and belkin surge protector",
+            "capacity": 128
+          },
+          {
+            "wall": "W11",
+            "brand": "Apple",
+            "product": "Apple TV and Apple Power Adapters",
+            "capacity": 0
+          },
+          {
+            "wall": "W2",
+            "brand": "Native union,Gripp ,Belkin",
+            "product": "Cables ,car charger, powerbank",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 128
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W13",
+          "W12"
+        ],
+        "products": [
+          {
+            "wall": "W12",
+            "brand": "Apple",
+            "product": "Apple Acc ,Apple Pencil,Keyaboard and Mouse (Primary: Mac Accessories)",
+            "capacity": 328
+          },
+          {
+            "wall": "W13",
+            "brand": "Tekne,Tucano,Gripp",
+            "product": "Tekne organiser, Macbook sleeve (Primary: Mac Accessories)",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 352
+      },
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W14",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W14",
+            "brand": "Native unio,tucano",
+            "product": "Bagpacks",
+            "capacity": 12
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple",
+            "product": "HomePod",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 12
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W19"
+        ],
+        "products": [
+          {
+            "wall": "W19",
+            "brand": "Apple,Gripp,Tucano,Velanta,Panzer",
+            "product": "Apple Watch Bands,Pulse Watch Bands,Gripp Airpods cases, velanta Card holder,camera lens",
+            "capacity": 360
+          }
+        ],
+        "total_capacity": 360
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W20"
+        ],
+        "products": [
+          {
+            "wall": "W20",
+            "brand": "Tucano ,Tekne",
+            "product": "iPad TG and Tekne iPad Cases",
+            "capacity": 100
+          }
+        ],
+        "total_capacity": 100
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W7",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "Panzer",
+            "product": "iPhone TG all models and Camera lens protector (Primary: Cases & Covers)",
+            "capacity": 360
+          },
+          {
+            "wall": "W8",
+            "brand": "Tekne",
+            "product": "iPhone Cases (Primary: Cases & Covers)",
+            "capacity": 972
+          }
+        ],
+        "total_capacity": 1332
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 3,
+      "Mac Accessories": 2,
+      "Miscellaneous": 2,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1,
+      "Cases & Covers": 2
+    }
+  },
+  "imagine- lulu mall kochi": {
+    "original_name": "IMAGINE- LULU MALL KOCHI",
+    "location": "IMAGINE @ LULU",
+    "city": "CALICUT",
+    "total_walls": 4,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "TPA",
+            "product": "MAC SLEEVES AND PRIVACY FILTER (Primary: Mac Accessories)",
+            "capacity": 75
+          }
+        ],
+        "total_capacity": 75
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "APPLE",
+            "product": "AIRPODS, KEYBOARD FOLIO AND PENCIL (Primary: Audio Accessories)",
+            "capacity": 392
+          }
+        ],
+        "total_capacity": 392
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TPA / APPLE",
+            "product": "IPHONE CASES (Primary: Cases & Covers)",
+            "capacity": 240
+          },
+          {
+            "wall": "W4",
+            "brand": "TPA / APPLE",
+            "product": "IPHONE CASES (Primary: Cases & Covers)",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 384
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 1,
+      "Audio Accessories": 1,
+      "Cases & Covers": 2
+    }
+  },
+  "imagine- lulu mall trivandrum": {
+    "original_name": "IMAGINE- LULU MALL TRIVANDRUM",
+    "location": "IMAGINE @ LULU MALL, TRIVANDRUM",
+    "city": "Trivandrum",
+    "total_walls": 3,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Panzer",
+            "product": "TG (Primary: Cases & Covers)",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W3",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "JBL",
+            "product": "Speaker (Primary: Audio Accessories)",
+            "capacity": 30
+          },
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "Airpods,adaptors (Primary: Audio Accessories)",
+            "capacity": 63
+          }
+        ],
+        "total_capacity": 93
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 1,
+      "Audio Accessories": 2
+    }
+  },
+  "imagine- mall de goa porvorim": {
+    "original_name": "IMAGINE- MALL DE GOA PORVORIM",
+    "location": "IMAGINE @ MALL DE GOA",
+    "city": "Porvorim",
+    "total_walls": 8,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "Apple Case (Primary: Miscellaneous)",
+            "capacity": 150
+          }
+        ],
+        "total_capacity": 150
+      },
+      "Mac Accessories": {
+        "wall_count": 5,
+        "category": "Mac Accessories",
+        "walls": [
+          "W7",
+          "W4",
+          "W2",
+          "W5",
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 225
+          },
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "MagicMouse,Keyboard,Airpod,Trackpad",
+            "capacity": 70
+          },
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Apple TV, Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 30
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 165
+          },
+          {
+            "wall": "W7",
+            "brand": "Pulse/Gripp/Tucano/Revacase",
+            "product": "Privacy Filter,Sleeve and bag",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 538
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Tekne",
+            "product": "iPad Cases",
+            "capacity": 36
+          }
+        ],
+        "total_capacity": 36
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "Apple Watch Band (Primary: Watch Accessories)",
+            "capacity": 68
+          }
+        ],
+        "total_capacity": 68
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 1,
+      "Mac Accessories": 5,
+      "iPad Accessories": 1,
+      "Watch Accessories": 1
+    }
+  },
+  "imagine- mantri square mall bengaluru": {
+    "original_name": "IMAGINE- MANTRI SQUARE MALL BENGALURU",
+    "location": "IMAGINE @ MANTRI SQUARE",
+    "city": "BANGALORE",
+    "total_walls": 14,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W7",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE",
+            "product": "PHONES",
+            "capacity": 8
+          },
+          {
+            "wall": "W7",
+            "brand": "TUCANO",
+            "product": "BAGS",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 16
+      },
+      "Cases & Covers": {
+        "wall_count": 7,
+        "category": "Cases & Covers",
+        "walls": [
+          "W12",
+          "W2",
+          "W8",
+          "W3",
+          "W9",
+          "W6",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "TEKNE/PULSE",
+            "product": "BACK CASE ADAPTOR",
+            "capacity": 180
+          },
+          {
+            "wall": "W12",
+            "brand": "TEKNE/PULSE/PANZER",
+            "product": "BACK CASE/LENS PROTECTOR",
+            "capacity": 144
+          },
+          {
+            "wall": "W2",
+            "brand": "GRIPP",
+            "product": "TG",
+            "capacity": 80
+          },
+          {
+            "wall": "W3",
+            "brand": "TEKNE/APPLE",
+            "product": "BACK CASE",
+            "capacity": 100
+          },
+          {
+            "wall": "W6",
+            "brand": "PANZER/PULSE",
+            "product": "ADAPTOR/BACK CASE",
+            "capacity": 49
+          },
+          {
+            "wall": "W8",
+            "brand": "VALENTA/POPSOCKETS/GRIPP",
+            "product": "LENS PROTECTOR/STANDS",
+            "capacity": 144
+          },
+          {
+            "wall": "W9",
+            "brand": "APPLE/PANZER",
+            "product": "BACK CASE",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 841
+      },
+      "Adapters & Cables": {
+        "wall_count": 2,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W13",
+          "W15"
+        ],
+        "products": [
+          {
+            "wall": "W13",
+            "brand": "TEKNE/PULSE/PANZER",
+            "product": "CABLES/LENS PROTECTOR",
+            "capacity": 108
+          },
+          {
+            "wall": "W15",
+            "brand": "APPLE",
+            "product": "CABLES/ADAPTORS/PENCIL",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 124
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W14"
+        ],
+        "products": [
+          {
+            "wall": "W14",
+            "brand": "APPLE",
+            "product": "APPLE TV/MAC ACCY",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "APPLE",
+            "product": "AIRPODS/MAC ACCY",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 8
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "APPLE/POWER UP",
+            "product": "BANDS",
+            "capacity": 72
+          }
+        ],
+        "total_capacity": 72
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 2,
+      "Cases & Covers": 7,
+      "Adapters & Cables": 2,
+      "Mac Accessories": 1,
+      "Audio Accessories": 1,
+      "Watch Accessories": 1
+    }
+  },
+  "imagine- mc road thiruvalla": {
+    "original_name": "IMAGINE- MC ROAD THIRUVALLA",
+    "location": "IMAGINE @ MC ROAD",
+    "city": "THIRUVALLA",
+    "total_walls": 9,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple,Tekne,Panzer",
+            "product": "iphone cases, TG",
+            "capacity": 30
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple,Tekne,Grip,Panzer",
+            "product": "iphone cases,Lens protector, TG",
+            "capacity": 30
+          }
+        ],
+        "total_capacity": 60
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple ,Tekne,Grip,Tucano",
+            "product": "Ipad case, TG",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 20
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Apple Keyboard,Iphone,pencil,Airpods,Mouse, Apple Watch",
+            "capacity": 0
+          },
+          {
+            "wall": "W6",
+            "brand": "Apple,Tekne,Hyphen,Grip,Fuelbox",
+            "product": "Cabels , ear pods,pencil tip, card holder, Airpod case,adaptors, carmount,powe bank ,Multiport Hub",
+            "capacity": 40
+          }
+        ],
+        "total_capacity": 40
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple,Tekne",
+            "product": "Adaptors,Cables,Multiport Adaptors,Airtags,Magsafe",
+            "capacity": 40
+          }
+        ],
+        "total_capacity": 40
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "Apple,Grip,panzer",
+            "product": "Watch Straf, Watch Case, Carmount, Cables, Cleaning Solution",
+            "capacity": 25
+          }
+        ],
+        "total_capacity": 25
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W8",
+            "brand": "Tucano,belkin,tekne",
+            "product": "Surge protector, Laptop case, privacy filter",
+            "capacity": 15
+          }
+        ],
+        "total_capacity": 15
+      },
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W9",
+            "brand": "Apple, Marshal",
+            "product": "Apple TV, Marshal speker",
+            "capacity": 4
+          }
+        ],
+        "total_capacity": 4
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 2,
+      "iPad Accessories": 1,
+      "Audio Accessories": 2,
+      "Adapters & Cables": 1,
+      "Watch Accessories": 1,
+      "Mac Accessories": 1,
+      "Miscellaneous": 1
+    }
+  },
+  "imagine- nexus koramangala bengaluru": {
+    "original_name": "IMAGINE- NEXUS KORAMANGALA BENGALURU",
+    "location": "IMAGINE @ NEXUS MALL",
+    "city": "BANGALORE",
+    "total_walls": 14,
+    "wall_details": {
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE/TPA",
+            "product": "WATCH BANDS",
+            "capacity": 180
+          },
+          {
+            "wall": "W3",
+            "brand": "TPA Panel",
+            "product": "ULTRAHUMAN RINGS /IMOO WATCHES",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 228
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W11",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "APPLE/TPA",
+            "product": "HEADPHONES",
+            "capacity": 24
+          },
+          {
+            "wall": "W11",
+            "brand": "TPA Panel",
+            "product": "SPEAKERS",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 48
+      },
+      "Mac Accessories": {
+        "wall_count": 6,
+        "category": "Mac Accessories",
+        "walls": [
+          "W7",
+          "W12",
+          "W2",
+          "W8",
+          "W5",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W12",
+            "brand": "Apple Panel",
+            "product": "APPLE ACC/ESSENTIALS",
+            "capacity": 450
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple Panel",
+            "product": "APPLE ACC",
+            "capacity": 20
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple Panel",
+            "product": "APPLE ACC",
+            "capacity": 16
+          },
+          {
+            "wall": "W7",
+            "brand": "TPA Panel",
+            "product": "BAGS AND SLEEVES",
+            "capacity": 6
+          },
+          {
+            "wall": "W8",
+            "brand": "TPA Panel",
+            "product": "ADAPTERS/POWERBANK/CAR CHARGER/ESSENTIAL KITS",
+            "capacity": 216
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple Panel",
+            "product": "APPLE ACC",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 728
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W13",
+          "W14"
+        ],
+        "products": [
+          {
+            "wall": "W13",
+            "brand": "APPLE/TPA",
+            "product": "IPHONE CASES (Primary: Cases & Covers)",
+            "capacity": 640
+          },
+          {
+            "wall": "W14",
+            "brand": "APPLE/TPA",
+            "product": "IPHONE CASES (Primary: Cases & Covers)",
+            "capacity": 640
+          }
+        ],
+        "total_capacity": 1280
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W4",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "APPLE/TPA",
+            "product": "IPAD CASES (Primary: iPad Accessories)",
+            "capacity": 75
+          },
+          {
+            "wall": "W6",
+            "brand": "APPLE/TPA",
+            "product": "IPAD CASES (Primary: iPad Accessories)",
+            "capacity": 75
+          }
+        ],
+        "total_capacity": 150
+      }
+    },
+    "lob_summary": {
+      "Watch Accessories": 2,
+      "Audio Accessories": 2,
+      "Mac Accessories": 6,
+      "Cases & Covers": 2,
+      "iPad Accessories": 2
+    }
+  },
+  "imagine- nexus mall kukkatpally hyderabad": {
+    "original_name": "IMAGINE- NEXUS MALL KUKKATPALLY HYDERABAD",
+    "location": "IMAGINE @ FORUM SUJANA MALL",
+    "city": "HYDERABAD",
+    "total_walls": 8,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE / SANDISK / HYPERDRIVE / BELKIN / PULSE / TEKNE",
+            "product": "APPLE TV / SANDISK SSD / HYDERDRIVE HUB / TEKNE HUB / BELKIN W/L CHARGER / PULSE W/L CHARGER",
+            "capacity": 8
+          }
+        ],
+        "total_capacity": 8
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W2",
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "APPLE / BEATS",
+            "product": "APPLE MAGIC KEYBOARD / MOUSE / TRACKPAD / IPHONES / AIRPODS / MAC ADAPTORS / BEATS EARBUDS",
+            "capacity": 24
+          },
+          {
+            "wall": "W8",
+            "brand": "APPLE / GRIPP / PANZER / PULSE / VALENTA",
+            "product": "APPLE 30W & 35W DUAL PORT ADAPTORS/ APPLE USB-C & LIGHTENING EARPHONES / USB-C EARPHONE JACK ADAPTOR / USB-C TO LIGHTENING CHARGING CABLE / PULSE CASES / GRIPP AIRPODS CASES / PANZER CAMERA LENS / PROTECTOR / VALENTA WALLET'S",
+            "capacity": 300
+          }
+        ],
+        "total_capacity": 324
+      },
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "APPLE / GRIPP / PULSE / POPSOCKET / PANZER GLASS/",
+            "product": "APPLE AIRTAG / APPLE HUB / GRIPP WATCH BANDS / PULSE WATCH BANDS / POP SOCKET MAGSAFE HOLDER'S / PANZER WATCH BUMPERS",
+            "capacity": 240
+          },
+          {
+            "wall": "W6",
+            "brand": "APPLE / TEKNE / POWERUP / GRIPP / HYPHEN",
+            "product": "APPLE ADAPTOR'S / PULSE 30W & 40W ADAPTORS / WATCH CHARGER / POWER BANK / CAR CHARGER / CASES",
+            "capacity": 280
+          }
+        ],
+        "total_capacity": 520
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "TEKNE / TUCANO / RIVACASE / PANZERGLASS / BELKIN",
+            "product": "TEKNE ESSENTIAL KIT / TUCANO BAGS / RIVA CASE BAGS / PANZER CLEANING SOLUTION / BELKIN SURGE PROTECTOR",
+            "capacity": 45
+          }
+        ],
+        "total_capacity": 45
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "APPLE / TEKNE / TUCANO",
+            "product": "APPLE IPAD CASES / TUCANO IPAD CASES / TEKNE IPAD CASES",
+            "capacity": 96
+          }
+        ],
+        "total_capacity": 96
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "APPLE / GRIPP",
+            "product": "APPLE CASES / GRIPP CASES / GRIPP LENS PROTECTORS",
+            "capacity": 300
+          }
+        ],
+        "total_capacity": 300
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 1,
+      "Audio Accessories": 2,
+      "Watch Accessories": 2,
+      "Mac Accessories": 1,
+      "iPad Accessories": 1,
+      "Cases & Covers": 1
+    }
+  },
+  "imagine- nexus neighbourhood bengaluru": {
+    "original_name": "IMAGINE- NEXUS NEIGHBOURHOOD BENGALURU",
+    "location": "IMAGINE @ WHITEFIELD",
+    "city": "Bangalore",
+    "total_walls": 2,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "1",
+          "2"
+        ],
+        "products": [
+          {
+            "wall": "1",
+            "brand": "Apple acc / 3p accy",
+            "product": "apple Accy /Tekne/ grip (Primary: Mac Accessories)",
+            "capacity": 195
+          },
+          {
+            "wall": "2",
+            "brand": "apple core prducts / accy",
+            "product": "apple core prducts / accy (Primary: Mac Accessories)",
+            "capacity": 123
+          }
+        ],
+        "total_capacity": 318
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 2
+    }
+  },
+  "imagine- nexus vijaya mall chennai": {
+    "original_name": "IMAGINE- NEXUS VIJAYA MALL CHENNAI",
+    "location": "IMAGINE @ VADAPALANI",
+    "city": "CHENNAI",
+    "total_walls": 9,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple Cases &Pulse",
+            "product": "Apple Iphone cases & Pulse Phone Cases",
+            "capacity": 60
+          },
+          {
+            "wall": "W2",
+            "brand": "TEKNE &PULSE",
+            "product": "Phone cases",
+            "capacity": 60
+          }
+        ],
+        "total_capacity": 120
+      },
+      "Mac Accessories": {
+        "wall_count": 3,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3",
+          "W8",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TEKNE &PULSE",
+            "product": "Tekne Gaget Organiser,Tekne Fast charhing cable, tekne USB-C hUB,pULSE WC& CARMOUNT",
+            "capacity": 0
+          },
+          {
+            "wall": "W8",
+            "brand": "GRIPP, TUCANNO",
+            "product": "BAGS AND SLEEVES",
+            "capacity": 0
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple,Pulse,Gripp",
+            "product": "Apple Accessories,Gripp, Pulse",
+            "capacity": 60
+          }
+        ],
+        "total_capacity": 60
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple,Gripp,Pulse",
+            "product": "Apple straps, Gripp watch straps & pulse watch straps",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 24
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "airpods,Apple type c adaptors,keyboard,mouse",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple",
+            "product": "ipads, Pencil,ipad KEYBOARD",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      },
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "APPLE",
+            "product": "IPHONES ALL MODELS",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 2,
+      "Mac Accessories": 3,
+      "Watch Accessories": 1,
+      "Audio Accessories": 1,
+      "iPad Accessories": 1,
+      "Miscellaneous": 1
+    }
+  },
+  "imagine- orion avenue mall bengaluru": {
+    "original_name": "IMAGINE- ORION AVENUE MALL BENGALURU",
+    "location": "IMAGINE @ ORION EAST MALL",
+    "city": "Bangalore",
+    "total_walls": 6,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple/Pulse",
+            "product": "Apple TV/Carmounts",
+            "capacity": 30
+          }
+        ],
+        "total_capacity": 30
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Keyboard/Airpods/Pencil/iPhones/Iphone cases",
+            "capacity": 40
+          }
+        ],
+        "total_capacity": 40
+      },
+      "Adapters & Cables": {
+        "wall_count": 2,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W3",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple/Pulse/Gripp",
+            "product": "Adapters/Earpods/Cables/Powerbanks/TG",
+            "capacity": 216
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple/Tekkne/Panzer",
+            "product": "Adapters/Tekkne Cases/PanzerTG/Camera Lens",
+            "capacity": 216
+          }
+        ],
+        "total_capacity": 432
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple/Panzer/Gripp",
+            "product": "iPhone Cases/Panzer cases/Gripp Cases",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple/Tekkne/Belkin/Pulse",
+            "product": "Ipad Cases Apple and Tekkne/ Belkin Surge Protecteors/Privacy Filters",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 1,
+      "Audio Accessories": 1,
+      "Adapters & Cables": 2,
+      "Cases & Covers": 1,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- orion mall brigade gateway bengaluru": {
+    "original_name": "IMAGINE- ORION MALL BRIGADE GATEWAY BENGALURU",
+    "location": "IMAGINE @ ORION MALL",
+    "city": "Bengaluru",
+    "total_walls": 26,
+    "wall_details": {
+      "Miscellaneous": {
+        "wall_count": 12,
+        "category": "Miscellaneous",
+        "walls": [
+          "W1",
+          "W14",
+          "W12",
+          "W16",
+          "W15",
+          "W8",
+          "W3",
+          "W25",
+          "W11",
+          "W22",
+          "W13",
+          "W23"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Native Union,riva case",
+            "product": "Sleevs",
+            "capacity": 60
+          },
+          {
+            "wall": "W11",
+            "brand": "Apple Watch Bands, Native Union, Popsocket, Valenta, Gripp",
+            "product": "nan",
+            "capacity": 135
+          },
+          {
+            "wall": "W12",
+            "brand": "Apple, Tekne",
+            "product": "Cases",
+            "capacity": 288
+          },
+          {
+            "wall": "W13",
+            "brand": "Teken, Gripp,PD,",
+            "product": "Cases",
+            "capacity": 288
+          },
+          {
+            "wall": "W14",
+            "brand": "Apple, Gripp, Tekne",
+            "product": "cases",
+            "capacity": 115
+          },
+          {
+            "wall": "W15",
+            "brand": "Tekne.",
+            "product": "cases",
+            "capacity": 108
+          },
+          {
+            "wall": "W16",
+            "brand": "Tekne.",
+            "product": "cases",
+            "capacity": 108
+          },
+          {
+            "wall": "W22",
+            "brand": "Ultrahuman Ring",
+            "product": "Ring",
+            "capacity": 15
+          },
+          {
+            "wall": "W23",
+            "brand": "Jignmark",
+            "product": "Sleeve",
+            "capacity": 20
+          },
+          {
+            "wall": "W25",
+            "brand": "EATON",
+            "product": "UPS",
+            "capacity": 2
+          },
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "Apple TV",
+            "capacity": 12
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "Homepod Mini",
+            "capacity": 9
+          }
+        ],
+        "total_capacity": 1160
+      },
+      "Audio Accessories": {
+        "wall_count": 9,
+        "category": "Audio Accessories",
+        "walls": [
+          "W17",
+          "W4",
+          "W24",
+          "W20",
+          "W26",
+          "W18",
+          "W9",
+          "W19",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "Apple, Bose, B/W, Marshall",
+            "product": "iphone, and earphones",
+            "capacity": 210
+          },
+          {
+            "wall": "W17",
+            "brand": "B/W, JBL",
+            "product": "Speakers",
+            "capacity": 3
+          },
+          {
+            "wall": "W18",
+            "brand": "Bose, Marshall",
+            "product": "Speakers",
+            "capacity": 4
+          },
+          {
+            "wall": "W19",
+            "brand": "Bose, Marshall",
+            "product": "Speakers",
+            "capacity": 4
+          },
+          {
+            "wall": "W20",
+            "brand": "Bose, Marshall",
+            "product": "Speakers",
+            "capacity": 4
+          },
+          {
+            "wall": "W24",
+            "brand": "Marshall, B/W",
+            "product": "Speakers",
+            "capacity": 2
+          },
+          {
+            "wall": "W26",
+            "brand": "Bose.",
+            "product": "Speakers",
+            "capacity": 6
+          },
+          {
+            "wall": "W4",
+            "brand": "Apple, Bose, B/W, Sonic Lamb",
+            "product": "Headphones",
+            "capacity": 24
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple",
+            "product": "Adapter, cable, Airpods",
+            "capacity": 150
+          }
+        ],
+        "total_capacity": 407
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W7",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Teke, belkim",
+            "product": "Gadget organiser,essential Kit,privacy Filter, Surge Protrctor",
+            "capacity": 60
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple",
+            "product": "Apple Keyboard, Pencil, Adapter",
+            "capacity": 100
+          }
+        ],
+        "total_capacity": 160
+      },
+      "Adapters & Cables": {
+        "wall_count": 3,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W21",
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W21",
+            "brand": "Tekne",
+            "product": "Wireless Charger",
+            "capacity": 15
+          },
+          {
+            "wall": "W5",
+            "brand": "Tekne, Panzer, IMOO, Logitech, Microsoft",
+            "product": "Wirelesscharger, Powerbank, Cable, Spray, Watch, Keybaord,",
+            "capacity": 100
+          },
+          {
+            "wall": "W6",
+            "brand": "Alogic,Fuelbox,Sandisc,Gripp, Logitech,Native Union,",
+            "product": "Converters, Cables, Car Mount, Adapter, Keyborad",
+            "capacity": 60
+          }
+        ],
+        "total_capacity": 175
+      }
+    },
+    "lob_summary": {
+      "Miscellaneous": 12,
+      "Audio Accessories": 9,
+      "Mac Accessories": 2,
+      "Adapters & Cables": 3
+    }
+  },
+  "imagine- orion uptown mall bengaluru": {
+    "original_name": "IMAGINE- ORION UPTOWN MALL BENGALURU",
+    "location": "IMAGINE @ ORION UPTOWN MALL",
+    "city": "banglore",
+    "total_walls": 2,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "1"
+        ],
+        "products": [
+          {
+            "wall": "1",
+            "brand": "Apple acc / 3p accy",
+            "product": "apple Accy /Tekne/ alogic (Primary: Mac Accessories)",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 20
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "2"
+        ],
+        "products": [
+          {
+            "wall": "2",
+            "brand": "apple accy / 3p accy",
+            "product": "apple iphone cases / grip/ panzeer/dbramante/hypen (Primary: Cases & Covers)",
+            "capacity": 22
+          }
+        ],
+        "total_capacity": 22
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 1,
+      "Cases & Covers": 1
+    }
+  },
+  "imagine- pattom trivandrum": {
+    "original_name": "IMAGINE- PATTOM TRIVANDRUM",
+    "location": "IMAGINE @ PATTOM",
+    "city": "PATTOM",
+    "total_walls": 6,
+    "wall_details": {
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Tucano, Tekne, Panzer,Gripp, Powerup",
+            "product": "Phone Cases, iPhone Tempered Glass, iPad Cases, Lens protector, iPad Cases ,car charger",
+            "capacity": 110
+          }
+        ],
+        "total_capacity": 110
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Gripp, Panzer,Belkin",
+            "product": "Phone cases, Belkin surge protector",
+            "capacity": 110
+          }
+        ],
+        "total_capacity": 110
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple,Tekne",
+            "product": "Phone Case",
+            "capacity": 150
+          }
+        ],
+        "total_capacity": 150
+      },
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W4",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Tekne,Panzer",
+            "product": "Adaptors,Cables,Cable,watch straps, camera lens protector",
+            "capacity": 175
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple",
+            "product": "Cabels,watch straps,connectors,earpods,magsafe chargers",
+            "capacity": 200
+          }
+        ],
+        "total_capacity": 375
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple",
+            "product": "Phones, Airpods, Pencil, Magic Keyboard, Watches, Magic Mouse,adaptors",
+            "capacity": 125
+          }
+        ],
+        "total_capacity": 125
+      }
+    },
+    "lob_summary": {
+      "iPad Accessories": 1,
+      "Adapters & Cables": 1,
+      "Cases & Covers": 1,
+      "Watch Accessories": 2,
+      "Audio Accessories": 1
+    }
+  },
+  "imagine- peravallur chennai": {
+    "original_name": "IMAGINE- PERAVALLUR CHENNAI",
+    "location": "IMAGINE @ PERAMBUR",
+    "city": "Chennai",
+    "total_walls": 7,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple & Pulse",
+            "product": "Apple Iphone cases & Pulse Phone Cases",
+            "capacity": 12
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple & Grip",
+            "product": "Apple iphone cases, Grip phone cases & Grip TG",
+            "capacity": 12
+          }
+        ],
+        "total_capacity": 24
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Beats & Grip",
+            "product": "Beats BT Headphones & Grip Camera Lens Protect",
+            "capacity": 5
+          },
+          {
+            "wall": "W4",
+            "brand": "Apple & Pulse",
+            "product": "Apple adapter, cables earphones & Pulse adapters, powerbank, & Cables",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 25
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple, Grip & Pluse",
+            "product": "Apple iPad cases, Grip iPad Cases & Pulse iPad cases",
+            "capacity": 6
+          }
+        ],
+        "total_capacity": 6
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W7",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Pulse, Amazething, belkin",
+            "product": "Pulse Privacy filter, belkin surge protector & Amazething mac case",
+            "capacity": 5
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple & Pulse",
+            "product": "Apple Tv & Pulse spary & organiser",
+            "capacity": 4
+          }
+        ],
+        "total_capacity": 9
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 2,
+      "Audio Accessories": 2,
+      "iPad Accessories": 1,
+      "Mac Accessories": 2
+    }
+  },
+  "imagine- rajarajeshwari nagar bengaluru": {
+    "original_name": "IMAGINE- RAJARAJESHWARI NAGAR BENGALURU",
+    "location": "IMAGINE @ RR NAGAR",
+    "city": "Bangalore",
+    "total_walls": 6,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 3,
+        "category": "Mac Accessories",
+        "walls": [
+          "W2",
+          "W1",
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple Accy/ 3rd P Accy",
+            "product": "Apple /Tekne & Panzer Accy",
+            "capacity": 180
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple Accy/ 3rd P Accy",
+            "product": "Apple & Grip Accy",
+            "capacity": 144
+          },
+          {
+            "wall": "W3",
+            "brand": "3rd P Accy",
+            "product": "Tucano Laptop bag",
+            "capacity": 45
+          }
+        ],
+        "total_capacity": 369
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "3rd P Accy",
+            "product": "Marshall & Beats",
+            "capacity": 45
+          }
+        ],
+        "total_capacity": 45
+      },
+      "Miscellaneous": {
+        "wall_count": 2,
+        "category": "Miscellaneous",
+        "walls": [
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple Accy/ 3rd P Accy",
+            "product": "Apple & Tekne",
+            "capacity": 240
+          },
+          {
+            "wall": "W6",
+            "brand": "3rd P Accy",
+            "product": "Tekne",
+            "capacity": 45
+          }
+        ],
+        "total_capacity": 285
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 3,
+      "Audio Accessories": 1,
+      "Miscellaneous": 2
+    }
+  },
+  "imagine- rmz ecoworld bengaluru": {
+    "original_name": "IMAGINE- RMZ ECOWORLD BENGALURU",
+    "location": "IMAGINE @ RMZ, BANGALORE",
+    "city": "Bangalore",
+    "total_walls": 8,
+    "wall_details": {
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple/Ultrahuman",
+            "product": "Apple TV/ Ultrahuman Rings",
+            "capacity": 12
+          },
+          {
+            "wall": "W3",
+            "brand": "Apple/Tekkne/Gripp/Powerup",
+            "product": "Apple Watch Straps/Tekkne Hubs/Grip Airpods Cases/Car Mounts",
+            "capacity": 140
+          }
+        ],
+        "total_capacity": 152
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Airpods/Keyboards/Pencil/Adapters",
+            "capacity": 39
+          }
+        ],
+        "total_capacity": 39
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Tekkne/Pulse/Tucano/Belkin",
+            "product": "Tekkne Essential Kit/Privacy filters/Belkin Surge Protector/ Sleeves",
+            "capacity": 30
+          }
+        ],
+        "total_capacity": 30
+      },
+      "Adapters & Cables": {
+        "wall_count": 3,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W7",
+          "W8",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Belkin/Pulse/Panzerglass/Gripp",
+            "product": "Wireless chargers and TG",
+            "capacity": 96
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple/Tekkne",
+            "product": "Apple iPhone Cases/ Tekkne Cases/ Cables",
+            "capacity": 175
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple/Tekkne/Pulse",
+            "product": "Adapters/Cables/Wallets/Earpods/Tekkne Cables/ Pulse Cases",
+            "capacity": 175
+          }
+        ],
+        "total_capacity": 446
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "Apple/Tekkne",
+            "product": "Apple and TPA iPad Cases",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      }
+    },
+    "lob_summary": {
+      "Watch Accessories": 2,
+      "Audio Accessories": 1,
+      "Mac Accessories": 1,
+      "Adapters & Cables": 3,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- shri balaji arcade belagavi": {
+    "original_name": "IMAGINE- SHRI BALAJI ARCADE BELAGAVI",
+    "location": "IMAGINE @BALAJI ARCADE",
+    "city": "BELAGAVI",
+    "total_walls": 5,
+    "wall_details": {
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple / TPA",
+            "product": "iPad Cases (Primary: iPad Accessories)",
+            "capacity": 64
+          },
+          {
+            "wall": "W2",
+            "brand": "TPA",
+            "product": "Mac Sleev / iPad Cases (Primary: iPad Accessories)",
+            "capacity": 36
+          }
+        ],
+        "total_capacity": 100
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple / TPA",
+            "product": "Apple Accy / TPA adapter (Primary: Mac Accessories)",
+            "capacity": 264
+          }
+        ],
+        "total_capacity": 264
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple / TPA",
+            "product": "iPhone Cases / Temred Glass (Primary: Cases & Covers)",
+            "capacity": 150
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple / TPA",
+            "product": "iPhone Cases (Apple/TPA) (Primary: Cases & Covers)",
+            "capacity": 174
+          }
+        ],
+        "total_capacity": 324
+      }
+    },
+    "lob_summary": {
+      "iPad Accessories": 2,
+      "Mac Accessories": 1,
+      "Cases & Covers": 2
+    }
+  },
+  "imagine- sm tower kollam": {
+    "original_name": "IMAGINE- SM TOWER KOLLAM",
+    "location": "IMAGINE @ SM TOWER",
+    "city": "Kollam",
+    "total_walls": 8,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple,Tekne,Grip",
+            "product": "iphone cases,Lens protector",
+            "capacity": 150
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple,panzer,Gripp",
+            "product": "Iphone cases,TG",
+            "capacity": 150
+          }
+        ],
+        "total_capacity": 300
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Riva,Tekne",
+            "product": "Laptop Bags,Ipad Cases,Privacy filters",
+            "capacity": 9
+          },
+          {
+            "wall": "W6",
+            "brand": "Apple,Gripp,Logitech",
+            "product": "ipad cases,Keyboard,Ipad TG,Airpods Cases",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 25
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W4",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Apple Keyboard,Ipad,Iphone,pencil,Airpods,Mouse",
+            "capacity": 20
+          },
+          {
+            "wall": "W5",
+            "brand": "Gripp,Belkin,Fuelbox,powerup",
+            "product": "Surge protector,airpod cases,Cables,headphones,Car mount,Car holder etc",
+            "capacity": 24
+          }
+        ],
+        "total_capacity": 44
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "Apple,Tekne",
+            "product": "Adaptors,Cables,ear pods,Power bank,Cables,Multiport Adaptors,Airtags,Magsafe",
+            "capacity": 210
+          }
+        ],
+        "total_capacity": 210
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W8",
+            "brand": "Apple,Hypine,Gripp",
+            "product": "Apple TV,Watch Straps,Gripp",
+            "capacity": 16
+          }
+        ],
+        "total_capacity": 16
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 2,
+      "iPad Accessories": 2,
+      "Audio Accessories": 2,
+      "Adapters & Cables": 1,
+      "Watch Accessories": 1
+    }
+  },
+  "imagine- sobha city thrissur": {
+    "original_name": "IMAGINE- SOBHA CITY THRISSUR",
+    "location": "IMAGINE @ SOBHA MALL",
+    "city": "Thrissur",
+    "total_walls": 8,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 3,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1",
+          "W8",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Gripp, Rivacase, Belkin",
+            "product": "Bags, Surge protector",
+            "capacity": 10
+          },
+          {
+            "wall": "W6",
+            "brand": "APPLE, Tekne, Pulse, Gripp, Panzer",
+            "product": "Adaptors, cables, Powerbanks, Multiport adaptors",
+            "capacity": 220
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "Apple TV, Magsafe adaptor, Airtags",
+            "capacity": 5
+          }
+        ],
+        "total_capacity": 235
+      },
+      "iPad Accessories": {
+        "wall_count": 2,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "TEKNE, Gripp, Pulse",
+            "product": "Bags, Magnetic filter, Ipad cases",
+            "capacity": 9
+          },
+          {
+            "wall": "W3",
+            "brand": "Apple, Tekne",
+            "product": "iPad cases",
+            "capacity": 12
+          }
+        ],
+        "total_capacity": 21
+      },
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "APPLE, Tekne, Pulse, Gripp, Panzer",
+            "product": "IPHONE CASEs",
+            "capacity": 225
+          },
+          {
+            "wall": "W5",
+            "brand": "APPLE, Tekne, Pulse",
+            "product": "IPHONE CASEs",
+            "capacity": 90
+          }
+        ],
+        "total_capacity": 315
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "Apple",
+            "product": "IPHONES, Aipods, Pencils, Magic mouse",
+            "capacity": 20
+          }
+        ],
+        "total_capacity": 20
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 3,
+      "iPad Accessories": 2,
+      "Cases & Covers": 2,
+      "Mac Accessories": 1
+    }
+  },
+  "imagine- sree ranga arcade hassan": {
+    "original_name": "IMAGINE- SREE RANGA ARCADE HASSAN",
+    "location": "IMAGINE @ BM ROAD",
+    "city": "Hassan",
+    "total_walls": 5,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "1"
+        ],
+        "products": [
+          {
+            "wall": "1",
+            "brand": "Apple",
+            "product": "iPhone cases (Apple) (Primary: Cases & Covers)",
+            "capacity": 360
+          }
+        ],
+        "total_capacity": 360
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "2"
+        ],
+        "products": [
+          {
+            "wall": "2",
+            "brand": "Gripp",
+            "product": "Watch Bands (Primary: Watch Accessories)",
+            "capacity": 265
+          }
+        ],
+        "total_capacity": 265
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "3"
+        ],
+        "products": [
+          {
+            "wall": "3",
+            "brand": "Apple",
+            "product": "Apple iPad Cases (Primary: iPad Accessories)",
+            "capacity": 17
+          }
+        ],
+        "total_capacity": 17
+      },
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "4"
+        ],
+        "products": [
+          {
+            "wall": "4",
+            "brand": "Marshall",
+            "product": "BT Speaker (Primary: Audio Accessories)",
+            "capacity": 11
+          }
+        ],
+        "total_capacity": 11
+      },
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "5"
+        ],
+        "products": [
+          {
+            "wall": "5",
+            "brand": "Apple",
+            "product": "Apple Glass Shelf",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 1,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1,
+      "Audio Accessories": 1,
+      "Miscellaneous": 1
+    }
+  },
+  "imagine- the galleria mall bengaluru": {
+    "original_name": "IMAGINE- THE GALLERIA MALL BENGALURU",
+    "location": "IMAGINE @ RMZ GALLERIA",
+    "city": "BANGALORE",
+    "total_walls": 10,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "Apple Accessories",
+            "capacity": 180
+          }
+        ],
+        "total_capacity": 180
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W9",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "Apple Tekne Marshall Belkin Fuelbox Logitech Beats Sandisk & Poweup",
+            "product": "Mac Accessiores, Speakers, SSD, Beats Airpods",
+            "capacity": 0
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple",
+            "product": "Airpods, Keyboard, Adapters",
+            "capacity": 90
+          }
+        ],
+        "total_capacity": 90
+      },
+      "Miscellaneous": {
+        "wall_count": 3,
+        "category": "Miscellaneous",
+        "walls": [
+          "W7",
+          "W2",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Apple Watch",
+            "capacity": 0
+          },
+          {
+            "wall": "W6",
+            "brand": "Gripp and Tucano",
+            "product": "Sleevs and Bagpacks (Primary: Miscellaneous)",
+            "capacity": 6
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple",
+            "product": "Homepods and Homepod Mini",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 6
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple & Tekne",
+            "product": "Watch Bands Cables Power Banks and Adapter",
+            "capacity": 210
+          }
+        ],
+        "total_capacity": 210
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "Apple Tekne & Gripp",
+            "product": "iPhone Cases & TG (Primary: Cases & Covers)",
+            "capacity": 420
+          }
+        ],
+        "total_capacity": 420
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple Tekne & Gripp",
+            "product": "iPad Cases and TG",
+            "capacity": 100
+          }
+        ],
+        "total_capacity": 100
+      },
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W8"
+        ],
+        "products": [
+          {
+            "wall": "W8",
+            "brand": "Pulse Tekne & Belkin",
+            "product": "Adapters,Orginser,Tekne,Essentinal Kit Pulse Magnetic Filter",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 1,
+      "Audio Accessories": 2,
+      "Miscellaneous": 3,
+      "Watch Accessories": 1,
+      "Cases & Covers": 1,
+      "iPad Accessories": 1,
+      "Adapters & Cables": 1
+    }
+  },
+  "imagine- the mirage udupi": {
+    "original_name": "IMAGINE- THE MIRAGE UDUPI",
+    "location": "IMAGINE @ MANIPAL ROAD, UDUPI",
+    "city": "UDUPI",
+    "total_walls": 4,
+    "wall_details": {
+      "Audio Accessories": {
+        "wall_count": 1,
+        "category": "Audio Accessories",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "APPLE",
+            "product": "APPLE TV / Essentials (Wall charger / cable/ Earphones) (Primary: Audio Accessories)",
+            "capacity": 48
+          }
+        ],
+        "total_capacity": 48
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "APPLE",
+            "product": "Clear Cases / Silicon / Laether cases (Primary: Cases & Covers)",
+            "capacity": 360
+          }
+        ],
+        "total_capacity": 360
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3",
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TPA",
+            "product": "Sleeves/Laptop bags / Hard Shells (Primary: Mac Accessories)",
+            "capacity": 199
+          },
+          {
+            "wall": "W4",
+            "brand": "APPLE",
+            "product": "Essentials (Wall charger /cable / pencil tips /mac hub ) (Primary: Mac Accessories)",
+            "capacity": 205
+          }
+        ],
+        "total_capacity": 404
+      }
+    },
+    "lob_summary": {
+      "Audio Accessories": 1,
+      "Cases & Covers": 1,
+      "Mac Accessories": 2
+    }
+  },
+  "imagine- ttk road chennai": {
+    "original_name": "IMAGINE- TTK ROAD CHENNAI",
+    "location": "IMAGINE @ TTK ROAD",
+    "city": "CHENNAI",
+    "total_walls": 9,
+    "wall_details": {
+      "Adapters & Cables": {
+        "wall_count": 1,
+        "category": "Adapters & Cables",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "TEKNE AND PULSE",
+            "product": "Tekne hub and cables , Pulse adapter and cables",
+            "capacity": 576
+          }
+        ],
+        "total_capacity": 576
+      },
+      "Mac Accessories": {
+        "wall_count": 2,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3",
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "RIVACASE ,TUCANO AND PULSE",
+            "product": "Bags and Sleeves",
+            "capacity": 60
+          },
+          {
+            "wall": "W3",
+            "brand": "APPLE",
+            "product": "ADAPTER ,CABLES AND KEYBOARD",
+            "capacity": 330
+          }
+        ],
+        "total_capacity": 390
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "APPLE,GRIPP,PAnzer AND PULSE",
+            "product": "APPLE,GRIPP AND PULSE CASES ,TG ,LENS PROTECTOR",
+            "capacity": 360
+          }
+        ],
+        "total_capacity": 360
+      },
+      "Miscellaneous": {
+        "wall_count": 3,
+        "category": "Miscellaneous",
+        "walls": [
+          "W8",
+          "W6",
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "APPLE ,PANZER",
+            "product": "APPLE ,PANZER Cases",
+            "capacity": 360
+          },
+          {
+            "wall": "W6",
+            "brand": "APPLE ,TEKNE",
+            "product": "APPLE ,TEKNE Cases",
+            "capacity": 360
+          },
+          {
+            "wall": "W8",
+            "brand": "TEKNE AND GRIPP",
+            "product": "TEKNE AND GRIPP CASES",
+            "capacity": 100
+          }
+        ],
+        "total_capacity": 820
+      },
+      "Watch Accessories": {
+        "wall_count": 2,
+        "category": "Watch Accessories",
+        "walls": [
+          "W7",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W7",
+            "brand": "APPLE ,PANZER AND GRIPP",
+            "product": "APPLE BANDS AND GRIPP AIRPODS ,PANZER WATCH CASE",
+            "capacity": 144
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple, Marshall, Ultrahuman",
+            "product": "Airpods max, Marshall Speakers, ultrahuman rings",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 144
+      }
+    },
+    "lob_summary": {
+      "Adapters & Cables": 1,
+      "Mac Accessories": 2,
+      "Cases & Covers": 1,
+      "Miscellaneous": 3,
+      "Watch Accessories": 2
+    }
+  },
+  "imagine- ub city bengaluru": {
+    "original_name": "IMAGINE- UB CITY BENGALURU",
+    "location": "IMAGINE @ U.B.CITY",
+    "city": "Bangalore",
+    "total_walls": 10,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 4,
+        "category": "Mac Accessories",
+        "walls": [
+          "W2",
+          "W1",
+          "W9",
+          "W7"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "Apple Accessories",
+            "capacity": 240
+          },
+          {
+            "wall": "W2",
+            "brand": "Apple/Popsoket/UAG/Panzer",
+            "product": "Apple phone cases/Accessories",
+            "capacity": 480
+          },
+          {
+            "wall": "W7",
+            "brand": "Tekne",
+            "product": "Organiser/TSF/adaptors",
+            "capacity": 192
+          },
+          {
+            "wall": "W9",
+            "brand": "APPLE",
+            "product": "Phones/Pencil/Magic keyboards for ipad",
+            "capacity": 6
+          }
+        ],
+        "total_capacity": 918
+      },
+      "Audio Accessories": {
+        "wall_count": 2,
+        "category": "Audio Accessories",
+        "walls": [
+          "W8",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "APPLE",
+            "product": "Mac/Airpods/Beats",
+            "capacity": 0
+          },
+          {
+            "wall": "W8",
+            "brand": "APPLE",
+            "product": "AIRPODS/ Beats /Magic keyboards",
+            "capacity": 6
+          }
+        ],
+        "total_capacity": 6
+      },
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "TEKNE",
+            "product": "Phone cases",
+            "capacity": 480
+          }
+        ],
+        "total_capacity": 480
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W4"
+        ],
+        "products": [
+          {
+            "wall": "W4",
+            "brand": "TEKNE",
+            "product": "IPAD CASES/ IPAD TG",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W5"
+        ],
+        "products": [
+          {
+            "wall": "W5",
+            "brand": "Apple/Native Union",
+            "product": "Watch Bands",
+            "capacity": 144
+          }
+        ],
+        "total_capacity": 144
+      },
+      "Miscellaneous": {
+        "wall_count": 1,
+        "category": "Miscellaneous",
+        "walls": [
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W6",
+            "brand": "APPLE",
+            "product": "Homepod",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 4,
+      "Audio Accessories": 2,
+      "Cases & Covers": 1,
+      "iPad Accessories": 1,
+      "Watch Accessories": 1,
+      "Miscellaneous": 1
+    }
+  },
+  "imagine- vega city mall bengaluru": {
+    "original_name": "IMAGINE- VEGA CITY MALL BENGALURU",
+    "location": "IMAGINE @ VEGA CITY",
+    "city": "BANGALORE",
+    "total_walls": 18,
+    "wall_details": {
+      "Mac Accessories": {
+        "wall_count": 5,
+        "category": "Mac Accessories",
+        "walls": [
+          "W1",
+          "W12",
+          "W17",
+          "W11",
+          "W9"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple",
+            "product": "Apple Accessories (Primary: Mac Accessories)",
+            "capacity": 210
+          },
+          {
+            "wall": "W11",
+            "brand": "Tucano,Rivacase",
+            "product": "Macbook Sleeves",
+            "capacity": 0
+          },
+          {
+            "wall": "W12",
+            "brand": "Tucano,Rivacase and Native Union",
+            "product": "Macbook Sleeves",
+            "capacity": 0
+          },
+          {
+            "wall": "W17",
+            "brand": "Tekan,Powerup and Belkin",
+            "product": "Wireless Charger,Privacy Filter and Car Charger Connector",
+            "capacity": 110
+          },
+          {
+            "wall": "W9",
+            "brand": "Apple and Native Union",
+            "product": "Apple Accessories and Sleeve",
+            "capacity": 40
+          }
+        ],
+        "total_capacity": 360
+      },
+      "Audio Accessories": {
+        "wall_count": 4,
+        "category": "Audio Accessories",
+        "walls": [
+          "W13",
+          "W16",
+          "W15",
+          "W10"
+        ],
+        "products": [
+          {
+            "wall": "W10",
+            "brand": "Apple ,Beats and Native Union",
+            "product": "Airpods ,Beats and Native union",
+            "capacity": 0
+          },
+          {
+            "wall": "W13",
+            "brand": "Tekne and Marshall",
+            "product": "Cables, Adapters and Speakers",
+            "capacity": 120
+          },
+          {
+            "wall": "W15",
+            "brand": "Marshall",
+            "product": "Speakers",
+            "capacity": 0
+          },
+          {
+            "wall": "W16",
+            "brand": "Bose",
+            "product": "Speakers",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 120
+      },
+      "Cases & Covers": {
+        "wall_count": 4,
+        "category": "Cases & Covers",
+        "walls": [
+          "W7",
+          "W14",
+          "W5",
+          "W6"
+        ],
+        "products": [
+          {
+            "wall": "W14",
+            "brand": "Panzer,Belkin and Gripp",
+            "product": "TG and Lens Protector",
+            "capacity": 336
+          },
+          {
+            "wall": "W5",
+            "brand": "Apple and Tekne",
+            "product": "iPhone Cases",
+            "capacity": 180
+          },
+          {
+            "wall": "W6",
+            "brand": "Apple and Tekne",
+            "product": "iPhone Cases",
+            "capacity": 180
+          },
+          {
+            "wall": "W7",
+            "brand": "Apple and Tekne",
+            "product": "iPhone Cases",
+            "capacity": 180
+          }
+        ],
+        "total_capacity": 876
+      },
+      "Miscellaneous": {
+        "wall_count": 3,
+        "category": "Miscellaneous",
+        "walls": [
+          "W4",
+          "W8",
+          "W18"
+        ],
+        "products": [
+          {
+            "wall": "W18",
+            "brand": "Tekan and Native Union",
+            "product": "Tekne Essitional Kit and Sleeves",
+            "capacity": 0
+          },
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Apple TV,iPad and Apple Watch",
+            "capacity": 0
+          },
+          {
+            "wall": "W8",
+            "brand": "Apple",
+            "product": "iPhone",
+            "capacity": 0
+          }
+        ],
+        "total_capacity": 0
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple,Tekne and Panzer",
+            "product": "Watch Bands,Cases and TG",
+            "capacity": 180
+          }
+        ],
+        "total_capacity": 180
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple,Tucano and Tekne",
+            "product": "iPad Cases",
+            "capacity": 108
+          }
+        ],
+        "total_capacity": 108
+      }
+    },
+    "lob_summary": {
+      "Mac Accessories": 5,
+      "Audio Accessories": 4,
+      "Cases & Covers": 4,
+      "Miscellaneous": 3,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1
+    }
+  },
+  "imagine- vijetha golden empire dilsukhnagar hyderabad": {
+    "original_name": "IMAGINE- VIJETHA GOLDEN EMPIRE DILSUKHNAGAR HYDERABAD",
+    "location": "IMAGINE @ DILSUKH NAGAR",
+    "city": "Hyderabad",
+    "total_walls": 4,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 2,
+        "category": "Cases & Covers",
+        "walls": [
+          "W4",
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "TPA",
+            "product": "Silicon/Laether cases (Primary: Cases & Covers)",
+            "capacity": 35
+          },
+          {
+            "wall": "W4",
+            "brand": "Apple",
+            "product": "Silicon/Laether cases (Primary: Cases & Covers)",
+            "capacity": 25
+          }
+        ],
+        "total_capacity": 60
+      },
+      "iPad Accessories": {
+        "wall_count": 1,
+        "category": "iPad Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple",
+            "product": "Ipad cases (Primary: iPad Accessories)",
+            "capacity": 35
+          }
+        ],
+        "total_capacity": 35
+      },
+      "Mac Accessories": {
+        "wall_count": 1,
+        "category": "Mac Accessories",
+        "walls": [
+          "W3"
+        ],
+        "products": [
+          {
+            "wall": "W3",
+            "brand": "Apple",
+            "product": "Keyboards (Primary: Mac Accessories)",
+            "capacity": 10
+          }
+        ],
+        "total_capacity": 10
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 2,
+      "iPad Accessories": 1,
+      "Mac Accessories": 1
+    }
+  },
+  "imagine- west fort palace thrissur": {
+    "original_name": "IMAGINE- WEST FORT PALACE THRISSUR",
+    "location": "IMAGINE @ THRISSUR",
+    "city": "Thrissur",
+    "total_walls": 2,
+    "wall_details": {
+      "Cases & Covers": {
+        "wall_count": 1,
+        "category": "Cases & Covers",
+        "walls": [
+          "W1"
+        ],
+        "products": [
+          {
+            "wall": "W1",
+            "brand": "Apple, Tekne, PanzerGlass",
+            "product": "iPhone Case (Primary: Cases & Covers)",
+            "capacity": 384
+          }
+        ],
+        "total_capacity": 384
+      },
+      "Watch Accessories": {
+        "wall_count": 1,
+        "category": "Watch Accessories",
+        "walls": [
+          "W2"
+        ],
+        "products": [
+          {
+            "wall": "W2",
+            "brand": "Apple, Tekne, Gripp",
+            "product": "Cables, Adaptors, Power Banks, Watch Bands (Primary: Watch Accessories)",
+            "capacity": 438
+          }
+        ],
+        "total_capacity": 438
+      }
+    },
+    "lob_summary": {
+      "Cases & Covers": 1,
+      "Watch Accessories": 1
+    }
+  }
+}

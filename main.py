@@ -699,19 +699,36 @@ def run_direct_category_optimization(loader, logger, category, store_type, strat
     from src.data_processing.data_transformer import DataTransformer
     from src.optimization.product_optimizer import ProductOptimizer
     
-    # Load products
-    try:
-        products = loader.load_products_by_category(category)
-    except:
-        products = loader.load_all_products()
-        from src.models.product import ProductCategory
-        cat_map = {
-            'cases': ProductCategory.CASE,
-            'cables': ProductCategory.CABLE,
-            'screen_protectors': ProductCategory.SCREEN_PROTECTOR
-        }
-        if category in cat_map:
-            products = [p for p in products if p.category == cat_map[category]]
+    # Load products - prioritize cases_sales.csv for cases category
+    if category == 'cases':
+        logger.info("Prioritizing cases_sales.csv data for cases category")
+        try:
+            # Try to load specifically from cases_sales.csv
+            products = loader.load_products_from_file('data/raw/accessories/cases_sales.csv')
+            logger.info(f"Successfully loaded {len(products)} products from cases_sales.csv")
+        except Exception as e:
+            logger.warning(f"Could not load from cases_sales.csv: {e}")
+            # Fall back to standard loading
+            try:
+                products = loader.load_products_by_category(category)
+            except:
+                products = loader.load_all_products()
+                from src.models.product import ProductCategory
+                products = [p for p in products if p.category == ProductCategory.CASE]
+    else:
+        # Standard loading for other categories
+        try:
+            products = loader.load_products_by_category(category)
+        except:
+            products = loader.load_all_products()
+            from src.models.product import ProductCategory
+            cat_map = {
+                'cases': ProductCategory.CASE,
+                'cables': ProductCategory.CABLE,
+                'screen_protectors': ProductCategory.SCREEN_PROTECTOR
+            }
+            if category in cat_map:
+                products = [p for p in products if p.category == cat_map[category]]
     
     if not products:
         raise ValueError(f"No products found for category {category}")

@@ -1,0 +1,264 @@
+Wall 1: Total products loaded: 594
+Wall 1: Apple products: 45
+Wall 1: TPA products: 511
+Wall 1: Other products: 38
+Wall 1: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 1: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 1: Wall series allocation: ['Base', 'Plus'] (length: 2)
+Wall 1: Checking series allocation - len(wall_series)=2, wall_series=['Base', 'Plus']
+Wall 1: Apple Base found: 9
+Wall 1: Apple Plus found: 9
+Wall 1: Sample Apple Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Apple Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: APPLE PRIORITY - Apple first in sorted lists
+Wall 1: Series 1 = 9 Apple + 0 TPA
+Wall 1: Series 2 = 9 Apple + 0 TPA
+Wall 1: Target series 1: Base, products: 9
+Wall 1: Target series 2: Plus, products: 9
+Wall 1: Sample Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: Total products loaded: 594
+Wall 1: Apple products: 45
+Wall 1: TPA products: 511
+Wall 1: Other products: 38
+Wall 1: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 1: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 1: Wall series allocation: ['Base', 'Plus'] (length: 2)
+Wall 1: Checking series allocation - len(wall_series)=2, wall_series=['Base', 'Plus']
+Wall 1: Apple Base found: 9
+Wall 1: Apple Plus found: 9
+Wall 1: Sample Apple Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Apple Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: APPLE PRIORITY - Apple first in sorted lists
+Wall 1: Series 1 = 9 Apple + 0 TPA
+Wall 1: Series 2 = 9 Apple + 0 TPA
+Wall 1: Target series 1: Base, products: 9
+Wall 1: Target series 2: Plus, products: 9
+Wall 1: Sample Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 2: Total products loaded: 594
+Wall 2: Apple products: 45
+Wall 2: TPA products: 511
+Wall 2: Other products: 38
+Wall 2: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 2: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 2: Wall series allocation: ['Pro', 'Pro Max'] (length: 2)
+Wall 2: Checking series allocation - len(wall_series)=2, wall_series=['Pro', 'Pro Max']
+Wall 2: Apple Pro found: 12
+Wall 2: Apple Pro Max found: 15
+Wall 2: Sample Apple Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Apple Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: APPLE PRIORITY - Apple first in sorted lists
+Wall 2: Series 1 = 12 Apple + 0 TPA
+Wall 2: Series 2 = 15 Apple + 0 TPA
+Wall 2: Target series 1: Pro, products: 12
+Wall 2: Target series 2: Pro Max, products: 15
+Wall 2: Sample Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: Total products loaded: 594
+Wall 2: Apple products: 45
+Wall 2: TPA products: 511
+Wall 2: Other products: 38
+Wall 2: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 2: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 2: Wall series allocation: ['Pro', 'Pro Max'] (length: 2)
+Wall 2: Checking series allocation - len(wall_series)=2, wall_series=['Pro', 'Pro Max']
+Wall 2: Apple Pro found: 12
+Wall 2: Apple Pro Max found: 15
+Wall 2: Sample Apple Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Apple Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: APPLE PRIORITY - Apple first in sorted lists
+Wall 2: Series 1 = 12 Apple + 0 TPA
+Wall 2: Series 2 = 15 Apple + 0 TPA
+Wall 2: Target series 1: Pro, products: 12
+Wall 2: Target series 2: Pro Max, products: 15
+Wall 2: Sample Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 3: Total products loaded: 594
+Wall 3: Apple products: 45
+Wall 3: TPA products: 511
+Wall 3: Other products: 38
+Wall 3: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 3: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 3: Wall series allocation: ['Base', 'Plus', 'Pro', 'Pro Max'] (length: 4)
+Wall 3: Checking series allocation - len(wall_series)=4, wall_series=['Base', 'Plus', 'Pro', 'Pro Max']
+Wall 3: Using 4-series mode: Base, Plus, Pro, Pro Max
+Wall 3: Apple Base found: 9
+Wall 3: Apple Plus found: 9
+Wall 3: Apple Pro found: 12
+Wall 3: Apple Pro Max found: 15
+Wall 3: TPA PRIORITY - TPA first in sorted lists (4 series)
+Wall 3: Series 1 (Base) = 9 TPA + 9 Apple
+Wall 3: Series 2 (Plus) = 9 TPA + 9 Apple
+Wall 3: Series 3 (Pro) = 6 TPA + 12 Apple
+Wall 3: Series 4 (Pro Max) = 3 TPA + 15 Apple
+Wall 3: Target series 1: Base, products: 18
+Wall 3: Target series 2: Plus, products: 18
+Wall 3: Target series 3: Pro, products: 18
+Wall 3: Target series 4: Pro Max, products: 18
+Wall 3: Sample Base: ['Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A']
+Wall 3: Sample Plus: ['Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ']
+Wall 3: Sample Pro: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: Sample Pro Max: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: 4-SERIES GRID FILLING - Base(0-1), Plus(2-3), Pro(4), Pro Max(5)
+Wall 3: 4-SERIES PLACEMENT COMPLETE - Base:6, Plus:6, Pro:3, Pro Max:3
+Wall 3: Total products loaded: 594
+Wall 3: Apple products: 45
+Wall 3: TPA products: 511
+Wall 3: Other products: 38
+Wall 3: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 3: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 3: Wall series allocation: ['Base', 'Plus', 'Pro', 'Pro Max'] (length: 4)
+Wall 3: Checking series allocation - len(wall_series)=4, wall_series=['Base', 'Plus', 'Pro', 'Pro Max']
+Wall 3: Using 4-series mode: Base, Plus, Pro, Pro Max
+Wall 3: Apple Base found: 9
+Wall 3: Apple Plus found: 9
+Wall 3: Apple Pro found: 12
+Wall 3: Apple Pro Max found: 15
+Wall 3: TPA PRIORITY - TPA first in sorted lists (4 series)
+Wall 3: Series 1 (Base) = 9 TPA + 9 Apple
+Wall 3: Series 2 (Plus) = 9 TPA + 9 Apple
+Wall 3: Series 3 (Pro) = 6 TPA + 12 Apple
+Wall 3: Series 4 (Pro Max) = 3 TPA + 15 Apple
+Wall 3: Target series 1: Base, products: 18
+Wall 3: Target series 2: Plus, products: 18
+Wall 3: Target series 3: Pro, products: 18
+Wall 3: Target series 4: Pro Max, products: 18
+Wall 3: Sample Base: ['Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A']
+Wall 3: Sample Plus: ['Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ']
+Wall 3: Sample Pro: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: Sample Pro Max: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: 4-SERIES GRID FILLING - Base(0-1), Plus(2-3), Pro(4), Pro Max(5)
+Wall 3: 4-SERIES PLACEMENT COMPLETE - Base:6, Plus:6, Pro:3, Pro Max:3
+Wall 1: Total products loaded: 594
+Wall 1: Apple products: 45
+Wall 1: TPA products: 511
+Wall 1: Other products: 38
+Wall 1: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 1: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 1: Wall series allocation: ['Base', 'Plus'] (length: 2)
+Wall 1: Checking series allocation - len(wall_series)=2, wall_series=['Base', 'Plus']
+Wall 1: Apple Base found: 9
+Wall 1: Apple Plus found: 9
+Wall 1: Sample Apple Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Apple Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: APPLE PRIORITY - Apple first in sorted lists
+Wall 1: Series 1 = 9 Apple + 0 TPA
+Wall 1: Series 2 = 9 Apple + 0 TPA
+Wall 1: Target series 1: Base, products: 9
+Wall 1: Target series 2: Plus, products: 9
+Wall 1: Sample Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: Total products loaded: 594
+Wall 1: Apple products: 45
+Wall 1: TPA products: 511
+Wall 1: Other products: 38
+Wall 1: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 1: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 1: Wall series allocation: ['Base', 'Plus'] (length: 2)
+Wall 1: Checking series allocation - len(wall_series)=2, wall_series=['Base', 'Plus']
+Wall 1: Apple Base found: 9
+Wall 1: Apple Plus found: 9
+Wall 1: Sample Apple Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Apple Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 1: APPLE PRIORITY - Apple first in sorted lists
+Wall 1: Series 1 = 9 Apple + 0 TPA
+Wall 1: Series 2 = 9 Apple + 0 TPA
+Wall 1: Target series 1: Base, products: 9
+Wall 1: Target series 2: Plus, products: 9
+Wall 1: Sample Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']
+Wall 1: Sample Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']
+Wall 2: Total products loaded: 594
+Wall 2: Apple products: 45
+Wall 2: TPA products: 511
+Wall 2: Other products: 38
+Wall 2: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 2: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 2: Wall series allocation: ['Pro', 'Pro Max'] (length: 2)
+Wall 2: Checking series allocation - len(wall_series)=2, wall_series=['Pro', 'Pro Max']
+Wall 2: Apple Pro found: 12
+Wall 2: Apple Pro Max found: 15
+Wall 2: Sample Apple Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Apple Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: APPLE PRIORITY - Apple first in sorted lists
+Wall 2: Series 1 = 12 Apple + 0 TPA
+Wall 2: Series 2 = 15 Apple + 0 TPA
+Wall 2: Target series 1: Pro, products: 12
+Wall 2: Target series 2: Pro Max, products: 15
+Wall 2: Sample Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: Total products loaded: 594
+Wall 2: Apple products: 45
+Wall 2: TPA products: 511
+Wall 2: Other products: 38
+Wall 2: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 2: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 2: Wall series allocation: ['Pro', 'Pro Max'] (length: 2)
+Wall 2: Checking series allocation - len(wall_series)=2, wall_series=['Pro', 'Pro Max']
+Wall 2: Apple Pro found: 12
+Wall 2: Apple Pro Max found: 15
+Wall 2: Sample Apple Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Apple Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 2: APPLE PRIORITY - Apple first in sorted lists
+Wall 2: Series 1 = 12 Apple + 0 TPA
+Wall 2: Series 2 = 15 Apple + 0 TPA
+Wall 2: Target series 1: Pro, products: 12
+Wall 2: Target series 2: Pro Max, products: 15
+Wall 2: Sample Pro: ['iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ', 'iPhone 16 Pro Clear Case with ']
+Wall 2: Sample Pro Max: ['iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w', 'iPhone 16 Pro Max Clear Case w']
+Wall 3: Total products loaded: 594
+Wall 3: Apple products: 45
+Wall 3: TPA products: 511
+Wall 3: Other products: 38
+Wall 3: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 3: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 3: Wall series allocation: ['Base', 'Plus', 'Pro', 'Pro Max'] (length: 4)
+Wall 3: Checking series allocation - len(wall_series)=4, wall_series=['Base', 'Plus', 'Pro', 'Pro Max']
+Wall 3: Using 4-series mode: Base, Plus, Pro, Pro Max
+Wall 3: Apple Base found: 9
+Wall 3: Apple Plus found: 9
+Wall 3: Apple Pro found: 12
+Wall 3: Apple Pro Max found: 15
+Wall 3: TPA PRIORITY - TPA first in sorted lists (4 series)
+Wall 3: Series 1 (Base) = 9 TPA + 9 Apple
+Wall 3: Series 2 (Plus) = 9 TPA + 9 Apple
+Wall 3: Series 3 (Pro) = 6 TPA + 12 Apple
+Wall 3: Series 4 (Pro Max) = 3 TPA + 15 Apple
+Wall 3: Target series 1: Base, products: 18
+Wall 3: Target series 2: Plus, products: 18
+Wall 3: Target series 3: Pro, products: 18
+Wall 3: Target series 4: Pro Max, products: 18
+Wall 3: Sample Base: ['Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A']
+Wall 3: Sample Plus: ['Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ']
+Wall 3: Sample Pro: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: Sample Pro Max: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: 4-SERIES GRID FILLING - Base(0-1), Plus(2-3), Pro(4), Pro Max(5)
+Wall 3: 4-SERIES PLACEMENT COMPLETE - Base:6, Plus:6, Pro:3, Pro Max:3
+Wall 3: Total products loaded: 594
+Wall 3: Apple products: 45
+Wall 3: TPA products: 511
+Wall 3: Other products: 38
+Wall 3: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}
+Wall 3: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}
+Wall 3: Wall series allocation: ['Base', 'Plus', 'Pro', 'Pro Max'] (length: 4)
+Wall 3: Checking series allocation - len(wall_series)=4, wall_series=['Base', 'Plus', 'Pro', 'Pro Max']
+Wall 3: Using 4-series mode: Base, Plus, Pro, Pro Max
+Wall 3: Apple Base found: 9
+Wall 3: Apple Plus found: 9
+Wall 3: Apple Pro found: 12
+Wall 3: Apple Pro Max found: 15
+Wall 3: TPA PRIORITY - TPA first in sorted lists (4 series)
+Wall 3: Series 1 (Base) = 9 TPA + 9 Apple
+Wall 3: Series 2 (Plus) = 9 TPA + 9 Apple
+Wall 3: Series 3 (Pro) = 6 TPA + 12 Apple
+Wall 3: Series 4 (Pro Max) = 3 TPA + 15 Apple
+Wall 3: Target series 1: Base, products: 18
+Wall 3: Target series 2: Plus, products: 18
+Wall 3: Target series 3: Pro, products: 18
+Wall 3: Target series 4: Pro Max, products: 18
+Wall 3: Sample Base: ['Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A', 'Gripp Clear MagSafe Case for A']
+Wall 3: Sample Plus: ['Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ', 'Pulse CRYSTAL Case with Metal ']
+Wall 3: Sample Pro: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: Sample Pro Max: ['Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec', 'Gripp FOCAL Camera Lens Protec']
+Wall 3: 4-SERIES GRID FILLING - Base(0-1), Plus(2-3), Pro(4), Pro Max(5)
+Wall 3: 4-SERIES PLACEMENT COMPLETE - Base:6, Plus:6, Pro:3, Pro Max:3

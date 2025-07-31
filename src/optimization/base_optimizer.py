@@ -28,6 +28,7 @@ class OptimizationResult:
     metrics: Dict[str, float]
     warnings: List[str] = field(default_factory=list)
     optimization_time: float = 0.0
+    metadata: Optional[Dict[str, Any]] = field(default_factory=dict)
     
     def get_summary(self) -> Dict[str, Any]:
         """Get optimization summary"""

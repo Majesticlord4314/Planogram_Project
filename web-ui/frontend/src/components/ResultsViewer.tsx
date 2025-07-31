@@ -29,7 +29,7 @@ import {
     Warning as WarningIcon
 } from '@mui/icons-material';
 
-import { apiService } from '../services/api';
+import { apiService, getFullApiUrl } from '../services/api';
 
 interface ResultsViewerProps {
     open: boolean;
@@ -83,7 +83,7 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
             }
 
             // Fetch associated files
-            const filesResponse = await fetch(`http://localhost:5000/api/results/${jobId}/files`);
+            const filesResponse = await fetch(getFullApiUrl(`/api/results/${jobId}/files`));
             if (filesResponse.ok) {
                 const filesData = await filesResponse.json();
                 if (filesData.success && filesData.data) {
@@ -94,15 +94,15 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
                     // Set the first planogram as default
                     const allPlanograms = filesData.data.planograms || [];
                     if (allPlanograms.length > 0) {
-                        setPlanogramImage(`http://localhost:5000${allPlanograms[0].url}`);
+                        setPlanogramImage(getFullApiUrl(allPlanograms[0].url));
                         setSelectedPlanogramIndex(0);
                     } else {
                         // Fallback to old behavior for backward compatibility
                         const imageFile = filesData.data.files?.find((f: any) =>
-                            f.type === 'planogram' && f.name.toLowerCase().includes('.png')
+                            f.type === 'planogram_image' && f.filename.toLowerCase().includes('.png')
                         );
                         if (imageFile) {
-                            setPlanogramImage(`http://localhost:5000${imageFile.url}`);
+                            setPlanogramImage(getFullApiUrl(imageFile.url));
                         }
                     }
                 }
@@ -284,7 +284,7 @@ const ResultsViewer: React.FC<ResultsViewerProps> = ({ open, jobId, onClose }) =
                                             value={selectedPlanogramIndex}
                                             onChange={(_, newValue) => {
                                                 setSelectedPlanogramIndex(newValue);
-                                                setPlanogramImage(`http://localhost:5000${planograms[newValue].url}`);
+                                                setPlanogramImage(getFullApiUrl(planograms[newValue].url));
                                             }}
                                             variant="scrollable"
                                             scrollButtons="auto"

@@ -1,0 +1,487 @@
+{
+    "ecc8d83e-621a-4316-ba5c-ca000e30c0b2": {
+        "job_id": "ecc8d83e-621a-4316-ba5c-ca000e30c0b2",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'"
+        ],
+        "result": null,
+        "error": "Failed to run store planogram generation: Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'",
+        "created_at": "2025-07-23T17:52:22.941155",
+        "started_at": "2025-07-23T17:52:22.944173",
+        "completed_at": "2025-07-23T17:52:23.546658",
+        "start_time": "2025-07-23T17:52:22.944177"
+    },
+    "140bdc91-cf52-4fac-81c6-ba5d41c0bd7e": {
+        "job_id": "140bdc91-cf52-4fac-81c6-ba5d41c0bd7e",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'"
+        ],
+        "result": null,
+        "error": "Failed to run store planogram generation: Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'",
+        "created_at": "2025-07-23T17:52:29.973860",
+        "started_at": "2025-07-23T17:52:29.975215",
+        "completed_at": "2025-07-23T17:52:29.978209",
+        "start_time": "2025-07-23T17:52:29.975216"
+    },
+    "30f41b4f-b710-491e-ac6e-7705c8465ccc": {
+        "job_id": "30f41b4f-b710-491e-ac6e-7705c8465ccc",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'"
+        ],
+        "result": null,
+        "error": "Failed to run store planogram generation: Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'",
+        "created_at": "2025-07-23T17:53:01.790329",
+        "started_at": "2025-07-23T17:53:01.792709",
+        "completed_at": "2025-07-23T17:53:01.803138",
+        "start_time": "2025-07-23T17:53:01.792712"
+    },
+    "c8a3c304-aaca-4b61-92ec-be45330c2315": {
+        "job_id": "c8a3c304-aaca-4b61-92ec-be45330c2315",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [],
+        "result": null,
+        "error": "Server restarted during execution.",
+        "created_at": "2025-07-23T17:55:13.663143",
+        "started_at": "2025-07-23T17:55:13.666988",
+        "completed_at": null,
+        "start_time": "2025-07-23T17:55:13.666991"
+    },
+    "1cd153c1-1fe0-4dc1-a81b-59c70662004d": {
+        "job_id": "1cd153c1-1fe0-4dc1-a81b-59c70662004d",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [],
+        "result": null,
+        "error": "Server restarted during execution.",
+        "created_at": "2025-07-23T17:55:31.602764",
+        "started_at": "2025-07-23T17:55:31.604339",
+        "completed_at": null,
+        "start_time": "2025-07-23T17:55:31.604341"
+    },
+    "18f779d2-6f5c-41f2-ac46-34adf2f32569": {
+        "job_id": "18f779d2-6f5c-41f2-ac46-34adf2f32569",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "failed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases"
+        ],
+        "result": null,
+        "error": "Server restarted during execution.",
+        "created_at": "2025-07-23T17:58:50.345389",
+        "started_at": "2025-07-23T17:58:50.347350",
+        "completed_at": null,
+        "start_time": "2025-07-23T17:58:50.347353"
+    },
+    "db8ead2a-a426-49d6-8e2a-302ec837e93b": {
+        "job_id": "db8ead2a-a426-49d6-8e2a-302ec837e93b",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-23T18:00:28.487257",
+        "started_at": "2025-07-23T18:00:28.489508",
+        "completed_at": "2025-07-23T18:00:30.809173",
+        "start_time": "2025-07-23T18:00:28.489510"
+    },
+    "9ec4571e-4fe5-4427-bfa9-e470b7d9f4a1": {
+        "job_id": "9ec4571e-4fe5-4427-bfa9-e470b7d9f4a1",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-23T18:02:20.585848",
+        "started_at": "2025-07-23T18:02:20.588638",
+        "completed_at": "2025-07-23T18:02:25.006713",
+        "start_time": "2025-07-23T18:02:20.588641"
+    },
+    "02168e0a-74c2-4907-8cb9-9370400e9378": {
+        "job_id": "02168e0a-74c2-4907-8cb9-9370400e9378",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KNS TOWERS TUMKUR",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KNS TOWERS TUMKUR",
+            "Selected accessories: cases",
+            "Starting optimization for cases"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KNS TOWERS TUMKUR",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-24T00:20:43.096993",
+        "started_at": "2025-07-24T00:20:43.100991",
+        "completed_at": "2025-07-24T00:20:45.475762",
+        "start_time": "2025-07-24T00:20:43.100995"
+    },
+    "9f3fd409-0300-407d-94c6-0b74237e20cd": {
+        "job_id": "9f3fd409-0300-407d-94c6-0b74237e20cd",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Failed to load iPhone LOB: 'DataLoader' object has no attribute 'load_products_by_lob', trying all products...",
+            "Loaded 1125 total products",
+            "Loaded 0 case products",
+            "No case products found, creating mock products for testing...",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Created 0 mock case products"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-24T00:22:47.079619",
+        "started_at": "2025-07-24T00:22:47.084532",
+        "completed_at": "2025-07-24T00:22:53.451258",
+        "start_time": "2025-07-24T00:22:47.084537"
+    },
+    "780510cf-2acb-4eaa-915e-3083ee53082c": {
+        "job_id": "780510cf-2acb-4eaa-915e-3083ee53082c",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Failed to load iPhone LOB: 'DataLoader' object has no attribute 'load_products_by_lob', trying all products...",
+            "Loaded 1125 total products",
+            "Loaded 0 case products",
+            "No case products found, creating mock products for testing...",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Created 0 mock case products"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-24T00:24:11.625292",
+        "started_at": "2025-07-24T00:24:11.628191",
+        "completed_at": "2025-07-24T00:24:16.076979",
+        "start_time": "2025-07-24T00:24:11.628194"
+    },
+    "500e3ce0-d356-4d22-a34d-dfeb135bd5eb": {
+        "job_id": "500e3ce0-d356-4d22-a34d-dfeb135bd5eb",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Failed to load iPhone LOB: 'DataLoader' object has no attribute 'load_products_by_lob', trying all products...",
+            "Loaded 1125 total products",
+            "Loaded 0 case products",
+            "No case products found, creating mock products for testing...",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Created 0 mock case products"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-24T00:26:45.494897",
+        "started_at": "2025-07-24T00:26:45.498713",
+        "completed_at": "2025-07-24T00:26:51.980168",
+        "start_time": "2025-07-24T00:26:45.498716"
+    },
+    "0967b1f0-73d7-4fb2-9816-0ae90b1f37fe": {
+        "job_id": "0967b1f0-73d7-4fb2-9816-0ae90b1f37fe",
+        "job_type": "store_planogram",
+        "parameters": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "accessory",
+            "selected_products": [
+                "cases"
+            ]
+        },
+        "status": "completed",
+        "progress": 0,
+        "logs": [
+            "Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU",
+            "Selected accessories: cases",
+            "Starting optimization for cases",
+            "Loaded 1125 total products for case filtering",
+            "Loaded 0 case products",
+            "No case products found, creating mock products for testing...",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Error creating mock product: Product.__init__() got an unexpected keyword argument 'total_qty'",
+            "Created 0 mock case products"
+        ],
+        "result": {
+            "store_name": "IMAGINE- KORAMANGALA BENGALURU",
+            "optimization_type": "smart_accessory",
+            "generated_files": [],
+            "optimization_results": [
+                "cases: Generated 3 planograms"
+            ],
+            "total_accessories": 1,
+            "message": "Accessory optimization completed successfully"
+        },
+        "error": null,
+        "created_at": "2025-07-24T00:30:01.208940",
+        "started_at": "2025-07-24T00:30:01.216479",
+        "completed_at": "2025-07-24T00:30:08.705659",
+        "start_time": "2025-07-24T00:30:01.216483"
+    }
+}

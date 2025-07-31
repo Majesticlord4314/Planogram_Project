@@ -1,0 +1,3988 @@
+{
+  "metadata": {
+    "total_products": 493,
+    "generated_at": "2025-07-28T15:36:37.456465",
+    "source_files": [
+      "cases_sales.csv",
+      "combined_watch.csv",
+      "ipad-cases-transformed.csv",
+      "mac-accessories-transformed.csv"
+    ]
+  },
+  "products": [
+    {
+      "product_name": "iPhone 16 Clear Case with MagSafe",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Black",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Denim",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Fuchsia",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Lake Green",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Plum",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Star Fruit",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Stone Gray",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Silicone Case with MagSafe - Ultramarine",
+      "brand": "Apple",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Clear Case with MagSafe",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Black",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Denim",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Fuchsia",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Lake Green",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Plum",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Star Fruit",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Stone Gray",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Ultramarine",
+      "brand": "Apple",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Clear Case with MagSafe",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Black",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Denim",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Fuchsia",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Lake Green",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Plum",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Star Fruit",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Stone Gray",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Ultramarine",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Clear Case with MagSafe",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Black",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Denim",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Fuchsia",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Lake Green",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Plum",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Star Fruit",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Stone Gray",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Ultramarine",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15",
+      "brand": "Flayrr",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15 Plus",
+      "brand": "Flayrr",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15 Pro Max",
+      "brand": "Flayrr",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Diamond Blue",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Silver",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1(Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 15 PRO Max  6.7    Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16  6.1   - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Robocare iPhone 16 TEMPERED GLASS 3D Dust Prevention edge to edge Glass",
+      "brand": "Robocare",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Plus  6.7   - Black",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  -  Black",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Blue",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Green",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Pink",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Silver",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 Plus  6.7   - Clear",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Robocare iPhone 16 Plus TEMPERED GLASS 3D Dust Prevention edge to edge Glass",
+      "brand": "Robocare",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro  6.3   - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 PRO  6.3   - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Robocare iPhone 16 Pro TEMPERED GLASS 3D Dust Prevention edge to edge Glass",
+      "brand": "Robocare",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 Pro Max  6.9   - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Robocare iPhone 16 Pro Max TEMPERED GLASS 3D Dust Prevention edge to edge Glass",
+      "brand": "Robocare",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Case For iPhone 15- 81016- Clear",
+      "brand": "AT Minimal",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Magsafe Case For iPhone 15 -81054 -Clear",
+      "brand": "AT Minimal",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Case for Apple iPhone 15(6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Magsafe Case for Apple iPhone 15(6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt MagSafe Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt MagSafe Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 Max  6.7    Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 15 (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 (6.1) with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 Max (6.7) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Magsafe Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Magsafe Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Max- Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15- Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE FROST Case for Apple iPhone 15 (6.1) - Clear Frost",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE FROST MagSafe Case for Apple iPhone 15 (6.1) with White Ring - Clear Frost",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE FROST MagSafe Case for Apple iPhone 15 Max (6.7) with White Ring - Clear Frost",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO Case for Apple iPhone 15 (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO Case for Apple iPhone 15 Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO MagSafe Case for Apple iPhone 15 (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO MagSafe Case for Apple iPhone 15 Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO XTREME Magsafe Case for Apple iPhone 15 (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO XTREME Magsafe Case for Apple iPhone 15 (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Raigor Magsafe case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 (6.1) - Grey",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 (6.1) - Sierra Blue",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple  iPhone 15 Max  6.7  - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple  iPhone 15 Max  6.7  - Blue",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple  iPhone 15 Max  6.7  - Transparent",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Vintage Magsafe Case for Apple iPhone 15 (6.1) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Vintage Magsafe Case for Apple iPhone 15 Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 - 6.1",
+      "brand": "Hyphen",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO Drop Case - iPhone 15 - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN LUCD MagSafe Case - iPhone 15 - 6.1",
+      "brand": "Hyphen",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Armor Magsafe case for iPhone 15 Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Clear Magsafe Case for iPhone 15-Clear",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse FROSTED Case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse HORNOR Case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse HORNOR Case for iPhone 15-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse LIQUID silicon case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse LIQUID silicon case for iPhone 15-Storm Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15-Grey",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Super crystal magsafe case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Super crystal magsafe case for iPhone 15-Clear",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse TANK Gradient Magsafe case for iPhone 15-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse THOR Leather case for iPhone 15-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse THOR Leather case for iPhone 15-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Tire magsafe case for iPhone 15 Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Case For iPhone 15 plus- 81023- Clear",
+      "brand": "AT Minimal",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Magsafe Case For iPhone 15 Plus-81061-Clear",
+      "brand": "AT Minimal",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Plus - 6.7",
+      "brand": "Hyphen",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Plus - 6.7 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO Drop Case - iPhone 15 Plus - 6.7 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN LUCD Magsafe Case Case - iPhone 15 Plus - 6.7",
+      "brand": "Hyphen",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "nmaxn IPhone 15 Plus Case 750 Series Navy Blue  Handmade   Fully Covered   Nature Pattern AP 15PL 7503",
+      "brand": "nmaxn",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "nmaxn iPhone 15 Plus Case 750 Series Capsicum Red/ Handmade - Fully Covered / Nature Pattern  AP-15PL-7504",
+      "brand": "nmaxn",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Magsafe Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt Case for Apple iPhone 15 Pro  6.1  - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt MagSafe Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 15 Pro (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Pro (6.1) with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 Pro (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 Pro (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 Pro (6.1) - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Magsafe Case for Apple iPhone 15 Pro  6.1  - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE frost Case for Apple iPhone 15 Pro (6.1) - Clear Frost",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE frost MagSafe Case for Apple iPhone 15 Pro (6.1) with White Ring - Clear Frost",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO Case for Apple iPhone 15 Pro (6.1) - Smoke",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Grey",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Sierra Blue",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Vintage Magsafe Case for Apple iPhone 15 Pro (6.1) - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Pro - 6.1",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO Drop Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN LUCD Magsafe Case Case - iPhone 15 Pro - 6.1",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN NOCT MagSafe Frame Case - Black - iPhone 15 Pro - 6.1",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN NOCT MagSafe Frame Case - Titanium Grey - iPhone 15 Pro - 6.1",
+      "brand": "Hyphen",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Black",
+      "brand": "Pulse",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Black",
+      "brand": "Pulse",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "nmaxn IPhone 15 Pro Case 750 Series Capsicum Red/ Handmade - Fully Covered / Nature Pattern AP-15PR-7504",
+      "brand": "nmaxn",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "nmaxn iPhone 15 Pro Case 750 Series Brown  Handmade   Fully Covered   Nature Pattern AP 15PR 7502",
+      "brand": "nmaxn",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Magsafe Case For iPhone 15 Pro Max-81085-Clear",
+      "brand": "AT Minimal",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Magsafe Case For iPhone 15 Pro Max-81108-Gray",
+      "brand": "AT Minimal",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Minimal Magsafe Case For iPhone 15 Pro Max-81122-Blue",
+      "brand": "AT Minimal",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Titan Pro Magsafe Case For iPhone 15 Pro Max-81269-Clear",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Alpine Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Bolt MagSafe Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 15 Pro Max (6.7) - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Pro Max (6.7) with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 Pro Max (6.7) - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Case for Apple iPhone 15 Pro Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defender Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max(6.7) - Camel",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max(6.7) - Grey",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max- Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max- Blue",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max- Brown",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE frost Case for Apple iPhone 15 Pro Max (6.7) - Clear Frost",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp ICE frost MagSafe Case for Apple iPhone 15 Pro Max (6.7) with White Ring - Clear Frost",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO Case for Apple iPhone 15 Pro Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO MagSafe Case for Apple iPhone 15 Pro Max (6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO XTREME Magsafe Case for Apple iPhone 15 Pro Max(6.7) - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp NEO XTREME Magsafe Case for Apple iPhone 15 Pro Max(6.7) - Smoke",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Raigor Magsafe case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Raigor Magsafe case for Apple iPhone 15 Pro Max (6.7) - Blue",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Raigor Magsafe case for Apple iPhone 15 Pro Max (6.7) - Red",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Grey",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rubon Magsafe Case for Apple iPhone 15 Pro Max (6.7) - Sierra Blue",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Pro Max - 6.7",
+      "brand": "Hyphen",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO Drop Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case",
+      "brand": "Hyphen",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "HYPHEN LUCD Magsafe Case Case - iPhone 15 Pro Max - 6.7",
+      "brand": "Hyphen",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Max Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Clear Magsafe Case for iPhone 15 Pro Max-Clear",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse FROSTED Case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse HORNOR Case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse HORNOR Case for iPhone 15 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse LIQUID silicon case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse LIQUID silicon case for iPhone 15 Pro Max-Storm Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Grey",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Super crystal magsafe case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Super crystal magsafe case for iPhone 15 Pro Max-Clear",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse TANK Gradient Magsafe case for iPhone 15 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse THOR Leather case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse THOR Leather case for iPhone 15 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse TPU TPE PC shockproof case for iPhone 15 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse TPU TPE PC shockproof case for iPhone 15 Pro Max-Light Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Max Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 16  6.1  - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16  6.1  with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dusk Magsafe Case for Apple iPhone 16  6.1  - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16  6.1  - Gunmetal",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16  6.1  - Natural Titanium",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16  6.1  - Grey",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16  6.1  - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16  6.1  - Black Matte",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16  6.1  - Blue Matte",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16  6.1  - Green Matte",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16  6.1  - Transparent",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16  6.1  - Black",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16  6.1  - Blue",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16  6.1  - Green",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16  6.1  - White",
+      "brand": "Gripp",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16-Dark Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16-Matt Clear",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Green",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Grey Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16-Grey",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Dark Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Grey",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-White",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-Grey",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16-Storm Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16-Black",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16-Blue",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16-Brown",
+      "brand": "Pulse",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-Black",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-Grey",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-White",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16-Black",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16-Blue",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16-Grey",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne SILICON Case for iPhone 16-Black",
+      "brand": "Tekne",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG- Plasma  XTE  MagSafe Case for iphone 16-15086- Black/Ornage",
+      "brand": "UAG",
+      "series": "base",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 16 Plus  6.7  - Clear",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Plus  6.7  with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dusk MagSafe Case for Apple iPhone 16 Plus  6.7  - Black",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Plus  6.7  - Gunmetal",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Plus  6.7  - Natural Titanium",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16 Plus  6.7  - Grey",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Plus  6.7  - Black",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Black Matte",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Blue Matte",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Green Matte",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Transparent",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Plus  6.7  - Black",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Plus  6.7  - Blue",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Plus  6.7  - Green",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Plus  6.7  - White",
+      "brand": "Gripp",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Dark Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Matt Clear",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Green",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Grey Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Grey",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Dark Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Grey",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-White",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-Grey",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16 Plus-Storm Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Black",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Blue",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Brown",
+      "brand": "Pulse",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne ARMOUR Case for iPhone 16 Plus-Matt Clear",
+      "brand": "Tekne",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Plus-Grey",
+      "brand": "Tekne",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Plus-White",
+      "brand": "Tekne",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Black",
+      "brand": "Tekne",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Grey",
+      "brand": "Tekne",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG- Metropolis LT Magsafe Case for iphone 16 Plus- 14348-Kevlar Black",
+      "brand": "UAG",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Plasma XTE Magsafe Case for iphone 16 Plus- 14997-Black/Orange",
+      "brand": "UAG",
+      "series": "plus",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 16 Pro  6.3  - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Pro  6.3  with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dusk MagSafe Case for Apple iPhone 16 Pro  6.3  - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Gunmetal",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Natural Titanium",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Rose Gold",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16 Pro  6.3  - Grey",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16 Pro  6.3  - R.Gold",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro  6.3  - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Black Matte",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold Matte",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Transparent",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Pro  6.3  - Black",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Pro  6.3  - Grey",
+      "brand": "Gripp",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro - Black",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro - Tan",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro - Charcoal",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Loop Case - iPhone 16 Pro - Charcoal",
+      "brand": "Apple",
+      "series": "pro",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear Case for Apple iPhone 16 Pro Max  6.9  - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Pro Max  6.9  with White Ring - Clear",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Dusk MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Gunmetal",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Natural Titanium",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Rose Gold",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Grey",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Holdit MagSafe Case for Apple iPhone 16 Pro Max  6.9  - R.Gold",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Gold",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Black Matte",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Gold Matte",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Transparent",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Pro Max  6.9  - Black",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Pro Max  6.9  - Grey",
+      "brand": "Gripp",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max -Matt Clear",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max-Dark Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max -Matt Grey Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max-Matt Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max-Matt Green",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max -Grey",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro Max - Black",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro Max - Tan",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Charcoal",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Eclipse",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Sage",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Peak Design Mobile - Everyday Loop Case - iPhone 16 Pro Max - Charcoal",
+      "brand": "Apple",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Dark Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Grey",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-White",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-Grey",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse SILICON Case for iPhone 16 Pro Max-Storm Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max -Brown",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max-Black",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max-Blue",
+      "brand": "Pulse",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black",
+      "brand": "Tekne",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Grey",
+      "brand": "Tekne",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White",
+      "brand": "Tekne",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black",
+      "brand": "Tekne",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Civilian  Magsafe Case For Iphone 16 Pro Max-14140-Black",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Pathfinder  Magsafe Case For Iphone 16 Pro Max-14744-Ice",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Pathfinder Magsafe Case For Iphone 16 Pro Max-14751-Active Neon",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Pathfinder Magsafe Case For Iphone 16 Pro Max-14867-Silver",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Pathfinder Magsafe Case For Iphone 16 Pro Max-14874-Black",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Pathfinder Magsafe Case For Iphone 16 Pro Max-14898-Cloud Blue",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Plasma XTE Magsafe Case For Iphone 16 Pro Max-15048-Ash/Titanium",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "UAG-Plasma XTE Magsafe Case For Iphone 16 Pro Max-15055-Black/Clear",
+      "brand": "UAG",
+      "series": "pro_max",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Apple MGNK2ZM/A White iPad mini 6 Smart Cover",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Apple Smart Cover for iPad (8th generation) - Electric Orange",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Apple iPad mini Smart Cover - Yellow",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Armor Case for Apple iPad 10.2 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Armor Case for Apple iPad Air 10.9 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Armor Case for Apple iPad Air 11  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Armor Case for Apple iPad Pro 11 (2021) - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Armor Case for Apple iPad Pro 12.9 2020 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Element Case for Apple iPad Air 11  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp IPad 11 Case Combo Pack (Gripp 11 Rhino Case + Gripp 11 Tempered Glass + Gripp IPad Stand)",
+      "brand": "Gripp",
+      "series": "screen_protector",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad 10.9 (10th Generation) 2022 - Grey/Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad 10.9 10th Generation  2022   Yellow",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Air 11  2024    Grey Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Air 13  2024    Grey Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 11  2024    Grey Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 11 2022 - Dark Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 11 2022 - Grey/Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 11 2022 - Sky Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 11 2022 - Yellow",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Melon Case for Apple iPad Pro 13  2024    Grey Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Mingo Case for Apple iPad 10.2 - Rainbow Pink",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Mingo Case for Apple iPad 10.2- Rainbow Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad 10.2 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad 10.2 - Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad 10.2 - Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad 10.9 (10th Generation) 2022 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad Air 10.9 - Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad Air 10.9 - SKY Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad Air Air 10.9 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad Pro 11 2021 -Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Rhino Case for Apple iPad Pro 12.9 2020 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Air 10.9 Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Air 10.9 Sky Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Air 11  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Air 11  2024    Lavender",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp STYLEUS Case for Apple iPad Pro 11 2021 - Sky Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Terra Case for Apple iPad 10.2 - Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Terra Case for Apple iPad Pro 11/iPad Air 10.9 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Terra Case for Apple iPad Pro 11/iPad Air 10.9 - Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad 10.9 (10th Generation) 2022 - Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Air 10.9 2022 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Air 11  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Air 11  2024    Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Air 13  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Pro 11  2022   Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Pro 11  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Pro 11 2022 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Pro 12.9 2022   Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Ultra Case for Apple iPad Pro 13  2024    Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Inspire-B02 iPad Folio Tri-Cover 10.9 - 11 inch",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Inspire-B02 iPad Pro Tri-Mode Case 11 inch",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Inspire-B02 iPad Pro Tri-Mode Case 12.9 inch",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Inspire-B02 iPad Tri-Case 10.2 inch",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Inspire-B02 iPad Tri-Case 10.9 inch",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Logitech Combo touch backlit keyboard case with trackpad 11 - NEW",
+      "brand": "Logitech",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Logitech Combo touch backlit keyboard case with trackpad 12.9",
+      "brand": "Logitech",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Logitech Combo touch backlit keyboard case with trackpad 12.9 - NEW",
+      "brand": "Logitech",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "MT-IPAD PRO 11(2021) CASE-PRD-06094-BLACK",
+      "brand": "Muvtech",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "STM Studio Case (iPad 9th/8th/7th gen) black",
+      "brand": "STM",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "STM Studio Case (iPad 9th/8th/7th gen) blue",
+      "brand": "STM",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "STM Studio Case (iPad 9th/8th/7th gen) grey",
+      "brand": "STM",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Smart Cover for 10.5-inch iPad Pro - Midnight Blue",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Smart Cover for iPad (8th generation) - Cyprus Green",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Smart Cover for iPad (8th generation) - Deep Navy",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Smart Cover for iPad (9th generation) - English Lavender",
+      "brand": "Apple",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tucano Metal Ipad Case for Ipad Pro 11 ( 2020) - Space Grey",
+      "brand": "Tucano",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tucano SOLID CASE IPAD 2020 11 BLACK",
+      "brand": "Tucano",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Tucano UP PLUS CASE IPAD 2020 11 BLACK",
+      "brand": "Tucano",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Hard Shell Case 11 Black",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Hard Shell Case 11 Cactus Green",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Hard Shell Case 11 Grey",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Tablet Case 11 Black",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Tablet Case 11 Grey",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Tablet Case 11 Mixed Orange",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "tomtoc Tablet Case 12.9 Mixed Orange",
+      "brand": "tomtoc",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Marsix Case For Macbook Air 15.3-82679-Black",
+      "brand": "AmazingThing",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "AT Marsix Pro Case For Macbook Pro 13 -77569 -Black",
+      "brand": "AmazingThing",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Belkin-6-OUTLET SURGE PROTECTOR  2 METER CORD",
+      "brand": "Belkin",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13 M1 2020 & Retina 2020 - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13 M1 2020 & Retina 2020 - Frost",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13 M1 2020 & Retina 2020 - Navy Blue",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13 M1 2020 & Retina 2020 - Smoke",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Black",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Frost",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Compaq Macbook Air Hardshel case 13.6 (M2 2022) - Smoke",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defence Macbook Air 13 Hardshel case (M1 2020 & Retina 2020) - Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defence Macbook Air 13.6 Hardshel case (M2 2022) - Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Gripp Defence Macbook Pro 13 Hardshel Case (M2 - 2022 & M1 - 2021 ) - Grey",
+      "brand": "Gripp",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "NATIVE UNION  STOW MACBOOK CASE FABRIC INDIGO 13",
+      "brand": "Native Union",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "NATIVE UNION STOW MACBOOK CASE FABRIC SLATE 13",
+      "brand": "Native Union",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 5120 black Laptop bag 13.3 / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 5123 black MacBook 13 sleeve / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 5123 blue MacBook 13 sleeve / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 5123 red MacBook 13 sleeve / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 7703 black ECO Laptop sleeve 13.3 / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 7703 blue ECO Laptop sleeve 13.3 / 12",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 8221 black Laptop bag 13 3 / 6",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 8231 Black Laptop bag 15 6 / 6",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 8630 black Laptop bag 15 6 / 6",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 8720 grey Laptop bag 13.3 / 6",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "RIVACASE 8730 grey Laptop bag 15 6 / 6",
+      "brand": "Rivacase",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    },
+    {
+      "product_name": "Raopro  isheild Hard Shell Case For Macbook 16.2 56821  Clear",
+      "brand": "Raopro",
+      "series": "other",
+      "category": "case",
+      "price": 0,
+      "sku": null
+    }
+  ],
+  "series_breakdown": {
+    "base": 124,
+    "plus": 69,
+    "pro": 60,
+    "pro_max": 134,
+    "other": 105,
+    "screen_protector": 1
+  },
+  "brand_breakdown": {
+    "Apple": 54,
+    "Flayrr": 3,
+    "Gripp": 235,
+    "Robocare": 4,
+    "AT Minimal": 7,
+    "Hyphen": 21,
+    "Pulse": 99,
+    "nmaxn": 4,
+    "Tekne": 16,
+    "UAG": 11,
+    "tomtoc": 12,
+    "Logitech": 3,
+    "Muvtech": 1,
+    "STM": 3,
+    "Tucano": 3,
+    "AmazingThing": 2,
+    "Belkin": 1,
+    "Native Union": 2,
+    "Rivacase": 11,
+    "Raopro": 1
+  }
+}

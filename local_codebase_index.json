@@ -1,0 +1,958 @@
+{
+  "created_at": "2025-07-31T12:27:21.406755",
+  "total_files": 111,
+  "files": [
+    {
+      "path": "create_local_index.py",
+      "name": "create_local_index.py",
+      "extension": ".py",
+      "size_bytes": 5486,
+      "modified": "2025-07-31T12:27:13.197529",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nCreate a local searchable index of the codebase\n\"\"\"\nimport os\nimport json\nfrom pathlib import Path\nfrom datetime import datetime\n\ndef should_ignore_file(file_path, ignore_patterns):\n    \"\"\"Check if file should be ignored based on patterns\"\"\"\n    file_str = str(file_path)\n    for pattern in ignore_patterns:\n        if pattern in file_str or file_str.endswith(pattern):\n            return True\n    return False\n\ndef create_codebase_index():\n    \"\"\"Create a local index of the codebase\"\"\"\n    \n    # Define file extensions to index\n    code_extensions = {'.py', '.js', '.ts', '.tsx', '.jsx', '.html', '.css', '.json', '.md', '.txt', '.yml', '.yaml'}\n    \n    # Define ignore patterns\n    ignore_patterns = [\n        '__pycache__',\n        'node_modules',\n        '.git',\n        'myenv',\n        'venv',\n        '.vscode',\n        '.idea',\n        'output',\n        'logs',\n        '.egg-info',\n        'dist',\n        'build'\n    ]\n    \n    index = {\n        'created_at': "
+    },
+    {
+      "path": "FINAL_RECOMMENDATIONS.md",
+      "name": "FINAL_RECOMMENDATIONS.md",
+      "extension": ".md",
+      "size_bytes": 4690,
+      "modified": "2025-07-24T16:15:28.620998",
+      "content_preview": "# 🎯 FINAL WALL COUNT RECOMMENDATIONS\n\n## ✅ **ISSUE RESOLVED**\n\nBased on comprehensive analysis of 45 stores and detailed examination of wall overlap patterns, here are the **final recommendations** for the frontend:\n\n## 🔧 **IMPLEMENTED FIXES**\n\n### 1. **Correct Wall Count Logic**\n- **Use MAX(wall_numbers) as total wall count** ✅\n- For KORAMANGALA: W15 exists → **15 total walls** (not 11 or 10)\n- This accounts for missing intermediate walls (W3, W4, W10, W13 missing = still 15 total)\n\n### 2. **Wall Overlap Handling** \n- **Compatible overlaps (KEEP)**: Cases + Screen Protectors, iPad + Mac Accessories\n- **Incompatible overlaps (SPLIT)**: Mac + Miscellaneous, Storage + Miscellaneous\n- **94.5% of walls are compatible** - only flag the 5.5% that need attention\n\n### 3. **Frontend Display Logic**\n\n```typescript\n// CORRECT IMPLEMENTATION\ninterface StoreData {\n  total_walls: number;        // Use max wall number (15 for KORAMANGALA)\n  wall_details: {\n    [category: string]: {\n      wall_count: "
+    },
+    {
+      "path": "main.py",
+      "name": "main.py",
+      "extension": ".py",
+      "size_bytes": 33888,
+      "modified": "2025-07-23T01:55:30.913991",
+      "content_preview": "#!/usr/bin/env python3\nimport os\nimport sys\nfrom pathlib import Path\nimport argparse\nfrom typing import List, Optional\nfrom src.visualization.clean_planogram import create_clean_planogram\n\n# Setup paths\nproject_root = Path(__file__).parent.absolute()\nsys.path.insert(0, str(project_root))\n\n# Create necessary directories\nfor dir_name in ['logs', 'debug', 'output']:\n    (project_root / dir_name).mkdir(exist_ok=True)\n\ndef interactive_mode():\n    \"\"\"Run the system in interactive mode\"\"\"\n    print(\"\\n\" + \"=\"*60)\n    print(\"APPLE PLANOGRAM OPTIMIZATION SYSTEM\")\n    print(\"=\"*60)\n    \n    # Import modules\n    from src.data_processing.data_loader import DataLoader\n    from src.data_processing.data_transformer import DataTransformer\n    from src.data_processing.data_validator import DataValidator\n    from src.optimization.product_optimizer import ProductOptimizer\n    from src.optimization.bundle_optimizer import BundleOptimizer\n    from src.visualization.planogram_visualizer import PlanogramVisu"
+    },
+    {
+      "path": "MASTER_DOCUMENTATION.md",
+      "name": "MASTER_DOCUMENTATION.md",
+      "extension": ".md",
+      "size_bytes": 11788,
+      "modified": "2025-07-29T14:56:42.900419",
+      "content_preview": "# 🎯 PLANOGRAM PROJECT - MASTER DOCUMENTATION\n\n**Complete reference for all connections, APIs, functions, and testing procedures.**  \n*Use this as context for all future conversations.*\n\n---\n\n## 📋 TABLE OF CONTENTS\n\n1. [Project Overview](#project-overview)\n2. [System Architecture](#system-architecture) \n3. [File Structure & Connections](#file-structure--connections)\n4. [API Endpoints](#api-endpoints)\n5. [Functions Reference](#functions-reference)\n6. [Testing & Development](#testing--development)\n7. [Data Flow](#data-flow)\n8. [Visual Enhancement Details](#visual-enhancement-details)\n\n---\n\n## 🏗️ PROJECT OVERVIEW\n\n### Core Purpose\nGenerate optimized planograms for Apple Store accessory layouts using real product data with enhanced visual presentation.\n\n### Key Features\n- **Series-based allocation**: Products allocated by iPhone series (Base, Plus, Pro, Pro Max)\n- **Phone-like rectangles**: Visual products rendered as phone-shaped rectangles instead of squares\n- **Brand grouping**: Apple pr"
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": ".md",
+      "size_bytes": 12650,
+      "modified": "2025-07-29T14:56:26.372886",
+      "content_preview": "# 🎯 PLANOGRAM PROJECT - MASTER DOCUMENTATION\n\n**Complete reference for all connections, APIs, functions, and testing procedures.**  \n*Use this as context for all future conversations.*\n\n---\n\n## 📋 TABLE OF CONTENTS\n\n1. [Project Overview](#project-overview)\n2. [System Architecture](#system-architecture) \n3. [File Structure & Connections](#file-structure--connections)\n4. [API Endpoints](#api-endpoints)\n5. [Functions Reference](#functions-reference)\n6. [Testing & Development](#testing--development)\n7. [Data Flow](#data-flow)\n8. [Visual Enhancement Details](#visual-enhancement-details)\n\n---\n\n## 🏗️ PROJECT OVERVIEW\n\n### Core Purpose\nGenerate optimized planograms for Apple Store accessory layouts using real product data with enhanced visual presentation.\n\n### Key Features\n- **Series-based allocation**: Products allocated by iPhone series (Base, Plus, Pro, Pro Max)\n- **Phone-like rectangles**: Visual products rendered as phone-shaped rectangles instead of squares\n- **Brand grouping**: Apple pr"
+    },
+    {
+      "path": "data\\processed\\cases_planogram_data.json",
+      "name": "cases_planogram_data.json",
+      "extension": ".json",
+      "size_bytes": 152945,
+      "modified": "2025-07-24T17:04:27.124948",
+      "content_preview": "{\n  \"processed_data\": {\n    \"iPhone 16 Base\": {\n      \"clear\": {\n        \"total_products\": 9,\n        \"total_sales\": 1413.0,\n        \"top_products\": [\n          {\n            \"product_name\": \"Pulse CLEAR Case with Camera stand for iPhone 16-White                                                             \",\n            \"brand\": \"Pulse\",\n            \"subcategory\": \"clear\",\n            \"total_sales\": 288.0,\n            \"pureqty\": 255.0,\n            \"impureqty\": 33,\n            \"series\": \"iPhone 16 Base\",\n            \"category\": \"clear\",\n            \"priority_score\": 92.88\n          },\n          {\n            \"product_name\": \"Tekne CLEAR Case with Camera stand for iPhone 16-White                                                             \",\n            \"brand\": \"Tekne\",\n            \"subcategory\": \"clear\",\n            \"total_sales\": 270.0,\n            \"pureqty\": 234.0,\n            \"impureqty\": 36,\n            \"series\": \"iPhone 16 Base\",\n            \"category\": \"clear\",\n            \"prior"
+    },
+    {
+      "path": "data\\processed\\cases_reference.json",
+      "name": "cases_reference.json",
+      "extension": ".json",
+      "size_bytes": 107933,
+      "modified": "2025-07-28T15:36:37.465556",
+      "content_preview": "{\n  \"metadata\": {\n    \"total_products\": 493,\n    \"generated_at\": \"2025-07-28T15:36:37.456465\",\n    \"source_files\": [\n      \"cases_sales.csv\",\n      \"combined_watch.csv\",\n      \"ipad-cases-transformed.csv\",\n      \"mac-accessories-transformed.csv\"\n    ]\n  },\n  \"products\": [\n    {\n      \"product_name\": \"iPhone 16 Clear Case with MagSafe\",\n      \"brand\": \"Apple\",\n      \"series\": \"base\",\n      \"category\": \"case\",\n      \"price\": 0,\n      \"sku\": null\n    },\n    {\n      \"product_name\": \"iPhone 16 Silicone Case with MagSafe - Black\",\n      \"brand\": \"Apple\",\n      \"series\": \"base\",\n      \"category\": \"case\",\n      \"price\": 0,\n      \"sku\": null\n    },\n    {\n      \"product_name\": \"iPhone 16 Silicone Case with MagSafe - Denim\",\n      \"brand\": \"Apple\",\n      \"series\": \"base\",\n      \"category\": \"case\",\n      \"price\": 0,\n      \"sku\": null\n    },\n    {\n      \"product_name\": \"iPhone 16 Silicone Case with MagSafe - Fuchsia\",\n      \"brand\": \"Apple\",\n      \"series\": \"base\",\n      \"category\": \"case\",\n      \""
+    },
+    {
+      "path": "data\\processed\\final_wall_configs.json",
+      "name": "final_wall_configs.json",
+      "extension": ".json",
+      "size_bytes": 3902,
+      "modified": "2025-07-31T12:18:31.983858",
+      "content_preview": "{\n  \"Single Wall Test Store\": {\n    \"wall_counts\": {\n      \"iPad Accessories\": 1\n    },\n    \"total_walls\": 1,\n    \"last_updated\": \"2025-07-30T09:53:51.111883\",\n    \"status\": \"finalized\"\n  },\n  \"Two Wall Test Store\": {\n    \"wall_counts\": {\n      \"iPad Accessories\": 2\n    },\n    \"total_walls\": 2,\n    \"last_updated\": \"2025-07-30T09:53:51.486531\",\n    \"status\": \"finalized\"\n  },\n  \"imagine- lulu mall kochi\": {\n    \"wall_counts\": {\n      \"Mac Accessories\": 1,\n      \"Audio Accessories\": 1,\n      \"Cases & Covers\": 2\n    },\n    \"total_walls\": 4,\n    \"last_updated\": \"2025-07-30T10:08:50.484306\",\n    \"status\": \"finalized\"\n  },\n  \"imagine- kns towers tumkur\": {\n    \"wall_counts\": {\n      \"iPad Accessories\": 2,\n      \"Audio Accessories\": 3,\n      \"Cases & Covers\": 3,\n      \"Watch Accessories\": 1\n    },\n    \"total_walls\": 9,\n    \"last_updated\": \"2025-07-30T11:23:11.828584\",\n    \"status\": \"finalized\"\n  },\n  \"imagine- ampa skywalk chennai\": {\n    \"wall_counts\": {\n      \"Miscellaneous\": 5,\n      \"Adapt"
+    },
+    {
+      "path": "data\\processed\\store_reference.json",
+      "name": "store_reference.json",
+      "extension": ".json",
+      "size_bytes": 129609,
+      "modified": "2025-07-29T11:47:28.592278",
+      "content_preview": "{\n  \"0\": {\n    \"original_name\": \"0\",\n    \"location\": \"IMAGINE @ LULU KOZHIKODE\",\n    \"city\": \"KOZHIKODE\",\n    \"total_walls\": 2,\n    \"wall_details\": {\n      \"Cases & Covers\": {\n        \"wall_count\": 1,\n        \"category\": \"Cases & Covers\",\n        \"walls\": [\n          \"W1\"\n        ],\n        \"products\": [\n          {\n            \"wall\": \"W1\",\n            \"brand\": \"APPLE,TEKNE,PULSE,POWERUP\",\n            \"product\": \"PHONE ACCESSORIES AND MAC ACCESSORIES (Primary: Cases & Covers)\",\n            \"capacity\": 684\n          }\n        ],\n        \"total_capacity\": 684\n      },\n      \"Miscellaneous\": {\n        \"wall_count\": 1,\n        \"category\": \"Miscellaneous\",\n        \"walls\": [\n          \"W2\"\n        ],\n        \"products\": [\n          {\n            \"wall\": \"W2\",\n            \"brand\": \"GRIP,TEKNE RIVACASE\",\n            \"product\": \"TABLET CASE,MACBOOK ACC (Primary: Miscellaneous)\",\n            \"capacity\": 30\n          }\n        ],\n        \"total_capacity\": 30\n      }\n    },\n    \"lob_summary\": {\n"
+    },
+    {
+      "path": "data\\raw\\store_templates\\express_store.json",
+      "name": "express_store.json",
+      "extension": ".json",
+      "size_bytes": 1995,
+      "modified": "2025-07-07T15:46:12.172087",
+      "content_preview": "{\n  \"store_info\": {\n    \"store_type\": \"express\",\n    \"store_name\": \"Express Store Template\", \n    \"description\": \"Compact format store with essential product range\",\n    \"total_area_sqm\": 20,\n    \"accessory_area_sqm\": 5,\n    \"customer_flow\": \"high\",\n    \"avg_daily_visitors\": 300,\n    \"restock_frequency_days\": 2\n  },\n  \n  \"shelves\": [\n    {\n      \"shelf_id\": 0,\n      \"shelf_name\": \"Apple Premium Row 1\",\n      \"width\": 67,\n      \"height\": 22,\n      \"depth\": 20,\n      \"y_position\": 120,\n      \"shelf_type\": \"compact\",\n      \"eye_level_score\": 1.0\n    },\n    {\n      \"shelf_id\": 1,\n      \"shelf_name\": \"Apple Premium Row 2\",\n      \"width\": 67,\n      \"height\": 22,\n      \"depth\": 20,\n      \"y_position\": 98,\n      \"shelf_type\": \"compact\",\n      \"eye_level_score\": 0.95\n    },\n    {\n      \"shelf_id\": 2,\n      \"shelf_name\": \"Apple Premium Row 3\",\n      \"width\": 67,\n      \"height\": 22,\n      \"depth\": 20,\n      \"y_position\": 76,\n      \"shelf_type\": \"compact\",\n      \"eye_level_score\": 0.9\n    },\n    {"
+    },
+    {
+      "path": "data\\raw\\store_templates\\flagship_store.json",
+      "name": "flagship_store.json",
+      "extension": ".json",
+      "size_bytes": 2728,
+      "modified": "2025-07-07T15:46:13.636251",
+      "content_preview": "{\n  \"store_info\": {\n    \"store_type\": \"flagship\",\n    \"store_name\": \"Flagship Store Template\",\n    \"description\": \"Large format store with full product range and premium displays\",\n    \"total_area_sqm\": 60,\n    \"accessory_area_sqm\": 15,\n    \"customer_flow\": \"high\",\n    \"avg_daily_visitors\": 1000,\n    \"restock_frequency_days\": 2\n  },\n  \n  \"shelves\": [\n    {\n      \"shelf_id\": 0,\n      \"shelf_name\": \"Apple Premium Row 1\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 200,\n      \"shelf_type\": \"premium\",\n      \"eye_level_score\": 1.0\n    },\n    {\n      \"shelf_id\": 1,\n      \"shelf_name\": \"Apple Premium Row 2\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 175,\n      \"shelf_type\": \"premium\",\n      \"eye_level_score\": 0.95\n    },\n    {\n      \"shelf_id\": 2,\n      \"shelf_name\": \"Apple Premium Row 3\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 150,\n      \"shelf_type\": \"premium\",\n      \"eye_level"
+    },
+    {
+      "path": "data\\raw\\store_templates\\standard_store.json",
+      "name": "standard_store.json",
+      "extension": ".json",
+      "size_bytes": 2226,
+      "modified": "2025-07-07T15:46:52.580771",
+      "content_preview": "{\n  \"store_info\": {\n    \"store_type\": \"standard\",\n    \"store_name\": \"Standard Store Template\",\n    \"description\": \"Standard format store with balanced product range\",\n    \"total_area_sqm\": 40,\n    \"accessory_area_sqm\": 10,\n    \"customer_flow\": \"medium\",\n    \"avg_daily_visitors\": 500,\n    \"restock_frequency_days\": 3\n  },\n  \n  \"shelves\": [\n    {\n      \"shelf_id\": 0,\n      \"shelf_name\": \"Apple Premium Row\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 150,\n      \"shelf_type\": \"premium\",\n      \"eye_level_score\": 1.0\n    },\n    {\n      \"shelf_id\": 1,\n      \"shelf_name\": \"Third Party Row 1\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 125,\n      \"shelf_type\": \"standard\",\n      \"eye_level_score\": 0.9\n    },\n    {\n      \"shelf_id\": 2,\n      \"shelf_name\": \"Third Party Row 2\",\n      \"width\": 67.0,\n      \"height\": 25,\n      \"depth\": 25,\n      \"y_position\": 100,\n      \"shelf_type\": \"standard\",\n      \"eye_level_score\": 0.8\n    }"
+    },
+    {
+      "path": "src\\store_planogram_generator.py",
+      "name": "store_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 14173,
+      "modified": "2025-07-22T14:57:08.720921",
+      "content_preview": "\"\"\"\nStore Planogram Generator - Integrates store selection with planogram generation\n\"\"\"\n\nimport os\nimport sys\nimport json\nfrom pathlib import Path\n\n# Add src directory to path for imports\nsys.path.append(str(Path(__file__).parent))\n\nfrom store_wall_analyzer import StoreWallAnalyzer\nfrom lob_distribution_engine import LOBDistributionEngine\n\n# Import existing planogram generators\nfrom visualization.cohort_planogram import CohortPlanogramGenerator\n\nclass StorePlanogramGenerator:\n    def __init__(self):\n        self.analyzer = StoreWallAnalyzer('data/raw/store_templates/Plannogram compiled_16052025.csv')\n        self.distribution_engine = LOBDistributionEngine()\n        self.planogram_generator = CohortPlanogramGenerator()\n        \n        # Product size variations\n        self.product_sizes = {\n            'iphone_cases': {\n                'small': {'width': 60, 'height': 120},\n                'medium': {'width': 70, 'height': 140}, \n                'large': {'width': 80, 'height': 160}\n"
+    },
+    {
+      "path": "src\\store_selector_ui.py",
+      "name": "store_selector_ui.py",
+      "extension": ".py",
+      "size_bytes": 13187,
+      "modified": "2025-07-22T14:43:52.626079",
+      "content_preview": "\"\"\"\nStore Selector UI - Interactive interface for selecting stores and viewing LOB distribution\n\"\"\"\n\nimport streamlit as st\nimport pandas as pd\nimport json\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nfrom store_wall_analyzer import StoreWallAnalyzer\nfrom lob_distribution_engine import LOBDistributionEngine\nfrom store_planogram_generator import StorePlanogramGenerator\n\nclass StoreSelectorUI:\n    def __init__(self):\n        self.analyzer = StoreWallAnalyzer('data/raw/store_templates/Plannogram compiled_16052025.csv')\n        self.distribution_engine = LOBDistributionEngine()\n        self.planogram_generator = StorePlanogramGenerator()\n        \n    def load_analysis_data(self):\n        \"\"\"Load or generate analysis data\"\"\"\n        try:\n            with open('output/store_wall_analysis.json', 'r') as f:\n                analysis_data = json.load(f)\n            \n            with open('output/lob_distribution_recommendations.json', '"
+    },
+    {
+      "path": "src\\store_wall_analyzer.py",
+      "name": "store_wall_analyzer.py",
+      "extension": ".py",
+      "size_bytes": 10670,
+      "modified": "2025-07-22T18:30:11.475961",
+      "content_preview": "\"\"\"\nStore Wall Analyzer - Groups walls by store and LOB categories based on product data\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nimport re\nfrom collections import defaultdict\nimport json\n\nclass StoreWallAnalyzer:\n    def __init__(self, csv_path):\n        \"\"\"Initialize with store template CSV path\"\"\"\n        self.csv_path = csv_path\n        self.df = None\n        self.lob_mapping = {\n            # iPhone related\n            'iphone_cases': ['iphone case', 'phone case', 'iphone cases', 'phone cases'],\n            'iphone_accessories': ['iphone', 'phone', 'apple phone', 'lens protector', 'tg', 'apple accessories'],\n            \n            # iPad related  \n            'ipad_cases': ['ipad case', 'ipad cases', 'ipad tg'],\n            'ipad_accessories': ['ipad', 'apple tv', 'magic keyboard'],\n            \n            # Mac related\n            'mac_accessories': ['mac', 'macbook', 'magic mouse', 'magic keyboard for ipad'],\n            \n            # Watch related\n            'watch_band"
+    },
+    {
+      "path": "src\\cohort_planogram\\base.py",
+      "name": "base.py",
+      "extension": ".py",
+      "size_bytes": 10235,
+      "modified": "2025-07-17T02:08:12.973155",
+      "content_preview": "\"\"\"\nBase class for cohort-based planogram generators\nProvides common functionality and styling for all LOB planograms\n\"\"\"\n\nimport matplotlib.pyplot as plt\nimport matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport logging\nfrom pathlib import Path\nfrom typing import Dict, List, Any\nimport pandas as pd\n\nclass CohortPlanogramBase:\n    \"\"\"Base class for cohort planogram generators\"\"\"\n    \n    def __init__(self, lob: str):\n        self.lob = lob\n        self.logger = logging.getLogger(__name__)\n        self.output_dir = Path(\"output/cohort_planograms\")\n        self.output_dir.mkdir(parents=True, exist_ok=True)\n        \n        # Common styling\n        self.text_color = '#1D1D1F'\n        self.background_color = '#F8F9FA'\n        \n        # Color schemes for different categories\n        self.category_colors = {\n            'Case': '#007AFF',\n            'Screen Protector': '#34C759',\n            'Cable': '#FF9500',\n            'Charger/Adapter': '#FF"
+    },
+    {
+      "path": "src\\cohort_planogram\\data_loader.py",
+      "name": "data_loader.py",
+      "extension": ".py",
+      "size_bytes": 8765,
+      "modified": "2025-07-17T02:10:18.313738",
+      "content_preview": "\"\"\"\nData loader for cohort planogram generation\nHandles loading and processing of cohort data for different LOBs\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import List, Dict, Any, Optional\nimport logging\n\nclass CohortDataLoader:\n    \"\"\"Loads and processes cohort data for planogram generation\"\"\"\n    \n    def __init__(self):\n        self.logger = logging.getLogger(__name__)\n        self.data_dir = Path(\"data/raw\")\n        self.cohort_file = self.data_dir / \"cohorts\" / \"planogram_cohorts_corrected.csv\"\n        \n        # Cache for loaded data\n        self._cohort_data = None\n        self._lob_data_cache = {}\n    \n    def _load_cohort_data(self) -> pd.DataFrame:\n        \"\"\"Load the main cohort data file\"\"\"\n        if self._cohort_data is None:\n            try:\n                if self.cohort_file.exists():\n                    self._cohort_data = pd.read_csv(self.cohort_file)\n                    self.logger.info(f\"Loaded {len(self._cohort_data)} cohort r"
+    },
+    {
+      "path": "src\\cohort_planogram\\ipad_cohort.py",
+      "name": "ipad_cohort.py",
+      "extension": ".py",
+      "size_bytes": 23648,
+      "modified": "2025-07-21T14:55:50.116136",
+      "content_preview": "\"\"\"\niPad Cohort-Based Planogram Generator\n\"\"\"\n\nimport pandas as pd\nfrom typing import List\nfrom pathlib import Path\nfrom matplotlib.patches import FancyBboxPatch\nfrom .base import CohortPlanogramBase, StoreTemplateLoader\nfrom .data_loader import CohortDataLoader\n\nclass iPadCohortPlanogram(CohortPlanogramBase):\n    \"\"\"Generate iPad cohort-based planograms\"\"\"\n    \n    def __init__(self):\n        super().__init__('iPad')\n        self.data_loader = CohortDataLoader()\n        self.store_template_loader = StoreTemplateLoader()\n        \n    def generate_cohort_planogram(self, store_type: str) -> Path:\n        \"\"\"Generate comprehensive iPad cohort planogram\"\"\"\n        self.logger.info(f\"Generating iPad cohort planogram for {store_type} store\")\n        \n        # Load iPad cohort data\n        try:\n            ipad_data = self.data_loader.get_lob_data('iPad')\n        except Exception as e:\n            self.logger.warning(f\"Could not load iPad cohort data: {e}\")\n            # Create a fallback pl"
+    },
+    {
+      "path": "src\\cohort_planogram\\iphone_cohort.py",
+      "name": "iphone_cohort.py",
+      "extension": ".py",
+      "size_bytes": 25550,
+      "modified": "2025-07-17T10:49:59.967396",
+      "content_preview": "\"\"\"\niPhone Cohort-Based Planogram Generator\n\nThis module generates detailed cohort-based planograms for iPhone,\nshowing relationships between iPhone models and their accessories\nbased on customer purchase behavior and attach rates.\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nfrom matplotlib import patches\nfrom typing import Dict, List, Tuple\nfrom pathlib import Path\n\nfrom .base import CohortPlanogramBase, StoreTemplateLoader\nfrom .data_loader import CohortDataLoader\n\nclass iPhoneCohortPlanogram(CohortPlanogramBase):\n    \"\"\"Generate iPhone cohort-based planograms\"\"\"\n    \n    def __init__(self):\n        super().__init__('iPhone')\n        self.data_loader = CohortDataLoader()\n        self.store_template_loader = StoreTemplateLoader()\n        \n    def generate_cohort_planogram(self, store_type: str) -> Path:\n        \"\"\"Generate comprehensive iPhone cohort planogram\"\"\"\n        self.logger.info(f\"Generating iPhone cohort planogram for "
+    },
+    {
+      "path": "src\\cohort_planogram\\mac_cohort.py",
+      "name": "mac_cohort.py",
+      "extension": ".py",
+      "size_bytes": 18317,
+      "modified": "2025-07-21T13:19:28.965629",
+      "content_preview": "\"\"\"\nMac Cohort-Based Planogram Generator\n\"\"\"\n\nfrom pathlib import Path\nfrom matplotlib.patches import FancyBboxPatch\nfrom .base import CohortPlanogramBase, StoreTemplateLoader\nfrom .data_loader import CohortDataLoader\n\nclass MacCohortPlanogram(CohortPlanogramBase):\n    \"\"\"Generate Mac cohort-based planograms\"\"\"\n    \n    def __init__(self):\n        super().__init__('Mac')\n        self.data_loader = CohortDataLoader()\n        self.store_template_loader = StoreTemplateLoader()\n    \n    def create_rounded_rect(self, xy, width, height, facecolor='#007AFF', alpha=1.0, edgecolor='#86868B'):\n        \"\"\"Create a rounded rectangle patch\"\"\"\n        return FancyBboxPatch(\n            xy, width, height,\n            boxstyle=\"round,pad=2\",\n            facecolor=facecolor,\n            edgecolor=edgecolor,\n            linewidth=1,\n            alpha=alpha\n        )\n        \n    def generate_cohort_planogram(self, store_type: str) -> Path:\n        \"\"\"Generate comprehensive Mac cohort planogram\"\"\"\n      "
+    },
+    {
+      "path": "src\\cohort_planogram\\runner.py",
+      "name": "runner.py",
+      "extension": ".py",
+      "size_bytes": 8779,
+      "modified": "2025-07-15T15:57:29.684472",
+      "content_preview": "\"\"\"\nCohort Planogram Runner - Main Entry Point\n\nThis module provides the main entry point for generating cohort-based planograms\nfor all supported LOBs (iPhone, iPad, Mac, Watch, AirPods).\n\"\"\"\n\nimport logging\nfrom pathlib import Path\nfrom typing import Dict, Optional\n\nfrom .iphone_cohort import iPhoneCohortPlanogram\nfrom .ipad_cohort import iPadCohortPlanogram\nfrom .watch_cohort import WatchCohortPlanogram\nfrom .mac_cohort import MacCohortPlanogram\nfrom .data_loader import CohortDataLoader\n\nclass CohortPlanogramRunner:\n    \"\"\"Main runner for cohort-based planogram generation\"\"\"\n    \n    def __init__(self):\n        self.logger = logging.getLogger(__name__)\n        self.data_loader = CohortDataLoader()\n        \n        # Map LOBs to their planogram generators\n        self.generators = {\n            'iPhone': iPhoneCohortPlanogram,\n            'iPad': iPadCohortPlanogram,\n            'Watch': WatchCohortPlanogram,\n            'Mac': MacCohortPlanogram,\n            # 'AirPods': AirPodsCoho"
+    },
+    {
+      "path": "src\\cohort_planogram\\store_template_loader.py",
+      "name": "store_template_loader.py",
+      "extension": ".py",
+      "size_bytes": 5954,
+      "modified": "2025-07-15T15:27:54.910819",
+      "content_preview": "\"\"\"\nStore Template Loader for Cohort Planograms\n\nThis module loads store templates and provides store-specific configuration\nfor cohort planogram generation.\n\"\"\"\n\nimport json\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\n\nclass StoreTemplateLoader:\n    \"\"\"Load and manage store templates for cohort planograms\"\"\"\n    \n    def __init__(self):\n        self.templates_dir = Path(\"data/raw/store_templates\")\n        self.store_configs = {}\n        self._load_templates()\n    \n    def _load_templates(self):\n        \"\"\"Load all store templates\"\"\"\n        template_files = {\n            'flagship': 'flagship_store.json',\n            'standard': 'standard_store.json',\n            'express': 'express_store.json'\n        }\n        \n        for store_type, filename in template_files.items():\n            template_path = self.templates_dir / filename\n            if template_path.exists():\n                with open(template_path, 'r') as f:\n                    self.store_configs[store_type"
+    },
+    {
+      "path": "src\\cohort_planogram\\watch_cohort.py",
+      "name": "watch_cohort.py",
+      "extension": ".py",
+      "size_bytes": 17754,
+      "modified": "2025-07-21T14:55:27.429365",
+      "content_preview": "\"\"\"\nWatch Cohort-Based Planogram Generator\n\"\"\"\n\nfrom pathlib import Path\nfrom .base import CohortPlanogramBase, StoreTemplateLoader\nfrom .data_loader import CohortDataLoader\n\nclass WatchCohortPlanogram(CohortPlanogramBase):\n    \"\"\"Generate Watch cohort-based planograms\"\"\"\n    \n    def __init__(self):\n        super().__init__('Watch')\n        self.data_loader = CohortDataLoader()\n        self.store_template_loader = StoreTemplateLoader()\n        \n    def generate_cohort_planogram(self, store_type: str) -> Path:\n        \"\"\"Generate comprehensive Watch cohort planogram\"\"\"\n        self.logger.info(f\"Generating Watch cohort planogram for {store_type} store\")\n        \n        # Load Watch cohort data\n        watch_data = self.data_loader.get_lob_data('Watch')\n        \n        # Get Watch cohort data and matrices (same structure as iPhone)\n        try:\n            # Get store-specific matrix configuration\n            matrix_config = self.store_template_loader.get_matrix_config(store_type)\n   "
+    },
+    {
+      "path": "src\\cohort_planogram\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 828,
+      "modified": "2025-07-17T02:18:56.531590",
+      "content_preview": "\"\"\"\nCohort-based planogram generation system\n\nThis package provides cohort-based planogram generation for different LOBs,\nshowing relationships between core products and their accessories based on\ncustomer purchase behavior and attach rates.\n\"\"\"\n\nfrom .runner import CohortPlanogramRunner\nfrom .base import CohortPlanogramBase, StoreTemplateLoader\nfrom .data_loader import CohortDataLoader\nfrom .iphone_cohort import iPhoneCohortPlanogram\nfrom .ipad_cohort import iPadCohortPlanogram\nfrom .mac_cohort import MacCohortPlanogram\nfrom .watch_cohort import WatchCohortPlanogram\n\n__all__ = [\n    'CohortPlanogramRunner',\n    'CohortPlanogramBase',\n    'StoreTemplateLoader', \n    'CohortDataLoader',\n    'iPhoneCohortPlanogram',\n    'iPadCohortPlanogram',\n    'MacCohortPlanogram',\n    'WatchCohortPlanogram'\n]\n\n__version__ = '1.0.0'"
+    },
+    {
+      "path": "src\\database\\data_validator.py",
+      "name": "data_validator.py",
+      "extension": ".py",
+      "size_bytes": 7660,
+      "modified": "2025-07-26T19:17:14.550755",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nData validation utilities for store database\n\"\"\"\n\nimport pandas as pd\nimport logging\nfrom typing import Dict, List, Tuple\nfrom pathlib import Path\n\nlogger = logging.getLogger(__name__)\n\nclass DataValidator:\n    \"\"\"Validates CSV data before database import\"\"\"\n    \n    def __init__(self):\n        self.validation_errors = []\n        self.validation_warnings = []\n    \n    def validate_csv_file(self, csv_path: str) -> Tuple[bool, List[str], List[str]]:\n        \"\"\"Validate CSV file structure and data quality\"\"\"\n        self.validation_errors = []\n        self.validation_warnings = []\n        \n        try:\n            # Check if file exists\n            if not Path(csv_path).exists():\n                self.validation_errors.append(f\"CSV file not found: {csv_path}\")\n                return False, self.validation_errors, self.validation_warnings\n            \n            # Load CSV\n            df = pd.read_csv(csv_path)\n            logger.info(f\"Loaded CSV with {len(df)} "
+    },
+    {
+      "path": "src\\database\\init_database.py",
+      "name": "init_database.py",
+      "extension": ".py",
+      "size_bytes": 2087,
+      "modified": "2025-07-26T19:14:47.483383",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nDatabase Initialization Script\nSets up the store database and populates it with initial data.\n\"\"\"\n\nimport sys\nimport logging\nfrom pathlib import Path\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.database.store_database import StoreDatabase\n\n# Configure logging\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'\n)\nlogger = logging.getLogger(__name__)\n\ndef main():\n    \"\"\"Initialize database and populate with CSV data\"\"\"\n    try:\n        # Initialize database\n        db_path = project_root / \"data\" / \"store_data.db\"\n        csv_path = project_root / \"data\" / \"raw\" / \"store_templates\" / \"Plannogram compiled_16052025.backup.csv\"\n        \n        logger.info(\"Initializing store database...\")\n        db = StoreDatabase(str(db_path))\n        \n        # Check if CSV file exists\n        if not csv_path.exists():\n       "
+    },
+    {
+      "path": "src\\database\\migrate_data.py",
+      "name": "migrate_data.py",
+      "extension": ".py",
+      "size_bytes": 3612,
+      "modified": "2025-07-26T19:17:50.738625",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nEnhanced data migration script with validation\n\"\"\"\n\nimport sys\nimport logging\nfrom pathlib import Path\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.database.store_database import StoreDatabase\nfrom src.database.data_validator import DataValidator\n\n# Configure logging\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'\n)\nlogger = logging.getLogger(__name__)\n\ndef migrate_with_validation(csv_path: str, db_path: str, force: bool = False) -> bool:\n    \"\"\"Migrate data with validation\"\"\"\n    try:\n        # Validate CSV data first\n        logger.info(\"Validating CSV data...\")\n        validator = DataValidator()\n        report = validator.generate_validation_report(csv_path)\n        \n        # Print validation report\n        print(\"=== Data Validation Report ===\")\n        print(f\"Status: {report['validation_summary']['"
+    },
+    {
+      "path": "src\\database\\store_database.py",
+      "name": "store_database.py",
+      "extension": ".py",
+      "size_bytes": 15771,
+      "modified": "2025-07-26T19:14:30.806044",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nStore Database Manager\nHandles SQLite database operations for store, wall, and product data.\n\"\"\"\n\nimport sqlite3\nimport pandas as pd\nimport logging\nimport re\nfrom pathlib import Path\nfrom datetime import datetime\nfrom typing import Dict, List, Optional, Tuple\nfrom contextlib import contextmanager\n\nlogger = logging.getLogger(__name__)\n\nclass StoreDatabase:\n    \"\"\"Database manager for store planogram data\"\"\"\n    \n    def __init__(self, db_path: str = \"store_data.db\"):\n        \"\"\"Initialize database connection\"\"\"\n        self.db_path = Path(db_path)\n        self.db_path.parent.mkdir(parents=True, exist_ok=True)\n        self.create_tables()\n    \n    @contextmanager\n    def get_connection(self):\n        \"\"\"Context manager for database connections\"\"\"\n        conn = sqlite3.connect(self.db_path)\n        conn.row_factory = sqlite3.Row  # Enable dict-like access\n        try:\n            yield conn\n        finally:\n            conn.close()\n    \n    def create_tables(se"
+    },
+    {
+      "path": "src\\database\\test_database.py",
+      "name": "test_database.py",
+      "extension": ".py",
+      "size_bytes": 1699,
+      "modified": "2025-07-26T19:15:53.275916",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nTest script for store database functionality\n\"\"\"\n\nimport sys\nfrom pathlib import Path\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.database.store_database import StoreDatabase\n\ndef test_database():\n    \"\"\"Test database functionality\"\"\"\n    db_path = project_root / \"data\" / \"store_data.db\"\n    db = StoreDatabase(str(db_path))\n    \n    print(\"=== Database Statistics ===\")\n    stats = db.get_store_statistics()\n    for key, value in stats.items():\n        print(f\"{key}: {value}\")\n    \n    print(\"\\n=== All Stores ===\")\n    stores = db.get_all_stores()\n    for i, store in enumerate(stores[:5]):  # Show first 5 stores\n        print(f\"{i+1}. {store['store_name']} - {store['city']} ({store['total_walls']} walls)\")\n    \n    print(f\"\\n... and {len(stores) - 5} more stores\")\n    \n    print(\"\\n=== Sample Store Wall Analysis ===\")\n    if stores:\n        sample_store = stores[0]\n   "
+    },
+    {
+      "path": "src\\database\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 138,
+      "modified": "2025-07-26T19:15:03.768436",
+      "content_preview": "\"\"\"\nDatabase module for store planogram data management.\n\"\"\"\n\nfrom .store_database import StoreDatabase\n\n__all__ = ['StoreDatabase']"
+    },
+    {
+      "path": "src\\data_processing\\cohort_data_corrector.py",
+      "name": "cohort_data_corrector.py",
+      "extension": ".py",
+      "size_bytes": 16775,
+      "modified": "2025-07-17T10:47:36.041729",
+      "content_preview": "import pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\nimport random\n\nclass CohortDataCorrector:\n    \"\"\"Correct and enhance cohort data for proper LOB-accessory associations\"\"\"\n    \n    def __init__(self):\n        self.cohort_file = Path(\"data/raw/cohorts/planogram_cohorts_master.csv\")\n        self.corrected_file = Path(\"data/raw/cohorts/planogram_cohorts_corrected.csv\")\n        self.backup_file = Path(\"data/raw/cohorts/planogram_cohorts_master_backup.csv\")\n        \n        # Reclassification patterns for \"Other\" category\n        self.reclassification_patterns = {\n            'Screen Protector': [\n                'screen protector', 'tempered glass', 'privacy screen', 'glass screen'\n            ],\n            'Cleaning Kit': [\n                'cleaning', 'cloth', 'wipe', 'spray', 'cleaner', 'antibacterial'\n            ],\n            'Power Bank': [\n                'power bank', 'battery pack', 'portable charger', 'magsafe power', 'mah'\n    "
+    },
+    {
+      "path": "src\\data_processing\\cohort_data_validator.py",
+      "name": "cohort_data_validator.py",
+      "extension": ".py",
+      "size_bytes": 13481,
+      "modified": "2025-07-15T11:59:59.376886",
+      "content_preview": "import pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import Dict, List, Set, Tuple\nfrom src.utils.logger import get_logger\n\nclass CohortDataValidator:\n    \"\"\"Validate and analyze cohort data for LOB-accessory associations\"\"\"\n    \n    def __init__(self):\n        self.logger = get_logger()\n        self.cohort_file = Path(\"data/raw/cohorts/planogram_cohorts_master.csv\")\n        self.validation_results = {}\n        \n        # Define expected accessory categories for each LOB\n        self.expected_accessories = {\n            'iPhone': {\n                'Case', 'Screen Protector', 'Cable', 'Charger/Adapter', \n                'Wireless Charger', 'Car Mount', 'PopSocket', 'Power Bank',\n                'Headphones', 'Cleaning Kit', 'Ring Holder', 'Wallet', 'Stand'\n            },\n            'iPad': {\n                'Case', 'Screen Protector', 'Cable', 'Charger/Adapter',\n                'Apple Pencil', 'Keyboard', 'Stand', 'Wireless Charger',\n                'Cleaning Kit"
+    },
+    {
+      "path": "src\\data_processing\\data_loader.py",
+      "name": "data_loader.py",
+      "extension": ".py",
+      "size_bytes": 3410,
+      "modified": "2025-07-29T14:56:53.925086",
+      "content_preview": "\"\"\"\nData Loader for Planogram Project\nLoads product data from CSV files\n\"\"\"\nimport os\nimport sys\nimport pandas as pd\nfrom pathlib import Path\nfrom collections import namedtuple\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nclass DataLoader:\n    \"\"\"Data loader for product data\"\"\"\n    \n    def __init__(self, data_dir=None):\n        \"\"\"Initialize the data loader\"\"\"\n        if data_dir:\n            self.data_dir = Path(data_dir)\n        else:\n            self.data_dir = project_root / 'data' / 'raw'\n    \n    def load_products_from_file(self, file_path):\n        \"\"\"Load products from a CSV file\"\"\"\n        try:\n            # Handle both absolute and relative paths\n            if os.path.isabs(file_path):\n                full_path = Path(file_path)\n            else:\n                full_path = project_root / file_path\n            \n            # Check if file exists\n            if not full_path.exists():\n       "
+    },
+    {
+      "path": "src\\data_processing\\data_transformer.py",
+      "name": "data_transformer.py",
+      "extension": ".py",
+      "size_bytes": 16312,
+      "modified": "2025-07-02T16:13:50.923907",
+      "content_preview": "import pandas as pd\nimport numpy as np\nfrom typing import List, Dict, Optional, Tuple\nfrom datetime import datetime, timedelta\nfrom src.models.product import Product, ProductCategory, ProductStatus\nfrom src.models.store import Store\n\nclass DataTransformer:\n    \"\"\"Transform and prepare data for optimization\"\"\"\n    \n    def __init__(self):\n        self.transformations_applied = []\n    \n    def prepare_products_for_store(self, products: List[Product], \n                                  store: Store, \n                                  strategy: str = \"balanced\") -> List[Product]:\n        \"\"\"Prepare and filter products based on store type and strategy\"\"\"\n        # Record transformation\n        self.transformations_applied = []\n        \n        # Apply store-specific filtering\n        filtered_products = store.filter_products_by_rules(products)\n        self.transformations_applied.append(f\"Store filtering: {len(products)} -> {len(filtered_products)} products\")\n        \n        # Apply strate"
+    },
+    {
+      "path": "src\\data_processing\\data_validator.py",
+      "name": "data_validator.py",
+      "extension": ".py",
+      "size_bytes": 8464,
+      "modified": "2025-07-21T12:29:52.370378",
+      "content_preview": "from typing import List, Dict, Tuple, Optional\nimport pandas as pd\nfrom datetime import datetime\nfrom src.models.product import Product, ProductCategory\nfrom src.models.store import Store\n\nclass DataValidator:\n    \"\"\"Validate data quality and completeness\"\"\"\n    \n    def __init__(self):\n        self.validation_results = []\n        self.warnings = []\n        self.errors = []\n    \n    def validate_products(self, products: List[Product]) -> Tuple[bool, List[str]]:\n        \"\"\"Validate product data and return (is_valid, issues)\"\"\"\n        self.validation_results = []\n        self.warnings = []\n        self.errors = []\n        \n        if not products:\n            self.errors.append(\"No products provided for validation\")\n            return False, self.errors\n        \n        # Check for duplicates\n        product_ids = [p.product_id for p in products]\n        if len(product_ids) != len(set(product_ids)):\n            duplicates = [pid for pid in product_ids if product_ids.count(pid) > 1]\n    "
+    },
+    {
+      "path": "src\\data_processing\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-01T16:21:13.432458",
+      "content_preview": ""
+    },
+    {
+      "path": "src\\integration\\optimized_cases_integration.py",
+      "name": "optimized_cases_integration.py",
+      "extension": ".py",
+      "size_bytes": 8196,
+      "modified": "2025-07-29T16:12:58.172658",
+      "content_preview": "\"\"\"\nOptimized Cases Integration\nSimple interface for frontend to use the optimized planogram generator\n\"\"\"\n\nimport sys\nimport os\nfrom pathlib import Path\nfrom typing import List, Dict, Optional, Any\n\n# Add project paths\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root / 'web-ui' / 'backend'))\n\nclass OptimizedCasesIntegration:\n    \"\"\"Simple integration interface for optimized cases planogram generation\"\"\"\n    \n    def __init__(self, project_root_path: Optional[str] = None):\n        \"\"\"Initialize the integration\"\"\"\n        self.project_root = Path(project_root_path) if project_root_path else project_root\n        self.generator = None\n        self._initialize_generator()\n    \n    def _initialize_generator(self):\n        \"\"\"Initialize the optimized generator\"\"\"\n        try:\n            from planogram_services.cases_covers_generator_new import CasesCoversGenerator\n            self.generator = CasesCoversGenerator(str(self.project_root))\n     "
+    },
+    {
+      "path": "src\\models\\product.py",
+      "name": "product.py",
+      "extension": ".py",
+      "size_bytes": 4796,
+      "modified": "2025-07-03T16:30:36.399334",
+      "content_preview": "from dataclasses import dataclass\nfrom enum import Enum\nfrom typing import Optional\n\nclass ProductCategory(Enum):\n    CASE = \"case\"\n    CABLE = \"cable\"\n    ADAPTER = \"adapter\"\n    SCREEN_PROTECTOR = \"screen_protector\"\n    CHARGER = \"charger\"\n    MOUNT = \"mount\"\n    AUDIO = \"audio\"\n    KEYBOARD = \"keyboard\"\n    MOUSE = \"mouse\"\n    PENCIL = \"pencil\"\n    WATCH_BAND = \"watch_band\"\n    OTHER = \"other\"\n\nclass ProductStatus(Enum):\n    ACTIVE = \"active\"\n    DISCONTINUED = \"discontinued\"\n    SEASONAL = \"seasonal\"\n    NEW = \"new\"\n\n@dataclass\nclass Product:\n    \"\"\"Product data model for accessories\"\"\"\n    # Basic info\n    product_name: str\n    series: str  # iPhone 16, iPhone 15, etc.\n    category: ProductCategory\n    subcategory: str\n    brand: str\n    \n    # Dimensions (in cm)\n    width: float\n    height: float\n    depth: float\n    \n    # Sales data\n    pureqty: float\n    impureqty: float\n    \n    # Core product info\n    core_product: str  # Which device it's for (iPhone, iPad, etc.)\n    \n    #"
+    },
+    {
+      "path": "src\\models\\shelf.py",
+      "name": "shelf.py",
+      "extension": ".py",
+      "size_bytes": 7137,
+      "modified": "2025-07-07T16:35:47.449004",
+      "content_preview": "from dataclasses import dataclass, field\nfrom typing import List, Dict, Optional, Tuple\nfrom enum import Enum\n\nclass ShelfType(Enum):\n    STORAGE = \"storage\"\n    STANDARD = \"standard\"\n    PREMIUM = \"premium\"\n    PROMOTIONAL = \"promotional\"\n\n@dataclass\nclass ShelfPosition:\n    \"\"\"Represents a product position on shelf\"\"\"\n    product_id: str\n    x_start: float\n    x_end: float\n    facings: int\n    \n    @property\n    def width(self) -> float:\n        return self.x_end - self.x_start\n\n@dataclass\nclass Shelf:\n    \"\"\"Shelf data model\"\"\"\n    shelf_id: int\n    shelf_name: str\n    width: float  # cm\n    height: float  # cm\n    depth: float  # cm\n    y_position: float  # vertical position from ground\n    shelf_type: str\n    eye_level_score: float  # 0 to 1, where 1 is perfect eye level\n    \n    # Product positions on this shelf\n    positions: List[ShelfPosition] = field(default_factory=list)\n    \n    # Calculated properties\n    area: Optional[float] = field(init=False)\n    is_eye_level: Optional"
+    },
+    {
+      "path": "src\\models\\store.py",
+      "name": "store.py",
+      "extension": ".py",
+      "size_bytes": 16106,
+      "modified": "2025-07-02T15:25:43.633542",
+      "content_preview": "from dataclasses import dataclass, field\nfrom typing import List, Dict, Optional, Tuple\nfrom .shelf import Shelf, ShelfPosition\nfrom .product import Product, ProductCategory\nimport json\n\n@dataclass\nclass Store:\n    \"\"\"Store configuration model\"\"\"\n    # Basic info\n    store_type: str  # flagship, standard, express\n    store_name: str\n    total_area_sqm: float\n    accessory_area_sqm: float\n    customer_flow: str  # high, medium, low\n    restock_frequency_days: int\n    \n    # Shelves\n    shelves: List[Shelf] = field(default_factory=list)\n    \n    # Configuration rules\n    rules: Dict = field(default_factory=dict)\n    placement_rules: Dict = field(default_factory=dict)\n    optimization_weights: Dict = field(default_factory=dict)\n    \n    # Calculated properties\n    total_shelf_area: Optional[float] = field(init=False)\n    eye_level_shelves: Optional[List[Shelf]] = field(init=False)\n    premium_shelves: Optional[List[Shelf]] = field(init=False)\n    total_capacity: Optional[int] = field(init"
+    },
+    {
+      "path": "src\\models\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-01T16:21:16.501241",
+      "content_preview": ""
+    },
+    {
+      "path": "src\\optimization\\base_optimizer.py",
+      "name": "base_optimizer.py",
+      "extension": ".py",
+      "size_bytes": 16686,
+      "modified": "2025-07-22T19:28:49.194035",
+      "content_preview": "from abc import ABC, abstractmethod\nfrom dataclasses import dataclass, field\nfrom typing import List, Dict, Optional, Tuple, Any\nimport time\nimport sys\nfrom pathlib import Path\n\n# Fix imports\nproject_root = Path(__file__).parent.parent.parent\nsys.path.insert(0, str(project_root))\n\nfrom src.models.product import Product, ProductCategory\nfrom src.models.shelf import Shelf, ShelfPosition\nfrom src.models.store import Store\nfrom src.utils.logger import get_logger\nfrom src.utils.error_handler import OptimizationError, handle_errors\nfrom src.utils.monitor import monitor\n\n# Rest of the file remains the same...\n\n@dataclass\nclass OptimizationResult:\n    \"\"\"Result of optimization process\"\"\"\n    success: bool\n    store: Store\n    products_placed: List[Product]\n    products_rejected: List[Product]\n    metrics: Dict[str, float]\n    warnings: List[str] = field(default_factory=list)\n    optimization_time: float = 0.0\n    metadata: Optional[Dict[str, Any]] = field(default_factory=dict)\n    \n    def get"
+    },
+    {
+      "path": "src\\optimization\\bundle_optimizer.py",
+      "name": "bundle_optimizer.py",
+      "extension": ".py",
+      "size_bytes": 20804,
+      "modified": "2025-07-02T15:16:29.186260",
+      "content_preview": "from typing import List, Dict, Optional, Tuple, Set\nimport pandas as pd\nfrom src.models.product import Product, ProductCategory\nfrom src.models.shelf import Shelf\nfrom .base_optimizer import BaseOptimizer, OptimizationResult\nfrom src.utils.monitor import monitor\n\nclass BundleOptimizer(BaseOptimizer):\n    \"\"\"Optimizer for bundle-based planogram generation\"\"\"\n    \n    def __init__(self, store, gap_size: float = 2.0, bundle_data: Optional[pd.DataFrame] = None):\n        super().__init__(store, gap_size)\n        self.bundle_data = bundle_data\n        self.bundle_groups = []\n        self.bundle_placements = {}\n    \n    @monitor.time_it\n    def optimize(self, products: List[Product], **kwargs) -> OptimizationResult:\n        \"\"\"Optimize product placement based on bundle relationships\"\"\"\n        self.logger.info(\"Running bundle-based optimization\")\n        \n        # Load bundle data if provided in kwargs\n        if 'bundle_data' in kwargs:\n            self.bundle_data = kwargs['bundle_data']\n "
+    },
+    {
+      "path": "src\\optimization\\product_optimizer.py",
+      "name": "product_optimizer.py",
+      "extension": ".py",
+      "size_bytes": 44714,
+      "modified": "2025-07-07T16:49:00.005519",
+      "content_preview": "from typing import List, Dict, Optional, Tuple\nimport numpy as np\nfrom src.models.product import Product, ProductCategory\nfrom src.models.shelf import Shelf, ShelfPosition  # ADD ShelfPosition here\nfrom .base_optimizer import BaseOptimizer, OptimizationResult\nfrom src.utils.monitor import monitor\n\nclass ProductOptimizer(BaseOptimizer):\n    \"\"\"Optimizer for product-based planogram generation\"\"\"\n    \n    def __init__(self, store, gap_size: float = 0.5, strategy: str = \"balanced\"):\n        super().__init__(store, gap_size)\n        self.strategy = strategy\n        self.category_shelf_assignments = {}\n    \n    @monitor.time_it\n    def optimize(self, products: List[Product], **kwargs) -> OptimizationResult:\n        \"\"\"Optimize product placement based on selected strategy\"\"\"\n        self.logger.info(f\"Running product optimization with strategy: {self.strategy}\")\n        \n        # Sort products by priority\n        sorted_products = self._sort_products_by_priority(products)\n        \n        # "
+    },
+    {
+      "path": "src\\optimization\\smart_accessory_optimizer.py",
+      "name": "smart_accessory_optimizer.py",
+      "extension": ".py",
+      "size_bytes": 23652,
+      "modified": "2025-07-29T16:11:12.692405",
+      "content_preview": "\"\"\"\nSmart Accessory Optimizer - Intelligent wall allocation for accessories\nHandles complex scenarios like:\n- iPhone 16 series prioritization\n- Apple vs Third Party distribution rules\n- Cross-accessory optimization (cases + screen protectors)\n- Optimal wall filling based on sales data\n\"\"\"\n\nfrom typing import List, Dict, Optional, Tuple, Set\nimport numpy as np\nfrom collections import defaultdict, Counter\nfrom src.models.product import Product, ProductCategory\nfrom src.models.shelf import Shelf, ShelfPosition\nfrom .base_optimizer import BaseOptimizer, OptimizationResult\nfrom src.utils.monitor import monitor\nfrom src.utils.logger import get_logger\n\nclass SmartAccessoryOptimizer(BaseOptimizer):\n    \"\"\"Intelligent optimizer for accessory-based planogram generation\"\"\"\n    \n    def __init__(self, store, gap_size: float = 0.5, accessory_type: str = \"cases\"):\n        super().__init__(store, gap_size)\n        self.accessory_type = accessory_type\n        self.logger = get_logger()\n        \n      "
+    },
+    {
+      "path": "src\\optimization\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-01T16:21:19.201385",
+      "content_preview": ""
+    },
+    {
+      "path": "src\\planogram_v2\\advanced_cases_plotter.py",
+      "name": "advanced_cases_plotter.py",
+      "extension": ".py",
+      "size_bytes": 28336,
+      "modified": "2025-07-24T17:15:11.117659",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nAdvanced Cases Planogram Plotter - Professional Retail Layout\nCreates planograms that match the aesthetic of existing retail layouts with proper Apple/TPA segregation\n\"\"\"\n\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport numpy as np\nimport json\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple, Optional\nimport textwrap\nfrom datetime import datetime\nimport pandas as pd\n\nclass AdvancedCasesPlanogramPlotter:\n    \"\"\"Generate professional retail-style planograms for cases & covers\"\"\"\n    \n    def __init__(self, data_path: str):\n        self.data_path = Path(data_path)\n        self.color_scheme = self._init_color_scheme()\n        self.layout_configs = self._init_layout_configs()\n        \n    def _init_color_scheme(self) -> Dict:\n        \"\"\"Initialize professional color scheme matching retail standards\"\"\"\n        return {\n            # Apple brand colors\n            'appl"
+    },
+    {
+      "path": "src\\planogram_v2\\cases_data_processor.py",
+      "name": "cases_data_processor.py",
+      "extension": ".py",
+      "size_bytes": 10661,
+      "modified": "2025-07-24T17:04:02.252759",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nCases & Covers Data Processor - Simplified Planogram Generation\nBreaks down cases sales data by category and sales frequency for top products\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\nimport json\n\nclass CasesDataProcessor:\n    \"\"\"Process cases sales data for planogram generation\"\"\"\n    \n    def __init__(self, data_path: str):\n        self.data_path = Path(data_path)\n        self.cases_data = None\n        self.processed_data = {}\n        \n    def load_cases_data(self) -> pd.DataFrame:\n        \"\"\"Load cases sales data\"\"\"\n        cases_file = self.data_path / 'data' / 'raw' / 'accessories' / 'cases_sales.csv'\n        if not cases_file.exists():\n            raise FileNotFoundError(f\"Cases data not found: {cases_file}\")\n            \n        self.cases_data = pd.read_csv(cases_file)\n        \n        # Clean column names (remove trailing spaces)\n        self.cases_data.columns = self.cases_data.columns."
+    },
+    {
+      "path": "src\\planogram_v2\\cases_data_processor_final.py",
+      "name": "cases_data_processor_final.py",
+      "extension": ".py",
+      "size_bytes": 10661,
+      "modified": "2025-07-24T17:04:02.252759",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nCases & Covers Data Processor - Simplified Planogram Generation\nBreaks down cases sales data by category and sales frequency for top products\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\nimport json\n\nclass CasesDataProcessor:\n    \"\"\"Process cases sales data for planogram generation\"\"\"\n    \n    def __init__(self, data_path: str):\n        self.data_path = Path(data_path)\n        self.cases_data = None\n        self.processed_data = {}\n        \n    def load_cases_data(self) -> pd.DataFrame:\n        \"\"\"Load cases sales data\"\"\"\n        cases_file = self.data_path / 'data' / 'raw' / 'accessories' / 'cases_sales.csv'\n        if not cases_file.exists():\n            raise FileNotFoundError(f\"Cases data not found: {cases_file}\")\n            \n        self.cases_data = pd.read_csv(cases_file)\n        \n        # Clean column names (remove trailing spaces)\n        self.cases_data.columns = self.cases_data.columns."
+    },
+    {
+      "path": "src\\planogram_v2\\cases_data_processor_fixed.py",
+      "name": "cases_data_processor_fixed.py",
+      "extension": ".py",
+      "size_bytes": 10281,
+      "modified": "2025-07-24T17:01:19.205220",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nCases & Covers Data Processor - Simplified Planogram Generation\nBreaks down cases sales data by category and sales frequency for top products\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\nimport json\n\nclass CasesDataProcessor:\n    \"\"\"Process cases sales data for planogram generation\"\"\"\n    \n    def __init__(self, data_path: str):\n        self.data_path = Path(data_path)\n        self.cases_data = None\n        self.processed_data = {}\n        \n    def load_cases_data(self) -> pd.DataFrame:\n        \"\"\"Load cases sales data\"\"\"\n        cases_file = self.data_path / 'data' / 'raw' / 'accessories' / 'cases_sales.csv'\n        if not cases_file.exists():\n            raise FileNotFoundError(f\"Cases data not found: {cases_file}\")\n            \n        self.cases_data = pd.read_csv(cases_file)\n        \n        # Clean column names (remove trailing spaces)\n        self.cases_data.columns = self.cases_data.columns."
+    },
+    {
+      "path": "src\\planogram_v2\\cases_planogram_plotter.py",
+      "name": "cases_planogram_plotter.py",
+      "extension": ".py",
+      "size_bytes": 13745,
+      "modified": "2025-07-24T16:55:36.389290",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nCases & Covers Planogram Plotter - Modular Visual Generation\nCreates clean, professional planogram visualizations for cases\n\"\"\"\n\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport numpy as np\nimport json\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple\nimport textwrap\nfrom datetime import datetime\n\nclass CasesPlanogramPlotter:\n    \"\"\"Generate visual planograms for cases & covers\"\"\"\n    \n    def __init__(self, data_path: str):\n        self.data_path = Path(data_path)\n        self.color_scheme = self._init_color_scheme()\n        self.layout_config = self._init_layout_config()\n        \n    def _init_color_scheme(self) -> Dict:\n        \"\"\"Initialize color scheme for different case types\"\"\"\n        return {\n            'clear': '#E8F4FD',      # Light blue\n            'silicone': '#F0F8E8',   # Light green  \n            'magsafe': '#FFF2E8',    # Light orange\n           "
+    },
+    {
+      "path": "src\\planogram_v2\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 42,
+      "modified": "2025-07-24T16:55:43.123407",
+      "content_preview": "# Planogram V2 - Simplified Modular System"
+    },
+    {
+      "path": "src\\utils\\constants.py",
+      "name": "constants.py",
+      "extension": ".py",
+      "size_bytes": 814,
+      "modified": "2025-07-01T16:05:39.749969",
+      "content_preview": "\"\"\"System-wide constants\"\"\"\n\n# Planogram settings\nDEFAULT_GAP_SIZE = 4.0  # cm between products\nMIN_PRODUCT_WIDTH = 5.0\nMAX_PRODUCT_WIDTH = 50.0\n\n# Optimization weights\nDEMAND_WEIGHT = 0.4\nMARGIN_WEIGHT = 0.3\nPLACEMENT_WEIGHT = 0.3\n\n# Store types\nSTORE_TYPES = {\n    'flagship': {\n        'min_skus': 150,\n        'max_skus': 500,\n        'premium_required': True\n    },\n    'standard': {\n        'min_skus': 50,\n        'max_skus': 150,\n        'premium_required': False\n    },\n    'express': {\n        'min_skus': 20,\n        'max_skus': 50,\n        'premium_required': False\n    }\n}\n\n# Category priorities\nCATEGORY_PRIORITY = {\n    'case': 1,\n    'screen_protector': 2,\n    'cable': 3,\n    'charger': 4,\n    'adapter': 5,\n    'mount': 6,\n    'audio': 7,\n    'other': 8\n}"
+    },
+    {
+      "path": "src\\utils\\debugger.py",
+      "name": "debugger.py",
+      "extension": ".py",
+      "size_bytes": 904,
+      "modified": "2025-07-01T16:37:37.775480",
+      "content_preview": "from typing import Any, Dict, List, Optional\nimport json\nfrom datetime import datetime\nfrom pathlib import Path\n\nclass PlanogramDebugger:\n    \"\"\"Debug utilities for planogram system\"\"\"\n    \n    def __init__(self, debug_dir: str = \"debug\"):\n        self.debug_dir = Path(debug_dir)\n        self.debug_dir.mkdir(exist_ok=True)\n        self.session_id = datetime.now().strftime('%Y%m%d_%H%M%S')\n        self.checkpoints = []\n    \n    def checkpoint(self, name: str, data: Any, description: str = \"\"):\n        \"\"\"Save a checkpoint for debugging\"\"\"\n        self.checkpoints.append({\n            'name': name,\n            'timestamp': datetime.now().isoformat(),\n            'description': description\n        })\n    \n    def generate_debug_report(self) -> str:\n        \"\"\"Generate a debug report\"\"\"\n        return f\"Debug session {self.session_id}: {len(self.checkpoints)} checkpoints\""
+    },
+    {
+      "path": "src\\utils\\error_handler.py",
+      "name": "error_handler.py",
+      "extension": ".py",
+      "size_bytes": 1198,
+      "modified": "2025-07-01T16:37:24.724346",
+      "content_preview": "import traceback\nfrom functools import wraps\nfrom typing import Callable, Any, Optional\n\nclass PlanogramError(Exception):\n    \"\"\"Base exception for planogram system\"\"\"\n    pass\n\nclass DataLoadError(PlanogramError):\n    \"\"\"Error loading data\"\"\"\n    pass\n\nclass ValidationError(PlanogramError):\n    \"\"\"Data validation error\"\"\"\n    pass\n\nclass OptimizationError(PlanogramError):\n    \"\"\"Optimization algorithm error\"\"\"\n    pass\n\nclass ConfigurationError(PlanogramError):\n    \"\"\"Configuration error\"\"\"\n    pass\n\ndef handle_errors(default_return=None, raise_on_error=True):\n    \"\"\"Decorator for error handling\"\"\"\n    def decorator(func: Callable) -> Callable:\n        @wraps(func)\n        def wrapper(*args, **kwargs) -> Any:\n            try:\n                return func(*args, **kwargs)\n            except PlanogramError:\n                if raise_on_error:\n                    raise\n                return default_return\n            except Exception as e:\n                if raise_on_error:\n              "
+    },
+    {
+      "path": "src\\utils\\logger.py",
+      "name": "logger.py",
+      "extension": ".py",
+      "size_bytes": 1875,
+      "modified": "2025-07-21T12:34:26.501569",
+      "content_preview": "import logging\nimport sys\nfrom datetime import datetime\nfrom pathlib import Path\n\nclass PlanogramLogger:\n    \"\"\"Centralized logging system for the planogram project\"\"\"\n    \n    def __init__(self, log_dir: str = \"logs\", console_level: str = \"INFO\", file_level: str = \"DEBUG\"):\n        self.log_dir = Path(log_dir)\n        self.log_dir.mkdir(exist_ok=True)\n        \n        # Create logger\n        self.logger = logging.getLogger('planogram_system')\n        self.logger.setLevel(logging.DEBUG)\n        \n        # Remove existing handlers\n        self.logger.handlers = []\n        \n        # Console handler\n        console_handler = logging.StreamHandler(sys.stdout)\n        console_handler.setLevel(getattr(logging, console_level))\n        console_format = logging.Formatter(\n            '%(asctime)s | %(levelname)-8s | %(message)s',\n            datefmt='%H:%M:%S'\n        )\n        console_handler.setFormatter(console_format)\n        self.logger.addHandler(console_handler)\n        \n        # File "
+    },
+    {
+      "path": "src\\utils\\monitor.py",
+      "name": "monitor.py",
+      "extension": ".py",
+      "size_bytes": 568,
+      "modified": "2025-07-07T12:53:31.986907",
+      "content_preview": "import time\nfrom functools import wraps\n\nclass PerformanceMonitor:\n    \"\"\"Monitor system performance\"\"\"\n    \n    def __init__(self):\n        self.metrics = []\n    \n    def time_it(self, func):\n        \"\"\"Decorator to time function execution\"\"\"\n        @wraps(func)\n        def wrapper(*args, **kwargs):\n            start = time.time()\n            result = func(*args, **kwargs)\n            duration = time.time() - start\n            print(f\"[TIMER] {func.__name__} took {duration:.2f}s\")\n            return result\n        return wrapper\n\nmonitor = PerformanceMonitor()"
+    },
+    {
+      "path": "src\\utils\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-01T16:21:22.350197",
+      "content_preview": ""
+    },
+    {
+      "path": "src\\visualization\\arrangement_utils.py",
+      "name": "arrangement_utils.py",
+      "extension": ".py",
+      "size_bytes": 17948,
+      "modified": "2025-07-10T10:42:04.844989",
+      "content_preview": "from collections import defaultdict\nfrom itertools import cycle\n\ndef extract_color_from_name(name):\n    # Looks for color after last hyphen or common Apple color names\n    color_keywords = [\n        'Black', 'Denim', 'Fuchsia', 'Lake Green', 'Plum', 'Star Fruit', 'Stone Gray', 'Ultramarine',\n        'Red', 'Blue', 'Green', 'Pink', 'Purple', 'Yellow', 'White', 'Orange', 'Silver', 'Gold', 'Clear', 'Grey', 'Gray', 'Brown', 'Beige', 'Coral', 'Midnight', 'Starlight', 'Lavender', 'Mint', 'Deep Navy', 'Cypress', 'Storm Blue', 'Sunshine', 'Violet', 'Forest', 'Indigo', 'Sky', 'Sand', 'Crimson', 'Teal', 'Turquoise', 'Graphite', 'Magenta', 'Rose', 'Champagne', 'Charcoal', 'Smoke', 'Pearl', 'Aqua', 'Peach', 'Cobalt', 'Emerald', 'Ruby', 'Amber', 'Bronze', 'Copper', 'Ivory', 'Mustard', 'Olive', 'Sage', 'Slate', 'Taupe', 'Wine', 'Zinc', 'Maroon', 'Cyan', 'Lime', 'Mint', 'Berry', 'Lilac', 'Cream', 'Espresso', 'Mocha', 'Onyx', 'Blush', 'Ice', 'Cement', 'Graphite', 'Shadow', 'Ocean', 'Sunset', 'Dusk', '"
+    },
+    {
+      "path": "src\\visualization\\clean_planogram.py",
+      "name": "clean_planogram.py",
+      "extension": ".py",
+      "size_bytes": 14226,
+      "modified": "2025-07-23T17:43:00.824740",
+      "content_preview": "import matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nfrom matplotlib import patches\nimport numpy as np\nfrom typing import List, Dict, Optional, Tuple\nfrom src.models.product import Product\nfrom src.optimization.base_optimizer import OptimizationResult\nfrom src.visualization.arrangement_utils import extract_color_from_name, arrange_section\nimport textwrap\nimport os\n\ndef extract_color_from_name(name):\n    # Looks for color after last hyphen or common Apple color names\n    import re\n    color_keywords = [\n        'Black', 'Denim', 'Fuchsia', 'Lake Green', 'Plum', 'Star Fruit', 'Stone Gray', 'Ultramarine',\n        'Red', 'Blue', 'Green', 'Pink', 'Purple', 'Yellow', 'White', 'Orange', 'Silver', 'Gold', 'Clear', 'Grey', 'Gray', 'Brown', 'Beige', 'Coral', 'Midnight', 'Starlight', 'Lavender', 'Mint', 'Deep Navy', 'Cypress', 'Storm Blue', 'Sunshine', 'Violet', 'Fore"
+    },
+    {
+      "path": "src\\visualization\\cohort_planogram.py",
+      "name": "cohort_planogram.py",
+      "extension": ".py",
+      "size_bytes": 15580,
+      "modified": "2025-07-15T15:19:52.917976",
+      "content_preview": "import matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nfrom matplotlib import patches\nimport numpy as np\nimport pandas as pd\nfrom typing import List, Dict, Optional, Tuple\nfrom pathlib import Path\nimport seaborn as sns\n\nclass CohortPlanogramGenerator:\n    \"\"\"Generate cohort-based planograms showing LOB-accessory relationships\"\"\"\n    \n    def __init__(self):\n        self.cohort_file = Path(\"data/raw/cohorts/planogram_cohorts_corrected.csv\")\n        self.output_dir = Path(\"output\")\n        self.output_dir.mkdir(exist_ok=True)\n        \n        # Color schemes for different categories\n        self.category_colors = {\n            'Case': '#007AFF',\n            'Screen Protector': '#34C759',\n            'Cable': '#FF9500',\n            'Charger/Adapter': '#FF3B30',\n            'Wireless Charger': '#AF52DE',\n            'Car Mount': '#FFCC00',\n            'PopSocket'"
+    },
+    {
+      "path": "src\\visualization\\direct_integration.py",
+      "name": "direct_integration.py",
+      "extension": ".py",
+      "size_bytes": 1273,
+      "modified": "2025-07-23T17:06:05.573208",
+      "content_preview": "\"\"\"\nDirect Integration for Planogram Generation\nUses the intelligent planogram generator to create professional-grade planograms\n\"\"\"\nimport os\nimport sys\nfrom pathlib import Path\nfrom datetime import datetime\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.visualization.intelligent_planogram_generator import create_intelligent_cases_planogram\n\ndef generate_planograms_for_web(store_name):\n    \"\"\"Generate professional planograms for the web UI using the intelligent generator\"\"\"\n    # Determine store type from store name\n    store_type = 'large'  # Default (maps to flagship)\n    if 'express' in store_name.lower():\n        store_type = 'small'\n        num_walls = 1\n    elif 'standard' in store_name.lower():\n        store_type = 'medium'\n        num_walls = 2\n    else:\n        store_type = 'large'\n        num_walls = 3\n    \n    # Generate planograms using the intelligent generator\n    result = create_i"
+    },
+    {
+      "path": "src\\visualization\\direct_integration_fix.py",
+      "name": "direct_integration_fix.py",
+      "extension": ".py",
+      "size_bytes": 6391,
+      "modified": "2025-07-23T14:27:59.068989",
+      "content_preview": "\"\"\"\nDirect Integration for Planogram Generation\nUses the IntelligentPlanogramGenerator to create professional-grade planograms\n\"\"\"\n\nimport os\nimport sys\nfrom pathlib import Path\nfrom datetime import datetime\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.visualization.intelligent_planogram_generator import IntelligentPlanogramGenerator, create_intelligent_cases_planogram\nfrom src.data_processing.data_loader import DataLoader\n\ndef generate_planograms_for_web(store_name):\n    \"\"\"Generate professional planograms for the web UI using the intelligent generator\"\"\"\n    # Make sure output directory exists\n    output_dir = Path('output')\n    output_dir.mkdir(exist_ok=True)\n    \n    # Determine store type from store name\n    store_type = 'large'  # Default (maps to flagship)\n    if "
+    },
+    {
+      "path": "src\\visualization\\enhanced_planogram_generator.py",
+      "name": "enhanced_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 21976,
+      "modified": "2025-07-25T13:38:46.365663",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nEnhanced Intelligent Planogram Generator\nCreates professional retail planograms with intelligent product placement following specific business rules.\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch\nimport seaborn as sns\nfrom pathlib import Path\nfrom datetime import datetime\nimport re\nimport logging\nfrom collections import defaultdict, Counter\nimport random\n\n# Configure logging\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\n\nclass EnhancedPlanogramGenerator:\n    \"\"\"Enhanced planogram generator with intelligent product placement\"\"\"\n    \n    def __init__(self):\n        self.colors = {\n            'Apple': '#007AFF',\n            'Gripp': '#FF6B35', \n            'Pulse': '#8E44AD',\n            'Hyphen': '#E74C3C',\n            'Tekne': '#2ECC71',\n            'UAG': '#F39C12',\n            'AT Minimal': '#34495E',\n            'R"
+    },
+    {
+      "path": "src\\visualization\\enhanced_retail_planogram.py",
+      "name": "enhanced_retail_planogram.py",
+      "extension": ".py",
+      "size_bytes": 34137,
+      "modified": "2025-07-29T14:56:29.476583",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nEnhanced Retail Planogram Generator\nCreates professional retail planograms with:\n- Rectangle shapes mimicking phone dimensions\n- Product dimensions affecting placement density\n- Series-based wall allocation (Base, Plus, Pro, Pro Max)\n- Column-wise brand grouping\n- Realistic product categorization\n- Screen protector/TG optimization\n- Forced diversity while respecting dimensions\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport seaborn as sns\nfrom pathlib import Path\nfrom datetime import datetime\nimport re\nimport logging\nfrom collections import defaultdict, Counter\nimport random\nimport os\nfrom itertools import cycle\n\n# Configure logging\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\n\nclass EnhancedPlanogramGenerator:\n    \"\"\"Enhanced professional retail planogram generator\"\"\"\n    \n    def __init__(self):\n        # Apple brand "
+    },
+    {
+      "path": "src\\visualization\\excel_exporter.py",
+      "name": "excel_exporter.py",
+      "extension": ".py",
+      "size_bytes": 12450,
+      "modified": "2025-07-03T11:31:29.072890",
+      "content_preview": "import pandas as pd\nfrom typing import Dict, List, Optional\nfrom pathlib import Path\nimport os\n\nfrom src.models.product import Product\nfrom src.optimization.base_optimizer import OptimizationResult\nfrom src.utils.logger import get_logger\n\nclass ExcelExporter:\n    \"\"\"Export planogram data to Excel format for easy reading\"\"\"\n    \n    def __init__(self):\n        self.logger = get_logger()\n    \n    def export_planogram_to_excel(self, \n                                result: OptimizationResult,\n                                product_lookup: Dict[str, Product],\n                                filename: str,\n                                title: str = \"Planogram Export\") -> str:\n        \"\"\"Export complete planogram data to Excel file\"\"\"\n        \n        # Create output directory if it doesn't exist\n        output_dir = Path(\"output\")\n        output_dir.mkdir(exist_ok=True)\n        \n        # Full file path\n        excel_path = output_dir / f\"{filename}.xlsx\"\n        \n        # Create Excel "
+    },
+    {
+      "path": "src\\visualization\\export_handler.py",
+      "name": "export_handler.py",
+      "extension": ".py",
+      "size_bytes": 9913,
+      "modified": "2025-07-02T15:36:32.429100",
+      "content_preview": "import json\nimport pandas as pd\nfrom pathlib import Path\nfrom typing import Dict, List, Any\nfrom datetime import datetime\nfrom enum import Enum\n\nfrom src.models.product import Product\nfrom src.optimization.base_optimizer import OptimizationResult\nfrom src.utils.logger import get_logger\n\n\ndef _recursive_convert(obj: Any) -> Any:\n    \"\"\"\n    Recursively convert:\n    - Dict keys that are Enums to their .value\n    - Enum values to .value\n    - Process nested lists and dicts\n    \"\"\"\n    if isinstance(obj, dict):\n        new_dict = {}\n        for k, v in obj.items():\n            # convert key\n            new_key = k.value if isinstance(k, Enum) else k\n            new_dict[new_key] = _recursive_convert(v)\n        return new_dict\n    elif isinstance(obj, list):\n        return [_recursive_convert(item) for item in obj]\n    elif isinstance(obj, Enum):\n        return obj.value\n    else:\n        return obj\n\nclass ExportHandler:\n    \"\"\"Handle exporting planogram data in various formats\"\"\"\n    \n    "
+    },
+    {
+      "path": "src\\visualization\\intelligent_planogram_generator.py",
+      "name": "intelligent_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 13928,
+      "modified": "2025-07-29T16:13:34.757416",
+      "content_preview": "\"\"\"\nIntelligent Planogram Generator\nCreates professional-grade planograms with smart product placement\n\"\"\"\nimport os\nimport sys\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nimport numpy as np\nfrom pathlib import Path\nfrom datetime import datetime\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\ndef create_intelligent_cases_planogram(products, store_type='large', store_name='Smart Cases Layout', num_walls=3):\n    \"\"\"Create intelligent cases planogram using optimized integration\"\"\"\n    try:\n        # Use the optimized integration interface\n        integration_path = project_root / 'src' / 'integration'\n        sys.path.insert(0, str(integration_path))\n        \n        from optimized_cases_integration import OptimizedCasesIntegration\n        \n        # Initialize the integration\n        integration = OptimizedCasesIntegration(str(project_root))\n  "
+    },
+    {
+      "path": "src\\visualization\\iphone_planogram_logic.py",
+      "name": "iphone_planogram_logic.py",
+      "extension": ".py",
+      "size_bytes": 3411,
+      "modified": "2025-07-23T17:30:57.480501",
+      "content_preview": "\nfrom typing import List, Dict, Tuple\nfrom src.models.product import Product\n\ndef arrange_iphone_products(products: List[Product], store_template: 'Store') -> List[Dict]:\n    \"\"\"Determines the wall configuration based on store type and arranges products.\"\"\"\n    store_type = store_template.store_type.lower()\n\n    # 1. Wall Allocation Logic\n    if store_type == 'flagship':\n        num_walls = 4\n    elif store_type == 'standard':\n        num_walls = 3\n    elif store_type == 'express':\n        num_walls = 2\n    else:\n        num_walls = 1\n\n    # 2. Product Categorization\n    apple_cases = [p for p in products if 'apple' in getattr(p, 'brand', '').lower() and 'case' in getattr(p, 'product_name', '').lower()]\n    tpa_cases = [p for p in products if 'apple' not in getattr(p, 'brand', '').lower() and 'case' in getattr(p, 'product_name', '').lower()]\n    protectors = [p for p in products if any(cat in getattr(p, 'product_name', '').lower() for cat in ['screen', 'glass', 'lens'])]\n\n    # 3. Wall"
+    },
+    {
+      "path": "src\\visualization\\mac_planogram.py",
+      "name": "mac_planogram.py",
+      "extension": ".py",
+      "size_bytes": 25575,
+      "modified": "2025-07-14T13:11:58.635542",
+      "content_preview": "import matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nfrom matplotlib import patches\nimport numpy as np\nimport pandas as pd\nfrom typing import List, Optional, Tuple\nfrom pathlib import Path\nfrom src.models.product import Product\nfrom src.utils.logger import get_logger\n\ndef load_mac_products():\n    \"\"\"Load Mac accessories from mac-accessories-transformed.csv\"\"\"\n    mac_file = Path(\"data/raw/accessories/mac-accessories-transformed.csv\")\n    \n    if not mac_file.exists():\n        raise FileNotFoundError(f\"Mac data file not found: {mac_file}\")\n    \n    df = pd.read_csv(mac_file)\n    # Clean column names and values\n    df.columns = df.columns.str.strip()\n    df = df.apply(lambda x: x.str.strip() if x.dtype == \"object\" else x)\n    \n    # Convert to product-like objects with required attributes\n    products = []\n    for _, row in df.iterrows():\n        product = ty"
+    },
+    {
+      "path": "src\\visualization\\planogram_generator.py",
+      "name": "planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 4390,
+      "modified": "2025-07-23T17:26:01.469523",
+      "content_preview": "\nimport matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nimport numpy as np\nfrom typing import List, Dict, Tuple\nfrom src.models.product import Product\nimport textwrap\nimport os\nfrom datetime import datetime\n\ndef extract_product_category(name: str) -> str:\n    \"\"\"Extracts the category (e.g., Clear, Magsafe, Armor) from a product name.\"\"\"\n    name_lower = name.lower()\n    if 'clear' in name_lower:\n        return 'Clear'\n    if 'magsafe' in name_lower:\n        return 'MagSafe'\n    if 'armor' in name_lower or 'rugged' in name_lower:\n        return 'Armor'\n    if 'screen' in name_lower or 'glass' in name_lower:\n        return 'Screen Protector'\n    if 'lens' in name_lower:\n        return 'Lens Protector'\n    return 'Standard'\n\ndef create_advanced_planogram(products: List[Product], store_template: 'Store', wall_config: Dict, output_filename: str):\n    \"\"\"\n    Creates a single, advanced planogram wall with detailed prod"
+    },
+    {
+      "path": "src\\visualization\\planogram_integration.py",
+      "name": "planogram_integration.py",
+      "extension": ".py",
+      "size_bytes": 3422,
+      "modified": "2025-07-23T13:12:23.831264",
+      "content_preview": "import os\nimport sys\nfrom pathlib import Path\nfrom datetime import datetime\nfrom src.visualization.web_planogram_generator import generate_web_planogram, generate_product_details\n\ndef generate_store_planograms(products, store_type='flagship'):\n    \"\"\"Generate planograms for a store based on store type\"\"\"\n    from src.utils.logger import get_logger\n    logger = get_logger()\n    \n    # Determine wall allocation based on store type\n    if store_type == 'flagship':\n        num_walls = 3\n        wall_allocation = [\n            {'name': 'Wall 1/3', 'series': ['iPhone 16 Pro Max', 'iPhone 16 Pro'], 'focus': 'iPhone 16 Pro Models'},\n            {'name': 'Wall 2/3', 'series': ['iPhone 16 Plus', 'iPhone 16 Base'], 'focus': 'iPhone 16 Standard Models'},\n            {'name': 'Wall 3/3', 'series': ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base'], 'focus': 'Top TPA Brands (Third Party)'}\n        ]\n    elif store_type == 'standard':\n        num_walls = 2\n        wall_allocat"
+    },
+    {
+      "path": "src\\visualization\\planogram_visualizer.py",
+      "name": "planogram_visualizer.py",
+      "extension": ".py",
+      "size_bytes": 47336,
+      "modified": "2025-07-23T01:57:40.105717",
+      "content_preview": "import matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nimport numpy as np\nfrom typing import List, Dict, Optional, Tuple\nimport seaborn as sns\nfrom src.models.product import Product, ProductCategory\nfrom src.models.shelf import Shelf\nfrom src.models.store import Store\nfrom src.optimization.base_optimizer import OptimizationResult\nfrom src.utils.logger import get_logger\n\nclass PlanogramVisualizer:\n    \"\"\"Create visual representations of planograms\"\"\"\n    \n    def __init__(self, figsize: Tuple[int, int] = (24, 16)):\n        self.figsize = figsize\n        self.dpi = 300  # High resolution output\n        self.logger = get_logger()\n        \n        # Define color schemes\n        self.category_colors = {\n            ProductCategory.CASE: '#FF6B6B',\n            ProductCategory.SCREEN_PROTECTOR: '#4ECDC4',\n            ProductCateg"
+    },
+    {
+      "path": "src\\visualization\\professional_planogram_generator.py",
+      "name": "professional_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 26071,
+      "modified": "2025-07-25T13:42:50.387893",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nProfessional Planogram Generator\nCreates high-quality retail planograms with intelligent product placement, proper color distribution,\nand professional visual design following retail best practices.\n\"\"\"\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport seaborn as sns\nfrom pathlib import Path\nfrom datetime import datetime\nimport re\nimport logging\nfrom collections import defaultdict, Counter\nimport random\nfrom itertools import cycle\n\n# Configure logging\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\n\nclass ProfessionalPlanogramGenerator:\n    \"\"\"Professional planogram generator with intelligent product placement\"\"\"\n    \n    def __init__(self):\n        # Professional brand color scheme\n        self.brand_colors = {\n            'Apple': '#007AFF',\n            'Gripp': '#FF6B35', \n            'Pulse': '#8E44AD',\n  "
+    },
+    {
+      "path": "src\\visualization\\retail_planogram_generator.py",
+      "name": "retail_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 23229,
+      "modified": "2025-07-29T14:56:40.808202",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nRetail-Style Planogram Generator\nCreates planograms that match real Apple Store layouts with proper organization and aesthetics.\n\"\"\"\n\nimport matplotlib\n# Set non-interactive backend to prevent GUI issues\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch\nimport numpy as np\nfrom collections import defaultdict\nfrom datetime import datetime\nfrom pathlib import Path\n\nclass RetailPlanogramGenerator:\n    def __init__(self):\n        \"\"\"Initialize the retail planogram generator with proper styling\"\"\"\n        \n        # Uniform product dimensions - all products same size like real stores\n        self.product_width = 0.85\n        self.product_height = 0.85\n        self.gap = 0.15  # Gap between products\n        \n        # Brand colors for organization\n        self.brand_colors = {\n            'Apple': '#007AFF',      # Apple blue\n            'Pulse': '#FF6B6B',      # Red\n            "
+    },
+    {
+      "path": "src\\visualization\\streamlined_planogram_generator.py",
+      "name": "streamlined_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 20201,
+      "modified": "2025-07-29T14:56:28.148134",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nPROFESSIONAL RETAIL PLANOGRAM GENERATOR\n- Series split based on number of walls\n- Dedicated rows for screen protectors/TG/lens protectors  \n- Product categorization (armor, magsafe, silicone, etc.)\n- Proper TPA diversity with brand mixing\n- Phone-like rectangles with proper dimensions\n- Real store integration\n\"\"\"\n\nimport json\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom pathlib import Path\nimport random\nfrom datetime import datetime\n\nclass ProfessionalPlanogramGenerator:\n    def __init__(self):\n        self.project_root = Path(__file__).parent.parent.parent.absolute()\n        self.cases_data = self._load_cases_reference()\n        \n        # Grid configuration  \n        self.grid_rows = 8\n        self.grid_cols = 6\n        self.total_slots = self.grid_rows * self.grid_cols\n        \n        # Dedicate rows for accessories\n        self.accessory_rows = 1  # Bottom row for screen/lens protectors\n        self.case_rows = self.grid_rows"
+    },
+    {
+      "path": "src\\visualization\\watch_planogram.py",
+      "name": "watch_planogram.py",
+      "extension": ".py",
+      "size_bytes": 14143,
+      "modified": "2025-07-14T10:33:56.621644",
+      "content_preview": "import matplotlib\nmatplotlib.use('Agg')  # Use non-interactive backend for server environments\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Rectangle, FancyBboxPatch\nfrom matplotlib import patches\nimport numpy as np\nimport pandas as pd\nfrom typing import List, Dict, Optional, Tuple\nfrom pathlib import Path\nimport textwrap\nimport os\n\ndef extract_color_from_watch_name(name):\n    \"\"\"Extract color from watch product name\"\"\"\n    color_keywords = [\n        'Black', 'White', 'Silver', 'Gold', 'Rose Gold', 'Blue', 'Red', 'Green', 'Pink', 'Purple', \n        'Yellow', 'Orange', 'Gray', 'Grey', 'Brown', 'Tan', 'Olive', 'Navy', 'Midnight', 'Starlight',\n        'Space Gray', 'Graphite', 'Pacific Blue', 'Sierra Blue', 'Alpine Green', 'Product Red',\n        'Deep Purple', 'Dynamic Island', 'Storm Blue', 'Winter Blue', 'Spring Yellow', 'Canary Yellow',\n        'Electric Orange', 'Dark Cherry', 'Clover', 'Forest Green', 'Jade', 'Mint', 'Seafoam',\n        'Lavender', 'Light Pink', 'Fla"
+    },
+    {
+      "path": "src\\visualization\\web_planogram_generator.py",
+      "name": "web_planogram_generator.py",
+      "extension": ".py",
+      "size_bytes": 2812,
+      "modified": "2025-07-23T16:34:12.743454",
+      "content_preview": "\nimport os\nimport sys\nimport shutil\nfrom pathlib import Path\nfrom datetime import datetime\nimport matplotlib.pyplot as plt\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\ndef generate_web_planogram(products, store_type, wall_name, wall_series):\n    \"\"\"Generate planogram for web UI by copying the correct version\"\"\"\n    # Make sure output directory exists\n    output_dir = Path('output')\n    output_dir.mkdir(exist_ok=True)\n    \n    # Generate a timestamp for the filename\n    timestamp = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    \n    # Extract wall number from wall_name\n    wall_num = 1\n    if \"Wall\" in wall_name and \"/\" in wall_name:\n        try:\n            wall_num = int(wall_name.split(\"/\")[0].replace(\"Wall\", \"\").strip())\n        except:\n            wall_num = 1\n    \n    # Source file (the correct planogram)\n    source_file = project_root / \"web-ui\" / \"backend\" / \"output\" / f\"Smart_Cases_Layout_{store_t"
+    },
+    {
+      "path": "src\\visualization\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-01T16:00:19.111671",
+      "content_preview": ""
+    },
+    {
+      "path": "web-ui\\backend\\api.py",
+      "name": "api.py",
+      "extension": ".py",
+      "size_bytes": 0,
+      "modified": "2025-07-27T17:33:34.410565",
+      "content_preview": ""
+    },
+    {
+      "path": "web-ui\\backend\\app.py",
+      "name": "app.py",
+      "extension": ".py",
+      "size_bytes": 58281,
+      "modified": "2025-07-31T12:13:29.640488",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nApple Store Planogram Optimization System\nA streamlined Flask-based web service for optimizing Apple Store wall layouts.\n\"\"\"\n\nimport os\nimport sys\nimport json\nimport logging\nimport re\nimport uuid\nimport threading\nfrom pathlib import Path\nfrom datetime import datetime\nfrom urllib.parse import unquote\nfrom enum import Enum\n\nimport pandas as pd\nimport numpy as np\n\nfrom flask import Flask, request, jsonify, send_from_directory\nfrom flask_cors import CORS\n\n# ---------------------------------------------------------------------------- #\n#                                  Setup                                       #\n# ---------------------------------------------------------------------------- #\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\n# Configure logging\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n    handlers="
+    },
+    {
+      "path": "web-ui\\backend\\database_endpoints.py",
+      "name": "database_endpoints.py",
+      "extension": ".py",
+      "size_bytes": 26201,
+      "modified": "2025-07-26T21:32:09.949098",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nDatabase-powered API endpoints for the planogram system\n\"\"\"\n\nimport sys\nimport logging\nimport re\nfrom pathlib import Path\nfrom flask import jsonify, request\nfrom functools import wraps\nimport time\nimport pandas as pd\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.database.store_database import StoreDatabase\n\nlogger = logging.getLogger(__name__)\n\n# Initialize database\ndb_path = project_root / \"data\" / \"store_data.db\"\nstore_db = StoreDatabase(str(db_path))\n\n# Simple in-memory cache\ncache = {}\nCACHE_TIMEOUT = 300  # 5 minutes\n\ndef cached(timeout=CACHE_TIMEOUT):\n    \"\"\"Simple caching decorator\"\"\"\n    def decorator(f):\n        @wraps(f)\n        def decorated_function(*args, **kwargs):\n            # Create cache key from function name and arguments\n            cache_key = f\"{f.__name__}:{str(args)}:{str(sorted(kwargs.items()))}\"\n            \n            # Check if cached resu"
+    },
+    {
+      "path": "web-ui\\backend\\debug_wall_generation.txt",
+      "name": "debug_wall_generation.txt",
+      "extension": ".txt",
+      "size_bytes": 16496,
+      "modified": "2025-07-31T12:07:23.292342",
+      "content_preview": "Wall 1: Total products loaded: 594\nWall 1: Apple products: 45\nWall 1: TPA products: 511\nWall 1: Other products: 38\nWall 1: TPA brands: {'Gripp': 219, 'Pulse': 244, 'Tekne': 48}\nWall 1: Other brands: {'Hyphen': 17, 'AT Minimal': 7, 'PG': 2, 'Roskilde': 3, 'UAG': 9}\nWall 1: Wall series allocation: ['Base', 'Plus'] (length: 2)\nWall 1: Checking series allocation - len(wall_series)=2, wall_series=['Base', 'Plus']\nWall 1: Apple Base found: 9\nWall 1: Apple Plus found: 9\nWall 1: Sample Apple Base: ['iPhone 16 Clear Case with MagS', 'iPhone 16 Silicone Case with M', 'iPhone 16 Silicone Case with M']\nWall 1: Sample Apple Plus: ['iPhone 16 Plus Clear Case with', 'iPhone 16 Plus Silicone Case w', 'iPhone 16 Plus Silicone Case w']\nWall 1: APPLE PRIORITY - Apple first in sorted lists\nWall 1: Series 1 = 9 Apple + 0 TPA\nWall 1: Series 2 = 9 Apple + 0 TPA\nWall 1: Target series 1: Base, products: 9\nWall 1: Target series 2: Plus, products: 9\nWall 1: Sample Base: ['iPhone 16 Clear Case with MagS', 'iPhone"
+    },
+    {
+      "path": "web-ui\\backend\\jobs.json",
+      "name": "jobs.json",
+      "extension": ".json",
+      "size_bytes": 26643,
+      "modified": "2025-07-24T00:30:08.700109",
+      "content_preview": "{\n    \"ecc8d83e-621a-4316-ba5c-ca000e30c0b2\": {\n        \"job_id\": \"ecc8d83e-621a-4316-ba5c-ca000e30c0b2\",\n        \"job_type\": \"store_planogram\",\n        \"parameters\": {\n            \"store_name\": \"IMAGINE- KORAMANGALA BENGALURU\",\n            \"optimization_type\": \"accessory\",\n            \"selected_products\": [\n                \"cases\"\n            ]\n        },\n        \"status\": \"failed\",\n        \"progress\": 0,\n        \"logs\": [\n            \"Running smart accessory optimization for store: IMAGINE- KORAMANGALA BENGALURU\",\n            \"Selected accessories: cases\",\n            \"Starting optimization for cases\",\n            \"Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'\"\n        ],\n        \"result\": null,\n        \"error\": \"Failed to run store planogram generation: Accessory optimization failed: 'SimpleRunner' object has no attribute '_get_recommended_walls'\",\n        \"created_at\": \"2025-07-23T17:52:22.941155\",\n        \"started_at\": \"2025-07-23T1"
+    },
+    {
+      "path": "web-ui\\backend\\professional_planogram_service.py",
+      "name": "professional_planogram_service.py",
+      "extension": ".py",
+      "size_bytes": 7072,
+      "modified": "2025-07-24T17:27:30.579779",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nProfessional Planogram Service - Standalone API for generating professional planograms\n\"\"\"\n\nimport os\nimport sys\nimport json\nfrom pathlib import Path\nfrom datetime import datetime\nfrom flask import Flask, request, jsonify, send_from_directory\nfrom flask_cors import CORS\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.absolute()\nsys.path.insert(0, str(project_root))\n\nfrom src.planogram_v2.cases_data_processor import CasesDataProcessor\nfrom src.planogram_v2.advanced_cases_plotter import AdvancedCasesPlanogramPlotter\n\n# Create Flask application\napp = Flask(__name__)\nCORS(app, resources={r\"/api/*\": {\"origins\": \"*\"}})\n\n@app.route('/api/professional-planograms/generate/<store_name>', methods=['POST'])\ndef generate_professional_planograms(store_name):\n    \"\"\"Generate professional retail-quality planograms for a store\"\"\"\n    try:\n        data = request.get_json() or {}\n        accessories = data.get(\"selected_accessories\", [\"cases\"])\n  "
+    },
+    {
+      "path": "web-ui\\backend\\requirements.txt",
+      "name": "requirements.txt",
+      "extension": ".txt",
+      "size_bytes": 257,
+      "modified": "2025-07-17T11:41:31.460933",
+      "content_preview": "Flask==2.3.3\nFlask-CORS==4.0.0\nFlask-SocketIO==5.3.6\npython-socketio==5.8.0\npython-engineio==4.7.1\neventlet==0.33.3\npandas==2.0.3\nnumpy==1.24.3\nmatplotlib==3.7.2\nseaborn==0.12.2\ngunicorn==21.2.0\npytest==7.4.0\npytest-flask==1.2.0\nWerkzeug==2.3.7"
+    },
+    {
+      "path": "web-ui\\backend\\planogram_services\\cases_covers_generator.py",
+      "name": "cases_covers_generator.py",
+      "extension": ".py",
+      "size_bytes": 63828,
+      "modified": "2025-07-30T15:03:25.400482",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nProfessional Cases & Covers Planogram Generator\nBased on the established professional planogram system with proper grid sizing,\nbrand distribution, and aesthetic requirements matching the reference images.\n\"\"\"\n\n# Configure matplotlib backend for thread-safe operation BEFORE importing pyplot\nimport matplotlib\nmatplotlib.use('Agg')  # Non-GUI backend to prevent threading issues\n\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport numpy as np\nimport json\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple, Optional\nimport textwrap\nfrom datetime import datetime\nimport re\nimport pandas as pd\nfrom collections import defaultdict, Counter\nfrom itertools import cycle\n\nclass CasesCoversGenerator:\n    \"\"\"Professional Cases & Covers planogram generator matching reference aesthetics\"\"\"\n    \n    def __init__(self, project_root: str):\n        self.project_root = Path(project_root)\n   "
+    },
+    {
+      "path": "web-ui\\backend\\planogram_services\\ipad_accessories_generator.py",
+      "name": "ipad_accessories_generator.py",
+      "extension": ".py",
+      "size_bytes": 223128,
+      "modified": "2025-07-31T12:16:26.562803",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\niPad Accessories Planogram Generator\nProfessional planogram generator optimized for iPad accessories with support for:\n- Larger accessory dimensions (iPad Pro 12.9\" up to 28×21.5cm)\n- Multiple categories (cases, folios, keyboard cases, armor cases)\n- iPad model compatibility (Mini, Base, Air, Pro 11\", Pro 12.9\")\n- Sales-based prioritization and brand allocation\n\"\"\"\n\nimport matplotlib.pyplot as plt\nimport matplotlib.patches as patches\nfrom matplotlib.patches import FancyBboxPatch, Rectangle\nimport numpy as np\nimport json\nfrom pathlib import Path\nfrom typing import Dict, List, Tuple, Optional\nimport textwrap\nfrom datetime import datetime\nimport re\nimport pandas as pd\nfrom collections import defaultdict, Counter\nfrom itertools import cycle\n\nclass IPadAccessoriesGenerator:\n    \"\"\"Professional iPad accessories planogram generator\"\"\"\n    \n    def __init__(self, project_root: str):\n        self.project_root = Path(project_root)\n        \n        # iPad-specific brand"
+    },
+    {
+      "path": "web-ui\\backend\\planogram_services\\ipad_integration.py",
+      "name": "ipad_integration.py",
+      "extension": ".py",
+      "size_bytes": 11737,
+      "modified": "2025-07-30T10:08:41.773258",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\niPad Accessories Frontend Integration\nProvides the interface between frontend wall count selection and iPad planogram generation\n\"\"\"\n\nimport json\nimport logging\nfrom pathlib import Path\nfrom typing import Dict, List, Optional, Any\nfrom datetime import datetime\n\ntry:\n    from .ipad_accessories_generator import IPadAccessoriesGenerator\nexcept ImportError:\n    # Handle direct execution\n    from ipad_accessories_generator import IPadAccessoriesGenerator\n\nlogger = logging.getLogger(__name__)\n\nclass OptimizedIPadIntegration:\n    \"\"\"\n    Frontend integration class for iPad Accessories planogram generation\n    Handles multi-wall generation based on frontend wall count selection\n    \"\"\"\n    \n    def __init__(self, project_root: str):\n        self.project_root = Path(project_root)\n        self.generator = IPadAccessoriesGenerator(project_root)\n        self.output_path = self.project_root / 'output'\n        self.output_path.mkdir(parents=True, exist_ok=True)\n    \n    de"
+    },
+    {
+      "path": "web-ui\\backend\\planogram_services\\planogram_manager.py",
+      "name": "planogram_manager.py",
+      "extension": ".py",
+      "size_bytes": 19643,
+      "modified": "2025-07-30T09:53:45.237159",
+      "content_preview": "#!/usr/bin/env python3\n\"\"\"\nPlanogram Manager - Handles wall count storage and planogram generation\nManages the final wall counts after user edits and generates planograms accordingly\n\"\"\"\n\nimport json\nimport logging\nfrom pathlib import Path\nfrom typing import Dict, List, Optional, Any\nfrom datetime import datetime\nimport sys\n\n# Add project root to path\nproject_root = Path(__file__).parent.parent.parent.parent\nsys.path.insert(0, str(project_root))\n\ntry:\n    from .cases_covers_generator import CasesCoversGenerator\n    from .ipad_accessories_generator import IPadAccessoriesGenerator\nexcept ImportError:\n    # Handle direct execution\n    from cases_covers_generator import CasesCoversGenerator\n    from ipad_accessories_generator import IPadAccessoriesGenerator\n\nlogger = logging.getLogger(__name__)\n\nclass PlanogramManager:\n    \"\"\"Manages wall count storage and planogram generation\"\"\"\n    \n    def __init__(self, project_root: Path):\n        self.project_root = project_root\n        self.storage_"
+    },
+    {
+      "path": "web-ui\\backend\\planogram_services\\__init__.py",
+      "name": "__init__.py",
+      "extension": ".py",
+      "size_bytes": 29,
+      "modified": "2025-07-29T14:55:34.600717",
+      "content_preview": "# Planogram Services Module\n"
+    },
+    {
+      "path": "web-ui\\frontend\\package-lock.json",
+      "name": "package-lock.json",
+      "extension": ".json",
+      "size_bytes": 694938,
+      "modified": "2025-07-22T17:58:04.931840",
+      "content_preview": "{\n  \"name\": \"planogram-web-ui\",\n  \"version\": \"1.0.0\",\n  \"lockfileVersion\": 3,\n  \"requires\": true,\n  \"packages\": {\n    \"\": {\n      \"name\": \"planogram-web-ui\",\n      \"version\": \"1.0.0\",\n      \"dependencies\": {\n        \"@emotion/react\": \"^11.11.1\",\n        \"@emotion/styled\": \"^11.11.0\",\n        \"@mui/icons-material\": \"^5.14.15\",\n        \"@mui/material\": \"^5.14.15\",\n        \"@types/node\": \"^20.8.7\",\n        \"@types/react\": \"^18.2.31\",\n        \"@types/react-dom\": \"^18.2.14\",\n        \"axios\": \"^1.5.1\",\n        \"react\": \"^18.2.0\",\n        \"react-dom\": \"^18.2.0\",\n        \"react-router-dom\": \"^6.17.0\",\n        \"react-scripts\": \"5.0.1\",\n        \"recharts\": \"^2.15.4\",\n        \"socket.io-client\": \"^4.7.2\",\n        \"typescript\": \"^4.9.5\",\n        \"web-vitals\": \"^3.5.0\"\n      },\n      \"devDependencies\": {\n        \"@types/recharts\": \"^1.8.29\"\n      }\n    },\n    \"node_modules/@alloc/quick-lru\": {\n      \"version\": \"5.2.0\",\n      \"resolved\": \"https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0"
+    },
+    {
+      "path": "web-ui\\frontend\\package.json",
+      "name": "package.json",
+      "extension": ".json",
+      "size_bytes": 1238,
+      "modified": "2025-07-22T17:58:04.675721",
+      "content_preview": "{\n  \"name\": \"planogram-web-ui\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Web UI for Apple Planogram Optimization System\",\n  \"private\": true,\n  \"dependencies\": {\n    \"@emotion/react\": \"^11.11.1\",\n    \"@emotion/styled\": \"^11.11.0\",\n    \"@mui/icons-material\": \"^5.14.15\",\n    \"@mui/material\": \"^5.14.15\",\n    \"@types/node\": \"^20.8.7\",\n    \"@types/react\": \"^18.2.31\",\n    \"@types/react-dom\": \"^18.2.14\",\n    \"axios\": \"^1.5.1\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"react-router-dom\": \"^6.17.0\",\n    \"react-scripts\": \"5.0.1\",\n    \"recharts\": \"^2.15.4\",\n    \"socket.io-client\": \"^4.7.2\",\n    \"typescript\": \"^4.9.5\",\n    \"web-vitals\": \"^3.5.0\"\n  },\n  \"scripts\": {\n    \"start\": \"react-scripts start\",\n    \"build\": \"react-scripts build\",\n    \"test\": \"react-scripts test\",\n    \"eject\": \"react-scripts eject\"\n  },\n  \"eslintConfig\": {\n    \"extends\": [\n      \"react-app\",\n      \"react-app/jest\"\n    ]\n  },\n  \"browserslist\": {\n    \"production\": [\n      \">0.2%\",\n      \"not dead\",\n      \"not op_mi"
+    },
+    {
+      "path": "web-ui\\frontend\\tsconfig.json",
+      "name": "tsconfig.json",
+      "extension": ".json",
+      "size_bytes": 559,
+      "modified": "2025-07-17T12:49:23.946399",
+      "content_preview": "{\n  \"compilerOptions\": {\n    \"target\": \"es5\",\n    \"lib\": [\n      \"dom\",\n      \"dom.iterable\",\n      \"esnext\"\n    ],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"esModuleInterop\": true,\n    \"allowSyntheticDefaultImports\": true,\n    \"strict\": true,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noFallthroughCasesInSwitch\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"node\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"noEmit\": true,\n    \"jsx\": \"react-jsx\"\n  },\n  \"include\": [\n    \"src\"\n  ]\n}"
+    },
+    {
+      "path": "web-ui\\frontend\\public\\index.html",
+      "name": "index.html",
+      "extension": ".html",
+      "size_bytes": 457,
+      "modified": "2025-07-17T12:49:01.450957",
+      "content_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta name=\"theme-color\" content=\"#000000\" />\n    <meta\n      name=\"description\"\n      content=\"Planogram Web UI\"\n    />\n    <title>Planogram Web UI</title>\n  </head>\n  <body>\n    <noscript>You need to enable JavaScript to run this app.</noscript>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\App.tsx",
+      "name": "App.tsx",
+      "extension": ".tsx",
+      "size_bytes": 2106,
+      "modified": "2025-07-21T12:32:06.913854",
+      "content_preview": "import React, { useEffect } from 'react';\nimport { ThemeProvider, createTheme } from '@mui/material/styles';\nimport CssBaseline from '@mui/material/CssBaseline';\nimport { Container, Box, Fab } from '@mui/material';\nimport { BugReport } from '@mui/icons-material';\nimport Dashboard from './components/Dashboard';\nimport SocketTest from './components/SocketTest';\nimport { socketService } from './services/socket';\n\n// Create a theme\nconst theme = createTheme({\n  palette: {\n    mode: 'light',\n    primary: {\n      main: '#1976d2',\n    },\n    secondary: {\n      main: '#dc004e',\n    },\n  },\n});\n\nfunction App() {\n  const [showSocketTest, setShowSocketTest] = React.useState(false);\n\n  useEffect(() => {\n    // Initialize WebSocket connection when app starts\n    const initializeSocket = async () => {\n      try {\n        await socketService.connect();\n        console.log('WebSocket connected successfully');\n      } catch (error) {\n        console.error('Failed to connect to WebSocket:', error);\n    "
+    },
+    {
+      "path": "web-ui\\frontend\\src\\index.tsx",
+      "name": "index.tsx",
+      "extension": ".tsx",
+      "size_bytes": 263,
+      "modified": "2025-07-17T12:48:49.270287",
+      "content_preview": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst root = ReactDOM.createRoot(\n  document.getElementById('root') as HTMLElement\n);\n\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\Dashboard.tsx",
+      "name": "Dashboard.tsx",
+      "extension": ".tsx",
+      "size_bytes": 7159,
+      "modified": "2025-07-24T00:55:52.424040",
+      "content_preview": "import React, { useState, useEffect } from 'react';\nimport {\n    Grid,\n    Card,\n    CardContent,\n    Typography,\n    Button,\n    Box,\n    Alert,\n    CircularProgress,\n    Chip\n} from '@mui/material';\nimport {\n    Store\n} from '@mui/icons-material';\n\nimport { apiService } from '../services/api';\nimport type { SystemStatus } from '../services/api';\nimport ProgressTracker from './ProgressTracker';\nimport ResultsViewer from './ResultsViewer';\nimport OptimizationForm from './OptimizationForm';\nimport StoreSelector from './StoreSelector';\n\nconst Dashboard: React.FC = () => {\n    const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null);\n    const [loading, setLoading] = useState(true);\n    const [error, setError] = useState<string | null>(null);\n\n    // Progress tracking state\n    const [progressOpen, setProgressOpen] = useState(false);\n    const [currentJobId, setCurrentJobId] = useState<string | null>(null);\n    const [currentJobType, setCurrentJobType] = useState<string"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\OptimizationForm.tsx",
+      "name": "OptimizationForm.tsx",
+      "extension": ".tsx",
+      "size_bytes": 16011,
+      "modified": "2025-07-24T01:11:50.889903",
+      "content_preview": "\nimport React, { useState, useEffect } from 'react';\nimport {\n    Dialog,\n    DialogTitle,\n    DialogContent,\n    DialogActions,\n    Button,\n    Box,\n    Typography,\n    RadioGroup,\n    FormControlLabel,\n    Radio,\n    Chip,\n    Grid,\n    Card,\n    CardContent,\n    Alert\n} from '@mui/material';\nimport {\n    Close as CloseIcon,\n    PlayArrow as PlayArrowIcon\n} from '@mui/icons-material';\n\nimport { apiService } from '../services/api';\nimport type { ValidParameters } from '../services/api';\n\ninterface OptimizationFormProps {\n    open: boolean;\n    onClose: () => void;\n    onStart: (jobId: string, jobType: string) => void;\n}\n\nconst OptimizationForm: React.FC<OptimizationFormProps> = ({ open, onClose, onStart }) => {\n    const [step, setStep] = useState<number>(1);\n    const [optimizationType, setOptimizationType] = useState<string>('');\n    const [cohortMode, setCohortMode] = useState<string>(''); // For cohort sub-options\n    const [lob, setLob] = useState<string>('iPhone');\n    const [st"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\ProgressTracker.tsx",
+      "name": "ProgressTracker.tsx",
+      "extension": ".tsx",
+      "size_bytes": 7028,
+      "modified": "2025-07-24T01:38:57.744394",
+      "content_preview": "\nimport React, { useState, useEffect } from 'react';\nimport {\n  Dialog,\n  DialogTitle,\n  DialogContent,\n  DialogActions,\n  Button,\n  Box,\n  Typography,\n  LinearProgress,\n  List,\n  ListItem,\n  ListItemText,\n  Chip,\n  IconButton,\n  Paper\n} from '@mui/material';\nimport {\n  Close as CloseIcon,\n  Cancel as CancelIcon,\n  CheckCircle as CheckCircleIcon,\n  Error as ErrorIcon\n} from '@mui/icons-material';\n\nimport { socketService } from '../services/socket';\nimport { apiService, OptimizationJob } from '../services/api';\n\ninterface ProgressTrackerProps {\n  open: boolean;\n  jobId: string | null;\n  jobType: string;\n  onClose: () => void;\n  onComplete: (result: any) => void;\n}\n\nconst ProgressTracker: React.FC<ProgressTrackerProps> = ({\n  open,\n  jobId,\n  jobType,\n  onClose,\n  onComplete\n}) => {\n  const [progress, setProgress] = useState(0);\n  const [status, setStatus] = useState('Starting...');\n  const [logs, setLogs] = useState<string[]>([]);\n  const [isComplete, setIsComplete] = useState(false);\n "
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\ResultsViewer.tsx",
+      "name": "ResultsViewer.tsx",
+      "extension": ".tsx",
+      "size_bytes": 30325,
+      "modified": "2025-07-30T10:55:48.893531",
+      "content_preview": "import React, { useState, useEffect } from 'react';\nimport {\n    Dialog,\n    DialogTitle,\n    DialogContent,\n    DialogActions,\n    Button,\n    Box,\n    Typography,\n    Grid,\n    Card,\n    CardContent,\n    CardMedia,\n    Chip,\n    IconButton,\n    Tabs,\n    Tab,\n    List,\n    ListItem,\n    ListItemText,\n    ListItemIcon\n} from '@mui/material';\nimport {\n    Close as CloseIcon,\n    Download as DownloadIcon,\n    Image as ImageIcon,\n    TableChart as TableChartIcon,\n    Assessment as AssessmentIcon,\n    Warning as WarningIcon\n} from '@mui/icons-material';\n\nimport { apiService, getFullApiUrl } from '../services/api';\n\ninterface ResultsViewerProps {\n    open: boolean;\n    jobId: string | null;\n    onClose: () => void;\n}\n\ninterface TabPanelProps {\n    children?: React.ReactNode;\n    index: number;\n    value: number;\n}\n\nfunction TabPanel(props: TabPanelProps) {\n    const { children, value, index, ...other } = props;\n\n    return (\n        <div\n            role=\"tabpanel\"\n            hidden={valu"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\SocketTest.tsx",
+      "name": "SocketTest.tsx",
+      "extension": ".tsx",
+      "size_bytes": 7461,
+      "modified": "2025-07-17T12:52:20.223312",
+      "content_preview": "import React, { useEffect, useState } from 'react';\nimport socketService, { JobStatus, JobLogs } from '../services/socket';\n\ninterface LogEntry {\n  message: string;\n  level: 'info' | 'warning' | 'error' | 'success';\n  timestamp: string;\n}\n\nconst SocketTest: React.FC = () => {\n  const [connected, setConnected] = useState(false);\n  const [jobId, setJobId] = useState('');\n  const [logs, setLogs] = useState<LogEntry[]>([]);\n  const [connectionDetails, setConnectionDetails] = useState<any>(null);\n\n  useEffect(() => {\n    // Connect to WebSocket server on component mount\n    connectToServer();\n\n    // Set up event listeners\n    setupEventListeners();\n\n    // Clean up on component unmount\n    return () => {\n      socketService.disconnect();\n    };\n    // eslint-disable-next-line react-hooks/exhaustive-deps\n  }, []);\n\n  const connectToServer = async () => {\n    try {\n      addLog('Connecting to WebSocket server...', 'info');\n      await socketService.connect();\n      setConnected(true);\n      "
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\StoreOptimization.tsx",
+      "name": "StoreOptimization.tsx",
+      "extension": ".tsx",
+      "size_bytes": 17165,
+      "modified": "2025-07-27T18:26:32.661442",
+      "content_preview": "import React, { useState, useEffect } from 'react';\nimport {\n    Box,\n    Card,\n    CardContent,\n    Typography,\n    Button,\n    Select,\n    MenuItem,\n    FormControl,\n    InputLabel,\n    Grid,\n    Chip,\n    Alert,\n    CircularProgress,\n    Accordion,\n    AccordionSummary,\n    AccordionDetails,\n    Table,\n    TableBody,\n    TableCell,\n    TableContainer,\n    TableHead,\n    TableRow,\n    Paper,\n    Checkbox,\n    FormControlLabel,\n    FormGroup,\n    Divider\n} from '@mui/material';\nimport {\n    ExpandMore,\n    Store,\n    ViewModule,\n    PlayArrow,\n    Info,\n    Business,\n    Category,\n    Analytics,\n    CheckCircle,\n    Cancel\n} from '@mui/icons-material';\n\nimport { apiService } from '../services/api';\nimport { socketService } from '../services/socket';\nimport ProgressTracker from './ProgressTracker';\nimport ResultsViewer from './ResultsViewer';\n\ninterface StoreTemplate {\n    store_name: string;\n    location: string;\n    city: string;\n    cm: string;\n    walls: WallInfo[];\n    total_walls"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\StoreSelector.tsx",
+      "name": "StoreSelector.tsx",
+      "extension": ".tsx",
+      "size_bytes": 61491,
+      "modified": "2025-07-30T13:16:16.839099",
+      "content_preview": "﻿import React, { useState, useEffect } from 'react';\n import { apiService, getFullApiUrl } from '../services/api';\nimport {\n  Card,\n  CardContent,\n  Typography,\n  Grid,\n  Button,\n  Box,\n  Chip,\n  FormControl,\n  InputLabel,\n  Select,\n  MenuItem,\n  FormGroup,\n  FormControlLabel,\n  Checkbox,\n  CircularProgress,\n  Alert,\n  Divider,\n  LinearProgress,\n  TextField,\n  Paper,\n  Table,\n  TableBody,\n  TableCell,\n  TableContainer,\n  TableHead,\n  TableRow,\n  IconButton\n} from '@mui/material';\nimport {\n  Store,\n  LocationOn as MapPin,\n  Business as Building,\n  BarChart,\n  TrendingUp,\n  Inventory as Package,\n  FlashOn as Zap,\n  CheckCircle,\n  Edit,\n  Save,\n  Cancel,\n  DonutLarge,\n  Timeline,\n  Add,\n  Remove\n} from '@mui/icons-material';\n\ninterface StoreData {\n  location: string;\n  city: string;\n  total_walls: number;\n  lob_breakdown: Record<string, string>;\n  capacity_summary: Record<string, number>;\n  wall_details: Record<string, {\n    walls: string[];\n    total_capacity: number | string;\n    wall_c"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\StoreSelector_broken.tsx",
+      "name": "StoreSelector_broken.tsx",
+      "extension": ".tsx",
+      "size_bytes": 55939,
+      "modified": "2025-07-30T10:23:05.392686",
+      "content_preview": "import React, { useState, useEffect } from 'react';\nimport { apiService, getFullApiUrl } from '../services/api';\nimport {\n  Card,\n  CardContent,\n  Typography,\n  Grid,\n  Button,\n  Box,\n  Chip,\n  FormControl,\n  InputLabel,\n  Select,\n  MenuItem,\n  FormGroup,\n  FormControlLabel,\n  Checkbox,\n  CircularProgress,\n  Alert,\n  Divider,\n  LinearProgress,\n  TextField,\n  Paper,\n  Table,\n  TableBody,\n  TableCell,\n  TableContainer,\n  TableHead,\n  TableRow\n} from '@mui/material';\nimport {\n  Store,\n  LocationOn as MapPin,\n  Business as Building,\n  BarChart,\n  TrendingUp,\n  Inventory as Package,\n\n  CheckCircle,\n  Edit,\n  Save,\n  Cancel,\n  DonutLarge,\n  Timeline\n} from '@mui/icons-material';\n\ninterface StoreData {\n  location: string;\n  city: string;\n  total_walls: number;\n  lob_breakdown: Record<string, string>;\n  capacity_summary: Record<string, number>;\n  wall_details: Record<string, {\n    walls: string[];\n    total_capacity: number | string;\n    wall_count: number;\n    products: string[];\n  }>;\n}\n\nint"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\ui\\badge.tsx",
+      "name": "badge.tsx",
+      "extension": ".tsx",
+      "size_bytes": 751,
+      "modified": "2025-07-22T15:12:19.389246",
+      "content_preview": "import React from 'react';\n\ninterface BadgeProps {\n  children: React.ReactNode;\n  variant?: 'default' | 'secondary' | 'outline' | 'destructive';\n  className?: string;\n}\n\nexport const Badge: React.FC<BadgeProps> = ({\n  children,\n  variant = 'default',\n  className = ''\n}) => {\n  const baseClasses = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium';\n  \n  const variantClasses = {\n    default: 'bg-blue-100 text-blue-800',\n    secondary: 'bg-gray-100 text-gray-800',\n    outline: 'border border-gray-300 text-gray-700',\n    destructive: 'bg-red-100 text-red-800'\n  };\n  \n  const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;\n  \n  return (\n    <span className={classes}>\n      {children}\n    </span>\n  );\n};\n"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\ui\\button.tsx",
+      "name": "button.tsx",
+      "extension": ".tsx",
+      "size_bytes": 1254,
+      "modified": "2025-07-22T15:12:07.495369",
+      "content_preview": "import React from 'react';\n\ninterface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  variant?: 'primary' | 'secondary' | 'outline' | 'destructive';\n  size?: 'sm' | 'md' | 'lg';\n  children: React.ReactNode;\n}\n\nexport const Button: React.FC<ButtonProps> = ({\n  variant = 'primary',\n  size = 'md',\n  children,\n  className = '',\n  ...props\n}) => {\n  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';\n  \n  const variantClasses = {\n    primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500',\n    secondary: 'bg-gray-100 hover:bg-gray-200 text-gray-900 focus:ring-gray-500',\n    outline: 'border border-gray-300 hover:bg-gray-50 text-gray-700 focus:ring-gray-500',\n    destructive: 'bg-red-600 hover:bg-red-700 text-white focus:ring-red-500'\n  };\n  \n  const sizeClasses = {\n    sm: 'px-3 py-1.5 text-sm',\n    md:"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\components\\ui\\card.tsx",
+      "name": "card.tsx",
+      "extension": ".tsx",
+      "size_bytes": 1165,
+      "modified": "2025-07-22T15:11:38.577816",
+      "content_preview": "import React from 'react';\n\ninterface CardProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\ninterface CardHeaderProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\ninterface CardTitleProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\ninterface CardContentProps {\n  children: React.ReactNode;\n  className?: string;\n}\n\nexport const Card: React.FC<CardProps> = ({ children, className = '' }) => {\n  return (\n    <div className={`bg-white shadow-sm border border-gray-200 rounded-lg ${className}`}>\n      {children}\n    </div>\n  );\n};\n\nexport const CardHeader: React.FC<CardHeaderProps> = ({ children, className = '' }) => {\n  return (\n    <div className={`px-6 py-4 border-b border-gray-200 ${className}`}>\n      {children}\n    </div>\n  );\n};\n\nexport const CardTitle: React.FC<CardTitleProps> = ({ children, className = '' }) => {\n  return (\n    <h3 className={`text-lg font-semibold text-gray-900 ${className}`}>\n      {children}\n    </h3>\n  );\n};\n\nexport const CardCon"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\services\\api.ts",
+      "name": "api.ts",
+      "extension": ".ts",
+      "size_bytes": 6319,
+      "modified": "2025-07-24T01:06:03.340413",
+      "content_preview": "\nimport axios from 'axios';\n\n// API Configuration\nconst API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';\n\n// Helper to get full API URL\nexport const getFullApiUrl = (path: string): string => {\n  // Make sure path starts with a slash\n  const normalizedPath = path.startsWith('/') ? path : `/${path}`;\n  return `${API_BASE_URL}${normalizedPath}`;\n};\n\nconst api = axios.create({\n  baseURL: API_BASE_URL,\n  timeout: 30000,\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\n// API Types\nexport interface APIResponse<T = any> {\n  success: boolean;\n  message?: string;\n  data?: T;\n  error?: {\n    code: string;\n    message: string;\n    details?: any;\n  };\n  timestamp: string;\n}\n\nexport interface SystemStatus {\n  data_files: { [key: string]: boolean };\n  store_templates: string[];\n  lob_status: { [key: string]: boolean };\n  system_health: string;\n  active_jobs: number;\n  project_root: string;\n  directories: {\n    data: string;\n    output: string;\n    logs: string;\n"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\services\\socket-update.md",
+      "name": "socket-update.md",
+      "extension": ".md",
+      "size_bytes": 2783,
+      "modified": "2025-07-17T12:42:10.368736",
+      "content_preview": "# Socket Service Update Instructions\n\nTo fix the WebSocket connection issues, please update the `socket.ts` file with the following changes:\n\n1. Add the new event listeners for the real-time progress tracking system:\n\n```typescript\n// New event listeners for real-time progress tracking\nonJobStatusUpdate(callback: (data: JobStatus) => void) {\n  if (this.socket) {\n    this.socket.on('job_status', callback);\n  }\n}\n\nonJobLogsStream(callback: (data: { job_id: string; logs: any[]; total_logs: number; timestamp: string }) => void) {\n  if (this.socket) {\n    this.socket.on('job_logs_stream', callback);\n  }\n}\n\nonJobCancellationResponse(callback: (data: { job_id: string; success: boolean; timestamp: string }) => void) {\n  if (this.socket) {\n    this.socket.on('job_cancellation_response', callback);\n  }\n}\n\n// New methods to request job status, logs, and cancellation\nrequestJobStatus(jobId: string) {\n  if (this.socket?.connected) {\n    this.socket.emit('get_job_status', { job_id: jobId });\n  }\n}\n\n"
+    },
+    {
+      "path": "web-ui\\frontend\\src\\services\\socket.ts",
+      "name": "socket.ts",
+      "extension": ".ts",
+      "size_bytes": 9577,
+      "modified": "2025-07-21T12:35:58.470277",
+      "content_preview": "import { io, Socket } from 'socket.io-client';\n\nconst SOCKET_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';\n\nexport interface ProgressUpdate {\n  job_id: string;\n  progress: number;\n  status: string;\n  logs: string[];\n  timestamp: string;\n}\n\nexport interface JobComplete {\n  job_id: string;\n  result: any;\n  timestamp: string;\n}\n\nexport interface JobError {\n  job_id: string;\n  error: {\n    message: string;\n    code?: string;\n  };\n  timestamp: string;\n}\n\nexport interface JobStatus {\n  job_id: string;\n  status: string;\n  progress: number;\n  logs: any[];\n  timestamp?: string;\n}\n\nexport interface JobLogs {\n  job_id: string;\n  logs: any[];\n  total_logs: number;\n  timestamp: string;\n}\n\nexport interface JobCancellationResponse {\n  job_id: string;\n  success: boolean;\n  timestamp: string;\n}\n\nclass SocketService {\n  private socket: Socket | null = null;\n  private reconnectAttempts = 0;\n  private maxReconnectAttempts = 5;\n  private reconnectDelay = 1000;\n\n  connect(): Promise<Socket"
+    }
+  ],
+  "directories": [
+    "data",
+    "data\\processed",
+    "data\\raw",
+    "data\\raw\\accessories",
+    "data\\raw\\cohorts",
+    "data\\raw\\store_templates",
+    "src",
+    "src\\cohort_planogram",
+    "src\\database",
+    "src\\data_processing",
+    "src\\integration",
+    "src\\models",
+    "src\\optimization",
+    "src\\planogram_v2",
+    "src\\utils",
+    "src\\visualization",
+    "web-ui",
+    "web-ui\\backend",
+    "web-ui\\backend\\planogram_services",
+    "web-ui\\backend\\temp",
+    "web-ui\\frontend",
+    "web-ui\\frontend\\public",
+    "web-ui\\frontend\\src",
+    "web-ui\\frontend\\src\\components",
+    "web-ui\\frontend\\src\\components\\ui",
+    "web-ui\\frontend\\src\\services"
+  ],
+  "file_types": {
+    ".py": 78,
+    ".md": 4,
+    ".json": 11,
+    ".txt": 2,
+    ".html": 1,
+    ".tsx": 13,
+    ".ts": 2
+  },
+  "summary": {
+    "total_files": 111,
+    "total_directories": 26,
+    "file_types_count": 7,
+    "most_common_types": [
+      [
+        ".py",
+        78
+      ],
+      [
+        ".tsx",
+        13
+      ],
+      [
+        ".json",
+        11
+      ],
+      [
+        ".md",
+        4
+      ],
+      [
+        ".txt",
+        2
+      ]
+    ]
+  }
+}

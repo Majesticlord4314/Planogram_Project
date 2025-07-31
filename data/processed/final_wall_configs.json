@@ -1,0 +1,148 @@
+{
+  "Single Wall Test Store": {
+    "wall_counts": {
+      "iPad Accessories": 1
+    },
+    "total_walls": 1,
+    "last_updated": "2025-07-30T09:53:51.111883",
+    "status": "finalized"
+  },
+  "Two Wall Test Store": {
+    "wall_counts": {
+      "iPad Accessories": 2
+    },
+    "total_walls": 2,
+    "last_updated": "2025-07-30T09:53:51.486531",
+    "status": "finalized"
+  },
+  "imagine- lulu mall kochi": {
+    "wall_counts": {
+      "Mac Accessories": 1,
+      "Audio Accessories": 1,
+      "Cases & Covers": 2
+    },
+    "total_walls": 4,
+    "last_updated": "2025-07-30T10:08:50.484306",
+    "status": "finalized"
+  },
+  "imagine- kns towers tumkur": {
+    "wall_counts": {
+      "iPad Accessories": 2,
+      "Audio Accessories": 3,
+      "Cases & Covers": 3,
+      "Watch Accessories": 1
+    },
+    "total_walls": 9,
+    "last_updated": "2025-07-30T11:23:11.828584",
+    "status": "finalized"
+  },
+  "imagine- ampa skywalk chennai": {
+    "wall_counts": {
+      "Miscellaneous": 5,
+      "Adapters & Cables": 1,
+      "Cases & Covers": 3,
+      "iPad Accessories": 2,
+      "Mac Accessories": 1
+    },
+    "total_walls": 12,
+    "last_updated": "2025-07-30T12:23:42.729115",
+    "status": "finalized"
+  },
+  "imagine- koramangala bengaluru": {
+    "wall_counts": {
+      "Adapters & Cables": 2,
+      "Cases & Covers": 3,
+      "Mac Accessories": 2,
+      "Miscellaneous": 2,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1
+    },
+    "total_walls": 11,
+    "last_updated": "2025-07-30T15:08:36.343714",
+    "status": "finalized"
+  },
+  "imagine- nexus koramangala bengaluru": {
+    "wall_counts": {
+      "Audio Accessories": 2,
+      "Cases & Covers": 3,
+      "Mac Accessories": 6,
+      "Watch Accessories": 1,
+      "iPad Accessories": 2
+    },
+    "total_walls": 14,
+    "last_updated": "2025-07-30T14:26:06.721791",
+    "status": "finalized"
+  },
+  "imagine- forum thomsun mall kochi": {
+    "wall_counts": {
+      "Adapters & Cables": 1,
+      "iPad Accessories": 1,
+      "Watch Accessories": 1,
+      "Cases & Covers": 1,
+      "Mac Accessories": 1,
+      "Audio Accessories": 1
+    },
+    "total_walls": 6,
+    "last_updated": "2025-07-31T12:05:10.100912",
+    "status": "finalized"
+  },
+  "imagine- g square alappuzha": {
+    "wall_counts": {
+      "Mac Accessories": 2,
+      "Audio Accessories": 2,
+      "Watch Accessories": 2,
+      "iPad Accessories": 1,
+      "Cases & Covers": 3
+    },
+    "total_walls": 10,
+    "last_updated": "2025-07-31T12:05:29.153981",
+    "status": "finalized"
+  },
+  "imagine- garuda mall bengaluru": {
+    "wall_counts": {
+      "Adapters & Cables": 1,
+      "Audio Accessories": 2,
+      "Mac Accessories": 3,
+      "Watch Accessories": 1,
+      "iPad Accessories": 1
+    },
+    "total_walls": 8,
+    "last_updated": "2025-07-31T12:05:37.938203",
+    "status": "finalized"
+  },
+  "imagine- express avenue chennai": {
+    "wall_counts": {
+      "Adapters & Cables": 1,
+      "Mac Accessories": 1
+    },
+    "total_walls": 2,
+    "last_updated": "2025-07-31T12:05:42.041536",
+    "status": "finalized"
+  },
+  "imagine- gopalan signature mall bengaluru": {
+    "wall_counts": {
+      "Adapters & Cables": 3,
+      "Audio Accessories": 2,
+      "Cases & Covers": 4,
+      "Mac Accessories": 3,
+      "Miscellaneous": 2,
+      "iPad Accessories": 2
+    },
+    "total_walls": 16,
+    "last_updated": "2025-07-31T12:07:13.370403",
+    "status": "finalized"
+  },
+  "imagine- hsr layout bengaluru": {
+    "wall_counts": {
+      "Cases & Covers": 4,
+      "Audio Accessories": 3,
+      "Miscellaneous": 3,
+      "Mac Accessories": 1,
+      "Adapters & Cables": 1,
+      "iPad Accessories": 1
+    },
+    "total_walls": 13,
+    "last_updated": "2025-07-31T12:18:31.983858",
+    "status": "finalized"
+  }
+}

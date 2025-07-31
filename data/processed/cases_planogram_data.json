@@ -1,0 +1,4057 @@
+{
+  "processed_data": {
+    "iPhone 16 Base": {
+      "clear": {
+        "total_products": 9,
+        "total_sales": 1413.0,
+        "top_products": [
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-White                                                             ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 288.0,
+            "pureqty": 255.0,
+            "impureqty": 33,
+            "series": "iPhone 16 Base",
+            "category": "clear",
+            "priority_score": 92.88
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-White                                                             ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 270.0,
+            "pureqty": 234.0,
+            "impureqty": 36,
+            "series": "iPhone 16 Base",
+            "category": "clear",
+            "priority_score": 92.7
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-Black                                                             ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 237.0,
+            "pureqty": 193.0,
+            "impureqty": 44,
+            "series": "iPhone 16 Base",
+            "category": "clear",
+            "priority_score": 92.37
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Grey                                                              ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 136.0,
+            "pureqty": 120.0,
+            "impureqty": 16,
+            "series": "iPhone 16 Base",
+            "category": "clear",
+            "priority_score": 91.36
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Black                                                             ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 123.0,
+            "pureqty": 106.0,
+            "impureqty": 17,
+            "series": "iPhone 16 Base",
+            "category": "clear",
+            "priority_score": 91.23
+          },
+          {
+            "product_name": "iPhone 16 Clear Case with MagSafe                                                                                  ",
+            "brand": "Apple",
+            "subcategory": "clear",
+            "total_sales": 119.0,
+            "pureqty": 92.0,
+            "impureqty": 27
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Dark Blue                                                         ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 113.0,
+            "pureqty": 94.0,
+            "impureqty": 19
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 16  6.1  - Clear                                                                 ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 80.0,
+            "pureqty": 62.0,
+            "impureqty": 18
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-Grey                                                              ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 47.0,
+            "pureqty": 37.0,
+            "impureqty": 10
+          }
+        ]
+      },
+      "silicone": {
+        "total_products": 8,
+        "total_sales": 256.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Black                                                                       ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 74.0,
+            "pureqty": 44.0,
+            "impureqty": 30,
+            "series": "iPhone 16 Base",
+            "category": "silicone",
+            "priority_score": 88.74
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Lake Green                                                                  ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 62.0,
+            "pureqty": 40.0,
+            "impureqty": 22,
+            "series": "iPhone 16 Base",
+            "category": "silicone",
+            "priority_score": 88.62
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Denim                                                                       ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 35.0,
+            "pureqty": 24.0,
+            "impureqty": 11,
+            "series": "iPhone 16 Base",
+            "category": "silicone",
+            "priority_score": 88.35
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Ultramarine                                                                 ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 33.0,
+            "pureqty": 15.0,
+            "impureqty": 18,
+            "series": "iPhone 16 Base",
+            "category": "silicone",
+            "priority_score": 88.33
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Fuchsia                                                                     ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 22.0,
+            "pureqty": 13.0,
+            "impureqty": 9,
+            "series": "iPhone 16 Base",
+            "category": "silicone",
+            "priority_score": 88.22
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Plum                                                                        ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 17.0,
+            "pureqty": 9.0,
+            "impureqty": 8
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Star Fruit                                                                  ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 8.0,
+            "pureqty": 7.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "iPhone 16 Silicone Case with MagSafe - Stone Gray                                                                  ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 5.0,
+            "pureqty": 1.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "tempered_glass": {
+        "total_products": 2,
+        "total_sales": 4.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16  6.1   - Clear                                                     ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 3.0,
+            "pureqty": 3.0,
+            "impureqty": 0
+          },
+          {
+            "product_name": "Robocare iPhone 16 TEMPERED GLASS 3D Dust Prevention edge to edge Glass                                            ",
+            "brand": "Robocare",
+            "subcategory": "tempered_glass",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 24,
+        "total_sales": 2226.0,
+        "top_products": [
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16-Black                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 350.0,
+            "pureqty": 295.0,
+            "impureqty": 55,
+            "series": "iPhone 16 Base",
+            "category": "magsafe",
+            "priority_score": 89.5
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16-Grey                                                                         ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 304.0,
+            "pureqty": 262.0,
+            "impureqty": 42,
+            "series": "iPhone 16 Base",
+            "category": "magsafe",
+            "priority_score": 89.04
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 273.0,
+            "pureqty": 231.0,
+            "impureqty": 42,
+            "series": "iPhone 16 Base",
+            "category": "magsafe",
+            "priority_score": 88.73
+          },
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16-Black                                                                        ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 241.0,
+            "pureqty": 202.0,
+            "impureqty": 39,
+            "series": "iPhone 16 Base",
+            "category": "magsafe",
+            "priority_score": 88.41
+          },
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16-Grey                                                                         ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 211.0,
+            "pureqty": 185.0,
+            "impureqty": 26,
+            "series": "iPhone 16 Base",
+            "category": "magsafe",
+            "priority_score": 88.11
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16-Blue                                                                         ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 144.0,
+            "pureqty": 118.0,
+            "impureqty": 26
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Grey Blue                                                   ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 143.0,
+            "pureqty": 128.0,
+            "impureqty": 15
+          },
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16-Blue                                                                         ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 119.0,
+            "pureqty": 98.0,
+            "impureqty": 21
+          },
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16  6.1  with White Ring - Clear                                         ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 81.0,
+            "pureqty": 60.0,
+            "impureqty": 21
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16  6.1  - Green Matte                                                 ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 80.0,
+            "pureqty": 65.0,
+            "impureqty": 15
+          }
+        ]
+      },
+      "armour": {
+        "total_products": 3,
+        "total_sales": 559.0,
+        "top_products": [
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16-Black                                                                              ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 338.0,
+            "pureqty": 296.0,
+            "impureqty": 42
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16-Matt Clear                                                                         ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 122.0,
+            "pureqty": 110.0,
+            "impureqty": 12
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16-Dark Blue                                                                          ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 99.0,
+            "pureqty": 88.0,
+            "impureqty": 11
+          }
+        ]
+      },
+      "crystal": {
+        "total_products": 3,
+        "total_sales": 850.0,
+        "top_products": [
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White                                                     ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 454.0,
+            "pureqty": 385.0,
+            "impureqty": 69
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-Grey                                                      ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 226.0,
+            "pureqty": 194.0,
+            "impureqty": 32
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-Black                                                     ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 170.0,
+            "pureqty": 149.0,
+            "impureqty": 21
+          }
+        ]
+      },
+      "silicon": {
+        "total_products": 3,
+        "total_sales": 472.0,
+        "top_products": [
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16-Black                                                                             ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 223.0,
+            "pureqty": 186.0,
+            "impureqty": 37
+          },
+          {
+            "product_name": "Tekne SILICON Case for iPhone 16-Black                                                                             ",
+            "brand": "Tekne",
+            "subcategory": "silicon",
+            "total_sales": 153.0,
+            "pureqty": 130.0,
+            "impureqty": 23
+          },
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16-Storm Blue                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 96.0,
+            "pureqty": 84.0,
+            "impureqty": 12
+          }
+        ]
+      },
+      "leather": {
+        "total_products": 3,
+        "total_sales": 213.0,
+        "top_products": [
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16-Black                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 114.0,
+            "pureqty": 92.0,
+            "impureqty": 22
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16-Blue                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 61.0,
+            "pureqty": 50.0,
+            "impureqty": 11
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16-Brown                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 38.0,
+            "pureqty": 31.0,
+            "impureqty": 7
+          }
+        ]
+      }
+    },
+    "iPhone 16 Plus": {
+      "clear": {
+        "total_products": 8,
+        "total_sales": 699.0,
+        "top_products": [
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Plus-Grey                                                         ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 186.0,
+            "pureqty": 155.0,
+            "impureqty": 31,
+            "series": "iPhone 16 Plus",
+            "category": "clear",
+            "priority_score": 101.86
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-White                                                        ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 135.0,
+            "pureqty": 123.0,
+            "impureqty": 12,
+            "series": "iPhone 16 Plus",
+            "category": "clear",
+            "priority_score": 101.35
+          },
+          {
+            "product_name": "iPhone 16 Plus Clear Case with MagSafe                                                                             ",
+            "brand": "Apple",
+            "subcategory": "clear",
+            "total_sales": 87.0,
+            "pureqty": 71.0,
+            "impureqty": 16,
+            "series": "iPhone 16 Plus",
+            "category": "clear",
+            "priority_score": 100.87
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Grey                                                         ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 80.0,
+            "pureqty": 65.0,
+            "impureqty": 15,
+            "series": "iPhone 16 Plus",
+            "category": "clear",
+            "priority_score": 100.8
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Dark Blue                                                    ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 70.0,
+            "pureqty": 56.0,
+            "impureqty": 14,
+            "series": "iPhone 16 Plus",
+            "category": "clear",
+            "priority_score": 100.7
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Black                                                        ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 65.0,
+            "pureqty": 53.0,
+            "impureqty": 12
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 16 Plus  6.7  - Clear                                                            ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 44.0,
+            "pureqty": 37.0,
+            "impureqty": 7
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Plus-White                                                        ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 32.0,
+            "pureqty": 29.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "silicone": {
+        "total_products": 8,
+        "total_sales": 143.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Fuchsia                                                                ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 26.0,
+            "pureqty": 16.0,
+            "impureqty": 10,
+            "series": "iPhone 16 Plus",
+            "category": "silicone",
+            "priority_score": 98.26
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Black                                                                  ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 25.0,
+            "pureqty": 15.0,
+            "impureqty": 10,
+            "series": "iPhone 16 Plus",
+            "category": "silicone",
+            "priority_score": 98.25
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Ultramarine                                                            ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 25.0,
+            "pureqty": 16.0,
+            "impureqty": 9,
+            "series": "iPhone 16 Plus",
+            "category": "silicone",
+            "priority_score": 98.25
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Lake Green                                                             ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 24.0,
+            "pureqty": 15.0,
+            "impureqty": 9,
+            "series": "iPhone 16 Plus",
+            "category": "silicone",
+            "priority_score": 98.24
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Stone Gray                                                             ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 16.0,
+            "pureqty": 6.0,
+            "impureqty": 10,
+            "series": "iPhone 16 Plus",
+            "category": "silicone",
+            "priority_score": 98.16
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Denim                                                                  ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 15.0,
+            "pureqty": 10.0,
+            "impureqty": 5
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Plum                                                                   ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 10.0,
+            "pureqty": 7.0,
+            "impureqty": 3
+          },
+          {
+            "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Star Fruit                                                             ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "tempered_glass": {
+        "total_products": 3,
+        "total_sales": 135.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Plus  6.7   - Black                                         ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 133.0,
+            "pureqty": 92.0,
+            "impureqty": 41
+          },
+          {
+            "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 Plus  6.7   - Clear                                                ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "Robocare iPhone 16 Plus TEMPERED GLASS 3D Dust Prevention edge to edge Glass                                       ",
+            "brand": "Robocare",
+            "subcategory": "tempered_glass",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "lens_protector": {
+        "total_products": 5,
+        "total_sales": 1407.0,
+        "top_products": [
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Green                   ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 369.0,
+            "pureqty": 299.0,
+            "impureqty": 70
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  -  Black                  ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 330.0,
+            "pureqty": 243.0,
+            "impureqty": 87
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Blue                    ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 329.0,
+            "pureqty": 252.0,
+            "impureqty": 77
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Silver                   ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 237.0,
+            "pureqty": 189.0,
+            "impureqty": 48
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Pink                     ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 142.0,
+            "pureqty": 111.0,
+            "impureqty": 31
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 24,
+        "total_sales": 1301.0,
+        "top_products": [
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Black                                                                   ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 180.0,
+            "pureqty": 144.0,
+            "impureqty": 36,
+            "series": "iPhone 16 Plus",
+            "category": "magsafe",
+            "priority_score": 97.8
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Black                                                                   ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 170.0,
+            "pureqty": 145.0,
+            "impureqty": 25,
+            "series": "iPhone 16 Plus",
+            "category": "magsafe",
+            "priority_score": 97.7
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Grey                                                                    ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 158.0,
+            "pureqty": 137.0,
+            "impureqty": 21,
+            "series": "iPhone 16 Plus",
+            "category": "magsafe",
+            "priority_score": 97.58
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Black                                                  ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 148.0,
+            "pureqty": 131.0,
+            "impureqty": 17,
+            "series": "iPhone 16 Plus",
+            "category": "magsafe",
+            "priority_score": 97.48
+          },
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Grey                                                                    ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 130.0,
+            "pureqty": 113.0,
+            "impureqty": 17,
+            "series": "iPhone 16 Plus",
+            "category": "magsafe",
+            "priority_score": 97.3
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Green Matte                                            ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 83.0,
+            "pureqty": 68.0,
+            "impureqty": 15
+          },
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Plus  6.7  with White Ring - Clear                                    ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 66.0,
+            "pureqty": 55.0,
+            "impureqty": 11
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Blue                                                                    ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 60.0,
+            "pureqty": 52.0,
+            "impureqty": 8
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Grey Blue                                              ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 56.0,
+            "pureqty": 49.0,
+            "impureqty": 7
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Plus  6.7  - Blue Matte                                             ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 42.0,
+            "pureqty": 31.0,
+            "impureqty": 11
+          }
+        ]
+      },
+      "armour": {
+        "total_products": 4,
+        "total_sales": 584.0,
+        "top_products": [
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Black                                                                         ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 220.0,
+            "pureqty": 198.0,
+            "impureqty": 22
+          },
+          {
+            "product_name": "Tekne ARMOUR Case for iPhone 16 Plus-Matt Clear                                                                    ",
+            "brand": "Tekne",
+            "subcategory": "armour",
+            "total_sales": 165.0,
+            "pureqty": 144.0,
+            "impureqty": 21
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Dark Blue                                                                     ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 119.0,
+            "pureqty": 96.0,
+            "impureqty": 23
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Plus-Matt Clear                                                                    ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 80.0,
+            "pureqty": 67.0,
+            "impureqty": 13
+          }
+        ]
+      },
+      "crystal": {
+        "total_products": 3,
+        "total_sales": 507.0,
+        "top_products": [
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White                                                ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 255.0,
+            "pureqty": 208.0,
+            "impureqty": 47
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-Black                                                ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 130.0,
+            "pureqty": 106.0,
+            "impureqty": 24
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-Grey                                                 ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 122.0,
+            "pureqty": 109.0,
+            "impureqty": 13
+          }
+        ]
+      },
+      "silicon": {
+        "total_products": 2,
+        "total_sales": 161.0,
+        "top_products": [
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16 Plus-Black                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 108.0,
+            "pureqty": 89.0,
+            "impureqty": 19
+          },
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16 Plus-Storm Blue                                                                   ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 53.0,
+            "pureqty": 38.0,
+            "impureqty": 15
+          }
+        ]
+      },
+      "leather": {
+        "total_products": 3,
+        "total_sales": 98.0,
+        "top_products": [
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Black                                                                  ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 48.0,
+            "pureqty": 39.0,
+            "impureqty": 9
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Blue                                                                   ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 27.0,
+            "pureqty": 21.0,
+            "impureqty": 6
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Plus-Brown                                                                  ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 23.0,
+            "pureqty": 17.0,
+            "impureqty": 6
+          }
+        ]
+      }
+    },
+    "iPhone 16 Pro": {
+      "clear": {
+        "total_products": 2,
+        "total_sales": 504.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Pro Clear Case with MagSafe                                                                              ",
+            "brand": "Apple",
+            "subcategory": "clear",
+            "total_sales": 405.0,
+            "pureqty": 195.0,
+            "impureqty": 210,
+            "series": "iPhone 16 Pro",
+            "category": "clear",
+            "priority_score": 114.05
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 16 Pro  6.3  - Clear                                                             ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 99.0,
+            "pureqty": 53.0,
+            "impureqty": 46,
+            "series": "iPhone 16 Pro",
+            "category": "clear",
+            "priority_score": 110.99
+          }
+        ]
+      },
+      "silicone": {
+        "total_products": 8,
+        "total_sales": 353.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Black                                                                   ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 201.0,
+            "pureqty": 93.0,
+            "impureqty": 108,
+            "series": "iPhone 16 Pro",
+            "category": "silicone",
+            "priority_score": 110.01
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Denim                                                                   ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 43.0,
+            "pureqty": 11.0,
+            "impureqty": 32,
+            "series": "iPhone 16 Pro",
+            "category": "silicone",
+            "priority_score": 108.43
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Stone Gray                                                              ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 30.0,
+            "pureqty": 12.0,
+            "impureqty": 18,
+            "series": "iPhone 16 Pro",
+            "category": "silicone",
+            "priority_score": 108.3
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Ultramarine                                                             ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 28.0,
+            "pureqty": 9.0,
+            "impureqty": 19,
+            "series": "iPhone 16 Pro",
+            "category": "silicone",
+            "priority_score": 108.28
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Plum                                                                    ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 18.0,
+            "pureqty": 4.0,
+            "impureqty": 14,
+            "series": "iPhone 16 Pro",
+            "category": "silicone",
+            "priority_score": 108.18
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Fuchsia                                                                 ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 14.0,
+            "pureqty": 6.0,
+            "impureqty": 8
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Star Fruit                                                              ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 11.0,
+            "pureqty": 5.0,
+            "impureqty": 6
+          },
+          {
+            "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Lake Green                                                              ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 8.0,
+            "pureqty": 0.0,
+            "impureqty": 8
+          }
+        ]
+      },
+      "tempered_glass": {
+        "total_products": 3,
+        "total_sales": 137.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro  6.3   - Black                                          ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 131.0,
+            "pureqty": 68.0,
+            "impureqty": 63
+          },
+          {
+            "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 PRO  6.3   - Clear                                                 ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 3.0,
+            "pureqty": 3.0,
+            "impureqty": 0
+          },
+          {
+            "product_name": "Robocare iPhone 16 Pro TEMPERED GLASS 3D Dust Prevention edge to edge Glass                                        ",
+            "brand": "Robocare",
+            "subcategory": "tempered_glass",
+            "total_sales": 3.0,
+            "pureqty": 1.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 14,
+        "total_sales": 1012.0,
+        "top_products": [
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold Matte                                              ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 155.0,
+            "pureqty": 94.0,
+            "impureqty": 61,
+            "series": "iPhone 16 Pro",
+            "category": "magsafe",
+            "priority_score": 107.55
+          },
+          {
+            "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Rose Gold                                          ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 124.0,
+            "pureqty": 71.0,
+            "impureqty": 53,
+            "series": "iPhone 16 Pro",
+            "category": "magsafe",
+            "priority_score": 107.24
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Transparent                                             ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 122.0,
+            "pureqty": 68.0,
+            "impureqty": 54,
+            "series": "iPhone 16 Pro",
+            "category": "magsafe",
+            "priority_score": 107.22
+          },
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Pro  6.3  with White Ring - Clear                                     ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 110.0,
+            "pureqty": 57.0,
+            "impureqty": 53,
+            "series": "iPhone 16 Pro",
+            "category": "magsafe",
+            "priority_score": 107.1
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Black Matte                                             ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 97.0,
+            "pureqty": 61.0,
+            "impureqty": 36,
+            "series": "iPhone 16 Pro",
+            "category": "magsafe",
+            "priority_score": 106.97
+          },
+          {
+            "product_name": "Gripp Dusk MagSafe Case for Apple iPhone 16 Pro  6.3  - Black                                                      ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 85.0,
+            "pureqty": 51.0,
+            "impureqty": 34
+          },
+          {
+            "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Natural Titanium                                   ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 71.0,
+            "pureqty": 41.0,
+            "impureqty": 30
+          },
+          {
+            "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold                                                     ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 66.0,
+            "pureqty": 35.0,
+            "impureqty": 31
+          },
+          {
+            "product_name": "Gripp Matrix MagSafe Case for Apple iPhone 16 Pro  6.3  - Black                                                    ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 44.0,
+            "pureqty": 21.0,
+            "impureqty": 23
+          },
+          {
+            "product_name": "Gripp Slim Fit Magsafe Case for Apple iPhone 16 Pro  6.3  - Grey                                                   ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 38.0,
+            "pureqty": 16.0,
+            "impureqty": 22
+          }
+        ]
+      },
+      "clarino": {
+        "total_products": 2,
+        "total_sales": 5.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro - Tan                                                   ",
+            "brand": "Apple",
+            "subcategory": "clarino",
+            "total_sales": 4.0,
+            "pureqty": 1.0,
+            "impureqty": 3
+          },
+          {
+            "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro - Black                                                 ",
+            "brand": "Apple",
+            "subcategory": "clarino",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "fabric": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro - Charcoal                                               ",
+            "brand": "Apple",
+            "subcategory": "fabric",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "loop": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Loop Case - iPhone 16 Pro - Charcoal                                                 ",
+            "brand": "Apple",
+            "subcategory": "loop",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          }
+        ]
+      }
+    },
+    "iPhone 16 Pro Max": {
+      "clear": {
+        "total_products": 9,
+        "total_sales": 1845.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Pro Max Clear Case with MagSafe                                                                          ",
+            "brand": "Apple",
+            "subcategory": "clear",
+            "total_sales": 513.0,
+            "pureqty": 222.0,
+            "impureqty": 291,
+            "series": "iPhone 16 Pro Max",
+            "category": "clear",
+            "priority_score": 125.13
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                     ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 317.0,
+            "pureqty": 203.0,
+            "impureqty": 114,
+            "series": "iPhone 16 Pro Max",
+            "category": "clear",
+            "priority_score": 123.17
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black                                                     ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 282.0,
+            "pureqty": 159.0,
+            "impureqty": 123,
+            "series": "iPhone 16 Pro Max",
+            "category": "clear",
+            "priority_score": 122.82
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                     ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 230.0,
+            "pureqty": 149.0,
+            "impureqty": 81,
+            "series": "iPhone 16 Pro Max",
+            "category": "clear",
+            "priority_score": 122.3
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Black                                                     ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 129.0,
+            "pureqty": 79.0,
+            "impureqty": 50,
+            "series": "iPhone 16 Pro Max",
+            "category": "clear",
+            "priority_score": 121.29
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Grey                                                      ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 110.0,
+            "pureqty": 67.0,
+            "impureqty": 43
+          },
+          {
+            "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Dark Blue                                                 ",
+            "brand": "Pulse",
+            "subcategory": "clear",
+            "total_sales": 96.0,
+            "pureqty": 60.0,
+            "impureqty": 36
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 16 Pro Max  6.9  - Clear                                                         ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 86.0,
+            "pureqty": 53.0,
+            "impureqty": 33
+          },
+          {
+            "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Grey                                                      ",
+            "brand": "Tekne",
+            "subcategory": "clear",
+            "total_sales": 82.0,
+            "pureqty": 51.0,
+            "impureqty": 31
+          }
+        ]
+      },
+      "silicone": {
+        "total_products": 8,
+        "total_sales": 372.0,
+        "top_products": [
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Black                                                               ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 125.0,
+            "pureqty": 43.0,
+            "impureqty": 82,
+            "series": "iPhone 16 Pro Max",
+            "category": "silicone",
+            "priority_score": 119.25
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Denim                                                               ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 53.0,
+            "pureqty": 11.0,
+            "impureqty": 42,
+            "series": "iPhone 16 Pro Max",
+            "category": "silicone",
+            "priority_score": 118.53
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Lake Green                                                          ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 51.0,
+            "pureqty": 14.0,
+            "impureqty": 37,
+            "series": "iPhone 16 Pro Max",
+            "category": "silicone",
+            "priority_score": 118.51
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Plum                                                                ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 35.0,
+            "pureqty": 14.0,
+            "impureqty": 21,
+            "series": "iPhone 16 Pro Max",
+            "category": "silicone",
+            "priority_score": 118.35
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Stone Gray                                                          ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 32.0,
+            "pureqty": 11.0,
+            "impureqty": 21,
+            "series": "iPhone 16 Pro Max",
+            "category": "silicone",
+            "priority_score": 118.32
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Fuchsia                                                             ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 29.0,
+            "pureqty": 10.0,
+            "impureqty": 19
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Ultramarine                                                         ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 29.0,
+            "pureqty": 7.0,
+            "impureqty": 22
+          },
+          {
+            "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Star Fruit                                                          ",
+            "brand": "Apple",
+            "subcategory": "silicone",
+            "total_sales": 18.0,
+            "pureqty": 8.0,
+            "impureqty": 10
+          }
+        ]
+      },
+      "tempered_glass": {
+        "total_products": 3,
+        "total_sales": 392.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black                                      ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 379.0,
+            "pureqty": 179.0,
+            "impureqty": 200
+          },
+          {
+            "product_name": "Robocare iPhone 16 Pro Max TEMPERED GLASS 3D Dust Prevention edge to edge Glass                                    ",
+            "brand": "Robocare",
+            "subcategory": "tempered_glass",
+            "total_sales": 12.0,
+            "pureqty": 6.0,
+            "impureqty": 6
+          },
+          {
+            "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 16 Pro Max  6.9   - Clear                                             ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "lens_protector": {
+        "total_products": 4,
+        "total_sales": 2521.0,
+        "top_products": [
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold             ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 988.0,
+            "pureqty": 530.0,
+            "impureqty": 458
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 590.0,
+            "pureqty": 351.0,
+            "impureqty": 239
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black             ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 526.0,
+            "pureqty": 275.0,
+            "impureqty": 251
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver           ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 417.0,
+            "pureqty": 210.0,
+            "impureqty": 207
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 29,
+        "total_sales": 2124.0,
+        "top_products": [
+          {
+            "product_name": "Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black                                                                ",
+            "brand": "Tekne",
+            "subcategory": "magsafe",
+            "total_sales": 271.0,
+            "pureqty": 157.0,
+            "impureqty": 114,
+            "series": "iPhone 16 Pro Max",
+            "category": "magsafe",
+            "priority_score": 118.71
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Gold Matte                                          ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 189.0,
+            "pureqty": 94.0,
+            "impureqty": 95,
+            "series": "iPhone 16 Pro Max",
+            "category": "magsafe",
+            "priority_score": 117.89
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max-Matt Black                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 175.0,
+            "pureqty": 112.0,
+            "impureqty": 63,
+            "series": "iPhone 16 Pro Max",
+            "category": "magsafe",
+            "priority_score": 117.75
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max-Black                                                                ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 175.0,
+            "pureqty": 93.0,
+            "impureqty": 82,
+            "series": "iPhone 16 Pro Max",
+            "category": "magsafe",
+            "priority_score": 117.75
+          },
+          {
+            "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max -Grey                                                                ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 171.0,
+            "pureqty": 106.0,
+            "impureqty": 65,
+            "series": "iPhone 16 Pro Max",
+            "category": "magsafe",
+            "priority_score": 117.71
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Transparent                                         ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 149.0,
+            "pureqty": 81.0,
+            "impureqty": 68
+          },
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Pro Max  6.9  with White Ring - Clear                                 ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 123.0,
+            "pureqty": 71.0,
+            "impureqty": 52
+          },
+          {
+            "product_name": "Gripp Dusk MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Black                                                  ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 108.0,
+            "pureqty": 43.0,
+            "impureqty": 65
+          },
+          {
+            "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Black Matte                                         ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 108.0,
+            "pureqty": 51.0,
+            "impureqty": 57
+          },
+          {
+            "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max -Matt Grey Blue                                          ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 106.0,
+            "pureqty": 65.0,
+            "impureqty": 41
+          }
+        ]
+      },
+      "armour": {
+        "total_products": 3,
+        "total_sales": 344.0,
+        "top_products": [
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max-Black                                                                      ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 231.0,
+            "pureqty": 142.0,
+            "impureqty": 89
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max -Matt Clear                                                                ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 71.0,
+            "pureqty": 37.0,
+            "impureqty": 34
+          },
+          {
+            "product_name": "PULSE ARMOUR Case for iPhone 16 Pro Max-Dark Blue                                                                  ",
+            "brand": "Pulse",
+            "subcategory": "armour",
+            "total_sales": 42.0,
+            "pureqty": 21.0,
+            "impureqty": 21
+          }
+        ]
+      },
+      "clarino": {
+        "total_products": 2,
+        "total_sales": 4.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro Max - Black                                             ",
+            "brand": "Apple",
+            "subcategory": "clarino",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          },
+          {
+            "product_name": "Peak Design Mobile - Everyday Clarino Case - iPhone 16 Pro Max - Tan                                               ",
+            "brand": "Apple",
+            "subcategory": "clarino",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "fabric": {
+        "total_products": 3,
+        "total_sales": 8.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Eclipse                                            ",
+            "brand": "Apple",
+            "subcategory": "fabric",
+            "total_sales": 4.0,
+            "pureqty": 1.0,
+            "impureqty": 3
+          },
+          {
+            "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Charcoal                                           ",
+            "brand": "Apple",
+            "subcategory": "fabric",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          },
+          {
+            "product_name": "Peak Design Mobile - Everyday Fabric Case - iPhone 16 Pro Max - Sage                                               ",
+            "brand": "Apple",
+            "subcategory": "fabric",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "loop": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "Peak Design Mobile - Everyday Loop Case - iPhone 16 Pro Max - Charcoal                                             ",
+            "brand": "Apple",
+            "subcategory": "loop",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "crystal": {
+        "total_products": 3,
+        "total_sales": 545.0,
+        "top_products": [
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White                                             ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 274.0,
+            "pureqty": 165.0,
+            "impureqty": 109
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-Black                                             ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 138.0,
+            "pureqty": 83.0,
+            "impureqty": 55
+          },
+          {
+            "product_name": "Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-Grey                                              ",
+            "brand": "Pulse",
+            "subcategory": "crystal",
+            "total_sales": 133.0,
+            "pureqty": 72.0,
+            "impureqty": 61
+          }
+        ]
+      },
+      "silicon": {
+        "total_products": 2,
+        "total_sales": 182.0,
+        "top_products": [
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16 Pro Max-Black                                                                     ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 126.0,
+            "pureqty": 68.0,
+            "impureqty": 58
+          },
+          {
+            "product_name": "Pulse SILICON Case for iPhone 16 Pro Max-Storm Blue                                                                ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 56.0,
+            "pureqty": 27.0,
+            "impureqty": 29
+          }
+        ]
+      },
+      "leather": {
+        "total_products": 3,
+        "total_sales": 176.0,
+        "top_products": [
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max-Black                                                               ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 82.0,
+            "pureqty": 40.0,
+            "impureqty": 42
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max -Brown                                                              ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 49.0,
+            "pureqty": 20.0,
+            "impureqty": 29
+          },
+          {
+            "product_name": "Pulse Vegan Leather Case for iPhone 16 Pro Max-Blue                                                                ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 45.0,
+            "pureqty": 20.0,
+            "impureqty": 25
+          }
+        ]
+      }
+    },
+    "iPhone 15 Base": {
+      "tempered_glass": {
+        "total_products": 1,
+        "total_sales": 5.0,
+        "top_products": [
+          {
+            "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15                                                      ",
+            "brand": "Flayrr",
+            "subcategory": "tempered_glass",
+            "total_sales": 5.0,
+            "pureqty": 4.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "": {
+        "total_products": 4,
+        "total_sales": 603.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Privacy Glass for  Apple iPhone 15 Max  6.7    Black                                                         ",
+            "brand": "Gripp",
+            "subcategory": "",
+            "total_sales": 316.0,
+            "pureqty": 165.0,
+            "impureqty": 151
+          },
+          {
+            "product_name": "Gripp Privacy Glass for  Apple iPhone 15  6.1    Black                                                             ",
+            "brand": "Gripp",
+            "subcategory": "",
+            "total_sales": 272.0,
+            "pureqty": 150.0,
+            "impureqty": 122
+          },
+          {
+            "product_name": "Roskilde MagSafe - iPhone 15 - Black                                                                               ",
+            "brand": "Roskilde",
+            "subcategory": "",
+            "total_sales": 10.0,
+            "pureqty": 4.0,
+            "impureqty": 6
+          },
+          {
+            "product_name": "Roskilde MagSafe - iPhone 15 - Tan                                                                                 ",
+            "brand": "Roskilde",
+            "subcategory": "",
+            "total_sales": 5.0,
+            "pureqty": 1.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "minimal": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "AT Minimal Case For iPhone 15- 81016- Clear                                                                        ",
+            "brand": "AT Minimal",
+            "subcategory": "minimal",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 41,
+        "total_sales": 5016.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear                                     ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 551.0,
+            "pureqty": 421.0,
+            "impureqty": 130,
+            "series": "iPhone 15 Base",
+            "category": "magsafe",
+            "priority_score": 51.51
+          },
+          {
+            "product_name": "Pulse Super crystal magsafe case for iPhone 15-Black                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 405.0,
+            "pureqty": 315.0,
+            "impureqty": 90,
+            "series": "iPhone 15 Base",
+            "category": "magsafe",
+            "priority_score": 50.05
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15-Grey                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 400.0,
+            "pureqty": 297.0,
+            "impureqty": 103,
+            "series": "iPhone 15 Base",
+            "category": "magsafe",
+            "priority_score": 50.0
+          },
+          {
+            "product_name": "Pulse Tire magsafe case for iPhone 15 Black                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 388.0,
+            "pureqty": 290.0,
+            "impureqty": 98,
+            "series": "iPhone 15 Base",
+            "category": "magsafe",
+            "priority_score": 49.88
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15-Black                                                                      ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 366.0,
+            "pureqty": 289.0,
+            "impureqty": 77,
+            "series": "iPhone 15 Base",
+            "category": "magsafe",
+            "priority_score": 49.66
+          },
+          {
+            "product_name": "Pulse Clear Magsafe Case for iPhone 15-Clear                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 349.0,
+            "pureqty": 291.0,
+            "impureqty": 58
+          },
+          {
+            "product_name": "Pulse Armor Magsafe case for iPhone 15 Black                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 343.0,
+            "pureqty": 269.0,
+            "impureqty": 74
+          },
+          {
+            "product_name": "Pulse TANK Gradient Magsafe case for iPhone 15-Blue                                                                ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 342.0,
+            "pureqty": 256.0,
+            "impureqty": 86
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15-Blue                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 322.0,
+            "pureqty": 241.0,
+            "impureqty": 81
+          },
+          {
+            "product_name": "Pulse Super crystal magsafe case for iPhone 15-Clear                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 315.0,
+            "pureqty": 259.0,
+            "impureqty": 56
+          }
+        ]
+      },
+      "alpine": {
+        "total_products": 1,
+        "total_sales": 7.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Alpine Case for Apple iPhone 15(6.1) - Black                                                                 ",
+            "brand": "Gripp",
+            "subcategory": "alpine",
+            "total_sales": 7.0,
+            "pureqty": 5.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "bolt": {
+        "total_products": 2,
+        "total_sales": 225.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Bolt Case for Apple iPhone 15 Max (6.7) - Black                                                              ",
+            "brand": "Gripp",
+            "subcategory": "bolt",
+            "total_sales": 218.0,
+            "pureqty": 157.0,
+            "impureqty": 61
+          },
+          {
+            "product_name": "Gripp Bolt Case for Apple iPhone 15 (6.1) - Black                                                                  ",
+            "brand": "Gripp",
+            "subcategory": "bolt",
+            "total_sales": 7.0,
+            "pureqty": 4.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "clarion": {
+        "total_products": 2,
+        "total_sales": 106.0,
+        "top_products": [
+          {
+            "product_name": "Gripp CLARION Case for Apple iPhone 15 Max (6.7) - Black                                                           ",
+            "brand": "Gripp",
+            "subcategory": "clarion",
+            "total_sales": 90.0,
+            "pureqty": 68.0,
+            "impureqty": 22
+          },
+          {
+            "product_name": "Gripp CLARION Case for Apple iPhone 15 (6.1) - Black                                                               ",
+            "brand": "Gripp",
+            "subcategory": "clarion",
+            "total_sales": 16.0,
+            "pureqty": 8.0,
+            "impureqty": 8
+          }
+        ]
+      },
+      "clear": {
+        "total_products": 3,
+        "total_sales": 314.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear                                                             ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 241.0,
+            "pureqty": 196.0,
+            "impureqty": 45,
+            "series": "iPhone 15 Base",
+            "category": "clear",
+            "priority_score": 52.41
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 15 (6.1) - Clear                                                                 ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 38.0,
+            "pureqty": 30.0,
+            "impureqty": 8,
+            "series": "iPhone 15 Base",
+            "category": "clear",
+            "priority_score": 50.38
+          },
+          {
+            "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 - 6.1 10ft Drop-Tested Case                                             ",
+            "brand": "Hyphen",
+            "subcategory": "clear",
+            "total_sales": 35.0,
+            "pureqty": 22.0,
+            "impureqty": 13,
+            "series": "iPhone 15 Base",
+            "category": "clear",
+            "priority_score": 50.35
+          }
+        ]
+      },
+      "combat": {
+        "total_products": 3,
+        "total_sales": 30.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 (6.1) - Smoke                                                                ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 11.0,
+            "pureqty": 10.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 (6.1) - Clear                                                                ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 10.0,
+            "pureqty": 7.0,
+            "impureqty": 3
+          },
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 Max (6.7) - Smoke                                                            ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 9.0,
+            "pureqty": 8.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "defender": {
+        "total_products": 2,
+        "total_sales": 31.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Defender Case for Apple iPhone 15 Max (6.7) - Black                                                          ",
+            "brand": "Gripp",
+            "subcategory": "defender",
+            "total_sales": 23.0,
+            "pureqty": 11.0,
+            "impureqty": 12
+          },
+          {
+            "product_name": "Gripp Defender Case for Apple iPhone 15 (6.1) - Black                                                              ",
+            "brand": "Gripp",
+            "subcategory": "defender",
+            "total_sales": 8.0,
+            "pureqty": 7.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "frost": {
+        "total_products": 1,
+        "total_sales": 13.0,
+        "top_products": [
+          {
+            "product_name": "Gripp ICE FROST Case for Apple iPhone 15 (6.1) - Clear Frost                                                       ",
+            "brand": "Gripp",
+            "subcategory": "frost",
+            "total_sales": 13.0,
+            "pureqty": 9.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "neo": {
+        "total_products": 2,
+        "total_sales": 90.0,
+        "top_products": [
+          {
+            "product_name": "Gripp NEO Case for Apple iPhone 15 Max (6.7) - Smoke                                                               ",
+            "brand": "Gripp",
+            "subcategory": "neo",
+            "total_sales": 76.0,
+            "pureqty": 55.0,
+            "impureqty": 21
+          },
+          {
+            "product_name": "Gripp NEO Case for Apple iPhone 15 (6.1) - Smoke                                                                   ",
+            "brand": "Gripp",
+            "subcategory": "neo",
+            "total_sales": 14.0,
+            "pureqty": 10.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "soft": {
+        "total_products": 1,
+        "total_sales": 6.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 - 6.1                                                                      ",
+            "brand": "Hyphen",
+            "subcategory": "soft",
+            "total_sales": 6.0,
+            "pureqty": 3.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "drop": {
+        "total_products": 2,
+        "total_sales": 36.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 - 6.1 10ft Drop-Tested Case                                              ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 24.0,
+            "pureqty": 20.0,
+            "impureqty": 4
+          },
+          {
+            "product_name": "HYPHEN DURO Drop Case - iPhone 15 - 6.1 10ft Drop-Tested Case                                                      ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 12.0,
+            "pureqty": 7.0,
+            "impureqty": 5
+          }
+        ]
+      },
+      "frosted": {
+        "total_products": 1,
+        "total_sales": 355.0,
+        "top_products": [
+          {
+            "product_name": "Pulse FROSTED Case for iPhone 15-Black                                                                             ",
+            "brand": "Pulse",
+            "subcategory": "frosted",
+            "total_sales": 355.0,
+            "pureqty": 270.0,
+            "impureqty": 85
+          }
+        ]
+      },
+      "hornor": {
+        "total_products": 2,
+        "total_sales": 655.0,
+        "top_products": [
+          {
+            "product_name": "Pulse HORNOR Case for iPhone 15-Black                                                                              ",
+            "brand": "Pulse",
+            "subcategory": "hornor",
+            "total_sales": 384.0,
+            "pureqty": 304.0,
+            "impureqty": 80
+          },
+          {
+            "product_name": "Pulse HORNOR Case for iPhone 15-Blue                                                                               ",
+            "brand": "Pulse",
+            "subcategory": "hornor",
+            "total_sales": 271.0,
+            "pureqty": 216.0,
+            "impureqty": 55
+          }
+        ]
+      },
+      "silicon": {
+        "total_products": 2,
+        "total_sales": 781.0,
+        "top_products": [
+          {
+            "product_name": "Pulse LIQUID silicon case for iPhone 15-Storm Blue                                                                 ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 393.0,
+            "pureqty": 291.0,
+            "impureqty": 102
+          },
+          {
+            "product_name": "Pulse LIQUID silicon case for iPhone 15-Black                                                                      ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 388.0,
+            "pureqty": 290.0,
+            "impureqty": 98
+          }
+        ]
+      },
+      "leather": {
+        "total_products": 2,
+        "total_sales": 774.0,
+        "top_products": [
+          {
+            "product_name": "Pulse THOR Leather case for iPhone 15-Black                                                                        ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 393.0,
+            "pureqty": 284.0,
+            "impureqty": 109
+          },
+          {
+            "product_name": "Pulse THOR Leather case for iPhone 15-Blue                                                                         ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 381.0,
+            "pureqty": 283.0,
+            "impureqty": 98
+          }
+        ]
+      }
+    },
+    "iPhone 15 Plus": {
+      "tempered_glass": {
+        "total_products": 1,
+        "total_sales": 9.0,
+        "top_products": [
+          {
+            "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15 Plus                                                 ",
+            "brand": "Flayrr",
+            "subcategory": "tempered_glass",
+            "total_sales": 9.0,
+            "pureqty": 1.0,
+            "impureqty": 8
+          }
+        ]
+      },
+      "minimal": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "AT Minimal Case For iPhone 15 plus- 81023- Clear                                                                   ",
+            "brand": "AT Minimal",
+            "subcategory": "minimal",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 2,
+        "total_sales": 20.0,
+        "top_products": [
+          {
+            "product_name": "AT Minimal Magsafe Case For iPhone 15 Plus-81061-Clear                                                             ",
+            "brand": "AT Minimal",
+            "subcategory": "magsafe",
+            "total_sales": 18.0,
+            "pureqty": 16.0,
+            "impureqty": 2,
+            "series": "iPhone 15 Plus",
+            "category": "magsafe",
+            "priority_score": 56.18
+          },
+          {
+            "product_name": "HYPHEN LUCD Magsafe Case Case - iPhone 15 Plus - 6.7                                                               ",
+            "brand": "Hyphen",
+            "subcategory": "magsafe",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1,
+            "series": "iPhone 15 Plus",
+            "category": "magsafe",
+            "priority_score": 56.02
+          }
+        ]
+      },
+      "soft": {
+        "total_products": 1,
+        "total_sales": 4.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Plus - 6.7                                                                 ",
+            "brand": "Hyphen",
+            "subcategory": "soft",
+            "total_sales": 4.0,
+            "pureqty": 3.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "clear": {
+        "total_products": 1,
+        "total_sales": 5.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Plus - 6.7 10ft Drop-Tested Case                                        ",
+            "brand": "Hyphen",
+            "subcategory": "clear",
+            "total_sales": 5.0,
+            "pureqty": 4.0,
+            "impureqty": 1,
+            "series": "iPhone 15 Plus",
+            "category": "clear",
+            "priority_score": 60.05
+          }
+        ]
+      },
+      "drop": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN DURO Drop Case - iPhone 15 Plus - 6.7 10ft Drop-Tested Case                                                 ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "": {
+        "total_products": 1,
+        "total_sales": 8.0,
+        "top_products": [
+          {
+            "product_name": "Roskilde MagSafe - iPhone 15 Plus - Black                                                                          ",
+            "brand": "Roskilde",
+            "subcategory": "",
+            "total_sales": 8.0,
+            "pureqty": 5.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "plus": {
+        "total_products": 2,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "nmaxn IPhone 15 Plus Case 750 Series Navy Blue  Handmade   Fully Covered   Nature Pattern AP 15PL 7503             ",
+            "brand": "nmaxn",
+            "subcategory": "plus",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "nmaxn iPhone 15 Plus Case 750 Series Capsicum Red/ Handmade - Fully Covered / Nature Pattern  AP-15PL-7504         ",
+            "brand": "nmaxn",
+            "subcategory": "plus",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      }
+    },
+    "iPhone 15 Pro": {
+      "": {
+        "total_products": 3,
+        "total_sales": 296.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Privacy Glass for  Apple iPhone 15 Pro  6.1    Black                                                         ",
+            "brand": "Gripp",
+            "subcategory": "",
+            "total_sales": 255.0,
+            "pureqty": 50.0,
+            "impureqty": 205
+          },
+          {
+            "product_name": "PG Ceramic Protection - iPhone 15 Pro UWF wA - 2838                                                                ",
+            "brand": "PG",
+            "subcategory": "",
+            "total_sales": 36.0,
+            "pureqty": 4.0,
+            "impureqty": 32
+          },
+          {
+            "product_name": "Roskilde MagSafe - iPhone 15 Pro - Tan                                                                             ",
+            "brand": "Roskilde",
+            "subcategory": "",
+            "total_sales": 5.0,
+            "pureqty": 0.0,
+            "impureqty": 5
+          }
+        ]
+      },
+      "alpine": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Alpine Case for Apple iPhone 15 Pro (6.1) - Black                                                            ",
+            "brand": "Gripp",
+            "subcategory": "alpine",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 14,
+        "total_sales": 312.0,
+        "top_products": [
+          {
+            "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Black                                                                    ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 123.0,
+            "pureqty": 40.0,
+            "impureqty": 83,
+            "series": "iPhone 15 Pro",
+            "category": "magsafe",
+            "priority_score": 67.23
+          },
+          {
+            "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Black                                                                   ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 120.0,
+            "pureqty": 43.0,
+            "impureqty": 77,
+            "series": "iPhone 15 Pro",
+            "category": "magsafe",
+            "priority_score": 67.2
+          },
+          {
+            "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Pro (6.1) with White Ring - Clear                                     ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 23.0,
+            "pureqty": 8.0,
+            "impureqty": 15,
+            "series": "iPhone 15 Pro",
+            "category": "magsafe",
+            "priority_score": 66.23
+          },
+          {
+            "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 Pro (6.1) - Black                                                   ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 9.0,
+            "pureqty": 4.0,
+            "impureqty": 5,
+            "series": "iPhone 15 Pro",
+            "category": "magsafe",
+            "priority_score": 66.09
+          },
+          {
+            "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Sierra Blue                                               ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 9.0,
+            "pureqty": 1.0,
+            "impureqty": 8,
+            "series": "iPhone 15 Pro",
+            "category": "magsafe",
+            "priority_score": 66.09
+          },
+          {
+            "product_name": "Gripp Defender Magsafe Case for Apple iPhone 15 Pro  6.1  - Black                                                  ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 8.0,
+            "pureqty": 4.0,
+            "impureqty": 4
+          },
+          {
+            "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Black                                                     ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 5.0,
+            "pureqty": 0.0,
+            "impureqty": 5
+          },
+          {
+            "product_name": "Gripp Combat Magsafe Case for Apple iPhone 15 Pro (6.1) - Clear                                                    ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 4.0,
+            "pureqty": 0.0,
+            "impureqty": 4
+          },
+          {
+            "product_name": "Gripp Alpine Magsafe Case for Apple iPhone 15 Pro (6.1) - Black                                                    ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 3.0,
+            "pureqty": 1.0,
+            "impureqty": 2
+          },
+          {
+            "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Grey                                                      ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "bolt": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Bolt Case for Apple iPhone 15 Pro  6.1  - Black                                                              ",
+            "brand": "Gripp",
+            "subcategory": "bolt",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "clarion": {
+        "total_products": 1,
+        "total_sales": 6.0,
+        "top_products": [
+          {
+            "product_name": "Gripp CLARION Case for Apple iPhone 15 Pro (6.1) - Black                                                           ",
+            "brand": "Gripp",
+            "subcategory": "clarion",
+            "total_sales": 6.0,
+            "pureqty": 1.0,
+            "impureqty": 5
+          }
+        ]
+      },
+      "clear": {
+        "total_products": 2,
+        "total_sales": 12.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 15 Pro (6.1) - Clear                                                             ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 8.0,
+            "pureqty": 1.0,
+            "impureqty": 7,
+            "series": "iPhone 15 Pro",
+            "category": "clear",
+            "priority_score": 70.08
+          },
+          {
+            "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case                                         ",
+            "brand": "Hyphen",
+            "subcategory": "clear",
+            "total_sales": 4.0,
+            "pureqty": 0.0,
+            "impureqty": 4,
+            "series": "iPhone 15 Pro",
+            "category": "clear",
+            "priority_score": 70.04
+          }
+        ]
+      },
+      "combat": {
+        "total_products": 2,
+        "total_sales": 3.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 Pro (6.1) - Clear                                                            ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 Pro (6.1) - Smoke                                                            ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "defender": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Defender Case for Apple iPhone 15 Pro (6.1) - Black                                                          ",
+            "brand": "Gripp",
+            "subcategory": "defender",
+            "total_sales": 1.0,
+            "pureqty": 1.0,
+            "impureqty": 0
+          }
+        ]
+      },
+      "frost": {
+        "total_products": 1,
+        "total_sales": 3.0,
+        "top_products": [
+          {
+            "product_name": "Gripp ICE frost Case for Apple iPhone 15 Pro (6.1) - Clear Frost                                                   ",
+            "brand": "Gripp",
+            "subcategory": "frost",
+            "total_sales": 3.0,
+            "pureqty": 0.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "neo": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "Gripp NEO Case for Apple iPhone 15 Pro (6.1) - Smoke                                                               ",
+            "brand": "Gripp",
+            "subcategory": "neo",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "soft": {
+        "total_products": 1,
+        "total_sales": 4.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Pro - 6.1                                                                  ",
+            "brand": "Hyphen",
+            "subcategory": "soft",
+            "total_sales": 4.0,
+            "pureqty": 2.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "drop": {
+        "total_products": 2,
+        "total_sales": 12.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN DURO Drop Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case                                                  ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 10.0,
+            "pureqty": 5.0,
+            "impureqty": 5
+          },
+          {
+            "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case                                          ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "frame": {
+        "total_products": 2,
+        "total_sales": 3.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN NOCT MagSafe Frame Case - Titanium Grey - iPhone 15 Pro - 6.1                                               ",
+            "brand": "Hyphen",
+            "subcategory": "frame",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "HYPHEN NOCT MagSafe Frame Case - Black - iPhone 15 Pro - 6.1                                                       ",
+            "brand": "Hyphen",
+            "subcategory": "frame",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "pro": {
+        "total_products": 2,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "nmaxn IPhone 15 Pro Case 750 Series Capsicum Red/ Handmade - Fully Covered / Nature Pattern AP-15PR-7504           ",
+            "brand": "nmaxn",
+            "subcategory": "pro",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          },
+          {
+            "product_name": "nmaxn iPhone 15 Pro Case 750 Series Brown  Handmade   Fully Covered   Nature Pattern AP 15PR 7502                  ",
+            "brand": "nmaxn",
+            "subcategory": "pro",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      }
+    },
+    "iPhone 15 Pro Max": {
+      "tempered_glass": {
+        "total_products": 2,
+        "total_sales": 524.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Tempered Glass 0.3mm  for Apple iPhone 15 PRO Max  6.7    Clear                                              ",
+            "brand": "Gripp",
+            "subcategory": "tempered_glass",
+            "total_sales": 520.0,
+            "pureqty": 90.0,
+            "impureqty": 430
+          },
+          {
+            "product_name": "Flayrr 3D Edge to Edge 3D Smooth Tempered Glass for iPhone 15 Pro Max                                              ",
+            "brand": "Flayrr",
+            "subcategory": "tempered_glass",
+            "total_sales": 4.0,
+            "pureqty": 1.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "lens_protector": {
+        "total_products": 4,
+        "total_sales": 1720.0,
+        "top_products": [
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey/Gold        ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 533.0,
+            "pureqty": 95.0,
+            "impureqty": 438
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Diamond Blue     ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 445.0,
+            "pureqty": 51.0,
+            "impureqty": 394
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1(Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Grey              ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 417.0,
+            "pureqty": 67.0,
+            "impureqty": 350
+          },
+          {
+            "product_name": "Gripp FOCAL Camera Lens Protector 3N1 (Compatible with Apple iPhone 15 Pro & iPhone 15 Pro Max) - Silver           ",
+            "brand": "Gripp",
+            "subcategory": "lens_protector",
+            "total_sales": 325.0,
+            "pureqty": 37.0,
+            "impureqty": 288
+          }
+        ]
+      },
+      "": {
+        "total_products": 2,
+        "total_sales": 651.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black                                                     ",
+            "brand": "Gripp",
+            "subcategory": "",
+            "total_sales": 636.0,
+            "pureqty": 114.0,
+            "impureqty": 522
+          },
+          {
+            "product_name": "PG Ceramic Protection for iPhone 15 Pro Max UWF wA - 2840                                                          ",
+            "brand": "PG",
+            "subcategory": "",
+            "total_sales": 15.0,
+            "pureqty": 8.0,
+            "impureqty": 7
+          }
+        ]
+      },
+      "magsafe": {
+        "total_products": 36,
+        "total_sales": 1872.0,
+        "top_products": [
+          {
+            "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Max Black                                                                ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 217.0,
+            "pureqty": 83.0,
+            "impureqty": 134,
+            "series": "iPhone 15 Pro Max",
+            "category": "magsafe",
+            "priority_score": 78.17
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Grey                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 213.0,
+            "pureqty": 71.0,
+            "impureqty": 142,
+            "series": "iPhone 15 Pro Max",
+            "category": "magsafe",
+            "priority_score": 78.13
+          },
+          {
+            "product_name": "Pulse TANK Gradient Magsafe case for iPhone 15 Pro Max-Blue                                                        ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 209.0,
+            "pureqty": 69.0,
+            "impureqty": 140,
+            "series": "iPhone 15 Pro Max",
+            "category": "magsafe",
+            "priority_score": 78.09
+          },
+          {
+            "product_name": "Pulse Super crystal magsafe case for iPhone 15 Pro Max-Black                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 205.0,
+            "pureqty": 91.0,
+            "impureqty": 114,
+            "series": "iPhone 15 Pro Max",
+            "category": "magsafe",
+            "priority_score": 78.05
+          },
+          {
+            "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Max Black                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 198.0,
+            "pureqty": 81.0,
+            "impureqty": 117,
+            "series": "iPhone 15 Pro Max",
+            "category": "magsafe",
+            "priority_score": 77.98
+          },
+          {
+            "product_name": "Pulse Super crystal magsafe case for iPhone 15 Pro Max-Clear                                                       ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 194.0,
+            "pureqty": 84.0,
+            "impureqty": 110
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Black                                                              ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 159.0,
+            "pureqty": 69.0,
+            "impureqty": 90
+          },
+          {
+            "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Blue                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 158.0,
+            "pureqty": 53.0,
+            "impureqty": 105
+          },
+          {
+            "product_name": "Pulse Clear Magsafe Case for iPhone 15 Pro Max-Clear                                                               ",
+            "brand": "Pulse",
+            "subcategory": "magsafe",
+            "total_sales": 127.0,
+            "pureqty": 51.0,
+            "impureqty": 76
+          },
+          {
+            "product_name": "Gripp HERITAGE XTREME Magsafe Case for Apple iPhone 15 Pro Max(6.7) - Camel                                        ",
+            "brand": "Gripp",
+            "subcategory": "magsafe",
+            "total_sales": 21.0,
+            "pureqty": 2.0,
+            "impureqty": 19
+          }
+        ]
+      },
+      "alpine": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Alpine Case for Apple iPhone 15 Pro Max (6.7) - Black                                                        ",
+            "brand": "Gripp",
+            "subcategory": "alpine",
+            "total_sales": 2.0,
+            "pureqty": 1.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "bolt": {
+        "total_products": 1,
+        "total_sales": 22.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Bolt Case for Apple iPhone 15 Pro Max (6.7) - Black                                                          ",
+            "brand": "Gripp",
+            "subcategory": "bolt",
+            "total_sales": 22.0,
+            "pureqty": 7.0,
+            "impureqty": 15
+          }
+        ]
+      },
+      "clarion": {
+        "total_products": 1,
+        "total_sales": 5.0,
+        "top_products": [
+          {
+            "product_name": "Gripp CLARION Case for Apple iPhone 15 Pro Max (6.7) - Black                                                       ",
+            "brand": "Gripp",
+            "subcategory": "clarion",
+            "total_sales": 5.0,
+            "pureqty": 1.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "clear": {
+        "total_products": 2,
+        "total_sales": 35.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case                                     ",
+            "brand": "Hyphen",
+            "subcategory": "clear",
+            "total_sales": 18.0,
+            "pureqty": 7.0,
+            "impureqty": 11,
+            "series": "iPhone 15 Pro Max",
+            "category": "clear",
+            "priority_score": 80.18
+          },
+          {
+            "product_name": "Gripp Clear Case for Apple iPhone 15 Pro Max (6.7) - Clear                                                         ",
+            "brand": "Gripp",
+            "subcategory": "clear",
+            "total_sales": 17.0,
+            "pureqty": 7.0,
+            "impureqty": 10,
+            "series": "iPhone 15 Pro Max",
+            "category": "clear",
+            "priority_score": 80.17
+          }
+        ]
+      },
+      "combat": {
+        "total_products": 2,
+        "total_sales": 15.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 Pro Max (6.7) - Clear                                                        ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 10.0,
+            "pureqty": 1.0,
+            "impureqty": 9
+          },
+          {
+            "product_name": "Gripp Combat Case for Apple iPhone 15 Pro Max (6.7) - Smoke                                                        ",
+            "brand": "Gripp",
+            "subcategory": "combat",
+            "total_sales": 5.0,
+            "pureqty": 1.0,
+            "impureqty": 4
+          }
+        ]
+      },
+      "defender": {
+        "total_products": 1,
+        "total_sales": 6.0,
+        "top_products": [
+          {
+            "product_name": "Gripp Defender Case for Apple iPhone 15 Pro Max (6.7) - Black                                                      ",
+            "brand": "Gripp",
+            "subcategory": "defender",
+            "total_sales": 6.0,
+            "pureqty": 3.0,
+            "impureqty": 3
+          }
+        ]
+      },
+      "frost": {
+        "total_products": 1,
+        "total_sales": 2.0,
+        "top_products": [
+          {
+            "product_name": "Gripp ICE frost Case for Apple iPhone 15 Pro Max (6.7) - Clear Frost                                               ",
+            "brand": "Gripp",
+            "subcategory": "frost",
+            "total_sales": 2.0,
+            "pureqty": 0.0,
+            "impureqty": 2
+          }
+        ]
+      },
+      "neo": {
+        "total_products": 1,
+        "total_sales": 1.0,
+        "top_products": [
+          {
+            "product_name": "Gripp NEO Case for Apple iPhone 15 Pro Max (6.7) - Smoke                                                           ",
+            "brand": "Gripp",
+            "subcategory": "neo",
+            "total_sales": 1.0,
+            "pureqty": 0.0,
+            "impureqty": 1
+          }
+        ]
+      },
+      "soft": {
+        "total_products": 1,
+        "total_sales": 7.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN AIRE Clear Soft Case - iPhone 15 Pro Max - 6.7                                                              ",
+            "brand": "Hyphen",
+            "subcategory": "soft",
+            "total_sales": 7.0,
+            "pureqty": 1.0,
+            "impureqty": 6
+          }
+        ]
+      },
+      "drop": {
+        "total_products": 2,
+        "total_sales": 30.0,
+        "top_products": [
+          {
+            "product_name": "HYPHEN DURO Drop Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case                                              ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 18.0,
+            "pureqty": 8.0,
+            "impureqty": 10
+          },
+          {
+            "product_name": "HYPHEN DURO MagSafe Drop Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case                                      ",
+            "brand": "Hyphen",
+            "subcategory": "drop",
+            "total_sales": 12.0,
+            "pureqty": 1.0,
+            "impureqty": 11
+          }
+        ]
+      },
+      "frosted": {
+        "total_products": 1,
+        "total_sales": 227.0,
+        "top_products": [
+          {
+            "product_name": "Pulse FROSTED Case for iPhone 15 Pro Max-Black                                                                     ",
+            "brand": "Pulse",
+            "subcategory": "frosted",
+            "total_sales": 227.0,
+            "pureqty": 88.0,
+            "impureqty": 139
+          }
+        ]
+      },
+      "hornor": {
+        "total_products": 2,
+        "total_sales": 321.0,
+        "top_products": [
+          {
+            "product_name": "Pulse HORNOR Case for iPhone 15 Pro Max-Black                                                                      ",
+            "brand": "Pulse",
+            "subcategory": "hornor",
+            "total_sales": 190.0,
+            "pureqty": 66.0,
+            "impureqty": 124
+          },
+          {
+            "product_name": "Pulse HORNOR Case for iPhone 15 Pro Max-Blue                                                                       ",
+            "brand": "Pulse",
+            "subcategory": "hornor",
+            "total_sales": 131.0,
+            "pureqty": 46.0,
+            "impureqty": 85
+          }
+        ]
+      },
+      "silicon": {
+        "total_products": 2,
+        "total_sales": 362.0,
+        "top_products": [
+          {
+            "product_name": "Pulse LIQUID silicon case for iPhone 15 Pro Max-Black                                                              ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 188.0,
+            "pureqty": 80.0,
+            "impureqty": 108
+          },
+          {
+            "product_name": "Pulse LIQUID silicon case for iPhone 15 Pro Max-Storm Blue                                                         ",
+            "brand": "Pulse",
+            "subcategory": "silicon",
+            "total_sales": 174.0,
+            "pureqty": 65.0,
+            "impureqty": 109
+          }
+        ]
+      },
+      "leather": {
+        "total_products": 2,
+        "total_sales": 414.0,
+        "top_products": [
+          {
+            "product_name": "Pulse THOR Leather case for iPhone 15 Pro Max-Blue                                                                 ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 210.0,
+            "pureqty": 78.0,
+            "impureqty": 132
+          },
+          {
+            "product_name": "Pulse THOR Leather case for iPhone 15 Pro Max-Black                                                                ",
+            "brand": "Pulse",
+            "subcategory": "leather",
+            "total_sales": 204.0,
+            "pureqty": 85.0,
+            "impureqty": 119
+          }
+        ]
+      },
+      "shockproof": {
+        "total_products": 2,
+        "total_sales": 388.0,
+        "top_products": [
+          {
+            "product_name": "Pulse TPU TPE PC shockproof case for iPhone 15 Pro Max-Black                                                       ",
+            "brand": "Pulse",
+            "subcategory": "shockproof",
+            "total_sales": 232.0,
+            "pureqty": 102.0,
+            "impureqty": 130
+          },
+          {
+            "product_name": "Pulse TPU TPE PC shockproof case for iPhone 15 Pro Max-Light Blue                                                  ",
+            "brand": "Pulse",
+            "subcategory": "shockproof",
+            "total_sales": 156.0,
+            "pureqty": 50.0,
+            "impureqty": 106
+          }
+        ]
+      }
+    }
+  },
+  "top_products": {
+    "iPhone 16 Pro Max": [
+      {
+        "product_name": "iPhone 16 Pro Max Clear Case with MagSafe                                                                          ",
+        "brand": "Apple",
+        "subcategory": "clear",
+        "total_sales": 513.0,
+        "pureqty": 222.0,
+        "impureqty": 291,
+        "series": "iPhone 16 Pro Max",
+        "category": "clear",
+        "priority_score": 125.13
+      },
+      {
+        "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                     ",
+        "brand": "Tekne",
+        "subcategory": "clear",
+        "total_sales": 317.0,
+        "pureqty": 203.0,
+        "impureqty": 114,
+        "series": "iPhone 16 Pro Max",
+        "category": "clear",
+        "priority_score": 123.17
+      },
+      {
+        "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black                                                     ",
+        "brand": "Tekne",
+        "subcategory": "clear",
+        "total_sales": 282.0,
+        "pureqty": 159.0,
+        "impureqty": 123,
+        "series": "iPhone 16 Pro Max",
+        "category": "clear",
+        "priority_score": 122.82
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                     ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 230.0,
+        "pureqty": 149.0,
+        "impureqty": 81,
+        "series": "iPhone 16 Pro Max",
+        "category": "clear",
+        "priority_score": 122.3
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-Black                                                     ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 129.0,
+        "pureqty": 79.0,
+        "impureqty": 50,
+        "series": "iPhone 16 Pro Max",
+        "category": "clear",
+        "priority_score": 121.29
+      },
+      {
+        "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Black                                                               ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 125.0,
+        "pureqty": 43.0,
+        "impureqty": 82,
+        "series": "iPhone 16 Pro Max",
+        "category": "silicone",
+        "priority_score": 119.25
+      },
+      {
+        "product_name": "Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black                                                                ",
+        "brand": "Tekne",
+        "subcategory": "magsafe",
+        "total_sales": 271.0,
+        "pureqty": 157.0,
+        "impureqty": 114,
+        "series": "iPhone 16 Pro Max",
+        "category": "magsafe",
+        "priority_score": 118.71
+      },
+      {
+        "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Denim                                                               ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 53.0,
+        "pureqty": 11.0,
+        "impureqty": 42,
+        "series": "iPhone 16 Pro Max",
+        "category": "silicone",
+        "priority_score": 118.53
+      },
+      {
+        "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Lake Green                                                          ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 51.0,
+        "pureqty": 14.0,
+        "impureqty": 37,
+        "series": "iPhone 16 Pro Max",
+        "category": "silicone",
+        "priority_score": 118.51
+      },
+      {
+        "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Plum                                                                ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 35.0,
+        "pureqty": 14.0,
+        "impureqty": 21,
+        "series": "iPhone 16 Pro Max",
+        "category": "silicone",
+        "priority_score": 118.35
+      },
+      {
+        "product_name": "iPhone 16 Pro Max Silicone Case with MagSafe - Stone Gray                                                          ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 32.0,
+        "pureqty": 11.0,
+        "impureqty": 21,
+        "series": "iPhone 16 Pro Max",
+        "category": "silicone",
+        "priority_score": 118.32
+      },
+      {
+        "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro Max  6.9  - Gold Matte                                          ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 189.0,
+        "pureqty": 94.0,
+        "impureqty": 95,
+        "series": "iPhone 16 Pro Max",
+        "category": "magsafe",
+        "priority_score": 117.89
+      },
+      {
+        "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max-Matt Black                                               ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 175.0,
+        "pureqty": 112.0,
+        "impureqty": 63,
+        "series": "iPhone 16 Pro Max",
+        "category": "magsafe",
+        "priority_score": 117.75
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max-Black                                                                ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 175.0,
+        "pureqty": 93.0,
+        "impureqty": 82,
+        "series": "iPhone 16 Pro Max",
+        "category": "magsafe",
+        "priority_score": 117.75
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16 Pro Max -Grey                                                                ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 171.0,
+        "pureqty": 106.0,
+        "impureqty": 65,
+        "series": "iPhone 16 Pro Max",
+        "category": "magsafe",
+        "priority_score": 117.71
+      }
+    ],
+    "iPhone 16 Pro": [
+      {
+        "product_name": "iPhone 16 Pro Clear Case with MagSafe                                                                              ",
+        "brand": "Apple",
+        "subcategory": "clear",
+        "total_sales": 405.0,
+        "pureqty": 195.0,
+        "impureqty": 210,
+        "series": "iPhone 16 Pro",
+        "category": "clear",
+        "priority_score": 114.05
+      },
+      {
+        "product_name": "Gripp Clear Case for Apple iPhone 16 Pro  6.3  - Clear                                                             ",
+        "brand": "Gripp",
+        "subcategory": "clear",
+        "total_sales": 99.0,
+        "pureqty": 53.0,
+        "impureqty": 46,
+        "series": "iPhone 16 Pro",
+        "category": "clear",
+        "priority_score": 110.99
+      },
+      {
+        "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Black                                                                   ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 201.0,
+        "pureqty": 93.0,
+        "impureqty": 108,
+        "series": "iPhone 16 Pro",
+        "category": "silicone",
+        "priority_score": 110.01
+      },
+      {
+        "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Denim                                                                   ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 43.0,
+        "pureqty": 11.0,
+        "impureqty": 32,
+        "series": "iPhone 16 Pro",
+        "category": "silicone",
+        "priority_score": 108.43
+      },
+      {
+        "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Stone Gray                                                              ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 30.0,
+        "pureqty": 12.0,
+        "impureqty": 18,
+        "series": "iPhone 16 Pro",
+        "category": "silicone",
+        "priority_score": 108.3
+      },
+      {
+        "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Ultramarine                                                             ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 28.0,
+        "pureqty": 9.0,
+        "impureqty": 19,
+        "series": "iPhone 16 Pro",
+        "category": "silicone",
+        "priority_score": 108.28
+      },
+      {
+        "product_name": "iPhone 16 Pro Silicone Case with MagSafe - Plum                                                                    ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 18.0,
+        "pureqty": 4.0,
+        "impureqty": 14,
+        "series": "iPhone 16 Pro",
+        "category": "silicone",
+        "priority_score": 108.18
+      },
+      {
+        "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold Matte                                              ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 155.0,
+        "pureqty": 94.0,
+        "impureqty": 61,
+        "series": "iPhone 16 Pro",
+        "category": "magsafe",
+        "priority_score": 107.55
+      },
+      {
+        "product_name": "Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Rose Gold                                          ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 124.0,
+        "pureqty": 71.0,
+        "impureqty": 53,
+        "series": "iPhone 16 Pro",
+        "category": "magsafe",
+        "priority_score": 107.24
+      },
+      {
+        "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Transparent                                             ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 122.0,
+        "pureqty": 68.0,
+        "impureqty": 54,
+        "series": "iPhone 16 Pro",
+        "category": "magsafe",
+        "priority_score": 107.22
+      },
+      {
+        "product_name": "Gripp Clear MagSafe Case for Apple iPhone 16 Pro  6.3  with White Ring - Clear                                     ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 110.0,
+        "pureqty": 57.0,
+        "impureqty": 53,
+        "series": "iPhone 16 Pro",
+        "category": "magsafe",
+        "priority_score": 107.1
+      },
+      {
+        "product_name": "Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Black Matte                                             ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 97.0,
+        "pureqty": 61.0,
+        "impureqty": 36,
+        "series": "iPhone 16 Pro",
+        "category": "magsafe",
+        "priority_score": 106.97
+      }
+    ],
+    "iPhone 16 Plus": [
+      {
+        "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16 Plus-Grey                                                         ",
+        "brand": "Tekne",
+        "subcategory": "clear",
+        "total_sales": 186.0,
+        "pureqty": 155.0,
+        "impureqty": 31,
+        "series": "iPhone 16 Plus",
+        "category": "clear",
+        "priority_score": 101.86
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-White                                                        ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 135.0,
+        "pureqty": 123.0,
+        "impureqty": 12,
+        "series": "iPhone 16 Plus",
+        "category": "clear",
+        "priority_score": 101.35
+      },
+      {
+        "product_name": "iPhone 16 Plus Clear Case with MagSafe                                                                             ",
+        "brand": "Apple",
+        "subcategory": "clear",
+        "total_sales": 87.0,
+        "pureqty": 71.0,
+        "impureqty": 16,
+        "series": "iPhone 16 Plus",
+        "category": "clear",
+        "priority_score": 100.87
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Grey                                                         ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 80.0,
+        "pureqty": 65.0,
+        "impureqty": 15,
+        "series": "iPhone 16 Plus",
+        "category": "clear",
+        "priority_score": 100.8
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16 Plus-Dark Blue                                                    ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 70.0,
+        "pureqty": 56.0,
+        "impureqty": 14,
+        "series": "iPhone 16 Plus",
+        "category": "clear",
+        "priority_score": 100.7
+      },
+      {
+        "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Fuchsia                                                                ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 26.0,
+        "pureqty": 16.0,
+        "impureqty": 10,
+        "series": "iPhone 16 Plus",
+        "category": "silicone",
+        "priority_score": 98.26
+      },
+      {
+        "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Black                                                                  ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 25.0,
+        "pureqty": 15.0,
+        "impureqty": 10,
+        "series": "iPhone 16 Plus",
+        "category": "silicone",
+        "priority_score": 98.25
+      },
+      {
+        "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Ultramarine                                                            ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 25.0,
+        "pureqty": 16.0,
+        "impureqty": 9,
+        "series": "iPhone 16 Plus",
+        "category": "silicone",
+        "priority_score": 98.25
+      },
+      {
+        "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Lake Green                                                             ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 24.0,
+        "pureqty": 15.0,
+        "impureqty": 9,
+        "series": "iPhone 16 Plus",
+        "category": "silicone",
+        "priority_score": 98.24
+      },
+      {
+        "product_name": "iPhone 16 Plus Silicone Case with MagSafe - Stone Gray                                                             ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 16.0,
+        "pureqty": 6.0,
+        "impureqty": 10,
+        "series": "iPhone 16 Plus",
+        "category": "silicone",
+        "priority_score": 98.16
+      },
+      {
+        "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Black                                                                   ",
+        "brand": "Tekne",
+        "subcategory": "magsafe",
+        "total_sales": 180.0,
+        "pureqty": 144.0,
+        "impureqty": 36,
+        "series": "iPhone 16 Plus",
+        "category": "magsafe",
+        "priority_score": 97.8
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Black                                                                   ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 170.0,
+        "pureqty": 145.0,
+        "impureqty": 25,
+        "series": "iPhone 16 Plus",
+        "category": "magsafe",
+        "priority_score": 97.7
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16 Plus-Grey                                                                    ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 158.0,
+        "pureqty": 137.0,
+        "impureqty": 21,
+        "series": "iPhone 16 Plus",
+        "category": "magsafe",
+        "priority_score": 97.58
+      },
+      {
+        "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Black                                                  ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 148.0,
+        "pureqty": 131.0,
+        "impureqty": 17,
+        "series": "iPhone 16 Plus",
+        "category": "magsafe",
+        "priority_score": 97.48
+      },
+      {
+        "product_name": "Tekne Matt Magsafe Case for iPhone 16 Plus-Grey                                                                    ",
+        "brand": "Tekne",
+        "subcategory": "magsafe",
+        "total_sales": 130.0,
+        "pureqty": 113.0,
+        "impureqty": 17,
+        "series": "iPhone 16 Plus",
+        "category": "magsafe",
+        "priority_score": 97.3
+      }
+    ],
+    "iPhone 16 Base": [
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-White                                                             ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 288.0,
+        "pureqty": 255.0,
+        "impureqty": 33,
+        "series": "iPhone 16 Base",
+        "category": "clear",
+        "priority_score": 92.88
+      },
+      {
+        "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-White                                                             ",
+        "brand": "Tekne",
+        "subcategory": "clear",
+        "total_sales": 270.0,
+        "pureqty": 234.0,
+        "impureqty": 36,
+        "series": "iPhone 16 Base",
+        "category": "clear",
+        "priority_score": 92.7
+      },
+      {
+        "product_name": "Tekne CLEAR Case with Camera stand for iPhone 16-Black                                                             ",
+        "brand": "Tekne",
+        "subcategory": "clear",
+        "total_sales": 237.0,
+        "pureqty": 193.0,
+        "impureqty": 44,
+        "series": "iPhone 16 Base",
+        "category": "clear",
+        "priority_score": 92.37
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Grey                                                              ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 136.0,
+        "pureqty": 120.0,
+        "impureqty": 16,
+        "series": "iPhone 16 Base",
+        "category": "clear",
+        "priority_score": 91.36
+      },
+      {
+        "product_name": "Pulse CLEAR Case with Camera stand for iPhone 16-Black                                                             ",
+        "brand": "Pulse",
+        "subcategory": "clear",
+        "total_sales": 123.0,
+        "pureqty": 106.0,
+        "impureqty": 17,
+        "series": "iPhone 16 Base",
+        "category": "clear",
+        "priority_score": 91.23
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16-Black                                                                        ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 350.0,
+        "pureqty": 295.0,
+        "impureqty": 55,
+        "series": "iPhone 16 Base",
+        "category": "magsafe",
+        "priority_score": 89.5
+      },
+      {
+        "product_name": "PULSE Matt Magsafe Case for iPhone 16-Grey                                                                         ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 304.0,
+        "pureqty": 262.0,
+        "impureqty": 42,
+        "series": "iPhone 16 Base",
+        "category": "magsafe",
+        "priority_score": 89.04
+      },
+      {
+        "product_name": "iPhone 16 Silicone Case with MagSafe - Black                                                                       ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 74.0,
+        "pureqty": 44.0,
+        "impureqty": 30,
+        "series": "iPhone 16 Base",
+        "category": "silicone",
+        "priority_score": 88.74
+      },
+      {
+        "product_name": "PULSE Aluminium Rugged Magsafe Case for iPhone 16-Matt Black                                                       ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 273.0,
+        "pureqty": 231.0,
+        "impureqty": 42,
+        "series": "iPhone 16 Base",
+        "category": "magsafe",
+        "priority_score": 88.73
+      },
+      {
+        "product_name": "iPhone 16 Silicone Case with MagSafe - Lake Green                                                                  ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 62.0,
+        "pureqty": 40.0,
+        "impureqty": 22,
+        "series": "iPhone 16 Base",
+        "category": "silicone",
+        "priority_score": 88.62
+      },
+      {
+        "product_name": "Tekne Matt Magsafe Case for iPhone 16-Black                                                                        ",
+        "brand": "Tekne",
+        "subcategory": "magsafe",
+        "total_sales": 241.0,
+        "pureqty": 202.0,
+        "impureqty": 39,
+        "series": "iPhone 16 Base",
+        "category": "magsafe",
+        "priority_score": 88.41
+      },
+      {
+        "product_name": "iPhone 16 Silicone Case with MagSafe - Denim                                                                       ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 35.0,
+        "pureqty": 24.0,
+        "impureqty": 11,
+        "series": "iPhone 16 Base",
+        "category": "silicone",
+        "priority_score": 88.35
+      },
+      {
+        "product_name": "iPhone 16 Silicone Case with MagSafe - Ultramarine                                                                 ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 33.0,
+        "pureqty": 15.0,
+        "impureqty": 18,
+        "series": "iPhone 16 Base",
+        "category": "silicone",
+        "priority_score": 88.33
+      },
+      {
+        "product_name": "iPhone 16 Silicone Case with MagSafe - Fuchsia                                                                     ",
+        "brand": "Apple",
+        "subcategory": "silicone",
+        "total_sales": 22.0,
+        "pureqty": 13.0,
+        "impureqty": 9,
+        "series": "iPhone 16 Base",
+        "category": "silicone",
+        "priority_score": 88.22
+      },
+      {
+        "product_name": "Tekne Matt Magsafe Case for iPhone 16-Grey                                                                         ",
+        "brand": "Tekne",
+        "subcategory": "magsafe",
+        "total_sales": 211.0,
+        "pureqty": 185.0,
+        "impureqty": 26,
+        "series": "iPhone 16 Base",
+        "category": "magsafe",
+        "priority_score": 88.11
+      }
+    ],
+    "iPhone 15 Pro Max": [
+      {
+        "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro Max - 6.7 10ft Drop-Tested Case                                     ",
+        "brand": "Hyphen",
+        "subcategory": "clear",
+        "total_sales": 18.0,
+        "pureqty": 7.0,
+        "impureqty": 11,
+        "series": "iPhone 15 Pro Max",
+        "category": "clear",
+        "priority_score": 80.18
+      },
+      {
+        "product_name": "Gripp Clear Case for Apple iPhone 15 Pro Max (6.7) - Clear                                                         ",
+        "brand": "Gripp",
+        "subcategory": "clear",
+        "total_sales": 17.0,
+        "pureqty": 7.0,
+        "impureqty": 10,
+        "series": "iPhone 15 Pro Max",
+        "category": "clear",
+        "priority_score": 80.17
+      },
+      {
+        "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Max Black                                                                ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 217.0,
+        "pureqty": 83.0,
+        "impureqty": 134,
+        "series": "iPhone 15 Pro Max",
+        "category": "magsafe",
+        "priority_score": 78.17
+      },
+      {
+        "product_name": "Pulse Newton Magsafe Case for iPhone 15 Pro Max-Grey                                                               ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 213.0,
+        "pureqty": 71.0,
+        "impureqty": 142,
+        "series": "iPhone 15 Pro Max",
+        "category": "magsafe",
+        "priority_score": 78.13
+      },
+      {
+        "product_name": "Pulse TANK Gradient Magsafe case for iPhone 15 Pro Max-Blue                                                        ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 209.0,
+        "pureqty": 69.0,
+        "impureqty": 140,
+        "series": "iPhone 15 Pro Max",
+        "category": "magsafe",
+        "priority_score": 78.09
+      },
+      {
+        "product_name": "Pulse Super crystal magsafe case for iPhone 15 Pro Max-Black                                                       ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 205.0,
+        "pureqty": 91.0,
+        "impureqty": 114,
+        "series": "iPhone 15 Pro Max",
+        "category": "magsafe",
+        "priority_score": 78.05
+      },
+      {
+        "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Max Black                                                               ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 198.0,
+        "pureqty": 81.0,
+        "impureqty": 117,
+        "series": "iPhone 15 Pro Max",
+        "category": "magsafe",
+        "priority_score": 77.98
+      }
+    ],
+    "iPhone 15 Pro": [
+      {
+        "product_name": "Gripp Clear Case for Apple iPhone 15 Pro (6.1) - Clear                                                             ",
+        "brand": "Gripp",
+        "subcategory": "clear",
+        "total_sales": 8.0,
+        "pureqty": 1.0,
+        "impureqty": 7,
+        "series": "iPhone 15 Pro",
+        "category": "clear",
+        "priority_score": 70.08
+      },
+      {
+        "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Pro - 6.1 10ft Drop-Tested Case                                         ",
+        "brand": "Hyphen",
+        "subcategory": "clear",
+        "total_sales": 4.0,
+        "pureqty": 0.0,
+        "impureqty": 4,
+        "series": "iPhone 15 Pro",
+        "category": "clear",
+        "priority_score": 70.04
+      },
+      {
+        "product_name": "Pulse Tire magsafe case for iPhone 15 Pro Black                                                                    ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 123.0,
+        "pureqty": 40.0,
+        "impureqty": 83,
+        "series": "iPhone 15 Pro",
+        "category": "magsafe",
+        "priority_score": 67.23
+      },
+      {
+        "product_name": "Pulse Armor Magsafe case for iPhone 15 Pro Black                                                                   ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 120.0,
+        "pureqty": 43.0,
+        "impureqty": 77,
+        "series": "iPhone 15 Pro",
+        "category": "magsafe",
+        "priority_score": 67.2
+      },
+      {
+        "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Pro (6.1) with White Ring - Clear                                     ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 23.0,
+        "pureqty": 8.0,
+        "impureqty": 15,
+        "series": "iPhone 15 Pro",
+        "category": "magsafe",
+        "priority_score": 66.23
+      },
+      {
+        "product_name": "Gripp CLARION MAGSAFE Case for Apple iPhone 15 Pro (6.1) - Black                                                   ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 9.0,
+        "pureqty": 4.0,
+        "impureqty": 5,
+        "series": "iPhone 15 Pro",
+        "category": "magsafe",
+        "priority_score": 66.09
+      },
+      {
+        "product_name": "Gripp Rubon MagSafe Case for Apple iPhone 15 Pro (6.1) - Sierra Blue                                               ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 9.0,
+        "pureqty": 1.0,
+        "impureqty": 8,
+        "series": "iPhone 15 Pro",
+        "category": "magsafe",
+        "priority_score": 66.09
+      }
+    ],
+    "iPhone 15 Plus": [
+      {
+        "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 Plus - 6.7 10ft Drop-Tested Case                                        ",
+        "brand": "Hyphen",
+        "subcategory": "clear",
+        "total_sales": 5.0,
+        "pureqty": 4.0,
+        "impureqty": 1,
+        "series": "iPhone 15 Plus",
+        "category": "clear",
+        "priority_score": 60.05
+      },
+      {
+        "product_name": "AT Minimal Magsafe Case For iPhone 15 Plus-81061-Clear                                                             ",
+        "brand": "AT Minimal",
+        "subcategory": "magsafe",
+        "total_sales": 18.0,
+        "pureqty": 16.0,
+        "impureqty": 2,
+        "series": "iPhone 15 Plus",
+        "category": "magsafe",
+        "priority_score": 56.18
+      },
+      {
+        "product_name": "HYPHEN LUCD Magsafe Case Case - iPhone 15 Plus - 6.7                                                               ",
+        "brand": "Hyphen",
+        "subcategory": "magsafe",
+        "total_sales": 2.0,
+        "pureqty": 1.0,
+        "impureqty": 1,
+        "series": "iPhone 15 Plus",
+        "category": "magsafe",
+        "priority_score": 56.02
+      }
+    ],
+    "iPhone 15 Base": [
+      {
+        "product_name": "Gripp Clear Case for Apple iPhone 15 Max (6.7) - Clear                                                             ",
+        "brand": "Gripp",
+        "subcategory": "clear",
+        "total_sales": 241.0,
+        "pureqty": 196.0,
+        "impureqty": 45,
+        "series": "iPhone 15 Base",
+        "category": "clear",
+        "priority_score": 52.41
+      },
+      {
+        "product_name": "Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear                                     ",
+        "brand": "Gripp",
+        "subcategory": "magsafe",
+        "total_sales": 551.0,
+        "pureqty": 421.0,
+        "impureqty": 130,
+        "series": "iPhone 15 Base",
+        "category": "magsafe",
+        "priority_score": 51.51
+      },
+      {
+        "product_name": "Gripp Clear Case for Apple iPhone 15 (6.1) - Clear                                                                 ",
+        "brand": "Gripp",
+        "subcategory": "clear",
+        "total_sales": 38.0,
+        "pureqty": 30.0,
+        "impureqty": 8,
+        "series": "iPhone 15 Base",
+        "category": "clear",
+        "priority_score": 50.38
+      },
+      {
+        "product_name": "HYPHEN AIRE MagSafe Clear Case - iPhone 15 - 6.1 10ft Drop-Tested Case                                             ",
+        "brand": "Hyphen",
+        "subcategory": "clear",
+        "total_sales": 35.0,
+        "pureqty": 22.0,
+        "impureqty": 13,
+        "series": "iPhone 15 Base",
+        "category": "clear",
+        "priority_score": 50.35
+      },
+      {
+        "product_name": "Pulse Super crystal magsafe case for iPhone 15-Black                                                               ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 405.0,
+        "pureqty": 315.0,
+        "impureqty": 90,
+        "series": "iPhone 15 Base",
+        "category": "magsafe",
+        "priority_score": 50.05
+      },
+      {
+        "product_name": "Pulse Newton Magsafe Case for iPhone 15-Grey                                                                       ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 400.0,
+        "pureqty": 297.0,
+        "impureqty": 103,
+        "series": "iPhone 15 Base",
+        "category": "magsafe",
+        "priority_score": 50.0
+      },
+      {
+        "product_name": "Pulse Tire magsafe case for iPhone 15 Black                                                                        ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 388.0,
+        "pureqty": 290.0,
+        "impureqty": 98,
+        "series": "iPhone 15 Base",
+        "category": "magsafe",
+        "priority_score": 49.88
+      },
+      {
+        "product_name": "Pulse Newton Magsafe Case for iPhone 15-Black                                                                      ",
+        "brand": "Pulse",
+        "subcategory": "magsafe",
+        "total_sales": 366.0,
+        "pureqty": 289.0,
+        "impureqty": 77,
+        "series": "iPhone 15 Base",
+        "category": "magsafe",
+        "priority_score": 49.66
+      }
+    ]
+  },
+  "metadata": {
+    "total_products": 399,
+    "processing_date": "2025-07-24T17:04:27.118531",
+    "data_source": "C:\\Users\\Shivansh Pal\\Desktop\\Planogram_Project\\data\\raw\\accessories\\cases_sales.csv"
+  }
+}

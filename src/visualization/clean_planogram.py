@@ -26,7 +26,7 @@ def extract_color_from_name(name):
         return name.split('-')[-1].strip()
     return ''
 
-def create_clean_planogram(products: List[Product], store_template: 'Store', lob: str, figsize: Tuple[int, int] = (16, 12)) -> plt.Figure:
+def create_clean_planogram(products: List[Product], store_template: 'Store', lob: str, figsize: Tuple[int, int] = (16, 12), title: str = None, save_path: str = None, products_list: List = None) -> plt.Figure:
     """Create a clean, modern planogram visualization with two separate planograms for iPad/iPhone series split."""
     from src.utils.logger import get_logger
     logger = get_logger()
@@ -108,8 +108,8 @@ def create_clean_planogram(products: List[Product], store_template: 'Store', lob
         
     elif lob.lower() == 'iphone':
         # Use dedicated iPhone planogram system
-        from src.visualization.iphone_planogram import create_iphone_planogram
-        create_iphone_planogram([p[0] for p in all_products], store_template)
+        from src.visualization.iphone_planogram_logic import arrange_iphone_products
+        planogram_data = arrange_iphone_products(products, store_template)
         # Create dummy figure to return
         fig, ax = plt.subplots(figsize=figsize)
         ax.text(0.5, 0.5, 'iPhone planograms generated successfully', ha='center', va='center', transform=ax.transAxes, fontsize=16)

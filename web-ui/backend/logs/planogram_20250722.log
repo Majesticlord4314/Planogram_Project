@@ -1,0 +1,92 @@
+2025-07-22 19:47:51,974 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 19:47:51,976 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 19:47:51,976 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 19:47:51,976 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 19:47:51,976 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 19:47:52,520 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_194752.png
+2025-07-22 19:49:08,122 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 19:49:08,122 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 19:49:08,123 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 19:49:08,124 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 19:49:08,649 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_194908.png
+2025-07-22 19:50:24,797 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 19:50:24,797 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 19:50:24,798 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 19:50:24,798 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 19:50:24,798 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 19:50:25,264 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_195024.png
+2025-07-22 20:43:58,306 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 20:43:58,306 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 20:43:58,308 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 20:43:58,308 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 20:43:58,308 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 20:49:55,684 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 20:49:55,685 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 20:49:55,685 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 20:49:55,685 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 20:49:55,686 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 20:49:56,221 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_204955.png
+2025-07-22 23:19:24,187 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 23:19:24,190 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:19:24,190 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:19:24,190 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:19:24,190 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:19:25,314 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_231924.png
+2025-07-22 23:22:39,151 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:22:39,152 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:22:39,152 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:22:39,153 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:22:39,605 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_232239.png
+2025-07-22 23:26:49,533 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:26:49,533 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:26:49,538 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:26:49,538 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:26:50,690 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_232649.png
+2025-07-22 23:27:39,717 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:27:39,717 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:27:39,717 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:27:39,721 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:27:41,008 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_232739.png
+2025-07-22 23:30:57,671 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 23:30:57,671 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:30:57,672 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:30:57,672 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:30:57,672 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:30:58,194 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_233057.png
+2025-07-22 23:31:25,758 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:31:25,758 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:31:25,759 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:31:25,760 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:31:26,456 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_233125.png
+2025-07-22 23:32:39,968 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:32:39,968 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:32:39,968 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:32:39,971 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:32:41,132 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_233240.png
+2025-07-22 23:41:26,094 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 23:41:26,095 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:41:26,096 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:41:26,096 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:41:26,096 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:41:26,793 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_234126.png
+2025-07-22 23:42:48,824 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 23:42:48,824 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:42:48,824 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:42:48,824 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:42:48,824 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:42:49,512 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_234248.png
+2025-07-22 23:42:49,524 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: ipad_cases
+2025-07-22 23:43:43,857 | INFO     | logger          | __init__             | Logging initialized. Log file: logs\planogram_20250722.log
+2025-07-22 23:43:43,857 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:43:43,858 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:43:43,858 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:43:43,859 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:43:44,588 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_234343.png
+2025-07-22 23:43:44,600 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: ipad_cases
+2025-07-22 23:43:44,600 | INFO     | clean_planogram | create_clean_planogram | Generating clean planogram for LOB 'ipad_cases' with store 'Flagship Store Template'.
+2025-07-22 23:43:44,600 | WARNING  | clean_planogram | create_clean_planogram | No products provided to create_clean_planogram. Generating empty plot.
+2025-07-22 23:47:59,651 | INFO     | smart_accessory_optimizer | optimize             | Running smart accessory optimization for: cases
+2025-07-22 23:47:59,651 | INFO     | smart_accessory_optimizer | _optimize_cases      | Optimizing iPhone cases with smart allocation...
+2025-07-22 23:47:59,651 | INFO     | smart_accessory_optimizer | _allocate_walls_for_cases | Wall allocation strategy: ['cases_apple', 'cases_tpa', 'accessories']
+2025-07-22 23:47:59,655 | INFO     | smart_accessory_optimizer | _balance_variants    | Balanced variants: ['iPhone 16 Pro Max', 'iPhone 16 Pro', 'iPhone 16 Plus', 'iPhone 16 Base', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max', 'iPhone 16 Pro Max']
+2025-07-22 23:48:01,273 | INFO     | smart_accessory_optimizer | _generate_intelligent_cases_planogram | Generated intelligent cases planogram: output/Smart Cases Layout_large_cases_planogram_20250722_234759.png

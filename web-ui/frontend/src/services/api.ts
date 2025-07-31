@@ -1,7 +1,15 @@
+
 import axios from 'axios';
 
 // API Configuration
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+// Helper to get full API URL
+export const getFullApiUrl = (path: string): string => {
+  // Make sure path starts with a slash
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  return `${API_BASE_URL}${normalizedPath}`;
+};
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -10,42 +18,6 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
-
-// Request interceptor for logging
-api.interceptors.request.use(
-  (config) => {
-    console.log(`API Request: ${config.method?.toUpperCase()} ${config.url}`);
-    return config;
-  },
-  (error) => {
-    console.error('API Request Error:', error);
-    return Promise.reject(error);
-  }
-);
-
-// Response interceptor for error handling
-api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error) => {
-    console.error('API Response Error:', error);
-    
-    if (error.response) {
-      // Server responded with error status
-      const { status, data } = error.response;
-      console.error(`API Error ${status}:`, data);
-    } else if (error.request) {
-      // Request was made but no response received
-      console.error('No response received:', error.request);
-    } else {
-      // Something else happened
-      console.error('Request setup error:', error.message);
-    }
-    
-    return Promise.reject(error);
-  }
-);
 
 // API Types
 export interface APIResponse<T = any> {
@@ -218,9 +190,31 @@ export const apiService = {
   },
 
   async deleteFile(filename: string): Promise<APIResponse> {
-    const response = await api.delete(`/api/files/${filename}`);
-    return response.data;
-  }
+    return api.delete(`/api/files/${filename}`);
+  },
+
+  // Store Template Management
+  async getStoreTemplates(): Promise<APIResponse<{ stores: any[], total_stores: number }>> {
+    return api.get('/api/stores/templates');
+  },
+
+  async getStoreWalls(storeName: string): Promise<APIResponse<any>> {
+    return api.get(`/api/stores/${encodeURIComponent(storeName)}/walls`);
+  },
+
+  async startStoreOptimization(storeName: string, params: {
+    optimization_type?: string;
+    selected_lobs?: string[];
+    additional_params?: any;
+  }): Promise<APIResponse<{ job_id: string }>> {
+    return api.post(`/api/stores/${encodeURIComponent(storeName)}/optimize`, params);
+  },
+
+  async generatePlanogram(storeName: string, selectedAccessories: string[]): Promise<APIResponse<{ job_id: string }>> {
+    return api.post(`/api/stores/${encodeURIComponent(storeName)}/generate-planograms`, {
+        selected_accessories: selectedAccessories,
+    });
+  },
 };
 
 export default api;

@@ -1,0 +1,120 @@
+import os
+import sys
+from pathlib import Path
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+# Add project root to path
+project_root = Path(__file__).parent.parent.parent.absolute()
+sys.path.insert(0, str(project_root))
+
+from src.visualization.intelligent_planogram_generator import IntelligentPlanogramGenerator, create_intelligent_cases_planogram
+
+def generate_web_planogram(products, store_type, wall_name, wall_series):
+    """Generate planogram for web UI integration using the intelligent generator"""
+    # Map web UI store types to intelligent generator store types
+    store_type_mapping = {
+        'flagship': 'large',
+        'standard': 'medium',
+        'express': 'small'
+    }
+    
+    # Create a generator instance
+    generator = IntelligentPlanogramGenerator()
+    
+    # Generate a professional planogram
+    try:
+        # Use the generator to create a high-quality planogram
+        result = generator.generate_intelligent_planogram(
+            products=products,
+            store_type=store_type_mapping.get(store_type, 'large'),
+            store_name=f"Smart Cases Layout - {wall_name}"
+        )
+        
+        # Get the planogram image path
+        planogram_image = result.get('planogram_image', '')
+        
+        # If the planogram was generated successfully, return the path
+        if planogram_image and os.path.exists(planogram_image):
+            return planogram_image
+    except Exception as e:
+        print(f"Error generating intelligent planogram: {e}")
+    
+    # If we get here, the intelligent generator failed, create a fallback
+    return create_fallback_planogram(store_type, wall_name, wall_series)
+
+def create_fallback_planogram(store_type, wall_name, wall_series):
+    """Create a simple fallback planogram if the intelligent generator fails"""
+    # Create output directory if it doesn't exist
+    output_dir = Path('output')
+    output_dir.mkdir(exist_ok=True)
+    
+    # Generate a timestamp for the filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Create the filename
+    clean_wall_name = wall_name.replace(' ', '_').replace('/', '-')
+    filename = f"output/Smart_Cases_Layout_improved_{timestamp}.png"
+    
+    # Create a simple planogram
+    fig, ax = plt.subplots(figsize=(20, 14))
+    ax.text(0.5, 0.5, f"Smart Cases Layout - {wall_name}\n{', '.join(wall_series)}",
+            fontsize=20, ha='center', va='center')
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis('off')
+    plt.savefig(filename, dpi=300, bbox_inches='tight')
+    plt.close(fig)
+    
+    return filename
+
+def generate_product_details(products, planogram_file, store_type, wall_name, wall_series):
+    """Generate a text file with product details for the planogram"""
+    # Create output filename based on planogram file
+    text_file = planogram_file.replace('.png', '.txt')
+    
+    with open(text_file, 'w') as f:
+        f.write(f"SMART CASES LAYOUT - {store_type.upper()} STORE - {wall_name}\n")
+        f.write("=" * 50 + "\n\n")
+        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Wall Series: {', '.join(wall_series)}\n")
+        f.write(f"Total Products: {len(products)}\n\n")
+        
+        # Group products by series
+        series_groups = {}
+        for product in products:
+            series = getattr(product, 'series', 'Unknown')
+            if series not in series_groups:
+                series_groups[series] = []
+            series_groups[series].append(product)
+        
+        # Write details for each series
+        for series_name in wall_series:
+            if series_name in series_groups:
+                f.write(f"{series_name} Cases:\n")
+                f.write("-" * 40 + "\n")
+                
+                # Sort by brand
+                brand_groups = {}
+                for product in series_groups[series_name]:
+                    brand = getattr(product, 'brand', 'Unknown')
+                    if brand not in brand_groups:
+                        brand_groups[brand] = []
+                    brand_groups[brand].append(product)
+                
+                # Write details for each brand
+                for brand, brand_products in brand_groups.items():
+                    f.write(f"\n{brand}:\n")
+                    
+                    for i, product in enumerate(brand_products):
+                        product_name = getattr(product, 'product_name', 'Unknown')
+                        qty = getattr(product, 'pureqty', 0)
+                        if qty <= 0:
+                            qty = getattr(product, 'impureqty', 0)
+                        
+                        f.write(f"  {i+1}. {product_name[:50]}\n")
+                        f.write(f"     Quantity: {qty}\n")
+                
+                f.write("\n" + "=" * 50 + "\n\n")
+    
+    return text_file

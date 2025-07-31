@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
     Dialog,
@@ -21,7 +22,8 @@ import {
     PlayArrow as PlayArrowIcon
 } from '@mui/icons-material';
 
-import { apiService, ValidParameters } from '../services/api';
+import { apiService } from '../services/api';
+import type { ValidParameters } from '../services/api';
 
 interface OptimizationFormProps {
     open: boolean;
@@ -65,7 +67,7 @@ const OptimizationForm: React.FC<OptimizationFormProps> = ({ open, onClose, onSt
     const handleStart = async () => {
         setLoading(true);
         try {
-            let response;
+            let response: any;
 
             switch (optimizationType) {
                 case 'cohort':

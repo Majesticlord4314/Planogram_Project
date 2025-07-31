@@ -1,423 +1,90 @@
+"""
+Data Loader for Planogram Project
+Loads product data from CSV files
+"""
+import os
+import sys
 import pandas as pd
-import json
 from pathlib import Path
-from typing import List, Dict, Optional, Tuple, Union
-from src.models.product import Product, ProductCategory, ProductStatus
-from src.models.shelf import Shelf
-from src.models.store import Store
+from collections import namedtuple
+
+# Add project root to path
+project_root = Path(__file__).parent.parent.parent.absolute()
+sys.path.insert(0, str(project_root))
 
 class DataLoader:
-    """Handle all data loading operations"""
+    """Data loader for product data"""
     
-    def __init__(self, data_path: str = "data/raw"):
-        self.data_path = Path(data_path)
-        self.accessories_path = self.data_path / "accessories"
-        self.cohorts_path = self.data_path / "cohorts"
-        self.templates_path = self.data_path / "store_templates"
-        
-        # Validate paths exist
-        self._validate_paths()
-    
-    def _validate_paths(self):
-        """Ensure all required paths exist"""
-        paths = [self.data_path, self.accessories_path, self.cohorts_path, self.templates_path]
-        for path in paths:
-            if not path.exists():
-                raise FileNotFoundError(f"Required path not found: {path}")
-    
-    def load_products_by_category(self, category: str) -> List[Product]:
-        """Load products for a specific category"""
-        file_mapping = {
-            'cases': 'cases_sales.csv',
-            'cables': 'cables_adapters_sales.csv',
-            'screen_protectors': 'screen_protectors_sales.csv',
-            'others': 'mounts_others_sales.csv'
-        }
-        
-        if category not in file_mapping:
-            raise ValueError(f"Unknown category: {category}. Available: {list(file_mapping.keys())}")
-            
-        file_path = self.accessories_path / file_mapping[category]
-        
-        if not file_path.exists():
-            raise FileNotFoundError(f"Data file not found: {file_path}")
-            
-        df = pd.read_csv(file_path)
-        # Clean column names and values
-        df.columns = df.columns.str.strip()
-        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-        return self._dataframe_to_products(df)
-    
-    def load_products_by_lob(self, lob: str, series_filter: Optional[str] = None) -> List[Product]:
-        """Load all products for a specific LOB (iPhone, iPad, etc.)"""
-        all_products = []
-        lob_lower = lob.lower()
-
-        # --- Special handling for iPad ---
-        if lob_lower == 'ipad':
-            try:
-                ipad_file = self.accessories_path / 'ipad-cases-transformed.csv'
-                if not ipad_file.exists():
-                    print("Warning: ipad-cases-transformed.csv not found.")
-                    return []
-                
-                df_ipad = pd.read_csv(ipad_file)
-                df_ipad.columns = df_ipad.columns.str.strip()
-                df_ipad = df_ipad.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-                
-                ipad_products = self._dataframe_to_products(df_ipad)
-                
-                if series_filter:
-                    ipad_products = [p for p in ipad_products if series_filter.lower() in p.series.lower()]
-                
-                print(f"Loaded {len(ipad_products)} iPad products exclusively from ipad-cases-transformed.csv")
-                return ipad_products
-            except Exception as e:
-                print(f"Error loading iPad cases file: {e}")
-                return []
-
-        # --- Special handling for iPhone ---
-        if lob_lower == 'iphone':
-            try:
-                iphone_file = self.accessories_path / 'cases_sales.csv'
-                if not iphone_file.exists():
-                    print("Warning: cases_sales.csv not found.")
-                    return []
-                
-                df_iphone = pd.read_csv(iphone_file)
-                df_iphone.columns = df_iphone.columns.str.strip()
-                df_iphone = df_iphone.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-                
-                iphone_products = self._dataframe_to_products(df_iphone)
-                
-                if series_filter:
-                    iphone_products = [p for p in iphone_products if series_filter.lower() in p.series.lower()]
-                
-                print(f"Loaded {len(iphone_products)} iPhone products exclusively from cases_sales.csv")
-                return iphone_products
-            except Exception as e:
-                print(f"Error loading iPhone cases file: {e}")
-                return []
-
-        # --- Special handling for Watch ---
-        if lob_lower == 'watch':
-            try:
-                watch_file = self.accessories_path / 'combined_watch.csv'
-                if not watch_file.exists():
-                    print("Warning: combined_watch.csv not found.")
-                    return []
-                
-                df_watch = pd.read_csv(watch_file)
-                df_watch.columns = df_watch.columns.str.strip()
-                df_watch = df_watch.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-                
-                watch_products = self._dataframe_to_watch_products(df_watch)
-                
-                print(f"Loaded {len(watch_products)} Watch products exclusively from combined_watch.csv")
-                return watch_products
-            except Exception as e:
-                print(f"Error loading Watch file: {e}")
-                return []
-
-        # --- Special handling for Mac ---
-        if lob_lower == 'mac':
-            try:
-                mac_file = self.accessories_path / 'mac-accessories-transformed.csv'
-                if not mac_file.exists():
-                    print("Warning: mac-accessories-transformed.csv not found.")
-                    return []
-                
-                df_mac = pd.read_csv(mac_file)
-                df_mac.columns = df_mac.columns.str.strip()
-                df_mac = df_mac.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-                
-                mac_products = self._dataframe_to_products(df_mac)
-                
-                if series_filter:
-                    mac_products = [p for p in mac_products if series_filter.lower() in p.series.lower()]
-                
-                print(f"Loaded {len(mac_products)} Mac products exclusively from mac-accessories-transformed.csv")
-                return mac_products
-            except Exception as e:
-                print(f"Error loading Mac accessories file: {e}")
-                return []
-
-        # --- General handling for other LOBs ---
-        for category in ['cases', 'cables', 'screen_protectors', 'others']:
-            try:
-                products = self.load_products_by_category(category)
-                # Filter by core_product
-                lob_products = [p for p in products if lob_lower in p.core_product.lower()]
-                
-                if series_filter:
-                    lob_products = [p for p in lob_products if series_filter.lower() in p.series.lower()]
-                    
-                if lob_products:
-                    all_products.extend(lob_products)
-                    print(f"Loaded {len(lob_products)} {lob} products from {category}")
-            except FileNotFoundError:
-                continue # It's okay if a category file doesn't exist
-            except Exception as e:
-                print(f"Error loading {category} data for {lob}: {e}")
-                continue
-                
-        return all_products
-    
-    def load_all_products(self) -> List[Product]:
-        """Load all products from all categories"""
-        all_products = []
-        
-        for category in ['cases', 'cables', 'screen_protectors', 'others']:
-            try:
-                products = self.load_products_by_category(category)
-                all_products.extend(products)
-            except FileNotFoundError:
-                print(f"Warning: Could not load {category} data")
-                continue
-                
-        return all_products
-    
-    def load_cohort_data(self, lob: str, model: Optional[str] = None) -> pd.DataFrame:
-        """Load cohort data for a specific LOB"""
-        # Use general LOB file
-        file_path = self.cohorts_path / f'{lob.lower()}_planogram_cohorts.csv'
-        if not file_path.exists():
-            # Try alternate naming
-            file_path = self.cohorts_path / f'{lob.lower()}_cohorts.csv'
-            
-        if file_path.exists():
-            return pd.read_csv(file_path)
+    def __init__(self, data_dir=None):
+        """Initialize the data loader"""
+        if data_dir:
+            self.data_dir = Path(data_dir)
         else:
-            print(f"Warning: Cohort file not found for {lob}")
-            return pd.DataFrame()
+            self.data_dir = project_root / 'data' / 'raw'
     
-    def load_bundle_recommendations(self) -> pd.DataFrame:
-        """Load bundle recommendations"""
-        file_path = self.cohorts_path / 'bundle_recommendations.csv'
-        if file_path.exists():
-            return pd.read_csv(file_path)
-        else:
-            print("Warning: Bundle recommendations file not found")
-            return pd.DataFrame()
-    
-    def load_master_cohorts(self) -> pd.DataFrame:
-        """Load master cohort file with all LOBs"""
-        file_path = self.cohorts_path / 'planogram_cohorts_master.csv'
-        if file_path.exists():
-            return pd.read_csv(file_path)
-        else:
-            print("Warning: Master cohort file not found")
-            return pd.DataFrame()
-    
-    def enrich_products_with_cohorts(self, products: List[Product], 
-                                   cohort_df: pd.DataFrame) -> List[Product]:
-        """Add cohort data (attach rates, bundle info) to products"""
-        if cohort_df.empty:
-            return products
-            
-        # Create lookup dictionary from cohort data
-        cohort_lookup = {}
-        
-        # Handle different column names in cohort files
-        product_col = 'accessory_product' if 'accessory_product' in cohort_df.columns else 'accessory_name'
-        
-        for _, row in cohort_df.iterrows():
-            key = row[product_col]
-            cohort_lookup[key] = {
-                'attach_rate': float(row.get('attach_rate', 0)),
-                'purchase_frequency': int(row.get('purchase_frequency', 0)),
-                'recommended_facings': int(row.get('recommended_facings', 0))
-            }
-        
-        # Enrich products
-        enriched = []
-        for product in products:
-            # Try to match by product name
-            if product.product_name in cohort_lookup:
-                product.attach_rate = cohort_lookup[product.product_name]['attach_rate']
-                product.bundle_frequency = cohort_lookup[product.product_name]['purchase_frequency']
-                
-                # Adjust facings based on cohort data if provided
-                recommended = cohort_lookup[product.product_name]['recommended_facings']
-                if recommended > 0:
-                    product.min_facings = max(1, recommended - 1)
-                    product.max_facings = min(product.max_facings, recommended + 2)
+    def load_products_from_file(self, file_path):
+        """Load products from a CSV file"""
+        try:
+            # Handle both absolute and relative paths
+            if os.path.isabs(file_path):
+                full_path = Path(file_path)
             else:
-                # Default values if not in cohort
-                product.attach_rate = 0.0
-                product.bundle_frequency = 0
-                
-            enriched.append(product)
+                full_path = project_root / file_path
             
-        return enriched
-    
-    def load_store_template(self, store_type: str) -> Store:
-        """Load store configuration"""
-        file_path = self.templates_path / f"{store_type}_store.json"
-        
-        if not file_path.exists():
-            raise FileNotFoundError(f"Store template not found: {file_path}")
+            # Check if file exists
+            if not full_path.exists():
+                print(f"File not found: {full_path}")
+                return []
             
-        with open(file_path, 'r') as f:
-            template = json.load(f)
+            # Read CSV file
+            df = pd.read_csv(full_path)
+            
+            # Clean column names by stripping whitespace
+            df.columns = df.columns.str.strip()
+            
+            # Create products from DataFrame
+            products = []
+            class Product:
+                def __init__(self, **kwargs):
+                    self.__dict__.update(kwargs)
+
+            for _, row in df.iterrows():
+                try:
+                    product_data = {
+                        'product_name': row.get('Product Name', row.get('product_name', '')),
+                        'brand': row.get('Brand', row.get('brand', '')),
+                        'series': row.get('Series', row.get('series', '')),
+                        'total_qty': row.get('Total Qty', row.get('total_qty', 0)),
+                        'pureqty': row.get('Pure Qty', row.get('pureqty', 0)),
+                        'impureqty': row.get('Impure Qty', row.get('impureqty', 0)),
+                        'product_id': row.get('Product ID', row.get('product_id', '')),
+                        'color': row.get('Color', row.get('color', '')),
+                        'price': row.get('Price', row.get('price', 0))
+                    }
+                    product = Product(**product_data)
+                    products.append(product)
+                except Exception as e:
+                    print(f"Error creating product from row: {e}")
+            
+            return products
         
-        # Create Shelf objects
-        shelves = []
-        for shelf_data in template['shelves']:
-            shelf = Shelf(
-                shelf_id=shelf_data['shelf_id'],
-                shelf_name=shelf_data['shelf_name'],
-                width=float(shelf_data['width']),
-                height=float(shelf_data['height']),
-                depth=float(shelf_data['depth']),
-                y_position=float(shelf_data['y_position']),
-                shelf_type=shelf_data['shelf_type'],
-                eye_level_score=float(shelf_data['eye_level_score'])
-            )
-            shelves.append(shelf)
-        
-        # Create Store object
-        store_info = template['store_info']
-        store = Store(
-            store_type=store_info['store_type'],
-            store_name=store_info['store_name'],
-            total_area_sqm=float(store_info['total_area_sqm']),
-            accessory_area_sqm=float(store_info['accessory_area_sqm']),
-            customer_flow=store_info['customer_flow'],
-            restock_frequency_days=int(store_info['restock_frequency_days']),
-            shelves=shelves,
-            rules=template.get('product_mix_rules', {}),
-            placement_rules=template.get('placement_rules', {}),
-            optimization_weights=template.get('optimization_weights', {})
-        )
-        
-        return store
+        except Exception as e:
+            print(f"Error loading products from file: {e}")
+            return []
     
-    def _dataframe_to_products(self, df: pd.DataFrame) -> List[Product]:
-        """Convert DataFrame to list of Product objects"""
+    def load_all_products(self):
+        """Load all products from all CSV files"""
         products = []
         
-        for _, row in df.iterrows():
-            try:
-                # Map category string to enum
-                cat_enum = self._map_category(row['category'])
-                
-                # Handle optional subcategory
-                subcategory = str(row['subcategory']) if pd.notna(row['subcategory']) else ''
-                
-                product = Product(
-                    product_name=str(row['product_name']).strip(),
-                    series=str(row['series']).strip(),
-                    category=cat_enum,
-                    subcategory=subcategory,
-                    brand=str(row['brand']),
-                    width=float(row['width']),
-                    height=float(row['height']),
-                    depth=float(row['depth']),
-                    pureqty=float(row['pureqty']) if 'pureqty' in row and pd.notna(row['pureqty']) else (float(row['frequency']) if 'frequency' in row else 0.0),
-                    impureqty=float(row['impureqty']) if 'impureqty' in row and pd.notna(row['impureqty']) else 0.0,
-                    core_product=str(row['core_product'])
-                )
-                products.append(product)
-                
-            except Exception as e:
-                print(f"Error loading product {row.get('product_name', 'unknown')}: {e}")
-                continue
-                
-        # Normalize sales velocity across all products
-        if products:
-            max_qty = max(p.total_qty for p in products)
-            if max_qty > 0:
-                for p in products:
-                    p.sales_velocity = (p.total_qty / max_qty) * 100  # Normalize to 0-100
-                    
-        return products
-    
-    def _dataframe_to_watch_products(self, df: pd.DataFrame) -> List[Product]:
-        """Convert watch DataFrame to list of Product objects"""
-        products = []
+        # Find all CSV files in the accessories directory
+        accessories_dir = self.data_dir / 'accessories'
+        if accessories_dir.exists():
+            for file_path in accessories_dir.glob('*.csv'):
+                try:
+                    file_products = self.load_products_from_file(file_path)
+                    products.extend(file_products)
+                    print(f"Loaded {len(file_products)} products from {file_path.name}")
+                except Exception as e:
+                    print(f"Error loading products from {file_path.name}: {e}")
         
-        for _, row in df.iterrows():
-            try:
-                # Map category string to enum for watch products
-                cat_enum = self._map_watch_category(row['category'])
-                
-                # Handle optional subcategory
-                subcategory = str(row['subcategory']) if pd.notna(row['subcategory']) else ''
-                
-                # Create fake series for watch products (use subcategory as series)
-                series = subcategory if subcategory else 'Apple Watch'
-                
-                product = Product(
-                    product_name=str(row['product_name']).strip(),
-                    series=series,
-                    category=cat_enum,
-                    subcategory=subcategory,
-                    brand=str(row['brand']),
-                    width=float(row['width']),
-                    height=float(row['height']),
-                    depth=float(row['depth']),
-                    pureqty=float(row['frequency']) if pd.notna(row['frequency']) else 0.0,
-                    impureqty=0.0,  # No impureqty for watch data
-                    core_product='Watch'  # All watch products
-                )
-                products.append(product)
-                
-            except Exception as e:
-                print(f"Error loading watch product {row.get('product_name', 'unknown')}: {e}")
-                continue
-                
-        # Normalize sales velocity across all products
-        if products:
-            max_qty = max(p.total_qty for p in products)
-            if max_qty > 0:
-                for p in products:
-                    p.sales_velocity = (p.total_qty / max_qty) * 100  # Normalize to 0-100
-                     
         return products
-    
-    def _map_watch_category(self, category_str: str) -> ProductCategory:
-        """Map watch category string to enum"""
-        mapping = {
-            'straps': ProductCategory.OTHER,  # Use OTHER for watch straps
-            'watch glass': ProductCategory.SCREEN_PROTECTOR,
-            'cables & adapters': ProductCategory.CABLE,
-            'chargers & docks': ProductCategory.CHARGER,
-        }
-        
-        category_lower = category_str.lower().strip()
-        return mapping.get(category_lower, ProductCategory.OTHER)
-    
-    def _map_category(self, category_str: str) -> ProductCategory:
-        """Map string category to enum"""
-        mapping = {
-            'case': ProductCategory.CASE,
-            'cable': ProductCategory.CABLE,
-            'adapter': ProductCategory.ADAPTER,
-            'screen_protector': ProductCategory.SCREEN_PROTECTOR,
-            'charger': ProductCategory.CHARGER,
-            'mount': ProductCategory.MOUNT,
-            'audio': ProductCategory.AUDIO,
-            'keyboard': ProductCategory.KEYBOARD,
-            'mouse': ProductCategory.MOUSE,
-            'pencil': ProductCategory.PENCIL,
-            'watch_band': ProductCategory.WATCH_BAND
-        }
-        return mapping.get(category_str.lower(), ProductCategory.OTHER)
-    
-    def get_available_stores(self) -> List[str]:
-        """Get list of available store templates"""
-        stores = []
-        for file in self.templates_path.glob("*_store.json"):
-            store_type = file.stem.replace('_store', '')
-            stores.append(store_type)
-        return stores
-    
-    def get_available_lobs(self) -> List[str]:
-        """Get list of available LOBs from cohort files"""
-        lobs = []
-        for file in self.cohorts_path.glob("*_cohorts.csv"):
-            if 'master' not in file.stem:
-                lob = file.stem.replace('_cohorts', '').replace('_planogram', '')
-                lobs.append(lob.title())
-        return lobs

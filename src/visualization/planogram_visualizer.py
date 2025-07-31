@@ -203,14 +203,7 @@ class PlanogramVisualizer:
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#333333', alpha=0.7)
         )
         
-        # Add sales indicator
-        if hasattr(product, 'profit'):
-            if product.profit > 20:  # High margin
-                ax.text(position.x_end - 5, shelf_y + product.height - 5, '$$$',
-                    fontsize=8, color='green')
-            elif product.profit > 10:  # Medium margin
-                ax.text(position.x_end - 5, shelf_y + product.height - 5, '$$',
-                    fontsize=8, color='darkgreen')
+        # Removed profit indicator as requested
     
     def _format_product_label(self, product: Product, position) -> List[str]:
         """Format product label for display"""
@@ -226,11 +219,7 @@ class PlanogramVisualizer:
         lines.append(name)
         lines.append(f"{position.facings} units")
         
-        # Show profit if available, otherwise price
-        if hasattr(product, 'profit') and product.profit > 0:
-            lines.append(f"M: ${product.profit:.0f}")  # M for margin
-        elif hasattr(product, 'price'):
-            lines.append(f"P: ${product.price:.0f}")   # P for price
+        # Removed price/profit display as requested
         
         return lines
     
@@ -441,28 +430,28 @@ class PlanogramVisualizer:
     
     def _arrange_products_for_express_store(self, all_products: List[Tuple]) -> List[Tuple]:
         """Arrange products for express store with aesthetic structure"""
-        self.logger.info("Creating aesthetic arrangement for express store")
+        self.logger.info("Creating aesthetic arrangement for express store with brand grouping and TPA partition")
         
         # Separate by brand
         apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
         tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
         
-        # Sort each group by sales velocity
-        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
-        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        # Sort each group by total quantity (sales) for better accuracy
+        apple_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
         
         self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
         
-        # Group TPA products by iPhone series for visual coherence
-        tpa_by_series = {}
+        # Group TPA products by brand for brand-based grouping
+        tpa_by_brand = {}
         for product, facings in tpa_products:
-            series = getattr(product, 'series', 'Other')
-            if series not in tpa_by_series:
-                tpa_by_series[series] = []
-            tpa_by_series[series].append((product, facings))
+            brand = getattr(product, 'brand', 'Unknown')
+            if brand not in tpa_by_brand:
+                tpa_by_brand[brand] = []
+            tpa_by_brand[brand].append((product, facings))
         
-        # Debug: Log what series we found
-        self.logger.info(f"TPA products by series: {list(tpa_by_series.keys())}")
+        # Debug: Log what brands we found
+        self.logger.info(f"TPA products by brand: {list(tpa_by_brand.keys())}")
         
         # Create structured arrangement - Apple products should be on TOP row
         arranged_products = []
@@ -480,62 +469,68 @@ class PlanogramVisualizer:
         
         # Don't fill empty slots in top row - let them be empty if no Apple products
         
-        # Rows 2-4: Group TPA products by series for aesthetics
-        # Group similar iPhone series together for visual coherence
+        # Rows 2-4: Group TPA products by brand for aesthetics
+        # Sort brands by their total sales
+        brand_sales = {}
+        for brand, products in tpa_by_brand.items():
+            brand_sales[brand] = sum(getattr(p[0], 'total_qty', 0) for p, _ in products)
         
-        # Prioritize iPhone 15 series together, then iPhone 16 series
-        iphone_15_series = ['iPhone 15 Base', 'iPhone 15 Plus', 'iPhone 15 Pro', 'iPhone 15 Pro Max']
-        iphone_16_series = ['iPhone 16 Base', 'iPhone 16 Plus', 'iPhone 16 Pro', 'iPhone 16 Pro Max']
+        sorted_brands = sorted(tpa_by_brand.keys(), key=lambda b: brand_sales.get(b, 0), reverse=True)
         
-        # Row 2: iPhone 15 series - Group ALL iPhone 15 together
-        iphone_15_products = []
-        for series in iphone_15_series:
-            if series in tpa_by_series:
-                iphone_15_products.extend(tpa_by_series[series])
-                
-        # Also check for any products that have iPhone 15 in the name or series
-        for product_tuple in tpa_products:
-            product, facings = product_tuple
-            product_name = getattr(product, 'product_name', '').lower()
-            if 'iphone 15' in product_name and product_tuple not in iphone_15_products:
-                iphone_15_products.append(product_tuple)
+        # Ensure diversity by taking top products from each brand
+        diverse_tpa_products = []
+        for brand in sorted_brands:
+            # Sort products within this brand by sales
+            brand_products = sorted(tpa_by_brand[brand], key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+            # Take top 2-3 products from each brand for diversity
+            diverse_tpa_products.extend(brand_products[:3])
         
-        # Sort iPhone 15 products by sales velocity
-        iphone_15_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
-        row_2_products = iphone_15_products[:products_per_row]
-        arranged_products.extend(row_2_products)
-        self.logger.info(f"Row 2 (iPhone 15): {len(row_2_products)} products")
+        # Row 2: Top brands (first half of sorted brands)
+        if sorted_brands:
+            row_2_brands = sorted_brands[:len(sorted_brands)//2]
+            row_2_products = []
+            for brand in row_2_brands:
+                # Get top products for this brand
+                brand_products = sorted(tpa_by_brand[brand], key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+                row_2_products.extend(brand_products[:products_per_row//len(row_2_brands) if len(row_2_brands) > 0 else 1])
+            
+            row_2_products = row_2_products[:products_per_row]
+            arranged_products.extend(row_2_products)
+            self.logger.info(f"Row 2 (Top Brands): {len(row_2_products)} products")
         
-        # Row 3: iPhone 16 series  
-        iphone_16_products = []
-        for series in iphone_16_series:
-            if series in tpa_by_series:
-                iphone_16_products.extend(tpa_by_series[series])
+        # Row 3: Second half of brands
+        if sorted_brands:
+            row_3_brands = sorted_brands[len(sorted_brands)//2:]
+            row_3_products = []
+            for brand in row_3_brands:
+                # Get top products for this brand
+                brand_products = sorted(tpa_by_brand[brand], key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+                row_3_products.extend(brand_products[:products_per_row//len(row_3_brands) if len(row_3_brands) > 0 else 1])
+            
+            row_3_products = row_3_products[:products_per_row]
+            arranged_products.extend(row_3_products)
+            self.logger.info(f"Row 3 (Other Brands): {len(row_3_products)} products")
         
-        # Sort iPhone 16 products by sales velocity
-        iphone_16_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
-        row_3_products = iphone_16_products[:products_per_row]
-        arranged_products.extend(row_3_products)
-        self.logger.info(f"Row 3 (iPhone 16): {len(row_3_products)} products")
-        
-        # Row 4: Other series and remaining products
-        other_products = []
+        # Row 4: Remaining top sellers not yet included
         used_product_ids = set()
-        for product_tuple in row_2_products + row_3_products:
+        for product_tuple in arranged_products:
             if product_tuple:
-                product, facings = product_tuple
+                product, _ = product_tuple
                 used_product_ids.add(getattr(product, 'product_id', id(product)))
-                
+        
+        remaining_products = []
         for product_tuple in tpa_products:
             if product_tuple:
-                product, facings = product_tuple
+                product, _ = product_tuple
                 product_id = getattr(product, 'product_id', id(product))
                 if product_id not in used_product_ids:
-                    other_products.append(product_tuple)
+                    remaining_products.append(product_tuple)
         
-        row_4_products = other_products[:products_per_row]
+        # Sort remaining by sales
+        remaining_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+        row_4_products = remaining_products[:products_per_row]
         arranged_products.extend(row_4_products)
-        self.logger.info(f"Row 4 (Other): {len(row_4_products)} products")
+        self.logger.info(f"Row 4 (Remaining Top Sellers): {len(row_4_products)} products")
         
         # Return arranged products - don't force full grid
         return arranged_products
@@ -548,9 +543,9 @@ class PlanogramVisualizer:
         apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
         tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
         
-        # Sort each group by sales velocity
-        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
-        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        # Sort each group by total quantity (sales) for better accuracy
+        apple_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
         
         self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
         
@@ -583,17 +578,33 @@ class PlanogramVisualizer:
     
     def _arrange_products_for_standard_store(self, all_products: List[Tuple]) -> List[Tuple]:
         """Arrange products for standard store: First row Apple only, rest TPA only"""
-        self.logger.info("Creating standard arrangement: First row Apple, rest TPA")
+        self.logger.info("Creating standard arrangement: First row Apple, rest TPA with brand grouping")
         
         # Separate by brand
         apple_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() == 'apple']
         tpa_products = [(p, f) for p, f in all_products if getattr(p, 'brand', '').lower() != 'apple']
         
-        # Sort each group by sales velocity
-        apple_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
-        tpa_products.sort(key=lambda x: getattr(x[0], 'sales_velocity', 0), reverse=True)
+        # Sort each group by total quantity (sales) for better accuracy
+        apple_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+        tpa_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+        
+        # Group TPA products by brand for better organization
+        tpa_by_brand = {}
+        for product, facings in tpa_products:
+            brand = getattr(product, 'brand', 'Unknown')
+            if brand not in tpa_by_brand:
+                tpa_by_brand[brand] = []
+            tpa_by_brand[brand].append((product, facings))
         
         self.logger.info(f"Available products: {len(apple_products)} Apple, {len(tpa_products)} TPA")
+        
+        # Sort brands by their total sales
+        brand_sales = {}
+        for brand, products in tpa_by_brand.items():
+            brand_sales[brand] = sum(getattr(p[0], 'total_qty', 0) for p, _ in products)
+        
+        sorted_brands = sorted(tpa_by_brand.keys(), key=lambda b: brand_sales.get(b, 0), reverse=True)
+        self.logger.info(f"TPA products by brand: {sorted_brands}")
         
         arranged_products = []
         products_per_row = 6  # Standard store: 6 columns
@@ -609,16 +620,53 @@ class PlanogramVisualizer:
             
         self.logger.info(f"Apple row 1: {len([p for p in arranged_products if p is not None])} products")
         
-        # Remaining 5 rows: ONLY TPA products (30 slots total)
+        # Remaining 5 rows: TPA products grouped by brand (30 slots total)
         tpa_slots = 5 * products_per_row  # 30 slots for TPA
-        tpa_for_display = tpa_products[:tpa_slots]
-        arranged_products.extend(tpa_for_display)
+        tpa_for_display = []
+        
+        # Allocate slots per brand based on their sales proportion
+        total_brand_sales = sum(brand_sales.values())
+        brand_slots = {}
+        remaining_slots = tpa_slots
+        
+        # First pass: allocate minimum slots to each brand
+        for brand in sorted_brands:
+            brand_slots[brand] = max(1, min(len(tpa_by_brand[brand]), 3))  # At least 1, at most 3 initially
+            remaining_slots -= brand_slots[brand]
+        
+        # Second pass: allocate remaining slots proportionally
+        if remaining_slots > 0 and total_brand_sales > 0:
+            for brand in sorted_brands:
+                if remaining_slots <= 0:
+                    break
+                proportion = brand_sales[brand] / total_brand_sales
+                additional = min(remaining_slots, int(proportion * tpa_slots) - brand_slots[brand])
+                if additional > 0:
+                    brand_slots[brand] += additional
+                    remaining_slots -= additional
+        
+        # Fill with products from each brand
+        for brand in sorted_brands:
+            # Sort products within this brand by sales
+            brand_products = sorted(tpa_by_brand[brand], key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+            # Take allocated number of products from this brand
+            tpa_for_display.extend(brand_products[:brand_slots[brand]])
+        
+        # If we still have slots, fill with remaining top sellers
+        if len(tpa_for_display) < tpa_slots:
+            used_product_ids = set(p[0].product_id for p in tpa_for_display if hasattr(p[0], 'product_id'))
+            remaining_products = [p for p in tpa_products if hasattr(p[0], 'product_id') and p[0].product_id not in used_product_ids]
+            remaining_products.sort(key=lambda x: getattr(x[0], 'total_qty', 0), reverse=True)
+            tpa_for_display.extend(remaining_products[:tpa_slots - len(tpa_for_display)])
+        
+        # Add to arranged products
+        arranged_products.extend(tpa_for_display[:tpa_slots])
         
         # Fill remaining TPA slots with None if needed
         while len(arranged_products) < apple_slots + tpa_slots:
             arranged_products.append(None)
             
-        self.logger.info(f"TPA rows 2-6: {len(tpa_for_display)} products")
+        self.logger.info(f"TPA rows 2-6: {len(tpa_for_display)} products with brand grouping")
         
         return arranged_products
     
