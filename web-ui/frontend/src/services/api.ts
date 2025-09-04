@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 // API Configuration
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Prefer env override; otherwise use relative paths so CRA dev proxy handles routing
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 // Helper to get full API URL
 export const getFullApiUrl = (path: string): string => {
@@ -210,10 +211,13 @@ export const apiService = {
     return api.post(`/api/stores/${encodeURIComponent(storeName)}/optimize`, params);
   },
 
-  async generatePlanogram(storeName: string, selectedAccessories: string[]): Promise<APIResponse<{ job_id: string }>> {
-    return api.post(`/api/stores/${encodeURIComponent(storeName)}/generate-planograms`, {
-        selected_accessories: selectedAccessories,
+  async generatePlanogram(storeName: string, selectedAccessories: string[]): Promise<any> {
+    // Return the raw backend payload to support both sync and async responses
+    const response = await api.post(`/api/stores/${encodeURIComponent(storeName)}/generate-planograms`, {
+      selected_accessories: selectedAccessories,
     });
+    // Some codepaths return {success, job_id, result}, others return just {success, result}
+    return response.data || response;
   },
 };
 

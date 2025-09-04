@@ -25,7 +25,7 @@ from itertools import cycle
 
 class CasesCoversGenerator:
     """Professional Cases & Covers planogram generator matching reference aesthetics"""
-    
+
     def __init__(self, project_root: str):
         self.project_root = Path(project_root)
         self.output_path = self.project_root / 'output'
@@ -33,12 +33,12 @@ class CasesCoversGenerator:
 
         # Ensure matplotlib backend is configured for thread-safe operation
         self._configure_matplotlib_backend()
-        
+
         # Professional brand color scheme (matching your reference)
         self.brand_colors = {
             'Apple': '#FFD700',      # Yellow/Gold (as in your reference)
             'Gripp': '#00BFFF',      # Bright Blue (as in your reference)
-            'Pulse': '#8B4B8C',      # Purple/Magenta 
+            'Pulse': '#8B4B8C',      # Purple/Magenta
             'Hyphen': '#FF1493',     # Hot Pink (as in your reference)
             'Tekne': '#32CD32',      # Green
             'UAG': '#696969',        # Dark Gray
@@ -49,7 +49,7 @@ class CasesCoversGenerator:
             'Flayrr': '#FF69B4',     # Hot Pink
             'Default': '#B0C4DE'     # Light Steel Blue
         }
-        
+
         # Supporting colors
         self.colors = {
             'background': '#FFFFFF',
@@ -59,12 +59,12 @@ class CasesCoversGenerator:
             'grid_line': '#F2F2F7',
             'header_bg': '#F2F2F7'
         }
-    
+
     def _configure_matplotlib_backend(self):
         """Configure matplotlib backend for thread-safe operation"""
         import matplotlib
         current_backend = matplotlib.get_backend()
-        
+
         # Only change backend if it's not already set to Agg
         if current_backend != 'Agg':
             try:
@@ -74,18 +74,18 @@ class CasesCoversGenerator:
                 print(f"Warning: Could not set matplotlib backend to Agg: {e}")
         else:
             print(f"Matplotlib backend already configured: {current_backend}")
-    
+
     def filter_tpa_products(self, products: List[Dict]) -> List[Dict]:
         """Filter TPA products to only include Tekne, Pulse, and Gripp brands"""
         allowed_tpa_brands = ['tekne', 'pulse', 'gripp']
-        
+
         filtered_products = []
         tpa_filtered_count = 0
         tpa_total_count = 0
-        
+
         for product in products:
             brand = product.get('brand', '').lower().strip()
-            
+
             # Keep Apple products unchanged
             if brand == 'apple':
                 filtered_products.append(product)
@@ -104,33 +104,33 @@ class CasesCoversGenerator:
                     tpa_total_count += 1  # This is a TPA product being filtered out
                 else:
                     filtered_products.append(product)  # Keep other case products
-        
+
         print(f"TPA Brand Filtering: Kept {tpa_filtered_count} products from Tekne/Pulse/Gripp, filtered out {tpa_total_count - tpa_filtered_count} from other TPA brands")
-        
+
         return filtered_products
-    
+
     def is_tpa_brand(self, brand: str) -> bool:
         """Check if a brand is one of the allowed TPA brands"""
         allowed_tpa_brands = ['tekne', 'pulse', 'gripp']
         return brand.lower().strip() in allowed_tpa_brands
-    
+
     def is_apple_or_tpa_product(self, product: Dict) -> bool:
         """Check if a product is Apple or allowed TPA brand"""
         brand = product.get('brand', '').lower().strip()
         return brand == 'apple' or self.is_tpa_brand(brand)
-    
+
     def calculate_grid_size(self, total_store_walls: int, wall_number: int) -> Tuple[int, int]:
         """Calculate grid size based on total store size and your established logic for Cases & Covers"""
         # Grid size should reflect store size - flagship stores get more density
         # Based on your reference images showing 46+ products for major stores
-        
+
         if total_store_walls >= 8:  # Flagship stores (like KORAMANGALA with 11 walls total)
             return (8, 6)  # 8 rows, 6 columns (48 products like your reference)
-        elif total_store_walls >= 5:  # Standard stores  
+        elif total_store_walls >= 5:  # Standard stores
             return (7, 6)  # 7 rows, 6 columns (42 products)
         else:  # Express/small stores
             return (6, 6)  # 6 rows, 6 columns (36 products)
-    
+
     def get_cases_wall_count(self) -> int:
         """Get the number of walls allocated to Cases & Covers from stored config"""
         try:
@@ -138,7 +138,7 @@ class CasesCoversGenerator:
             if config_path.exists():
                 with open(config_path, 'r') as f:
                     configs = json.load(f)
-                    
+
                 # Look for KORAMANGALA config
                 for store_name, config in configs.items():
                     if 'koramangala' in store_name.lower():
@@ -146,36 +146,36 @@ class CasesCoversGenerator:
                         cases_walls = wall_counts.get('Cases & Covers', 2)
                         print(f"Found Cases & Covers wall count: {cases_walls}")
                         return cases_walls
-            
+
             # Default to 2 walls for Cases & Covers
             return 2
-            
+
         except Exception as e:
             print(f"Error getting wall count: {e}")
             return 2
-    
+
     def load_real_cases_data(self) -> List[Dict]:
         """Load real Cases & Covers data with filtered TPA products (Tekne, Pulse, Gripp only)"""
         try:
             # Load all Cases & Covers data (includes Apple cases and TPA products)
             cases_path = self.project_root / 'data' / 'raw' / 'accessories' / 'cases_sales.csv'
-            
+
             products = []
-            
+
             if cases_path.exists():
                 df = pd.read_csv(cases_path)
                 df.columns = df.columns.str.strip()
                 df_with_sales = df[df['pureqty'].notna() & (df['pureqty'] > 0)]
                 df_sorted = df_with_sales.sort_values('pureqty', ascending=False)
-                
+
                 for _, row in df_sorted.iterrows():
                     sales = int(row['pureqty'])
                     brand = row['brand'].strip() if pd.notna(row['brand']) else 'Default'
                     subcategory = row['subcategory'].strip() if pd.notna(row['subcategory']) else 'case'
-                    
+
                     # Determine if this is a TPA product (screen protectors, lens protectors, etc.)
                     is_tpa_product = any(keyword in subcategory.lower() for keyword in ['screen', 'lens', 'protector', 'glass'])
-                    
+
                     # Set facings based on product type
                     if brand.lower() == 'apple':
                         facings = max(1, min(6, sales // 50))  # Apple cases get more facings
@@ -183,13 +183,13 @@ class CasesCoversGenerator:
                         facings = max(1, min(4, sales // 30))  # TPA products get fewer facings
                     else:
                         facings = max(1, min(5, sales // 40))  # Other case brands
-                    
+
                     # Determine category
                     if is_tpa_product:
                         category = 'tpa'
                     else:
                         category = 'case'
-                    
+
                     product_data = {
                         'product_name': row['product_name'],
                         'brand': brand,  # Preserve actual brand name
@@ -199,24 +199,24 @@ class CasesCoversGenerator:
                         'sales': sales,
                         'facings': facings
                     }
-                    
+
                     for _ in range(facings):
                         products.append(product_data.copy())
-            
+
             # Apply TPA brand filtering to only include Tekne, Pulse, and Gripp
             filtered_products = self.filter_tpa_products(products)
-            
+
             print(f"Loaded {len(filtered_products)} total products (Cases + filtered TPA products)")
             return filtered_products
-            
+
         except Exception as e:
             print(f"Error loading Cases + TPA data: {e}")
             return []
-    
+
     def extract_series_info(self, product_name: str, series: str) -> str:
         """Extract iPhone series information"""
         combined = f"{product_name} {series}".lower()
-        
+
         if 'pro max' in combined:
             return 'Pro Max'
         elif 'pro' in combined:
@@ -225,29 +225,29 @@ class CasesCoversGenerator:
             return 'Plus'
         else:
             return 'Base'
-    
+
     def get_brand_color(self, brand: str) -> str:
         """Get brand color matching your reference"""
         brand_clean = brand.strip().replace(',', '').split()[0] if brand else 'Default'
-        
+
         # TPA products (Tekne, Pulse, Gripp) get their own brand colors
         if self.is_tpa_brand(brand_clean):
             return self.brand_colors.get(brand_clean.title(), self.brand_colors['Default'])
-        
+
         return self.brand_colors.get(brand_clean, self.brand_colors['Default'])
-    
+
     def get_series_wall_allocation(self, total_walls: int, wall_number: int) -> List[str]:
         """Determine which series go on which wall - prioritize Apple series"""
         # Apple has Base and Plus series available, so prioritize these
         apple_series = ['Base', 'Plus']
         other_series = ['Pro', 'Pro Max']
-        
+
         if total_walls >= 4:
             # 4+ walls: Each series gets its own wall, prioritize Apple series first
             all_series = apple_series + other_series
             series_idx = (wall_number - 1) % len(all_series)
             return [all_series[series_idx]]
-        
+
         elif total_walls == 3:
             # 3 walls: Proper series split - Apple first, then Pro series, then TPA with series split
             if wall_number == 1:
@@ -263,19 +263,19 @@ class CasesCoversGenerator:
                 return apple_series  # Base and Plus (Apple available)
             else:
                 return other_series  # Pro and Pro Max
-        
+
         else:
             # 1 wall: All series including Apple
             return apple_series + other_series
-    
+
     def create_dense_product_grid(self, products: List[Dict], grid_size: Tuple[int, int], wall_number: int, total_walls: int) -> List[List]:
         """Create dense grid with column-based series allocation and all colors represented"""
         rows, cols = grid_size
         total_slots = rows * cols
-        
+
         if not products:
             return [[None for _ in range(cols)] for _ in range(rows)]
-        
+
         # Separate Apple, TPA, and other products
         apple_products = [p for p in products if p['brand'].lower().strip() == 'apple']
         tpa_products = [p for p in products if self.is_tpa_brand(p['brand'])]
@@ -427,7 +427,7 @@ class CasesCoversGenerator:
                     series_1_products.append(product)
                 elif product_series == target_series_2 and len(series_2_products) < 18:
                     series_2_products.append(product)
-        
+
         # Calculate Apple/TPA allocation (50% of top rows)
         apple_rows = max(1, rows // 2)
         apple_slots = apple_rows * cols
@@ -572,12 +572,12 @@ class CasesCoversGenerator:
                         product['is_vertical_phone'] = True
                         grid[row][col] = product
                         series_2_index += 1
-        
+
         # Fill remaining rows with TPA brands only (Gripp, Pulse, Tekne)
         remaining_slots = total_slots - apple_slots
         # Use only TPA products for remaining slots, not other_products
         tpa_grid_products = self._ensure_all_colors_represented(tpa_products, remaining_slots)
-        
+
         # Fill remaining rows with TPA products only
         tpa_index = 0
         for row in range(apple_rows, rows):
@@ -586,81 +586,81 @@ class CasesCoversGenerator:
                     grid[row][col] = tpa_grid_products[tpa_index]
                     grid[row][col]['is_vertical_phone'] = False
                     tpa_index += 1
-        
+
         return grid
-    
+
     def _ensure_product_diversity(self, products: List[Dict], target_slots: int) -> List[Dict]:
         """Ensure product diversity like your reference - high sellers get more but slow sellers aren't skipped"""
         if not products:
             return []
-        
+
         # Filter out Apple and TPA products since they're handled separately in top rows
         non_apple_tpa_products = [p for p in products if p['brand'].lower().strip() not in ['apple', 'tpa']]
-        
+
         if not non_apple_tpa_products:
             return []
-        
+
         # Group by brand for diversity
         brand_groups = defaultdict(list)
         for product in non_apple_tpa_products:
             brand_groups[product['brand']].append(product)
-        
+
         # Sort brands by total sales
         brand_sales = {}
         for brand, prods in brand_groups.items():
             brand_sales[brand] = sum(p['sales'] for p in prods)
-        
+
         sorted_brands = sorted(brand_groups.keys(), key=lambda b: brand_sales[b], reverse=True)
-        
+
         # Calculate fair allocation ensuring everyone gets representation
         diversified_products = []
         total_brands = len(brand_groups)
-        
+
         if total_brands == 0:
             return []
-        
+
         # Base allocation per brand (ensuring representation)
         if total_brands <= 3:  # Few brands - give everyone good representation
             base_allocation = max(3, target_slots // total_brands)
         else:  # Many brands - ensure representation but prioritize top performers
             base_allocation = max(2, target_slots // (total_brands + 1))
-        
+
         allocated_slots = 0
         brand_allocations = {}
-        
+
         # First pass - ensure minimum representation
         for brand in sorted_brands:
             brand_products = sorted(brand_groups[brand], key=lambda p: p['sales'], reverse=True)
             allocation = min(len(brand_products), base_allocation, target_slots - allocated_slots)
             brand_allocations[brand] = allocation
             allocated_slots += allocation
-            
+
             if allocated_slots >= target_slots:
                 break
-        
+
         # Second pass - distribute remaining slots to top performers
         remaining_slots = target_slots - allocated_slots
         for brand in sorted_brands[:min(3, len(sorted_brands))]:  # Top 3 brands get extra slots
             if remaining_slots <= 0:
                 break
-            
+
             brand_products = brand_groups[brand]
             current_allocation = brand_allocations[brand]
-            
+
             if current_allocation < len(brand_products):
                 extra_slots = min(remaining_slots, len(brand_products) - current_allocation, max(1, remaining_slots // 3))
                 brand_allocations[brand] += extra_slots
                 remaining_slots -= extra_slots
-        
+
         # Build final product list
         for brand in sorted_brands:
             brand_products = sorted(brand_groups[brand], key=lambda p: p['sales'], reverse=True)
             allocation = brand_allocations.get(brand, 0)
-            
+
             for i in range(min(allocation, len(brand_products))):
                 if len(diversified_products) < target_slots:
                     diversified_products.append(brand_products[i].copy())
-        
+
         # Fill any remaining slots with top sellers
         while len(diversified_products) < target_slots and non_apple_tpa_products:
             top_products = sorted(non_apple_tpa_products, key=lambda p: p['sales'], reverse=True)
@@ -670,77 +670,77 @@ class CasesCoversGenerator:
                     diversified_products.append(product.copy())
                 else:
                     break
-        
+
     def _ensure_all_colors_represented(self, products: List[Dict], target_slots: int) -> List[Dict]:
         """Ensure ALL colors are represented with slight preference to high sellers"""
         if not products:
             return []
-        
+
         # Filter out Apple and TPA products since they're handled separately
         non_apple_tpa_products = [p for p in products if p['brand'].lower().strip() not in ['apple', 'tpa']]
-        
+
         if not non_apple_tpa_products:
             return []
-        
+
         # Group by brand for color representation
         brand_groups = defaultdict(list)
         for product in non_apple_tpa_products:
             brand_groups[product['brand']].append(product)
-        
+
         # Sort brands by total sales (high sellers get slight preference)
         brand_sales = {}
         for brand, prods in brand_groups.items():
             brand_sales[brand] = sum(p['sales'] for p in prods)
-        
+
         sorted_brands = sorted(brand_groups.keys(), key=lambda b: brand_sales[b], reverse=True)
-        
+
         # Force ALL brands to be represented (mandatory diversity)
         diversified_products = []
         total_brands = len(brand_groups)
-        
+
         if total_brands == 0:
             return []
-        
+
         # FORCE representation: Every brand gets at least 1 slot
         min_per_brand = max(1, target_slots // (total_brands * 2))  # Ensure everyone gets space
         allocated_slots = 0
         brand_allocations = {}
-        
+
         # First pass - MANDATORY representation for ALL brands
         for brand in sorted_brands:
             brand_products = sorted(brand_groups[brand], key=lambda p: p['sales'], reverse=True)
             allocation = min(len(brand_products), min_per_brand, target_slots - allocated_slots)
             brand_allocations[brand] = max(1, allocation)  # Force at least 1
             allocated_slots += brand_allocations[brand]
-            
+
             if allocated_slots >= target_slots:
                 break
-        
+
         # Second pass - Give extra slots to high sellers (slight preference)
         remaining_slots = target_slots - allocated_slots
         high_seller_bonus = max(1, remaining_slots // 3)  # Distribute bonus slots
-        
+
         for brand in sorted_brands[:3]:  # Top 3 brands get bonus
             if remaining_slots <= 0:
                 break
-            
+
             brand_products = brand_groups[brand]
             current_allocation = brand_allocations[brand]
-            
+
             if current_allocation < len(brand_products):
                 bonus_slots = min(remaining_slots, high_seller_bonus, len(brand_products) - current_allocation)
                 brand_allocations[brand] += bonus_slots
                 remaining_slots -= bonus_slots
-        
+
         # Build final product list with forced diversity
         for brand in sorted_brands:
             brand_products = sorted(brand_groups[brand], key=lambda p: p['sales'], reverse=True)
             allocation = brand_allocations.get(brand, 1)  # At least 1
-            
+
             for i in range(min(allocation, len(brand_products))):
                 if len(diversified_products) < target_slots:
                     diversified_products.append(brand_products[i].copy())
-        
+
         # Fill any remaining slots by cycling through all brands
         while len(diversified_products) < target_slots and non_apple_tpa_products:
             for brand in sorted_brands:
@@ -752,25 +752,25 @@ class CasesCoversGenerator:
                     if len(diversified_products) < target_slots:
                         diversified_products.append(product.copy())
                         break
-        
+
         print(f"  Color diversity: {len(set(p['brand'] for p in diversified_products[:target_slots]))} brands represented")
         return diversified_products[:target_slots]
-    
+
     def generate_store_planograms(self, store_name: str, total_walls: int) -> Dict[str, bool]:
         """Generate multiple walls for a store like frontend would do"""
         results = {}
-        
+
         # Load real data
         real_products = self.load_real_cases_data()
         if not real_products:
             print("No real Cases & Covers data found")
             return {}
-        
+
         # Get Cases & Covers wall allocation
         cases_wall_count = min(total_walls, self.get_cases_wall_count())
-        
+
         print(f"Generating {cases_wall_count} Cases & Covers walls for {store_name}")
-        
+
         # Generate each wall
         for wall_num in range(1, cases_wall_count + 1):
             success = self.generate_planogram(
@@ -784,9 +784,9 @@ class CasesCoversGenerator:
                 total_store_walls=total_walls  # Pass total store walls for flagship logic
             )
             results[f'wall_{wall_num}'] = success
-        
+
         return results
-    def generate_planogram(self, products: List[Dict], capacity: int, output_path: str, 
+    def generate_planogram(self, products: List[Dict], capacity: int, output_path: str,
                           details_path: str, wall_number: int, store_name: str, total_walls: int = 2, total_store_walls: int = 11) -> bool:
         """Generate professional Cases & Covers planogram matching reference style"""
         try:
@@ -795,87 +795,98 @@ class CasesCoversGenerator:
             if not real_products:
                 print("No real Cases & Covers data found, using provided products")
                 real_products = products
-            
+
             # Get actual Cases & Covers wall count from your stored config
             cases_wall_count = total_walls or self.get_cases_wall_count()
-            
+
             # Calculate grid size based on TOTAL STORE SIZE (flagship logic)
             grid_size = self.calculate_grid_size(total_store_walls, wall_number)
             rows, cols = grid_size
-            
+
             print(f"Generating Cases & Covers planogram:")
             print(f"  Wall {wall_number} of {cases_wall_count} Cases & Covers walls")
             print(f"  Store type: {'Flagship' if total_store_walls >= 8 else 'Standard' if total_store_walls >= 5 else 'Express'} ({total_store_walls} total walls)")
             print(f"  Grid: {rows}x{cols} = {rows*cols} products (flagship density)")
             print(f"  Apple allocation: 50% of top rows (vertical rectangles)")
             print(f"  Brand colors: Apple=Yellow, Gripp=Blue, Pulse=Purple, Hyphen=Pink")
-            
+
             # Create dense grid with Apple vertical placement and diversity
             product_grid = self.create_dense_product_grid(real_products, grid_size, wall_number, cases_wall_count)
-            
+
             # Create professional visualization with proper dimensions
             fig, ax = plt.subplots(figsize=(18, 14))  # Increased size
             ax.set_facecolor(self.colors['background'])
-            
+
             # Draw header
             self._draw_professional_header(ax, wall_number, store_name, len(real_products), cases_wall_count)
-            
+
             # Draw dense product grid with Apple vertical rectangles
             self._draw_dense_product_grid_with_apple_vertical(ax, product_grid, grid_size)
-            
+
             # Draw legend
             self._draw_professional_legend(ax, real_products)
-            
+
             # Draw statistics
             self._draw_professional_stats(ax, real_products, grid_size)
-            
+
             # Finalize with proper bounds to prevent cutoff
             ax.set_xlim(0, 17)   # Extended width
             ax.set_ylim(-1, 12)  # Extended height to prevent bottom cutoff
             ax.axis('off')
-            
+
             # Save
             plt.tight_layout()
             plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
             plt.close()
-            
+
             # Generate details
             self._generate_professional_details(details_path, wall_number, store_name, real_products, grid_size, cases_wall_count, total_store_walls)
-            
+
+            # Generate product names list based on historical sales (top capacity, deduplicated)
+            names_path = str(self.output_path / f"{store_name.lower()}_wall{wall_number}_cases_covers_list.txt")
+            self._generate_product_names_list(
+                names_path=names_path,
+                wall_number=wall_number,
+                store_name=store_name,
+                products=real_products,
+                grid_size=grid_size,
+                total_walls=cases_wall_count
+            )
+
             print(f"Professional Cases & Covers planogram saved: {output_path}")
             return True
-            
+
         except Exception as e:
             print(f"Error generating planogram: {e}")
             import traceback
             traceback.print_exc()
             return False
-    
+
     def _draw_professional_header(self, ax, wall_number: int, store_name: str, product_count: int, total_walls: int = 2):
         """Draw professional header matching your reference"""
         # Header background
         header_rect = Rectangle((0, 10.5), 16, 1.5, facecolor=self.colors['header_bg'], alpha=0.3)
         ax.add_patch(header_rect)
-        
+
         # Main title
-        ax.text(8, 11.5, f"Wall {wall_number} of {total_walls} - Cases & Covers", 
+        ax.text(8, 11.5, f"Wall {wall_number} of {total_walls} - Cases & Covers",
                 ha='center', va='center', fontsize=18, fontweight='bold',
                 color=self.colors['text_primary'])
-        
+
         # Store name
-        ax.text(8, 11.0, f"IMAGINE: {store_name.upper()}", 
+        ax.text(8, 11.0, f"IMAGINE: {store_name.upper()}",
                 ha='center', va='center', fontsize=12,
                 color=self.colors['text_secondary'])
-        
+
         # Product count (like your reference shows "46 Products")
-        ax.text(8, 10.7, f"({product_count} Products)", 
+        ax.text(8, 10.7, f"({product_count} Products)",
                 ha='center', va='center', fontsize=10,
                 color=self.colors['text_secondary'])
-    
+
     def _draw_dense_product_grid_with_apple_vertical(self, ax, product_grid: List[List], grid_size: Tuple[int, int]):
         """Draw product grid with vertical rectangles, realistic gaps, and color diversity"""
         rows, cols = grid_size
-        
+
         # Grid parameters for realistic retail layout with proper gaps
         start_x = 0.5
         start_y = 8.0  # Moved up to prevent cutoff
@@ -883,29 +894,29 @@ class CasesCoversGenerator:
         uniform_height = 1.4   # Tall for vertical rectangles
         gap_x = 0.15          # Realistic gap between each facing
         gap_y = 0.15          # Realistic vertical gap between rows
-        
+
         # Calculate Apple/TPA rows (top 50%)
         apple_rows = max(1, rows // 2)
-        
+
         for row in range(rows):
             for col in range(cols):
                 product = product_grid[row][col]
                 if product is None:
                     continue
-                
+
                 # Calculate position with realistic gaps
                 x_pos = start_x + col * (uniform_width + gap_x)
                 y_pos = start_y - row * (uniform_height + gap_y)
-                
+
                 # Get diverse brand colors with forced diversity for Apple/TPA
                 brand_color = self.get_brand_color(product['brand'])
                 is_apple_tpa = product['brand'].lower().strip() in ['apple', 'tpa']
-                
+
                 # Force color diversity for Apple products (not just fallback colors)
                 if is_apple_tpa and product['brand'].lower().strip() == 'apple':
                     # Extract color from actual Apple product names (handle trailing spaces)
                     product_name = product.get('product_name', '').lower().strip()
-                    
+
                     # Apple-specific color mapping with MORE VIBRANT colors
                     if 'clear' in product_name:
                         brand_color = '#E8E8E8'  # Clearer light gray
@@ -930,12 +941,12 @@ class CasesCoversGenerator:
                         apple_colors = ['#FFD700', '#FF8C00', '#FF6347', '#DC143C', '#4169E1', '#228B22']
                         color_index = (row * cols + col) % len(apple_colors)
                         brand_color = apple_colors[color_index]
-                
+
                 # Force color diversity for TPA products too
                 elif is_apple_tpa and product['brand'].lower().strip() == 'tpa':
                     tpa_colors = [
                         '#4169E1',  # Blue (screen protectors)
-                        '#228B22',  # Green (lens protectors) 
+                        '#228B22',  # Green (lens protectors)
                         '#FF6347',  # Red
                         '#9370DB',  # Purple
                         '#FF8C00',  # Orange
@@ -943,7 +954,7 @@ class CasesCoversGenerator:
                     ]
                     color_index = (row * cols + col) % len(tpa_colors)
                     brand_color = tpa_colors[color_index]
-                
+
                 # Vertical rectangle for ALL products
                 product_rect = FancyBboxPatch(
                     (x_pos, y_pos - uniform_height), uniform_width, uniform_height,
@@ -954,7 +965,7 @@ class CasesCoversGenerator:
                     alpha=0.95
                 )
                 ax.add_patch(product_rect)
-                
+
                 # Premium section header (only once for Apple/TPA section)
                 if row == 0 and col == 2 and is_apple_tpa:
                     premium_width = cols * (uniform_width + gap_x) - gap_x
@@ -964,10 +975,10 @@ class CasesCoversGenerator:
                     )
                     ax.add_patch(premium_rect)
                     section_name = "APPLE + TPA PREMIUM SECTION"
-                    ax.text(start_x + premium_width / 2, y_pos + 0.275, 
+                    ax.text(start_x + premium_width / 2, y_pos + 0.275,
                            section_name,
                            ha='center', va='center', fontsize=8, fontweight='bold', color='white')
-                
+
                 # Series indicators for Apple section (column-based)
                 if row == 0 and is_apple_tpa:
                     if col < 3:  # First 3 columns = Base
@@ -976,41 +987,41 @@ class CasesCoversGenerator:
                     else:  # Last 3 columns = Plus
                         series_indicator = "PLUS"
                         indicator_color = '#FF4500'
-                    
+
                     # Series indicator bar
                     series_rect = Rectangle(
                         (x_pos, y_pos - 0.05), uniform_width, 0.1,
                         facecolor=indicator_color, alpha=1.0, zorder=5
                     )
                     ax.add_patch(series_rect)
-                    
+
                     ax.text(x_pos + uniform_width/2, y_pos, series_indicator,
                            ha='center', va='center', fontsize=5, fontweight='bold', color='white')
-                
+
                 # Brand header
                 brand_header = Rectangle(
                     (x_pos, y_pos - 0.2), uniform_width, 0.12,
                     facecolor=brand_color, alpha=1.0
                 )
                 ax.add_patch(brand_header)
-                
+
                 # Brand text
                 text_color = 'white' if brand_color not in ['#FFD700', '#32CD32', '#FF8C00'] else 'black'
                 brand_text = product['brand'][:5]
                 ax.text(x_pos + uniform_width/2, y_pos - 0.14, brand_text,
                        ha='center', va='center', fontsize=6, fontweight='bold', color=text_color)
-                
+
                 # Color name with proper Apple product name mapping
                 color_names = {
                     '#F5F5F5': 'Clear', '#1C1C1E': 'Black', '#4A90E2': 'Denim', '#FF69B4': 'Fuchsia',
-                    '#50C878': 'Lake Green', '#8E4585': 'Plum', '#FFD700': 'Star Fruit', 
+                    '#50C878': 'Lake Green', '#8E4585': 'Plum', '#FFD700': 'Star Fruit',
                     '#8E8E93': 'Stone Gray', '#007AFF': 'Ultramarine', '#30D158': 'Green',
                     '#FF2D92': 'Pink', '#AF52DE': 'Purple', '#FF3B30': 'Red', '#FF9500': 'Orange',
                     '#FFCC00': 'Yellow', '#4169E1': 'Blue', '#228B22': 'Forest Green',
                     '#FF8C00': 'Dark Orange', '#FF6347': 'Tomato', '#DC143C': 'Crimson',
                     '#00CED1': 'Turquoise', '#696969': 'Gray'
                 }
-                
+
                 # For Apple products, try to extract color from product name first
                 if is_apple_tpa and product['brand'].lower().strip() == 'apple':
                     product_name = product.get('product_name', '').lower().strip()
@@ -1052,95 +1063,95 @@ class CasesCoversGenerator:
                     color_name = color_names.get(brand_color, 'Color')
                 ax.text(x_pos + uniform_width/2, y_pos - 0.35, color_name,
                        ha='center', va='center', fontsize=5, color=text_color)
-                
+
                 # Series info
                 series = self.extract_series_info(product['product_name'], product['series'])
                 if is_apple_tpa:
                     series_display = "Base" if col < 3 else "Plus"
                 else:
                     series_display = series
-                
+
                 ax.text(x_pos + uniform_width/2, y_pos - 0.6, series_display,
                        ha='center', va='center', fontsize=6, color=text_color, fontweight='bold')
-                
+
                 # Product type
                 if is_apple_tpa and product['brand'].lower().strip() == 'tpa':
                     product_type = 'Screen' if 'screen' in product.get('subcategory', '').lower() else 'Lens'
                 else:
                     product_type = product.get('subcategory', 'Case')[:5]
-                
+
                 ax.text(x_pos + uniform_width/2, y_pos - 0.9, product_type,
                        ha='center', va='center', fontsize=5, color=text_color)
-                
+
                 # Sales number
                 ax.text(x_pos + uniform_width/2, y_pos - 1.4, str(product['sales']),
                        ha='center', va='center', fontsize=4, color=text_color, alpha=0.8)
-    
+
     def _draw_professional_legend(self, ax, products: List[Dict]):
         """Draw professional legend without overlapping"""
         legend_x = 14.5  # Moved further right
         legend_y = 8.5   # Moved down to avoid overlap
-        
+
         # Legend title
-        ax.text(legend_x, legend_y, "Legend", 
+        ax.text(legend_x, legend_y, "Legend",
                 fontsize=10, fontweight='bold',
                 color=self.colors['text_primary'])
-        
+
         # Brand colors (top brands only)
         brands = list(set(p['brand'] for p in products))
         brand_counts = Counter(p['brand'] for p in products)
         top_brands = [brand for brand, _ in brand_counts.most_common(5)]  # Reduced to 5
-        
+
         y_offset = 0.4
         for i, brand in enumerate(top_brands):
             y_pos = legend_y - y_offset * (i + 1)
-            
+
             # Color box
             brand_color = self.get_brand_color(brand)
             color_box = Rectangle((legend_x, y_pos - 0.08), 0.25, 0.15,
                                 facecolor=brand_color, alpha=0.9)
             ax.add_patch(color_box)
-            
+
             # Brand name and count
             count = brand_counts[brand]
             ax.text(legend_x + 0.3, y_pos, f"{brand}: {count}",
                    fontsize=7, va='center',
                    color=self.colors['text_primary'])
-    
+
     def _draw_professional_stats(self, ax, products: List[Dict], grid_size: Tuple[int, int]):
         """Draw professional statistics at proper position"""
         rows, cols = grid_size
         total_slots = rows * cols
         total_sales = sum(p['sales'] for p in products[:total_slots])
-        
+
         stats_text = f"Total Products: {total_slots} | Total Sales: {total_sales:,} | Utilization: 100%"
-        
+
         ax.text(8.5, -0.3, stats_text,  # Moved up from 0.5 to -0.3
                ha='center', va='center', fontsize=10,
                color=self.colors['text_secondary'],
                bbox=dict(boxstyle="round,pad=0.3", facecolor=self.colors['header_bg']))
-    
-    def _generate_professional_details(self, details_path: str, wall_number: int, 
+
+    def _generate_professional_details(self, details_path: str, wall_number: int,
                                      store_name: str, products: List[Dict], grid_size: Tuple[int, int], total_walls: int, total_store_walls: int = 11):
         """Generate professional details file"""
         rows, cols = grid_size
         total_products = rows * cols
         apple_rows = max(1, rows // 2)
         apple_allocation = apple_rows * cols
-        
+
         # Determine store type
         store_type = 'Flagship' if total_store_walls >= 8 else 'Standard' if total_store_walls >= 5 else 'Express'
-        
+
         # Count actual products in the grid (not from original product list)
         grid = self.create_dense_product_grid(products, grid_size, wall_number, total_walls)
-        
+
         # Extract actual grid products
         grid_products = []
         for row in grid:
             for cell in row:
                 if cell:
                     grid_products.append(cell)
-        
+
         with open(details_path, 'w', encoding='utf-8') as f:
             f.write(f"CASES & COVERS PLANOGRAM DETAILS - Wall {wall_number} of {total_walls}\n")
             f.write(f"Store: IMAGINE {store_name.upper()} ({store_type} - {total_store_walls} walls)\n")
@@ -1148,14 +1159,14 @@ class CasesCoversGenerator:
             f.write(f"Grid Size: {rows}x{cols} = {total_products} products ({store_type} density)\n")
             f.write(f"Apple Premium Section: Top {apple_rows} rows ({apple_allocation} slots, 50%)\n")
             f.write(f"Other Brands Section: Bottom {rows - apple_rows} rows\n\n")
-            
+
             # Brand breakdown from actual grid
             brand_counts = Counter(p['brand'] for p in grid_products)
             f.write("BRAND DISTRIBUTION (ACTUAL GRID):\n")
             for brand, count in brand_counts.most_common():
                 percentage = (count / total_products) * 100
                 f.write(f"  • {brand}: {count} products ({percentage:.1f}%)\n")
-            
+
             # Apple analysis
             apple_count = brand_counts.get('Apple', 0)
             f.write(f"\nAPPLE ANALYSIS:\n")
@@ -1163,26 +1174,62 @@ class CasesCoversGenerator:
             f.write(f"  • Apple allocation: {apple_allocation} slots (50% of top rows)\n")
             f.write(f"  • Apple utilization: {(apple_count/apple_allocation*100):.1f}% of allocated slots\n")
             f.write(f"  • Vertical phone-like rectangles in premium section\n")
-            
+
             # Diversity analysis
             f.write(f"\nDIVERSITY METRICS:\n")
             f.write(f"  • Total brands represented: {len(brand_counts)}\n")
             f.write(f"  • High sellers with enhanced representation\n")
             f.write(f"  • All brands get minimum visibility\n")
-            
+
             # Top rows analysis
-            apple_in_top_rows = sum(1 for row in range(apple_rows) for col in range(cols) 
+            apple_in_top_rows = sum(1 for row in range(apple_rows) for col in range(cols)
                                   if grid[row][col] and grid[row][col]['brand'].lower() == 'apple')
-            f.write(f"  • Apple products in top {apple_rows} rows: {apple_in_top_rows}/{apple_allocation}\n")
-            
-            f.write(f"\nSTORE ANALYSIS:\n")
-            f.write(f"  • Store type: {store_type} ({total_store_walls} total walls)\n")
-            f.write(f"  • Grid density: {rows}x{cols} = {total_products} products\n")
-            f.write(f"  • Layout strategy: Flagship density for major stores\n")
-            
-            f.write(f"\nTOTAL PRODUCTS: {total_products}\n")
-            f.write(f"UTILIZATION: 100% (Dense {store_type.lower()} layout matching reference)\n")
-            f.write(f"LAYOUT: Apple vertical rectangles + brand diversity\n")
+
+    def _generate_product_names_list(self, names_path: str, wall_number: int,
+                                     store_name: str, products: List[Dict],
+                                     grid_size: Tuple[int, int], total_walls: int) -> None:
+        """Write a simple text file of product names selected by historical sales.
+        - Sort by sales (desc)
+        - De-duplicate by product_name
+        - Limit to grid capacity (rows*cols)
+        - Include brand/series/sales for context
+        """
+        try:
+            rows, cols = grid_size
+            capacity = rows * cols
+
+            # Sort by historical sales (desc)
+            sorted_products = sorted(products, key=lambda p: p.get('sales', 0), reverse=True)
+
+            # De-duplicate by product_name while preserving order
+            seen = set()
+            unique_products = []
+            for p in sorted_products:
+                name = p.get('product_name', '').strip()
+                if not name or name in seen:
+                    continue
+                seen.add(name)
+                unique_products.append(p)
+                if len(unique_products) >= capacity:
+                    break
+
+            with open(names_path, 'w', encoding='utf-8') as f:
+                f.write(f"CASES & COVERS PRODUCT LIST - Wall {wall_number} of {total_walls}\n")
+                f.write(f"Store: IMAGINE {store_name.upper()}\n")
+                f.write(f"Grid Capacity: {rows}x{cols} = {capacity} products\n")
+                f.write("Selection Basis: Historical sales (descending) with de-duplication\n\n")
+
+                for idx, p in enumerate(unique_products, 1):
+                    line = (
+                        f"{idx:02d}. {p.get('product_name','').strip()}"
+                        f" | Brand: {p.get('brand','').strip()}"
+                        f" | Series: {p.get('series','').strip()}"
+                        f" | Sales: {p.get('sales',0)}\n"
+                    )
+                    f.write(line)
+        except Exception as e:
+            print(f"Error writing product names list: {e}")
+
 
 # Add new store-wise generation function
 def generate_store_cases_planograms(store_name: str, total_store_walls: int = 11) -> Dict[str, bool]:
@@ -1198,8 +1245,8 @@ def generate_wall_planogram(wall_data: Dict, capacity: int, wall_number: int, st
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_path = str(generator.output_path / f'wall{wall_number}_cases_and_covers_planogram_{timestamp}.png')
     details_path = str(generator.output_path / f'wall{wall_number}_cases_and_covers_details_{timestamp}.txt')
-    
+
     products = wall_data.get('products', [])
-    
-    return generator.generate_planogram(products, capacity, output_path, details_path, 
+
+    return generator.generate_planogram(products, capacity, output_path, details_path,
                                       wall_number, store_name, total_walls=2, total_store_walls=11)

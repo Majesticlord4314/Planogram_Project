@@ -19,31 +19,34 @@ try:
     from .cases_covers_generator import CasesCoversGenerator
     from .ipad_accessories_generator import IPadAccessoriesGenerator
     from .mac_integration import MacIntegration
+    from .image_accessory_cases_generator import ImageAccessoryCasesGenerator
+
 except ImportError:
     # Handle direct execution
     from cases_covers_generator import CasesCoversGenerator
     from ipad_accessories_generator import IPadAccessoriesGenerator
     from mac_integration import MacIntegration
+    from image_accessory_cases_generator import ImageAccessoryCasesGenerator
 
 logger = logging.getLogger(__name__)
 
 class PlanogramManager:
     """Manages wall count storage and planogram generation"""
-    
+
     def __init__(self, project_root: Path):
         self.project_root = project_root
         self.storage_path = project_root / 'data' / 'processed' / 'final_wall_configs.json'
         self.output_path = project_root / 'output'
         self.planogram_generators = self._init_generators()
-        
+
         # Ensure directories exist
         self.storage_path.parent.mkdir(parents=True, exist_ok=True)
         self.output_path.mkdir(parents=True, exist_ok=True)
-    
+
     def _init_generators(self) -> Dict:
         """Initialize planogram generators for different categories"""
         return {
-            'Cases & Covers': CasesCoversGenerator,  # Enhanced generator
+            'Cases & Covers': ImageAccessoryCasesGenerator,  # Image-based accessory optimization generator
             'Mac Accessories': MacIntegration,  # Mac accessories and bags/sleeves generator
             'iPad Accessories': IPadAccessoriesGenerator,  # iPad generator with multi-wall support
             'Watch Accessories': None,  # TODO: Add Watch generator
@@ -51,23 +54,23 @@ class PlanogramManager:
             'Adapters & Cables': None,  # TODO: Add Adapters generator
             'Miscellaneous': None,  # TODO: Add Misc generator
         }
-    
+
     def store_final_wall_config(self, store_name: str, wall_config: Dict[str, int]) -> bool:
         """
         Store the final wall configuration after user edits/fixes
         This becomes the authoritative source for planogram generation
-        
+
         Args:
             store_name: Normalized store name
             wall_config: Final wall counts per LOB after all edits
-            
+
         Returns:
             bool: Success status
         """
         try:
             # Load existing configurations
             configs = self._load_wall_configs()
-            
+
             # Store the final configuration with timestamp
             configs[store_name] = {
                 'wall_counts': wall_config,
@@ -75,25 +78,25 @@ class PlanogramManager:
                 'last_updated': datetime.now().isoformat(),
                 'status': 'finalized'
             }
-            
+
             # Save to disk
             with open(self.storage_path, 'w', encoding='utf-8') as f:
                 json.dump(configs, f, indent=2, ensure_ascii=False)
-                
+
             logger.info(f"Stored final wall config for {store_name}: {wall_config}")
             return True
-            
+
         except Exception as e:
             logger.error(f"Error storing wall config: {e}")
             return False
-    
+
     def get_final_wall_config(self, store_name: str) -> Optional[Dict]:
         """
         Get the final wall configuration for a store
-        
+
         Args:
             store_name: Normalized store name
-            
+
         Returns:
             Dict with wall_counts, total_walls, last_updated, status
         """
@@ -103,15 +106,15 @@ class PlanogramManager:
         except Exception as e:
             logger.error(f"Error loading wall config: {e}")
             return None
-    
+
     def generate_planograms(self, store_name: str, store_data: Dict) -> Dict[str, Any]:
         """
         Generate planograms for all walls based on final wall configuration
-        
+
         Args:
             store_name: Normalized store name
             store_data: Store data from store reference
-            
+
         Returns:
             Dict with generation results
         """
@@ -121,7 +124,7 @@ class PlanogramManager:
             if not final_config:
                 logger.warning(f"No final wall config found for {store_name}")
                 return {'success': False, 'error': 'No final wall configuration found'}
-            
+
             wall_counts = final_config['wall_counts']
             results = {
                 'success': True,
@@ -130,20 +133,20 @@ class PlanogramManager:
                 'generated_planograms': {},
                 'errors': []
             }
-            
+
             # Generate planograms for each category
             wall_counter = 1
             for lob, count in wall_counts.items():
                 if count == 0:
                     continue
-                    
+
                 try:
                     # Get store data for this LOB
                     lob_data = store_data.get('wall_details', {}).get(lob, {})
                     if not lob_data:
                         logger.warning(f"No data found for LOB: {lob}")
                         continue
-                    
+
                     # Generate planograms for each wall in this LOB
                     lob_results = []
                     for wall_num in range(wall_counter, wall_counter + count):
@@ -151,46 +154,46 @@ class PlanogramManager:
                             store_name, lob, wall_num, lob_data
                         )
                         lob_results.append(planogram_result)
-                    
+
                     results['generated_planograms'][lob] = {
                         'wall_count': count,
                         'wall_range': f"{wall_counter}-{wall_counter + count - 1}",
                         'planograms': lob_results
                     }
-                    
+
                     wall_counter += count
-                    
+
                 except Exception as e:
                     error_msg = f"Error generating planogram for {lob}: {e}"
                     logger.error(error_msg)
                     results['errors'].append(error_msg)
-            
+
             return results
-            
+
         except Exception as e:
             logger.error(f"Error generating planograms: {e}")
             return {'success': False, 'error': str(e)}
-    
+
     def _generate_single_planogram(self, store_name: str, lob: str, wall_num: int, lob_data: Dict) -> Dict:
         """Generate a single planogram for a specific wall"""
         try:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             base_filename = f"wall{wall_num}_{lob.lower().replace(' ', '_').replace('&', 'and')}"
-            
+
             # Check if we have a generator for this LOB
             generator_class = self.planogram_generators.get(lob)
             if not generator_class:
                 logger.info(f"No specialized generator for {lob}, using generic layout")
                 return self._generate_generic_planogram(store_name, lob, wall_num, lob_data, base_filename, timestamp)
-            
+
             # Use specialized generator
             logger.info(f"Using specialized generator for {lob}")
             generator = generator_class(str(self.project_root))
-            
+
             # Generate planogram
             planogram_path = self.output_path / f"{base_filename}_planogram_{timestamp}.png"
             details_path = self.output_path / f"{base_filename}_details_{timestamp}.txt"
-            
+
             # Get products for this LOB - use real data for Cases & Covers and iPad Accessories
             if lob == 'Cases & Covers':
                 products = self._load_real_cases_data()
@@ -206,9 +209,17 @@ class PlanogramManager:
                 # Extract products from lob_data for other categories
                 products = lob_data.get('products', [])
                 capacity = lob_data.get('total_capacity', 0)
-            
+
             # Generate the visualization
-            if hasattr(generator, 'generate_planogram'):
+            if lob == 'Cases & Covers' and isinstance(generator, ImageAccessoryCasesGenerator):
+                # Use image-based generator with store category rules and wall counts
+                final_config = self.get_final_wall_config(store_name) or {'total_walls': 1, 'wall_counts': {}}
+                total_store_walls = int(final_config.get('total_walls', 1))
+                cases_walls = int(final_config.get('wall_counts', {}).get('Cases & Covers', 1))
+                results = generator.generate_store_planograms(store_name, num_walls=cases_walls, total_store_walls=total_store_walls)
+                # No per-wall file naming from generator; handled internally
+                success = results.get(f'wall_{wall_num}', False)
+            elif hasattr(generator, 'generate_planogram'):
                 success = generator.generate_planogram(
                     products=products,
                     capacity=capacity,
@@ -220,16 +231,16 @@ class PlanogramManager:
             else:
                 # Fallback method
                 success = self._generate_generic_planogram(store_name, lob, wall_num, lob_data, base_filename, timestamp)
-            
+
             return {
                 'wall_number': wall_num,
                 'lob': lob,
                 'success': success,
-                'planogram_path': str(planogram_path) if success else None,
-                'details_path': str(details_path) if success else None,
+                'planogram_path': None,
+                'details_path': None,
                 'timestamp': timestamp
             }
-            
+
         except Exception as e:
             logger.error(f"Error generating single planogram: {e}")
             return {
@@ -239,25 +250,25 @@ class PlanogramManager:
                 'error': str(e),
                 'timestamp': timestamp
             }
-    
+
     def _load_real_cases_data(self) -> List[Dict]:
         """Load real Cases & Covers data from CSV file"""
         try:
             import pandas as pd
-            
+
             # Load Cases & Covers CSV data
             csv_path = self.project_root / 'data' / 'raw' / 'accessories' / 'cases_sales.csv'
             if not csv_path.exists():
                 logger.warning(f"Cases CSV not found at {csv_path}")
                 return []
-            
+
             df = pd.read_csv(csv_path)
             df.columns = df.columns.str.strip()  # Clean column names
-            
+
             # Filter for products with sales data and sort by sales
             df_with_sales = df[df['pureqty'].notna() & (df['pureqty'] > 0)]
             df_sorted = df_with_sales.sort_values('pureqty', ascending=False)
-            
+
             # Convert to expected format (take top 30 products)
             products = []
             for _, row in df_sorted.head(30).iterrows():
@@ -269,14 +280,14 @@ class PlanogramManager:
                     'accessory_type': row['subcategory'].strip() if pd.notna(row['subcategory']) else row['category'].strip(),
                     'capacity': min(int(row['pureqty']), 200)  # Cap for display
                 })
-            
+
             logger.info(f"Loaded {len(products)} Cases & Covers products from CSV")
             return products
-            
+
         except Exception as e:
             logger.error(f"Error loading real Cases data: {e}")
             return []
-    
+
     def _generate_ipad_planograms(self, store_name: str, wall_num: int, lob_data: Dict, base_filename: str, timestamp: str) -> Dict:
         """Generate iPad planograms using the NEW 5-row system with no blank facings"""
         try:
@@ -286,30 +297,30 @@ class PlanogramManager:
                 ipad_wall_count = final_config['wall_counts'].get('iPad Accessories', 1)
             else:
                 ipad_wall_count = 1
-            
+
             logger.info(f"Generating {ipad_wall_count} iPad planogram(s) for {store_name} using NEW 5-row system")
-            
+
             # Initialize iPad generator with new system
             ipad_generator = IPadAccessoriesGenerator(str(self.project_root))
-            
+
             # Generate planograms using the new Apple/TPA strategy
             results = ipad_generator.generate_store_planograms(store_name, ipad_wall_count)
-            
+
             # Process results for this specific wall
             wall_key = f'wall_{wall_num}'
             success = results.get(wall_key, False)
-            
+
             # Determine actual file paths (iPad generator creates its own naming)
             store_slug = store_name.lower().replace(' ', '_')
             actual_planogram_path = f"ipad_wall_{wall_num}_{store_slug}.png"
             actual_details_path = f"ipad_wall_{wall_num}_{store_slug}_report.txt"
-            
+
             # Check if files were actually created
             planogram_file = self.project_root / actual_planogram_path
             details_file = self.project_root / actual_details_path
-            
+
             files_exist = planogram_file.exists() and details_file.exists()
-            
+
             return {
                 'wall_number': wall_num,
                 'lob': 'iPad Accessories',
@@ -327,7 +338,7 @@ class PlanogramManager:
                 },
                 'generation_strategy': self._get_ipad_strategy_description(ipad_wall_count)
             }
-            
+
         except Exception as e:
             logger.error(f"Error generating iPad planograms: {e}")
             import traceback
@@ -339,7 +350,7 @@ class PlanogramManager:
                 'error': str(e),
                 'timestamp': timestamp
             }
-    
+
     def _get_ipad_strategy_description(self, wall_count: int) -> str:
         """Get description of iPad generation strategy based on wall count"""
         strategies = {
@@ -417,40 +428,40 @@ class PlanogramManager:
         try:
             import matplotlib.pyplot as plt
             import matplotlib.patches as patches
-            
+
             # Create figure
             fig, ax = plt.subplots(1, 1, figsize=(12, 8))
             ax.set_xlim(0, 10)
             ax.set_ylim(0, 8)
             ax.set_aspect('equal')
-            
+
             # Title
-            ax.text(5, 7.5, f"Wall {wall_num} - {lob}", ha='center', va='center', 
+            ax.text(5, 7.5, f"Wall {wall_num} - {lob}", ha='center', va='center',
                    fontsize=16, fontweight='bold')
             ax.text(5, 7, f"Store: {store_name}", ha='center', va='center', fontsize=12)
-            
+
             # Products
             products = lob_data.get('products', [])
             capacity = lob_data.get('total_capacity', 0)
-            
+
             # Simple grid layout
             y_pos = 6
             ax.text(1, y_pos, f"Products ({len(products)}):", fontweight='bold')
             y_pos -= 0.3
-            
+
             for i, product in enumerate(products[:10]):  # Show first 10 products
                 product_name = product.get('product', 'Unknown Product')[:50]
                 brand = product.get('brand', 'Unknown Brand')
                 ax.text(1, y_pos, f"• {product_name} ({brand})", fontsize=10)
                 y_pos -= 0.3
-            
+
             if len(products) > 10:
-                ax.text(1, y_pos, f"... and {len(products) - 10} more products", 
+                ax.text(1, y_pos, f"... and {len(products) - 10} more products",
                        fontsize=10, style='italic')
-            
+
             # Capacity info
             ax.text(1, 2, f"Total Capacity: {capacity}", fontweight='bold', fontsize=12)
-            
+
             # Remove axes
             ax.set_xticks([])
             ax.set_yticks([])
@@ -458,13 +469,13 @@ class PlanogramManager:
             ax.spines['right'].set_visible(False)
             ax.spines['bottom'].set_visible(False)
             ax.spines['left'].set_visible(False)
-            
+
             # Save
             output_path = self.output_path / f"{base_filename}_planogram_{timestamp}.png"
             plt.tight_layout()
             plt.savefig(output_path, dpi=300, bbox_inches='tight')
             plt.close()
-            
+
             # Generate details file
             details_path = self.output_path / f"{base_filename}_details_{timestamp}.txt"
             with open(details_path, 'w', encoding='utf-8') as f:
@@ -477,19 +488,19 @@ class PlanogramManager:
                 f.write("PRODUCTS:\n")
                 for product in products:
                     f.write(f"  • {product.get('product', 'Unknown')} ({product.get('brand', 'Unknown')})\n")
-            
+
             return True
-            
+
         except Exception as e:
             logger.error(f"Error generating generic planogram: {e}")
             return False
-    
+
     def _load_wall_configs(self) -> Dict:
         """Load wall configurations from storage"""
         try:
             if not self.storage_path.exists():
                 return {}
-            
+
             with open(self.storage_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except Exception as e:

@@ -1,0 +1,79 @@
+Cases & Covers (Accessory-based)
+Store: IMAGINE- KORAMANGALA BENGALURU (BANGALORE)
+Store Category: flagship
+Wall: 3 of 4
+Grid: 8x6
+Apple rows: 4
+Series: pro
+
+Placed items (Apple rows):
+  • iphone 16 pro silicone case black.jpg
+  • iphone 16 pro silicone case blue.jpg
+  • iphone 16 pro silicone case denim.jpg
+  • iphone 16 pro silicone case fuschia.jpg
+  • iphone 16 pro silicone case magenta.jpg
+  • iphone 16 pro silicone case sea green.jpg
+  • iphone 16 pro silicone case black.jpg
+  • iphone 16 pro silicone case blue.jpg
+  • iphone 16 pro silicone case denim.jpg
+  • iphone 16 pro silicone case fuschia.jpg
+  • iphone 16 pro silicone case magenta.jpg
+  • iphone 16 pro silicone case sea green.jpg
+  • iphone 16 pro silicone case black.jpg
+  • iphone 16 pro silicone case blue.jpg
+  • iphone 16 pro silicone case denim.jpg
+  • iphone 16 pro silicone case fuschia.jpg
+  • iphone 16 pro silicone case magenta.jpg
+  • iphone 16 pro silicone case sea green.jpg
+  • iphone 16 pro silicone case black.jpg
+  • iphone 16 pro silicone case blue.jpg
+  • iphone 16 pro silicone case denim.jpg
+  • iphone 16 pro silicone case fuschia.jpg
+  • iphone 16 pro silicone case magenta.jpg
+  • iphone 16 pro silicone case sea green.jpg
+
+Placed items (TPA rows incl. screens):
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Gripp iphone 16 pro clear case.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Gripp iphone 16 pro clear case.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Gripp iphone 16 pro clear case.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Gripp iphone 16 pro clear case.jpg
+
+Top sellers by series (from cases_sales.csv):
+  Pro: 15 items
+    • iPhone 16 Pro Clear Case with MagSafe                                                                               | Brand: Apple       | Sales: 195
+    • Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold Matte                                               | Brand: Gripp       | Sales: 94
+    • iPhone 16 Pro Silicone Case with MagSafe - Black                                                                    | Brand: Apple       | Sales: 93
+    • Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Rose Gold                                           | Brand: Gripp       | Sales: 71
+    • Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Transparent                                              | Brand: Gripp       | Sales: 68
+    • Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro  6.3   - Black                                           | Brand: Gripp       | Sales: 68
+    • Gripp STELLAR MagSafe Case for Apple iPhone 16 Pro  6.3  - Black Matte                                              | Brand: Gripp       | Sales: 61
+    • Gripp Clear MagSafe Case for Apple iPhone 16 Pro  6.3  with White Ring - Clear                                      | Brand: Gripp       | Sales: 57
+    • Gripp Clear Case for Apple iPhone 16 Pro  6.3  - Clear                                                              | Brand: Gripp       | Sales: 53
+    • Gripp Dusk MagSafe Case for Apple iPhone 16 Pro  6.3  - Black                                                       | Brand: Gripp       | Sales: 51
+    • Gripp Privacy Glass for  Apple iPhone 15 Pro  6.1    Black                                                          | Brand: Gripp       | Sales: 50
+    • Pulse Armor Magsafe case for iPhone 15 Pro Black                                                                    | Brand: Pulse       | Sales: 43
+    • Gripp Glacier Slim MagSafe Case for Apple iPhone 16 Pro  6.3  - Natural Titanium                                    | Brand: Gripp       | Sales: 41
+    • Pulse Tire magsafe case for iPhone 15 Pro Black                                                                     | Brand: Pulse       | Sales: 40
+    • Gripp Matrix MagSafe Case for Apple iPhone 16 Pro  6.3  - Gold                                                      | Brand: Gripp       | Sales: 35
+
+Note: Grid uses available images only. Sales list includes best candidates even if imagery is missing.

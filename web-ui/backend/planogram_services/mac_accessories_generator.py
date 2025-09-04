@@ -1,26 +1,34 @@
 """
-Mac Accessories Planogram Generator
-Comprehensive system for generating Mac accessories planograms with dimensional awareness,
-cohort-based allocation, and multi-wall strategies.
+Mac Accessories Planogram Generator (Clean 4-row version)
+- Reads products from dataset (CSV with cohort file)
+- Builds 4 rows based on business rules (no hard-coded products)
+- Matches row widths visually for Rows 1–3; Row 4 has exactly 3 keyboard covers centered
 """
+from __future__ import annotations
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from matplotlib.patches import FancyBboxPatch
-from pathlib import Path
-from typing import List, Dict, Tuple, Optional
 import logging
 from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Dict, Tuple
 
-# Configure matplotlib for server environments
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
+import pandas as pd
+
+# Repo root (Planogram)
+REPO_ROOT = Path(__file__).resolve().parents[3]
+DATA_CSV = REPO_ROOT / "data/raw/accessories/mac-accessories-transformed.csv"
+COHORT_CSV = REPO_ROOT / "data/raw/cohorts/mac_planogram_cohorts.csv"
+OUTPUT_DIR = REPO_ROOT / "output"
+
+logger = logging.getLogger(__name__)
+
 
 @dataclass
 class MacProduct:
-    """Mac product with dimensional and sales data"""
     product_name: str
     series: str
     category: str
@@ -30,542 +38,311 @@ class MacProduct:
     height: float
     depth: float
     frequency: int
-    attach_rate: float = 0.0
-    recommended_facings: int = 1
-    
-    @property
-    def volume(self) -> float:
-        """Calculate product volume for shelf allocation"""
-        return self.width * self.height * self.depth
-    
-    @property
-    def is_thin_product(self) -> bool:
-        """Determine if product is thin (suitable for top shelves)"""
-        return self.height <= 1.0  # Privacy filters, keyboard skins
-    
-    @property
-    def is_bulky_product(self) -> bool:
-        """Determine if product is bulky (needs lower shelves)"""
-        return self.volume > 500  # Large hubs, chargers, bags
+    attach_rate: float
+
 
 class MacAccessoriesGenerator:
-    """Enhanced Mac accessories planogram generator"""
-    
     def __init__(self):
-        self.logger = logging.getLogger(__name__)
-        self.approved_tpa_brands = {'Gripp', 'Pulse', 'Tekne'}
-        
-        # Dimensional constraints for shelf allocation
-        self.shelf_constraints = {
-            'top_shelf': {'max_height': 1.0, 'max_depth': 25.0},      # Thin items
-            'mid_shelf': {'max_height': 5.0, 'max_depth': 20.0},      # Medium items  
-            'low_shelf': {'max_height': 15.0, 'max_depth': 35.0},     # Bulky items
-            'bottom_shelf': {'max_height': 50.0, 'max_depth': 50.0}   # Bags, large items
-        }
-        
-        # Category priorities for placement
-        self.category_priorities = {
-            'hardshell case': 1,      # High priority - protection
-            'privacy filter': 2,      # High priority - privacy
-            'hub': 3,                 # Medium priority - connectivity
-            'charger': 4,             # Medium priority - power
-            'cable': 5,               # Medium priority - connectivity
-            'cleaning': 6,            # Lower priority - maintenance
-            'stand': 7,               # Lower priority - ergonomics
-            'peripheral': 8,          # Lower priority - extras
-            'keyboard skin': 9,       # Lower priority - protection
-            'accessory': 10           # Lowest priority - general
-        }
+        self.logger = logging.getLogger(self.__class__.__name__)
 
-    def load_mac_data(self) -> Tuple[List[MacProduct], pd.DataFrame]:
-        """Load Mac accessories and cohort data"""
-        # Load accessories data
-        accessories_file = Path("data/raw/accessories/mac-accessories-transformed.csv")
-        cohorts_file = Path("data/raw/cohorts/mac_planogram_cohorts.csv")
-        
-        if not accessories_file.exists():
-            raise FileNotFoundError(f"Mac accessories file not found: {accessories_file}")
-        if not cohorts_file.exists():
-            raise FileNotFoundError(f"Mac cohorts file not found: {cohorts_file}")
-        
-        # Load accessories
-        accessories_df = pd.read_csv(accessories_file)
-        accessories_df.columns = accessories_df.columns.str.strip()
-        accessories_df = accessories_df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-        
-        # Load cohorts for attach rates
-        cohorts_df = pd.read_csv(cohorts_file)
-        cohorts_df.columns = cohorts_df.columns.str.strip()
-        
-        # Create product lookup for attach rates
-        attach_rates = {}
-        for _, row in cohorts_df.iterrows():
-            product_name = row['accessory_product']
-            attach_rate = float(row['attach_rate'])
-            attach_rates[product_name] = attach_rate
-        
-        # Convert to MacProduct objects
-        products = []
-        for _, row in accessories_df.iterrows():
-            # Get attach rate from cohorts data
-            attach_rate = attach_rates.get(row['product_name'], 0.0)
-            
-            product = MacProduct(
-                product_name=row['product_name'],
-                series=row['series'],
-                category=row['category'],
-                subcategory=row['subcategory'],
-                brand=row['brand'],
-                width=float(row['width']),
-                height=float(row['height']),
-                depth=float(row['depth']),
-                frequency=int(row['frequency']),
-                attach_rate=attach_rate,
-                recommended_facings=1
+    # -------------------------- Data -------------------------- #
+    def load_mac_data(self) -> List[MacProduct]:
+        if not DATA_CSV.exists():
+            raise FileNotFoundError(f"Missing Mac accessories file: {DATA_CSV}")
+        if not COHORT_CSV.exists():
+            raise FileNotFoundError(f"Missing Mac cohorts file: {COHORT_CSV}")
+
+        acc = pd.read_csv(DATA_CSV)
+        acc.columns = acc.columns.str.strip()
+        acc = acc.apply(lambda s: s.str.strip() if s.dtype == "object" else s)
+
+        cohorts = pd.read_csv(COHORT_CSV)
+        cohorts.columns = cohorts.columns.str.strip()
+        attach = {r["accessory_product"]: float(r["attach_rate"]) for _, r in cohorts.iterrows()}
+
+        products: List[MacProduct] = []
+        for _, r in acc.iterrows():
+            products.append(
+                MacProduct(
+                    product_name=r["product_name"],
+                    series=r["series"],
+                    category=(r["category"] or "").strip().lower(),
+                    subcategory=str(r["subcategory"]).strip(),
+                    brand=str(r["brand"]).strip(),
+                    width=float(r["width"]),
+                    height=float(r["height"]),
+                    depth=float(r["depth"]),
+                    frequency=int(r["frequency"]),
+                    attach_rate=float(attach.get(r["product_name"], 0.0)),
+                )
             )
-            products.append(product)
-        
-        self.logger.info(f"Loaded {len(products)} Mac products with cohort data")
-        return products, cohorts_df
+        # Prioritize by attach_rate * frequency
+        products.sort(key=lambda p: p.attach_rate * p.frequency, reverse=True)
+        return products
 
-    def filter_tpa_brands(self, products: List[MacProduct]) -> List[MacProduct]:
-        """Filter products to approved TPA brands only"""
-        # For Mac, we include Apple products (if any) plus approved TPA brands
-        filtered = []
-        for product in products:
-            if (product.brand == 'Apple' or 
-                product.brand in self.approved_tpa_brands):
-                filtered.append(product)
-        
-        self.logger.info(f"Filtered to {len(filtered)} products with approved brands")
-        return filtered
+    # ------------------------ Helpers ------------------------- #
+    @staticmethod
+    def _w_h(p: MacProduct) -> Tuple[float, float]:
+        """Map real dimensions to display rectangles.
+        - Use width as-is
+        - Use the larger of height/depth as display height (packages often have depth > height)
+        - Apply category-aware scaling so privacy filters are visually larger
+        """
+        c = (p.category or "").lower()
+        width_cm = float(p.width or 0)
+        height_cm = float(max(p.height or 0, p.depth or 0))
 
-    def categorize_by_dimensions(self, products: List[MacProduct]) -> Dict[str, List[MacProduct]]:
-        """Categorize products by dimensional constraints for shelf allocation"""
-        categories = {
-            'thin_items': [],      # Privacy filters, keyboard skins
-            'medium_items': [],    # Hubs, small chargers, cables
-            'bulky_items': [],     # Large chargers, stands
-            'large_items': []      # Bags, large accessories
-        }
-        
-        for product in products:
-            if product.height <= 1.0:  # Very thin items
-                categories['thin_items'].append(product)
-            elif product.volume <= 200:  # Small to medium items
-                categories['medium_items'].append(product)
-            elif product.volume <= 1000:  # Bulky but manageable
-                categories['bulky_items'].append(product)
-            else:  # Large items
-                categories['large_items'].append(product)
-        
-        return categories
+        # Base pixel scales
+        base_w = width_cm * 10.0
+        base_h = height_cm * 8.0
 
-    def generate_store_planograms(self, store_name: str, num_walls: int) -> Dict[str, str]:
-        """Generate Mac planograms for a store based on wall count"""
-        self.logger.info(f"Generating Mac planograms for {store_name} with {num_walls} walls")
-        
-        try:
-            # Load data
-            products, cohorts_df = self.load_mac_data()
-            
-            # Filter to approved brands
-            products = self.filter_tpa_brands(products)
-            
-            # Sort by priority: attach rate * frequency
-            products.sort(key=lambda p: p.attach_rate * p.frequency, reverse=True)
-            
-            # Generate planograms based on wall count
-            if num_walls == 1:
-                return self._generate_single_wall_mac(products, store_name)
-            elif num_walls == 2:
-                return self._generate_two_wall_mac(products, store_name)
-            elif num_walls == 3:
-                return self._generate_three_wall_mac(products, store_name)
-            else:
-                return self._generate_multi_wall_mac(products, store_name, num_walls)
-                
-        except Exception as e:
-            self.logger.error(f"Error generating Mac planograms: {e}")
-            raise
+        # Category adjustments
+        if "privacy" in c:
+            # Reduce earlier scaling by ~10%
+            base_w *= 1.17  # was 1.30
+            base_h *= 1.08  # was 1.20
+        elif "keyboard" in c or c == "keyboard skin":
+            # Keyboard covers: longer and slimmer
+            base_w *= 1.15
+            base_h *= 0.80
+        elif "hub" in c:
+            base_w *= 1.05
+        elif "charger" in c or "power bank" in c:
+            base_h *= 1.10
+        elif "cable" in c:
+            base_h *= 0.90
 
-    def _generate_single_wall_mac(self, products: List[MacProduct], store_name: str) -> Dict[str, str]:
-        """Single wall: Mixed categories with dimensional optimization"""
-        # Categorize by dimensions
-        dim_categories = self.categorize_by_dimensions(products)
-        
-        # Create mixed selection prioritizing high-attach rate items
-        selected_products = []
-        
-        # Top shelf: Thin items (privacy filters, keyboard skins)
-        selected_products.extend(dim_categories['thin_items'][:6])
-        
-        # Middle shelves: Medium items (hubs, cables, chargers)
-        selected_products.extend(dim_categories['medium_items'][:12])
-        
-        # Bottom shelf: Bulky items
-        selected_products.extend(dim_categories['bulky_items'][:6])
-        
-        # Generate visual
-        output_path = self._create_mac_planogram_visual(
-            selected_products, store_name, 1, "Mixed Mac Accessories"
-        )
-        
-        return {"wall_1": output_path}
+        # Final clamps (keep visual balance yet allow large privacy filters)
+        w = max(90, min(420, base_w))
+        h = max(80, min(240, base_h))
+        return float(w), float(h)
 
-    def _generate_two_wall_mac(self, products: List[MacProduct], store_name: str) -> Dict[str, str]:
-        """Two walls: Wall 1 (Protection & Privacy), Wall 2 (Connectivity & Power)"""
-        results = {}
+    def _pack_row_by_width(self, candidates: List[MacProduct], target_width: float, max_items: int, spacing: int = 18) -> List[MacProduct]:
+        if not candidates:
+            return []
+        # Sort by height desc to keep row height consistent
+        dims = [(p, *self._w_h(p)) for p in candidates]
+        dims.sort(key=lambda x: x[2], reverse=True)
+        row: List[MacProduct] = []
+        used_names: Dict[str, int] = {}
+        total_w = 0.0
+        for p, w, h in dims:
+            if len(row) >= max_items:
+                break
+            if total_w + (spacing if row else 0) + w <= target_width:
+                row.append(p)
+                total_w += (spacing if len(row) > 1 else 0) + w
+                used_names[p.product_name] = used_names.get(p.product_name, 0) + 1
+        # If width still far from target, allow one round of duplicates of the best-fitting items
+        i = 0
+        while len(row) < max_items and i < len(dims):
+            p, w, h = dims[i]
+            if total_w + spacing + w <= target_width and used_names.get(p.product_name, 0) < 2:
+                row.append(p)
+                total_w += (spacing if len(row) > 1 else 0) + w
+                used_names[p.product_name] = used_names.get(p.product_name, 0) + 1
+            i += 1
+        return row
 
-        # Wall 1: Protection & Privacy
-        protection_categories = ['hardshell case', 'privacy filter', 'keyboard skin', 'cleaning']
-        wall1_products = [p for p in products if p.category in protection_categories][:20]
+    @staticmethod
+    def _is_keyboard(p: MacProduct) -> bool:
+        n = p.product_name.lower()
+        c = (p.category or "").lower()
+        return ("keyboard" in n) or ("keyboard" in c) or (c == "keyboard skin")
 
-        results["wall_1"] = self._create_mac_planogram_visual(
-            wall1_products, store_name, 1, "Mac Protection & Privacy"
-        )
+    @staticmethod
+    def _is_privacy(p: MacProduct) -> bool:
+        n = p.product_name.lower()
+        c = (p.category or "").lower()
+        return ("privacy" in n) or (c == "privacy filter")
 
-        # Wall 2: Connectivity & Power
-        connectivity_categories = ['hub', 'charger', 'cable', 'stand', 'accessory']
-        wall2_products = [p for p in products if p.category in connectivity_categories][:20]
+    @staticmethod
+    def _is_hub_like(p: MacProduct) -> bool:
+        n = p.product_name.lower()
+        c = (p.category or "").lower()
+        return ("hub" in n) or ("dock" in n) or ("7 in 1" in n or "7-in-1" in n or "7 in1" in n or "7in1" in n) or (c == "hub")
 
-        results["wall_2"] = self._create_mac_planogram_visual(
-            wall2_products, store_name, 2, "Mac Connectivity & Power"
-        )
+    @staticmethod
+    def _is_power_or_spotfree_or_accessory(p: MacProduct) -> bool:
+        n = p.product_name.lower()
+        c = (p.category or "").lower()
+        return ("charg" in n) or ("power" in n) or ("bank" in n) or (c in {"charger", "accessory", "cleaning", "peripheral"}) or ("spray" in n) or ("spotfree" in n)
 
-        return results
+    # ------------------------- Core -------------------------- #
+    def _build_rows(self, products: List[MacProduct]) -> List[List[MacProduct]]:
+        spacing = 18
+        max_items_per_row = 8
 
-    def _generate_three_wall_mac(self, products: List[MacProduct], store_name: str) -> Dict[str, str]:
-        """Three walls: Protection, Connectivity, Bags & Peripherals"""
-        results = {}
+        # Privacy row first (Row 1)
+        privacy_candidates = [p for p in products if self._is_privacy(p)]
+        privacy_row_base = privacy_candidates[:10]  # over-select; packing trims
+        # Estimate a generous width target from first few privacy items
+        if privacy_row_base:
+            w_samples = [self._w_h(p)[0] for p in privacy_row_base[:6]]
+            privacy_target_w = sum(w_samples) + spacing * max(0, len(w_samples) - 1)
+        else:
+            privacy_target_w = 1000
+        # Force exactly 3 privacy filters in Row 1
+        row1 = self._pack_row_by_width(privacy_row_base, privacy_target_w, 3, spacing)
+        row1 = row1[:3]
 
-        # Wall 1: Protection & Privacy
-        protection_products = [p for p in products if p.category in ['hardshell case', 'privacy filter', 'keyboard skin', 'cleaning']][:20]
-        results["wall_1"] = self._create_mac_planogram_visual(
-            protection_products, store_name, 1, "Mac Protection & Privacy"
-        )
+        # Row 2: hubs/7-in-1 and similar (exclude keyboards)
+        hub_like = [p for p in products if self._is_hub_like(p) and not self._is_keyboard(p)]
+        row2 = self._pack_row_by_width(hub_like, privacy_target_w, max_items_per_row, spacing)
 
-        # Wall 2: Connectivity & Power
-        connectivity_products = [p for p in products if p.category in ['hub', 'charger', 'cable']][:20]
-        results["wall_2"] = self._create_mac_planogram_visual(
-            connectivity_products, store_name, 2, "Mac Connectivity & Power"
-        )
+        # Row 3: spotfree/chargers/accessory (exclude keyboards)
+        power_like = [p for p in products if self._is_power_or_spotfree_or_accessory(p) and not self._is_keyboard(p)]
+        row3 = self._pack_row_by_width(power_like, privacy_target_w, max_items_per_row, spacing)
 
-        # Wall 3: Bags, Sleeves & Peripherals
-        bags_products = [p for p in products if p.category in ['stand', 'peripheral', 'accessory']][:20]
-        results["wall_3"] = self._create_mac_planogram_visual(
-            bags_products, store_name, 3, "Mac Bags & Peripherals"
-        )
+        # Row 4: exactly 3 keyboard covers centered
+        keyboards = [p for p in products if self._is_keyboard(p)]
+        row4 = keyboards[:3]
+        if len(row4) < 3 and keyboards:
+            # Duplicate top keyboard to reach 3
+            while len(row4) < 3:
+                row4.append(keyboards[0])
 
-        return results
+        # Remove any keyboard from rows 1–3 if they slipped in
+        def strip_keyboards(row: List[MacProduct]) -> List[MacProduct]:
+            return [p for p in row if not self._is_keyboard(p)]
+        row1, row2, row3 = map(strip_keyboards, (row1, row2, row3))
 
-    def _generate_multi_wall_mac(self, products: List[MacProduct], store_name: str, num_walls: int) -> Dict[str, str]:
-        """Multi-wall strategy: Dedicated walls per category"""
-        results = {}
+        # Ensure Rows 1–3 are not empty; fallback to any high-priority products (non-keyboards)
+        def fallback(candidates: List[MacProduct]) -> List[MacProduct]:
+            pool = [p for p in candidates if not self._is_keyboard(p)]
+            return pool[:max_items_per_row]
+        if not row1:
+            row1 = fallback(products)
+        if not row2:
+            row2 = fallback(products)
+        if not row3:
+            row3 = fallback(products)
 
-        # Define wall allocation strategy
-        wall_strategies = [
-            ("Mac Protection & Privacy", ['hardshell case', 'privacy filter', 'keyboard skin', 'cleaning']),
-            ("Mac Connectivity", ['hub', 'cable']),
-            ("Mac Power & Charging", ['charger', 'accessory']),
-            ("Mac Peripherals & Stands", ['stand', 'peripheral']),
-        ]
+        return [row1, row2, row3, row4]
 
-        for i, (wall_title, categories) in enumerate(wall_strategies[:num_walls]):
-            wall_products = [p for p in products if p.category in categories][:20]
-            results[f"wall_{i+1}"] = self._create_mac_planogram_visual(
-                wall_products, store_name, i+1, wall_title
-            )
+    # ------------------------ Rendering ---------------------- #
+    def _render(self, grid: List[List[MacProduct]], store_name: str, wall_number: int) -> str:
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-        return results
+        spacing = 18
+        row_gap = 42
+        top_margin = 130
+        bottom_margin = 70
 
-    def _create_mac_planogram_visual(self, products: List[MacProduct], store_name: str,
-                                   wall_number: int, wall_title: str) -> str:
-        """Create visual Mac planogram with dimensional awareness"""
-        # Create 5-row grid similar to iPad system
-        grid_rows = 5
-        grid_cols = 4
+        # Precompute widths/heights
+        row_dims: List[List[Tuple[float, float]]] = [[self._w_h(p) for p in row] for row in grid]
+        row_heights = [max((h for w, h in dims), default=0) for dims in row_dims]
+        row_widths = [sum((w for w, h in dims)) + spacing * max(0, len(dims) - 1) for dims in row_dims]
 
-        # Sort products by dimensional constraints and priority
-        sorted_products = self._sort_products_by_shelf_suitability(products)
+        canvas_w = int(max(1400, max(row_widths) + 220))
+        canvas_h = int(max(800, sum(row_heights) + row_gap * (len(grid) - 1) + top_margin + bottom_margin))
 
-        # Create grid allocation
-        grid = self._allocate_products_to_grid(sorted_products, grid_rows, grid_cols)
-
-        # Generate visual
-        output_path = self._generate_mac_planogram_visual(
-            grid, store_name, wall_number, wall_title
-        )
-
-        return output_path
-
-    def _sort_products_by_shelf_suitability(self, products: List[MacProduct]) -> List[MacProduct]:
-        """Sort products by shelf suitability and priority"""
-        def shelf_priority(product):
-            # Combine category priority with dimensional suitability
-            cat_priority = self.category_priorities.get(product.category, 10)
-            sales_score = product.attach_rate * product.frequency
-
-            # Thin items get top shelf priority
-            if product.is_thin_product:
-                shelf_score = 1
-            elif product.is_bulky_product:
-                shelf_score = 4
-            else:
-                shelf_score = 2
-
-            # Lower score = higher priority
-            return (shelf_score, cat_priority, -sales_score)
-
-        return sorted(products, key=shelf_priority)
-
-    def _allocate_products_to_grid(self, products: List[MacProduct], rows: int, cols: int) -> List[List[Optional[MacProduct]]]:
-        """Allocate products to grid with dimensional constraints"""
-        grid = [[None for _ in range(cols)] for _ in range(rows)]
-
-        # Separate products by shelf suitability
-        thin_products = [p for p in products if p.is_thin_product]
-        medium_products = [p for p in products if not p.is_thin_product and not p.is_bulky_product]
-        bulky_products = [p for p in products if p.is_bulky_product]
-
-        product_index = 0
-
-        # Row 1: Thin products (privacy filters, keyboard skins)
-        for col in range(cols):
-            if product_index < len(thin_products):
-                grid[0][col] = thin_products[product_index]
-                product_index += 1
-
-        # Rows 2-3: Medium products (hubs, cables, small chargers)
-        product_index = 0
-        for row in range(1, 3):
-            for col in range(cols):
-                if product_index < len(medium_products):
-                    grid[row][col] = medium_products[product_index]
-                    product_index += 1
-
-        # Rows 4-5: Bulky products (large chargers, stands)
-        product_index = 0
-        for row in range(3, 5):
-            for col in range(cols):
-                if product_index < len(bulky_products):
-                    grid[row][col] = bulky_products[product_index]
-                    product_index += 1
-
-        return grid
-
-    def _generate_mac_planogram_visual(self, grid: List[List[Optional[MacProduct]]],
-                                     store_name: str, wall_number: int, wall_title: str) -> str:
-        """Generate visual planogram with proper Mac styling"""
-        # Create figure
-        fig, ax = plt.subplots(figsize=(16, 12))
-        ax.set_facecolor('#F8F9FA')
-        ax.set_xlim(0, 400)
-        ax.set_ylim(0, 300)
-        ax.axis('off')
+        fig, ax = plt.subplots(figsize=(canvas_w/100, canvas_h/100))
+        ax.set_facecolor("#FFFFFF")
+        ax.set_xlim(0, canvas_w)
+        ax.set_ylim(0, canvas_h)
+        ax.axis("off")
 
         # Title
-        title_text = f"{wall_title}\n{store_name.replace('_', ' ').title()}"
-        ax.text(200, 280, title_text, fontsize=18, fontweight='bold',
-               ha='center', va='center', color='#1D1D1F')
+        ax.text(canvas_w/2, canvas_h - 50,
+                f"{store_name.upper()} - MAC ACCESSORIES WALL {wall_number}",
+                fontsize=20, fontweight="bold", ha="center", va="center", color="#2C3E50")
+        ax.text(canvas_w/2, canvas_h - 85,
+                f"Professional Shelf Layout | {sum(len(r) for r in grid)} Products | Dimension-Optimized",
+                fontsize=12, ha="center", va="center", color="#7F8C8D")
 
-        # Grid parameters
-        rows = len(grid)
-        cols = len(grid[0]) if grid else 0
+        # Helpers for color contrast and text fitting
+        def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
+            hex_color = hex_color.lstrip('#')
+            r = int(hex_color[0:2], 16)
+            g = int(hex_color[2:4], 16)
+            b = int(hex_color[4:6], 16)
+            return (r, g, b)
+        def is_dark(hex_color: str) -> bool:
+            r, g, b = hex_to_rgb(hex_color)
+            # Relative luminance
+            lum = 0.2126*r + 0.7152*g + 0.0722*b
+            return lum < 150
+        def truncate(text: str, max_px: float, px_per_char: float = 6.5) -> str:
+            max_chars = max(6, int(max_px / px_per_char))
+            return text if len(text) <= max_chars else text[:max_chars-1] + '…'
 
-        # Calculate cell dimensions
-        grid_width = 320
-        grid_height = 200
-        cell_width = grid_width / cols
-        cell_height = grid_height / rows
+        y = canvas_h - top_margin
+        for r_idx, row in enumerate(grid):
+            dims = row_dims[r_idx]
+            if not dims:
+                continue
+            row_h = row_heights[r_idx]
+            row_w = row_widths[r_idx]
+            row_center_y = y - row_h/2
+            start_x = (canvas_w - row_w) / 2
+            x = start_x
+            for p, (w, h) in zip(row, dims):
+                # Brand color coding
+                brand = (p.brand or '').lower()
+                brand_colors = {
+                    'apple': '#007AFF', 'belkin': '#FF6B35', 'logitech': '#00B04F', 'anker': '#FF3B30',
+                    'satechi': '#5856D6', 'hyper': '#FF9500', 'caldigit': '#34C759', 'owc': '#AF52DE',
+                    'ugreen': '#32D74B', 'tekne': '#FF2D92', 'pulse': '#007AFF', 'gripp': '#1D1D1F'
+                }
+                fill = brand_colors.get(brand, '#E9F2FF')
+                edge = '#AEB6BF' if brand not in ('gripp',) else '#333333'
+                rect = Rectangle((x, row_center_y - h/2), w, h, facecolor=fill, edgecolor=edge)
+                ax.add_patch(rect)
 
-        # Starting position (centered)
-        start_x = (400 - grid_width) / 2
-        start_y = 220
+                # Determine text colors and sizes (no stretching)
+                dark_bg = is_dark(fill)
+                name_color = '#FFFFFF' if dark_bg else '#1D1D1F'
+                sub_color = '#F2F2F7' if dark_bg else '#7F8C8D'
+                name_fs = max(7, min(12, w/18))
+                sub_fs = max(6, min(10, w/22))
 
-        # Draw grid and products
-        for row in range(rows):
-            for col in range(cols):
-                x = start_x + col * cell_width
-                y = start_y - row * cell_height
-
-                product = grid[row][col]
-
-                if product:
-                    self._draw_mac_product_rectangle(ax, x, y, cell_width, cell_height, product)
+                # Primary line: for privacy, show product name; else brand
+                cat = (p.category or '').lower()
+                if 'privacy' in cat:
+                    primary_text = p.product_name
+                    secondary_text = p.brand.upper() if p.brand else ''
                 else:
-                    # Draw empty cell
-                    empty_rect = FancyBboxPatch(
-                        (x + 5, y - cell_height + 5), cell_width - 10, cell_height - 10,
-                        boxstyle="round,pad=3",
-                        facecolor='#F0F0F0',
-                        edgecolor='#D1D1D6',
-                        linewidth=1,
-                        alpha=0.3
-                    )
-                    ax.add_patch(empty_rect)
+                    primary_text = p.brand.upper() if p.brand else p.product_name
+                    secondary_text = p.product_name
 
-        # Add shelf labels
-        shelf_labels = ["Top Shelf (Thin Items)", "Mid Shelf (Cables & Hubs)",
-                       "Mid Shelf (Chargers)", "Low Shelf (Stands)", "Bottom Shelf (Large Items)"]
+                ax.text(
+                    x + w/2,
+                    row_center_y + min(10, h*0.28),
+                    truncate(primary_text, w*0.9),
+                    fontsize=name_fs,
+                    ha='center', va='center', color=name_color, clip_on=True
+                )
+                ax.text(
+                    x + w/2,
+                    row_center_y - h/2 + 10,
+                    truncate(secondary_text, w*0.92),
+                    fontsize=sub_fs,
+                    ha='center', va='bottom', color=sub_color, clip_on=True
+                )
+                x += w + spacing
+            y -= row_h + row_gap
 
-        for i, label in enumerate(shelf_labels[:rows]):
-            y_pos = start_y - i * cell_height - cell_height/2
-            ax.text(start_x - 10, y_pos, label, fontsize=10, ha='right', va='center',
-                   color='#86868B', rotation=90)
+        # Use consistent naming with other generators
+        store_slug = store_name.lower().replace(' ', '_').replace('-', '_')
+        fname = f"mac_wall_{wall_number}_{store_slug}.png"
+        out_path = str(OUTPUT_DIR / fname)
+        fig.savefig(out_path, dpi=120, bbox_inches="tight")
+        plt.close(fig)
+        return out_path
 
-        # Add summary statistics
-        total_products = sum(1 for row in grid for cell in row if cell is not None)
-        total_sales = sum(p.frequency for row in grid for p in row if p is not None)
-        avg_attach_rate = np.mean([p.attach_rate for row in grid for p in row if p is not None and p.attach_rate > 0])
+    # --------------------- Public API ------------------------ #
+    def generate_store_planograms(self, store_name: str, num_walls: int) -> Dict[str, str]:
+        products = self.load_mac_data()
+        # Filter to approved TPA brands if needed (soft filter)
+        approved = {"gripp", "pulse", "tekne", "belkin", "alogic", "anker", "satechi"}
+        products = [p for p in products if (p.brand or "").lower() in approved]
 
-        summary_y = 40
-        ax.text(50, summary_y, f"Products: {total_products}", fontsize=12, color='#1D1D1F')
-        ax.text(150, summary_y, f"Total Sales: {total_sales:,}", fontsize=12, color='#1D1D1F')
-        if not np.isnan(avg_attach_rate):
-            ax.text(280, summary_y, f"Avg Attach Rate: {avg_attach_rate:.1%}", fontsize=12, color='#1D1D1F')
+        # Generate the requested number of walls (typically 1 for Mac accessories)
+        results = {}
+        for wall_num in range(1, min(num_walls + 1, 2)):  # Max 1 wall for now
+            grid = self._build_rows(products)
+            out = self._render(grid, store_name, wall_num)
+            results[f"wall_{wall_num}"] = out
+        return results
 
-        # Add legend
-        legend_y = 20
-        # High sales indicator
-        star = patches.Circle((50, legend_y), 3, color='gold', alpha=0.9)
-        ax.add_patch(star)
-        ax.text(60, legend_y, "High Sales (>100)", fontsize=10, va='center', color='#1D1D1F')
-
-        # High attach rate indicator
-        diamond = patches.RegularPolygon((150, legend_y), 4, radius=4, color='#007AFF', alpha=0.9)
-        ax.add_patch(diamond)
-        ax.text(160, legend_y, "High Attach Rate (>5%)", fontsize=10, va='center', color='#1D1D1F')
-
-        # Save planogram
-        filename = f"mac_wall_{wall_number}_{store_name.lower().replace(' ', '_')}.png"
-        output_path = Path("output") / filename
-
-        plt.tight_layout()
-        plt.savefig(output_path, dpi=300, bbox_inches='tight',
-                   facecolor='white', edgecolor='none')
-        plt.close()
-
-        self.logger.info(f"Generated Mac planogram: {output_path}")
-        return str(output_path)
-
-    def _draw_mac_product_rectangle(self, ax, x: float, y: float, width: float, height: float,
-                                  product: MacProduct):
-        """Draw individual Mac product rectangle with proper styling"""
-        # Adjust for padding
-        rect_x = x + 3
-        rect_y = y - height + 3
-        rect_width = width - 6
-        rect_height = height - 6
-
-        # Get product color based on category and subcategory
-        color = self._get_mac_product_color(product)
-
-        # Draw main rectangle
-        product_rect = FancyBboxPatch(
-            (rect_x, rect_y), rect_width, rect_height,
-            boxstyle="round,pad=2",
-            facecolor=color,
-            edgecolor='#86868B',
-            linewidth=1.5,
-            alpha=0.9
-        )
-        ax.add_patch(product_rect)
-
-        # Format product name for display
-        display_name = self._format_mac_product_name(product.product_name, rect_width)
-
-        # Determine text color
-        text_color = 'white' if self._is_dark_color(color) else 'black'
-
-        # Add product text
-        ax.text(rect_x + rect_width/2, rect_y + rect_height/2, display_name,
-               fontsize=8, ha='center', va='center', color=text_color,
-               weight='medium', wrap=True)
-
-        # Add indicators for high-performing products
-        if product.frequency > 100:  # High sales
-            star = patches.Circle((rect_x + rect_width - 8, rect_y + rect_height - 8),
-                                3, color='gold', alpha=0.9)
-            ax.add_patch(star)
-
-        if product.attach_rate > 0.05:  # High attach rate (>5%)
-            diamond = patches.RegularPolygon((rect_x + 8, rect_y + rect_height - 8),
-                                           4, radius=3, color='#007AFF', alpha=0.9)
-            ax.add_patch(diamond)
-
-    def _get_mac_product_color(self, product: MacProduct) -> str:
-        """Get color for Mac product based on category and subcategory"""
-        # Brand-based colors for TPA brands
-        brand_colors = {
-            'Gripp': '#4A90E2',      # Blue
-            'Pulse': '#7ED321',      # Green
-            'Tekne': '#F5A623',      # Orange
-            'Apple': '#1D1D1F',      # Dark gray
-        }
-
-        if product.brand in brand_colors:
-            return brand_colors[product.brand]
-
-        # Category-based colors
-        category_colors = {
-            'hardshell case': '#E3F2FD',
-            'privacy filter': '#F3E5F5',
-            'hub': '#FFF8E1',
-            'cable': '#FFEBEE',
-            'charger': '#F1F8E9',
-            'cleaning': '#E8F5E8',
-            'stand': '#EDE7F6',
-            'peripheral': '#F9FBE7',
-            'keyboard skin': '#FCE4EC',
-            'accessory': '#FFF9C4'
-        }
-
-        return category_colors.get(product.category, '#E5E5EA')
-
-    def _is_dark_color(self, color_hex: str) -> bool:
-        """Determine if color is dark for text contrast"""
-        color_hex = color_hex.lstrip('#')
-        try:
-            r = int(color_hex[0:2], 16)
-            g = int(color_hex[2:4], 16)
-            b = int(color_hex[4:6], 16)
-            brightness = (r * 299 + g * 587 + b * 114) / 1000
-            return brightness < 128
-        except:
-            return False
-
-    def _format_mac_product_name(self, name: str, max_width: float) -> str:
-        """Format Mac product name for display"""
-        # Estimate characters that fit (approximately 6 pixels per character)
-        max_chars = int(max_width / 6)
-
-        # Extract key information
-        words = name.split()
-
-        # Get brand (first word usually)
-        brand = words[0] if words else ""
-
-        # Find key descriptors
-        key_words = []
-        for word in words[1:]:
-            if any(desc in word.lower() for desc in
-                  ['case', 'hub', 'cable', 'charger', 'filter', 'stand', 'skin', 'clean']):
-                key_words.append(word)
-                break
-
-        # Add size if present
-        for word in words:
-            if any(size in word for size in ['13', '14', '15', '16']):
-                key_words.append(word)
-                break
-
-        # Build result
-        result = brand
-        for word in key_words:
-            if len(result + " " + word) <= max_chars:
-                result += " " + word
-            else:
-                break
-
-        return result if len(result) > 3 else name[:max_chars]

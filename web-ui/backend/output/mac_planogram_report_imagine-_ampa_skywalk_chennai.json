@@ -1,0 +1,23 @@
+{
+  "store_name": "imagine- ampa skywalk chennai",
+  "generation_timestamp": "2025-08-12T17:01:42.145585",
+  "wall_configuration": {
+    "Mac Accessories": 1
+  },
+  "generated_planograms": [
+    "wall_1"
+  ],
+  "planogram_files": {
+    "wall_1": "/Users/shivansh420/Desktop/Planogram/web-ui/backend/output/mac_wall_1_imagine__ampa_skywalk_chennai.png"
+  },
+  "mac_categories_generated": 1,
+  "total_walls_used": 1,
+  "product_statistics": {
+    "total_mac_products": 0,
+    "total_bags_sleeves": 0,
+    "total_products": 0,
+    "categories": 0,
+    "brands": 0,
+    "avg_frequency": 0
+  }
+}

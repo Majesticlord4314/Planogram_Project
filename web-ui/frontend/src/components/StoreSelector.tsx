@@ -115,11 +115,9 @@ const COHORT_CATEGORIES = [
 const ACCESSORY_CATEGORIES = [
   'cases',
   'ipad_accessories',
-  'charging_cables',
+  'organizers_cables',
   'audio',
-  'bags_sleeves',
-  'organizers',
-  'misc_accessories'
+  'bags_sleeves'
 ];
 
 const StoreSelector: React.FC = () => {
@@ -265,9 +263,37 @@ const StoreSelector: React.FC = () => {
       setGenerating(true);
       setCurrentStep('generation');
 
-      const response = await apiService.generatePlanogram(selectedStore, selectedAccessories);
-      if (response.data && response.data.job_id) {
-        pollJobStatus(response.data.job_id);
+      // Clear cache before generating to ensure fresh results
+      try {
+        await fetch(getFullApiUrl('/api/clear-cache'), { method: 'POST' });
+      } catch (e) {
+        console.warn('Cache clear failed, continuing anyway:', e);
+      }
+
+      const resp = await apiService.generatePlanogram(selectedStore, selectedAccessories);
+      console.log('🔍 Full API Response:', resp);
+      console.log('🔍 Response keys:', Object.keys(resp || {}));
+
+      if (resp && resp.job_id) {
+        console.log('📋 Found job_id, starting polling:', resp.job_id);
+        pollJobStatus(resp.job_id);
+      } else {
+        // Handle both sync results and variants nested under data
+        const payload: any = (resp && (resp.result || resp.data?.result || resp.data || resp)) || null;
+        console.log('🔍 Extracted payload:', payload);
+        console.log('🔍 Payload keys:', Object.keys(payload || {}));
+        console.log('🔍 Generated files:', payload?.generated_files);
+
+        if (payload && payload.generated_files) {
+          console.log('✅ Setting generation result with', payload.generated_files.length, 'files');
+          setGenerationResult(payload);
+          setGenerating(false);
+          setCurrentStep('results');
+        } else {
+          console.warn('❌ No job_id or usable result returned from generate API:', resp);
+          setGenerating(false);
+          setCurrentStep('category-selection');
+        }
       }
 
     } catch (error) {
@@ -457,11 +483,9 @@ const StoreSelector: React.FC = () => {
     const formatMap: Record<string, string> = {
       'cases': 'Cases & Covers',
       'ipad_accessories': 'iPad Accessories',
-      'charging_cables': 'Charging & Cables',
+      'organizers_cables': 'Organizers & Cables',
       'audio': 'Audio Products',
-      'bags_sleeves': 'Bags & Sleeves',
-      'organizers': 'Organizers & Hubs',
-      'misc_accessories': 'Miscellaneous'
+      'bags_sleeves': 'Bags & Sleeves'
     };
     return formatMap[accessory] || formatLOBName(accessory);
   };
@@ -1306,7 +1330,11 @@ const StoreSelector: React.FC = () => {
     </Card>
   );
 
-  const renderResults = () => (
+  const renderResults = () => {
+    console.log('🔍 Rendering results, generationResult:', generationResult);
+    console.log('🔍 Generated files count:', generationResult?.generated_files?.length);
+
+    return (
     <Box>
       <Card sx={{ mb: 3 }}>
         <CardContent>
@@ -1319,7 +1347,7 @@ const StoreSelector: React.FC = () => {
               Generate More
             </Button>
           </Box>
-          
+
           {generationResult && (
             <Grid container spacing={2} sx={{ mb: 3 }}>
               <Grid item xs={12} md={4}>
@@ -1353,6 +1381,7 @@ const StoreSelector: React.FC = () => {
               {generationResult.generated_files ? (
                 // New smart accessory format
                 generationResult.generated_files.map((file: any, index: number) => {
+                  console.log(`🔍 Rendering file ${index}:`, file);
                   // Check if filename ends with .txt (for fallback text files)
                   const isTxtFile = file.filename.toLowerCase().endsWith('.txt');
                   const isPngFile = file.filename.toLowerCase().endsWith('.png');
@@ -1375,7 +1404,7 @@ const StoreSelector: React.FC = () => {
                             <Button
                               variant="contained"
                               size="small"
-                              href={getFullApiUrl(`/output/${encodeURIComponent(file.filename)}`)}
+                              href={getFullApiUrl(file.url || `/output/${encodeURIComponent(file.filename)}`)}
                               target="_blank"
                               rel="noopener noreferrer"
                               component="a"
@@ -1389,7 +1418,7 @@ const StoreSelector: React.FC = () => {
                               variant="contained"
                               size="small"
                               color="info"
-                              href={getFullApiUrl(`/output/${encodeURIComponent(file.filename)}`)}
+                              href={getFullApiUrl(file.url || `/output/${encodeURIComponent(file.filename)}`)}
                               target="_blank"
                               rel="noopener noreferrer"
                               component="a"
@@ -1401,7 +1430,7 @@ const StoreSelector: React.FC = () => {
                           <Button
                             variant="outlined"
                             size="small"
-                            href={getFullApiUrl(`/output/${encodeURIComponent(file.filename)}`)}
+                            href={getFullApiUrl(file.url || `/output/${encodeURIComponent(file.filename)}`)}
                             download={file.filename}
                             component="a"
                           >
@@ -1417,7 +1446,7 @@ const StoreSelector: React.FC = () => {
                       {(file.type === 'planogram_image' || isImageFile) && (
                         <Box sx={{ mt: 2, textAlign: 'center' }}>
                           <img
-                            src={getFullApiUrl(`/output/${encodeURIComponent(file.filename)}`)}
+                            src={getFullApiUrl(file.url || `/output/${encodeURIComponent(file.filename)}`)}
                             alt={file.description}
                             style={{
                               maxWidth: '100%',
@@ -1458,6 +1487,7 @@ const StoreSelector: React.FC = () => {
       )}
     </Box>
   );
+  };
 
   return (
     <Box>

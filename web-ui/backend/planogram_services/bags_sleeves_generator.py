@@ -18,6 +18,9 @@ from dataclasses import dataclass
 import matplotlib
 matplotlib.use('Agg')
 
+# Resolve repository root regardless of working directory
+REPO_ROOT = Path(__file__).resolve().parents[3]
+
 @dataclass
 class BagSleeveProduct:
     """Bag/Sleeve product with enhanced attributes"""
@@ -62,7 +65,7 @@ class BagsSleevesGenerator:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.approved_brands = {'Gripp', 'Pulse', 'Tekne', 'Native Union', 'tomtoc', 'Tucano', 'Rivacase'}
-        
+
         # Brand priority for placement
         self.brand_priority = {
             'Gripp': 1,
@@ -74,9 +77,33 @@ class BagsSleevesGenerator:
             'Rivacase': 7
         }
 
+        # Realistic wall layout (can be tuned per store):
+        # - Sleeves use top 3 rows, 5 columns per row (max 15 sleeves)
+        # - Bags use bottom 1 row, 3 columns (max 3 bags)
+        self.layout = {
+            # Sleeves horizontal: 4 rows x 3 columns (max 12)
+            'sleeves': {
+                'rows': 4,
+                'cols_per_row': 3,
+                'row_spacing': 40,
+                'col_spacing': 20,
+                'item_width': 60,
+                'item_height': 30
+            },
+            # Bottom row for bags, vertical: 1 row x 4 columns (max 4)
+            'bags': {
+                'rows': 1,
+                'cols_per_row': 4,
+                'row_spacing': 70,
+                'col_spacing': 20,
+                'item_width': 50,
+                'item_height': 70
+            }
+        }
+
     def load_bags_sleeves_data(self) -> List[BagSleeveProduct]:
         """Load bags and sleeves data from processed CSV"""
-        data_file = Path("data/processed/planogram_sleeves_bags.csv")
+        data_file = REPO_ROOT / "data/processed/planogram_sleeves_bags.csv"
         
         if not data_file.exists():
             raise FileNotFoundError(f"Bags & sleeves data file not found: {data_file}")
@@ -146,7 +173,7 @@ class BagsSleevesGenerator:
         
         return sorted(products, key=priority_key)
 
-    def _create_bags_sleeves_visual(self, sleeves: List[BagSleeveProduct], 
+    def _create_bags_sleeves_visual(self, sleeves: List[BagSleeveProduct],
                                   bags: List[BagSleeveProduct], store_name: str) -> str:
         """Create enhanced visual for bags & sleeves"""
         # Create figure
@@ -155,52 +182,70 @@ class BagsSleevesGenerator:
         ax.set_xlim(0, 400)
         ax.set_ylim(0, 320)
         ax.axis('off')
-        
+
         # Title
         title_text = f"Mac Bags & Sleeves\n{store_name.replace('_', ' ').title()}"
-        ax.text(200, 300, title_text, fontsize=20, fontweight='bold', 
+        ax.text(200, 300, title_text, fontsize=20, fontweight='bold',
                ha='center', va='center', color='#1D1D1F')
-        
-        # Draw sleeves section (top 4 rows)
-        sleeves_y_start = 260
-        self._draw_enhanced_sleeves_section(ax, sleeves, sleeves_y_start)
-        
-        # Draw bags section (bottom 2 rows)
-        bags_y_start = 120
-        self._draw_enhanced_bags_section(ax, bags, bags_y_start)
-        
-        # Add section labels with styling
-        ax.text(30, sleeves_y_start + 15, "SLEEVES", fontsize=16, fontweight='bold', 
+
+        # Draw sleeves section (top area) and capture displayed items
+        sleeves_y_start = 270
+        displayed_sleeves = self._draw_enhanced_sleeves_section(ax, sleeves, sleeves_y_start)
+
+        # Draw bags section (bottom row) and capture displayed items, add more vertical gap
+        bags_y_start = 60
+        displayed_bags = self._draw_enhanced_bags_section(ax, bags, bags_y_start)
+
+        # Add section labels with styling placed above item rectangles to avoid overlap
+        ax.text(30, 305, "SLEEVES", fontsize=16, fontweight='bold',
                color='#1D1D1F', bbox=dict(boxstyle="round,pad=5", facecolor='#E3F2FD', alpha=0.7))
-        ax.text(30, bags_y_start + 15, "BAGS", fontsize=16, fontweight='bold', 
+        ax.text(30, bags_y_start + self.layout['bags']['item_height'] + 15, "BAGS", fontsize=16, fontweight='bold',
                color='#1D1D1F', bbox=dict(boxstyle="round,pad=5", facecolor='#FFF3E0', alpha=0.7))
-        
+
         # Add enhanced summary with brand breakdown
-        self._add_enhanced_summary(ax, sleeves, bags)
-        
+        self._add_enhanced_summary(ax, displayed_sleeves, displayed_bags)
+
         # Add legend
         self._add_enhanced_legend(ax)
-        
-        # Save planogram
+
+        # Save planogram image
         filename = f"enhanced_bags_sleeves_{store_name.lower().replace(' ', '_')}.png"
-        output_path = Path("output") / filename
-        
+        output_path = REPO_ROOT / "output" / filename
+
         plt.tight_layout()
-        plt.savefig(output_path, dpi=300, bbox_inches='tight', 
+        plt.savefig(output_path, dpi=300, bbox_inches='tight',
                    facecolor='white', edgecolor='none')
         plt.close()
-        
-        self.logger.info(f"Generated enhanced bags & sleeves planogram: {output_path}")
+
+        # Create accompanying display list (descending importance)
+        def importance_key(p: BagSleeveProduct):
+            # Lower brand score = higher priority; higher frequency = higher priority
+            brand_score = self.brand_priority.get(p.brand, 10)
+            return (brand_score, -p.frequency)
+        displayed_all = displayed_sleeves + displayed_bags
+        ordered = sorted(displayed_all, key=importance_key)
+        list_filename = f"enhanced_bags_sleeves_{store_name.lower().replace(' ', '_')}_list.txt"
+        list_path = REPO_ROOT / "output" / list_filename
+        with open(list_path, 'w') as f:
+            f.write(f"Bags & Sleeves Display List for {store_name}\n")
+            f.write("(Descending importance: brand priority, then sales frequency)\n\n")
+            for idx, p in enumerate(ordered, 1):
+                f.write(f"{idx}. {p.category.upper()} | {p.brand} | {p.product_name} | {p.series} | {p.size_category} | freq={p.frequency}\n")
+        self.logger.info(f"Generated display list: {list_path}")
+
         return str(output_path)
 
-    def _draw_enhanced_sleeves_section(self, ax, sleeves: List[BagSleeveProduct], y_start: float):
-        """Draw sleeves with enhanced brand grouping and size arrangement"""
-        sleeve_width = 55
-        sleeve_height = 25
-        cols_per_row = 6
-        row_spacing = 35
-        col_spacing = 12
-        
+    def _draw_enhanced_sleeves_section(self, ax, sleeves: List[BagSleeveProduct], y_start: float) -> List[BagSleeveProduct]:
+        """Draw sleeves with enhanced brand grouping and size arrangement (horizontal). Returns displayed items."""
+        cfg = self.layout['sleeves']
+        sleeve_width = cfg['item_width']
+        sleeve_height = cfg['item_height']
+        cols_per_row = cfg['cols_per_row']
+        row_spacing = cfg['row_spacing']
+        col_spacing = cfg['col_spacing']
+        max_rows = cfg['rows']
+        max_items = max_rows * cols_per_row
+
         # Group sleeves by size category for better arrangement
         size_groups = {}
         for sleeve in sleeves:
@@ -208,60 +253,65 @@ class BagsSleevesGenerator:
             if size_cat not in size_groups:
                 size_groups[size_cat] = []
             size_groups[size_cat].append(sleeve)
-        
+
         # Calculate starting position for centering
         total_width = cols_per_row * sleeve_width + (cols_per_row - 1) * col_spacing
         start_x = (400 - total_width) / 2
-        
+
+        displayed: List[BagSleeveProduct] = []
+        drawn = 0
         current_row = 0
         current_col = 0
-        
-        # Draw sleeves grouped by size, then by brand
+
+        # Draw sleeves grouped by size, then by brand, respecting capacity
         for size_cat in sorted(size_groups.keys()):
-            size_sleeves = size_groups[size_cat]
-            
-            for sleeve in size_sleeves[:24]:  # Max 24 sleeves (4 rows × 6 cols)
-                if current_row >= 4:  # Max 4 rows for sleeves
+            if drawn >= max_items:
+                break
+            for sleeve in size_groups[size_cat]:
+                if drawn >= max_items or current_row >= max_rows:
                     break
-                
                 x_pos = start_x + current_col * (sleeve_width + col_spacing)
                 y_pos = y_start - current_row * row_spacing
-                
                 self._draw_enhanced_sleeve(ax, x_pos, y_pos, sleeve_width, sleeve_height, sleeve)
-                
+                displayed.append(sleeve)
+                drawn += 1
                 current_col += 1
                 if current_col >= cols_per_row:
                     current_col = 0
                     current_row += 1
+        return displayed
 
-    def _draw_enhanced_bags_section(self, ax, bags: List[BagSleeveProduct], y_start: float):
-        """Draw bags with enhanced styling and brand grouping"""
-        bag_width = 75
-        bag_height = 40
-        cols_per_row = 4
-        row_spacing = 50
-        col_spacing = 15
-        
+    def _draw_enhanced_bags_section(self, ax, bags: List[BagSleeveProduct], y_start: float) -> List[BagSleeveProduct]:
+        """Draw bags with enhanced styling and brand grouping (vertical). Returns displayed items."""
+        cfg = self.layout['bags']
+        bag_width = cfg['item_width']
+        bag_height = cfg['item_height']
+        cols_per_row = cfg['cols_per_row']
+        row_spacing = cfg['row_spacing']
+        col_spacing = cfg['col_spacing']
+        max_rows = cfg['rows']
+        max_items = max_rows * cols_per_row
+
         # Calculate starting position for centering
         total_width = cols_per_row * bag_width + (cols_per_row - 1) * col_spacing
         start_x = (400 - total_width) / 2
-        
-        for i, bag in enumerate(bags[:8]):  # Max 8 bags (2 rows × 4 cols)
+
+        displayed: List[BagSleeveProduct] = []
+        for i, bag in enumerate(bags[:max_items]):
             row = i // cols_per_row
+            if row >= max_rows:
+                break
             col = i % cols_per_row
-            
             x_pos = start_x + col * (bag_width + col_spacing)
             y_pos = y_start - row * row_spacing
-            
             self._draw_enhanced_bag(ax, x_pos, y_pos, bag_width, bag_height, bag)
+            displayed.append(bag)
+        return displayed
 
-    def _draw_enhanced_sleeve(self, ax, x: float, y: float, width: float, height: float, 
+    def _draw_enhanced_sleeve(self, ax, x: float, y: float, width: float, height: float,
                             sleeve: BagSleeveProduct):
-        """Draw individual sleeve with enhanced styling"""
-        # Get brand-specific color
+        """Draw individual sleeve (horizontal) with product name and size"""
         color = self._get_brand_color(sleeve.brand)
-        
-        # Draw main rectangle with rounded corners
         sleeve_rect = FancyBboxPatch(
             (x, y), width, height,
             boxstyle="round,pad=3",
@@ -271,33 +321,24 @@ class BagsSleevesGenerator:
             alpha=0.9
         )
         ax.add_patch(sleeve_rect)
-        
-        # Add premium brand indicator
-        if sleeve.is_premium_brand:
-            premium_indicator = patches.Circle((x + width - 8, y + height - 8), 
-                                             3, color='gold', alpha=0.9)
-            ax.add_patch(premium_indicator)
-        
-        # Format and add text
-        display_name = self._format_product_name(sleeve.product_name, width)
+
         text_color = 'white' if self._is_dark_color(color) else 'black'
-        
-        ax.text(x + width/2, y + height/2, display_name,
+
+        # Centered product name (wrap to fit width)
+        display_name = self._format_product_name(sleeve.product_name, width)
+        ax.text(x + width/2, y + height/2 + 2, display_name,
                fontsize=8, ha='center', va='center', color=text_color,
                weight='medium', wrap=True)
-        
-        # Add size indicator
+
+        # Small size label at top-left, full size name (e.g., 13-inch)
         size_text = sleeve.size_category
-        ax.text(x + 5, y + 5, size_text, fontsize=7, ha='left', va='bottom',
+        ax.text(x + 3, y + height - 5, size_text, fontsize=7, ha='left', va='top',
                color=text_color, weight='bold')
 
-    def _draw_enhanced_bag(self, ax, x: float, y: float, width: float, height: float, 
+    def _draw_enhanced_bag(self, ax, x: float, y: float, width: float, height: float,
                          bag: BagSleeveProduct):
-        """Draw individual bag with enhanced styling"""
-        # Get brand-specific color
+        """Draw individual bag (vertical) with product name and size"""
         color = self._get_brand_color(bag.brand)
-        
-        # Draw main rectangle with rounded corners
         bag_rect = FancyBboxPatch(
             (x, y), width, height,
             boxstyle="round,pad=4",
@@ -307,25 +348,19 @@ class BagsSleevesGenerator:
             alpha=0.9
         )
         ax.add_patch(bag_rect)
-        
-        # Add premium brand indicator
-        if bag.is_premium_brand:
-            premium_indicator = patches.Circle((x + width - 10, y + height - 10), 
-                                             4, color='gold', alpha=0.9)
-            ax.add_patch(premium_indicator)
-        
-        # Format and add text
-        display_name = self._format_product_name(bag.product_name, width)
+
         text_color = 'white' if self._is_dark_color(color) else 'black'
-        
-        ax.text(x + width/2, y + height/2, display_name,
+
+        # Centered product name (wrap to fit width)
+        display_name = self._format_product_name(bag.product_name, width)
+        ax.text(x + width/2, y + height/2 + 3, display_name,
                fontsize=9, ha='center', va='center', color=text_color,
                weight='medium', wrap=True)
-        
-        # Add high sales indicator
-        if bag.frequency > 50:
-            star = patches.Circle((x + 8, y + height - 8), 3, color='#FF3B30', alpha=0.9)
-            ax.add_patch(star)
+
+        # Small size label at bottom-right, full size name (e.g., 16-inch)
+        size_text = bag.size_category
+        ax.text(x + width - 3, y + 3, size_text, fontsize=7, ha='right', va='bottom',
+               color=text_color, weight='bold')
 
     def _get_brand_color(self, brand: str) -> str:
         """Get brand-specific color"""

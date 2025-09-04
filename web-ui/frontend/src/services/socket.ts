@@ -1,6 +1,7 @@
 import { io, Socket } from 'socket.io-client';
 
-const SOCKET_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Use same base URL strategy as API: env override or relative for CRA proxy
+const SOCKET_URL = process.env.REACT_APP_API_URL || '';
 
 export interface ProgressUpdate {
   job_id: string;

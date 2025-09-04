@@ -111,12 +111,10 @@ const COHORT_CATEGORIES = [
 // Accessory types for accessory-based optimization
 const ACCESSORY_CATEGORIES = [
   'cases',
-  'charging_cables',
+  'organizers_cables',
   'audio',
   'bags_sleeves',
-  'gaming',
-  'organizers',
-  'misc_accessories'
+  'gaming'
 ];
 
 const StoreSelector: React.FC = () => {
@@ -232,9 +230,17 @@ const StoreSelector: React.FC = () => {
       setGenerating(true);
       setCurrentStep('generation');
 
-      const response = await apiService.generatePlanogram(selectedStore, selectedAccessories);
-      if (response.data && response.data.job_id) {
-        pollJobStatus(response.data.job_id);
+      const resp = await apiService.generatePlanogram(selectedStore, selectedAccessories);
+      if (resp && resp.job_id) {
+        pollJobStatus(resp.job_id);
+      } else if (resp && (resp as any).result) {
+        setGenerationResult((resp as any).result);
+        setGenerating(false);
+        setCurrentStep('results');
+      } else {
+        console.warn('No job_id or result returned from generate API:', resp);
+        setGenerating(false);
+        setCurrentStep('category-selection');
       }
 
     } catch (error) {
@@ -363,12 +369,9 @@ const StoreSelector: React.FC = () => {
   const formatAccessoryName = (accessory: string) => {
     const formatMap: Record<string, string> = {
       'cases': 'Cases & Covers',
-      'charging_cables': 'Charging & Cables',
-      'ipad_accessories': 'iPad Accessories',
+      'organizers_cables': 'Organizers & Cables',
       'audio': 'Audio Products',
-      'bags_sleeves': 'Bags & Sleeves',
-      'organizers': 'Organizers & Hubs',
-      'misc_accessories': 'Miscellaneous'
+      'bags_sleeves': 'Bags & Sleeves'
     };
     return formatMap[accessory] || formatLOBName(accessory);
   };

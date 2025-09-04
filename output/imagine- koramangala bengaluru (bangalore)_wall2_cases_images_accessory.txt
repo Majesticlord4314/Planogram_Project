@@ -1,0 +1,79 @@
+Cases & Covers (Accessory-based)
+Store: IMAGINE- KORAMANGALA BENGALURU (BANGALORE)
+Store Category: flagship
+Wall: 2 of 4
+Grid: 8x6
+Apple rows: 4
+Series: plus
+
+Placed items (Apple rows):
+  • iphone 16 plus silicone case black.jpg
+  • iphone 16 plus silicone case blue.jpg
+  • iphone 16 plus silicone case denim.jpg
+  • iphone 16 plus silicone case gray.jpg
+  • iphone 16 plus silicone case magenta.jpg
+  • iphone 16 plus silicone case pink.jpg
+  • iphone 16 plus silicone case sea green.jpg
+  • iphone 16 plus silicone case sea pink.jpg
+  • iphone 16 plus silicone case yellow.jpg
+  • iphone 16 plus silicone case black.jpg
+  • iphone 16 plus silicone case blue.jpg
+  • iphone 16 plus silicone case denim.jpg
+  • iphone 16 plus silicone case gray.jpg
+  • iphone 16 plus silicone case magenta.jpg
+  • iphone 16 plus silicone case pink.jpg
+  • iphone 16 plus silicone case sea green.jpg
+  • iphone 16 plus silicone case sea pink.jpg
+  • iphone 16 plus silicone case yellow.jpg
+  • iphone 16 plus silicone case black.jpg
+  • iphone 16 plus silicone case blue.jpg
+  • iphone 16 plus silicone case denim.jpg
+  • iphone 16 plus silicone case gray.jpg
+  • iphone 16 plus silicone case magenta.jpg
+  • iphone 16 plus silicone case pink.jpg
+
+Placed items (TPA rows incl. screens):
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+
+Top sellers by series (from cases_sales.csv):
+  Plus: 15 items
+    • Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Green                    | Brand: Gripp       | Sales: 299
+    • Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  - Blue                     | Brand: Gripp       | Sales: 252
+    • Gripp FOCAL Camera Lens Protector 2N1  Compatible with Apple iPhone 16   iPhone 16 Plus  -  Black                   | Brand: Gripp       | Sales: 243
+    • Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Plus-White                                                 | Brand: Pulse       | Sales: 208
+    • PULSE ARMOUR Case for iPhone 16 Plus-Black                                                                          | Brand: Pulse       | Sales: 198
+    • Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Silver                    | Brand: Gripp       | Sales: 189
+    • Tekne CLEAR Case with Camera stand for iPhone 16 Plus-Grey                                                          | Brand: Tekne       | Sales: 155
+    • PULSE Matt Magsafe Case for iPhone 16 Plus-Black                                                                    | Brand: Pulse       | Sales: 145
+    • Tekne ARMOUR Case for iPhone 16 Plus-Matt Clear                                                                     | Brand: Tekne       | Sales: 144
+    • Tekne Matt Magsafe Case for iPhone 16 Plus-Black                                                                    | Brand: Tekne       | Sales: 144
+    • PULSE Matt Magsafe Case for iPhone 16 Plus-Grey                                                                     | Brand: Pulse       | Sales: 137
+    • PULSE Aluminium Rugged Magsafe Case for iPhone 16 Plus-Matt Black                                                   | Brand: Pulse       | Sales: 131
+    • Pulse CLEAR Case with Camera stand for iPhone 16 Plus-White                                                         | Brand: Pulse       | Sales: 123
+    • Tekne Matt Magsafe Case for iPhone 16 Plus-Grey                                                                     | Brand: Tekne       | Sales: 113
+    • Gripp FOCAL Camera Lens Protector 2N1 Compatible with Apple iPhone 16   iPhone 16 Plus  - Pink                      | Brand: Gripp       | Sales: 111
+
+Note: Grid uses available images only. Sales list includes best candidates even if imagery is missing.

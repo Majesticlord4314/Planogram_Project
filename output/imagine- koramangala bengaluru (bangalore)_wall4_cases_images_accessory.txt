@@ -1,0 +1,79 @@
+Cases & Covers (Accessory-based)
+Store: IMAGINE- KORAMANGALA BENGALURU (BANGALORE)
+Store Category: flagship
+Wall: 4 of 4
+Grid: 8x6
+Apple rows: 4
+Series: pro max
+
+Placed items (Apple rows):
+  • iphone 16 pro max silicone case blue.jpg
+  • iphone 16 pro max silicone case fuschia.jpg
+  • iphone 16 pro max silicone case magenta.jpg
+  • iphone 16 pro max silicone case sea black.jpg
+  • iphone 16 pro max silicone case yellow.jpg
+  • iphone 16 pro max silicone case blue.jpg
+  • iphone 16 pro max silicone case fuschia.jpg
+  • iphone 16 pro max silicone case magenta.jpg
+  • iphone 16 pro max silicone case sea black.jpg
+  • iphone 16 pro max silicone case yellow.jpg
+  • iphone 16 pro max silicone case blue.jpg
+  • iphone 16 pro max silicone case fuschia.jpg
+  • iphone 16 pro max silicone case magenta.jpg
+  • iphone 16 pro max silicone case sea black.jpg
+  • iphone 16 pro max silicone case yellow.jpg
+  • iphone 16 pro max silicone case blue.jpg
+  • iphone 16 pro max silicone case fuschia.jpg
+  • iphone 16 pro max silicone case magenta.jpg
+  • iphone 16 pro max silicone case sea black.jpg
+  • iphone 16 pro max silicone case yellow.jpg
+  • iphone 16 pro max silicone case blue.jpg
+  • iphone 16 pro max silicone case fuschia.jpg
+  • iphone 16 pro max silicone case magenta.jpg
+  • iphone 16 pro max silicone case sea black.jpg
+
+Placed items (TPA rows incl. screens):
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+
+Top sellers by series (from cases_sales.csv):
+  Pro Max: 15 items
+    • Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Gold              | Brand: Gripp       | Sales: 530
+    • Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Natural Titanium  | Brand: Gripp       | Sales: 351
+    • Gripp FOCAL Camera Lens Protector 3N1 Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Black              | Brand: Gripp       | Sales: 275
+    • iPhone 16 Pro Max Clear Case with MagSafe                                                                           | Brand: Apple       | Sales: 222
+    • Gripp FOCAL Camera Lens Protector 3N1  Compatible with Apple iPhone 16 Pro   iPhone 16 Pro Max  - Silver            | Brand: Gripp       | Sales: 210
+    • Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                      | Brand: Tekne       | Sales: 203
+    • Gripp Dust Proof 3D Tempered Glass for Apple iPhone 16 Pro Max  6.9   - Black                                       | Brand: Gripp       | Sales: 179
+    • Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16 Pro Max-White                                              | Brand: Pulse       | Sales: 165
+    • Tekne CLEAR Case with Camera stand for iPhone 16 Pro Max-Black                                                      | Brand: Tekne       | Sales: 159
+    • Tekne Matt Magsafe Case for iPhone 16 Pro Max-Black                                                                 | Brand: Tekne       | Sales: 157
+    • Pulse CLEAR Case with Camera stand for iPhone 16 Pro Max-White                                                      | Brand: Pulse       | Sales: 149
+    • PULSE ARMOUR Case for iPhone 16 Pro Max-Black                                                                       | Brand: Pulse       | Sales: 142
+    • Gripp Privacy Glass for  Apple iPhone 15 Pro Max  6.7    Black                                                      | Brand: Gripp       | Sales: 114
+    • PULSE Aluminium Rugged Magsafe Case for iPhone 16 Pro Max-Matt Black                                                | Brand: Pulse       | Sales: 112
+    • PULSE Matt Magsafe Case for iPhone 16 Pro Max -Grey                                                                 | Brand: Pulse       | Sales: 106
+
+Note: Grid uses available images only. Sales list includes best candidates even if imagery is missing.

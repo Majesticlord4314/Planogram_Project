@@ -1,0 +1,34 @@
+2025-08-08 17:07:31,124 | INFO     | logger          | __init__             | Logging initialized. Log file: logs/planogram_20250808.log
+2025-08-08 17:07:36,191 | ERROR    | main            | interactive_mode     | Error in interactive mode: 'DataLoader' object has no attribute 'get_available_stores'
+Traceback (most recent call last):
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 48, in interactive_mode
+    run_lob_optimization(loader, logger)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 320, in run_lob_optimization
+    store_type = select_store_type(loader)
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 490, in select_store_type
+    available_stores = loader.get_available_stores()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataLoader' object has no attribute 'get_available_stores'
+2025-08-08 17:07:40,133 | INFO     | logger          | __init__             | Logging initialized. Log file: logs/planogram_20250808.log
+2025-08-08 17:07:50,708 | ERROR    | main            | run_cohort_planogram_interactive | Error in cohort planogram generation: 'DataLoader' object has no attribute 'get_available_stores'
+Traceback (most recent call last):
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 100, in run_cohort_planogram_interactive
+    store_type = select_store_type(loader)
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 490, in select_store_type
+    available_stores = loader.get_available_stores()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataLoader' object has no attribute 'get_available_stores'
+2025-08-08 17:08:04,482 | INFO     | logger          | __init__             | Logging initialized. Log file: logs/planogram_20250808.log
+2025-08-08 17:08:13,899 | INFO     | logger          | __init__             | Logging initialized. Log file: logs/planogram_20250808.log
+2025-08-08 17:08:17,755 | ERROR    | main            | interactive_mode     | Error in interactive mode: 'DataLoader' object has no attribute 'get_available_stores'
+Traceback (most recent call last):
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 48, in interactive_mode
+    run_lob_optimization(loader, logger)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 320, in run_lob_optimization
+    store_type = select_store_type(loader)
+  File "/Users/shivansh420/Desktop/Planogram/main.py", line 490, in select_store_type
+    available_stores = loader.get_available_stores()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataLoader' object has no attribute 'get_available_stores'

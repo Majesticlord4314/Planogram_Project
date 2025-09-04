@@ -1,0 +1,79 @@
+Cases & Covers (Accessory-based)
+Store: IMAGINE- KORAMANGALA BENGALURU (BANGALORE)
+Store Category: flagship
+Wall: 1 of 4
+Grid: 8x6
+Apple rows: 4
+Series: base
+
+Placed items (Apple rows):
+  • iphone 16 silicone case black.jpg
+  • iphone 16 silicone case blue.jpg
+  • iphone 16 silicone case gray.jpg
+  • iphone 16 silicone case magenta.jpg
+  • iphone 16 silicone case pink.jpg
+  • iphone 16 silicone case yellow.jpg
+  • iphone 16e silicone case fuschia.jpg
+  • iphone 16 silicone case black.jpg
+  • iphone 16 silicone case blue.jpg
+  • iphone 16 silicone case gray.jpg
+  • iphone 16 silicone case magenta.jpg
+  • iphone 16 silicone case pink.jpg
+  • iphone 16 silicone case yellow.jpg
+  • iphone 16e silicone case fuschia.jpg
+  • iphone 16 silicone case black.jpg
+  • iphone 16 silicone case blue.jpg
+  • iphone 16 silicone case gray.jpg
+  • iphone 16 silicone case magenta.jpg
+  • iphone 16 silicone case pink.jpg
+  • iphone 16 silicone case yellow.jpg
+  • iphone 16e silicone case fuschia.jpg
+  • iphone 16 silicone case black.jpg
+  • iphone 16 silicone case blue.jpg
+  • iphone 16 silicone case gray.jpg
+
+Placed items (TPA rows incl. screens):
+  • Gripp iphone 16 clear case.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Tekne iphone 16 armour case.jpg
+  • Tekne iphone 16 clear case.jpg
+  • Tekne iphone 16 clear magsafe case.jpg
+  • Tekne iphone 16 crystal magsafe case.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+  • Gripp iphone 16 clear case.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Tekne iphone 16 armour case.jpg
+  • Tekne iphone 16 clear case.jpg
+  • Tekne iphone 16 clear magsafe case.jpg
+  • Tekne iphone 16 crystal magsafe case.jpg
+  • Gripp screen protector iphone 15.jpg
+  • Gripp screen protector iphone 16e.jpg
+  • Panzer screen protector 2.jpg
+  • Panzer screen protector.jpg
+  • gripp ipad air screen protector.jpg
+  • tucano ipad air screen protector.jpg
+
+Top sellers by series (from cases_sales.csv):
+  Base: 15 items
+    • Gripp Clear MagSafe Case for Apple iPhone 15 Max  6.7  with White Ring - Clear                                      | Brand: Gripp       | Sales: 421
+    • Pulse CRYSTAL Case with Metal Camera Stand for iPhone 16-White                                                      | Brand: Pulse       | Sales: 385
+    • Pulse Super crystal magsafe case for iPhone 15-Black                                                                | Brand: Pulse       | Sales: 315
+    • Pulse HORNOR Case for iPhone 15-Black                                                                               | Brand: Pulse       | Sales: 304
+    • Pulse Newton Magsafe Case for iPhone 15-Grey                                                                        | Brand: Pulse       | Sales: 297
+    • PULSE ARMOUR Case for iPhone 16-Black                                                                               | Brand: Pulse       | Sales: 296
+    • PULSE Matt Magsafe Case for iPhone 16-Black                                                                         | Brand: Pulse       | Sales: 295
+    • Pulse Clear Magsafe Case for iPhone 15-Clear                                                                        | Brand: Pulse       | Sales: 291
+    • Pulse LIQUID silicon case for iPhone 15-Storm Blue                                                                  | Brand: Pulse       | Sales: 291
+    • Pulse LIQUID silicon case for iPhone 15-Black                                                                       | Brand: Pulse       | Sales: 290
+    • Pulse Tire magsafe case for iPhone 15 Black                                                                         | Brand: Pulse       | Sales: 290
+    • Pulse Newton Magsafe Case for iPhone 15-Black                                                                       | Brand: Pulse       | Sales: 289
+    • Pulse THOR Leather case for iPhone 15-Black                                                                         | Brand: Pulse       | Sales: 284
+    • Pulse THOR Leather case for iPhone 15-Blue                                                                          | Brand: Pulse       | Sales: 283
+    • Pulse FROSTED Case for iPhone 15-Black                                                                              | Brand: Pulse       | Sales: 270
+
+Note: Grid uses available images only. Sales list includes best candidates even if imagery is missing.
