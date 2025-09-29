@@ -115,6 +115,7 @@ const COHORT_CATEGORIES = [
 const ACCESSORY_CATEGORIES = [
   'cases',
   'ipad_accessories',
+  'mac_accessories',
   'organizers_cables',
   'audio',
   'bags_sleeves'
@@ -483,6 +484,7 @@ const StoreSelector: React.FC = () => {
     const formatMap: Record<string, string> = {
       'cases': 'Cases & Covers',
       'ipad_accessories': 'iPad Accessories',
+      'mac_accessories': 'Mac Accessories',
       'organizers_cables': 'Organizers & Cables',
       'audio': 'Audio Products',
       'bags_sleeves': 'Bags & Sleeves'
@@ -1203,7 +1205,7 @@ const StoreSelector: React.FC = () => {
               >
                 <Typography variant="h6" color="primary" sx={{ mb: 1 }}>🛒 Accessory-Based Optimization</Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Generate planograms for specific accessory categories like cases, iPad accessories, charging cables, audio products, etc.
+                  Generate planograms for specific accessory categories like cases, iPad accessories, Mac accessories, charging cables, audio products, etc.
                 </Typography>
               </Card>
             </Grid>

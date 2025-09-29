@@ -82232,3 +82232,217 @@ OSError: [Errno 5] Input/output error
 2025-09-02 20:46:09,372 - app - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 1, 'Miscellaneous': 3, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
 2025-09-02 20:46:09,372 - app - INFO - Changes needed: {}
 2025-09-03 14:19:19,843 - app - INFO - Loaded store reference with 45 stores
+2025-09-04 20:24:58,290 - matplotlib.font_manager - INFO - generated new fontManager
+2025-09-04 20:24:58,884 - __main__ - INFO - Starting Apple Store Planogram Optimization System...
+2025-09-04 20:24:58,884 - __main__ - INFO - Project root: C:\Users\Workstation PC\Planogram_Project
+2025-09-04 20:24:58,884 - __main__ - INFO - Listening on port 5001
+2025-09-04 20:24:58,941 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.16.73.89:5001
+2025-09-04 20:24:58,941 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 21:10:48,139 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-04 21:10:48,320 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:48,340 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-04 21:10:48,340 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-04 21:10:48,340 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:10:48,340 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:10:48,399 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-04 21:10:48,414 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:48] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-04 21:10:49,343 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:49] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:50,744 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:50] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:51,745 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:51] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:52,762 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:52] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:54,113 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:54] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:56,131 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:56] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:10:58,686 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-04 21:10:58,686 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-04 21:10:58,686 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-04 21:10:58,686 - __main__ - INFO - Current distribution: {'Adapters & Cables': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 2}
+2025-09-04 21:10:58,686 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-04 21:10:58,686 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-04 21:10:58,686 - __main__ - INFO - Detected imbalances: [{'lob': 'Cases & Covers', 'current': 2, 'needed': 1, 'reason': 'iPhone accessories underrepresented (priority 1)'}]
+2025-09-04 21:10:58,686 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-04 21:10:58,686 - __main__ - INFO - Changes needed: {'Adapters & Cables': {'current': 3, 'optimal': 2, 'walls_affected': -1, 'action': 'REMOVE', 'change_type': 'decrease', 'reason': 'Business priority optimization for Adapters & Cables'}, 'Cases & Covers': {'current': 2, 'optimal': 3, 'walls_affected': 1, 'action': 'ADD', 'change_type': 'increase', 'reason': 'Business priority optimization for Cases & Covers'}}
+2025-09-04 21:10:58,686 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:58] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-04 21:10:58,686 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:58] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-04 21:10:59,276 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:10:59] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:11:03,856 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:03] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:11:10,944 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:10] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:11:18,344 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:18] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:11:21,112 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:21] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:11:36,144 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-04 21:11:36,144 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-04 21:11:36,144 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-04 21:11:36,144 - __main__ - INFO - Current distribution: {'Adapters & Cables': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 2}
+2025-09-04 21:11:36,144 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:36] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-04 21:11:36,144 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-04 21:11:36,159 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-04 21:11:36,159 - __main__ - INFO - Detected imbalances: [{'lob': 'Cases & Covers', 'current': 2, 'needed': 1, 'reason': 'iPhone accessories underrepresented (priority 1)'}]
+2025-09-04 21:11:36,159 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-04 21:11:36,159 - __main__ - INFO - Changes needed: {'Adapters & Cables': {'current': 3, 'optimal': 2, 'walls_affected': -1, 'action': 'REMOVE', 'change_type': 'decrease', 'reason': 'Business priority optimization for Adapters & Cables'}, 'Cases & Covers': {'current': 2, 'optimal': 3, 'walls_affected': 1, 'action': 'ADD', 'change_type': 'increase', 'reason': 'Business priority optimization for Cases & Covers'}}
+2025-09-04 21:11:36,159 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:36] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-04 21:11:41,133 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:41] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-04 21:11:48,428 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:11:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:12:18,429 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:12:18] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:12:48,586 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:12:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:13:18,593 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:13:18] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:13:48,959 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:13:48] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:14:18,956 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:14:18] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:14:49,722 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:14:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:15:19,725 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:15:19] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:15:49,737 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:15:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:16:19,738 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:16:19] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:16:49,822 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:16:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:17:19,953 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:17:19] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:17:49,964 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:17:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:18:19,973 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:18:19] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:18:50,623 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:18:50] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:19:20,869 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:19:20] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:19:51,067 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:19:51] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:20:21,203 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:20:21] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:20:51,421 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:20:51] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:21:21,646 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:21:21] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:21:51,658 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:21:51] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:22:24,700 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:22:24] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:22:54,698 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:22:54] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:23:24,713 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:23:24] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:23:54,729 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:23:54] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:24:25,263 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:24:25] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:24:55,271 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:24:55] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:25:25,287 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:25:25] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:25:56,020 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:25:56] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:26:26,285 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:26:26] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:26:56,316 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:26:56] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:27:26,333 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:27:26] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:27:57,106 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:27:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:28:27,367 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:28:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:28:57,645 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:28:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:29:27,916 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:29:27] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:29:57,920 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:29:57] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:30:28,298 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:30:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:30:58,507 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:30:58] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-04 21:31:28,512 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 21:31:28] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:31:55,532 - __main__ - INFO - Starting Apple Store Planogram Optimization System...
+2025-09-10 17:31:55,532 - __main__ - INFO - Project root: C:\Users\Workstation PC\Planogram_Project
+2025-09-10 17:31:55,532 - __main__ - INFO - Listening on port 5001
+2025-09-10 17:31:55,544 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.16.73.89:5001
+2025-09-10 17:31:55,544 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 17:33:49,156 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-10 17:33:49,156 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:49] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:49,156 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:33:49,156 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-10 17:33:49,170 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:33:50,171 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:50] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:51,022 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-10 17:33:51,116 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:51] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-10 17:33:51,128 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:51] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-10 17:33:51,358 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:51] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:52,205 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:52] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:53,454 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:53] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:55,322 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:55] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:58,172 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:58] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:33:58,621 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-10 17:33:58,621 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-10 17:33:58,621 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-10 17:33:58,621 - __main__ - INFO - Current distribution: {'Adapters & Cables': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 2}
+2025-09-10 17:33:58,621 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:58] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-10 17:33:58,621 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-10 17:33:58,621 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-10 17:33:58,621 - __main__ - INFO - Detected imbalances: [{'lob': 'Cases & Covers', 'current': 2, 'needed': 1, 'reason': 'iPhone accessories underrepresented (priority 1)'}]
+2025-09-10 17:33:58,621 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:33:58,621 - __main__ - INFO - Changes needed: {'Adapters & Cables': {'current': 3, 'optimal': 2, 'walls_affected': -1, 'action': 'REMOVE', 'change_type': 'decrease', 'reason': 'Business priority optimization for Adapters & Cables'}, 'Cases & Covers': {'current': 2, 'optimal': 3, 'walls_affected': 1, 'action': 'ADD', 'change_type': 'increase', 'reason': 'Business priority optimization for Cases & Covers'}}
+2025-09-10 17:33:58,621 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:33:58] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-10 17:34:01,204 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:01] "OPTIONS /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/save-wall-config HTTP/1.1" 200 -
+2025-09-10 17:34:01,204 - __main__ - INFO - Received wall config for IMAGINE- KORAMANGALA BENGALURU: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:34:01,204 - __main__ - INFO - Stored wall configuration for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:34:01,204 - planogram_services.planogram_manager - INFO - Stored final wall config for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:34:01,204 - __main__ - INFO - Final wall configuration stored for planogram generation: imagine- koramangala bengaluru
+2025-09-10 17:34:01,204 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:01] "POST /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/save-wall-config HTTP/1.1" 200 -
+2025-09-10 17:34:01,221 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-10 17:34:01,221 - __main__ - INFO - Using saved user configuration for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:34:01,228 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:01] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-10 17:34:01,260 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-10 17:34:01,260 - __main__ - INFO - Using saved user configuration for optimization: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:34:01,260 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-10 17:34:01,260 - __main__ - INFO - Current distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:34:01,261 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-10 17:34:01,261 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-10 17:34:01,261 - __main__ - INFO - No significant imbalances detected - current distribution is reasonable
+2025-09-10 17:34:01,261 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:34:01,261 - __main__ - INFO - Changes needed: {}
+2025-09-10 17:34:01,261 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:01] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-10 17:34:02,688 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:02] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:34:09,339 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:09] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:34:18,772 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:18] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:34:19,155 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:19] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:34:38,788 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:38] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:34:49,419 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:34:49] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:42:30,363 - __main__ - INFO - Starting Apple Store Planogram Optimization System...
+2025-09-10 17:42:30,363 - __main__ - INFO - Project root: C:\Users\Workstation PC\Planogram_Project
+2025-09-10 17:42:30,363 - __main__ - INFO - Listening on port 5001
+2025-09-10 17:42:30,375 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.16.73.89:5001
+2025-09-10 17:42:30,375 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 17:51:59,185 - __main__ - INFO - Starting Apple Store Planogram Optimization System...
+2025-09-10 17:51:59,186 - __main__ - INFO - Project root: C:\Users\Workstation PC\Planogram_Project
+2025-09-10 17:51:59,186 - __main__ - INFO - Listening on port 5001
+2025-09-10 17:51:59,198 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.16.73.89:5001
+2025-09-10 17:51:59,198 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 17:53:07,531 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-10 17:53:07,533 - __main__ - INFO - Loaded store reference with 45 stores
+2025-09-10 17:53:07,534 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:53:07,534 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:07] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:53:07,836 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:07] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:07,876 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:07] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-10 17:53:07,891 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:07] "GET /api/stores/analysis HTTP/1.1" 200 -
+2025-09-10 17:53:08,436 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:08] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:09,119 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:09] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:10,452 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:10] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:11,968 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:11] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:14,235 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:14] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:17,653 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:17] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:17,673 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-10 17:53:17,673 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-10 17:53:17,673 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-10 17:53:17,681 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:17] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-10 17:53:17,681 - __main__ - INFO - Current distribution: {'Adapters & Cables': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 2}
+2025-09-10 17:53:17,681 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-10 17:53:17,681 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-10 17:53:17,682 - __main__ - INFO - Detected imbalances: [{'lob': 'Cases & Covers', 'current': 2, 'needed': 1, 'reason': 'iPhone accessories underrepresented (priority 1)'}]
+2025-09-10 17:53:17,682 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:53:17,682 - __main__ - INFO - Changes needed: {'Adapters & Cables': {'current': 3, 'optimal': 2, 'walls_affected': -1, 'action': 'REMOVE', 'change_type': 'decrease', 'reason': 'Business priority optimization for Adapters & Cables'}, 'Cases & Covers': {'current': 2, 'optimal': 3, 'walls_affected': 1, 'action': 'ADD', 'change_type': 'increase', 'reason': 'Business priority optimization for Cases & Covers'}}
+2025-09-10 17:53:17,683 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:17] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-10 17:53:22,762 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:22] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:27,423 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:27] "OPTIONS /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/save-wall-config HTTP/1.1" 200 -
+2025-09-10 17:53:27,423 - __main__ - INFO - Received wall config for IMAGINE- KORAMANGALA BENGALURU: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:53:27,423 - __main__ - INFO - Stored wall configuration for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:53:27,423 - planogram_services.planogram_manager - INFO - Stored final wall config for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:53:27,423 - __main__ - INFO - Final wall configuration stored for planogram generation: imagine- koramangala bengaluru
+2025-09-10 17:53:27,423 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:27] "POST /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/save-wall-config HTTP/1.1" 200 -
+2025-09-10 17:53:27,423 - __main__ - INFO - Decoded name: imagine- koramangala bengaluru
+2025-09-10 17:53:27,423 - __main__ - INFO - Using saved user configuration for imagine- koramangala bengaluru: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:53:27,435 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:27] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/lob-details HTTP/1.1" 200 -
+2025-09-10 17:53:27,470 - __main__ - INFO - === Optimization request for store: IMAGINE- KORAMANGALA BENGALURU ===
+2025-09-10 17:53:27,470 - __main__ - INFO - Using saved user configuration for optimization: {'Adapters & Cables': 2, 'Cases & Covers': 3, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1}
+2025-09-10 17:53:27,471 - __main__ - INFO - Store: imagine- koramangala bengaluru, Total walls: 11
+2025-09-10 17:53:27,471 - __main__ - INFO - Current distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:53:27,471 - __main__ - INFO - Capacity summary: {'Adapters & Cables': 128, 'Mac Accessories': 352, 'Miscellaneous': 12, 'Watch Accessories': 360, 'iPad Accessories': 100, 'Cases & Covers': 1332}
+2025-09-10 17:53:27,471 - __main__ - INFO - Capacity scores: {'Adapters & Cables': 0.05604203152364273, 'Mac Accessories': 0.15411558669001751, 'Miscellaneous': 0.005253940455341506, 'Watch Accessories': 0.15761821366024517, 'iPad Accessories': 0.043782837127845885, 'Cases & Covers': 0.5831873905429071}
+2025-09-10 17:53:27,471 - __main__ - INFO - No significant imbalances detected - current distribution is reasonable
+2025-09-10 17:53:27,471 - __main__ - INFO - Optimal distribution: {'Adapters & Cables': 2, 'Mac Accessories': 2, 'Miscellaneous': 2, 'Watch Accessories': 1, 'iPad Accessories': 1, 'Cases & Covers': 3}
+2025-09-10 17:53:27,471 - __main__ - INFO - Changes needed: {}
+2025-09-10 17:53:27,471 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:27] "GET /api/stores/IMAGINE-%20KORAMANGALA%20BENGALURU/recommendations HTTP/1.1" 200 -
+2025-09-10 17:53:30,391 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:30] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:53:37,541 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:37] "GET /api/system/info HTTP/1.1" 200 -
+2025-09-10 17:53:41,880 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:53:41] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:54:01,900 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:54:01] "[33mGET /socket.io/?EIO=4&transport=websocket HTTP/1.1[0m" 404 -
+2025-09-10 17:54:08,084 - werkzeug - INFO - 127.0.0.1 - - [10/Sep/2025 17:54:08] "GET /api/system/info HTTP/1.1" 200 -

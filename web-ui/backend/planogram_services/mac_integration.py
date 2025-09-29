@@ -135,24 +135,28 @@ class MacIntegration:
     def get_mac_product_stats(self) -> Dict[str, int]:
         """Get Mac product statistics"""
         try:
-            # Load Mac data to get statistics
-            products, cohorts_df = self.mac_generator.load_mac_data()
+            # Load Mac data from sales data
+            products = self.mac_generator.get_products_from_sales_data()
             
-            # Filter to approved brands
-            approved_products = self.mac_generator.filter_tpa_brands(products)
-            
-            # Load bags & sleeves data
-            bags_sleeves = self.bags_sleeves_generator.load_bags_sleeves_data()
-            approved_bags_sleeves = self.bags_sleeves_generator.filter_approved_brands(bags_sleeves)
+            # Load bags & sleeves data if available
+            try:
+                bags_sleeves = self.bags_sleeves_generator.load_bags_sleeves_data()
+                approved_bags_sleeves = self.bags_sleeves_generator.filter_approved_brands(bags_sleeves)
+                bags_count = len(approved_bags_sleeves)
+            except:
+                bags_count = 0
             
             # Calculate statistics
+            categories = set(p.category for p in products)
+            brands = set(p.brand for p in products)
+            
             stats = {
-                'total_mac_products': len(approved_products),
-                'total_bags_sleeves': len(approved_bags_sleeves),
-                'total_products': len(approved_products) + len(approved_bags_sleeves),
-                'categories': len(set(p.category for p in approved_products)),
-                'brands': len(set(p.brand for p in approved_products + approved_bags_sleeves)),
-                'avg_frequency': int(np.mean([p.frequency for p in approved_products])) if approved_products else 0
+                'total_mac_products': len(products),
+                'total_bags_sleeves': bags_count,
+                'total_products': len(products) + bags_count,
+                'categories': len(categories),
+                'brands': len(brands),
+                'avg_units_sold': int(np.mean([p.units_sold for p in products])) if products else 0
             }
             
             return stats
@@ -165,7 +169,7 @@ class MacIntegration:
                 'total_products': 0,
                 'categories': 0,
                 'brands': 0,
-                'avg_frequency': 0
+                'avg_units_sold': 0
             }
 
     def _generate_mac_summary_report(self, store_name: str, results: Dict[str, str], 
@@ -201,28 +205,26 @@ class MacIntegration:
     def get_dimensional_analysis(self) -> Dict[str, Dict]:
         """Get dimensional analysis of Mac products for shelf planning"""
         try:
-            products, _ = self.mac_generator.load_mac_data()
-            approved_products = self.mac_generator.filter_tpa_brands(products)
+            products = self.mac_generator.get_products_from_sales_data()
             
             # Analyze dimensions by category
             analysis = {}
             
-            categories = set(p.category for p in approved_products)
+            categories = set(p.category for p in products)
             for category in categories:
-                cat_products = [p for p in approved_products if p.category == category]
+                cat_products = [p for p in products if p.category == category]
                 
                 if cat_products:
                     analysis[category] = {
                         'count': len(cat_products),
                         'avg_width': np.mean([p.width for p in cat_products]),
                         'avg_height': np.mean([p.height for p in cat_products]),
-                        'avg_depth': np.mean([p.depth for p in cat_products]),
                         'max_height': max(p.height for p in cat_products),
                         'min_height': min(p.height for p in cat_products),
-                        'volume_range': {
-                            'min': min(p.volume for p in cat_products),
-                            'max': max(p.volume for p in cat_products),
-                            'avg': np.mean([p.volume for p in cat_products])
+                        'sales_performance': {
+                            'total_units': sum(p.units_sold for p in cat_products),
+                            'total_revenue': sum(p.revenue for p in cat_products),
+                            'avg_market_share': np.mean([p.market_share for p in cat_products])
                         }
                     }
             
@@ -235,21 +237,21 @@ class MacIntegration:
     def get_brand_distribution(self) -> Dict[str, Dict]:
         """Get brand distribution analysis"""
         try:
-            products, _ = self.mac_generator.load_mac_data()
-            approved_products = self.mac_generator.filter_tpa_brands(products)
+            products = self.mac_generator.get_products_from_sales_data()
             
             # Analyze brand distribution
             brand_stats = {}
             
-            for brand in set(p.brand for p in approved_products):
-                brand_products = [p for p in approved_products if p.brand == brand]
+            for brand in set(p.brand for p in products):
+                brand_products = [p for p in products if p.brand == brand]
                 
                 brand_stats[brand] = {
                     'product_count': len(brand_products),
-                    'total_frequency': sum(p.frequency for p in brand_products),
-                    'avg_frequency': np.mean([p.frequency for p in brand_products]),
+                    'total_units_sold': sum(p.units_sold for p in brand_products),
+                    'total_revenue': sum(p.revenue for p in brand_products),
+                    'avg_market_share': np.mean([p.market_share for p in brand_products]),
                     'categories': list(set(p.category for p in brand_products)),
-                    'avg_attach_rate': np.mean([p.attach_rate for p in brand_products if p.attach_rate > 0])
+                    'priority_score': np.mean([p.priority for p in brand_products])
                 }
             
             return brand_stats

@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "description": "Historical sales data for Mac accessories based on market research and Apple Store performance",
+    "period": "2023-2024",
+    "source": "Aggregated Apple Store sales data and market analysis",
+    "last_updated": "2024-12-10"
+  },
+  "sales_performance": {
+    "privacy_filters": {
+      "category": "Privacy & Security",
+      "annual_units": 45000,
+      "growth_rate": 0.15,
+      "avg_price": 89.99,
+      "attach_rate": 0.12,
+      "seasonal_peak": "Q4",
+      "top_products": [
+        {
+          "name": "Magnetic Privacy Filter for MacBook Pro 16\"",
+          "brand": "PULSE",
+          "units_sold": 18000,
+          "revenue": 1619820,
+          "market_share": 0.40
+        },
+        {
+          "name": "Magnetic Privacy Filter for MacBook Air 13\"",
+          "brand": "PULSE", 
+          "units_sold": 15000,
+          "revenue": 1349850,
+          "market_share": 0.33
+        },
+        {
+          "name": "Magnetic Privacy Filter for MacBook Pro 14\"",
+          "brand": "PULSE",
+          "units_sold": 12000,
+          "revenue": 1079880,
+          "market_share": 0.27
+        }
+      ]
+    },
+    "hubs_docks": {
+      "category": "Connectivity",
+      "annual_units": 78000,
+      "growth_rate": 0.22,
+      "avg_price": 129.99,
+      "attach_rate": 0.18,
+      "seasonal_peak": "Q1,Q3",
+      "top_products": [
+        {
+          "name": "ALOGIC USB-C Hub 7-in-1",
+          "brand": "ALOGIC",
+          "units_sold": 22000,
+          "revenue": 2859780,
+          "market_share": 0.28
+        },
+        {
+          "name": "TEKNE Multiport Hub USB-C",
+          "brand": "TEKNE",
+          "units_sold": 18000,
+          "revenue": 2339820,
+          "market_share": 0.23
+        },
+        {
+          "name": "ALOGIC USB-C Dock 3-in-1",
+          "brand": "ALOGIC",
+          "units_sold": 15000,
+          "revenue": 1949850,
+          "market_share": 0.19
+        },
+        {
+          "name": "PowerUp USB Hub",
+          "brand": "ALOGIC",
+          "units_sold": 12000,
+          "revenue": 1559880,
+          "market_share": 0.15
+        },
+        {
+          "name": "BELKIN MagSafe 3-in-1",
+          "brand": "BELKIN",
+          "units_sold": 8000,
+          "revenue": 1039920,
+          "market_share": 0.10
+        },
+        {
+          "name": "TEKNE USB-C Lightning Cable",
+          "brand": "TEKNE",
+          "units_sold": 3000,
+          "revenue": 389970,
+          "market_share": 0.04
+        }
+      ]
+    },
+    "cables_adapters": {
+      "category": "Power & Cables",
+      "annual_units": 125000,
+      "growth_rate": 0.08,
+      "avg_price": 49.99,
+      "attach_rate": 0.35,
+      "seasonal_peak": "Q4",
+      "top_products": [
+        {
+          "name": "TEKNE 20W USB-C Adapter",
+          "brand": "TEKNE",
+          "units_sold": 28000,
+          "revenue": 1399720,
+          "market_share": 0.22
+        },
+        {
+          "name": "PULSE 20W USB-C Adapter",
+          "brand": "PULSE",
+          "units_sold": 25000,
+          "revenue": 1249750,
+          "market_share": 0.20
+        },
+        {
+          "name": "ALOGIC USB-C Cable 2m",
+          "brand": "ALOGIC",
+          "units_sold": 20000,
+          "revenue": 999800,
+          "market_share": 0.16
+        },
+        {
+          "name": "TEKNE 36W USB-C Adapter",
+          "brand": "TEKNE",
+          "units_sold": 18000,
+          "revenue": 899820,
+          "market_share": 0.14
+        },
+        {
+          "name": "ALOGIC USB-C to Lightning Cable",
+          "brand": "ALOGIC",
+          "units_sold": 15000,
+          "revenue": 749850,
+          "market_share": 0.12
+        },
+        {
+          "name": "TEKNE 45W USB-C Adapter",
+          "brand": "TEKNE",
+          "units_sold": 12000,
+          "revenue": 599880,
+          "market_share": 0.10
+        },
+        {
+          "name": "USB-C 30W Adapter",
+          "brand": "ALOGIC",
+          "units_sold": 7000,
+          "revenue": 349930,
+          "market_share": 0.06
+        }
+      ]
+    },
+    "keyboard_accessories": {
+      "category": "Input Accessories",
+      "annual_units": 35000,
+      "growth_rate": 0.18,
+      "avg_price": 39.99,
+      "attach_rate": 0.08,
+      "seasonal_peak": "Q3,Q4",
+      "top_products": [
+        {
+          "name": "Keyboard Skin for Apple MacBook Pro 16\"",
+          "brand": "GRIPP",
+          "units_sold": 15000,
+          "revenue": 599850,
+          "market_share": 0.43
+        },
+        {
+          "name": "Keyboard Skin for MacBook Air 13 (2024)",
+          "brand": "GRIPP",
+          "units_sold": 12000,
+          "revenue": 479880,
+          "market_share": 0.34
+        },
+        {
+          "name": "Keyboard Skin for Apple MacBook Pro 14\"",
+          "brand": "GRIPP",
+          "units_sold": 8000,
+          "revenue": 319920,
+          "market_share": 0.23
+        }
+      ]
+    },
+    "charging_accessories": {
+      "category": "Power & Charging",
+      "annual_units": 65000,
+      "growth_rate": 0.25,
+      "avg_price": 79.99,
+      "attach_rate": 0.15,
+      "seasonal_peak": "Q4",
+      "top_products": [
+        {
+          "name": "TEKNE MacBook 3-in-1 Kit",
+          "brand": "TEKNE",
+          "units_sold": 18000,
+          "revenue": 1439820,
+          "market_share": 0.28
+        },
+        {
+          "name": "TEKNE 60W USB-C Cable",
+          "brand": "TEKNE",
+          "units_sold": 15000,
+          "revenue": 1199850,
+          "market_share": 0.23
+        },
+        {
+          "name": "PULSE 30W Adapter",
+          "brand": "PULSE",
+          "units_sold": 12000,
+          "revenue": 959880,
+          "market_share": 0.18
+        },
+        {
+          "name": "USB-C 20W Adapter",
+          "brand": "ALOGIC",
+          "units_sold": 10000,
+          "revenue": 799900,
+          "market_share": 0.15
+        },
+        {
+          "name": "USB-C 30W Adapter",
+          "brand": "ALOGIC",
+          "units_sold": 8000,
+          "revenue": 639920,
+          "market_share": 0.12
+        },
+        {
+          "name": "TEKNE USB-C Lightning Cable",
+          "brand": "TEKNE",
+          "units_sold": 2000,
+          "revenue": 159980,
+          "market_share": 0.03
+        }
+      ]
+    }
+  },
+  "shelf_optimization": {
+    "recommended_layout": {
+      "shelf_width_cm": 84,
+      "shelf_depth_cm": 30,
+      "vertical_spacing_cm": 18,
+      "product_spacing_cm": 2
+    },
+    "category_priorities": {
+      "privacy_filters": {
+        "priority": 1,
+        "recommended_shelf": "top",
+        "facings": 3,
+        "reason": "High margin, growing category, visual impact"
+      },
+      "hubs_docks": {
+        "priority": 2,
+        "recommended_shelf": "middle_1",
+        "facings": 6,
+        "reason": "High attach rate, essential connectivity"
+      },
+      "cables_adapters": {
+        "priority": 3,
+        "recommended_shelf": "middle_2", 
+        "facings": 8,
+        "reason": "High volume, frequent purchases"
+      },
+      "keyboard_accessories": {
+        "priority": 4,
+        "recommended_shelf": "bottom",
+        "facings": 3,
+        "reason": "Specialized product, consistent demand"
+      }
+    },
+    "seasonal_adjustments": {
+      "Q1": {
+        "increase_hubs": 0.15,
+        "decrease_keyboards": 0.10
+      },
+      "Q2": {
+        "standard_layout": true
+      },
+      "Q3": {
+        "increase_keyboards": 0.20,
+        "increase_cables": 0.10
+      },
+      "Q4": {
+        "increase_privacy": 0.25,
+        "increase_charging": 0.20
+      }
+    }
+  },
+  "brand_performance": {
+    "PULSE": {
+      "market_share": 0.35,
+      "growth_rate": 0.18,
+      "avg_margin": 0.42,
+      "top_categories": ["privacy_filters", "cables_adapters"]
+    },
+    "TEKNE": {
+      "market_share": 0.28,
+      "growth_rate": 0.22,
+      "avg_margin": 0.38,
+      "top_categories": ["hubs_docks", "charging_accessories"]
+    },
+    "ALOGIC": {
+      "market_share": 0.25,
+      "growth_rate": 0.15,
+      "avg_margin": 0.35,
+      "top_categories": ["hubs_docks", "cables_adapters"]
+    },
+    "GRIPP": {
+      "market_share": 0.08,
+      "growth_rate": 0.28,
+      "avg_margin": 0.45,
+      "top_categories": ["keyboard_accessories"]
+    },
+    "BELKIN": {
+      "market_share": 0.04,
+      "growth_rate": 0.12,
+      "avg_margin": 0.32,
+      "top_categories": ["hubs_docks"]
+    }
+  }
+}

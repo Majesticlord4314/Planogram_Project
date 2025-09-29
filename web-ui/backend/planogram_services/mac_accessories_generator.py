@@ -1,348 +1,393 @@
 """
-Mac Accessories Planogram Generator (Clean 4-row version)
-- Reads products from dataset (CSV with cohort file)
-- Builds 4 rows based on business rules (no hard-coded products)
-- Matches row widths visually for Rows 1–3; Row 4 has exactly 3 keyboard covers centered
+Enhanced Mac Accessories Planogram Generator with Historical Sales Data Integration
+- Uses real product images from databank
+- Integrates historical sales data for optimal product placement
+- Creates realistic shelf layouts with proper package sizing
+- Supports constant shelf dimensions with varied product sizes
 """
 from __future__ import annotations
 
+import os
+import json
 import logging
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
-
-import pandas as pd
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from PIL import Image
+import numpy as np
 
 # Repo root (Planogram)
 REPO_ROOT = Path(__file__).resolve().parents[3]
-DATA_CSV = REPO_ROOT / "data/raw/accessories/mac-accessories-transformed.csv"
-COHORT_CSV = REPO_ROOT / "data/raw/cohorts/mac_planogram_cohorts.csv"
-OUTPUT_DIR = REPO_ROOT / "output"
+HISTORICAL_DATA = REPO_ROOT / "data/historical_sales_mac_accessories.json"
+IMAGE_DATABANK = REPO_ROOT / "pdf_databank/output/images/combined"
+OUTPUT_DIR = REPO_ROOT / "web-ui/backend/output"
 
 logger = logging.getLogger(__name__)
 
 
 @dataclass
 class MacProduct:
-    product_name: str
-    series: str
-    category: str
-    subcategory: str
+    """Enhanced Mac product with sales data"""
+    name: str
     brand: str
+    category: str
+    image_file: str
+    units_sold: int
+    revenue: float
+    market_share: float
     width: float
     height: float
-    depth: float
-    frequency: int
-    attach_rate: float
+    priority: int
 
 
 class MacAccessoriesGenerator:
     def __init__(self):
         self.logger = logging.getLogger(self.__class__.__name__)
-
-    # -------------------------- Data -------------------------- #
-    def load_mac_data(self) -> List[MacProduct]:
-        if not DATA_CSV.exists():
-            raise FileNotFoundError(f"Missing Mac accessories file: {DATA_CSV}")
-        if not COHORT_CSV.exists():
-            raise FileNotFoundError(f"Missing Mac cohorts file: {COHORT_CSV}")
-
-        acc = pd.read_csv(DATA_CSV)
-        acc.columns = acc.columns.str.strip()
-        acc = acc.apply(lambda s: s.str.strip() if s.dtype == "object" else s)
-
-        cohorts = pd.read_csv(COHORT_CSV)
-        cohorts.columns = cohorts.columns.str.strip()
-        attach = {r["accessory_product"]: float(r["attach_rate"]) for _, r in cohorts.iterrows()}
-
-        products: List[MacProduct] = []
-        for _, r in acc.iterrows():
-            products.append(
-                MacProduct(
-                    product_name=r["product_name"],
-                    series=r["series"],
-                    category=(r["category"] or "").strip().lower(),
-                    subcategory=str(r["subcategory"]).strip(),
-                    brand=str(r["brand"]).strip(),
-                    width=float(r["width"]),
-                    height=float(r["height"]),
-                    depth=float(r["depth"]),
-                    frequency=int(r["frequency"]),
-                    attach_rate=float(attach.get(r["product_name"], 0.0)),
-                )
-            )
-        # Prioritize by attach_rate * frequency
-        products.sort(key=lambda p: p.attach_rate * p.frequency, reverse=True)
-        return products
-
-    # ------------------------ Helpers ------------------------- #
-    @staticmethod
-    def _w_h(p: MacProduct) -> Tuple[float, float]:
-        """Map real dimensions to display rectangles.
-        - Use width as-is
-        - Use the larger of height/depth as display height (packages often have depth > height)
-        - Apply category-aware scaling so privacy filters are visually larger
-        """
-        c = (p.category or "").lower()
-        width_cm = float(p.width or 0)
-        height_cm = float(max(p.height or 0, p.depth or 0))
-
-        # Base pixel scales
-        base_w = width_cm * 10.0
-        base_h = height_cm * 8.0
-
-        # Category adjustments
-        if "privacy" in c:
-            # Reduce earlier scaling by ~10%
-            base_w *= 1.17  # was 1.30
-            base_h *= 1.08  # was 1.20
-        elif "keyboard" in c or c == "keyboard skin":
-            # Keyboard covers: longer and slimmer
-            base_w *= 1.15
-            base_h *= 0.80
-        elif "hub" in c:
-            base_w *= 1.05
-        elif "charger" in c or "power bank" in c:
-            base_h *= 1.10
-        elif "cable" in c:
-            base_h *= 0.90
-
-        # Final clamps (keep visual balance yet allow large privacy filters)
-        w = max(90, min(420, base_w))
-        h = max(80, min(240, base_h))
-        return float(w), float(h)
-
-    def _pack_row_by_width(self, candidates: List[MacProduct], target_width: float, max_items: int, spacing: int = 18) -> List[MacProduct]:
-        if not candidates:
-            return []
-        # Sort by height desc to keep row height consistent
-        dims = [(p, *self._w_h(p)) for p in candidates]
-        dims.sort(key=lambda x: x[2], reverse=True)
-        row: List[MacProduct] = []
-        used_names: Dict[str, int] = {}
-        total_w = 0.0
-        for p, w, h in dims:
-            if len(row) >= max_items:
-                break
-            if total_w + (spacing if row else 0) + w <= target_width:
-                row.append(p)
-                total_w += (spacing if len(row) > 1 else 0) + w
-                used_names[p.product_name] = used_names.get(p.product_name, 0) + 1
-        # If width still far from target, allow one round of duplicates of the best-fitting items
-        i = 0
-        while len(row) < max_items and i < len(dims):
-            p, w, h = dims[i]
-            if total_w + spacing + w <= target_width and used_names.get(p.product_name, 0) < 2:
-                row.append(p)
-                total_w += (spacing if len(row) > 1 else 0) + w
-                used_names[p.product_name] = used_names.get(p.product_name, 0) + 1
-            i += 1
-        return row
-
-    @staticmethod
-    def _is_keyboard(p: MacProduct) -> bool:
-        n = p.product_name.lower()
-        c = (p.category or "").lower()
-        return ("keyboard" in n) or ("keyboard" in c) or (c == "keyboard skin")
-
-    @staticmethod
-    def _is_privacy(p: MacProduct) -> bool:
-        n = p.product_name.lower()
-        c = (p.category or "").lower()
-        return ("privacy" in n) or (c == "privacy filter")
-
-    @staticmethod
-    def _is_hub_like(p: MacProduct) -> bool:
-        n = p.product_name.lower()
-        c = (p.category or "").lower()
-        return ("hub" in n) or ("dock" in n) or ("7 in 1" in n or "7-in-1" in n or "7 in1" in n or "7in1" in n) or (c == "hub")
-
-    @staticmethod
-    def _is_power_or_spotfree_or_accessory(p: MacProduct) -> bool:
-        n = p.product_name.lower()
-        c = (p.category or "").lower()
-        return ("charg" in n) or ("power" in n) or ("bank" in n) or (c in {"charger", "accessory", "cleaning", "peripheral"}) or ("spray" in n) or ("spotfree" in n)
-
-    # ------------------------- Core -------------------------- #
-    def _build_rows(self, products: List[MacProduct]) -> List[List[MacProduct]]:
-        spacing = 18
-        max_items_per_row = 8
-
-        # Privacy row first (Row 1)
-        privacy_candidates = [p for p in products if self._is_privacy(p)]
-        privacy_row_base = privacy_candidates[:10]  # over-select; packing trims
-        # Estimate a generous width target from first few privacy items
-        if privacy_row_base:
-            w_samples = [self._w_h(p)[0] for p in privacy_row_base[:6]]
-            privacy_target_w = sum(w_samples) + spacing * max(0, len(w_samples) - 1)
-        else:
-            privacy_target_w = 1000
-        # Force exactly 3 privacy filters in Row 1
-        row1 = self._pack_row_by_width(privacy_row_base, privacy_target_w, 3, spacing)
-        row1 = row1[:3]
-
-        # Row 2: hubs/7-in-1 and similar (exclude keyboards)
-        hub_like = [p for p in products if self._is_hub_like(p) and not self._is_keyboard(p)]
-        row2 = self._pack_row_by_width(hub_like, privacy_target_w, max_items_per_row, spacing)
-
-        # Row 3: spotfree/chargers/accessory (exclude keyboards)
-        power_like = [p for p in products if self._is_power_or_spotfree_or_accessory(p) and not self._is_keyboard(p)]
-        row3 = self._pack_row_by_width(power_like, privacy_target_w, max_items_per_row, spacing)
-
-        # Row 4: exactly 3 keyboard covers centered
-        keyboards = [p for p in products if self._is_keyboard(p)]
-        row4 = keyboards[:3]
-        if len(row4) < 3 and keyboards:
-            # Duplicate top keyboard to reach 3
-            while len(row4) < 3:
-                row4.append(keyboards[0])
-
-        # Remove any keyboard from rows 1–3 if they slipped in
-        def strip_keyboards(row: List[MacProduct]) -> List[MacProduct]:
-            return [p for p in row if not self._is_keyboard(p)]
-        row1, row2, row3 = map(strip_keyboards, (row1, row2, row3))
-
-        # Ensure Rows 1–3 are not empty; fallback to any high-priority products (non-keyboards)
-        def fallback(candidates: List[MacProduct]) -> List[MacProduct]:
-            pool = [p for p in candidates if not self._is_keyboard(p)]
-            return pool[:max_items_per_row]
-        if not row1:
-            row1 = fallback(products)
-        if not row2:
-            row2 = fallback(products)
-        if not row3:
-            row3 = fallback(products)
-
-        return [row1, row2, row3, row4]
-
-    # ------------------------ Rendering ---------------------- #
-    def _render(self, grid: List[List[MacProduct]], store_name: str, wall_number: int) -> str:
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-        spacing = 18
-        row_gap = 42
-        top_margin = 130
-        bottom_margin = 70
-
-        # Precompute widths/heights
-        row_dims: List[List[Tuple[float, float]]] = [[self._w_h(p) for p in row] for row in grid]
-        row_heights = [max((h for w, h in dims), default=0) for dims in row_dims]
-        row_widths = [sum((w for w, h in dims)) + spacing * max(0, len(dims) - 1) for dims in row_dims]
-
-        canvas_w = int(max(1400, max(row_widths) + 220))
-        canvas_h = int(max(800, sum(row_heights) + row_gap * (len(grid) - 1) + top_margin + bottom_margin))
-
-        fig, ax = plt.subplots(figsize=(canvas_w/100, canvas_h/100))
-        ax.set_facecolor("#FFFFFF")
-        ax.set_xlim(0, canvas_w)
-        ax.set_ylim(0, canvas_h)
-        ax.axis("off")
-
-        # Title
-        ax.text(canvas_w/2, canvas_h - 50,
-                f"{store_name.upper()} - MAC ACCESSORIES WALL {wall_number}",
-                fontsize=20, fontweight="bold", ha="center", va="center", color="#2C3E50")
-        ax.text(canvas_w/2, canvas_h - 85,
-                f"Professional Shelf Layout | {sum(len(r) for r in grid)} Products | Dimension-Optimized",
-                fontsize=12, ha="center", va="center", color="#7F8C8D")
-
-        # Helpers for color contrast and text fitting
-        def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
-            hex_color = hex_color.lstrip('#')
-            r = int(hex_color[0:2], 16)
-            g = int(hex_color[2:4], 16)
-            b = int(hex_color[4:6], 16)
-            return (r, g, b)
-        def is_dark(hex_color: str) -> bool:
-            r, g, b = hex_to_rgb(hex_color)
-            # Relative luminance
-            lum = 0.2126*r + 0.7152*g + 0.0722*b
-            return lum < 150
-        def truncate(text: str, max_px: float, px_per_char: float = 6.5) -> str:
-            max_chars = max(6, int(max_px / px_per_char))
-            return text if len(text) <= max_chars else text[:max_chars-1] + '…'
-
-        y = canvas_h - top_margin
-        for r_idx, row in enumerate(grid):
-            dims = row_dims[r_idx]
-            if not dims:
-                continue
-            row_h = row_heights[r_idx]
-            row_w = row_widths[r_idx]
-            row_center_y = y - row_h/2
-            start_x = (canvas_w - row_w) / 2
-            x = start_x
-            for p, (w, h) in zip(row, dims):
-                # Brand color coding
-                brand = (p.brand or '').lower()
-                brand_colors = {
-                    'apple': '#007AFF', 'belkin': '#FF6B35', 'logitech': '#00B04F', 'anker': '#FF3B30',
-                    'satechi': '#5856D6', 'hyper': '#FF9500', 'caldigit': '#34C759', 'owc': '#AF52DE',
-                    'ugreen': '#32D74B', 'tekne': '#FF2D92', 'pulse': '#007AFF', 'gripp': '#1D1D1F'
-                }
-                fill = brand_colors.get(brand, '#E9F2FF')
-                edge = '#AEB6BF' if brand not in ('gripp',) else '#333333'
-                rect = Rectangle((x, row_center_y - h/2), w, h, facecolor=fill, edgecolor=edge)
-                ax.add_patch(rect)
-
-                # Determine text colors and sizes (no stretching)
-                dark_bg = is_dark(fill)
-                name_color = '#FFFFFF' if dark_bg else '#1D1D1F'
-                sub_color = '#F2F2F7' if dark_bg else '#7F8C8D'
-                name_fs = max(7, min(12, w/18))
-                sub_fs = max(6, min(10, w/22))
-
-                # Primary line: for privacy, show product name; else brand
-                cat = (p.category or '').lower()
-                if 'privacy' in cat:
-                    primary_text = p.product_name
-                    secondary_text = p.brand.upper() if p.brand else ''
+        self.image_databank_path = IMAGE_DATABANK
+        self.output_path = OUTPUT_DIR
+        
+        # Brand colors matching the example
+        self.brand_colors = {
+            'PULSE': '#1E90FF',
+            'TEKNE': '#FF1493', 
+            'ALOGIC': '#E6E6FA',
+            'GRIPP': '#2C3E50',
+            'BELKIN': '#FF6B35'
+        }
+        
+        # Load historical sales data
+        self.sales_data = self.load_historical_data()
+        
+    def load_historical_data(self) -> Dict:
+        """Load historical sales data from JSON file"""
+        try:
+            if HISTORICAL_DATA.exists():
+                with open(HISTORICAL_DATA, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            else:
+                self.logger.warning(f"Historical data file not found: {HISTORICAL_DATA}")
+                return {}
+        except Exception as e:
+            self.logger.error(f"Error loading historical data: {e}")
+            return {}
+    
+    def load_product_image(self, image_filename: str, target_size: Tuple[int, int] = (100, 100)) -> Optional[np.ndarray]:
+        """Load and process product image"""
+        try:
+            image_path = os.path.join(self.image_databank_path, image_filename)
+            if os.path.exists(image_path):
+                img = Image.open(image_path)
+                if img.mode != 'RGB':
+                    img = img.convert('RGB')
+                
+                # Resize maintaining aspect ratio
+                img.thumbnail(target_size, Image.Resampling.LANCZOS)
+                
+                # Create a white background
+                background = Image.new('RGB', target_size, 'white')
+                
+                # Center the image on the background
+                x_offset = (target_size[0] - img.width) // 2
+                y_offset = (target_size[1] - img.height) // 2
+                background.paste(img, (x_offset, y_offset))
+                
+                return np.array(background)
+            else:
+                self.logger.warning(f"Image not found: {image_path}")
+                return None
+        except Exception as e:
+            self.logger.error(f"Error loading image {image_filename}: {e}")
+            return None
+    
+    def get_products_from_sales_data(self) -> List[MacProduct]:
+        """Extract products from historical sales data with proper mapping to image files"""
+        products = []
+        
+        if not self.sales_data or 'sales_performance' not in self.sales_data:
+            self.logger.warning("No sales data available, using fallback products")
+            return self.get_fallback_products()
+        
+        # Image file mapping based on actual databank files
+        image_mapping = {
+            # Privacy Filters
+            'Magnetic Privacy Filter for MacBook Pro 16"': 'pulse mac privacy filter.jpg',
+            'Magnetic Privacy Filter for MacBook Air 13"': 'pulse mac privacy filter.jpg', 
+            'Magnetic Privacy Filter for MacBook Pro 14"': 'pulse mac privacy filter.jpg',
+            
+            # Hubs & Docks
+            'ALOGIC USB-C Hub 7-in-1': 'alogic usb hub.jpg',
+            'TEKNE Multiport Hub USB-C': 'tekne multiport hub.jpg',
+            'ALOGIC USB-C Dock 3-in-1': 'alogic usb-c dock 3in1.jpg',
+            'PowerUp USB Hub': 'powerup usb hub.jpg',
+            'BELKIN MagSafe 3-in-1': 'tekne multiport hub.jpg',
+            'TEKNE USB-C Lightning Cable': 'tekne usb-c lightning cable.jpg',
+            
+            # Cables & Adapters
+            'TEKNE 20W USB-C Adapter': 'tekne 20W adapter.jpg',
+            'PULSE 20W USB-C Adapter': 'pulse 20W adapter.jpg',
+            'ALOGIC USB-C Cable 2m': 'alogic usb-c cable.jpg',
+            'TEKNE 36W USB-C Adapter': 'tekne 36W adapter.jpg',
+            'ALOGIC USB-C to Lightning Cable': 'alogic usb-c cable.jpg',
+            'TEKNE 45W USB-C Adapter': 'Tekne 45W adapter.jpg',
+            'USB-C 30W Adapter': 'usb-c 30W adapter.jpg',
+            
+            # Keyboard Accessories
+            'Keyboard Skin for Apple MacBook Pro 16"': 'Gripp keyboard cover.png',
+            'Keyboard Skin for MacBook Air 13 (2024)': 'Gripp keyboard cover.png',
+            'Keyboard Skin for Apple MacBook Pro 14"': 'Gripp keyboard cover.png',
+            
+            # Charging Accessories
+            'TEKNE MacBook 3-in-1 Kit': 'tekne macbook 3in1 kit.jpg',
+            'TEKNE 60W USB-C Cable': 'tekne 60W cable.jpg',
+            'PULSE 30W Adapter': 'pulse 30W adapter.jpg',
+            'USB-C 20W Adapter': 'usb-c 20W adapter.jpg'
+        }
+        
+        # Category priorities for shelf placement
+        category_priorities = {
+            'privacy_filters': 1,
+            'hubs_docks': 2, 
+            'cables_adapters': 3,
+            'keyboard_accessories': 4,
+            'charging_accessories': 3
+        }
+        
+        # Extract products from sales data
+        for category, data in self.sales_data['sales_performance'].items():
+            priority = category_priorities.get(category, 5)
+            
+            for product_data in data.get('top_products', []):
+                name = product_data['name']
+                brand = product_data['brand']
+                image_file = image_mapping.get(name, 'pulse mac privacy filter.jpg')  # fallback
+                
+                # Determine dimensions based on category - realistic product sizes
+                if category == 'privacy_filters':
+                    width, height = 28, 18  # Screen-sized rectangles
+                elif category == 'keyboard_accessories':
+                    width, height = 30, 8   # Wide rectangles for keyboard covers
                 else:
-                    primary_text = p.brand.upper() if p.brand else p.product_name
-                    secondary_text = p.product_name
-
-                ax.text(
-                    x + w/2,
-                    row_center_y + min(10, h*0.28),
-                    truncate(primary_text, w*0.9),
-                    fontsize=name_fs,
-                    ha='center', va='center', color=name_color, clip_on=True
-                )
-                ax.text(
-                    x + w/2,
-                    row_center_y - h/2 + 10,
-                    truncate(secondary_text, w*0.92),
-                    fontsize=sub_fs,
-                    ha='center', va='bottom', color=sub_color, clip_on=True
-                )
-                x += w + spacing
-            y -= row_h + row_gap
-
-        # Use consistent naming with other generators
-        store_slug = store_name.lower().replace(' ', '_').replace('-', '_')
-        fname = f"mac_wall_{wall_number}_{store_slug}.png"
-        out_path = str(OUTPUT_DIR / fname)
-        fig.savefig(out_path, dpi=120, bbox_inches="tight")
-        plt.close(fig)
-        return out_path
-
-    # --------------------- Public API ------------------------ #
+                    width, height = 9, 9    # Small squares for hubs/cables
+                
+                products.append(MacProduct(
+                    name=name,
+                    brand=brand,
+                    category=category,
+                    image_file=image_file,
+                    units_sold=product_data['units_sold'],
+                    revenue=product_data['revenue'],
+                    market_share=product_data['market_share'],
+                    width=width,
+                    height=height,
+                    priority=priority
+                ))
+        
+        # Sort by priority then by units sold
+        products.sort(key=lambda p: (p.priority, -p.units_sold))
+        return products
+    
+    def get_fallback_products(self) -> List[MacProduct]:
+        """Fallback products if sales data is not available"""
+        return [
+            MacProduct("Magnetic Privacy Filter for MacBook", "PULSE", "privacy_filters", 
+                      "pulse mac privacy filter.jpg", 15000, 1349850, 0.33, 26, 16, 1),
+            MacProduct("ALOGIC USB Hub", "ALOGIC", "hubs_docks", 
+                      "alogic usb hub.jpg", 12000, 1559880, 0.15, 10, 10, 2),
+            MacProduct("TEKNE 20W Adapter", "TEKNE", "cables_adapters", 
+                      "tekne 20W adapter.jpg", 28000, 1399720, 0.22, 10, 10, 3),
+            MacProduct("Keyboard Skin for MacBook Pro 16\"", "GRIPP", "keyboard_accessories", 
+                      "Gripp keyboard cover.png", 15000, 599850, 0.43, 25, 15, 4)
+        ]
+    
+    def add_product_with_image(self, ax, product: MacProduct, x_pos: float, y_pos: float, width: float, height: float):
+        """Add clean product image with black border and labels"""
+        
+        # Add black package outline representing actual product package size
+        package_rect = Rectangle(
+            (x_pos, y_pos), width, height,
+            facecolor='white',
+            edgecolor='black',
+            linewidth=2
+        )
+        ax.add_patch(package_rect)
+        
+        # Load and add product image inside the package
+        target_size = (int(width*10), int(height*10))  # Proper sizing for clean images
+        img_array = self.load_product_image(product.image_file, target_size)
+        
+        if img_array is not None:
+            # Add clean image with proper zoom
+            imagebox = OffsetImage(img_array, zoom=0.8)
+            ab = AnnotationBbox(imagebox, (x_pos + width/2, y_pos + height/2 + 2), 
+                              frameon=True, boxcoords="data")
+            ab.patch.set_facecolor('white')
+            ab.patch.set_edgecolor('black')
+            ab.patch.set_linewidth(2)
+            ax.add_artist(ab)
+        
+        # Add product name below package
+        ax.text(x_pos + width/2, y_pos - 1, product.name, 
+               ha='center', va='center', fontsize=8, 
+               fontweight='bold', color='#2C3E50')
+        
+        # Add brand name below product name
+        ax.text(x_pos + width/2, y_pos - 3, product.brand, 
+               ha='center', va='center', fontsize=10, 
+               fontweight='bold', color=self.brand_colors.get(product.brand, '#2C3E50'))
+    
+    def add_shelf_background(self, ax, y_pos: float, height: float, shelf_color: str = '#F5F5F5'):
+        """Add shelf background - centered and properly sized"""
+        shelf_rect = Rectangle((5, y_pos - 1), 90, height + 2, 
+                              facecolor=shelf_color, edgecolor='#D3D3D3', 
+                              linewidth=1, alpha=0.3)
+        ax.add_patch(shelf_rect)
+    
+    def create_planogram(self, store_name: str = "IMAGINE KORAMANGALA", wall_number: int = 1) -> str:
+        """Create enhanced planogram with improved layout and sizing"""
+        
+        # Get products from sales data
+        all_products = self.get_products_from_sales_data()
+        
+        # Organize products by category
+        products_by_category = {}
+        for product in all_products:
+            if product.category not in products_by_category:
+                products_by_category[product.category] = []
+            products_by_category[product.category].append(product)
+        
+        # Create figure
+        fig, ax = plt.subplots(figsize=(20, 14))
+        ax.set_xlim(0, 100)
+        ax.set_ylim(0, 100)
+        ax.set_aspect('equal')
+        fig.patch.set_facecolor('white')
+        
+        # Title
+        title = f"{store_name.upper()} - MAC ACCESSORIES WALL {wall_number}"
+        subtitle = "Professional Shelf Layout | 22 Products | Dimension-Optimized"
+        
+        ax.text(50, 95, title, ha='center', va='center', 
+                fontsize=18, fontweight='bold', color='#2C3E50')
+        ax.text(50, 91, subtitle, ha='center', va='center', 
+                fontsize=12, color='#7F8C8D')
+        
+        # Define constant shelf parameters - realistic shelf dimensions
+        shelf_start_x = 8
+        shelf_end_x = 92
+        shelf_width = shelf_end_x - shelf_start_x  # 84 units total width for all shelves
+        
+        # Add shelf backgrounds with adjusted sizes for larger boxes
+        self.add_shelf_background(ax, 68, 20)  # Top shelf - increased height for larger boxes
+        self.add_shelf_background(ax, 48, 15)  # Middle shelf 1 - increased height for larger boxes
+        self.add_shelf_background(ax, 30, 15)  # Middle shelf 2 - increased height for larger boxes
+        self.add_shelf_background(ax, 10, 15)  # Bottom shelf - keeping constant size
+        
+        # Prepare product data with fallback
+        privacy_products = products_by_category.get('privacy_filters', [])[:3]
+        if len(privacy_products) < 3:
+            # Create fallback privacy filter products
+            fallback_privacy = MacProduct("Magnetic privacy filter for MacBook", "PULSE", "privacy_filters", 
+                                        "pulse mac privacy filter.jpg", 15000, 1349850, 0.33, 25, 16, 1)
+            while len(privacy_products) < 3:
+                privacy_products.append(fallback_privacy)
+        
+        # Get middle row products
+        hub_products = products_by_category.get('hubs_docks', [])
+        cable_products = products_by_category.get('cables_adapters', [])
+        charging_products = products_by_category.get('charging_accessories', [])
+        
+        # Combine and prepare middle row products
+        middle_products_1 = (hub_products + cable_products)[:8]
+        middle_products_2 = (cable_products + charging_products)[:8]
+        
+        # Fill with fallbacks if needed
+        fallback_middle = MacProduct("ALOGIC USB", "ALOGIC", "hubs_docks", 
+                                   "alogic usb hub.jpg", 12000, 1559880, 0.15, 10, 10, 2)
+        while len(middle_products_1) < 8:
+            middle_products_1.append(fallback_middle)
+        while len(middle_products_2) < 8:
+            middle_products_2.append(fallback_middle)
+        
+        # Keyboard products
+        keyboard_products = products_by_category.get('keyboard_accessories', [])[:3]
+        if len(keyboard_products) < 3:
+            fallback_keyboard = MacProduct("Keyboard Skin for Apple Macbook Pro 16\"", "GRIPP", "keyboard_accessories", 
+                                         "Gripp keyboard cover.png", 15000, 599850, 0.43, 26, 10, 4)
+            while len(keyboard_products) < 3:
+                keyboard_products.append(fallback_keyboard)
+        
+        # Top row - 3 large privacy filter products (Target total: ~82 units)
+        top_widths = [25, 26, 25]  # Total: 76 units
+        top_gaps = [3, 3]  # Total gaps: 6 units = 82 total
+        
+        x_pos = shelf_start_x
+        for i, (product, width) in enumerate(zip(privacy_products, top_widths)):
+            y_pos = 74  # Adjusted for new shelf position
+            self.add_product_with_image(ax, product, x_pos, y_pos, width, 16)
+            x_pos += width + (top_gaps[i] if i < len(top_gaps) else 0)
+        
+        # Middle row 1 - 8 smaller products (Target total: ~82 units) - MADE SMALLER
+        middle1_widths = [8.5, 9, 9.5, 9, 8.5, 9.5, 9, 8.5]  # Total: 71.5 units (reduced)
+        middle1_gaps = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5]  # Total gaps: 10.5 units = 82 total
+        
+        x_pos = shelf_start_x
+        for i, (product, width) in enumerate(zip(middle_products_1, middle1_widths)):
+            y_pos = 54  # Adjusted for new shelf position, reduced gap from top row
+            self.add_product_with_image(ax, product, x_pos, y_pos, width, 10)  # Reduced height from 12 to 10
+            x_pos += width + (middle1_gaps[i] if i < len(middle1_gaps) else 0)
+        
+        # Middle row 2 - 8 smaller products (Target total: ~82 units) - MADE SMALLER
+        middle2_widths = [9, 8.5, 9.5, 9, 9, 8.5, 9.5, 8.5]  # Total: 71.5 units (reduced)
+        middle2_gaps = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5]  # Total gaps: 10.5 units = 82 total
+        
+        x_pos = shelf_start_x
+        for i, (product, width) in enumerate(zip(middle_products_2, middle2_widths)):
+            y_pos = 36  # Adjusted for new shelf position, reduced gap from middle row 1
+            self.add_product_with_image(ax, product, x_pos, y_pos, width, 10)  # Reduced height from 12 to 10
+            x_pos += width + (middle2_gaps[i] if i < len(middle2_gaps) else 0)
+        
+        # Bottom row - 3 keyboard products (Target total: ~82 units) - MORE RECTANGULAR
+        bottom_widths = [26, 26, 26]  # Total: 78 units - keeping width for rectangular shape
+        bottom_gaps = [2, 2]  # Total gaps: 4 units = 82 total
+        
+        x_pos = shelf_start_x
+        for i, (product, width) in enumerate(zip(keyboard_products, bottom_widths)):
+            y_pos = 16  # Adjusted for new shelf position, reduced gap from middle row 2
+            self.add_product_with_image(ax, product, x_pos, y_pos, width, 10)  # Reduced height from 15 to 10 for more rectangular shape
+            x_pos += width + (bottom_gaps[i] if i < len(bottom_gaps) else 0)
+        
+        # Remove axes
+        ax.set_xticks([])
+        ax.set_yticks([])
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        
+        # Save planogram
+        os.makedirs(self.output_path, exist_ok=True)
+        store_clean = store_name.lower().replace(' ', '_').replace('-', '_').replace('(', '').replace(')', '')
+        output_filename = f"{store_clean}_wall{wall_number}_mac_accessories_enhanced.png"
+        output_path = os.path.join(self.output_path, output_filename)
+        
+        plt.tight_layout()
+        plt.savefig(output_path, dpi=300, bbox_inches='tight', 
+                   facecolor='white', edgecolor='none')
+        plt.close()
+        
+        return output_path
+    
     def generate_store_planograms(self, store_name: str, num_walls: int) -> Dict[str, str]:
-        products = self.load_mac_data()
-        # Filter to approved TPA brands if needed (soft filter)
-        approved = {"gripp", "pulse", "tekne", "belkin", "alogic", "anker", "satechi"}
-        products = [p for p in products if (p.brand or "").lower() in approved]
-
-        # Generate the requested number of walls (typically 1 for Mac accessories)
+        """Generate planograms for the specified store and number of walls"""
         results = {}
-        for wall_num in range(1, min(num_walls + 1, 2)):  # Max 1 wall for now
-            grid = self._build_rows(products)
-            out = self._render(grid, store_name, wall_num)
-            results[f"wall_{wall_num}"] = out
+        
+        for wall_num in range(1, min(num_walls + 1, 2)):  # Max 1 wall for Mac accessories
+            output_path = self.create_planogram(store_name, wall_num)
+            results[f"wall_{wall_num}"] = output_path
+            self.logger.info(f"Generated Mac accessories planogram: {output_path}")
+        
         return results
-

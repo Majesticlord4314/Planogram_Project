@@ -1,0 +1,23 @@
+{
+  "store_name": "IMAGINE KORAMANGALA BENGALURU (BANGALORE)",
+  "generation_timestamp": "2025-09-10T17:26:32.014829",
+  "wall_configuration": {
+    "Mac Accessories": 1
+  },
+  "generated_planograms": [
+    "wall_1"
+  ],
+  "planogram_files": {
+    "wall_1": "C:\\Users\\Workstation PC\\Planogram_Project\\web-ui\\backend\\output\\imagine_koramangala_bengaluru_bangalore_wall1_mac_accessories_enhanced.png"
+  },
+  "mac_categories_generated": 1,
+  "total_walls_used": 1,
+  "product_statistics": {
+    "total_mac_products": 25,
+    "total_bags_sleeves": 41,
+    "total_products": 66,
+    "categories": 5,
+    "brands": 5,
+    "avg_units_sold": 13920
+  }
+}
